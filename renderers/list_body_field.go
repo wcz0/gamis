@@ -18,22 +18,6 @@ func NewListBodyField() *ListBodyField {
     return a
 }
 /**
- * 配置点击复制功能
- */
-func (a *ListBodyField) Copyable(value string) *ListBodyField {
-    a.Set("copyable", value)
-    return a
-}
-
-/**
- * 列标题
- */
-func (a *ListBodyField) Label(value string) *ListBodyField {
-    a.Set("label", value)
-    return a
-}
-
-/**
  * label 类名
  */
 func (a *ListBodyField) LabelClassName(value string) *ListBodyField {
@@ -70,5 +54,21 @@ func (a *ListBodyField) PopOver(value string) *ListBodyField {
  */
 func (a *ListBodyField) QuickEdit(value string) *ListBodyField {
     a.Set("quickEdit", value)
+    return a
+}
+
+/**
+ * 配置点击复制功能
+ */
+func (a *ListBodyField) Copyable(value string) *ListBodyField {
+    a.Set("copyable", value)
+    return a
+}
+
+/**
+ * 列标题
+ */
+func (a *ListBodyField) Label(value string) *ListBodyField {
+    a.Set("label", value)
     return a
 }

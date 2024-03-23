@@ -16,6 +16,14 @@ func NewGridColumn() *GridColumn {
     return a
 }
 /**
+ * 小屏时（>=768px）宽度占比
+ */
+func (a *GridColumn) Sm(value string) *GridColumn {
+    a.Set("sm", value)
+    return a
+}
+
+/**
  * 垂直对齐方式
  * 可选值: top | middle | bottom | between
  */
@@ -25,27 +33,10 @@ func (a *GridColumn) Valign(value string) *GridColumn {
 }
 
 /**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
- */
-func (a *GridColumn) Mode(value string) *GridColumn {
-    a.Set("mode", value)
-    return a
-}
-
-/**
  * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  */
 func (a *GridColumn) Horizontal(value string) *GridColumn {
     a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 列类名
- */
-func (a *GridColumn) ColumnClassName(value string) *GridColumn {
-    a.Set("columnClassName", value)
     return a
 }
 
@@ -74,6 +65,23 @@ func (a *GridColumn) Md(value string) *GridColumn {
 }
 
 /**
+ * 大屏时(>=1200px)宽度占比
+ */
+func (a *GridColumn) Lg(value string) *GridColumn {
+    a.Set("lg", value)
+    return a
+}
+
+/**
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
+ */
+func (a *GridColumn) Mode(value string) *GridColumn {
+    a.Set("mode", value)
+    return a
+}
+
+/**
  */
 func (a *GridColumn) Body(value string) *GridColumn {
     a.Set("body", value)
@@ -81,17 +89,9 @@ func (a *GridColumn) Body(value string) *GridColumn {
 }
 
 /**
- * 小屏时（>=768px）宽度占比
+ * 列类名
  */
-func (a *GridColumn) Sm(value string) *GridColumn {
-    a.Set("sm", value)
-    return a
-}
-
-/**
- * 大屏时(>=1200px)宽度占比
- */
-func (a *GridColumn) Lg(value string) *GridColumn {
-    a.Set("lg", value)
+func (a *GridColumn) ColumnClassName(value string) *GridColumn {
+    a.Set("columnClassName", value)
     return a
 }

@@ -17,6 +17,27 @@ func NewListenerAction() *ListenerAction {
 }
 /**
  */
+func (a *ListenerAction) StopPropagation(value string) *ListenerAction {
+    a.Set("stopPropagation", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) Expression(value string) *ListenerAction {
+    a.Set("expression", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) IgnoreError(value string) *ListenerAction {
+    a.Set("ignoreError", value)
+    return a
+}
+
+/**
+ */
 func (a *ListenerAction) Args(value string) *ListenerAction {
     a.Set("args", value)
     return a
@@ -39,34 +60,6 @@ func (a *ListenerAction) OutputVar(value string) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) Expression(value string) *ListenerAction {
-    a.Set("expression", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ComponentName(value string) *ListenerAction {
-    a.Set("componentName", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) IgnoreError(value string) *ListenerAction {
-    a.Set("ignoreError", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ComponentId(value string) *ListenerAction {
-    a.Set("componentId", value)
-    return a
-}
-
-/**
- */
 func (a *ListenerAction) Data(value string) *ListenerAction {
     a.Set("data", value)
     return a
@@ -76,13 +69,6 @@ func (a *ListenerAction) Data(value string) *ListenerAction {
  */
 func (a *ListenerAction) PreventDefault(value string) *ListenerAction {
     a.Set("preventDefault", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) StopPropagation(value string) *ListenerAction {
-    a.Set("stopPropagation", value)
     return a
 }
 
@@ -104,5 +90,19 @@ func (a *ListenerAction) ActionType(value string) *ListenerAction {
  */
 func (a *ListenerAction) Description(value string) *ListenerAction {
     a.Set("description", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ComponentId(value string) *ListenerAction {
+    a.Set("componentId", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ComponentName(value string) *ListenerAction {
+    a.Set("componentName", value)
     return a
 }

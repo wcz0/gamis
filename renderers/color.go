@@ -19,17 +19,10 @@ func NewColor() *Color {
     return a
 }
 /**
- * 是否静态展示表达式
+ * 组件样式
  */
-func (a *Color) StaticOn(value string) *Color {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *Color) StaticSchema(value string) *Color {
-    a.Set("staticSchema", value)
+func (a *Color) Style(value string) *Color {
+    a.Set("style", value)
     return a
 }
 
@@ -42,18 +35,10 @@ func (a *Color) DisabledOn(value string) *Color {
 }
 
 /**
- * 是否隐藏
+ * 是否显示
  */
-func (a *Color) Hidden(value string) *Color {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Color) HiddenOn(value string) *Color {
-    a.Set("hiddenOn", value)
+func (a *Color) Visible(value string) *Color {
+    a.Set("visible", value)
     return a
 }
 
@@ -66,10 +51,10 @@ func (a *Color) VisibleOn(value string) *Color {
 }
 
 /**
- * 事件动作配置
+ * 是否静态展示
  */
-func (a *Color) OnEvent(value string) *Color {
-    a.Set("onEvent", value)
+func (a *Color) Static(value string) *Color {
+    a.Set("static", value)
     return a
 }
 
@@ -82,18 +67,34 @@ func (a *Color) Type(value string) *Color {
 }
 
 /**
- * 是否禁用
+ * 容器 css 类名
  */
-func (a *Color) Disabled(value string) *Color {
-    a.Set("disabled", value)
+func (a *Color) ClassName(value string) *Color {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 事件动作配置
  */
-func (a *Color) Static(value string) *Color {
-    a.Set("static", value)
+func (a *Color) OnEvent(value string) *Color {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Color) StaticInputClassName(value string) *Color {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Color) UseMobileUI(value string) *Color {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -122,10 +123,10 @@ func (a *Color) ShowValue(value string) *Color {
 }
 
 /**
- * 是否显示
+ * 是否隐藏表达式
  */
-func (a *Color) Visible(value string) *Color {
-    a.Set("visible", value)
+func (a *Color) HiddenOn(value string) *Color {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -154,26 +155,33 @@ func (a *Color) StaticLabelClassName(value string) *Color {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否静态展示表达式
  */
-func (a *Color) StaticInputClassName(value string) *Color {
-    a.Set("staticInputClassName", value)
+func (a *Color) StaticOn(value string) *Color {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
  */
-func (a *Color) UseMobileUI(value string) *Color {
-    a.Set("useMobileUI", value)
+func (a *Color) StaticSchema(value string) *Color {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * 是否禁用
  */
-func (a *Color) ClassName(value string) *Color {
-    a.Set("className", value)
+func (a *Color) Disabled(value string) *Color {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Color) Hidden(value string) *Color {
+    a.Set("hidden", value)
     return a
 }
 
@@ -182,13 +190,5 @@ func (a *Color) ClassName(value string) *Color {
  */
 func (a *Color) Id(value string) *Color {
     a.Set("id", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Color) Style(value string) *Color {
-    a.Set("style", value)
     return a
 }

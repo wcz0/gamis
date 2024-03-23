@@ -19,57 +19,26 @@ func NewVideo() *Video {
     return a
 }
 /**
- * 指定为视频类型
+ * 组件样式
  */
-func (a *Video) Type(value string) *Video {
-    a.Set("type", value)
+func (a *Video) Style(value string) *Video {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 是否循环播放
+ * 容器 css 类名
  */
-func (a *Video) Loop(value string) *Video {
-    a.Set("loop", value)
+func (a *Video) ClassName(value string) *Video {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 配置播放器 className
+ * 配置帧列表容器className
  */
-func (a *Video) PlayerClassName(value string) *Video {
-    a.Set("playerClassName", value)
-    return a
-}
-
-/**
- * 默认播放的时候到了下一帧会继续播放，同时高亮下一帧。 如果配置这个则会停止播放，等待用户选择新的区间再播放。
- */
-func (a *Video) StopOnNextFrame(value string) *Video {
-    a.Set("stopOnNextFrame", value)
-    return a
-}
-
-/**
- */
-func (a *Video) StaticSchema(value string) *Video {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Video) OnEvent(value string) *Video {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否初始静音
- */
-func (a *Video) Muted(value string) *Video {
-    a.Set("muted", value)
+func (a *Video) FramesClassName(value string) *Video {
+    a.Set("framesClassName", value)
     return a
 }
 
@@ -82,58 +51,18 @@ func (a *Video) Src(value string) *Video {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 默认播放的时候到了下一帧会继续播放，同时高亮下一帧。 如果配置这个则会停止播放，等待用户选择新的区间再播放。
  */
-func (a *Video) Id(value string) *Video {
-    a.Set("id", value)
+func (a *Video) StopOnNextFrame(value string) *Video {
+    a.Set("stopOnNextFrame", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 静态展示表单项Label类名
  */
-func (a *Video) StaticPlaceholder(value string) *Video {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Video) EditorSetting(value string) *Video {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 如果是实时的，请标记一下
- */
-func (a *Video) IsLive(value string) *Video {
-    a.Set("isLive", value)
-    return a
-}
-
-/**
- * 视频封面地址
- */
-func (a *Video) Poster(value string) *Video {
-    a.Set("poster", value)
-    return a
-}
-
-/**
- * 是否将视频和封面分开显示
- */
-func (a *Video) SplitPoster(value string) *Video {
-    a.Set("splitPoster", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Video) Disabled(value string) *Video {
-    a.Set("disabled", value)
+func (a *Video) StaticLabelClassName(value string) *Video {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -154,18 +83,106 @@ func (a *Video) StaticOn(value string) *Video {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 静态展示表单项类名
  */
-func (a *Video) StaticInputClassName(value string) *Video {
-    a.Set("staticInputClassName", value)
+func (a *Video) StaticClassName(value string) *Video {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 组件样式
+ * 是否循环播放
  */
-func (a *Video) Style(value string) *Video {
-    a.Set("style", value)
+func (a *Video) Loop(value string) *Video {
+    a.Set("loop", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Video) Disabled(value string) *Video {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Video) HiddenOn(value string) *Video {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Video) UseMobileUI(value string) *Video {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 配置播放器 className
+ */
+func (a *Video) PlayerClassName(value string) *Video {
+    a.Set("playerClassName", value)
+    return a
+}
+
+/**
+ * 是否将视频和封面分开显示
+ */
+func (a *Video) SplitPoster(value string) *Video {
+    a.Set("splitPoster", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Video) DisabledOn(value string) *Video {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 如果是实时的，请标记一下
+ */
+func (a *Video) IsLive(value string) *Video {
+    a.Set("isLive", value)
+    return a
+}
+
+/**
+ * 跳转到帧时，往前多少秒。
+ */
+func (a *Video) JumpBufferDuration(value string) *Video {
+    a.Set("jumpBufferDuration", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Video) StaticPlaceholder(value string) *Video {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Video) VisibleOn(value string) *Video {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Video) EditorSetting(value string) *Video {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -186,10 +203,65 @@ func (a *Video) JumpFrame(value string) *Video {
 }
 
 /**
- * 是否隐藏表达式
+ * 视频封面地址
  */
-func (a *Video) HiddenOn(value string) *Video {
-    a.Set("hiddenOn", value)
+func (a *Video) Poster(value string) *Video {
+    a.Set("poster", value)
+    return a
+}
+
+/**
+ * 视频类型如： video/x-flv
+ */
+func (a *Video) VideoType(value string) *Video {
+    a.Set("videoType", value)
+    return a
+}
+
+/**
+ * 视频速率
+ */
+func (a *Video) Rates(value string) *Video {
+    a.Set("rates", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Video) OnEvent(value string) *Video {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Video) StaticInputClassName(value string) *Video {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Video) StaticSchema(value string) *Video {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 指定为视频类型
+ */
+func (a *Video) Type(value string) *Video {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否初始静音
+ */
+func (a *Video) Muted(value string) *Video {
+    a.Set("muted", value)
     return a
 }
 
@@ -202,50 +274,10 @@ func (a *Video) Visible(value string) *Video {
 }
 
 /**
- * 静态展示表单项类名
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Video) StaticClassName(value string) *Video {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 跳转到帧时，往前多少秒。
- */
-func (a *Video) JumpBufferDuration(value string) *Video {
-    a.Set("jumpBufferDuration", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Video) DisabledOn(value string) *Video {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Video) Hidden(value string) *Video {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Video) StaticLabelClassName(value string) *Video {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Video) UseMobileUI(value string) *Video {
-    a.Set("useMobileUI", value)
+func (a *Video) Id(value string) *Video {
+    a.Set("id", value)
     return a
 }
 
@@ -275,41 +307,9 @@ func (a *Video) AspectRatio(value string) *Video {
 }
 
 /**
- * 是否显示表达式
+ * 是否隐藏
  */
-func (a *Video) VisibleOn(value string) *Video {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 配置帧列表容器className
- */
-func (a *Video) FramesClassName(value string) *Video {
-    a.Set("framesClassName", value)
-    return a
-}
-
-/**
- * 视频类型如： video/x-flv
- */
-func (a *Video) VideoType(value string) *Video {
-    a.Set("videoType", value)
-    return a
-}
-
-/**
- * 视频速率
- */
-func (a *Video) Rates(value string) *Video {
-    a.Set("rates", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Video) ClassName(value string) *Video {
-    a.Set("className", value)
+func (a *Video) Hidden(value string) *Video {
+    a.Set("hidden", value)
     return a
 }

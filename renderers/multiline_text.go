@@ -19,58 +19,18 @@ func NewMultilineText() *MultilineText {
     return a
 }
 /**
- * 容器 css 类名
+ * 是否显示
  */
-func (a *MultilineText) ClassName(value string) *MultilineText {
-    a.Set("className", value)
+func (a *MultilineText) Visible(value string) *MultilineText {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *MultilineText) Hidden(value string) *MultilineText {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *MultilineText) VisibleOn(value string) *MultilineText {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 文本
- */
-func (a *MultilineText) Text(value string) *MultilineText {
-    a.Set("text", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *MultilineText) Disabled(value string) *MultilineText {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *MultilineText) DisabledOn(value string) *MultilineText {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *MultilineText) OnEvent(value string) *MultilineText {
-    a.Set("onEvent", value)
+func (a *MultilineText) Id(value string) *MultilineText {
+    a.Set("id", value)
     return a
 }
 
@@ -83,14 +43,6 @@ func (a *MultilineText) StaticClassName(value string) *MultilineText {
 }
 
 /**
- * 静态展示表单项Value类名
- */
-func (a *MultilineText) StaticInputClassName(value string) *MultilineText {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
  * 编辑器配置，运行时可以忽略
  */
 func (a *MultilineText) EditorSetting(value string) *MultilineText {
@@ -99,10 +51,10 @@ func (a *MultilineText) EditorSetting(value string) *MultilineText {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 容器 css 类名
  */
-func (a *MultilineText) Id(value string) *MultilineText {
-    a.Set("id", value)
+func (a *MultilineText) ClassName(value string) *MultilineText {
+    a.Set("className", value)
     return a
 }
 
@@ -123,9 +75,10 @@ func (a *MultilineText) StaticLabelClassName(value string) *MultilineText {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *MultilineText) StaticSchema(value string) *MultilineText {
-    a.Set("staticSchema", value)
+func (a *MultilineText) StaticInputClassName(value string) *MultilineText {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -134,14 +87,6 @@ func (a *MultilineText) StaticSchema(value string) *MultilineText {
  */
 func (a *MultilineText) Style(value string) *MultilineText {
     a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *MultilineText) UseMobileUI(value string) *MultilineText {
-    a.Set("useMobileUI", value)
     return a
 }
 
@@ -161,6 +106,14 @@ func (a *MultilineText) MaxRows(value string) *MultilineText {
 }
 
 /**
+ * 是否禁用
+ */
+func (a *MultilineText) Disabled(value string) *MultilineText {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
  * 是否隐藏表达式
  */
 func (a *MultilineText) HiddenOn(value string) *MultilineText {
@@ -169,10 +122,49 @@ func (a *MultilineText) HiddenOn(value string) *MultilineText {
 }
 
 /**
- * 是否显示
+ * 展开按钮文本
  */
-func (a *MultilineText) Visible(value string) *MultilineText {
-    a.Set("visible", value)
+func (a *MultilineText) ExpendButtonText(value string) *MultilineText {
+    a.Set("expendButtonText", value)
+    return a
+}
+
+/**
+ * 文本
+ */
+func (a *MultilineText) Text(value string) *MultilineText {
+    a.Set("text", value)
+    return a
+}
+
+/**
+ * 收起按钮文本
+ */
+func (a *MultilineText) CollapseButtonText(value string) *MultilineText {
+    a.Set("collapseButtonText", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *MultilineText) DisabledOn(value string) *MultilineText {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ */
+func (a *MultilineText) StaticSchema(value string) *MultilineText {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *MultilineText) OnEvent(value string) *MultilineText {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -193,17 +185,25 @@ func (a *MultilineText) StaticPlaceholder(value string) *MultilineText {
 }
 
 /**
- * 展开按钮文本
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *MultilineText) ExpendButtonText(value string) *MultilineText {
-    a.Set("expendButtonText", value)
+func (a *MultilineText) UseMobileUI(value string) *MultilineText {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 收起按钮文本
+ * 是否隐藏
  */
-func (a *MultilineText) CollapseButtonText(value string) *MultilineText {
-    a.Set("collapseButtonText", value)
+func (a *MultilineText) Hidden(value string) *MultilineText {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *MultilineText) VisibleOn(value string) *MultilineText {
+    a.Set("visibleOn", value)
     return a
 }

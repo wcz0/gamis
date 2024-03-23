@@ -19,34 +19,18 @@ func NewSearchBox() *SearchBox {
     return a
 }
 /**
- * 是否禁用
+ * 是否静态展示
  */
-func (a *SearchBox) Disabled(value string) *SearchBox {
-    a.Set("disabled", value)
+func (a *SearchBox) Static(value string) *SearchBox {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 是否为加强样式
  */
-func (a *SearchBox) Hidden(value string) *SearchBox {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 指定为搜索框。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/search-box
- */
-func (a *SearchBox) Type(value string) *SearchBox {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否开启清空内容后立即重新搜索
- */
-func (a *SearchBox) ClearAndSubmit(value string) *SearchBox {
-    a.Set("clearAndSubmit", value)
+func (a *SearchBox) Enhance(value string) *SearchBox {
+    a.Set("enhance", value)
     return a
 }
 
@@ -59,18 +43,10 @@ func (a *SearchBox) StaticOn(value string) *SearchBox {
 }
 
 /**
- * 静态展示空值占位
+ * 是否显示表达式
  */
-func (a *SearchBox) StaticPlaceholder(value string) *SearchBox {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *SearchBox) StaticLabelClassName(value string) *SearchBox {
-    a.Set("staticLabelClassName", value)
+func (a *SearchBox) VisibleOn(value string) *SearchBox {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -83,10 +59,41 @@ func (a *SearchBox) OnEvent(value string) *SearchBox {
 }
 
 /**
- * 是否可清除
  */
-func (a *SearchBox) Clearable(value string) *SearchBox {
-    a.Set("clearable", value)
+func (a *SearchBox) StaticSchema(value string) *SearchBox {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *SearchBox) Style(value string) *SearchBox {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否立马搜索。
+ */
+func (a *SearchBox) SearchImediately(value string) *SearchBox {
+    a.Set("searchImediately", value)
+    return a
+}
+
+/**
+ * 外层 css 类名
+ */
+func (a *SearchBox) ClassName(value string) *SearchBox {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *SearchBox) Disabled(value string) *SearchBox {
+    a.Set("disabled", value)
     return a
 }
 
@@ -99,18 +106,10 @@ func (a *SearchBox) Id(value string) *SearchBox {
 }
 
 /**
- * 静态展示表单项类名
+ * 静态展示表单项Label类名
  */
-func (a *SearchBox) StaticClassName(value string) *SearchBox {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *SearchBox) UseMobileUI(value string) *SearchBox {
-    a.Set("useMobileUI", value)
+func (a *SearchBox) StaticLabelClassName(value string) *SearchBox {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -123,10 +122,74 @@ func (a *SearchBox) Placeholder(value string) *SearchBox {
 }
 
 /**
+ * 是否显示
+ */
+func (a *SearchBox) Visible(value string) *SearchBox {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否可清除
+ */
+func (a *SearchBox) Clearable(value string) *SearchBox {
+    a.Set("clearable", value)
+    return a
+}
+
+/**
+ * 是否开启清空内容后立即重新搜索
+ */
+func (a *SearchBox) ClearAndSubmit(value string) *SearchBox {
+    a.Set("clearAndSubmit", value)
+    return a
+}
+
+/**
+ * 是否处于加载状态
+ */
+func (a *SearchBox) Loading(value string) *SearchBox {
+    a.Set("loading", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *SearchBox) HiddenOn(value string) *SearchBox {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *SearchBox) StaticPlaceholder(value string) *SearchBox {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 指定为搜索框。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/search-box
+ */
+func (a *SearchBox) Type(value string) *SearchBox {
+    a.Set("type", value)
+    return a
+}
+
+/**
  * 静态展示表单项Value类名
  */
 func (a *SearchBox) StaticInputClassName(value string) *SearchBox {
     a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *SearchBox) UseMobileUI(value string) *SearchBox {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -147,81 +210,10 @@ func (a *SearchBox) Mini(value string) *SearchBox {
 }
 
 /**
- * 是否立马搜索。
+ * 是否隐藏
  */
-func (a *SearchBox) SearchImediately(value string) *SearchBox {
-    a.Set("searchImediately", value)
-    return a
-}
-
-/**
- * 是否处于加载状态
- */
-func (a *SearchBox) Loading(value string) *SearchBox {
-    a.Set("loading", value)
-    return a
-}
-
-/**
- * 外层 css 类名
- */
-func (a *SearchBox) ClassName(value string) *SearchBox {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *SearchBox) HiddenOn(value string) *SearchBox {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *SearchBox) Visible(value string) *SearchBox {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *SearchBox) Style(value string) *SearchBox {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否为加强样式
- */
-func (a *SearchBox) Enhance(value string) *SearchBox {
-    a.Set("enhance", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *SearchBox) DisabledOn(value string) *SearchBox {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *SearchBox) Static(value string) *SearchBox {
-    a.Set("static", value)
-    return a
-}
-
-/**
- */
-func (a *SearchBox) StaticSchema(value string) *SearchBox {
-    a.Set("staticSchema", value)
+func (a *SearchBox) Hidden(value string) *SearchBox {
+    a.Set("hidden", value)
     return a
 }
 
@@ -234,9 +226,17 @@ func (a *SearchBox) EditorSetting(value string) *SearchBox {
 }
 
 /**
- * 是否显示表达式
+ * 是否禁用表达式
  */
-func (a *SearchBox) VisibleOn(value string) *SearchBox {
-    a.Set("visibleOn", value)
+func (a *SearchBox) DisabledOn(value string) *SearchBox {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *SearchBox) StaticClassName(value string) *SearchBox {
+    a.Set("staticClassName", value)
     return a
 }

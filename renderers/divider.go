@@ -19,18 +19,33 @@ func NewDivider() *Divider {
     return a
 }
 /**
- * 是否禁用表达式
  */
-func (a *Divider) DisabledOn(value string) *Divider {
-    a.Set("disabledOn", value)
+func (a *Divider) StaticSchema(value string) *Divider {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 事件动作配置
  */
-func (a *Divider) VisibleOn(value string) *Divider {
-    a.Set("visibleOn", value)
+func (a *Divider) OnEvent(value string) *Divider {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Divider) StaticInputClassName(value string) *Divider {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Divider) ClassName(value string) *Divider {
+    a.Set("className", value)
     return a
 }
 
@@ -52,24 +67,8 @@ func (a *Divider) StaticClassName(value string) *Divider {
 
 /**
  */
-func (a *Divider) Rotate(value string) *Divider {
-    a.Set("rotate", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Divider) Disabled(value string) *Divider {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Divider) Static(value string) *Divider {
-    a.Set("static", value)
+func (a *Divider) Type(value string) *Divider {
+    a.Set("type", value)
     return a
 }
 
@@ -82,10 +81,25 @@ func (a *Divider) StaticOn(value string) *Divider {
 }
 
 /**
- * 静态展示表单项Label类名
  */
-func (a *Divider) StaticLabelClassName(value string) *Divider {
-    a.Set("staticLabelClassName", value)
+func (a *Divider) Rotate(value string) *Divider {
+    a.Set("rotate", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Divider) Visible(value string) *Divider {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Divider) Static(value string) *Divider {
+    a.Set("static", value)
     return a
 }
 
@@ -98,18 +112,9 @@ func (a *Divider) LineStyle(value string) *Divider {
 }
 
 /**
- * 容器 css 类名
  */
-func (a *Divider) ClassName(value string) *Divider {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Divider) Visible(value string) *Divider {
-    a.Set("visible", value)
+func (a *Divider) Title(value string) *Divider {
+    a.Set("title", value)
     return a
 }
 
@@ -129,87 +134,10 @@ func (a *Divider) TitlePosition(value string) *Divider {
 }
 
 /**
+ * 是否禁用表达式
  */
-func (a *Divider) StaticSchema(value string) *Divider {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Divider) UseMobileUI(value string) *Divider {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) Type(value string) *Divider {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 可选值: horizontal | vertical
- */
-func (a *Divider) Direction(value string) *Divider {
-    a.Set("direction", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Divider) StaticPlaceholder(value string) *Divider {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Divider) EditorSetting(value string) *Divider {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) Title(value string) *Divider {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Divider) Style(value string) *Divider {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Divider) Hidden(value string) *Divider {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Divider) OnEvent(value string) *Divider {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Divider) StaticInputClassName(value string) *Divider {
-    a.Set("staticInputClassName", value)
+func (a *Divider) DisabledOn(value string) *Divider {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -225,5 +153,77 @@ func (a *Divider) HiddenOn(value string) *Divider {
  */
 func (a *Divider) Color(value string) *Divider {
     a.Set("color", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Divider) UseMobileUI(value string) *Divider {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Divider) StaticPlaceholder(value string) *Divider {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Divider) Style(value string) *Divider {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Divider) EditorSetting(value string) *Divider {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Divider) Hidden(value string) *Divider {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Divider) StaticLabelClassName(value string) *Divider {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 可选值: horizontal | vertical
+ */
+func (a *Divider) Direction(value string) *Divider {
+    a.Set("direction", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Divider) Disabled(value string) *Divider {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Divider) VisibleOn(value string) *Divider {
+    a.Set("visibleOn", value)
     return a
 }

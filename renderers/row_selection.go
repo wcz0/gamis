@@ -16,14 +16,6 @@ func NewRowSelection() *RowSelection {
     return a
 }
 /**
- * 行是否禁用表达式
- */
-func (a *RowSelection) DisableOn(value string) *RowSelection {
-    a.Set("disableOn", value)
-    return a
-}
-
-/**
  * 自定义选择菜单
  */
 func (a *RowSelection) Selections(value string) *RowSelection {
@@ -76,5 +68,13 @@ func (a *RowSelection) Type(value string) *RowSelection {
  */
 func (a *RowSelection) KeyField(value string) *RowSelection {
     a.Set("keyField", value)
+    return a
+}
+
+/**
+ * 行是否禁用表达式
+ */
+func (a *RowSelection) DisableOn(value string) *RowSelection {
+    a.Set("disableOn", value)
     return a
 }

@@ -19,6 +19,30 @@ func NewCard() *Card {
     return a
 }
 /**
+ * 头部配置
+ */
+func (a *Card) Header(value string) *Card {
+    a.Set("header", value)
+    return a
+}
+
+/**
+ * 卡片内容区的表单项label是否使用Card内部的样式，默认为true
+ */
+func (a *Card) UseCardLabel(value string) *Card {
+    a.Set("useCardLabel", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Card) DisabledOn(value string) *Card {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
  * 是否显示
  */
 func (a *Card) Visible(value string) *Card {
@@ -27,17 +51,26 @@ func (a *Card) Visible(value string) *Card {
 }
 
 /**
- * 是否显示表达式
+ * 是否静态展示
  */
-func (a *Card) VisibleOn(value string) *Card {
-    a.Set("visibleOn", value)
+func (a *Card) Static(value string) *Card {
+    a.Set("static", value)
     return a
 }
 
 /**
+ * 静态展示表单项Label类名
  */
-func (a *Card) StaticSchema(value string) *Card {
-    a.Set("staticSchema", value)
+func (a *Card) StaticLabelClassName(value string) *Card {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Card) Style(value string) *Card {
+    a.Set("style", value)
     return a
 }
 
@@ -50,10 +83,10 @@ func (a *Card) EditorSetting(value string) *Card {
 }
 
 /**
- * 容器 css 类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Card) ClassName(value string) *Card {
-    a.Set("className", value)
+func (a *Card) UseMobileUI(value string) *Card {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -74,26 +107,66 @@ func (a *Card) Body(value string) *Card {
 }
 
 /**
- * 卡片内容区的表单项label是否使用Card内部的样式，默认为true
+ * 容器 css 类名
  */
-func (a *Card) UseCardLabel(value string) *Card {
-    a.Set("useCardLabel", value)
+func (a *Card) ClassName(value string) *Card {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否禁用
  */
-func (a *Card) Static(value string) *Card {
-    a.Set("static", value)
+func (a *Card) Disabled(value string) *Card {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否隐藏表达式
  */
-func (a *Card) UseMobileUI(value string) *Card {
-    a.Set("useMobileUI", value)
+func (a *Card) HiddenOn(value string) *Card {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Card) StaticOn(value string) *Card {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Card) StaticInputClassName(value string) *Card {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Card) VisibleOn(value string) *Card {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Card) OnEvent(value string) *Card {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Card) StaticClassName(value string) *Card {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -130,94 +203,6 @@ func (a *Card) Id(value string) *Card {
 }
 
 /**
- * 次要说明
- */
-func (a *Card) Secondary(value string) *Card {
-    a.Set("secondary", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Card) OnEvent(value string) *Card {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Card) StaticLabelClassName(value string) *Card {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Card) StaticOn(value string) *Card {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Card) Style(value string) *Card {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 头部配置
- */
-func (a *Card) Header(value string) *Card {
-    a.Set("header", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Card) Disabled(value string) *Card {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Card) DisabledOn(value string) *Card {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Card) HiddenOn(value string) *Card {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Card) StaticClassName(value string) *Card {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Card) StaticInputClassName(value string) *Card {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
  * 静态展示空值占位
  */
 func (a *Card) StaticPlaceholder(value string) *Card {
@@ -230,5 +215,20 @@ func (a *Card) StaticPlaceholder(value string) *Card {
  */
 func (a *Card) Actions(value string) *Card {
     a.Set("actions", value)
+    return a
+}
+
+/**
+ * 次要说明
+ */
+func (a *Card) Secondary(value string) *Card {
+    a.Set("secondary", value)
+    return a
+}
+
+/**
+ */
+func (a *Card) StaticSchema(value string) *Card {
+    a.Set("staticSchema", value)
     return a
 }
