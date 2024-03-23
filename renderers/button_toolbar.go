@@ -1,371 +1,185 @@
-// <?php
-
-// namespace Slowlyo\AmisRenderers;
-
-// /**
-//  * Button Toolar 渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/button-toolbar
-//  *
-//  * @author slowlyo
-//  * @version 6.2.2
-//  */
-// class ButtonToolbar extends BaseRenderer
-// {
-//     public function __construct()
-//     {
-//         $this->set('type', 'button-toolbar');
-
-
-//     }
-
-//     /**
-//      *
-//      */
-//     public function buttons($value = '')
-//     {
-//         return $this->set('buttons', $value);
-//     }
-
-//     /**
-//      * 容器 css 类名
-//      */
-//     public function className($value = '')
-//     {
-//         return $this->set('className', $value);
-//     }
-
-//     /**
-//      * 是否禁用
-//      */
-//     public function disabled($value = true)
-//     {
-//         return $this->set('disabled', $value);
-//     }
-
-//     /**
-//      * 是否禁用表达式
-//      */
-//     public function disabledOn($value = '')
-//     {
-//         return $this->set('disabledOn', $value);
-//     }
-
-//     /**
-//      * 编辑器配置，运行时可以忽略
-//      */
-//     public function editorSetting($value = '')
-//     {
-//         return $this->set('editorSetting', $value);
-//     }
-
-//     /**
-//      * 是否隐藏
-//      */
-//     public function hidden($value = true)
-//     {
-//         return $this->set('hidden', $value);
-//     }
-
-//     /**
-//      * 是否隐藏表达式
-//      */
-//     public function hiddenOn($value = '')
-//     {
-//         return $this->set('hiddenOn', $value);
-//     }
-
-//     /**
-//      * 组件唯一 id，主要用于日志采集
-//      */
-//     public function id($value = '')
-//     {
-//         return $this->set('id', $value);
-//     }
-
-//     /**
-//      * 事件动作配置
-//      */
-//     public function onEvent($value = '')
-//     {
-//         return $this->set('onEvent', $value);
-//     }
-
-//     /**
-//      * 是否静态展示
-//      */
-//     public function static($value = true)
-//     {
-//         return $this->set('static', $value);
-//     }
-
-//     /**
-//      * 静态展示表单项类名
-//      */
-//     public function staticClassName($value = '')
-//     {
-//         return $this->set('staticClassName', $value);
-//     }
-
-//     /**
-//      * 静态展示表单项Value类名
-//      */
-//     public function staticInputClassName($value = '')
-//     {
-//         return $this->set('staticInputClassName', $value);
-//     }
-
-//     /**
-//      * 静态展示表单项Label类名
-//      */
-//     public function staticLabelClassName($value = '')
-//     {
-//         return $this->set('staticLabelClassName', $value);
-//     }
-
-//     /**
-//      * 是否静态展示表达式
-//      */
-//     public function staticOn($value = '')
-//     {
-//         return $this->set('staticOn', $value);
-//     }
-
-//     /**
-//      * 静态展示空值占位
-//      */
-//     public function staticPlaceholder($value = '')
-//     {
-//         return $this->set('staticPlaceholder', $value);
-//     }
-
-//     /**
-//      *
-//      */
-//     public function staticSchema($value = '')
-//     {
-//         return $this->set('staticSchema', $value);
-//     }
-
-//     /**
-//      * 组件样式
-//      */
-//     public function style($value = '')
-//     {
-//         return $this->set('style', $value);
-//     }
-
-//     /**
-//      * 指定为按钮工具集合类型
-//      */
-//     public function type($value = 'button-toolbar')
-//     {
-//         return $this->set('type', $value);
-//     }
-
-//     /**
-//      * 可以组件级别用来关闭移动端样式
-//      */
-//     public function useMobileUI($value = true)
-//     {
-//         return $this->set('useMobileUI', $value);
-//     }
-
-//     /**
-//      * 是否显示
-//      */
-//     public function visible($value = true)
-//     {
-//         return $this->set('visible', $value);
-//     }
-
-//     /**
-//      * 是否显示表达式
-//      */
-//     public function visibleOn($value = '')
-//     {
-//         return $this->set('visibleOn', $value);
-//     }
-
-
-// }
-
 package renderers
 
+
+/**
+ * Button Toolar 渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/button-toolbar
+ *
+
+*/
 type ButtonToolbar struct {
 	*BaseRenderer
 }
 
 func NewButtonToolbar() *ButtonToolbar {
-	b := &ButtonToolbar{
-		BaseRenderer: NewBaseRenderer(),
-	}
-	b.Set("type", "button-toolbar")
-	return b
-}
+    a := &ButtonToolbar{
+        BaseRenderer: NewBaseRenderer(),
+    }
 
-/**
- *
- */
-func (b *ButtonToolbar) Buttons(value string) *ButtonToolbar {
-	b.Set("buttons", value)
-	return b
+    a.Set("type", "button-toolbar")
+    return a
 }
-
 /**
  * 容器 css 类名
  */
-func (b *ButtonToolbar) ClassName(value string) *ButtonToolbar {
-	b.Set("className", value)
-	return b
-}
-
-/**
- * 是否禁用
- */
-func (b *ButtonToolbar) Disabled(value bool) *ButtonToolbar {
-	b.Set("disabled", value)
-	return b
+func (a *ButtonToolbar) ClassName(value string) *ButtonToolbar {
+    a.Set("className", value)
+    return a
 }
 
 /**
  * 是否禁用表达式
  */
-func (b *ButtonToolbar) DisabledOn(value string) *ButtonToolbar {
-	b.Set("disabledOn", value)
-	return b
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (b *ButtonToolbar) EditorSetting(value string) *ButtonToolbar {
-	b.Set("editorSetting", value)
-	return b
-}
-
-/**
- * 是否隐藏
- */
-func (b *ButtonToolbar) Hidden(value bool) *ButtonToolbar {
-	b.Set("hidden", value)
-	return b
-}
-
-/**
- * 是否隐藏表达式
- */
-func (b *ButtonToolbar) HiddenOn(value string) *ButtonToolbar {
-	b.Set("hiddenOn", value)
-	return b
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (b *ButtonToolbar) Id(value string) *ButtonToolbar {
-	b.Set("id", value)
-	return b
-}
-
-/**
- * 事件动作配置
- */
-func (b *ButtonToolbar) OnEvent(value string) *ButtonToolbar {
-	b.Set("onEvent", value)
-	return b
+func (a *ButtonToolbar) DisabledOn(value string) *ButtonToolbar {
+    a.Set("disabledOn", value)
+    return a
 }
 
 /**
  * 是否静态展示
  */
-func (b *ButtonToolbar) Static(value bool) *ButtonToolbar {
-	b.Set("static", value)
-	return b
-}
-
-/**
- * 静态展示表单项类名
- */
-func (b *ButtonToolbar) StaticClassName(value string) *ButtonToolbar {
-	b.Set("staticClassName", value)
-	return b
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (b *ButtonToolbar) StaticInputClassName(value string) *ButtonToolbar {
-	b.Set("staticInputClassName", value)
-	return b
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (b *ButtonToolbar) StaticLabelClassName(value string) *ButtonToolbar {
-	b.Set("staticLabelClassName", value)
-	return b
-}
-
-/**
- * 是否静态展示表达式
- */
-func (b *ButtonToolbar) StaticOn(value string) *ButtonToolbar {
-	b.Set("staticOn", value)
-	return b
-}
-
-/**
- * 静态展示空值占位
- */
-func (b *ButtonToolbar) StaticPlaceholder(value string) *ButtonToolbar {
-	b.Set("staticPlaceholder", value)
-	return b
-}
-
-/**
- *
- */
-func (b *ButtonToolbar) StaticSchema(value string) *ButtonToolbar {
-	b.Set("staticSchema", value)
-	return b
-}
-
-/**
- * 组件样式
- */
-func (b *ButtonToolbar) Style(value string) *ButtonToolbar {
-	b.Set("style", value)
-	return b
-}
-
-/**
- * 指定为按钮工具集合类型
- */
-func (b *ButtonToolbar) Type(value string) *ButtonToolbar {
-	b.Set("type", value)
-	return b
+func (a *ButtonToolbar) Static(value string) *ButtonToolbar {
+    a.Set("static", value)
+    return a
 }
 
 /**
  * 可以组件级别用来关闭移动端样式
  */
-func (b *ButtonToolbar) UseMobileUI(value bool) *ButtonToolbar {
-	b.Set("useMobileUI", value)
-	return b
+func (a *ButtonToolbar) UseMobileUI(value string) *ButtonToolbar {
+    a.Set("useMobileUI", value)
+    return a
 }
 
 /**
- * 是否显示
+ * 指定为按钮工具集合类型
  */
-func (b *ButtonToolbar) Visible(value bool) *ButtonToolbar {
-	b.Set("visible", value)
-	return b
+func (a *ButtonToolbar) Type(value string) *ButtonToolbar {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ */
+func (a *ButtonToolbar) StaticSchema(value string) *ButtonToolbar {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *ButtonToolbar) Hidden(value string) *ButtonToolbar {
+    a.Set("hidden", value)
+    return a
 }
 
 /**
  * 是否显示表达式
  */
-func (b *ButtonToolbar) VisibleOn(value string) *ButtonToolbar {
-	b.Set("visibleOn", value)
-	return b
+func (a *ButtonToolbar) VisibleOn(value string) *ButtonToolbar {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *ButtonToolbar) OnEvent(value string) *ButtonToolbar {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *ButtonToolbar) StaticOn(value string) *ButtonToolbar {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *ButtonToolbar) StaticPlaceholder(value string) *ButtonToolbar {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *ButtonToolbar) StaticClassName(value string) *ButtonToolbar {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *ButtonToolbar) StaticInputClassName(value string) *ButtonToolbar {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *ButtonToolbar) EditorSetting(value string) *ButtonToolbar {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ */
+func (a *ButtonToolbar) Buttons(value string) *ButtonToolbar {
+    a.Set("buttons", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *ButtonToolbar) Disabled(value string) *ButtonToolbar {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *ButtonToolbar) HiddenOn(value string) *ButtonToolbar {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *ButtonToolbar) Id(value string) *ButtonToolbar {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *ButtonToolbar) Style(value string) *ButtonToolbar {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *ButtonToolbar) Visible(value string) *ButtonToolbar {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *ButtonToolbar) StaticLabelClassName(value string) *ButtonToolbar {
+    a.Set("staticLabelClassName", value)
+    return a
 }
