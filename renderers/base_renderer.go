@@ -5,7 +5,7 @@ import (
 )
 
 type BaseRenderer struct {
-	Type       string
+	Type       string `json:"type"`
 	AmisSchema map[string]interface{}
 }
 
@@ -15,26 +15,42 @@ func NewBaseRenderer() *BaseRenderer {
 	}
 }
 
+func (b *BaseRenderer) ToJson() string {
+	bytes, err := json.Marshal(b.AmisSchema)
+	if err != nil {
+		panic(err)
+	}
+	return string(bytes)
+}
+
 func (b *BaseRenderer) Set(name string, value interface{}) *BaseRenderer {
+	// var obj  map[string]interface{}
+	// err := json.Unmarshal([]byte(b.AmisSchema), &obj)
+	// if err != nil {
+	// 	panic(err)
+	// }
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-
+	// obj[name] = value
+	// bytes, err := json.Marshal(obj)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// b.AmisSchema = string(bytes)
 	b.AmisSchema[name] = value
 	return b
 }
 
-func (b *BaseRenderer) ToJson() (string, error) {
-	bytes, err := json.Marshal(b.AmisSchema)
-	if err != nil {
-		return "", err
-	}
-	return string(bytes), nil
-}
-
 func (b *BaseRenderer) ToArray() map[string]interface{} {
+	// var obj  map[string]interface{}
+	// err := json.Unmarshal([]byte(b.AmisSchema), &obj)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// return obj
 	return b.AmisSchema
 }
 
@@ -50,13 +66,16 @@ func isArrayOfArrays(v []interface{}) bool {
 
 // mapOfArrays converts a slice of slices of interfaces to a map of interfaces.
 func mapOfArrays(v []interface{}) map[string]interface{} {
-	m := make(map[string]interface{})
-	for _, item := range v {
-		if arr, ok := item.([]interface{}); ok {
-			for i, a := range arr {
-				m[string(i)] = a
+	r := make(map[string]interface{})
+	for _, v := range v {
+		array := v.([]interface{})
+		if len(array) >= 2 {
+			key, ok1 := array[0].(string)
+			if ok1 {
+				r[key] = array[1]
 			}
 		}
 	}
-	return m
+	return r
 }
+

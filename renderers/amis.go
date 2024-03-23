@@ -9,3 +9,7 @@ func NewAmis() *Amis{
 func (a *Amis) Action() *Action{
 	return NewAction()
 }
+
+func (a *Amis) Page() *Page{
+	return NewPage()
+}

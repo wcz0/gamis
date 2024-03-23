@@ -2,9 +2,6 @@ package gamis
 
 import "gamis/renderers"
 
-func Amis(typeStr string) interface{} {
-	if typeStr != "" {
-		return renderers.NewComponent().SetType(typeStr)
-	}
+func Amis() *renderers.Amis {
 	return renderers.NewAmis()
 }
