@@ -15,7 +15,7 @@ func NewCode() *Code {
 /**
  * 外层 CSS 类名
  */
-func (c *Code) ClassName(value string) *Code {
+func (c *Code) ClassName(value interface{}) *Code {
 	c.Set("className", value)
 	return c
 }
@@ -23,7 +23,7 @@ func (c *Code) ClassName(value string) *Code {
 /**
  * 主题，还有 'vs-dark'
  */
-func (c *Code) EditorTheme(value string) *Code {
+func (c *Code) EditorTheme(value interface{}) *Code {
 	c.Set("editorTheme", value)
 	return c
 }
@@ -31,7 +31,7 @@ func (c *Code) EditorTheme(value string) *Code {
 /**
  * 所使用的高亮语言，默认是 plaintext
  */
-func (c *Code) Language(value string) *Code {
+func (c *Code) Language(value interface{}) *Code {
 	c.Set("language", value)
 	return c
 }
@@ -39,7 +39,7 @@ func (c *Code) Language(value string) *Code {
 /**
  * 在其他组件中，时，用作变量映射
  */
-func (c *Code) Name(value string) *Code {
+func (c *Code) Name(value interface{}) *Code {
 	c.Set("name", value)
 	return c
 }
@@ -47,7 +47,7 @@ func (c *Code) Name(value string) *Code {
 /**
  * 默认 tab 大小
  */
-func (c *Code) TabSize(value string) *Code {
+func (c *Code) TabSize(value interface{}) *Code {
 	c.Set("tabSize", value)
 	return c
 }
@@ -55,7 +55,7 @@ func (c *Code) TabSize(value string) *Code {
 /**
  * 指定为 code 渲染器。
  */
-func (c *Code) Type(value string) *Code {
+func (c *Code) Type(value interface{}) *Code {
 	c.Set("type", value)
 	return c
 }
@@ -63,7 +63,7 @@ func (c *Code) Type(value string) *Code {
 /**
  * 显示的颜色值
  */
-func (c *Code) Value(value string) *Code {
+func (c *Code) Value(value interface{}) *Code {
 	c.Set("value", value)
 	return c
 }

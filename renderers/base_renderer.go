@@ -24,33 +24,20 @@ func (b *BaseRenderer) ToJson() string {
 }
 
 func (b *BaseRenderer) Set(name string, value interface{}) *BaseRenderer {
-	// var obj  map[string]interface{}
-	// err := json.Unmarshal([]byte(b.AmisSchema), &obj)
-	// if err != nil {
-	// 	panic(err)
-	// }
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	// obj[name] = value
-	// bytes, err := json.Marshal(obj)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// b.AmisSchema = string(bytes)
 	b.AmisSchema[name] = value
 	return b
 }
 
+func (b *BaseRenderer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(b.AmisSchema)
+}
+
 func (b *BaseRenderer) ToArray() map[string]interface{} {
-	// var obj  map[string]interface{}
-	// err := json.Unmarshal([]byte(b.AmisSchema), &obj)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// return obj
 	return b.AmisSchema
 }
 

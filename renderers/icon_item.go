@@ -3,9 +3,9 @@ package renderers
 
 /**
 
-* @author wcz0
-* @version 6.2.2
-*/
+ * @author wcz0
+ * @version 6.2.2
+ */
 type IconItem struct {
 	*BaseRenderer
 }
@@ -19,14 +19,14 @@ func NewIconItem() *IconItem {
 }
 /**
  */
-func (a *IconItem) Icon(value string) *IconItem {
+func (a *IconItem) Icon(value interface{}) *IconItem {
     a.Set("icon", value)
     return a
 }
 
 /**
  */
-func (a *IconItem) Position(value string) *IconItem {
+func (a *IconItem) Position(value interface{}) *IconItem {
     a.Set("position", value)
     return a
 }

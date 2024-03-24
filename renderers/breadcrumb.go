@@ -4,8 +4,8 @@ type Breadcrumb struct {
 	*BaseRenderer
 }
 
-func NewBreadcrumb() *Breadcrumb{
-	b :=  &Breadcrumb{
+func NewBreadcrumb() *Breadcrumb {
+	b := &Breadcrumb{
 		BaseRenderer: NewBaseRenderer(),
 	}
 	b.Set("type", "breadcrumb")
@@ -15,7 +15,7 @@ func NewBreadcrumb() *Breadcrumb{
 /**
  * 外层类名
  */
-func (b *Breadcrumb) ClassName(value string) *Breadcrumb {
+func (b *Breadcrumb) ClassName(value interface{}) *Breadcrumb {
 	b.Set("className", value)
 	return b
 }
@@ -23,7 +23,7 @@ func (b *Breadcrumb) ClassName(value string) *Breadcrumb {
 /**
  * 下拉菜单类名
  */
-func (b *Breadcrumb) DropdownClassName(value string) *Breadcrumb {
+func (b *Breadcrumb) DropdownClassName(value interface{}) *Breadcrumb {
 	b.Set("dropdownClassName", value)
 	return b
 }
@@ -31,7 +31,7 @@ func (b *Breadcrumb) DropdownClassName(value string) *Breadcrumb {
 /**
  * 下拉菜单项类名
  */
-func (b *Breadcrumb) DropdownItemClassName(value string) *Breadcrumb {
+func (b *Breadcrumb) DropdownItemClassName(value interface{}) *Breadcrumb {
 	b.Set("dropdownItemClassName", value)
 	return b
 }
@@ -39,7 +39,7 @@ func (b *Breadcrumb) DropdownItemClassName(value string) *Breadcrumb {
 /**
  * 导航项类名
  */
-func (b *Breadcrumb) ItemClassName(value string) *Breadcrumb {
+func (b *Breadcrumb) ItemClassName(value interface{}) *Breadcrumb {
 	b.Set("itemClassName", value)
 	return b
 }
@@ -47,7 +47,7 @@ func (b *Breadcrumb) ItemClassName(value string) *Breadcrumb {
 /**
  * 文本
  */
-func (b *Breadcrumb) Items(value string) *Breadcrumb {
+func (b *Breadcrumb) Items(value interface{}) *Breadcrumb {
 	b.Set("items", value)
 	return b
 }
@@ -55,7 +55,7 @@ func (b *Breadcrumb) Items(value string) *Breadcrumb {
 /**
  * 最大展示长度
  */
-func (b *Breadcrumb) LabelMaxLength(value string) *Breadcrumb {
+func (b *Breadcrumb) LabelMaxLength(value interface{}) *Breadcrumb {
 	b.Set("labelMaxLength", value)
 	return b
 }
@@ -63,7 +63,7 @@ func (b *Breadcrumb) LabelMaxLength(value string) *Breadcrumb {
 /**
  * 分隔符
  */
-func (b *Breadcrumb) Separator(value string) *Breadcrumb {
+func (b *Breadcrumb) Separator(value interface{}) *Breadcrumb {
 	b.Set("separator", value)
 	return b
 }
@@ -71,7 +71,7 @@ func (b *Breadcrumb) Separator(value string) *Breadcrumb {
 /**
  * 分割符类名
  */
-func (b *Breadcrumb) SeparatorClassName(value string) *Breadcrumb {
+func (b *Breadcrumb) SeparatorClassName(value interface{}) *Breadcrumb {
 	b.Set("separatorClassName", value)
 	return b
 }
@@ -79,7 +79,7 @@ func (b *Breadcrumb) SeparatorClassName(value string) *Breadcrumb {
 /**
  * 动态数据
  */
-func (b *Breadcrumb) Source(value string) *Breadcrumb {
+func (b *Breadcrumb) Source(value interface{}) *Breadcrumb {
 	b.Set("source", value)
 	return b
 }
@@ -87,7 +87,7 @@ func (b *Breadcrumb) Source(value string) *Breadcrumb {
 /**
  * 浮窗提示位置
  */
-func (b *Breadcrumb) TooltipPosition(value string) *Breadcrumb {
+func (b *Breadcrumb) TooltipPosition(value interface{}) *Breadcrumb {
 	b.Set("tooltipPosition", value)
 	return b
 }
@@ -95,7 +95,7 @@ func (b *Breadcrumb) TooltipPosition(value string) *Breadcrumb {
 /**
  * 指定为 breadcrumb 渲染器。
  */
-func (b *Breadcrumb) Type(value string) *Breadcrumb {
+func (b *Breadcrumb) Type(value interface{}) *Breadcrumb {
 	b.Set("type", value)
 	return b
 }

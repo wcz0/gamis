@@ -12,7 +12,7 @@ func NewTableView() *TableView {
 	return t
 }
 
-func (t *TableView) Type(value string) *TableView {
+func (t *TableView) Type(value interface{}) *TableView {
 	t.Set("type", value)
 	return t
 }

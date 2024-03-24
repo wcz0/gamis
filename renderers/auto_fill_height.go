@@ -3,9 +3,9 @@ package renderers
 
 /**
 
-* @author wcz0
-* @version 6.2.2
-*/
+ * @author wcz0
+ * @version 6.2.2
+ */
 type AutoFillHeight struct {
 	*BaseRenderer
 }
@@ -19,14 +19,14 @@ func NewAutoFillHeight() *AutoFillHeight {
 }
 /**
  */
-func (a *AutoFillHeight) Height(value string) *AutoFillHeight {
+func (a *AutoFillHeight) Height(value interface{}) *AutoFillHeight {
     a.Set("height", value)
     return a
 }
 
 /**
  */
-func (a *AutoFillHeight) MaxHeight(value string) *AutoFillHeight {
+func (a *AutoFillHeight) MaxHeight(value interface{}) *AutoFillHeight {
     a.Set("maxHeight", value)
     return a
 }

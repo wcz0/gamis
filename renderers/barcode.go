@@ -15,7 +15,7 @@ func NewBarcode() *Barcode {
 /**
  * 外层类名
  */
-func (b *Barcode) ClassName(value string) *Barcode {
+func (b *Barcode) ClassName(value interface{}) *Barcode {
 	b.Set("className", value)
 	return b
 }
@@ -23,7 +23,7 @@ func (b *Barcode) ClassName(value string) *Barcode {
 /**
  * 指定为 barcode 渲染器。
  */
-func (b *Barcode) Type(value string) *Barcode {
+func (b *Barcode) Type(value interface{}) *Barcode {
 	b.Set("type", value)
 	return b
 }

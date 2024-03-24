@@ -1,5 +1,3 @@
-
-
 package renderers
 
 type InputExcel struct {
@@ -25,7 +23,7 @@ func (i *InputExcel) AllSheets(value bool) *InputExcel {
 /**
  * 数据录入配置，自动填充或者参照录入
  */
-func (i *InputExcel) AutoFill(value string) *InputExcel {
+func (i *InputExcel) AutoFill(value interface{}) *InputExcel {
 	i.Set("autoFill", value)
 	return i
 }
@@ -33,7 +31,7 @@ func (i *InputExcel) AutoFill(value string) *InputExcel {
 /**
  * 表单最外层类名
  */
-func (i *InputExcel) ClassName(value string) *InputExcel {
+func (i *InputExcel) ClassName(value interface{}) *InputExcel {
 	i.Set("className", value)
 	return i
 }
@@ -41,7 +39,7 @@ func (i *InputExcel) ClassName(value string) *InputExcel {
 /**
  * 表单项描述
  */
-func (i *InputExcel) Description(value string) *InputExcel {
+func (i *InputExcel) Description(value interface{}) *InputExcel {
 	i.Set("description", value)
 	return i
 }
@@ -57,7 +55,7 @@ func (i *InputExcel) Disabled(value bool) *InputExcel {
 /**
  * 当前表单项是否禁用的条件
  */
-func (i *InputExcel) DisabledOn(value string) *InputExcel {
+func (i *InputExcel) DisabledOn(value interface{}) *InputExcel {
 	i.Set("disabledOn", value)
 	return i
 }
@@ -81,7 +79,7 @@ func (i *InputExcel) Inline(value bool) *InputExcel {
 /**
  * 表单控制器类名
  */
-func (i *InputExcel) InputClassName(value string) *InputExcel {
+func (i *InputExcel) InputClassName(value interface{}) *InputExcel {
 	i.Set("inputClassName", value)
 	return i
 }
@@ -89,7 +87,7 @@ func (i *InputExcel) InputClassName(value string) *InputExcel {
 /**
  * 表单项标签
  */
-func (i *InputExcel) Label(value string) *InputExcel {
+func (i *InputExcel) Label(value interface{}) *InputExcel {
 	i.Set("label", value)
 	return i
 }
@@ -97,7 +95,7 @@ func (i *InputExcel) Label(value string) *InputExcel {
 /**
  * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
  */
-func (i *InputExcel) LabelAlign(value string) *InputExcel {
+func (i *InputExcel) LabelAlign(value interface{}) *InputExcel {
 	i.Set("labelAlign", value)
 	return i
 }
@@ -105,7 +103,7 @@ func (i *InputExcel) LabelAlign(value string) *InputExcel {
 /**
  * label 的类名
  */
-func (i *InputExcel) LabelClassName(value string) *InputExcel {
+func (i *InputExcel) LabelClassName(value interface{}) *InputExcel {
 	i.Set("labelClassName", value)
 	return i
 }
@@ -113,7 +111,7 @@ func (i *InputExcel) LabelClassName(value string) *InputExcel {
 /**
  * 表单项标签描述
  */
-func (i *InputExcel) LabelRemark(value string) *InputExcel {
+func (i *InputExcel) LabelRemark(value interface{}) *InputExcel {
 	i.Set("labelRemark", value)
 	return i
 }
@@ -121,7 +119,7 @@ func (i *InputExcel) LabelRemark(value string) *InputExcel {
 /**
  * 字段名，指定该表单项提交时的 key
  */
-func (i *InputExcel) Name(value string) *InputExcel {
+func (i *InputExcel) Name(value interface{}) *InputExcel {
 	i.Set("name", value)
 	return i
 }
@@ -129,7 +127,7 @@ func (i *InputExcel) Name(value string) *InputExcel {
 /**
  * 解析模式
  */
-func (i *InputExcel) ParseMode(value string) *InputExcel {
+func (i *InputExcel) ParseMode(value interface{}) *InputExcel {
 	i.Set("parseMode", value)
 	return i
 }
@@ -137,7 +135,7 @@ func (i *InputExcel) ParseMode(value string) *InputExcel {
 /**
  * 表单项描述
  */
-func (i *InputExcel) Placeholder(value string) *InputExcel {
+func (i *InputExcel) Placeholder(value interface{}) *InputExcel {
 	i.Set("placeholder", value)
 	return i
 }
@@ -161,7 +159,7 @@ func (i *InputExcel) Required(value bool) *InputExcel {
 /**
  * 通过表达式来配置当前表单项是否为必填。
  */
-func (i *InputExcel) RequiredOn(value string) *InputExcel {
+func (i *InputExcel) RequiredOn(value interface{}) *InputExcel {
 	i.Set("requiredOn", value)
 	return i
 }
@@ -177,7 +175,7 @@ func (i *InputExcel) SubmitOnChange(value bool) *InputExcel {
 /**
  * 指定为 input-excel 渲染器。
  */
-func (i *InputExcel) Type(value string) *InputExcel {
+func (i *InputExcel) Type(value interface{}) *InputExcel {
 	i.Set("type", value)
 	return i
 }
@@ -185,7 +183,7 @@ func (i *InputExcel) Type(value string) *InputExcel {
 /**
  * 表单校验接口
  */
-func (i *InputExcel) ValidateApi(value string) *InputExcel {
+func (i *InputExcel) ValidateApi(value interface{}) *InputExcel {
 	i.Set("validateApi", value)
 	return i
 }
@@ -193,7 +191,7 @@ func (i *InputExcel) ValidateApi(value string) *InputExcel {
 /**
  * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
  */
-func (i *InputExcel) Validations(value string) *InputExcel {
+func (i *InputExcel) Validations(value interface{}) *InputExcel {
 	i.Set("validations", value)
 	return i
 }
@@ -201,7 +199,7 @@ func (i *InputExcel) Validations(value string) *InputExcel {
 /**
  * 表单默认值
  */
-func (i *InputExcel) Value(value string) *InputExcel {
+func (i *InputExcel) Value(value interface{}) *InputExcel {
 	i.Set("value", value)
 	return i
 }
@@ -217,7 +215,7 @@ func (i *InputExcel) Visible(value bool) *InputExcel {
 /**
  * 当前表单项是否禁用的条件
  */
-func (i *InputExcel) VisibleOn(value string) *InputExcel {
+func (i *InputExcel) VisibleOn(value interface{}) *InputExcel {
 	i.Set("visibleOn", value)
 	return i
 }

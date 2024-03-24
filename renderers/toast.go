@@ -15,7 +15,7 @@ func NewToast() *Toast {
 /**
  * 内容
  */
-func (t *Toast) Body(value string) *Toast {
+func (t *Toast) Body(value interface{}) *Toast {
 	t.Set("body", value)
 	return t
 }
@@ -31,7 +31,7 @@ func (t *Toast) CloseButton(value bool) *Toast {
 /**
  * 轻提示内容
  */
-func (t *Toast) Items(value string) *Toast {
+func (t *Toast) Items(value interface{}) *Toast {
 	t.Set("items", value)
 	return t
 }
@@ -39,7 +39,7 @@ func (t *Toast) Items(value string) *Toast {
 /**
  * 展示图标，可选'info'/'success'/'error'/'warning'
  */
-func (t *Toast) Level(value string) *Toast {
+func (t *Toast) Level(value interface{}) *Toast {
 	t.Set("level", value)
 	return t
 }
@@ -47,7 +47,7 @@ func (t *Toast) Level(value string) *Toast {
 /**
  * 提示显示位置，可选值: top-right | top-center | top-left | bottom-center | bottom-left | bottom-right | center
  */
-func (t *Toast) Position(value string) *Toast {
+func (t *Toast) Position(value interface{}) *Toast {
 	t.Set("position", value)
 	return t
 }
@@ -63,7 +63,7 @@ func (t *Toast) ShowIcon(value bool) *Toast {
 /**
  * 持续时间
  */
-func (t *Toast) Timeout(value string) *Toast {
+func (t *Toast) Timeout(value interface{}) *Toast {
 	t.Set("timeout", value)
 	return t
 }
@@ -71,7 +71,7 @@ func (t *Toast) Timeout(value string) *Toast {
 /**
  * 标题
  */
-func (t *Toast) Title(value string) *Toast {
+func (t *Toast) Title(value interface{}) *Toast {
 	t.Set("title", value)
 	return t
 }

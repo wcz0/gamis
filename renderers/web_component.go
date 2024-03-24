@@ -12,22 +12,22 @@ func NewWebComponent() *WebComponent {
 	return w
 }
 
-func (w *WebComponent) body(value string) *WebComponent {
+func (w *WebComponent) body(value interface{}) *WebComponent {
 	w.Set("body", value)
 	return w
 }
 
-func (w *WebComponent) Props(value string) *WebComponent {
+func (w *WebComponent) Props(value interface{}) *WebComponent {
 	w.Set("props", value)
 	return w
 }
 
-func (w *WebComponent) Tag(value string) *WebComponent {
+func (w *WebComponent) Tag(value interface{}) *WebComponent {
 	w.Set("tag", value)
 	return w
 }
 
-func (w *WebComponent) Type(value string) *WebComponent {
+func (w *WebComponent) Type(value interface{}) *WebComponent {
 	w.Set("type", value)
 	return w
 }

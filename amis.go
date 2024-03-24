@@ -56,10 +56,6 @@ import "github.com/wcz0/gamis/renderers"
 		return renderers.NewBaseApi();
 	}
 
-	func BaseRenderer() *renderers.BaseRenderer{
-		return renderers.NewBaseRenderer();
-	}
-
 	func Breadcrumb() *renderers.Breadcrumb{
 		return renderers.NewBreadcrumb();
 	}

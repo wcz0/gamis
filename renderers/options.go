@@ -15,7 +15,7 @@ func NewOptions() *Options {
 /**
  * 数据录入配置，自动填充或者参照录入
  */
-func (o *Options) AutoFill(value string) *Options {
+func (o *Options) AutoFill(value interface{}) *Options {
 	o.Set("autoFill", value)
 	return o
 }
@@ -23,7 +23,7 @@ func (o *Options) AutoFill(value string) *Options {
 /**
  * 表单最外层类名
  */
-func (o *Options) ClassName(value string) *Options {
+func (o *Options) ClassName(value interface{}) *Options {
 	o.Set("className", value)
 	return o
 }
@@ -31,7 +31,7 @@ func (o *Options) ClassName(value string) *Options {
 /**
  * 表单项描述
  */
-func (o *Options) Description(value string) *Options {
+func (o *Options) Description(value interface{}) *Options {
 	o.Set("description", value)
 	return o
 }
@@ -47,7 +47,7 @@ func (o *Options) Disabled(value bool) *Options {
 /**
  * 当前表单项是否禁用的条件
  */
-func (o *Options) DisabledOn(value string) *Options {
+func (o *Options) DisabledOn(value interface{}) *Options {
 	o.Set("disabledOn", value)
 	return o
 }
@@ -71,7 +71,7 @@ func (o *Options) Inline(value bool) *Options {
 /**
  * 表单控制器类名
  */
-func (o *Options) InputClassName(value string) *Options {
+func (o *Options) InputClassName(value interface{}) *Options {
 	o.Set("inputClassName", value)
 	return o
 }
@@ -79,7 +79,7 @@ func (o *Options) InputClassName(value string) *Options {
 /**
  * 每个选项的高度，用于虚拟渲染
  */
-func (o *Options) ItemHeight(value string) *Options {
+func (o *Options) ItemHeight(value interface{}) *Options {
 	o.Set("itemHeight", value)
 	return o
 }
@@ -95,7 +95,7 @@ func (o *Options) JoinValues(value bool) *Options {
 /**
  * 表单项标签
  */
-func (o *Options) Label(value string) *Options {
+func (o *Options) Label(value interface{}) *Options {
 	o.Set("label", value)
 	return o
 }
@@ -103,7 +103,7 @@ func (o *Options) Label(value string) *Options {
 /**
  * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
  */
-func (o *Options) LabelAlign(value string) *Options {
+func (o *Options) LabelAlign(value interface{}) *Options {
 	o.Set("labelAlign", value)
 	return o
 }
@@ -111,7 +111,7 @@ func (o *Options) LabelAlign(value string) *Options {
 /**
  * label 的类名
  */
-func (o *Options) LabelClassName(value string) *Options {
+func (o *Options) LabelClassName(value interface{}) *Options {
 	o.Set("labelClassName", value)
 	return o
 }
@@ -119,7 +119,7 @@ func (o *Options) LabelClassName(value string) *Options {
 /**
  * 标识选项中哪个字段是label值
  */
-func (o *Options) LabelField(value string) *Options {
+func (o *Options) LabelField(value interface{}) *Options {
 	o.Set("labelField", value)
 	return o
 }
@@ -127,7 +127,7 @@ func (o *Options) LabelField(value string) *Options {
 /**
  * 表单项标签描述
  */
-func (o *Options) LabelRemark(value string) *Options {
+func (o *Options) LabelRemark(value interface{}) *Options {
 	o.Set("labelRemark", value)
 	return o
 }
@@ -143,7 +143,7 @@ func (o *Options) Multiple(value bool) *Options {
 /**
  * 字段名，指定该表单项提交时的 key
  */
-func (o *Options) Name(value string) *Options {
+func (o *Options) Name(value interface{}) *Options {
 	o.Set("name", value)
 	return o
 }
@@ -151,7 +151,7 @@ func (o *Options) Name(value string) *Options {
 /**
  * 选项组，供用户选择
  */
-func (o *Options) Options(value string) *Options {
+func (o *Options) Options(value interface{}) *Options {
 	o.Set("options", value)
 	return o
 }
@@ -167,7 +167,7 @@ func (o *Options) Required(value bool) *Options {
 /**
  * 通过表达式来配置当前表单项是否为必填。
  */
-func (o *Options) RequiredOn(value string) *Options {
+func (o *Options) RequiredOn(value interface{}) *Options {
 	o.Set("requiredOn", value)
 	return o
 }
@@ -175,7 +175,7 @@ func (o *Options) RequiredOn(value string) *Options {
 /**
  * 选项组源，可通过数据映射获取当前数据域变量、或者配置 API 对象
  */
-func (o *Options) Source(value string) *Options {
+func (o *Options) Source(value interface{}) *Options {
 	o.Set("source", value)
 	return o
 }
@@ -191,7 +191,7 @@ func (o *Options) SubmitOnChange(value bool) *Options {
 /**
  * 表单校验接口
  */
-func (o *Options) ValidateApi(value string) *Options {
+func (o *Options) ValidateApi(value interface{}) *Options {
 	o.Set("validateApi", value)
 	return o
 }
@@ -199,7 +199,7 @@ func (o *Options) ValidateApi(value string) *Options {
 /**
  * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
  */
-func (o *Options) Validations(value string) *Options {
+func (o *Options) Validations(value interface{}) *Options {
 	o.Set("validations", value)
 	return o
 }
@@ -207,7 +207,7 @@ func (o *Options) Validations(value string) *Options {
 /**
  * 表单默认值
  */
-func (o *Options) Value(value string) *Options {
+func (o *Options) Value(value interface{}) *Options {
 	o.Set("value", value)
 	return o
 }
@@ -215,7 +215,7 @@ func (o *Options) Value(value string) *Options {
 /**
  * 标识选项中哪个字段是value值
  */
-func (o *Options) ValueField(value string) *Options {
+func (o *Options) ValueField(value interface{}) *Options {
 	o.Set("valueField", value)
 	return o
 }
@@ -231,7 +231,7 @@ func (o *Options) ValuesNoWrap(value bool) *Options {
 /**
  * 在选项数量超过多少时开启虚拟渲染
  */
-func (o *Options) VirtualThreshold(value string) *Options {
+func (o *Options) VirtualThreshold(value interface{}) *Options {
 	o.Set("virtualThreshold", value)
 	return o
 }
@@ -247,7 +247,7 @@ func (o *Options) Visible(value bool) *Options {
 /**
  * 当前表单项是否禁用的条件
  */
-func (o *Options) VisibleOn(value string) *Options {
+func (o *Options) VisibleOn(value interface{}) *Options {
 	o.Set("visibleOn", value)
 	return o
 }
