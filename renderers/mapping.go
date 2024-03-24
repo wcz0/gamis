@@ -3,8 +3,9 @@ package renderers
 
 /**
  * Mapping 映射展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/mapping
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type Mapping struct {
 	*BaseRenderer
@@ -19,42 +20,10 @@ func NewMapping() *Mapping {
     return a
 }
 /**
- * 是否静态展示
+ * 是否显示
  */
-func (a *Mapping) Static(value string) *Mapping {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Mapping) StaticInputClassName(value string) *Mapping {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 配置映射规则，值可以使用模板语法。当 key 为 * 时表示 else，也就是说值没有映射到任何规则时用 * 对应的值展示。
- */
-func (a *Mapping) Map(value string) *Mapping {
-    a.Set("map", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Mapping) StaticLabelClassName(value string) *Mapping {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Mapping) ClassName(value string) *Mapping {
-    a.Set("className", value)
+func (a *Mapping) Visible(value string) *Mapping {
+    a.Set("visible", value)
     return a
 }
 
@@ -67,58 +36,18 @@ func (a *Mapping) VisibleOn(value string) *Mapping {
 }
 
 /**
- * 静态展示表单项类名
+ * 是否静态展示表达式
  */
-func (a *Mapping) StaticClassName(value string) *Mapping {
-    a.Set("staticClassName", value)
+func (a *Mapping) StaticOn(value string) *Mapping {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 自定义渲染映射值，支持html或schema
+ * 静态展示表单项Value类名
  */
-func (a *Mapping) ItemSchema(value string) *Mapping {
-    a.Set("itemSchema", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Mapping) Visible(value string) *Mapping {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 关联字段名。
- */
-func (a *Mapping) Name(value string) *Mapping {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *Mapping) Placeholder(value string) *Mapping {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Mapping) Disabled(value string) *Mapping {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Mapping) Id(value string) *Mapping {
-    a.Set("id", value)
+func (a *Mapping) StaticInputClassName(value string) *Mapping {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -131,22 +60,6 @@ func (a *Mapping) StaticPlaceholder(value string) *Mapping {
 }
 
 /**
- * 如果想远程拉取字典，请配置 source 为接口。
- */
-func (a *Mapping) Source(value string) *Mapping {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Mapping) StaticOn(value string) *Mapping {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
  */
 func (a *Mapping) StaticSchema(value string) *Mapping {
     a.Set("staticSchema", value)
@@ -154,10 +67,18 @@ func (a *Mapping) StaticSchema(value string) *Mapping {
 }
 
 /**
- * 是否禁用表达式
+ * 组件样式
  */
-func (a *Mapping) DisabledOn(value string) *Mapping {
-    a.Set("disabledOn", value)
+func (a *Mapping) Style(value string) *Mapping {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 如果想远程拉取字典，请配置 source 为接口。
+ */
+func (a *Mapping) Source(value string) *Mapping {
+    a.Set("source", value)
     return a
 }
 
@@ -178,10 +99,10 @@ func (a *Mapping) OnEvent(value string) *Mapping {
 }
 
 /**
- * 组件样式
+ * 静态展示表单项类名
  */
-func (a *Mapping) Style(value string) *Mapping {
-    a.Set("style", value)
+func (a *Mapping) StaticClassName(value string) *Mapping {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -194,10 +115,99 @@ func (a *Mapping) EditorSetting(value string) *Mapping {
 }
 
 /**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Mapping) UseMobileUI(value string) *Mapping {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Mapping) ClassName(value string) *Mapping {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 配置映射规则，值可以使用模板语法。当 key 为 * 时表示 else，也就是说值没有映射到任何规则时用 * 对应的值展示。
+ */
+func (a *Mapping) Map(value string) *Mapping {
+    a.Set("map", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Mapping) Static(value string) *Mapping {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 关联字段名。
+ */
+func (a *Mapping) Name(value string) *Mapping {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 指定为映射展示控件
+ * 可选值: map | mapping
+ */
+func (a *Mapping) Type(value string) *Mapping {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Mapping) StaticLabelClassName(value string) *Mapping {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
  * map或source为对象数组时，作为label值的字段名
  */
 func (a *Mapping) LabelField(value string) *Mapping {
     a.Set("labelField", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *Mapping) Placeholder(value string) *Mapping {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 自定义渲染映射值，支持html或schema
+ */
+func (a *Mapping) ItemSchema(value string) *Mapping {
+    a.Set("itemSchema", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Mapping) Disabled(value string) *Mapping {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Mapping) DisabledOn(value string) *Mapping {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -210,19 +220,10 @@ func (a *Mapping) Hidden(value string) *Mapping {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Mapping) UseMobileUI(value string) *Mapping {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 指定为映射展示控件
- * 可选值: map | mapping
- */
-func (a *Mapping) Type(value string) *Mapping {
-    a.Set("type", value)
+func (a *Mapping) Id(value string) *Mapping {
+    a.Set("id", value)
     return a
 }
 

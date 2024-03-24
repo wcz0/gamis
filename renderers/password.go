@@ -3,8 +3,9 @@ package renderers
 
 /**
  * Password
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type Password struct {
 	*BaseRenderer
@@ -27,26 +28,10 @@ func (a *Password) StaticClassName(value string) *Password {
 }
 
 /**
- * 是否禁用表达式
+ * 静态展示表单项Label类名
  */
-func (a *Password) DisabledOn(value string) *Password {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Password) HiddenOn(value string) *Password {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Password) VisibleOn(value string) *Password {
-    a.Set("visibleOn", value)
+func (a *Password) StaticLabelClassName(value string) *Password {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -59,18 +44,18 @@ func (a *Password) Style(value string) *Password {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 是否隐藏
  */
-func (a *Password) EditorSetting(value string) *Password {
-    a.Set("editorSetting", value)
+func (a *Password) Hidden(value string) *Password {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否隐藏表达式
  */
-func (a *Password) UseMobileUI(value string) *Password {
-    a.Set("useMobileUI", value)
+func (a *Password) HiddenOn(value string) *Password {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -83,6 +68,14 @@ func (a *Password) Visible(value string) *Password {
 }
 
 /**
+ * 事件动作配置
+ */
+func (a *Password) OnEvent(value string) *Password {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
  * 静态展示空值占位
  */
 func (a *Password) StaticPlaceholder(value string) *Password {
@@ -91,40 +84,10 @@ func (a *Password) StaticPlaceholder(value string) *Password {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否显示表达式
  */
-func (a *Password) StaticLabelClassName(value string) *Password {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Password) StaticInputClassName(value string) *Password {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Password) StaticSchema(value string) *Password {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *Password) Type(value string) *Password {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Password) Id(value string) *Password {
-    a.Set("id", value)
+func (a *Password) VisibleOn(value string) *Password {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -137,18 +100,10 @@ func (a *Password) StaticOn(value string) *Password {
 }
 
 /**
- * 事件动作配置
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Password) OnEvent(value string) *Password {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Password) Static(value string) *Password {
-    a.Set("static", value)
+func (a *Password) UseMobileUI(value string) *Password {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -157,6 +112,21 @@ func (a *Password) Static(value string) *Password {
  */
 func (a *Password) MosaicText(value string) *Password {
     a.Set("mosaicText", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Password) EditorSetting(value string) *Password {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ */
+func (a *Password) Type(value string) *Password {
+    a.Set("type", value)
     return a
 }
 
@@ -177,9 +147,40 @@ func (a *Password) Disabled(value string) *Password {
 }
 
 /**
- * 是否隐藏
+ * 是否禁用表达式
  */
-func (a *Password) Hidden(value string) *Password {
-    a.Set("hidden", value)
+func (a *Password) DisabledOn(value string) *Password {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Password) Id(value string) *Password {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Password) Static(value string) *Password {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Password) StaticInputClassName(value string) *Password {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Password) StaticSchema(value string) *Password {
+    a.Set("staticSchema", value)
     return a
 }

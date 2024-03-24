@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type ListenerAction struct {
 	*BaseRenderer
@@ -32,43 +34,8 @@ func (a *ListenerAction) OutputVar(value string) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) IgnoreError(value string) *ListenerAction {
-    a.Set("ignoreError", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) Args(value string) *ListenerAction {
-    a.Set("args", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) Data(value string) *ListenerAction {
-    a.Set("data", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) PreventDefault(value string) *ListenerAction {
-    a.Set("preventDefault", value)
-    return a
-}
-
-/**
- */
 func (a *ListenerAction) ActionType(value string) *ListenerAction {
     a.Set("actionType", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) Description(value string) *ListenerAction {
-    a.Set("description", value)
     return a
 }
 
@@ -81,8 +48,22 @@ func (a *ListenerAction) ComponentId(value string) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) ComponentName(value string) *ListenerAction {
-    a.Set("componentName", value)
+func (a *ListenerAction) Data(value string) *ListenerAction {
+    a.Set("data", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) Args(value string) *ListenerAction {
+    a.Set("args", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) PreventDefault(value string) *ListenerAction {
+    a.Set("preventDefault", value)
     return a
 }
 
@@ -104,5 +85,26 @@ func (a *ListenerAction) Expression(value string) *ListenerAction {
  */
 func (a *ListenerAction) ExecOn(value string) *ListenerAction {
     a.Set("execOn", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) Description(value string) *ListenerAction {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ComponentName(value string) *ListenerAction {
+    a.Set("componentName", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) IgnoreError(value string) *ListenerAction {
+    a.Set("ignoreError", value)
     return a
 }

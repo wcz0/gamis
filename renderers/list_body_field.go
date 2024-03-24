@@ -3,8 +3,9 @@ package renderers
 
 /**
  * 不指定类型默认就是文本
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type ListBodyField struct {
 	*BaseRenderer

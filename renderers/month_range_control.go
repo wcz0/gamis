@@ -3,8 +3,9 @@ package renderers
 
 /**
  * MonthRange 月范围控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/month-range
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type MonthRangeControl struct {
 	*BaseRenderer
@@ -19,90 +20,10 @@ func NewMonthRangeControl() *MonthRangeControl {
     return a
 }
 /**
+ * 是否隐藏
  */
-func (a *MonthRangeControl) Desc(value string) *MonthRangeControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
- */
-func (a *MonthRangeControl) Mode(value string) *MonthRangeControl {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 日期范围快捷键
- */
-func (a *MonthRangeControl) Shortcuts(value string) *MonthRangeControl {
-    a.Set("shortcuts", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *MonthRangeControl) Hint(value string) *MonthRangeControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *MonthRangeControl) SubmitOnChange(value string) *MonthRangeControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *MonthRangeControl) Horizontal(value string) *MonthRangeControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *MonthRangeControl) ClearValueOnHidden(value string) *MonthRangeControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *MonthRangeControl) ClassName(value string) *MonthRangeControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *MonthRangeControl) Label(value string) *MonthRangeControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 默认 `X` 即时间戳格式，用来提交的时间格式。更多格式类型请参考 moment.
- */
-func (a *MonthRangeControl) Format(value string) *MonthRangeControl {
-    a.Set("format", value)
-    return a
-}
-
-/**
- * 用来提交的时间格式。更多格式类型请参考 moment.（新：同format）
- */
-func (a *MonthRangeControl) ValueFormat(value string) *MonthRangeControl {
-    a.Set("valueFormat", value)
+func (a *MonthRangeControl) Hidden(value string) *MonthRangeControl {
+    a.Set("hidden", value)
     return a
 }
 
@@ -115,34 +36,18 @@ func (a *MonthRangeControl) Ranges(value string) *MonthRangeControl {
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ * label自定义宽度，默认单位为px
  */
-func (a *MonthRangeControl) LabelRemark(value string) *MonthRangeControl {
-    a.Set("labelRemark", value)
+func (a *MonthRangeControl) LabelWidth(value string) *MonthRangeControl {
+    a.Set("labelWidth", value)
     return a
 }
 
 /**
- * 配置 label className
+ * 容器 css 类名
  */
-func (a *MonthRangeControl) LabelClassName(value string) *MonthRangeControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *MonthRangeControl) Inline(value string) *MonthRangeControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *MonthRangeControl) Disabled(value string) *MonthRangeControl {
-    a.Set("disabled", value)
+func (a *MonthRangeControl) ClassName(value string) *MonthRangeControl {
+    a.Set("className", value)
     return a
 }
 
@@ -155,18 +60,18 @@ func (a *MonthRangeControl) Delimiter(value string) *MonthRangeControl {
 }
 
 /**
- * 是否隐藏
+ * 开启后变成非弹出模式，即内联模式。
  */
-func (a *MonthRangeControl) Hidden(value string) *MonthRangeControl {
-    a.Set("hidden", value)
+func (a *MonthRangeControl) Embed(value string) *MonthRangeControl {
+    a.Set("embed", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 默认 `X` 即时间戳格式，用来提交的时间格式。更多格式类型请参考 moment.
  */
-func (a *MonthRangeControl) OnEvent(value string) *MonthRangeControl {
-    a.Set("onEvent", value)
+func (a *MonthRangeControl) Format(value string) *MonthRangeControl {
+    a.Set("format", value)
     return a
 }
 
@@ -187,193 +92,10 @@ func (a *MonthRangeControl) Remark(value string) *MonthRangeControl {
 }
 
 /**
- * label自定义宽度，默认单位为px
- */
-func (a *MonthRangeControl) LabelWidth(value string) *MonthRangeControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 默认 `YYYY-MM-DD` 用来配置显示的时间格式。
- */
-func (a *MonthRangeControl) InputFormat(value string) *MonthRangeControl {
-    a.Set("inputFormat", value)
-    return a
-}
-
-/**
- * 边框模式，全边框，还是半边框，或者没边框。
- * 可选值: full | half | none
- */
-func (a *MonthRangeControl) BorderMode(value string) *MonthRangeControl {
-    a.Set("borderMode", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *MonthRangeControl) ValidationErrors(value string) *MonthRangeControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 最大日期限制，支持变量 $xxx 来取值，或者用相对值如：* `-2mins` 2分钟前\n * `+2days` 2天后\n* `-10week` 十周前\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。
- */
-func (a *MonthRangeControl) MaxDate(value string) *MonthRangeControl {
-    a.Set("maxDate", value)
-    return a
-}
-
-/**
- * 日期范围开始时间-占位符
- */
-func (a *MonthRangeControl) StartPlaceholder(value string) *MonthRangeControl {
-    a.Set("startPlaceholder", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *MonthRangeControl) Placeholder(value string) *MonthRangeControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *MonthRangeControl) StaticOn(value string) *MonthRangeControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *MonthRangeControl) StaticPlaceholder(value string) *MonthRangeControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- */
-func (a *MonthRangeControl) StaticSchema(value string) *MonthRangeControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 这里面 value 需要特殊说明一下，因为支持相对值。* `-2mins` 2分钟前\n * `+2days` 2天后\n* `-10week` 十周前\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。
- */
-func (a *MonthRangeControl) Value(value string) *MonthRangeControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 是否启用游标动画，默认开启
- */
-func (a *MonthRangeControl) Animation(value string) *MonthRangeControl {
-    a.Set("animation", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *MonthRangeControl) ReadOnly(value string) *MonthRangeControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *MonthRangeControl) ValidateOnChange(value string) *MonthRangeControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
  * 是否隐藏表达式
  */
 func (a *MonthRangeControl) HiddenOn(value string) *MonthRangeControl {
     a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *MonthRangeControl) StaticInputClassName(value string) *MonthRangeControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *MonthRangeControl) Type(value string) *MonthRangeControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *MonthRangeControl) Width(value string) *MonthRangeControl {
-    a.Set("width", value)
-    return a
-}
-
-/**
- * 最大跨度，比如 2days
- */
-func (a *MonthRangeControl) MaxDuration(value string) *MonthRangeControl {
-    a.Set("maxDuration", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *MonthRangeControl) DescriptionClassName(value string) *MonthRangeControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *MonthRangeControl) Id(value string) *MonthRangeControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *MonthRangeControl) Static(value string) *MonthRangeControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 开启后将选中的选项 value 的值用连接符拼接起来，作为当前表单项的值。如： `value1,value2` 否则为 `[value1, value2]`
- */
-func (a *MonthRangeControl) JoinValues(value string) *MonthRangeControl {
-    a.Set("joinValues", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *MonthRangeControl) LabelAlign(value string) *MonthRangeControl {
-    a.Set("labelAlign", value)
     return a
 }
 
@@ -386,6 +108,30 @@ func (a *MonthRangeControl) ExtraName(value string) *MonthRangeControl {
 }
 
 /**
+ * 配置描述上的 className
+ */
+func (a *MonthRangeControl) DescriptionClassName(value string) *MonthRangeControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *MonthRangeControl) ValidationErrors(value string) *MonthRangeControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *MonthRangeControl) ClearValueOnHidden(value string) *MonthRangeControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
  * 静态展示表单项Label类名
  */
 func (a *MonthRangeControl) StaticLabelClassName(value string) *MonthRangeControl {
@@ -394,74 +140,105 @@ func (a *MonthRangeControl) StaticLabelClassName(value string) *MonthRangeContro
 }
 
 /**
- * 日期数据处理函数，用来处理选择日期之后的的值(value: moment.Moment, config: {type: 'start' | 'end'; originValue: moment.Moment, timeFormat: string}, props: any, data: any, moment: moment) => moment.Moment;
+ * 表单 control 是否为 inline 模式。
  */
-func (a *MonthRangeControl) Transform(value string) *MonthRangeControl {
-    a.Set("transform", value)
+func (a *MonthRangeControl) Inline(value string) *MonthRangeControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
- * 开启后变成非弹出模式，即内联模式。
+ * 日期范围结束时间-占位符
  */
-func (a *MonthRangeControl) Embed(value string) *MonthRangeControl {
-    a.Set("embed", value)
+func (a *MonthRangeControl) EndPlaceholder(value string) *MonthRangeControl {
+    a.Set("endPlaceholder", value)
     return a
 }
 
 /**
- * 配置 input className
+ * 是否启用游标动画，默认开启
  */
-func (a *MonthRangeControl) InputClassName(value string) *MonthRangeControl {
-    a.Set("inputClassName", value)
+func (a *MonthRangeControl) Animation(value string) *MonthRangeControl {
+    a.Set("animation", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 描述标题
  */
-func (a *MonthRangeControl) DisabledOn(value string) *MonthRangeControl {
-    a.Set("disabledOn", value)
+func (a *MonthRangeControl) Label(value string) *MonthRangeControl {
+    a.Set("label", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 当修改完的时候是否提交表单。
  */
-func (a *MonthRangeControl) VisibleOn(value string) *MonthRangeControl {
-    a.Set("visibleOn", value)
+func (a *MonthRangeControl) SubmitOnChange(value string) *MonthRangeControl {
+    a.Set("submitOnChange", value)
     return a
 }
 
 /**
- * 静态展示表单项类名
  */
-func (a *MonthRangeControl) StaticClassName(value string) *MonthRangeControl {
-    a.Set("staticClassName", value)
+func (a *MonthRangeControl) Type(value string) *MonthRangeControl {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 最小日期限制，支持变量 $xxx 来取值，或者用相对值如：* `-2mins` 2分钟前\n * `+2days` 2天后\n* `-10week` 十周前\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。
+ * 日期范围快捷键
  */
-func (a *MonthRangeControl) MinDate(value string) *MonthRangeControl {
-    a.Set("minDate", value)
+func (a *MonthRangeControl) Shortcuts(value string) *MonthRangeControl {
+    a.Set("shortcuts", value)
     return a
 }
 
 /**
- * 是否为必填
+ * 输入提示，聚焦的时候显示
  */
-func (a *MonthRangeControl) Required(value string) *MonthRangeControl {
-    a.Set("required", value)
+func (a *MonthRangeControl) Hint(value string) *MonthRangeControl {
+    a.Set("hint", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 只读条件
  */
-func (a *MonthRangeControl) EditorSetting(value string) *MonthRangeControl {
-    a.Set("editorSetting", value)
+func (a *MonthRangeControl) ReadOnlyOn(value string) *MonthRangeControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 默认 `YYYY-MM-DD` 用来配置显示的时间格式。
+ */
+func (a *MonthRangeControl) InputFormat(value string) *MonthRangeControl {
+    a.Set("inputFormat", value)
+    return a
+}
+
+/**
+ * 最大日期限制，支持变量 $xxx 来取值，或者用相对值如：* `-2mins` 2分钟前\n * `+2days` 2天后\n* `-10week` 十周前\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。
+ */
+func (a *MonthRangeControl) MaxDate(value string) *MonthRangeControl {
+    a.Set("maxDate", value)
+    return a
+}
+
+/**
+ * 最大跨度，比如 2days
+ */
+func (a *MonthRangeControl) MaxDuration(value string) *MonthRangeControl {
+    a.Set("maxDuration", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *MonthRangeControl) Style(value string) *MonthRangeControl {
+    a.Set("style", value)
     return a
 }
 
@@ -474,26 +251,82 @@ func (a *MonthRangeControl) UseMobileUI(value string) *MonthRangeControl {
 }
 
 /**
- * 描述内容，支持 Html 片段。
+ * 在Table中调整宽度
  */
-func (a *MonthRangeControl) Description(value string) *MonthRangeControl {
-    a.Set("description", value)
+func (a *MonthRangeControl) Width(value string) *MonthRangeControl {
+    a.Set("width", value)
     return a
 }
 
 /**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ * 日期数据处理函数，用来处理选择日期之后的的值(value: moment.Moment, config: {type: 'start' | 'end'; originValue: moment.Moment, timeFormat: string}, props: any, data: any, moment: moment) => moment.Moment;
  */
-func (a *MonthRangeControl) Name(value string) *MonthRangeControl {
-    a.Set("name", value)
+func (a *MonthRangeControl) Transform(value string) *MonthRangeControl {
+    a.Set("transform", value)
     return a
 }
 
 /**
- * 组件样式
+ * 事件动作配置
  */
-func (a *MonthRangeControl) Style(value string) *MonthRangeControl {
-    a.Set("style", value)
+func (a *MonthRangeControl) OnEvent(value string) *MonthRangeControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *MonthRangeControl) StaticInputClassName(value string) *MonthRangeControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *MonthRangeControl) Placeholder(value string) *MonthRangeControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *MonthRangeControl) StaticClassName(value string) *MonthRangeControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 用来配置显示的时间格式（新：同inputFormat）
+ */
+func (a *MonthRangeControl) DisplayFormat(value string) *MonthRangeControl {
+    a.Set("displayFormat", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *MonthRangeControl) LabelRemark(value string) *MonthRangeControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *MonthRangeControl) LabelAlign(value string) *MonthRangeControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * 日期范围开始时间-占位符
+ */
+func (a *MonthRangeControl) StartPlaceholder(value string) *MonthRangeControl {
+    a.Set("startPlaceholder", value)
     return a
 }
 
@@ -507,10 +340,10 @@ func (a *MonthRangeControl) Size(value string) *MonthRangeControl {
 }
 
 /**
- * 日期范围结束时间-占位符
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
  */
-func (a *MonthRangeControl) EndPlaceholder(value string) *MonthRangeControl {
-    a.Set("endPlaceholder", value)
+func (a *MonthRangeControl) Horizontal(value string) *MonthRangeControl {
+    a.Set("horizontal", value)
     return a
 }
 
@@ -522,18 +355,90 @@ func (a *MonthRangeControl) Validations(value string) *MonthRangeControl {
 }
 
 /**
- * 远端校验表单项接口
+ * 最小日期限制，支持变量 $xxx 来取值，或者用相对值如：* `-2mins` 2分钟前\n * `+2days` 2天后\n* `-10week` 十周前\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。
  */
-func (a *MonthRangeControl) ValidateApi(value string) *MonthRangeControl {
-    a.Set("validateApi", value)
+func (a *MonthRangeControl) MinDate(value string) *MonthRangeControl {
+    a.Set("minDate", value)
     return a
 }
 
 /**
- * 用来配置显示的时间格式（新：同inputFormat）
+ * 这里面 value 需要特殊说明一下，因为支持相对值。* `-2mins` 2分钟前\n * `+2days` 2天后\n* `-10week` 十周前\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。
  */
-func (a *MonthRangeControl) DisplayFormat(value string) *MonthRangeControl {
-    a.Set("displayFormat", value)
+func (a *MonthRangeControl) Value(value string) *MonthRangeControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 边框模式，全边框，还是半边框，或者没边框。
+ * 可选值: full | half | none
+ */
+func (a *MonthRangeControl) BorderMode(value string) *MonthRangeControl {
+    a.Set("borderMode", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *MonthRangeControl) StaticPlaceholder(value string) *MonthRangeControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *MonthRangeControl) ValidateOnChange(value string) *MonthRangeControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ */
+func (a *MonthRangeControl) Desc(value string) *MonthRangeControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *MonthRangeControl) Disabled(value string) *MonthRangeControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *MonthRangeControl) Static(value string) *MonthRangeControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *MonthRangeControl) LabelClassName(value string) *MonthRangeControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *MonthRangeControl) InputClassName(value string) *MonthRangeControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *MonthRangeControl) Required(value string) *MonthRangeControl {
+    a.Set("required", value)
     return a
 }
 
@@ -546,9 +451,105 @@ func (a *MonthRangeControl) Visible(value string) *MonthRangeControl {
 }
 
 /**
- * 只读条件
+ * 是否显示表达式
  */
-func (a *MonthRangeControl) ReadOnlyOn(value string) *MonthRangeControl {
-    a.Set("readOnlyOn", value)
+func (a *MonthRangeControl) VisibleOn(value string) *MonthRangeControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *MonthRangeControl) StaticOn(value string) *MonthRangeControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *MonthRangeControl) StaticSchema(value string) *MonthRangeControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *MonthRangeControl) Name(value string) *MonthRangeControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
+ */
+func (a *MonthRangeControl) Mode(value string) *MonthRangeControl {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *MonthRangeControl) Id(value string) *MonthRangeControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *MonthRangeControl) Description(value string) *MonthRangeControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *MonthRangeControl) ValidateApi(value string) *MonthRangeControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *MonthRangeControl) DisabledOn(value string) *MonthRangeControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *MonthRangeControl) EditorSetting(value string) *MonthRangeControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 用来提交的时间格式。更多格式类型请参考 moment.（新：同format）
+ */
+func (a *MonthRangeControl) ValueFormat(value string) *MonthRangeControl {
+    a.Set("valueFormat", value)
+    return a
+}
+
+/**
+ * 开启后将选中的选项 value 的值用连接符拼接起来，作为当前表单项的值。如： `value1,value2` 否则为 `[value1, value2]`
+ */
+func (a *MonthRangeControl) JoinValues(value string) *MonthRangeControl {
+    a.Set("joinValues", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *MonthRangeControl) ReadOnly(value string) *MonthRangeControl {
+    a.Set("readOnly", value)
     return a
 }

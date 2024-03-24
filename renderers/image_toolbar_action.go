@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type ImageToolbarAction struct {
 	*BaseRenderer
@@ -16,6 +18,13 @@ func NewImageToolbarAction() *ImageToolbarAction {
     a.Set("key", "ROTATE_RIGHT")
     return a
 }
+/**
+ */
+func (a *ImageToolbarAction) Disabled(value string) *ImageToolbarAction {
+    a.Set("disabled", value)
+    return a
+}
+
 /**
  * 可选值: ROTATE_RIGHT | ROTATE_LEFT | ZOOM_IN | ZOOM_OUT | SCALE_ORIGIN
  */
@@ -42,12 +51,5 @@ func (a *ImageToolbarAction) Icon(value string) *ImageToolbarAction {
  */
 func (a *ImageToolbarAction) IconClassName(value string) *ImageToolbarAction {
     a.Set("iconClassName", value)
-    return a
-}
-
-/**
- */
-func (a *ImageToolbarAction) Disabled(value string) *ImageToolbarAction {
-    a.Set("disabled", value)
     return a
 }

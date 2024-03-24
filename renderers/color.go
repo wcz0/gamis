@@ -3,8 +3,9 @@ package renderers
 
 /**
  * Color 显示渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/color
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type Color struct {
 	*BaseRenderer
@@ -19,18 +20,25 @@ func NewColor() *Color {
     return a
 }
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否禁用表达式
  */
-func (a *Color) Id(value string) *Color {
-    a.Set("id", value)
+func (a *Color) DisabledOn(value string) *Color {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 指定为颜色显示控件
+ * 是否静态展示表达式
  */
-func (a *Color) Type(value string) *Color {
-    a.Set("type", value)
+func (a *Color) StaticOn(value string) *Color {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Color) StaticSchema(value string) *Color {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -43,14 +51,6 @@ func (a *Color) Disabled(value string) *Color {
 }
 
 /**
- * 是否禁用表达式
- */
-func (a *Color) DisabledOn(value string) *Color {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
  * 是否显示表达式
  */
 func (a *Color) VisibleOn(value string) *Color {
@@ -59,18 +59,18 @@ func (a *Color) VisibleOn(value string) *Color {
 }
 
 /**
- * 静态展示空值占位
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Color) StaticPlaceholder(value string) *Color {
-    a.Set("staticPlaceholder", value)
+func (a *Color) Id(value string) *Color {
+    a.Set("id", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否静态展示
  */
-func (a *Color) UseMobileUI(value string) *Color {
-    a.Set("useMobileUI", value)
+func (a *Color) Static(value string) *Color {
+    a.Set("static", value)
     return a
 }
 
@@ -79,14 +79,6 @@ func (a *Color) UseMobileUI(value string) *Color {
  */
 func (a *Color) EditorSetting(value string) *Color {
     a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 默认颜色
- */
-func (a *Color) DefaultColor(value string) *Color {
-    a.Set("defaultColor", value)
     return a
 }
 
@@ -107,25 +99,18 @@ func (a *Color) ClassName(value string) *Color {
 }
 
 /**
- * 是否隐藏表达式
+ * 是否隐藏
  */
-func (a *Color) HiddenOn(value string) *Color {
-    a.Set("hiddenOn", value)
+func (a *Color) Hidden(value string) *Color {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 静态展示表单项类名
  */
-func (a *Color) StaticOn(value string) *Color {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *Color) StaticSchema(value string) *Color {
-    a.Set("staticSchema", value)
+func (a *Color) StaticClassName(value string) *Color {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -134,6 +119,14 @@ func (a *Color) StaticSchema(value string) *Color {
  */
 func (a *Color) Style(value string) *Color {
     a.Set("style", value)
+    return a
+}
+
+/**
+ * 默认颜色
+ */
+func (a *Color) DefaultColor(value string) *Color {
+    a.Set("defaultColor", value)
     return a
 }
 
@@ -154,10 +147,18 @@ func (a *Color) StaticInputClassName(value string) *Color {
 }
 
 /**
- * 是否隐藏
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Color) Hidden(value string) *Color {
-    a.Set("hidden", value)
+func (a *Color) UseMobileUI(value string) *Color {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Color) HiddenOn(value string) *Color {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -178,17 +179,17 @@ func (a *Color) OnEvent(value string) *Color {
 }
 
 /**
- * 是否静态展示
+ * 静态展示空值占位
  */
-func (a *Color) Static(value string) *Color {
-    a.Set("static", value)
+func (a *Color) StaticPlaceholder(value string) *Color {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 静态展示表单项类名
+ * 指定为颜色显示控件
  */
-func (a *Color) StaticClassName(value string) *Color {
-    a.Set("staticClassName", value)
+func (a *Color) Type(value string) *Color {
+    a.Set("type", value)
     return a
 }

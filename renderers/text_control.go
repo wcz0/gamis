@@ -3,8 +3,9 @@ package renderers
 
 /**
  * Text 文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type TextControl struct {
 	*BaseRenderer
@@ -19,65 +20,26 @@ func NewTextControl() *TextControl {
     return a
 }
 /**
+ * 选项删除 API
  */
-func (a *TextControl) StaticSchema(value string) *TextControl {
-    a.Set("staticSchema", value)
+func (a *TextControl) DeleteApi(value string) *TextControl {
+    a.Set("deleteApi", value)
     return a
 }
 
 /**
- * 配置原生 input 的 autoComplete 属性
+ * 当修改完的时候是否提交表单。
  */
-func (a *TextControl) NativeAutoComplete(value string) *TextControl {
-    a.Set("nativeAutoComplete", value)
+func (a *TextControl) SubmitOnChange(value string) *TextControl {
+    a.Set("submitOnChange", value)
     return a
 }
 
 /**
- * 限制文字最小输入个数
+ * 是否显示
  */
-func (a *TextControl) MinLength(value string) *TextControl {
-    a.Set("minLength", value)
-    return a
-}
-
-/**
- * 可用来通过 API 拉取 options。
- */
-func (a *TextControl) Source(value string) *TextControl {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 新增文字
- */
-func (a *TextControl) CreateBtnLabel(value string) *TextControl {
-    a.Set("createBtnLabel", value)
-    return a
-}
-
-/**
- * 控制编辑弹框设置项
- */
-func (a *TextControl) EditDialog(value string) *TextControl {
-    a.Set("editDialog", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *TextControl) LabelWidth(value string) *TextControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *TextControl) Hint(value string) *TextControl {
-    a.Set("hint", value)
+func (a *TextControl) Visible(value string) *TextControl {
+    a.Set("visible", value)
     return a
 }
 
@@ -90,65 +52,50 @@ func (a *TextControl) VisibleOn(value string) *TextControl {
 }
 
 /**
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
  */
-func (a *TextControl) Testid(value string) *TextControl {
-    a.Set("testid", value)
+func (a *TextControl) Size(value string) *TextControl {
+    a.Set("size", value)
     return a
 }
 
 /**
- * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+ * 配置 input className
  */
-func (a *TextControl) ExtractValue(value string) *TextControl {
-    a.Set("extractValue", value)
-    return a
-}
-
-/**
- * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
- */
-func (a *TextControl) DeferApi(value string) *TextControl {
-    a.Set("deferApi", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *TextControl) AutoFill(value string) *TextControl {
-    a.Set("autoFill", value)
+func (a *TextControl) InputClassName(value string) *TextControl {
+    a.Set("inputClassName", value)
     return a
 }
 
 /**
  */
-func (a *TextControl) InitAutoFill(value string) *TextControl {
-    a.Set("initAutoFill", value)
+func (a *TextControl) Validations(value string) *TextControl {
+    a.Set("validations", value)
     return a
 }
 
 /**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ * 远端校验表单项接口
  */
-func (a *TextControl) ExtraName(value string) *TextControl {
-    a.Set("extraName", value)
+func (a *TextControl) ValidateApi(value string) *TextControl {
+    a.Set("validateApi", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否隐藏表达式
  */
-func (a *TextControl) StaticLabelClassName(value string) *TextControl {
-    a.Set("staticLabelClassName", value)
+func (a *TextControl) HiddenOn(value string) *TextControl {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 边框模式，全边框，还是半边框，或者没边框。
- * 可选值: full | half | none
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *TextControl) BorderMode(value string) *TextControl {
-    a.Set("borderMode", value)
+func (a *TextControl) Id(value string) *TextControl {
+    a.Set("id", value)
     return a
 }
 
@@ -169,6 +116,22 @@ func (a *TextControl) AddApi(value string) *TextControl {
 }
 
 /**
+ * 控制新增弹框设置项
+ */
+func (a *TextControl) AddDialog(value string) *TextControl {
+    a.Set("addDialog", value)
+    return a
+}
+
+/**
+ * 编辑时调用的 API
+ */
+func (a *TextControl) EditApi(value string) *TextControl {
+    a.Set("editApi", value)
+    return a
+}
+
+/**
  * 是否可删除
  */
 func (a *TextControl) Removable(value string) *TextControl {
@@ -177,160 +140,18 @@ func (a *TextControl) Removable(value string) *TextControl {
 }
 
 /**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ * 占位符
  */
-func (a *TextControl) Name(value string) *TextControl {
-    a.Set("name", value)
+func (a *TextControl) Placeholder(value string) *TextControl {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 是否隐藏
  */
-func (a *TextControl) StaticOn(value string) *TextControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *TextControl) Style(value string) *TextControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *TextControl) AddOn(value string) *TextControl {
-    a.Set("addOn", value)
-    return a
-}
-
-/**
- * 是否显示计数
- */
-func (a *TextControl) ShowCounter(value string) *TextControl {
-    a.Set("showCounter", value)
-    return a
-}
-
-/**
- * 配置 source 接口初始拉不拉取。
- */
-func (a *TextControl) InitFetch(value string) *TextControl {
-    a.Set("initFetch", value)
-    return a
-}
-
-/**
- * 选项修改的表单项
- */
-func (a *TextControl) EditControls(value string) *TextControl {
-    a.Set("editControls", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *TextControl) DescriptionClassName(value string) *TextControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *TextControl) Id(value string) *TextControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 后缀
- */
-func (a *TextControl) Suffix(value string) *TextControl {
-    a.Set("suffix", value)
-    return a
-}
-
-/**
- * 是否可以编辑
- */
-func (a *TextControl) Editable(value string) *TextControl {
-    a.Set("editable", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *TextControl) LabelClassName(value string) *TextControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *TextControl) HiddenOn(value string) *TextControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
- */
-func (a *TextControl) JoinValues(value string) *TextControl {
-    a.Set("joinValues", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *TextControl) ReadOnlyOn(value string) *TextControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *TextControl) Disabled(value string) *TextControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 自动完成 API，当输入部分文字的时候，会将这些文字通过 ${term} 可以取到，发送给接口。 接口可以返回匹配到的选项，帮助用户输入。
- */
-func (a *TextControl) AutoComplete(value string) *TextControl {
-    a.Set("autoComplete", value)
-    return a
-}
-
-/**
- */
-func (a *TextControl) Validations(value string) *TextControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *TextControl) Value(value string) *TextControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *TextControl) ClassName(value string) *TextControl {
-    a.Set("className", value)
+func (a *TextControl) Hidden(value string) *TextControl {
+    a.Set("hidden", value)
     return a
 }
 
@@ -343,26 +164,58 @@ func (a *TextControl) EditorSetting(value string) *TextControl {
 }
 
 /**
- * 是否可清除。
+ * 是否显示计数
  */
-func (a *TextControl) Clearable(value string) *TextControl {
-    a.Set("clearable", value)
+func (a *TextControl) ShowCounter(value string) *TextControl {
+    a.Set("showCounter", value)
     return a
 }
 
 /**
- * 控制新增弹框设置项
+ * 原生input标签的CSS类名
  */
-func (a *TextControl) AddDialog(value string) *TextControl {
-    a.Set("addDialog", value)
+func (a *TextControl) NativeInputClassName(value string) *TextControl {
+    a.Set("nativeInputClassName", value)
     return a
 }
 
 /**
- * 选项删除提示文字。
+ * 限制文字最小输入个数
  */
-func (a *TextControl) DeleteConfirmText(value string) *TextControl {
-    a.Set("deleteConfirmText", value)
+func (a *TextControl) MinLength(value string) *TextControl {
+    a.Set("minLength", value)
+    return a
+}
+
+/**
+ * 可用来通过 API 拉取 options。
+ */
+func (a *TextControl) Source(value string) *TextControl {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 默认选择选项第一个值。
+ */
+func (a *TextControl) SelectFirst(value string) *TextControl {
+    a.Set("selectFirst", value)
+    return a
+}
+
+/**
+ * 用表达式来配置 source 接口初始要不要拉取
+ */
+func (a *TextControl) InitFetchOn(value string) *TextControl {
+    a.Set("initFetchOn", value)
+    return a
+}
+
+/**
+ * 控制编辑弹框设置项
+ */
+func (a *TextControl) EditDialog(value string) *TextControl {
+    a.Set("editDialog", value)
     return a
 }
 
@@ -383,42 +236,135 @@ func (a *TextControl) StaticPlaceholder(value string) *TextControl {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *TextControl) StaticInputClassName(value string) *TextControl {
-    a.Set("staticInputClassName", value)
+func (a *TextControl) UseMobileUI(value string) *TextControl {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 自动转换值
  */
-func (a *TextControl) Hidden(value string) *TextControl {
-    a.Set("hidden", value)
+func (a *TextControl) Transform(value string) *TextControl {
+    a.Set("transform", value)
     return a
 }
 
 /**
- * 是否显示
+ * 前缀
  */
-func (a *TextControl) Visible(value string) *TextControl {
-    a.Set("visible", value)
+func (a *TextControl) Prefix(value string) *TextControl {
+    a.Set("prefix", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 分割符
  */
-func (a *TextControl) OnEvent(value string) *TextControl {
-    a.Set("onEvent", value)
+func (a *TextControl) Delimiter(value string) *TextControl {
+    a.Set("delimiter", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
  */
-func (a *TextControl) Remark(value string) *TextControl {
-    a.Set("remark", value)
+func (a *TextControl) DeferApi(value string) *TextControl {
+    a.Set("deferApi", value)
+    return a
+}
+
+/**
+ * 新增文字
+ */
+func (a *TextControl) CreateBtnLabel(value string) *TextControl {
+    a.Set("createBtnLabel", value)
+    return a
+}
+
+/**
+ */
+func (a *TextControl) InitAutoFill(value string) *TextControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *TextControl) Hint(value string) *TextControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *TextControl) ReadOnlyOn(value string) *TextControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 自动完成 API，当输入部分文字的时候，会将这些文字通过 ${term} 可以取到，发送给接口。 接口可以返回匹配到的选项，帮助用户输入。
+ */
+func (a *TextControl) AutoComplete(value string) *TextControl {
+    a.Set("autoComplete", value)
+    return a
+}
+
+/**
+ * 后缀
+ */
+func (a *TextControl) Suffix(value string) *TextControl {
+    a.Set("suffix", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *TextControl) Width(value string) *TextControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 选项删除提示文字。
+ */
+func (a *TextControl) DeleteConfirmText(value string) *TextControl {
+    a.Set("deleteConfirmText", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *TextControl) ClearValueOnHidden(value string) *TextControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *TextControl) StaticLabelClassName(value string) *TextControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *TextControl) StaticSchema(value string) *TextControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ */
+func (a *TextControl) AddOn(value string) *TextControl {
+    a.Set("addOn", value)
     return a
 }
 
@@ -431,11 +377,49 @@ func (a *TextControl) Multiple(value string) *TextControl {
 }
 
 /**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
  */
-func (a *TextControl) Mode(value string) *TextControl {
-    a.Set("mode", value)
+func (a *TextControl) Desc(value string) *TextControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *TextControl) StaticInputClassName(value string) *TextControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *TextControl) Style(value string) *TextControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否去除首尾空白文本。
+ */
+func (a *TextControl) TrimContents(value string) *TextControl {
+    a.Set("trimContents", value)
+    return a
+}
+
+/**
+ * 选项修改的表单项
+ */
+func (a *TextControl) EditControls(value string) *TextControl {
+    a.Set("editControls", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *TextControl) ExtraName(value string) *TextControl {
+    a.Set("extraName", value)
     return a
 }
 
@@ -444,6 +428,263 @@ func (a *TextControl) Mode(value string) *TextControl {
  */
 func (a *TextControl) Horizontal(value string) *TextControl {
     a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *TextControl) ValidationErrors(value string) *TextControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 边框模式，全边框，还是半边框，或者没边框。
+ * 可选值: full | half | none
+ */
+func (a *TextControl) BorderMode(value string) *TextControl {
+    a.Set("borderMode", value)
+    return a
+}
+
+/**
+ * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+ */
+func (a *TextControl) ExtractValue(value string) *TextControl {
+    a.Set("extractValue", value)
+    return a
+}
+
+/**
+ * 懒加载字段
+ */
+func (a *TextControl) DeferField(value string) *TextControl {
+    a.Set("deferField", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *TextControl) Required(value string) *TextControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *TextControl) ClassName(value string) *TextControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * control节点的CSS类名
+ */
+func (a *TextControl) InputControlClassName(value string) *TextControl {
+    a.Set("inputControlClassName", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *TextControl) DescriptionClassName(value string) *TextControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *TextControl) Static(value string) *TextControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否可以新增
+ */
+func (a *TextControl) Creatable(value string) *TextControl {
+    a.Set("creatable", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *TextControl) AutoFill(value string) *TextControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *TextControl) Inline(value string) *TextControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *TextControl) DisabledOn(value string) *TextControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 选项集合
+ */
+func (a *TextControl) Options(value string) *TextControl {
+    a.Set("options", value)
+    return a
+}
+
+/**
+ * 配置 source 接口初始拉不拉取。
+ */
+func (a *TextControl) InitFetch(value string) *TextControl {
+    a.Set("initFetch", value)
+    return a
+}
+
+/**
+ * 是否可以编辑
+ */
+func (a *TextControl) Editable(value string) *TextControl {
+    a.Set("editable", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *TextControl) LabelWidth(value string) *TextControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *TextControl) Description(value string) *TextControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 限制文字最大输入个数
+ */
+func (a *TextControl) MaxLength(value string) *TextControl {
+    a.Set("maxLength", value)
+    return a
+}
+
+/**
+ * 配置原生 input 的 autoComplete 属性
+ */
+func (a *TextControl) NativeAutoComplete(value string) *TextControl {
+    a.Set("nativeAutoComplete", value)
+    return a
+}
+
+/**
+ * 是否可清除。
+ */
+func (a *TextControl) Clearable(value string) *TextControl {
+    a.Set("clearable", value)
+    return a
+}
+
+/**
+ * 新增时的表单项。
+ */
+func (a *TextControl) AddControls(value string) *TextControl {
+    a.Set("addControls", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *TextControl) Label(value string) *TextControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *TextControl) OnEvent(value string) *TextControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *TextControl) StaticOn(value string) *TextControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *TextControl) StaticClassName(value string) *TextControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *TextControl) Remark(value string) *TextControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 在内容为空的时候清除值
+ */
+func (a *TextControl) ClearValueOnEmpty(value string) *TextControl {
+    a.Set("clearValueOnEmpty", value)
+    return a
+}
+
+/**
+ * 点清除按钮时，将表单项设置成当前配置的值。
+ */
+func (a *TextControl) ResetValue(value string) *TextControl {
+    a.Set("resetValue", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *TextControl) LabelClassName(value string) *TextControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *TextControl) Name(value string) *TextControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *TextControl) Value(value string) *TextControl {
+    a.Set("value", value)
     return a
 }
 
@@ -457,43 +698,10 @@ func (a *TextControl) Type(value string) *TextControl {
 }
 
 /**
- * 是否为必填
+ * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
  */
-func (a *TextControl) Required(value string) *TextControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 原生input标签的CSS类名
- */
-func (a *TextControl) NativeInputClassName(value string) *TextControl {
-    a.Set("nativeInputClassName", value)
-    return a
-}
-
-/**
- * 选项删除 API
- */
-func (a *TextControl) DeleteApi(value string) *TextControl {
-    a.Set("deleteApi", value)
-    return a
-}
-
-/**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
- */
-func (a *TextControl) Size(value string) *TextControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *TextControl) Label(value string) *TextControl {
-    a.Set("label", value)
+func (a *TextControl) JoinValues(value string) *TextControl {
+    a.Set("joinValues", value)
     return a
 }
 
@@ -506,26 +714,27 @@ func (a *TextControl) ReadOnly(value string) *TextControl {
 }
 
 /**
- * 配置 input className
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
  */
-func (a *TextControl) InputClassName(value string) *TextControl {
-    a.Set("inputClassName", value)
+func (a *TextControl) ValidateOnChange(value string) *TextControl {
+    a.Set("validateOnChange", value)
     return a
 }
 
 /**
- * 远端校验表单项接口
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
  */
-func (a *TextControl) ValidateApi(value string) *TextControl {
-    a.Set("validateApi", value)
+func (a *TextControl) Mode(value string) *TextControl {
+    a.Set("mode", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否禁用
  */
-func (a *TextControl) Static(value string) *TextControl {
-    a.Set("static", value)
+func (a *TextControl) Disabled(value string) *TextControl {
+    a.Set("disabled", value)
     return a
 }
 
@@ -538,216 +747,8 @@ func (a *TextControl) LabelRemark(value string) *TextControl {
 }
 
 /**
- * 分割符
  */
-func (a *TextControl) Delimiter(value string) *TextControl {
-    a.Set("delimiter", value)
-    return a
-}
-
-/**
- * 懒加载字段
- */
-func (a *TextControl) DeferField(value string) *TextControl {
-    a.Set("deferField", value)
-    return a
-}
-
-/**
- * 是否可以新增
- */
-func (a *TextControl) Creatable(value string) *TextControl {
-    a.Set("creatable", value)
-    return a
-}
-
-/**
- * 编辑时调用的 API
- */
-func (a *TextControl) EditApi(value string) *TextControl {
-    a.Set("editApi", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *TextControl) Placeholder(value string) *TextControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *TextControl) StaticClassName(value string) *TextControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 自动转换值
- */
-func (a *TextControl) Transform(value string) *TextControl {
-    a.Set("transform", value)
-    return a
-}
-
-/**
- * 点清除按钮时，将表单项设置成当前配置的值。
- */
-func (a *TextControl) ResetValue(value string) *TextControl {
-    a.Set("resetValue", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *TextControl) SubmitOnChange(value string) *TextControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *TextControl) ValidateOnChange(value string) *TextControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *TextControl) Inline(value string) *TextControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否去除首尾空白文本。
- */
-func (a *TextControl) TrimContents(value string) *TextControl {
-    a.Set("trimContents", value)
-    return a
-}
-
-/**
- * 限制文字最大输入个数
- */
-func (a *TextControl) MaxLength(value string) *TextControl {
-    a.Set("maxLength", value)
-    return a
-}
-
-/**
- * 前缀
- */
-func (a *TextControl) Prefix(value string) *TextControl {
-    a.Set("prefix", value)
-    return a
-}
-
-/**
- * 默认选择选项第一个值。
- */
-func (a *TextControl) SelectFirst(value string) *TextControl {
-    a.Set("selectFirst", value)
-    return a
-}
-
-/**
- */
-func (a *TextControl) Desc(value string) *TextControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *TextControl) ValidationErrors(value string) *TextControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *TextControl) DisabledOn(value string) *TextControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 用表达式来配置 source 接口初始要不要拉取
- */
-func (a *TextControl) InitFetchOn(value string) *TextControl {
-    a.Set("initFetchOn", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *TextControl) Width(value string) *TextControl {
-    a.Set("width", value)
-    return a
-}
-
-/**
- * 选项集合
- */
-func (a *TextControl) Options(value string) *TextControl {
-    a.Set("options", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *TextControl) Description(value string) *TextControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * control节点的CSS类名
- */
-func (a *TextControl) InputControlClassName(value string) *TextControl {
-    a.Set("inputControlClassName", value)
-    return a
-}
-
-/**
- * 在内容为空的时候清除值
- */
-func (a *TextControl) ClearValueOnEmpty(value string) *TextControl {
-    a.Set("clearValueOnEmpty", value)
-    return a
-}
-
-/**
- * 新增时的表单项。
- */
-func (a *TextControl) AddControls(value string) *TextControl {
-    a.Set("addControls", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *TextControl) ClearValueOnHidden(value string) *TextControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *TextControl) UseMobileUI(value string) *TextControl {
-    a.Set("useMobileUI", value)
+func (a *TextControl) Testid(value string) *TextControl {
+    a.Set("testid", value)
     return a
 }

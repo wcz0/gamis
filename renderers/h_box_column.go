@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type HBoxColumn struct {
 	*BaseRenderer
@@ -16,11 +18,10 @@ func NewHBoxColumn() *HBoxColumn {
     return a
 }
 /**
- * 垂直对齐方式
- * 可选值: top | middle | bottom | between
+ * 宽度
  */
-func (a *HBoxColumn) Valign(value string) *HBoxColumn {
-    a.Set("valign", value)
+func (a *HBoxColumn) Width(value string) *HBoxColumn {
+    a.Set("width", value)
     return a
 }
 
@@ -33,11 +34,10 @@ func (a *HBoxColumn) Height(value string) *HBoxColumn {
 }
 
 /**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
+ * 其他样式
  */
-func (a *HBoxColumn) Mode(value string) *HBoxColumn {
-    a.Set("mode", value)
+func (a *HBoxColumn) Style(value string) *HBoxColumn {
+    a.Set("style", value)
     return a
 }
 
@@ -58,14 +58,6 @@ func (a *HBoxColumn) Visible(value string) *HBoxColumn {
 }
 
 /**
- * 是否显示表达式
- */
-func (a *HBoxColumn) VisibleOn(value string) *HBoxColumn {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
  * 列上 CSS 类名
  */
 func (a *HBoxColumn) ColumnClassName(value string) *HBoxColumn {
@@ -74,18 +66,20 @@ func (a *HBoxColumn) ColumnClassName(value string) *HBoxColumn {
 }
 
 /**
- * 宽度
+ * 垂直对齐方式
+ * 可选值: top | middle | bottom | between
  */
-func (a *HBoxColumn) Width(value string) *HBoxColumn {
-    a.Set("width", value)
+func (a *HBoxColumn) Valign(value string) *HBoxColumn {
+    a.Set("valign", value)
     return a
 }
 
 /**
- * 其他样式
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
  */
-func (a *HBoxColumn) Style(value string) *HBoxColumn {
-    a.Set("style", value)
+func (a *HBoxColumn) Mode(value string) *HBoxColumn {
+    a.Set("mode", value)
     return a
 }
 
@@ -94,5 +88,13 @@ func (a *HBoxColumn) Style(value string) *HBoxColumn {
  */
 func (a *HBoxColumn) Body(value string) *HBoxColumn {
     a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *HBoxColumn) VisibleOn(value string) *HBoxColumn {
+    a.Set("visibleOn", value)
     return a
 }

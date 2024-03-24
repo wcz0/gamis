@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type Step struct {
 	*BaseRenderer
@@ -16,18 +18,18 @@ func NewStep() *Step {
     return a
 }
 /**
- * 是否隐藏表达式
- */
-func (a *Step) HiddenOn(value string) *Step {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
  * 是否显示表达式
  */
 func (a *Step) VisibleOn(value string) *Step {
     a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Step) OnEvent(value string) *Step {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -40,42 +42,10 @@ func (a *Step) Static(value string) *Step {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 静态展示表单项类名
  */
-func (a *Step) EditorSetting(value string) *Step {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 图标
- */
-func (a *Step) Icon(value string) *Step {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Step) DisabledOn(value string) *Step {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Step) StaticOn(value string) *Step {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Step) StaticInputClassName(value string) *Step {
-    a.Set("staticInputClassName", value)
+func (a *Step) StaticClassName(value string) *Step {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -88,26 +58,10 @@ func (a *Step) UseMobileUI(value string) *Step {
 }
 
 /**
- * 标题
+ * 是否禁用
  */
-func (a *Step) Title(value string) *Step {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 描述
- */
-func (a *Step) Description(value string) *Step {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Step) ClassName(value string) *Step {
-    a.Set("className", value)
+func (a *Step) Disabled(value string) *Step {
+    a.Set("disabled", value)
     return a
 }
 
@@ -120,10 +74,82 @@ func (a *Step) Hidden(value string) *Step {
 }
 
 /**
- * 事件动作配置
+ * 是否隐藏表达式
  */
-func (a *Step) OnEvent(value string) *Step {
-    a.Set("onEvent", value)
+func (a *Step) HiddenOn(value string) *Step {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 描述
+ */
+func (a *Step) Description(value string) *Step {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 子标题
+ */
+func (a *Step) SubTitle(value string) *Step {
+    a.Set("subTitle", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Step) DisabledOn(value string) *Step {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Step) StaticInputClassName(value string) *Step {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Step) EditorSetting(value string) *Step {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 标题
+ */
+func (a *Step) Title(value string) *Step {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 图标
+ */
+func (a *Step) Icon(value string) *Step {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Step) ClassName(value string) *Step {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Step) Id(value string) *Step {
+    a.Set("id", value)
     return a
 }
 
@@ -144,6 +170,13 @@ func (a *Step) StaticLabelClassName(value string) *Step {
 }
 
 /**
+ */
+func (a *Step) StaticSchema(value string) *Step {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
  * 组件样式
  */
 func (a *Step) Style(value string) *Step {
@@ -152,18 +185,9 @@ func (a *Step) Style(value string) *Step {
 }
 
 /**
- * 子标题
  */
-func (a *Step) SubTitle(value string) *Step {
-    a.Set("subTitle", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Step) Disabled(value string) *Step {
-    a.Set("disabled", value)
+func (a *Step) Value(value string) *Step {
+    a.Set("value", value)
     return a
 }
 
@@ -176,31 +200,9 @@ func (a *Step) Visible(value string) *Step {
 }
 
 /**
+ * 是否静态展示表达式
  */
-func (a *Step) StaticSchema(value string) *Step {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *Step) Value(value string) *Step {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Step) Id(value string) *Step {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Step) StaticClassName(value string) *Step {
-    a.Set("staticClassName", value)
+func (a *Step) StaticOn(value string) *Step {
+    a.Set("staticOn", value)
     return a
 }

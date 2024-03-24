@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type ComboCondition struct {
 	*BaseRenderer
@@ -15,13 +17,6 @@ func NewComboCondition() *ComboCondition {
 
     return a
 }
-/**
- */
-func (a *ComboCondition) Mode(value string) *ComboCondition {
-    a.Set("mode", value)
-    return a
-}
-
 /**
  */
 func (a *ComboCondition) Test(value string) *ComboCondition {
@@ -47,5 +42,12 @@ func (a *ComboCondition) Label(value string) *ComboCondition {
  */
 func (a *ComboCondition) Scaffold(value string) *ComboCondition {
     a.Set("scaffold", value)
+    return a
+}
+
+/**
+ */
+func (a *ComboCondition) Mode(value string) *ComboCondition {
+    a.Set("mode", value)
     return a
 }

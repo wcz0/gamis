@@ -3,8 +3,9 @@ package renderers
 
 /**
  * Time 时间选择控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/time
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type TimeControl struct {
 	*BaseRenderer
@@ -19,67 +20,10 @@ func NewTimeControl() *TimeControl {
     return a
 }
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *TimeControl) LabelRemark(value string) *TimeControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *TimeControl) ValidateOnChange(value string) *TimeControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
  * 是否隐藏表达式
  */
 func (a *TimeControl) HiddenOn(value string) *TimeControl {
     a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *TimeControl) VisibleOn(value string) *TimeControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *TimeControl) Required(value string) *TimeControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 时间的格式。
- */
-func (a *TimeControl) TimeFormat(value string) *TimeControl {
-    a.Set("timeFormat", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *TimeControl) Style(value string) *TimeControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
- */
-func (a *TimeControl) Mode(value string) *TimeControl {
-    a.Set("mode", value)
     return a
 }
 
@@ -92,46 +36,6 @@ func (a *TimeControl) Static(value string) *TimeControl {
 }
 
 /**
- * 静态展示表单项Value类名
- */
-func (a *TimeControl) StaticInputClassName(value string) *TimeControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *TimeControl) ClassName(value string) *TimeControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *TimeControl) Disabled(value string) *TimeControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *TimeControl) LabelWidth(value string) *TimeControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *TimeControl) StaticLabelClassName(value string) *TimeControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
  * 验证失败的提示信息
  */
 func (a *TimeControl) ValidationErrors(value string) *TimeControl {
@@ -140,74 +44,42 @@ func (a *TimeControl) ValidationErrors(value string) *TimeControl {
 }
 
 /**
- * 输入提示，聚焦的时候显示
+ * 设定是否存储 utc 时间。
  */
-func (a *TimeControl) Hint(value string) *TimeControl {
-    a.Set("hint", value)
+func (a *TimeControl) Utc(value string) *TimeControl {
+    a.Set("utc", value)
     return a
 }
 
 /**
- * 配置 input className
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
  */
-func (a *TimeControl) InputClassName(value string) *TimeControl {
-    a.Set("inputClassName", value)
+func (a *TimeControl) LabelRemark(value string) *TimeControl {
+    a.Set("labelRemark", value)
     return a
 }
 
 /**
- * 替代format
+ * 是否只读
  */
-func (a *TimeControl) ValueFormat(value string) *TimeControl {
-    a.Set("valueFormat", value)
+func (a *TimeControl) ReadOnly(value string) *TimeControl {
+    a.Set("readOnly", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 描述内容，支持 Html 片段。
  */
-func (a *TimeControl) Hidden(value string) *TimeControl {
-    a.Set("hidden", value)
+func (a *TimeControl) Description(value string) *TimeControl {
+    a.Set("description", value)
     return a
 }
 
 /**
- * 指定为日期时间选择控件
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
  */
-func (a *TimeControl) Type(value string) *TimeControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
- */
-func (a *TimeControl) Size(value string) *TimeControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *TimeControl) ExtraName(value string) *TimeControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *TimeControl) ReadOnlyOn(value string) *TimeControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- */
-func (a *TimeControl) Validations(value string) *TimeControl {
-    a.Set("validations", value)
+func (a *TimeControl) Horizontal(value string) *TimeControl {
+    a.Set("horizontal", value)
     return a
 }
 
@@ -220,56 +92,73 @@ func (a *TimeControl) DisplayFormat(value string) *TimeControl {
 }
 
 /**
- * 静态展示表单项类名
- */
-func (a *TimeControl) StaticClassName(value string) *TimeControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *TimeControl) StaticSchema(value string) *TimeControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 日期快捷键
- */
-func (a *TimeControl) Shortcuts(value string) *TimeControl {
-    a.Set("shortcuts", value)
-    return a
-}
-
-/**
- * 时间输入范围限制
- */
-func (a *TimeControl) TimeConstraints(value string) *TimeControl {
-    a.Set("timeConstraints", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *TimeControl) StaticOn(value string) *TimeControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *TimeControl) Desc(value string) *TimeControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
  * 是否为内联模式？
  */
 func (a *TimeControl) Emebed(value string) *TimeControl {
     a.Set("emebed", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *TimeControl) EditorSetting(value string) *TimeControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *TimeControl) Label(value string) *TimeControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ */
+func (a *TimeControl) Validations(value string) *TimeControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 日期展示格式
+ */
+func (a *TimeControl) InputFormat(value string) *TimeControl {
+    a.Set("inputFormat", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *TimeControl) Visible(value string) *TimeControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *TimeControl) Hint(value string) *TimeControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *TimeControl) Placeholder(value string) *TimeControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *TimeControl) ValidateApi(value string) *TimeControl {
+    a.Set("validateApi", value)
     return a
 }
 
@@ -283,130 +172,10 @@ func (a *TimeControl) BorderMode(value string) *TimeControl {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *TimeControl) UseMobileUI(value string) *TimeControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *TimeControl) LabelClassName(value string) *TimeControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 日期存储格式
- */
-func (a *TimeControl) Format(value string) *TimeControl {
-    a.Set("format", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *TimeControl) Id(value string) *TimeControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *TimeControl) SubmitOnChange(value string) *TimeControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *TimeControl) Placeholder(value string) *TimeControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *TimeControl) Visible(value string) *TimeControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *TimeControl) Description(value string) *TimeControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *TimeControl) DescriptionClassName(value string) *TimeControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
  * 在Table中调整宽度
  */
 func (a *TimeControl) Width(value string) *TimeControl {
     a.Set("width", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *TimeControl) Remark(value string) *TimeControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *TimeControl) Horizontal(value string) *TimeControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *TimeControl) Value(value string) *TimeControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *TimeControl) ClearValueOnHidden(value string) *TimeControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 是否显示清除按钮
- */
-func (a *TimeControl) Clearable(value string) *TimeControl {
-    a.Set("clearable", value)
-    return a
-}
-
-/**
- * 设定是否存储 utc 时间。
- */
-func (a *TimeControl) Utc(value string) *TimeControl {
-    a.Set("utc", value)
     return a
 }
 
@@ -427,50 +196,147 @@ func (a *TimeControl) Name(value string) *TimeControl {
 }
 
 /**
- * 描述标题
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
  */
-func (a *TimeControl) Label(value string) *TimeControl {
-    a.Set("label", value)
+func (a *TimeControl) ExtraName(value string) *TimeControl {
+    a.Set("extraName", value)
     return a
 }
 
 /**
- * 是否只读
+ * 配置 label className
  */
-func (a *TimeControl) ReadOnly(value string) *TimeControl {
-    a.Set("readOnly", value)
+func (a *TimeControl) LabelClassName(value string) *TimeControl {
+    a.Set("labelClassName", value)
     return a
 }
 
 /**
- * 表单 control 是否为 inline 模式。
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
  */
-func (a *TimeControl) Inline(value string) *TimeControl {
-    a.Set("inline", value)
+func (a *TimeControl) ClearValueOnHidden(value string) *TimeControl {
+    a.Set("clearValueOnHidden", value)
     return a
 }
 
 /**
- * 远端校验表单项接口
+ * 时间的格式。
  */
-func (a *TimeControl) ValidateApi(value string) *TimeControl {
-    a.Set("validateApi", value)
+func (a *TimeControl) TimeFormat(value string) *TimeControl {
+    a.Set("timeFormat", value)
     return a
 }
 
 /**
- * 日期展示格式
+ * 是否禁用
  */
-func (a *TimeControl) InputFormat(value string) *TimeControl {
-    a.Set("inputFormat", value)
+func (a *TimeControl) Disabled(value string) *TimeControl {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 字符串函数，用来决定是否禁用某个日期。(currentDate: moment.Moment, props: any) => boolean;
+ * 事件动作配置
  */
-func (a *TimeControl) DisabledDate(value string) *TimeControl {
-    a.Set("disabledDate", value)
+func (a *TimeControl) OnEvent(value string) *TimeControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *TimeControl) StaticOn(value string) *TimeControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *TimeControl) Style(value string) *TimeControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *TimeControl) Id(value string) *TimeControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *TimeControl) ReadOnlyOn(value string) *TimeControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *TimeControl) Required(value string) *TimeControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 替代format
+ */
+func (a *TimeControl) ValueFormat(value string) *TimeControl {
+    a.Set("valueFormat", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *TimeControl) LabelWidth(value string) *TimeControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
+ */
+func (a *TimeControl) Mode(value string) *TimeControl {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是否显示清除按钮
+ */
+func (a *TimeControl) Clearable(value string) *TimeControl {
+    a.Set("clearable", value)
+    return a
+}
+
+/**
+ * 时间输入范围限制
+ */
+func (a *TimeControl) TimeConstraints(value string) *TimeControl {
+    a.Set("timeConstraints", value)
+    return a
+}
+
+/**
+ * 日期快捷键
+ */
+func (a *TimeControl) Shortcuts(value string) *TimeControl {
+    a.Set("shortcuts", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *TimeControl) VisibleOn(value string) *TimeControl {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -483,18 +349,153 @@ func (a *TimeControl) StaticPlaceholder(value string) *TimeControl {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 静态展示表单项Label类名
  */
-func (a *TimeControl) EditorSetting(value string) *TimeControl {
-    a.Set("editorSetting", value)
+func (a *TimeControl) StaticLabelClassName(value string) *TimeControl {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 日期存储格式
  */
-func (a *TimeControl) OnEvent(value string) *TimeControl {
-    a.Set("onEvent", value)
+func (a *TimeControl) Format(value string) *TimeControl {
+    a.Set("format", value)
+    return a
+}
+
+/**
+ */
+func (a *TimeControl) Desc(value string) *TimeControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *TimeControl) DescriptionClassName(value string) *TimeControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 指定为日期时间选择控件
+ */
+func (a *TimeControl) Type(value string) *TimeControl {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *TimeControl) Hidden(value string) *TimeControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *TimeControl) InputClassName(value string) *TimeControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 字符串函数，用来决定是否禁用某个日期。(currentDate: moment.Moment, props: any) => boolean;
+ */
+func (a *TimeControl) DisabledDate(value string) *TimeControl {
+    a.Set("disabledDate", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *TimeControl) StaticClassName(value string) *TimeControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *TimeControl) StaticSchema(value string) *TimeControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
+ */
+func (a *TimeControl) Size(value string) *TimeControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *TimeControl) SubmitOnChange(value string) *TimeControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *TimeControl) UseMobileUI(value string) *TimeControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *TimeControl) ValidateOnChange(value string) *TimeControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *TimeControl) Value(value string) *TimeControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *TimeControl) Remark(value string) *TimeControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *TimeControl) Inline(value string) *TimeControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *TimeControl) ClassName(value string) *TimeControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *TimeControl) StaticInputClassName(value string) *TimeControl {
+    a.Set("staticInputClassName", value)
     return a
 }
 

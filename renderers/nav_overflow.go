@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type NavOverflow struct {
 	*BaseRenderer
@@ -16,10 +18,26 @@ func NewNavOverflow() *NavOverflow {
     return a
 }
 /**
- * 菜单触发按钮CSS类名
+ * 导航项目宽度
  */
-func (a *NavOverflow) OverflowClassName(value string) *NavOverflow {
-    a.Set("overflowClassName", value)
+func (a *NavOverflow) ItemWidth(value string) *NavOverflow {
+    a.Set("itemWidth", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *NavOverflow) Style(value string) *NavOverflow {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否开启响应式收纳
+ */
+func (a *NavOverflow) Enable(value string) *NavOverflow {
+    a.Set("enable", value)
     return a
 }
 
@@ -64,18 +82,10 @@ func (a *NavOverflow) WrapperComponent(value string) *NavOverflow {
 }
 
 /**
- * 导航项目宽度
+ * 导航列表后缀节点
  */
-func (a *NavOverflow) ItemWidth(value string) *NavOverflow {
-    a.Set("itemWidth", value)
-    return a
-}
-
-/**
- * 是否开启响应式收纳
- */
-func (a *NavOverflow) Enable(value string) *NavOverflow {
-    a.Set("enable", value)
+func (a *NavOverflow) OverflowSuffix(value string) *NavOverflow {
+    a.Set("overflowSuffix", value)
     return a
 }
 
@@ -88,17 +98,9 @@ func (a *NavOverflow) OverflowLabel(value string) *NavOverflow {
 }
 
 /**
- * 导航列表后缀节点
+ * 菜单触发按钮CSS类名
  */
-func (a *NavOverflow) OverflowSuffix(value string) *NavOverflow {
-    a.Set("overflowSuffix", value)
-    return a
-}
-
-/**
- * 自定义样式
- */
-func (a *NavOverflow) Style(value string) *NavOverflow {
-    a.Set("style", value)
+func (a *NavOverflow) OverflowClassName(value string) *NavOverflow {
+    a.Set("overflowClassName", value)
     return a
 }

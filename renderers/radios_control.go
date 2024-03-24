@@ -3,8 +3,9 @@ package renderers
 
 /**
  * Radio 单选框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/radios
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type RadiosControl struct {
 	*BaseRenderer
@@ -19,128 +20,18 @@ func NewRadiosControl() *RadiosControl {
     return a
 }
 /**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
  */
-func (a *RadiosControl) AutoFill(value string) *RadiosControl {
-    a.Set("autoFill", value)
+func (a *RadiosControl) DeferApi(value string) *RadiosControl {
+    a.Set("deferApi", value)
     return a
 }
 
 /**
+ * 新增时的表单项。
  */
-func (a *RadiosControl) InitAutoFill(value string) *RadiosControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 每行显示多少个
- */
-func (a *RadiosControl) ColumnsCount(value string) *RadiosControl {
-    a.Set("columnsCount", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *RadiosControl) Width(value string) *RadiosControl {
-    a.Set("width", value)
-    return a
-}
-
-/**
- * 是否可删除
- */
-func (a *RadiosControl) Removable(value string) *RadiosControl {
-    a.Set("removable", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *RadiosControl) DescriptionClassName(value string) *RadiosControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *RadiosControl) InputClassName(value string) *RadiosControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *RadiosControl) Validations(value string) *RadiosControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *RadiosControl) Static(value string) *RadiosControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *RadiosControl) Remark(value string) *RadiosControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 编辑时调用的 API
- */
-func (a *RadiosControl) EditApi(value string) *RadiosControl {
-    a.Set("editApi", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *RadiosControl) LabelAlign(value string) *RadiosControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *RadiosControl) ReadOnly(value string) *RadiosControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *RadiosControl) StaticPlaceholder(value string) *RadiosControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 多选模式，值太多时是否避免折行
- */
-func (a *RadiosControl) ValuesNoWrap(value string) *RadiosControl {
-    a.Set("valuesNoWrap", value)
-    return a
-}
-
-/**
- * 控制编辑弹框设置项
- */
-func (a *RadiosControl) EditDialog(value string) *RadiosControl {
-    a.Set("editDialog", value)
+func (a *RadiosControl) AddControls(value string) *RadiosControl {
+    a.Set("addControls", value)
     return a
 }
 
@@ -153,26 +44,34 @@ func (a *RadiosControl) DeleteConfirmText(value string) *RadiosControl {
 }
 
 /**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ * 是否显示表达式
  */
-func (a *RadiosControl) ValidateOnChange(value string) *RadiosControl {
-    a.Set("validateOnChange", value)
+func (a *RadiosControl) VisibleOn(value string) *RadiosControl {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 表单项类型
+ * 静态展示表单项Label类名
  */
-func (a *RadiosControl) Type(value string) *RadiosControl {
-    a.Set("type", value)
+func (a *RadiosControl) StaticLabelClassName(value string) *RadiosControl {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 选项修改的表单项
+ * 配置 source 接口初始拉不拉取。
  */
-func (a *RadiosControl) EditControls(value string) *RadiosControl {
-    a.Set("editControls", value)
+func (a *RadiosControl) InitFetch(value string) *RadiosControl {
+    a.Set("initFetch", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *RadiosControl) Visible(value string) *RadiosControl {
+    a.Set("visible", value)
     return a
 }
 
@@ -185,74 +84,50 @@ func (a *RadiosControl) Style(value string) *RadiosControl {
 }
 
 /**
- * 选项集合
+ * 每行显示多少个
  */
-func (a *RadiosControl) Options(value string) *RadiosControl {
-    a.Set("options", value)
+func (a *RadiosControl) ColumnsCount(value string) *RadiosControl {
+    a.Set("columnsCount", value)
     return a
 }
 
 /**
- * 是否可清除。
+ * 描述标题
  */
-func (a *RadiosControl) Clearable(value string) *RadiosControl {
-    a.Set("clearable", value)
+func (a *RadiosControl) Label(value string) *RadiosControl {
+    a.Set("label", value)
     return a
 }
 
 /**
+ * 描述标题
  */
-func (a *RadiosControl) StaticSchema(value string) *RadiosControl {
-    a.Set("staticSchema", value)
+func (a *RadiosControl) LabelAlign(value string) *RadiosControl {
+    a.Set("labelAlign", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 默认选择选项第一个值。
  */
-func (a *RadiosControl) Hidden(value string) *RadiosControl {
-    a.Set("hidden", value)
+func (a *RadiosControl) SelectFirst(value string) *RadiosControl {
+    a.Set("selectFirst", value)
     return a
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * 远端校验表单项接口
  */
-func (a *RadiosControl) Size(value string) *RadiosControl {
-    a.Set("size", value)
+func (a *RadiosControl) ValidateApi(value string) *RadiosControl {
+    a.Set("validateApi", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
  */
-func (a *RadiosControl) HiddenOn(value string) *RadiosControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *RadiosControl) StaticClassName(value string) *RadiosControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *RadiosControl) StaticInputClassName(value string) *RadiosControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 选项删除 API
- */
-func (a *RadiosControl) DeleteApi(value string) *RadiosControl {
-    a.Set("deleteApi", value)
+func (a *RadiosControl) ValidateOnChange(value string) *RadiosControl {
+    a.Set("validateOnChange", value)
     return a
 }
 
@@ -266,90 +141,10 @@ func (a *RadiosControl) Mode(value string) *RadiosControl {
 }
 
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ * 事件动作配置
  */
-func (a *RadiosControl) ClearValueOnHidden(value string) *RadiosControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 点清除按钮时，将表单项设置成当前配置的值。
- */
-func (a *RadiosControl) ResetValue(value string) *RadiosControl {
-    a.Set("resetValue", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *RadiosControl) Name(value string) *RadiosControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *RadiosControl) Hint(value string) *RadiosControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *RadiosControl) Id(value string) *RadiosControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 默认选择选项第一个值。
- */
-func (a *RadiosControl) SelectFirst(value string) *RadiosControl {
-    a.Set("selectFirst", value)
-    return a
-}
-
-/**
- * 用表达式来配置 source 接口初始要不要拉取
- */
-func (a *RadiosControl) InitFetchOn(value string) *RadiosControl {
-    a.Set("initFetchOn", value)
-    return a
-}
-
-/**
- * 是否可以编辑
- */
-func (a *RadiosControl) Editable(value string) *RadiosControl {
-    a.Set("editable", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *RadiosControl) Label(value string) *RadiosControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *RadiosControl) EditorSetting(value string) *RadiosControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否为多选模式
- */
-func (a *RadiosControl) Multiple(value string) *RadiosControl {
-    a.Set("multiple", value)
+func (a *RadiosControl) OnEvent(value string) *RadiosControl {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -362,106 +157,18 @@ func (a *RadiosControl) Creatable(value string) *RadiosControl {
 }
 
 /**
- * 新增文字
+ * 选项修改的表单项
  */
-func (a *RadiosControl) CreateBtnLabel(value string) *RadiosControl {
-    a.Set("createBtnLabel", value)
+func (a *RadiosControl) EditControls(value string) *RadiosControl {
+    a.Set("editControls", value)
     return a
 }
 
 /**
- * 配置 label className
+ * 输入提示，聚焦的时候显示
  */
-func (a *RadiosControl) LabelClassName(value string) *RadiosControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *RadiosControl) ReadOnlyOn(value string) *RadiosControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *RadiosControl) Horizontal(value string) *RadiosControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *RadiosControl) Disabled(value string) *RadiosControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *RadiosControl) OnEvent(value string) *RadiosControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *RadiosControl) UseMobileUI(value string) *RadiosControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 可用来通过 API 拉取 options。
- */
-func (a *RadiosControl) Source(value string) *RadiosControl {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 配置 source 接口初始拉不拉取。
- */
-func (a *RadiosControl) InitFetch(value string) *RadiosControl {
-    a.Set("initFetch", value)
-    return a
-}
-
-/**
- * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
- */
-func (a *RadiosControl) DeferApi(value string) *RadiosControl {
-    a.Set("deferApi", value)
-    return a
-}
-
-/**
- * 添加时调用的接口
- */
-func (a *RadiosControl) AddApi(value string) *RadiosControl {
-    a.Set("addApi", value)
-    return a
-}
-
-/**
- * 新增时的表单项。
- */
-func (a *RadiosControl) AddControls(value string) *RadiosControl {
-    a.Set("addControls", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *RadiosControl) SubmitOnChange(value string) *RadiosControl {
-    a.Set("submitOnChange", value)
+func (a *RadiosControl) Hint(value string) *RadiosControl {
+    a.Set("hint", value)
     return a
 }
 
@@ -474,97 +181,34 @@ func (a *RadiosControl) Description(value string) *RadiosControl {
 }
 
 /**
- * 表单 control 是否为 inline 模式。
+ * 可用来通过 API 拉取 options。
  */
-func (a *RadiosControl) Inline(value string) *RadiosControl {
-    a.Set("inline", value)
+func (a *RadiosControl) Source(value string) *RadiosControl {
+    a.Set("source", value)
     return a
 }
 
 /**
- * 验证失败的提示信息
+ * 配置 label className
  */
-func (a *RadiosControl) ValidationErrors(value string) *RadiosControl {
-    a.Set("validationErrors", value)
+func (a *RadiosControl) LabelClassName(value string) *RadiosControl {
+    a.Set("labelClassName", value)
     return a
 }
 
 /**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
  */
-func (a *RadiosControl) Value(value string) *RadiosControl {
-    a.Set("value", value)
+func (a *RadiosControl) Horizontal(value string) *RadiosControl {
+    a.Set("horizontal", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否隐藏表达式
  */
-func (a *RadiosControl) StaticLabelClassName(value string) *RadiosControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *RadiosControl) ExtraName(value string) *RadiosControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- */
-func (a *RadiosControl) Desc(value string) *RadiosControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *RadiosControl) Required(value string) *RadiosControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *RadiosControl) ValidateApi(value string) *RadiosControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *RadiosControl) ClassName(value string) *RadiosControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *RadiosControl) VisibleOn(value string) *RadiosControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *RadiosControl) LabelRemark(value string) *RadiosControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
- */
-func (a *RadiosControl) JoinValues(value string) *RadiosControl {
-    a.Set("joinValues", value)
+func (a *RadiosControl) HiddenOn(value string) *RadiosControl {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -577,34 +221,99 @@ func (a *RadiosControl) Delimiter(value string) *RadiosControl {
 }
 
 /**
- * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
  */
-func (a *RadiosControl) ExtractValue(value string) *RadiosControl {
-    a.Set("extractValue", value)
+func (a *RadiosControl) Size(value string) *RadiosControl {
+    a.Set("size", value)
     return a
 }
 
 /**
- * 懒加载字段
+ * 只读条件
  */
-func (a *RadiosControl) DeferField(value string) *RadiosControl {
-    a.Set("deferField", value)
+func (a *RadiosControl) ReadOnlyOn(value string) *RadiosControl {
+    a.Set("readOnlyOn", value)
     return a
 }
 
 /**
- * 控制新增弹框设置项
+ * 验证失败的提示信息
  */
-func (a *RadiosControl) AddDialog(value string) *RadiosControl {
-    a.Set("addDialog", value)
+func (a *RadiosControl) ValidationErrors(value string) *RadiosControl {
+    a.Set("validationErrors", value)
     return a
 }
 
 /**
- * label自定义宽度，默认单位为px
+ * 选项集合
  */
-func (a *RadiosControl) LabelWidth(value string) *RadiosControl {
-    a.Set("labelWidth", value)
+func (a *RadiosControl) Options(value string) *RadiosControl {
+    a.Set("options", value)
+    return a
+}
+
+/**
+ * 用表达式来配置 source 接口初始要不要拉取
+ */
+func (a *RadiosControl) InitFetchOn(value string) *RadiosControl {
+    a.Set("initFetchOn", value)
+    return a
+}
+
+/**
+ * 是否可清除。
+ */
+func (a *RadiosControl) Clearable(value string) *RadiosControl {
+    a.Set("clearable", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *RadiosControl) SubmitOnChange(value string) *RadiosControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *RadiosControl) Inline(value string) *RadiosControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *RadiosControl) InputClassName(value string) *RadiosControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *RadiosControl) Required(value string) *RadiosControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *RadiosControl) LabelRemark(value string) *RadiosControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *RadiosControl) DescriptionClassName(value string) *RadiosControl {
+    a.Set("descriptionClassName", value)
     return a
 }
 
@@ -617,6 +326,165 @@ func (a *RadiosControl) Placeholder(value string) *RadiosControl {
 }
 
 /**
+ */
+func (a *RadiosControl) Validations(value string) *RadiosControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *RadiosControl) Remark(value string) *RadiosControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 是否可以编辑
+ */
+func (a *RadiosControl) Editable(value string) *RadiosControl {
+    a.Set("editable", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *RadiosControl) AutoFill(value string) *RadiosControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *RadiosControl) LabelWidth(value string) *RadiosControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *RadiosControl) ExtraName(value string) *RadiosControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *RadiosControl) Value(value string) *RadiosControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *RadiosControl) Hidden(value string) *RadiosControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *RadiosControl) StaticPlaceholder(value string) *RadiosControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *RadiosControl) StaticInputClassName(value string) *RadiosControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 控制新增弹框设置项
+ */
+func (a *RadiosControl) AddDialog(value string) *RadiosControl {
+    a.Set("addDialog", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *RadiosControl) Disabled(value string) *RadiosControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *RadiosControl) Id(value string) *RadiosControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *RadiosControl) UseMobileUI(value string) *RadiosControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否为多选模式
+ */
+func (a *RadiosControl) Multiple(value string) *RadiosControl {
+    a.Set("multiple", value)
+    return a
+}
+
+/**
+ * 懒加载字段
+ */
+func (a *RadiosControl) DeferField(value string) *RadiosControl {
+    a.Set("deferField", value)
+    return a
+}
+
+/**
+ * 添加时调用的接口
+ */
+func (a *RadiosControl) AddApi(value string) *RadiosControl {
+    a.Set("addApi", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *RadiosControl) Name(value string) *RadiosControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *RadiosControl) ReadOnly(value string) *RadiosControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *RadiosControl) ClearValueOnHidden(value string) *RadiosControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
  * 是否禁用表达式
  */
 func (a *RadiosControl) DisabledOn(value string) *RadiosControl {
@@ -625,10 +493,135 @@ func (a *RadiosControl) DisabledOn(value string) *RadiosControl {
 }
 
 /**
- * 是否显示
  */
-func (a *RadiosControl) Visible(value string) *RadiosControl {
-    a.Set("visible", value)
+func (a *RadiosControl) StaticSchema(value string) *RadiosControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+ */
+func (a *RadiosControl) ExtractValue(value string) *RadiosControl {
+    a.Set("extractValue", value)
+    return a
+}
+
+/**
+ * 新增文字
+ */
+func (a *RadiosControl) CreateBtnLabel(value string) *RadiosControl {
+    a.Set("createBtnLabel", value)
+    return a
+}
+
+/**
+ * 控制编辑弹框设置项
+ */
+func (a *RadiosControl) EditDialog(value string) *RadiosControl {
+    a.Set("editDialog", value)
+    return a
+}
+
+/**
+ */
+func (a *RadiosControl) Desc(value string) *RadiosControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+ */
+func (a *RadiosControl) JoinValues(value string) *RadiosControl {
+    a.Set("joinValues", value)
+    return a
+}
+
+/**
+ * 点清除按钮时，将表单项设置成当前配置的值。
+ */
+func (a *RadiosControl) ResetValue(value string) *RadiosControl {
+    a.Set("resetValue", value)
+    return a
+}
+
+/**
+ * 编辑时调用的 API
+ */
+func (a *RadiosControl) EditApi(value string) *RadiosControl {
+    a.Set("editApi", value)
+    return a
+}
+
+/**
+ * 选项删除 API
+ */
+func (a *RadiosControl) DeleteApi(value string) *RadiosControl {
+    a.Set("deleteApi", value)
+    return a
+}
+
+/**
+ */
+func (a *RadiosControl) InitAutoFill(value string) *RadiosControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *RadiosControl) Static(value string) *RadiosControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *RadiosControl) StaticClassName(value string) *RadiosControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *RadiosControl) EditorSetting(value string) *RadiosControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 表单项类型
+ */
+func (a *RadiosControl) Type(value string) *RadiosControl {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 多选模式，值太多时是否避免折行
+ */
+func (a *RadiosControl) ValuesNoWrap(value string) *RadiosControl {
+    a.Set("valuesNoWrap", value)
+    return a
+}
+
+/**
+ * 是否可删除
+ */
+func (a *RadiosControl) Removable(value string) *RadiosControl {
+    a.Set("removable", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *RadiosControl) ClassName(value string) *RadiosControl {
+    a.Set("className", value)
     return a
 }
 
@@ -637,5 +630,13 @@ func (a *RadiosControl) Visible(value string) *RadiosControl {
  */
 func (a *RadiosControl) StaticOn(value string) *RadiosControl {
     a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *RadiosControl) Width(value string) *RadiosControl {
+    a.Set("width", value)
     return a
 }

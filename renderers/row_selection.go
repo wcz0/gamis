@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type RowSelection struct {
 	*BaseRenderer
@@ -15,30 +17,6 @@ func NewRowSelection() *RowSelection {
 
     return a
 }
-/**
- * 自定义选择菜单
- */
-func (a *RowSelection) Selections(value string) *RowSelection {
-    a.Set("selections", value)
-    return a
-}
-
-/**
- * 已选择的key值
- */
-func (a *RowSelection) SelectedRowKeys(value string) *RowSelection {
-    a.Set("selectedRowKeys", value)
-    return a
-}
-
-/**
- * 已选择的key值表达式
- */
-func (a *RowSelection) SelectedRowKeysExpr(value string) *RowSelection {
-    a.Set("selectedRowKeysExpr", value)
-    return a
-}
-
 /**
  * 已选择的key值表达式
  */
@@ -76,5 +54,29 @@ func (a *RowSelection) KeyField(value string) *RowSelection {
  */
 func (a *RowSelection) DisableOn(value string) *RowSelection {
     a.Set("disableOn", value)
+    return a
+}
+
+/**
+ * 自定义选择菜单
+ */
+func (a *RowSelection) Selections(value string) *RowSelection {
+    a.Set("selections", value)
+    return a
+}
+
+/**
+ * 已选择的key值
+ */
+func (a *RowSelection) SelectedRowKeys(value string) *RowSelection {
+    a.Set("selectedRowKeys", value)
+    return a
+}
+
+/**
+ * 已选择的key值表达式
+ */
+func (a *RowSelection) SelectedRowKeysExpr(value string) *RowSelection {
+    a.Set("selectedRowKeysExpr", value)
     return a
 }

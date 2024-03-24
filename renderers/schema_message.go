@@ -3,8 +3,9 @@ package renderers
 
 /**
  * 消息文案配置，记住这个优先级是最低的，如果你的接口返回了 msg，接口返回的优先。
- *
 
+* @author wcz0
+* @version 6.2.2
 */
 type SchemaMessage struct {
 	*BaseRenderer

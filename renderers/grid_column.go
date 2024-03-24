@@ -3,6 +3,8 @@ package renderers
 
 /**
 
+* @author wcz0
+* @version 6.2.2
 */
 type GridColumn struct {
 	*BaseRenderer
@@ -16,11 +18,26 @@ func NewGridColumn() *GridColumn {
     return a
 }
 /**
- * 垂直对齐方式
- * 可选值: top | middle | bottom | between
+ * 极小屏（<768px）时宽度占比
  */
-func (a *GridColumn) Valign(value string) *GridColumn {
-    a.Set("valign", value)
+func (a *GridColumn) Xs(value string) *GridColumn {
+    a.Set("xs", value)
+    return a
+}
+
+/**
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ */
+func (a *GridColumn) Horizontal(value string) *GridColumn {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * 列类名
+ */
+func (a *GridColumn) ColumnClassName(value string) *GridColumn {
+    a.Set("columnClassName", value)
     return a
 }
 
@@ -34,10 +51,9 @@ func (a *GridColumn) Mode(value string) *GridColumn {
 }
 
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  */
-func (a *GridColumn) Horizontal(value string) *GridColumn {
-    a.Set("horizontal", value)
+func (a *GridColumn) Body(value string) *GridColumn {
+    a.Set("body", value)
     return a
 }
 
@@ -50,10 +66,10 @@ func (a *GridColumn) Style(value string) *GridColumn {
 }
 
 /**
- * 极小屏（<768px）时宽度占比
+ * 小屏时（>=768px）宽度占比
  */
-func (a *GridColumn) Xs(value string) *GridColumn {
-    a.Set("xs", value)
+func (a *GridColumn) Sm(value string) *GridColumn {
+    a.Set("sm", value)
     return a
 }
 
@@ -74,24 +90,10 @@ func (a *GridColumn) Lg(value string) *GridColumn {
 }
 
 /**
- * 小屏时（>=768px）宽度占比
+ * 垂直对齐方式
+ * 可选值: top | middle | bottom | between
  */
-func (a *GridColumn) Sm(value string) *GridColumn {
-    a.Set("sm", value)
-    return a
-}
-
-/**
- */
-func (a *GridColumn) Body(value string) *GridColumn {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 列类名
- */
-func (a *GridColumn) ColumnClassName(value string) *GridColumn {
-    a.Set("columnClassName", value)
+func (a *GridColumn) Valign(value string) *GridColumn {
+    a.Set("valign", value)
     return a
 }
