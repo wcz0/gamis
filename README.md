@@ -4,4 +4,8 @@ amis 低代码框架, json 映射
 
 使用
 
-`str := Amis().Page().Title("这是一个标题").ToJson() `
+```go
+import github.com/wcz0/gamis
+
+str := gamis.Page().Title("这是一个标题").ToJson()
+```
