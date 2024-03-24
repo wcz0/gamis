@@ -18,14 +18,6 @@ func NewAutoGenerateFilter() *AutoGenerateFilter {
     return a
 }
 /**
- * 是否默认收起
- */
-func (a *AutoGenerateFilter) DefaultCollapsed(value interface{}) *AutoGenerateFilter {
-    a.Set("defaultCollapsed", value)
-    return a
-}
-
-/**
  * 过滤条件单行列数
  */
 func (a *AutoGenerateFilter) ColumnsNum(value interface{}) *AutoGenerateFilter {
@@ -38,5 +30,13 @@ func (a *AutoGenerateFilter) ColumnsNum(value interface{}) *AutoGenerateFilter {
  */
 func (a *AutoGenerateFilter) ShowBtnToolbar(value interface{}) *AutoGenerateFilter {
     a.Set("showBtnToolbar", value)
+    return a
+}
+
+/**
+ * 是否默认收起
+ */
+func (a *AutoGenerateFilter) DefaultCollapsed(value interface{}) *AutoGenerateFilter {
+    a.Set("defaultCollapsed", value)
     return a
 }

@@ -20,58 +20,10 @@ func NewWrapper() *Wrapper {
     return a
 }
 /**
- * 编辑器配置，运行时可以忽略
+ * 内容
  */
-func (a *Wrapper) EditorSetting(value interface{}) *Wrapper {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 指定为 container 类型
- */
-func (a *Wrapper) Type(value interface{}) *Wrapper {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Wrapper) Hidden(value interface{}) *Wrapper {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Wrapper) Id(value interface{}) *Wrapper {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Wrapper) OnEvent(value interface{}) *Wrapper {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Wrapper) StaticClassName(value interface{}) *Wrapper {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Wrapper) StaticInputClassName(value interface{}) *Wrapper {
-    a.Set("staticInputClassName", value)
+func (a *Wrapper) Body(value interface{}) *Wrapper {
+    a.Set("body", value)
     return a
 }
 
@@ -87,6 +39,46 @@ func (a *Wrapper) Wrap(value interface{}) *Wrapper {
  */
 func (a *Wrapper) ClassName(value interface{}) *Wrapper {
     a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Wrapper) DisabledOn(value interface{}) *Wrapper {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Wrapper) Static(value interface{}) *Wrapper {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Wrapper) StaticLabelClassName(value interface{}) *Wrapper {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *Wrapper) Style(value interface{}) *Wrapper {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 可选值: xs | sm | md | lg | none
+ */
+func (a *Wrapper) Size(value interface{}) *Wrapper {
+    a.Set("size", value)
     return a
 }
 
@@ -107,34 +99,18 @@ func (a *Wrapper) Visible(value interface{}) *Wrapper {
 }
 
 /**
- * 是否显示表达式
+ * 静态展示表单项类名
  */
-func (a *Wrapper) VisibleOn(value interface{}) *Wrapper {
-    a.Set("visibleOn", value)
+func (a *Wrapper) StaticClassName(value interface{}) *Wrapper {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 自定义样式
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Wrapper) Style(value interface{}) *Wrapper {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 内容
- */
-func (a *Wrapper) Body(value interface{}) *Wrapper {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Wrapper) DisabledOn(value interface{}) *Wrapper {
-    a.Set("disabledOn", value)
+func (a *Wrapper) Id(value interface{}) *Wrapper {
+    a.Set("id", value)
     return a
 }
 
@@ -147,6 +123,14 @@ func (a *Wrapper) StaticOn(value interface{}) *Wrapper {
 }
 
 /**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Wrapper) EditorSetting(value interface{}) *Wrapper {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
  * 静态展示空值占位
  */
 func (a *Wrapper) StaticPlaceholder(value interface{}) *Wrapper {
@@ -155,10 +139,10 @@ func (a *Wrapper) StaticPlaceholder(value interface{}) *Wrapper {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 静态展示表单项Value类名
  */
-func (a *Wrapper) StaticLabelClassName(value interface{}) *Wrapper {
-    a.Set("staticLabelClassName", value)
+func (a *Wrapper) StaticInputClassName(value interface{}) *Wrapper {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -186,17 +170,33 @@ func (a *Wrapper) Disabled(value interface{}) *Wrapper {
 }
 
 /**
- * 是否静态展示
+ * 是否隐藏
  */
-func (a *Wrapper) Static(value interface{}) *Wrapper {
-    a.Set("static", value)
+func (a *Wrapper) Hidden(value interface{}) *Wrapper {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 可选值: xs | sm | md | lg | none
+ * 是否显示表达式
  */
-func (a *Wrapper) Size(value interface{}) *Wrapper {
-    a.Set("size", value)
+func (a *Wrapper) VisibleOn(value interface{}) *Wrapper {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Wrapper) OnEvent(value interface{}) *Wrapper {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 指定为 container 类型
+ */
+func (a *Wrapper) Type(value interface{}) *Wrapper {
+    a.Set("type", value)
     return a
 }

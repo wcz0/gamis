@@ -20,34 +20,66 @@ func NewJson() *Json {
     return a
 }
 /**
- * 是否显示表达式
+ * 静态展示表单项Value类名
  */
-func (a *Json) VisibleOn(value interface{}) *Json {
-    a.Set("visibleOn", value)
+func (a *Json) StaticInputClassName(value interface{}) *Json {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 容器 css 类名
  */
-func (a *Json) StaticPlaceholder(value interface{}) *Json {
-    a.Set("staticPlaceholder", value)
+func (a *Json) ClassName(value interface{}) *Json {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 是否显示
+ * 静态展示表单项类名
  */
-func (a *Json) Visible(value interface{}) *Json {
-    a.Set("visible", value)
+func (a *Json) StaticClassName(value interface{}) *Json {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 要展示的 JSON 数据
+ * 静态展示表单项Label类名
  */
-func (a *Json) Value(value interface{}) *Json {
-    a.Set("value", value)
+func (a *Json) StaticLabelClassName(value interface{}) *Json {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Json) EditorSetting(value interface{}) *Json {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Json) Disabled(value interface{}) *Json {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Json) DisabledOn(value interface{}) *Json {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Json) UseMobileUI(value interface{}) *Json {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -69,73 +101,10 @@ func (a *Json) IconStyle(value interface{}) *Json {
 }
 
 /**
- * 静态展示表单项类名
- */
-func (a *Json) StaticClassName(value interface{}) *Json {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Json) UseMobileUI(value interface{}) *Json {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 是否可复制
- */
-func (a *Json) EnableClipboard(value interface{}) *Json {
-    a.Set("enableClipboard", value)
-    return a
-}
-
-/**
- * 是否为键排序
- */
-func (a *Json) SortKeys(value interface{}) *Json {
-    a.Set("sortKeys", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Json) HiddenOn(value interface{}) *Json {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否可修改
- */
-func (a *Json) Mutable(value interface{}) *Json {
-    a.Set("mutable", value)
-    return a
-}
-
-/**
  * 是否显示键的引号
  */
 func (a *Json) QuotesOnKeys(value interface{}) *Json {
     a.Set("quotesOnKeys", value)
-    return a
-}
-
-/**
- */
-func (a *Json) StaticSchema(value interface{}) *Json {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Json) Style(value interface{}) *Json {
-    a.Set("style", value)
     return a
 }
 
@@ -148,22 +117,6 @@ func (a *Json) EllipsisThreshold(value interface{}) *Json {
 }
 
 /**
- * 容器 css 类名
- */
-func (a *Json) ClassName(value interface{}) *Json {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Json) Static(value interface{}) *Json {
-    a.Set("static", value)
-    return a
-}
-
-/**
  * 是否静态展示表达式
  */
 func (a *Json) StaticOn(value interface{}) *Json {
@@ -172,74 +125,10 @@ func (a *Json) StaticOn(value interface{}) *Json {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 静态展示空值占位
  */
-func (a *Json) StaticInputClassName(value interface{}) *Json {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Json) Disabled(value interface{}) *Json {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Json) DisabledOn(value interface{}) *Json {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Json) Hidden(value interface{}) *Json {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Json) StaticLabelClassName(value interface{}) *Json {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 支持从数据链取值
- */
-func (a *Json) Source(value interface{}) *Json {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Json) Id(value interface{}) *Json {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Json) OnEvent(value interface{}) *Json {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Json) EditorSetting(value interface{}) *Json {
-    a.Set("editorSetting", value)
+func (a *Json) StaticPlaceholder(value interface{}) *Json {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -253,9 +142,120 @@ func (a *Json) Type(value interface{}) *Json {
 }
 
 /**
+ * 要展示的 JSON 数据
+ */
+func (a *Json) Value(value interface{}) *Json {
+    a.Set("value", value)
+    return a
+}
+
+/**
  * 默认展开的级别
  */
 func (a *Json) LevelExpand(value interface{}) *Json {
     a.Set("levelExpand", value)
+    return a
+}
+
+/**
+ * 支持从数据链取值
+ */
+func (a *Json) Source(value interface{}) *Json {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Json) Visible(value interface{}) *Json {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Json) Id(value interface{}) *Json {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Json) Static(value interface{}) *Json {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Json) Style(value interface{}) *Json {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否为键排序
+ */
+func (a *Json) SortKeys(value interface{}) *Json {
+    a.Set("sortKeys", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Json) Hidden(value interface{}) *Json {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Json) VisibleOn(value interface{}) *Json {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Json) StaticSchema(value interface{}) *Json {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Json) HiddenOn(value interface{}) *Json {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Json) OnEvent(value interface{}) *Json {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否可修改
+ */
+func (a *Json) Mutable(value interface{}) *Json {
+    a.Set("mutable", value)
+    return a
+}
+
+/**
+ * 是否可复制
+ */
+func (a *Json) EnableClipboard(value interface{}) *Json {
+    a.Set("enableClipboard", value)
     return a
 }

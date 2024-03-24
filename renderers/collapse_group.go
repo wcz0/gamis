@@ -20,90 +20,10 @@ func NewCollapseGroup() *CollapseGroup {
     return a
 }
 /**
- * 是否禁用
- */
-func (a *CollapseGroup) Disabled(value interface{}) *CollapseGroup {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *CollapseGroup) VisibleOn(value interface{}) *CollapseGroup {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *CollapseGroup) EditorSetting(value interface{}) *CollapseGroup {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *CollapseGroup) Visible(value interface{}) *CollapseGroup {
-    a.Set("visible", value)
-    return a
-}
-
-/**
  * 组件唯一 id，主要用于日志采集
  */
 func (a *CollapseGroup) Id(value interface{}) *CollapseGroup {
     a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *CollapseGroup) StaticOn(value interface{}) *CollapseGroup {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *CollapseGroup) StaticClassName(value interface{}) *CollapseGroup {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *CollapseGroup) UseMobileUI(value interface{}) *CollapseGroup {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 激活面板
- */
-func (a *CollapseGroup) ActiveKey(value interface{}) *CollapseGroup {
-    a.Set("activeKey", value)
-    return a
-}
-
-/**
- * 内容区域
- */
-func (a *CollapseGroup) Body(value interface{}) *CollapseGroup {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *CollapseGroup) OnEvent(value interface{}) *CollapseGroup {
-    a.Set("onEvent", value)
     return a
 }
 
@@ -116,66 +36,10 @@ func (a *CollapseGroup) StaticLabelClassName(value interface{}) *CollapseGroup {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 手风琴模式
  */
-func (a *CollapseGroup) StaticInputClassName(value interface{}) *CollapseGroup {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *CollapseGroup) StaticSchema(value interface{}) *CollapseGroup {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 设置图标位置
- * 可选值: left | right
- */
-func (a *CollapseGroup) ExpandIconPosition(value interface{}) *CollapseGroup {
-    a.Set("expandIconPosition", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *CollapseGroup) ClassName(value interface{}) *CollapseGroup {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *CollapseGroup) Hidden(value interface{}) *CollapseGroup {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *CollapseGroup) HiddenOn(value interface{}) *CollapseGroup {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *CollapseGroup) Style(value interface{}) *CollapseGroup {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 指定为折叠器类型
- */
-func (a *CollapseGroup) Type(value interface{}) *CollapseGroup {
-    a.Set("type", value)
+func (a *CollapseGroup) Accordion(value interface{}) *CollapseGroup {
+    a.Set("accordion", value)
     return a
 }
 
@@ -196,6 +60,38 @@ func (a *CollapseGroup) EnableFieldSetStyle(value interface{}) *CollapseGroup {
 }
 
 /**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *CollapseGroup) UseMobileUI(value interface{}) *CollapseGroup {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 内容区域
+ */
+func (a *CollapseGroup) Body(value interface{}) *CollapseGroup {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *CollapseGroup) VisibleOn(value interface{}) *CollapseGroup {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *CollapseGroup) StaticOn(value interface{}) *CollapseGroup {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
  * 是否禁用表达式
  */
 func (a *CollapseGroup) DisabledOn(value interface{}) *CollapseGroup {
@@ -204,10 +100,82 @@ func (a *CollapseGroup) DisabledOn(value interface{}) *CollapseGroup {
 }
 
 /**
- * 是否静态展示
+ * 事件动作配置
  */
-func (a *CollapseGroup) Static(value interface{}) *CollapseGroup {
-    a.Set("static", value)
+func (a *CollapseGroup) OnEvent(value interface{}) *CollapseGroup {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *CollapseGroup) StaticClassName(value interface{}) *CollapseGroup {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 设置图标位置
+ * 可选值: left | right
+ */
+func (a *CollapseGroup) ExpandIconPosition(value interface{}) *CollapseGroup {
+    a.Set("expandIconPosition", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *CollapseGroup) Hidden(value interface{}) *CollapseGroup {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *CollapseGroup) Visible(value interface{}) *CollapseGroup {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ */
+func (a *CollapseGroup) StaticSchema(value interface{}) *CollapseGroup {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *CollapseGroup) EditorSetting(value interface{}) *CollapseGroup {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 指定为折叠器类型
+ */
+func (a *CollapseGroup) Type(value interface{}) *CollapseGroup {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *CollapseGroup) ClassName(value interface{}) *CollapseGroup {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *CollapseGroup) HiddenOn(value interface{}) *CollapseGroup {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -220,9 +188,41 @@ func (a *CollapseGroup) StaticPlaceholder(value interface{}) *CollapseGroup {
 }
 
 /**
- * 手风琴模式
+ * 是否禁用
  */
-func (a *CollapseGroup) Accordion(value interface{}) *CollapseGroup {
-    a.Set("accordion", value)
+func (a *CollapseGroup) Disabled(value interface{}) *CollapseGroup {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 激活面板
+ */
+func (a *CollapseGroup) ActiveKey(value interface{}) *CollapseGroup {
+    a.Set("activeKey", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *CollapseGroup) Static(value interface{}) *CollapseGroup {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *CollapseGroup) StaticInputClassName(value interface{}) *CollapseGroup {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *CollapseGroup) Style(value interface{}) *CollapseGroup {
+    a.Set("style", value)
     return a
 }

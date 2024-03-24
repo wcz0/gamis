@@ -19,14 +19,6 @@ func NewListBodyField() *ListBodyField {
     return a
 }
 /**
- * 列标题
- */
-func (a *ListBodyField) Label(value interface{}) *ListBodyField {
-    a.Set("label", value)
-    return a
-}
-
-/**
  * label 类名
  */
 func (a *ListBodyField) LabelClassName(value interface{}) *ListBodyField {
@@ -71,5 +63,13 @@ func (a *ListBodyField) QuickEdit(value interface{}) *ListBodyField {
  */
 func (a *ListBodyField) Copyable(value interface{}) *ListBodyField {
     a.Set("copyable", value)
+    return a
+}
+
+/**
+ * 列标题
+ */
+func (a *ListBodyField) Label(value interface{}) *ListBodyField {
+    a.Set("label", value)
     return a
 }

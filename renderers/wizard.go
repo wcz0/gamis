@@ -20,33 +20,48 @@ func NewWizard() *Wizard {
     return a
 }
 /**
- * 容器 css 类名
+ * 是否禁用表达式
  */
-func (a *Wizard) ClassName(value interface{}) *Wizard {
-    a.Set("className", value)
+func (a *Wizard) DisabledOn(value interface{}) *Wizard {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否静态展示表达式
  */
-func (a *Wizard) Static(value interface{}) *Wizard {
-    a.Set("static", value)
+func (a *Wizard) StaticOn(value interface{}) *Wizard {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
  */
-func (a *Wizard) Steps(value interface{}) *Wizard {
-    a.Set("steps", value)
+func (a *Wizard) Reload(value interface{}) *Wizard {
+    a.Set("reload", value)
     return a
 }
 
 /**
- * 步骤条区域css类
+ * 是否用panel包裹
  */
-func (a *Wizard) StepsClassName(value interface{}) *Wizard {
-    a.Set("stepsClassName", value)
+func (a *Wizard) WrapWithPanel(value interface{}) *Wizard {
+    a.Set("wrapWithPanel", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Wizard) Visible(value interface{}) *Wizard {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) StaticSchema(value interface{}) *Wizard {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -59,72 +74,43 @@ func (a *Wizard) ReadOnly(value interface{}) *Wizard {
 }
 
 /**
+ * 指定为表单向导
  */
-func (a *Wizard) Reload(value interface{}) *Wizard {
-    a.Set("reload", value)
+func (a *Wizard) Type(value interface{}) *Wizard {
+    a.Set("type", value)
     return a
 }
 
 /**
+ * 展示模式
+ * 可选值: vertical | horizontal
  */
-func (a *Wizard) LoadingConfig(value interface{}) *Wizard {
-    a.Set("loadingConfig", value)
+func (a *Wizard) Mode(value interface{}) *Wizard {
+    a.Set("mode", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 保存完后，可以指定跳转地址，支持相对路径和组内绝对路径，同时可以通过 $xxx 使用变量
  */
-func (a *Wizard) VisibleOn(value interface{}) *Wizard {
-    a.Set("visibleOn", value)
+func (a *Wizard) Redirect(value interface{}) *Wizard {
+    a.Set("redirect", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 步骤条区域css类
  */
-func (a *Wizard) OnEvent(value interface{}) *Wizard {
-    a.Set("onEvent", value)
+func (a *Wizard) StepsClassName(value interface{}) *Wizard {
+    a.Set("stepsClassName", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 容器 css 类名
  */
-func (a *Wizard) StaticPlaceholder(value interface{}) *Wizard {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Wizard) Style(value interface{}) *Wizard {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Wizard) UseMobileUI(value interface{}) *Wizard {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 下一步按钮的文字描述
- */
-func (a *Wizard) ActionNextLabel(value interface{}) *Wizard {
-    a.Set("actionNextLabel", value)
-    return a
-}
-
-/**
- * step + body区域css类
- */
-func (a *Wizard) StepClassName(value interface{}) *Wizard {
-    a.Set("stepClassName", value)
+func (a *Wizard) ClassName(value interface{}) *Wizard {
+    a.Set("className", value)
     return a
 }
 
@@ -145,48 +131,26 @@ func (a *Wizard) HiddenOn(value interface{}) *Wizard {
 }
 
 /**
+ * 静态展示空值占位
  */
-func (a *Wizard) StaticSchema(value interface{}) *Wizard {
-    a.Set("staticSchema", value)
+func (a *Wizard) StaticPlaceholder(value interface{}) *Wizard {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 保存完后，可以指定跳转地址，支持相对路径和组内绝对路径，同时可以通过 $xxx 使用变量
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Wizard) Redirect(value interface{}) *Wizard {
-    a.Set("redirect", value)
+func (a *Wizard) EditorSetting(value interface{}) *Wizard {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否用panel包裹
+ * 是否合并后再提交
  */
-func (a *Wizard) WrapWithPanel(value interface{}) *Wizard {
-    a.Set("wrapWithPanel", value)
-    return a
-}
-
-/**
- * 完成按钮的文字描述
- */
-func (a *Wizard) ActionFinishLabel(value interface{}) *Wizard {
-    a.Set("actionFinishLabel", value)
-    return a
-}
-
-/**
- * Wizard 用来获取初始数据的 api。
- */
-func (a *Wizard) InitApi(value interface{}) *Wizard {
-    a.Set("initApi", value)
-    return a
-}
-
-/**
- */
-func (a *Wizard) Name(value interface{}) *Wizard {
-    a.Set("name", value)
+func (a *Wizard) BulkSubmit(value interface{}) *Wizard {
+    a.Set("bulkSubmit", value)
     return a
 }
 
@@ -199,10 +163,65 @@ func (a *Wizard) Target(value interface{}) *Wizard {
 }
 
 /**
- * 是否禁用表达式
+ * 是否将底部按钮固定在底部。
  */
-func (a *Wizard) DisabledOn(value interface{}) *Wizard {
-    a.Set("disabledOn", value)
+func (a *Wizard) AffixFooter(value interface{}) *Wizard {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ * 底部操作栏的css类
+ */
+func (a *Wizard) FooterClassName(value interface{}) *Wizard {
+    a.Set("footerClassName", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Wizard) VisibleOn(value interface{}) *Wizard {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Wizard) OnEvent(value interface{}) *Wizard {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Wizard) StaticLabelClassName(value interface{}) *Wizard {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Wizard) Style(value interface{}) *Wizard {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 表单区域css类
+ */
+func (a *Wizard) BodyClassName(value interface{}) *Wizard {
+    a.Set("bodyClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) LoadingConfig(value interface{}) *Wizard {
+    a.Set("loadingConfig", value)
     return a
 }
 
@@ -223,50 +242,26 @@ func (a *Wizard) StaticClassName(value interface{}) *Wizard {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 完成按钮的文字描述
  */
-func (a *Wizard) StaticLabelClassName(value interface{}) *Wizard {
-    a.Set("staticLabelClassName", value)
+func (a *Wizard) ActionFinishLabel(value interface{}) *Wizard {
+    a.Set("actionFinishLabel", value)
     return a
 }
 
 /**
- * 是否合并后再提交
+ * 上一步按钮的文字描述
  */
-func (a *Wizard) BulkSubmit(value interface{}) *Wizard {
-    a.Set("bulkSubmit", value)
+func (a *Wizard) ActionPrevLabel(value interface{}) *Wizard {
+    a.Set("actionPrevLabel", value)
     return a
 }
 
 /**
+ * Wizard 用来获取初始数据的 api。
  */
-func (a *Wizard) StartStep(value interface{}) *Wizard {
-    a.Set("startStep", value)
-    return a
-}
-
-/**
- * 表单区域css类
- */
-func (a *Wizard) BodyClassName(value interface{}) *Wizard {
-    a.Set("bodyClassName", value)
-    return a
-}
-
-/**
- * 底部操作栏的css类
- */
-func (a *Wizard) FooterClassName(value interface{}) *Wizard {
-    a.Set("footerClassName", value)
-    return a
-}
-
-/**
- * 展示模式
- * 可选值: vertical | horizontal
- */
-func (a *Wizard) Mode(value interface{}) *Wizard {
-    a.Set("mode", value)
+func (a *Wizard) InitApi(value interface{}) *Wizard {
+    a.Set("initApi", value)
     return a
 }
 
@@ -279,10 +274,26 @@ func (a *Wizard) Disabled(value interface{}) *Wizard {
 }
 
 /**
- * 指定为表单向导
+ * 是否静态展示
  */
-func (a *Wizard) Type(value interface{}) *Wizard {
-    a.Set("type", value)
+func (a *Wizard) Static(value interface{}) *Wizard {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Wizard) StaticInputClassName(value interface{}) *Wizard {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Wizard) UseMobileUI(value interface{}) *Wizard {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -291,6 +302,36 @@ func (a *Wizard) Type(value interface{}) *Wizard {
  */
 func (a *Wizard) ActionClassName(value interface{}) *Wizard {
     a.Set("actionClassName", value)
+    return a
+}
+
+/**
+ * 下一步按钮的文字描述
+ */
+func (a *Wizard) ActionNextLabel(value interface{}) *Wizard {
+    a.Set("actionNextLabel", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) Name(value interface{}) *Wizard {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) Steps(value interface{}) *Wizard {
+    a.Set("steps", value)
+    return a
+}
+
+/**
+ * step + body区域css类
+ */
+func (a *Wizard) StepClassName(value interface{}) *Wizard {
+    a.Set("stepClassName", value)
     return a
 }
 
@@ -311,49 +352,8 @@ func (a *Wizard) Api(value interface{}) *Wizard {
 }
 
 /**
- * 是否将底部按钮固定在底部。
  */
-func (a *Wizard) AffixFooter(value interface{}) *Wizard {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Wizard) Visible(value interface{}) *Wizard {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Wizard) StaticOn(value interface{}) *Wizard {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Wizard) StaticInputClassName(value interface{}) *Wizard {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Wizard) EditorSetting(value interface{}) *Wizard {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 上一步按钮的文字描述
- */
-func (a *Wizard) ActionPrevLabel(value interface{}) *Wizard {
-    a.Set("actionPrevLabel", value)
+func (a *Wizard) StartStep(value interface{}) *Wizard {
+    a.Set("startStep", value)
     return a
 }

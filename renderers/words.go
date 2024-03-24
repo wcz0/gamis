@@ -20,34 +20,10 @@ func NewWords() *Words {
     return a
 }
 /**
- * 容器 css 类名
- */
-func (a *Words) ClassName(value interface{}) *Words {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Words) Static(value interface{}) *Words {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Words) EditorSetting(value interface{}) *Words {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
  * 展示文字
  */
-func (a *Words) CollapseButton(value interface{}) *Words {
-    a.Set("collapseButton", value)
+func (a *Words) ExpendButton(value interface{}) *Words {
+    a.Set("expendButton", value)
     return a
 }
 
@@ -60,18 +36,10 @@ func (a *Words) DisabledOn(value interface{}) *Words {
 }
 
 /**
- * useTag 当数据是数组时，是否使用tag的方式展示
+ * 是否隐藏
  */
-func (a *Words) InTag(value interface{}) *Words {
-    a.Set("inTag", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Words) VisibleOn(value interface{}) *Words {
-    a.Set("visibleOn", value)
+func (a *Words) Hidden(value interface{}) *Words {
+    a.Set("hidden", value)
     return a
 }
 
@@ -84,34 +52,18 @@ func (a *Words) Id(value interface{}) *Words {
 }
 
 /**
- * 静态展示表单项类名
+ * 静态展示空值占位
  */
-func (a *Words) StaticClassName(value interface{}) *Words {
-    a.Set("staticClassName", value)
+func (a *Words) StaticPlaceholder(value interface{}) *Words {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Words) StaticInputClassName(value interface{}) *Words {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 展示文字
- */
-func (a *Words) ExpendButtonText(value interface{}) *Words {
-    a.Set("expendButtonText", value)
-    return a
-}
-
-/**
- * tags数据
- */
-func (a *Words) Words(value interface{}) *Words {
-    a.Set("words", value)
+func (a *Words) EditorSetting(value interface{}) *Words {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -124,58 +76,10 @@ func (a *Words) OnEvent(value interface{}) *Words {
 }
 
 /**
- * 展示限制, 为0时也无限制
+ * 静态展示表单项类名
  */
-func (a *Words) Limit(value interface{}) *Words {
-    a.Set("limit", value)
-    return a
-}
-
-/**
- * 分割符
- */
-func (a *Words) Delimiter(value interface{}) *Words {
-    a.Set("delimiter", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Words) HiddenOn(value interface{}) *Words {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Words) UseMobileUI(value interface{}) *Words {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 展示文字
- */
-func (a *Words) ExpendButton(value interface{}) *Words {
-    a.Set("expendButton", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Words) Hidden(value interface{}) *Words {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Words) StaticPlaceholder(value interface{}) *Words {
-    a.Set("staticPlaceholder", value)
+func (a *Words) StaticClassName(value interface{}) *Words {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -188,10 +92,18 @@ func (a *Words) StaticLabelClassName(value interface{}) *Words {
 }
 
 /**
- * 组件样式
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Words) Style(value interface{}) *Words {
-    a.Set("style", value)
+func (a *Words) UseMobileUI(value interface{}) *Words {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 分割符
+ */
+func (a *Words) Delimiter(value interface{}) *Words {
+    a.Set("delimiter", value)
     return a
 }
 
@@ -200,22 +112,6 @@ func (a *Words) Style(value interface{}) *Words {
  */
 func (a *Words) Disabled(value interface{}) *Words {
     a.Set("disabled", value)
-    return a
-}
-
-/**
- * 收起文字
- */
-func (a *Words) CollapseButtonText(value interface{}) *Words {
-    a.Set("collapseButtonText", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Words) Visible(value interface{}) *Words {
-    a.Set("visible", value)
     return a
 }
 
@@ -235,8 +131,112 @@ func (a *Words) StaticSchema(value interface{}) *Words {
 }
 
 /**
+ * 组件样式
+ */
+func (a *Words) Style(value interface{}) *Words {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Words) HiddenOn(value interface{}) *Words {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Words) Visible(value interface{}) *Words {
+    a.Set("visible", value)
+    return a
+}
+
+/**
  */
 func (a *Words) Type(value interface{}) *Words {
     a.Set("type", value)
+    return a
+}
+
+/**
+ * 展示文字
+ */
+func (a *Words) ExpendButtonText(value interface{}) *Words {
+    a.Set("expendButtonText", value)
+    return a
+}
+
+/**
+ * useTag 当数据是数组时，是否使用tag的方式展示
+ */
+func (a *Words) InTag(value interface{}) *Words {
+    a.Set("inTag", value)
+    return a
+}
+
+/**
+ * 收起文字
+ */
+func (a *Words) CollapseButtonText(value interface{}) *Words {
+    a.Set("collapseButtonText", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Words) ClassName(value interface{}) *Words {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Words) VisibleOn(value interface{}) *Words {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 展示限制, 为0时也无限制
+ */
+func (a *Words) Limit(value interface{}) *Words {
+    a.Set("limit", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Words) Static(value interface{}) *Words {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Words) StaticInputClassName(value interface{}) *Words {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 展示文字
+ */
+func (a *Words) CollapseButton(value interface{}) *Words {
+    a.Set("collapseButton", value)
+    return a
+}
+
+/**
+ * tags数据
+ */
+func (a *Words) Words(value interface{}) *Words {
+    a.Set("words", value)
     return a
 }
