@@ -19,50 +19,17 @@ func NewIcon() *Icon {
     return a
 }
 /**
- * 是否静态展示
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Icon) Static(value string) *Icon {
-    a.Set("static", value)
+func (a *Icon) UseMobileUI(value string) *Icon {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
  */
-func (a *Icon) StaticLabelClassName(value string) *Icon {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Icon) Style(value string) *Icon {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Icon) EditorSetting(value string) *Icon {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *Icon) Badge(value string) *Icon {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Icon) DisabledOn(value string) *Icon {
-    a.Set("disabledOn", value)
+func (a *Icon) Type(value string) *Icon {
+    a.Set("type", value)
     return a
 }
 
@@ -75,14 +42,6 @@ func (a *Icon) Disabled(value string) *Icon {
 }
 
 /**
- * 是否隐藏
- */
-func (a *Icon) Hidden(value string) *Icon {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
  * 是否显示
  */
 func (a *Icon) Visible(value string) *Icon {
@@ -91,10 +50,41 @@ func (a *Icon) Visible(value string) *Icon {
 }
 
 /**
- * 事件动作配置
+ * 是否静态展示
  */
-func (a *Icon) OnEvent(value string) *Icon {
-    a.Set("onEvent", value)
+func (a *Icon) Static(value string) *Icon {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Icon) StaticOn(value string) *Icon {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Icon) StaticSchema(value string) *Icon {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Icon) DisabledOn(value string) *Icon {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Icon) StaticPlaceholder(value string) *Icon {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -107,10 +97,18 @@ func (a *Icon) StaticClassName(value string) *Icon {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 组件样式
  */
-func (a *Icon) UseMobileUI(value string) *Icon {
-    a.Set("useMobileUI", value)
+func (a *Icon) Style(value string) *Icon {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Icon) StaticInputClassName(value string) *Icon {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -119,6 +117,14 @@ func (a *Icon) UseMobileUI(value string) *Icon {
  */
 func (a *Icon) ClassName(value string) *Icon {
     a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Icon) Hidden(value string) *Icon {
+    a.Set("hidden", value)
     return a
 }
 
@@ -139,48 +145,10 @@ func (a *Icon) Id(value string) *Icon {
 }
 
 /**
+ * 事件动作配置
  */
-func (a *Icon) Type(value string) *Icon {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 按钮类型
- */
-func (a *Icon) Icon(value string) *Icon {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Icon) HiddenOn(value string) *Icon {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Icon) StaticPlaceholder(value string) *Icon {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Icon) StaticInputClassName(value string) *Icon {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Icon) StaticSchema(value string) *Icon {
-    a.Set("staticSchema", value)
+func (a *Icon) OnEvent(value string) *Icon {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -193,9 +161,41 @@ func (a *Icon) Vendor(value string) *Icon {
 }
 
 /**
- * 是否静态展示表达式
+ * 角标
  */
-func (a *Icon) StaticOn(value string) *Icon {
-    a.Set("staticOn", value)
+func (a *Icon) Badge(value string) *Icon {
+    a.Set("badge", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Icon) HiddenOn(value string) *Icon {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Icon) StaticLabelClassName(value string) *Icon {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Icon) EditorSetting(value string) *Icon {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 按钮类型
+ */
+func (a *Icon) Icon(value string) *Icon {
+    a.Set("icon", value)
     return a
 }

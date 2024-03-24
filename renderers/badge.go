@@ -26,18 +26,11 @@ func (a *Badge) Size(value string) *Badge {
 }
 
 /**
- * 角标位置，相对于position的位置进行偏移
+ * 角标位置
+ * 可选值: top-right | top-left | bottom-right | bottom-left
  */
-func (a *Badge) Offset(value string) *Badge {
-    a.Set("offset", value)
-    return a
-}
-
-/**
- * 封顶的数字值
- */
-func (a *Badge) OverflowCount(value string) *Badge {
-    a.Set("overflowCount", value)
+func (a *Badge) Position(value string) *Badge {
+    a.Set("position", value)
     return a
 }
 
@@ -50,18 +43,10 @@ func (a *Badge) VisibleOn(value string) *Badge {
 }
 
 /**
- * 是否显示动画
+ * 提示类型
  */
-func (a *Badge) Animation(value string) *Badge {
-    a.Set("animation", value)
-    return a
-}
-
-/**
- * 角标的自定义样式
- */
-func (a *Badge) Style(value string) *Badge {
-    a.Set("style", value)
+func (a *Badge) Level(value string) *Badge {
+    a.Set("level", value)
     return a
 }
 
@@ -82,19 +67,34 @@ func (a *Badge) Mode(value string) *Badge {
 }
 
 /**
- * 角标位置
- * 可选值: top-right | top-left | bottom-right | bottom-left
+ * 角标位置，相对于position的位置进行偏移
  */
-func (a *Badge) Position(value string) *Badge {
-    a.Set("position", value)
+func (a *Badge) Offset(value string) *Badge {
+    a.Set("offset", value)
     return a
 }
 
 /**
- * 提示类型
+ * 封顶的数字值
  */
-func (a *Badge) Level(value string) *Badge {
-    a.Set("level", value)
+func (a *Badge) OverflowCount(value string) *Badge {
+    a.Set("overflowCount", value)
+    return a
+}
+
+/**
+ * 是否显示动画
+ */
+func (a *Badge) Animation(value string) *Badge {
+    a.Set("animation", value)
+    return a
+}
+
+/**
+ * 角标的自定义样式
+ */
+func (a *Badge) Style(value string) *Badge {
+    a.Set("style", value)
     return a
 }
 

@@ -16,10 +16,10 @@ func NewNavOverflow() *NavOverflow {
     return a
 }
 /**
- * 导航项目宽度
+ * 菜单触发按钮CSS类名
  */
-func (a *NavOverflow) ItemWidth(value string) *NavOverflow {
-    a.Set("itemWidth", value)
+func (a *NavOverflow) OverflowClassName(value string) *NavOverflow {
+    a.Set("overflowClassName", value)
     return a
 }
 
@@ -32,18 +32,26 @@ func (a *NavOverflow) OverflowIndicator(value string) *NavOverflow {
 }
 
 /**
- * 菜单触发按钮CSS类名
- */
-func (a *NavOverflow) OverflowClassName(value string) *NavOverflow {
-    a.Set("overflowClassName", value)
-    return a
-}
-
-/**
  * Popover浮层CSS类名
  */
 func (a *NavOverflow) OverflowPopoverClassName(value string) *NavOverflow {
     a.Set("overflowPopoverClassName", value)
+    return a
+}
+
+/**
+ * 菜单外层CSS类名
+ */
+func (a *NavOverflow) OverflowListClassName(value string) *NavOverflow {
+    a.Set("overflowListClassName", value)
+    return a
+}
+
+/**
+ * 导航横向布局时，开启开启响应式收纳后最大可显示数量，超出此数量的导航将被收纳到下拉菜单中
+ */
+func (a *NavOverflow) MaxVisibleCount(value string) *NavOverflow {
+    a.Set("maxVisibleCount", value)
     return a
 }
 
@@ -56,18 +64,10 @@ func (a *NavOverflow) WrapperComponent(value string) *NavOverflow {
 }
 
 /**
- * 导航列表后缀节点
+ * 导航项目宽度
  */
-func (a *NavOverflow) OverflowSuffix(value string) *NavOverflow {
-    a.Set("overflowSuffix", value)
-    return a
-}
-
-/**
- * 自定义样式
- */
-func (a *NavOverflow) Style(value string) *NavOverflow {
-    a.Set("style", value)
+func (a *NavOverflow) ItemWidth(value string) *NavOverflow {
+    a.Set("itemWidth", value)
     return a
 }
 
@@ -88,17 +88,17 @@ func (a *NavOverflow) OverflowLabel(value string) *NavOverflow {
 }
 
 /**
- * 菜单外层CSS类名
+ * 导航列表后缀节点
  */
-func (a *NavOverflow) OverflowListClassName(value string) *NavOverflow {
-    a.Set("overflowListClassName", value)
+func (a *NavOverflow) OverflowSuffix(value string) *NavOverflow {
+    a.Set("overflowSuffix", value)
     return a
 }
 
 /**
- * 导航横向布局时，开启开启响应式收纳后最大可显示数量，超出此数量的导航将被收纳到下拉菜单中
+ * 自定义样式
  */
-func (a *NavOverflow) MaxVisibleCount(value string) *NavOverflow {
-    a.Set("maxVisibleCount", value)
+func (a *NavOverflow) Style(value string) *NavOverflow {
+    a.Set("style", value)
     return a
 }

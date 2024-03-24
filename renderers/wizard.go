@@ -19,6 +19,37 @@ func NewWizard() *Wizard {
     return a
 }
 /**
+ * 是否禁用表达式
+ */
+func (a *Wizard) DisabledOn(value string) *Wizard {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否将底部按钮固定在底部。
+ */
+func (a *Wizard) AffixFooter(value string) *Wizard {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) Steps(value string) *Wizard {
+    a.Set("steps", value)
+    return a
+}
+
+/**
+ * 步骤条区域css类
+ */
+func (a *Wizard) StepsClassName(value string) *Wizard {
+    a.Set("stepsClassName", value)
+    return a
+}
+
+/**
  * 容器 css 类名
  */
 func (a *Wizard) ClassName(value string) *Wizard {
@@ -35,17 +66,10 @@ func (a *Wizard) Id(value string) *Wizard {
 }
 
 /**
- * Wizard 用来保存数据的 api。 [详情](https://baidu.github.io/amis/docs/api#wizard)
+ * 表单区域css类
  */
-func (a *Wizard) Api(value string) *Wizard {
-    a.Set("api", value)
-    return a
-}
-
-/**
- */
-func (a *Wizard) Reload(value string) *Wizard {
-    a.Set("reload", value)
+func (a *Wizard) BodyClassName(value string) *Wizard {
+    a.Set("bodyClassName", value)
     return a
 }
 
@@ -58,49 +82,26 @@ func (a *Wizard) FooterClassName(value string) *Wizard {
 }
 
 /**
- * 是否禁用表达式
+ * 是否显示表达式
  */
-func (a *Wizard) DisabledOn(value string) *Wizard {
-    a.Set("disabledOn", value)
+func (a *Wizard) VisibleOn(value string) *Wizard {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 下一步按钮的文字描述
+ * 是否用panel包裹
  */
-func (a *Wizard) ActionNextLabel(value string) *Wizard {
-    a.Set("actionNextLabel", value)
+func (a *Wizard) WrapWithPanel(value string) *Wizard {
+    a.Set("wrapWithPanel", value)
     return a
 }
 
 /**
- * 下一步并且保存按钮的文字描述
+ * 配置按钮 className
  */
-func (a *Wizard) ActionNextSaveLabel(value string) *Wizard {
-    a.Set("actionNextSaveLabel", value)
-    return a
-}
-
-/**
- * 是否为只读模式。
- */
-func (a *Wizard) ReadOnly(value string) *Wizard {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 表单区域css类
- */
-func (a *Wizard) BodyClassName(value string) *Wizard {
-    a.Set("bodyClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Wizard) LoadingConfig(value string) *Wizard {
-    a.Set("loadingConfig", value)
+func (a *Wizard) ActionClassName(value string) *Wizard {
+    a.Set("actionClassName", value)
     return a
 }
 
@@ -121,81 +122,10 @@ func (a *Wizard) Style(value string) *Wizard {
 }
 
 /**
- * 是否用panel包裹
+ * 下一步并且保存按钮的文字描述
  */
-func (a *Wizard) WrapWithPanel(value string) *Wizard {
-    a.Set("wrapWithPanel", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Wizard) VisibleOn(value string) *Wizard {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 配置按钮 className
- */
-func (a *Wizard) ActionClassName(value string) *Wizard {
-    a.Set("actionClassName", value)
-    return a
-}
-
-/**
- * 步骤条区域css类
- */
-func (a *Wizard) StepsClassName(value string) *Wizard {
-    a.Set("stepsClassName", value)
-    return a
-}
-
-/**
- * 是否将底部按钮固定在底部。
- */
-func (a *Wizard) AffixFooter(value string) *Wizard {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * step + body区域css类
- */
-func (a *Wizard) StepClassName(value string) *Wizard {
-    a.Set("stepClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Wizard) StaticInputClassName(value string) *Wizard {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Wizard) StaticSchema(value string) *Wizard {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 完成按钮的文字描述
- */
-func (a *Wizard) ActionFinishLabel(value string) *Wizard {
-    a.Set("actionFinishLabel", value)
-    return a
-}
-
-/**
- * 上一步按钮的文字描述
- */
-func (a *Wizard) ActionPrevLabel(value string) *Wizard {
-    a.Set("actionPrevLabel", value)
+func (a *Wizard) ActionNextSaveLabel(value string) *Wizard {
+    a.Set("actionNextSaveLabel", value)
     return a
 }
 
@@ -208,10 +138,9 @@ func (a *Wizard) InitApi(value string) *Wizard {
 }
 
 /**
- * 是否隐藏
  */
-func (a *Wizard) Hidden(value string) *Wizard {
-    a.Set("hidden", value)
+func (a *Wizard) LoadingConfig(value string) *Wizard {
+    a.Set("loadingConfig", value)
     return a
 }
 
@@ -220,60 +149,6 @@ func (a *Wizard) Hidden(value string) *Wizard {
  */
 func (a *Wizard) OnEvent(value string) *Wizard {
     a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Wizard) StaticClassName(value string) *Wizard {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Wizard) EditorSetting(value string) *Wizard {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型的 name 值。 如果 target 目标是一个 `Form` ，则目标 `Form` 会重新触发 `initApi` 和 `schemaApi`，api 可以拿到当前 form 数据。如果目标是一个 `CRUD` 模型，则目标模型会重新触发搜索，参数为当前 Form 数据。
- */
-func (a *Wizard) Target(value string) *Wizard {
-    a.Set("target", value)
-    return a
-}
-
-/**
- */
-func (a *Wizard) Name(value string) *Wizard {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 保存完后，可以指定跳转地址，支持相对路径和组内绝对路径，同时可以通过 $xxx 使用变量
- */
-func (a *Wizard) Redirect(value string) *Wizard {
-    a.Set("redirect", value)
-    return a
-}
-
-/**
- */
-func (a *Wizard) Steps(value string) *Wizard {
-    a.Set("steps", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Wizard) HiddenOn(value string) *Wizard {
-    a.Set("hiddenOn", value)
     return a
 }
 
@@ -290,6 +165,146 @@ func (a *Wizard) StaticPlaceholder(value string) *Wizard {
  */
 func (a *Wizard) UseMobileUI(value string) *Wizard {
     a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Wizard) Hidden(value string) *Wizard {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Wizard) HiddenOn(value string) *Wizard {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 指定为表单向导
+ */
+func (a *Wizard) Type(value string) *Wizard {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 完成按钮的文字描述
+ */
+func (a *Wizard) ActionFinishLabel(value string) *Wizard {
+    a.Set("actionFinishLabel", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) Name(value string) *Wizard {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) Reload(value string) *Wizard {
+    a.Set("reload", value)
+    return a
+}
+
+/**
+ * 默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型的 name 值。 如果 target 目标是一个 `Form` ，则目标 `Form` 会重新触发 `initApi` 和 `schemaApi`，api 可以拿到当前 form 数据。如果目标是一个 `CRUD` 模型，则目标模型会重新触发搜索，参数为当前 Form 数据。
+ */
+func (a *Wizard) Target(value string) *Wizard {
+    a.Set("target", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) StartStep(value string) *Wizard {
+    a.Set("startStep", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Wizard) StaticOn(value string) *Wizard {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Wizard) StaticClassName(value string) *Wizard {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Wizard) StaticInputClassName(value string) *Wizard {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 下一步按钮的文字描述
+ */
+func (a *Wizard) ActionNextLabel(value string) *Wizard {
+    a.Set("actionNextLabel", value)
+    return a
+}
+
+/**
+ * Wizard 用来保存数据的 api。 [详情](https://baidu.github.io/amis/docs/api#wizard)
+ */
+func (a *Wizard) Api(value string) *Wizard {
+    a.Set("api", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Wizard) Static(value string) *Wizard {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Wizard) StaticLabelClassName(value string) *Wizard {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Wizard) StaticSchema(value string) *Wizard {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Wizard) EditorSetting(value string) *Wizard {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 上一步按钮的文字描述
+ */
+func (a *Wizard) ActionPrevLabel(value string) *Wizard {
+    a.Set("actionPrevLabel", value)
     return a
 }
 
@@ -311,9 +326,10 @@ func (a *Wizard) Mode(value string) *Wizard {
 }
 
 /**
+ * 是否为只读模式。
  */
-func (a *Wizard) StartStep(value string) *Wizard {
-    a.Set("startStep", value)
+func (a *Wizard) ReadOnly(value string) *Wizard {
+    a.Set("readOnly", value)
     return a
 }
 
@@ -326,33 +342,17 @@ func (a *Wizard) Disabled(value string) *Wizard {
 }
 
 /**
- * 是否静态展示
+ * step + body区域css类
  */
-func (a *Wizard) Static(value string) *Wizard {
-    a.Set("static", value)
+func (a *Wizard) StepClassName(value string) *Wizard {
+    a.Set("stepClassName", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 保存完后，可以指定跳转地址，支持相对路径和组内绝对路径，同时可以通过 $xxx 使用变量
  */
-func (a *Wizard) StaticOn(value string) *Wizard {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Wizard) StaticLabelClassName(value string) *Wizard {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 指定为表单向导
- */
-func (a *Wizard) Type(value string) *Wizard {
-    a.Set("type", value)
+func (a *Wizard) Redirect(value string) *Wizard {
+    a.Set("redirect", value)
     return a
 }

@@ -16,16 +16,17 @@ func NewListenerAction() *ListenerAction {
     return a
 }
 /**
+ * 可选值: merge | override
  */
-func (a *ListenerAction) StopPropagation(value string) *ListenerAction {
-    a.Set("stopPropagation", value)
+func (a *ListenerAction) DataMergeMode(value string) *ListenerAction {
+    a.Set("dataMergeMode", value)
     return a
 }
 
 /**
  */
-func (a *ListenerAction) Expression(value string) *ListenerAction {
-    a.Set("expression", value)
+func (a *ListenerAction) OutputVar(value string) *ListenerAction {
+    a.Set("outputVar", value)
     return a
 }
 
@@ -44,21 +45,6 @@ func (a *ListenerAction) Args(value string) *ListenerAction {
 }
 
 /**
- * 可选值: merge | override
- */
-func (a *ListenerAction) DataMergeMode(value string) *ListenerAction {
-    a.Set("dataMergeMode", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) OutputVar(value string) *ListenerAction {
-    a.Set("outputVar", value)
-    return a
-}
-
-/**
  */
 func (a *ListenerAction) Data(value string) *ListenerAction {
     a.Set("data", value)
@@ -69,13 +55,6 @@ func (a *ListenerAction) Data(value string) *ListenerAction {
  */
 func (a *ListenerAction) PreventDefault(value string) *ListenerAction {
     a.Set("preventDefault", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ExecOn(value string) *ListenerAction {
-    a.Set("execOn", value)
     return a
 }
 
@@ -104,5 +83,26 @@ func (a *ListenerAction) ComponentId(value string) *ListenerAction {
  */
 func (a *ListenerAction) ComponentName(value string) *ListenerAction {
     a.Set("componentName", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) StopPropagation(value string) *ListenerAction {
+    a.Set("stopPropagation", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) Expression(value string) *ListenerAction {
+    a.Set("expression", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ExecOn(value string) *ListenerAction {
+    a.Set("execOn", value)
     return a
 }

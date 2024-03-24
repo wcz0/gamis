@@ -19,18 +19,10 @@ func NewSearchBox() *SearchBox {
     return a
 }
 /**
- * 是否静态展示
+ * 是否处于加载状态
  */
-func (a *SearchBox) Static(value string) *SearchBox {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否为加强样式
- */
-func (a *SearchBox) Enhance(value string) *SearchBox {
-    a.Set("enhance", value)
+func (a *SearchBox) Loading(value string) *SearchBox {
+    a.Set("loading", value)
     return a
 }
 
@@ -43,10 +35,33 @@ func (a *SearchBox) StaticOn(value string) *SearchBox {
 }
 
 /**
- * 是否显示表达式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *SearchBox) VisibleOn(value string) *SearchBox {
-    a.Set("visibleOn", value)
+func (a *SearchBox) EditorSetting(value string) *SearchBox {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 是否为加强样式
+ */
+func (a *SearchBox) Enhance(value string) *SearchBox {
+    a.Set("enhance", value)
+    return a
+}
+
+/**
+ */
+func (a *SearchBox) StaticSchema(value string) *SearchBox {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *SearchBox) Visible(value string) *SearchBox {
+    a.Set("visible", value)
     return a
 }
 
@@ -59,9 +74,10 @@ func (a *SearchBox) OnEvent(value string) *SearchBox {
 }
 
 /**
+ * 静态展示表单项Label类名
  */
-func (a *SearchBox) StaticSchema(value string) *SearchBox {
-    a.Set("staticSchema", value)
+func (a *SearchBox) StaticLabelClassName(value string) *SearchBox {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -98,66 +114,18 @@ func (a *SearchBox) Disabled(value string) *SearchBox {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 静态展示表单项类名
  */
-func (a *SearchBox) Id(value string) *SearchBox {
-    a.Set("id", value)
+func (a *SearchBox) StaticClassName(value string) *SearchBox {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否显示表达式
  */
-func (a *SearchBox) StaticLabelClassName(value string) *SearchBox {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *SearchBox) Placeholder(value string) *SearchBox {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *SearchBox) Visible(value string) *SearchBox {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否可清除
- */
-func (a *SearchBox) Clearable(value string) *SearchBox {
-    a.Set("clearable", value)
-    return a
-}
-
-/**
- * 是否开启清空内容后立即重新搜索
- */
-func (a *SearchBox) ClearAndSubmit(value string) *SearchBox {
-    a.Set("clearAndSubmit", value)
-    return a
-}
-
-/**
- * 是否处于加载状态
- */
-func (a *SearchBox) Loading(value string) *SearchBox {
-    a.Set("loading", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *SearchBox) HiddenOn(value string) *SearchBox {
-    a.Set("hiddenOn", value)
+func (a *SearchBox) VisibleOn(value string) *SearchBox {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -170,10 +138,18 @@ func (a *SearchBox) StaticPlaceholder(value string) *SearchBox {
 }
 
 /**
- * 指定为搜索框。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/search-box
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *SearchBox) Type(value string) *SearchBox {
-    a.Set("type", value)
+func (a *SearchBox) Id(value string) *SearchBox {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 关键字名字。
+ */
+func (a *SearchBox) Name(value string) *SearchBox {
+    a.Set("name", value)
     return a
 }
 
@@ -194,18 +170,18 @@ func (a *SearchBox) UseMobileUI(value string) *SearchBox {
 }
 
 /**
- * 关键字名字。
+ * 指定为搜索框。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/search-box
  */
-func (a *SearchBox) Name(value string) *SearchBox {
-    a.Set("name", value)
+func (a *SearchBox) Type(value string) *SearchBox {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否为 Mini 样式。
+ * 占位符
  */
-func (a *SearchBox) Mini(value string) *SearchBox {
-    a.Set("mini", value)
+func (a *SearchBox) Placeholder(value string) *SearchBox {
+    a.Set("placeholder", value)
     return a
 }
 
@@ -218,10 +194,26 @@ func (a *SearchBox) Hidden(value string) *SearchBox {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 是否隐藏表达式
  */
-func (a *SearchBox) EditorSetting(value string) *SearchBox {
-    a.Set("editorSetting", value)
+func (a *SearchBox) HiddenOn(value string) *SearchBox {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *SearchBox) Static(value string) *SearchBox {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否开启清空内容后立即重新搜索
+ */
+func (a *SearchBox) ClearAndSubmit(value string) *SearchBox {
+    a.Set("clearAndSubmit", value)
     return a
 }
 
@@ -234,9 +226,17 @@ func (a *SearchBox) DisabledOn(value string) *SearchBox {
 }
 
 /**
- * 静态展示表单项类名
+ * 是否为 Mini 样式。
  */
-func (a *SearchBox) StaticClassName(value string) *SearchBox {
-    a.Set("staticClassName", value)
+func (a *SearchBox) Mini(value string) *SearchBox {
+    a.Set("mini", value)
+    return a
+}
+
+/**
+ * 是否可清除
+ */
+func (a *SearchBox) Clearable(value string) *SearchBox {
+    a.Set("clearable", value)
     return a
 }

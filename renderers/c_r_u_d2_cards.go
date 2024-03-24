@@ -18,26 +18,18 @@ func NewCRUD2Cards() *CRUD2Cards {
     return a
 }
 /**
- * 是否显示底部
+ * 标题
  */
-func (a *CRUD2Cards) ShowFooter(value string) *CRUD2Cards {
-    a.Set("showFooter", value)
+func (a *CRUD2Cards) Title(value string) *CRUD2Cards {
+    a.Set("title", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 是否显示表达式
  */
-func (a *CRUD2Cards) OnEvent(value string) *CRUD2Cards {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *CRUD2Cards) StaticPlaceholder(value string) *CRUD2Cards {
-    a.Set("staticPlaceholder", value)
+func (a *CRUD2Cards) VisibleOn(value string) *CRUD2Cards {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -50,10 +42,34 @@ func (a *CRUD2Cards) Api(value string) *CRUD2Cards {
 }
 
 /**
- * 是否开启Query信息转换，开启后将会对url中的Query进行转换，默认开启，默认仅转化布尔值
+ * 是否可以选择数据，外部事件动作
  */
-func (a *CRUD2Cards) ParsePrimitiveQuery(value string) *CRUD2Cards {
-    a.Set("parsePrimitiveQuery", value)
+func (a *CRUD2Cards) Selectable(value string) *CRUD2Cards {
+    a.Set("selectable", value)
+    return a
+}
+
+/**
+ * 设置分页页码字段名。
+ */
+func (a *CRUD2Cards) PageField(value string) *CRUD2Cards {
+    a.Set("pageField", value)
+    return a
+}
+
+/**
+ * 是否自动跳顶部，当切分页的时候。
+ */
+func (a *CRUD2Cards) AutoJumpToTopOnPagerChange(value string) *CRUD2Cards {
+    a.Set("autoJumpToTopOnPagerChange", value)
+    return a
+}
+
+/**
+ * 是否固顶
+ */
+func (a *CRUD2Cards) AffixHeader(value string) *CRUD2Cards {
+    a.Set("affixHeader", value)
     return a
 }
 
@@ -66,137 +82,10 @@ func (a *CRUD2Cards) Header(value string) *CRUD2Cards {
 }
 
 /**
- * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+ * 静默拉取
  */
-func (a *CRUD2Cards) ItemDraggableOn(value string) *CRUD2Cards {
-    a.Set("itemDraggableOn", value)
-    return a
-}
-
-/**
- * 也可以直接从环境变量中读取，但是不太推荐。
- */
-func (a *CRUD2Cards) Source(value string) *CRUD2Cards {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 标题
- */
-func (a *CRUD2Cards) Title(value string) *CRUD2Cards {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 顶部区域
- */
-func (a *CRUD2Cards) HeaderToolbar(value string) *CRUD2Cards {
-    a.Set("headerToolbar", value)
-    return a
-}
-
-/**
- * 是否固底
- */
-func (a *CRUD2Cards) AffixFooter(value string) *CRUD2Cards {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * 底部区域
- */
-func (a *CRUD2Cards) Footer(value string) *CRUD2Cards {
-    a.Set("footer", value)
-    return a
-}
-
-/**
- * 行标识符，默认为id
- */
-func (a *CRUD2Cards) PrimaryField(value string) *CRUD2Cards {
-    a.Set("primaryField", value)
-    return a
-}
-
-/**
- * 配置某项是否可以点选
- */
-func (a *CRUD2Cards) ItemCheckableOn(value string) *CRUD2Cards {
-    a.Set("itemCheckableOn", value)
-    return a
-}
-
-/**
- * 是否为瀑布流布局？
- */
-func (a *CRUD2Cards) MasonryLayout(value string) *CRUD2Cards {
-    a.Set("masonryLayout", value)
-    return a
-}
-
-/**
- * 是否展示已选数据区域，仅当selectable为 true 时生效
- */
-func (a *CRUD2Cards) ShowSelection(value string) *CRUD2Cards {
-    a.Set("showSelection", value)
-    return a
-}
-
-/**
- */
-func (a *CRUD2Cards) Name(value string) *CRUD2Cards {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 底部区域
- */
-func (a *CRUD2Cards) FooterToolbar(value string) *CRUD2Cards {
-    a.Set("footerToolbar", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *CRUD2Cards) DisabledOn(value string) *CRUD2Cards {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 设置自动刷新时间
- */
-func (a *CRUD2Cards) Interval(value string) *CRUD2Cards {
-    a.Set("interval", value)
-    return a
-}
-
-/**
- * 设置分页一页显示的多少条数据的字段名。
- */
-func (a *CRUD2Cards) PerPageField(value string) *CRUD2Cards {
-    a.Set("perPageField", value)
-    return a
-}
-
-/**
- * 是否隐藏快速编辑的按钮。
- */
-func (a *CRUD2Cards) HideQuickSaveBtn(value string) *CRUD2Cards {
-    a.Set("hideQuickSaveBtn", value)
-    return a
-}
-
-/**
- * 是否隐藏勾选框
- */
-func (a *CRUD2Cards) HideCheckToggler(value string) *CRUD2Cards {
-    a.Set("hideCheckToggler", value)
+func (a *CRUD2Cards) SilentPolling(value string) *CRUD2Cards {
+    a.Set("silentPolling", value)
     return a
 }
 
@@ -209,42 +98,34 @@ func (a *CRUD2Cards) Multiple(value string) *CRUD2Cards {
 }
 
 /**
- * 底部 CSS 类名
+ * 是否展示已选数据区域，仅当selectable为 true 时生效
  */
-func (a *CRUD2Cards) FooterClassName(value string) *CRUD2Cards {
-    a.Set("footerClassName", value)
+func (a *CRUD2Cards) ShowSelection(value string) *CRUD2Cards {
+    a.Set("showSelection", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 是否开启Query信息转换，开启后将会对url中的Query进行转换，默认开启，默认仅转化布尔值
  */
-func (a *CRUD2Cards) Disabled(value string) *CRUD2Cards {
-    a.Set("disabled", value)
+func (a *CRUD2Cards) ParsePrimitiveQuery(value string) *CRUD2Cards {
+    a.Set("parsePrimitiveQuery", value)
     return a
 }
 
 /**
- * 是否为前端单次加载模式，可以用来实现前端分页。
+ * 是否为瀑布流布局？
  */
-func (a *CRUD2Cards) LoadDataOnce(value string) *CRUD2Cards {
-    a.Set("loadDataOnce", value)
+func (a *CRUD2Cards) MasonryLayout(value string) *CRUD2Cards {
+    a.Set("masonryLayout", value)
     return a
 }
 
 /**
- * 顶部区域CSS类名
+ * 是否禁用表达式
  */
-func (a *CRUD2Cards) HeaderToolbarClassName(value string) *CRUD2Cards {
-    a.Set("headerToolbarClassName", value)
-    return a
-}
-
-/**
- * 可以用来作为值的字段
- */
-func (a *CRUD2Cards) ValueField(value string) *CRUD2Cards {
-    a.Set("valueField", value)
+func (a *CRUD2Cards) DisabledOn(value string) *CRUD2Cards {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -257,6 +138,134 @@ func (a *CRUD2Cards) StaticLabelClassName(value string) *CRUD2Cards {
 }
 
 /**
+ * 是否禁用
+ */
+func (a *CRUD2Cards) Disabled(value string) *CRUD2Cards {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *CRUD2Cards) OnEvent(value string) *CRUD2Cards {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *CRUD2Cards) Hidden(value string) *CRUD2Cards {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *CRUD2Cards) Static(value string) *CRUD2Cards {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 也可以直接从环境变量中读取，但是不太推荐。
+ */
+func (a *CRUD2Cards) Source(value string) *CRUD2Cards {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *CRUD2Cards) ClassName(value string) *CRUD2Cards {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 底部区域
+ */
+func (a *CRUD2Cards) FooterToolbar(value string) *CRUD2Cards {
+    a.Set("footerToolbar", value)
+    return a
+}
+
+/**
+ * 底部区域CSS类名
+ */
+func (a *CRUD2Cards) FooterToolbarClassName(value string) *CRUD2Cards {
+    a.Set("footerToolbarClassName", value)
+    return a
+}
+
+/**
+ * 卡片 CSS 类名
+ */
+func (a *CRUD2Cards) ItemClassName(value string) *CRUD2Cards {
+    a.Set("itemClassName", value)
+    return a
+}
+
+/**
+ * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+ */
+func (a *CRUD2Cards) ItemDraggableOn(value string) *CRUD2Cards {
+    a.Set("itemDraggableOn", value)
+    return a
+}
+
+/**
+ * 指定内容区的展示模式。
+ */
+func (a *CRUD2Cards) Mode(value string) *CRUD2Cards {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 无限加载时，根据此项设置其每页加载数量，可以不限制
+ */
+func (a *CRUD2Cards) PerPage(value string) *CRUD2Cards {
+    a.Set("perPage", value)
+    return a
+}
+
+/**
+ * 是否将接口返回的内容自动同步到地址栏，前提是开启了同步地址栏。
+ */
+func (a *CRUD2Cards) SyncResponse2Query(value string) *CRUD2Cards {
+    a.Set("syncResponse2Query", value)
+    return a
+}
+
+/**
+ * 行标识符，默认为id
+ */
+func (a *CRUD2Cards) PrimaryField(value string) *CRUD2Cards {
+    a.Set("primaryField", value)
+    return a
+}
+
+/**
+ * 是否固底
+ */
+func (a *CRUD2Cards) AffixFooter(value string) *CRUD2Cards {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ * 配置某项是否可以点选
+ */
+func (a *CRUD2Cards) ItemCheckableOn(value string) *CRUD2Cards {
+    a.Set("itemCheckableOn", value)
+    return a
+}
+
+/**
  * 指定为 CRUD2 渲染器。
  */
 func (a *CRUD2Cards) Type(value string) *CRUD2Cards {
@@ -265,18 +274,50 @@ func (a *CRUD2Cards) Type(value string) *CRUD2Cards {
 }
 
 /**
- * 保存排序的 api
+ * 数据展示模式 无限加载 or 分页
+ * 可选值: more | pagination
  */
-func (a *CRUD2Cards) SaveOrderApi(value string) *CRUD2Cards {
-    a.Set("saveOrderApi", value)
+func (a *CRUD2Cards) LoadType(value string) *CRUD2Cards {
+    a.Set("loadType", value)
     return a
 }
 
 /**
- * 内容区域占满屏幕剩余空间
+ * 组件样式
  */
-func (a *CRUD2Cards) AutoFillHeight(value string) *CRUD2Cards {
-    a.Set("autoFillHeight", value)
+func (a *CRUD2Cards) Style(value string) *CRUD2Cards {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ */
+func (a *CRUD2Cards) LoadingConfig(value string) *CRUD2Cards {
+    a.Set("loadingConfig", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *CRUD2Cards) StaticInputClassName(value string) *CRUD2Cards {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 设置自动刷新时间
+ */
+func (a *CRUD2Cards) Interval(value string) *CRUD2Cards {
+    a.Set("interval", value)
+    return a
+}
+
+/**
+ * 头部 CSS 类名
+ */
+func (a *CRUD2Cards) HeaderClassName(value string) *CRUD2Cards {
+    a.Set("headerClassName", value)
     return a
 }
 
@@ -289,6 +330,38 @@ func (a *CRUD2Cards) Placeholder(value string) *CRUD2Cards {
 }
 
 /**
+ * 是否隐藏表达式
+ */
+func (a *CRUD2Cards) HiddenOn(value string) *CRUD2Cards {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 快速编辑配置成及时保存时使用的 API
+ */
+func (a *CRUD2Cards) QuickSaveItemApi(value string) *CRUD2Cards {
+    a.Set("quickSaveItemApi", value)
+    return a
+}
+
+/**
+ * 是否显示头部
+ */
+func (a *CRUD2Cards) ShowHeader(value string) *CRUD2Cards {
+    a.Set("showHeader", value)
+    return a
+}
+
+/**
+ * 是否隐藏勾选框
+ */
+func (a *CRUD2Cards) HideCheckToggler(value string) *CRUD2Cards {
+    a.Set("hideCheckToggler", value)
+    return a
+}
+
+/**
  * 点击卡片的时候是否勾选卡片。
  */
 func (a *CRUD2Cards) CheckOnItemClick(value string) *CRUD2Cards {
@@ -297,10 +370,73 @@ func (a *CRUD2Cards) CheckOnItemClick(value string) *CRUD2Cards {
 }
 
 /**
- * 容器 css 类名
+ * 可以用来作为值的字段
  */
-func (a *CRUD2Cards) ClassName(value string) *CRUD2Cards {
-    a.Set("className", value)
+func (a *CRUD2Cards) ValueField(value string) *CRUD2Cards {
+    a.Set("valueField", value)
+    return a
+}
+
+/**
+ * 快速编辑后用来批量保存的 API
+ */
+func (a *CRUD2Cards) QuickSaveApi(value string) *CRUD2Cards {
+    a.Set("quickSaveApi", value)
+    return a
+}
+
+/**
+ * 设置分页一页显示的多少条数据的字段名。
+ */
+func (a *CRUD2Cards) PerPageField(value string) *CRUD2Cards {
+    a.Set("perPageField", value)
+    return a
+}
+
+/**
+ * 顶部区域CSS类名
+ */
+func (a *CRUD2Cards) HeaderToolbarClassName(value string) *CRUD2Cards {
+    a.Set("headerToolbarClassName", value)
+    return a
+}
+
+/**
+ * 翻页时是否保留用户已选的数据
+ */
+func (a *CRUD2Cards) KeepItemSelectionOnPageChange(value string) *CRUD2Cards {
+    a.Set("keepItemSelectionOnPageChange", value)
+    return a
+}
+
+/**
+ * 是否显示底部
+ */
+func (a *CRUD2Cards) ShowFooter(value string) *CRUD2Cards {
+    a.Set("showFooter", value)
+    return a
+}
+
+/**
+ * 底部区域
+ */
+func (a *CRUD2Cards) Footer(value string) *CRUD2Cards {
+    a.Set("footer", value)
+    return a
+}
+
+/**
+ */
+func (a *CRUD2Cards) StopAutoRefreshWhen(value string) *CRUD2Cards {
+    a.Set("stopAutoRefreshWhen", value)
+    return a
+}
+
+/**
+ * 内容区域占满屏幕剩余空间
+ */
+func (a *CRUD2Cards) AutoFillHeight(value string) *CRUD2Cards {
+    a.Set("autoFillHeight", value)
     return a
 }
 
@@ -329,6 +465,30 @@ func (a *CRUD2Cards) SyncLocation(value string) *CRUD2Cards {
 }
 
 /**
+ * 是否静态展示表达式
+ */
+func (a *CRUD2Cards) StaticOn(value string) *CRUD2Cards {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 保存排序的 api
+ */
+func (a *CRUD2Cards) SaveOrderApi(value string) *CRUD2Cards {
+    a.Set("saveOrderApi", value)
+    return a
+}
+
+/**
+ * 顶部区域
+ */
+func (a *CRUD2Cards) HeaderToolbar(value string) *CRUD2Cards {
+    a.Set("headerToolbar", value)
+    return a
+}
+
+/**
  */
 func (a *CRUD2Cards) Card(value string) *CRUD2Cards {
     a.Set("card", value)
@@ -344,184 +504,18 @@ func (a *CRUD2Cards) Visible(value string) *CRUD2Cards {
 }
 
 /**
+ * 是否为前端单次加载模式，可以用来实现前端分页。
  */
-func (a *CRUD2Cards) StaticSchema(value string) *CRUD2Cards {
-    a.Set("staticSchema", value)
+func (a *CRUD2Cards) LoadDataOnce(value string) *CRUD2Cards {
+    a.Set("loadDataOnce", value)
     return a
 }
 
 /**
- * 是否将接口返回的内容自动同步到地址栏，前提是开启了同步地址栏。
+ * 静态展示空值占位
  */
-func (a *CRUD2Cards) SyncResponse2Query(value string) *CRUD2Cards {
-    a.Set("syncResponse2Query", value)
-    return a
-}
-
-/**
- * 翻页时是否保留用户已选的数据
- */
-func (a *CRUD2Cards) KeepItemSelectionOnPageChange(value string) *CRUD2Cards {
-    a.Set("keepItemSelectionOnPageChange", value)
-    return a
-}
-
-/**
- * 头部 CSS 类名
- */
-func (a *CRUD2Cards) HeaderClassName(value string) *CRUD2Cards {
-    a.Set("headerClassName", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *CRUD2Cards) StaticOn(value string) *CRUD2Cards {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *CRUD2Cards) StaticClassName(value string) *CRUD2Cards {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静默拉取
- */
-func (a *CRUD2Cards) SilentPolling(value string) *CRUD2Cards {
-    a.Set("silentPolling", value)
-    return a
-}
-
-/**
- */
-func (a *CRUD2Cards) StopAutoRefreshWhen(value string) *CRUD2Cards {
-    a.Set("stopAutoRefreshWhen", value)
-    return a
-}
-
-/**
- * 快速编辑配置成及时保存时使用的 API
- */
-func (a *CRUD2Cards) QuickSaveItemApi(value string) *CRUD2Cards {
-    a.Set("quickSaveItemApi", value)
-    return a
-}
-
-/**
- * 设置分页页码字段名。
- */
-func (a *CRUD2Cards) PageField(value string) *CRUD2Cards {
-    a.Set("pageField", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *CRUD2Cards) VisibleOn(value string) *CRUD2Cards {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 快速编辑后用来批量保存的 API
- */
-func (a *CRUD2Cards) QuickSaveApi(value string) *CRUD2Cards {
-    a.Set("quickSaveApi", value)
-    return a
-}
-
-/**
- * 是否固顶
- */
-func (a *CRUD2Cards) AffixHeader(value string) *CRUD2Cards {
-    a.Set("affixHeader", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *CRUD2Cards) StaticInputClassName(value string) *CRUD2Cards {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *CRUD2Cards) Style(value string) *CRUD2Cards {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 指定内容区的展示模式。
- */
-func (a *CRUD2Cards) Mode(value string) *CRUD2Cards {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 是否可以选择数据，外部事件动作
- */
-func (a *CRUD2Cards) Selectable(value string) *CRUD2Cards {
-    a.Set("selectable", value)
-    return a
-}
-
-/**
- * 底部区域CSS类名
- */
-func (a *CRUD2Cards) FooterToolbarClassName(value string) *CRUD2Cards {
-    a.Set("footerToolbarClassName", value)
-    return a
-}
-
-/**
- * 卡片 CSS 类名
- */
-func (a *CRUD2Cards) ItemClassName(value string) *CRUD2Cards {
-    a.Set("itemClassName", value)
-    return a
-}
-
-/**
- * 是否显示头部
- */
-func (a *CRUD2Cards) ShowHeader(value string) *CRUD2Cards {
-    a.Set("showHeader", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *CRUD2Cards) Hidden(value string) *CRUD2Cards {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *CRUD2Cards) Static(value string) *CRUD2Cards {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *CRUD2Cards) HiddenOn(value string) *CRUD2Cards {
-    a.Set("hiddenOn", value)
+func (a *CRUD2Cards) StaticPlaceholder(value string) *CRUD2Cards {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -534,33 +528,39 @@ func (a *CRUD2Cards) UseMobileUI(value string) *CRUD2Cards {
 }
 
 /**
+ * 静态展示表单项类名
  */
-func (a *CRUD2Cards) LoadingConfig(value string) *CRUD2Cards {
-    a.Set("loadingConfig", value)
+func (a *CRUD2Cards) StaticClassName(value string) *CRUD2Cards {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 数据展示模式 无限加载 or 分页
- * 可选值: more | pagination
  */
-func (a *CRUD2Cards) LoadType(value string) *CRUD2Cards {
-    a.Set("loadType", value)
+func (a *CRUD2Cards) StaticSchema(value string) *CRUD2Cards {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 无限加载时，根据此项设置其每页加载数量，可以不限制
  */
-func (a *CRUD2Cards) PerPage(value string) *CRUD2Cards {
-    a.Set("perPage", value)
+func (a *CRUD2Cards) Name(value string) *CRUD2Cards {
+    a.Set("name", value)
     return a
 }
 
 /**
- * 是否自动跳顶部，当切分页的时候。
+ * 是否隐藏快速编辑的按钮。
  */
-func (a *CRUD2Cards) AutoJumpToTopOnPagerChange(value string) *CRUD2Cards {
-    a.Set("autoJumpToTopOnPagerChange", value)
+func (a *CRUD2Cards) HideQuickSaveBtn(value string) *CRUD2Cards {
+    a.Set("hideQuickSaveBtn", value)
+    return a
+}
+
+/**
+ * 底部 CSS 类名
+ */
+func (a *CRUD2Cards) FooterClassName(value string) *CRUD2Cards {
+    a.Set("footerClassName", value)
     return a
 }

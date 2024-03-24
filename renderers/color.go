@@ -19,42 +19,10 @@ func NewColor() *Color {
     return a
 }
 /**
- * 组件样式
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Color) Style(value string) *Color {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Color) DisabledOn(value string) *Color {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Color) Visible(value string) *Color {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Color) VisibleOn(value string) *Color {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Color) Static(value string) *Color {
-    a.Set("static", value)
+func (a *Color) Id(value string) *Color {
+    a.Set("id", value)
     return a
 }
 
@@ -67,26 +35,34 @@ func (a *Color) Type(value string) *Color {
 }
 
 /**
- * 容器 css 类名
+ * 是否禁用
  */
-func (a *Color) ClassName(value string) *Color {
-    a.Set("className", value)
+func (a *Color) Disabled(value string) *Color {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 是否禁用表达式
  */
-func (a *Color) OnEvent(value string) *Color {
-    a.Set("onEvent", value)
+func (a *Color) DisabledOn(value string) *Color {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否显示表达式
  */
-func (a *Color) StaticInputClassName(value string) *Color {
-    a.Set("staticInputClassName", value)
+func (a *Color) VisibleOn(value string) *Color {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Color) StaticPlaceholder(value string) *Color {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -123,34 +99,18 @@ func (a *Color) ShowValue(value string) *Color {
 }
 
 /**
+ * 容器 css 类名
+ */
+func (a *Color) ClassName(value string) *Color {
+    a.Set("className", value)
+    return a
+}
+
+/**
  * 是否隐藏表达式
  */
 func (a *Color) HiddenOn(value string) *Color {
     a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Color) StaticPlaceholder(value string) *Color {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Color) StaticClassName(value string) *Color {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Color) StaticLabelClassName(value string) *Color {
-    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -170,10 +130,26 @@ func (a *Color) StaticSchema(value string) *Color {
 }
 
 /**
- * 是否禁用
+ * 组件样式
  */
-func (a *Color) Disabled(value string) *Color {
-    a.Set("disabled", value)
+func (a *Color) Style(value string) *Color {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Color) StaticLabelClassName(value string) *Color {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Color) StaticInputClassName(value string) *Color {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -186,9 +162,33 @@ func (a *Color) Hidden(value string) *Color {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否显示
  */
-func (a *Color) Id(value string) *Color {
-    a.Set("id", value)
+func (a *Color) Visible(value string) *Color {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Color) OnEvent(value string) *Color {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Color) Static(value string) *Color {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Color) StaticClassName(value string) *Color {
+    a.Set("staticClassName", value)
     return a
 }

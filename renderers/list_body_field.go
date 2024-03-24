@@ -18,22 +18,6 @@ func NewListBodyField() *ListBodyField {
     return a
 }
 /**
- * label 类名
- */
-func (a *ListBodyField) LabelClassName(value string) *ListBodyField {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 内层组件的CSS类名
- */
-func (a *ListBodyField) InnerClassName(value string) *ListBodyField {
-    a.Set("innerClassName", value)
-    return a
-}
-
-/**
  * 绑定字段名
  */
 func (a *ListBodyField) Name(value string) *ListBodyField {
@@ -70,5 +54,21 @@ func (a *ListBodyField) Copyable(value string) *ListBodyField {
  */
 func (a *ListBodyField) Label(value string) *ListBodyField {
     a.Set("label", value)
+    return a
+}
+
+/**
+ * label 类名
+ */
+func (a *ListBodyField) LabelClassName(value string) *ListBodyField {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 内层组件的CSS类名
+ */
+func (a *ListBodyField) InnerClassName(value string) *ListBodyField {
+    a.Set("innerClassName", value)
     return a
 }

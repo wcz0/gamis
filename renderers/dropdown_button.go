@@ -19,47 +19,6 @@ func NewDropdownButton() *DropdownButton {
     return a
 }
 /**
- * 点击内容是否关闭
- */
-func (a *DropdownButton) CloseOnClick(value string) *DropdownButton {
-    a.Set("closeOnClick", value)
-    return a
-}
-
-/**
- * 按钮大小
- * 可选值: xs | sm | md | lg
- */
-func (a *DropdownButton) Size(value string) *DropdownButton {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *DropdownButton) Disabled(value string) *DropdownButton {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 内容区域
- */
-func (a *DropdownButton) Body(value string) *DropdownButton {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 点击外部是否关闭
- */
-func (a *DropdownButton) CloseOnOutside(value string) *DropdownButton {
-    a.Set("closeOnOutside", value)
-    return a
-}
-
-/**
  * 静态展示空值占位
  */
 func (a *DropdownButton) StaticPlaceholder(value string) *DropdownButton {
@@ -68,49 +27,17 @@ func (a *DropdownButton) StaticPlaceholder(value string) *DropdownButton {
 }
 
 /**
+ * 静态展示表单项Label类名
+ */
+func (a *DropdownButton) StaticLabelClassName(value string) *DropdownButton {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
  */
 func (a *DropdownButton) StaticSchema(value string) *DropdownButton {
     a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否只显示图标。
- */
-func (a *DropdownButton) IconOnly(value string) *DropdownButton {
-    a.Set("iconOnly", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *DropdownButton) ClassName(value string) *DropdownButton {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *DropdownButton) StaticInputClassName(value string) *DropdownButton {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 给 Button 配置 className。
- */
-func (a *DropdownButton) BtnClassName(value string) *DropdownButton {
-    a.Set("btnClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *DropdownButton) Style(value string) *DropdownButton {
-    a.Set("style", value)
     return a
 }
 
@@ -123,18 +50,18 @@ func (a *DropdownButton) UseMobileUI(value string) *DropdownButton {
 }
 
 /**
- * 按钮文字
+ * 按钮集合，支持分组
  */
-func (a *DropdownButton) Label(value string) *DropdownButton {
-    a.Set("label", value)
+func (a *DropdownButton) Buttons(value string) *DropdownButton {
+    a.Set("buttons", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 按钮文字
  */
-func (a *DropdownButton) HiddenOn(value string) *DropdownButton {
-    a.Set("hiddenOn", value)
+func (a *DropdownButton) Label(value string) *DropdownButton {
+    a.Set("label", value)
     return a
 }
 
@@ -155,10 +82,84 @@ func (a *DropdownButton) OnEvent(value string) *DropdownButton {
 }
 
 /**
- * 菜单 CSS 样式
+ * 按钮级别，样式
+ * 可选值: info | success | danger | warning | primary | link
  */
-func (a *DropdownButton) MenuClassName(value string) *DropdownButton {
-    a.Set("menuClassName", value)
+func (a *DropdownButton) Level(value string) *DropdownButton {
+    a.Set("level", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *DropdownButton) Hidden(value string) *DropdownButton {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *DropdownButton) HiddenOn(value string) *DropdownButton {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *DropdownButton) ClassName(value string) *DropdownButton {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 给 Button 配置 className。
+ */
+func (a *DropdownButton) BtnClassName(value string) *DropdownButton {
+    a.Set("btnClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *DropdownButton) Static(value string) *DropdownButton {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *DropdownButton) Style(value string) *DropdownButton {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 内容区域
+ */
+func (a *DropdownButton) Body(value string) *DropdownButton {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 点击内容是否关闭
+ */
+func (a *DropdownButton) CloseOnClick(value string) *DropdownButton {
+    a.Set("closeOnClick", value)
+    return a
+}
+
+/**
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
+ */
+func (a *DropdownButton) Size(value string) *DropdownButton {
+    a.Set("size", value)
     return a
 }
 
@@ -179,26 +180,26 @@ func (a *DropdownButton) Block(value string) *DropdownButton {
 }
 
 /**
- * 右侧图标
+ * 是否只显示图标。
  */
-func (a *DropdownButton) RightIcon(value string) *DropdownButton {
-    a.Set("rightIcon", value)
+func (a *DropdownButton) IconOnly(value string) *DropdownButton {
+    a.Set("iconOnly", value)
     return a
 }
 
 /**
- * 按钮集合，支持分组
+ * 是否禁用表达式
  */
-func (a *DropdownButton) Buttons(value string) *DropdownButton {
-    a.Set("buttons", value)
+func (a *DropdownButton) DisabledOn(value string) *DropdownButton {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 点击外部是否关闭
  */
-func (a *DropdownButton) Static(value string) *DropdownButton {
-    a.Set("static", value)
+func (a *DropdownButton) CloseOnOutside(value string) *DropdownButton {
+    a.Set("closeOnOutside", value)
     return a
 }
 
@@ -219,19 +220,25 @@ func (a *DropdownButton) EditorSetting(value string) *DropdownButton {
 }
 
 /**
- * 按钮级别，样式
- * 可选值: info | success | danger | warning | primary | link
  */
-func (a *DropdownButton) Level(value string) *DropdownButton {
-    a.Set("level", value)
+func (a *DropdownButton) Testid(value string) *DropdownButton {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 菜单 CSS 样式
  */
-func (a *DropdownButton) DisabledOn(value string) *DropdownButton {
-    a.Set("disabledOn", value)
+func (a *DropdownButton) MenuClassName(value string) *DropdownButton {
+    a.Set("menuClassName", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *DropdownButton) VisibleOn(value string) *DropdownButton {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -244,17 +251,10 @@ func (a *DropdownButton) StaticOn(value string) *DropdownButton {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *DropdownButton) Testid(value string) *DropdownButton {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *DropdownButton) StaticLabelClassName(value string) *DropdownButton {
-    a.Set("staticLabelClassName", value)
+func (a *DropdownButton) StaticInputClassName(value string) *DropdownButton {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -264,6 +264,14 @@ func (a *DropdownButton) StaticLabelClassName(value string) *DropdownButton {
  */
 func (a *DropdownButton) Align(value string) *DropdownButton {
     a.Set("align", value)
+    return a
+}
+
+/**
+ * 右侧图标
+ */
+func (a *DropdownButton) RightIcon(value string) *DropdownButton {
+    a.Set("rightIcon", value)
     return a
 }
 
@@ -292,18 +300,10 @@ func (a *DropdownButton) OverlayPlacement(value string) *DropdownButton {
 }
 
 /**
- * 是否隐藏
+ * 是否禁用
  */
-func (a *DropdownButton) Hidden(value string) *DropdownButton {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *DropdownButton) VisibleOn(value string) *DropdownButton {
-    a.Set("visibleOn", value)
+func (a *DropdownButton) Disabled(value string) *DropdownButton {
+    a.Set("disabled", value)
     return a
 }
 

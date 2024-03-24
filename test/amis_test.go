@@ -1,11 +1,13 @@
-package gamis
+package test
 
 import (
 	"testing"
+
+	"github.com/wcz0/gamis"
 )
 
 func TestAmis(t *testing.T) {
-	str := Amis().Page().Title("这是一个标题").ToJson()
+	str := gamis.Page().Title("这是一个标题").ToJson()
 	if str == "" {
 		t.Error("error")
 	}

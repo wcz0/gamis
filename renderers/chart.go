@@ -19,37 +19,6 @@ func NewChart() *Chart {
     return a
 }
 /**
- */
-func (a *Chart) Name(value string) *Chart {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Chart) StaticLabelClassName(value string) *Chart {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Chart) StaticInputClassName(value string) *Chart {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 图表配置接口
- */
-func (a *Chart) Api(value string) *Chart {
-    a.Set("api", value)
-    return a
-}
-
-/**
  * 是否初始加载用表达式来配置
  */
 func (a *Chart) InitFetchOn(value string) *Chart {
@@ -58,106 +27,24 @@ func (a *Chart) InitFetchOn(value string) *Chart {
 }
 
 /**
- * 宽度设置
  */
-func (a *Chart) Width(value string) *Chart {
-    a.Set("width", value)
+func (a *Chart) Name(value string) *Chart {
+    a.Set("name", value)
     return a
 }
 
 /**
- * 是否显示
  */
-func (a *Chart) Visible(value string) *Chart {
-    a.Set("visible", value)
+func (a *Chart) DataFilter(value string) *Chart {
+    a.Set("dataFilter", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否显示表达式
  */
-func (a *Chart) Static(value string) *Chart {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Chart) StaticClassName(value string) *Chart {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 不可见的时候隐藏
- */
-func (a *Chart) UnMountOnHidden(value string) *Chart {
-    a.Set("unMountOnHidden", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Chart) ClassName(value string) *Chart {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Chart) UseMobileUI(value string) *Chart {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * Chart 主题配置
- */
-func (a *Chart) ChartTheme(value string) *Chart {
-    a.Set("chartTheme", value)
-    return a
-}
-
-/**
- * 刷新时间
- */
-func (a *Chart) Interval(value string) *Chart {
-    a.Set("interval", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Chart) Hidden(value string) *Chart {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 跟踪表达式，如果这个表达式的运行结果发生变化了，则会更新 Echart，当 config 中用了数据映射时有用。
- */
-func (a *Chart) TrackExpression(value string) *Chart {
-    a.Set("trackExpression", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Chart) DisabledOn(value string) *Chart {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Chart) HiddenOn(value string) *Chart {
-    a.Set("hiddenOn", value)
+func (a *Chart) VisibleOn(value string) *Chart {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -170,18 +57,66 @@ func (a *Chart) OnEvent(value string) *Chart {
 }
 
 /**
- * 指定为 chart 类型
+ * 是否静态展示表达式
  */
-func (a *Chart) Type(value string) *Chart {
-    a.Set("type", value)
+func (a *Chart) StaticOn(value string) *Chart {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 点击行为配置，可以用来满足下钻操作等。
+ * style样式
  */
-func (a *Chart) ClickAction(value string) *Chart {
-    a.Set("clickAction", value)
+func (a *Chart) Style(value string) *Chart {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 图表配置接口
+ */
+func (a *Chart) Api(value string) *Chart {
+    a.Set("api", value)
+    return a
+}
+
+/**
+ * 获取 geo json 文件的地址
+ */
+func (a *Chart) MapURL(value string) *Chart {
+    a.Set("mapURL", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Chart) StaticInputClassName(value string) *Chart {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否初始加载。
+ */
+func (a *Chart) InitFetch(value string) *Chart {
+    a.Set("initFetch", value)
+    return a
+}
+
+/**
+ * 宽度设置
+ */
+func (a *Chart) Width(value string) *Chart {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 刷新时间
+ */
+func (a *Chart) Interval(value string) *Chart {
+    a.Set("interval", value)
     return a
 }
 
@@ -194,33 +129,18 @@ func (a *Chart) Height(value string) *Chart {
 }
 
 /**
+ * 不可见的时候隐藏
  */
-func (a *Chart) DataFilter(value string) *Chart {
-    a.Set("dataFilter", value)
+func (a *Chart) UnMountOnHidden(value string) *Chart {
+    a.Set("unMountOnHidden", value)
     return a
 }
 
 /**
- * 默认开启 Config 中的数据映射，如果想关闭，请开启此功能。
+ * 是否禁用表达式
  */
-func (a *Chart) DisableDataMapping(value string) *Chart {
-    a.Set("disableDataMapping", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Chart) Disabled(value string) *Chart {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Chart) Id(value string) *Chart {
-    a.Set("id", value)
+func (a *Chart) DisabledOn(value string) *Chart {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -233,10 +153,9 @@ func (a *Chart) StaticPlaceholder(value string) *Chart {
 }
 
 /**
- * 是否初始加载。
  */
-func (a *Chart) InitFetch(value string) *Chart {
-    a.Set("initFetch", value)
+func (a *Chart) StaticSchema(value string) *Chart {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -257,6 +176,109 @@ func (a *Chart) ReplaceChartOption(value string) *Chart {
 }
 
 /**
+ * 是否隐藏表达式
+ */
+func (a *Chart) HiddenOn(value string) *Chart {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Chart) Visible(value string) *Chart {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Chart) StaticClassName(value string) *Chart {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Chart) Source(value string) *Chart {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 点击行为配置，可以用来满足下钻操作等。
+ */
+func (a *Chart) ClickAction(value string) *Chart {
+    a.Set("clickAction", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Chart) Hidden(value string) *Chart {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Chart) Static(value string) *Chart {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 指定为 chart 类型
+ */
+func (a *Chart) Type(value string) *Chart {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * Chart 主题配置
+ */
+func (a *Chart) ChartTheme(value string) *Chart {
+    a.Set("chartTheme", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Chart) Disabled(value string) *Chart {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Chart) UseMobileUI(value string) *Chart {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 跟踪表达式，如果这个表达式的运行结果发生变化了，则会更新 Echart，当 config 中用了数据映射时有用。
+ */
+func (a *Chart) TrackExpression(value string) *Chart {
+    a.Set("trackExpression", value)
+    return a
+}
+
+/**
+ * 默认开启 Config 中的数据映射，如果想关闭，请开启此功能。
+ */
+func (a *Chart) DisableDataMapping(value string) *Chart {
+    a.Set("disableDataMapping", value)
+    return a
+}
+
+/**
  * 加载百度地图
  */
 func (a *Chart) LoadBaiduMap(value string) *Chart {
@@ -265,18 +287,10 @@ func (a *Chart) LoadBaiduMap(value string) *Chart {
 }
 
 /**
- * 是否显示表达式
+ * 容器 css 类名
  */
-func (a *Chart) VisibleOn(value string) *Chart {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Chart) StaticOn(value string) *Chart {
-    a.Set("staticOn", value)
+func (a *Chart) ClassName(value string) *Chart {
+    a.Set("className", value)
     return a
 }
 
@@ -289,9 +303,18 @@ func (a *Chart) EditorSetting(value string) *Chart {
 }
 
 /**
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Chart) Source(value string) *Chart {
-    a.Set("source", value)
+func (a *Chart) Id(value string) *Chart {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Chart) StaticLabelClassName(value string) *Chart {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -300,28 +323,5 @@ func (a *Chart) Source(value string) *Chart {
  */
 func (a *Chart) MapName(value string) *Chart {
     a.Set("mapName", value)
-    return a
-}
-
-/**
- */
-func (a *Chart) StaticSchema(value string) *Chart {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * style样式
- */
-func (a *Chart) Style(value string) *Chart {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 获取 geo json 文件的地址
- */
-func (a *Chart) MapURL(value string) *Chart {
-    a.Set("mapURL", value)
     return a
 }

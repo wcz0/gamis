@@ -17,6 +17,13 @@ func NewComboCondition() *ComboCondition {
 }
 /**
  */
+func (a *ComboCondition) Mode(value string) *ComboCondition {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ */
 func (a *ComboCondition) Test(value string) *ComboCondition {
     a.Set("test", value)
     return a
@@ -40,12 +47,5 @@ func (a *ComboCondition) Label(value string) *ComboCondition {
  */
 func (a *ComboCondition) Scaffold(value string) *ComboCondition {
     a.Set("scaffold", value)
-    return a
-}
-
-/**
- */
-func (a *ComboCondition) Mode(value string) *ComboCondition {
-    a.Set("mode", value)
     return a
 }

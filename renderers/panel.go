@@ -19,10 +19,49 @@ func NewPanel() *Panel {
     return a
 }
 /**
- * 容器 css 类名
+ * Panel 标题
  */
-func (a *Panel) ClassName(value string) *Panel {
-    a.Set("className", value)
+func (a *Panel) Title(value string) *Panel {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 内容区域
+ */
+func (a *Panel) Body(value string) *Panel {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Panel) Hidden(value string) *Panel {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Panel) VisibleOn(value string) *Panel {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Panel) StaticOn(value string) *Panel {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Panel) StaticSchema(value string) *Panel {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -43,10 +82,10 @@ func (a *Panel) ActionsClassName(value string) *Panel {
 }
 
 /**
- * 内容区域
+ * 头部内容, 和 title 二选一。
  */
-func (a *Panel) Body(value string) *Panel {
-    a.Set("body", value)
+func (a *Panel) Header(value string) *Panel {
+    a.Set("header", value)
     return a
 }
 
@@ -59,18 +98,18 @@ func (a *Panel) DisabledOn(value string) *Panel {
 }
 
 /**
- * 是否隐藏表达式
+ * 静态展示空值占位
  */
-func (a *Panel) HiddenOn(value string) *Panel {
-    a.Set("hiddenOn", value)
+func (a *Panel) StaticPlaceholder(value string) *Panel {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 按钮集合
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Panel) Actions(value string) *Panel {
-    a.Set("actions", value)
+func (a *Panel) UseMobileUI(value string) *Panel {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -87,78 +126,6 @@ func (a *Panel) BodyClassName(value string) *Panel {
  */
 func (a *Panel) HeaderClassName(value string) *Panel {
     a.Set("headerClassName", value)
-    return a
-}
-
-/**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
- */
-func (a *Panel) SubFormHorizontal(value string) *Panel {
-    a.Set("subFormHorizontal", value)
-    return a
-}
-
-/**
- */
-func (a *Panel) StaticSchema(value string) *Panel {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Panel) Style(value string) *Panel {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * Panel 标题
- */
-func (a *Panel) Title(value string) *Panel {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
- */
-func (a *Panel) SubFormMode(value string) *Panel {
-    a.Set("subFormMode", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Panel) Disabled(value string) *Panel {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Panel) VisibleOn(value string) *Panel {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Panel) StaticClassName(value string) *Panel {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Panel) Hidden(value string) *Panel {
-    a.Set("hidden", value)
     return a
 }
 
@@ -187,18 +154,18 @@ func (a *Panel) Type(value string) *Panel {
 }
 
 /**
- * 是否静态展示
+ * 按钮集合
  */
-func (a *Panel) Static(value string) *Panel {
-    a.Set("static", value)
+func (a *Panel) Actions(value string) *Panel {
+    a.Set("actions", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 是否隐藏表达式
  */
-func (a *Panel) StaticPlaceholder(value string) *Panel {
-    a.Set("staticPlaceholder", value)
+func (a *Panel) HiddenOn(value string) *Panel {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -211,58 +178,10 @@ func (a *Panel) OnEvent(value string) *Panel {
 }
 
 /**
- * footer 和 actions 外层 div 类名。
+ * 组件样式
  */
-func (a *Panel) FooterWrapClassName(value string) *Panel {
-    a.Set("footerWrapClassName", value)
-    return a
-}
-
-/**
- * 头部内容, 和 title 二选一。
- */
-func (a *Panel) Header(value string) *Panel {
-    a.Set("header", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Panel) Id(value string) *Panel {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Panel) StaticOn(value string) *Panel {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Panel) StaticInputClassName(value string) *Panel {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Panel) UseMobileUI(value string) *Panel {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 底部内容区域
- */
-func (a *Panel) Footer(value string) *Panel {
-    a.Set("footer", value)
+func (a *Panel) Style(value string) *Panel {
+    a.Set("style", value)
     return a
 }
 
@@ -279,5 +198,86 @@ func (a *Panel) FooterClassName(value string) *Panel {
  */
 func (a *Panel) AffixFooter(value string) *Panel {
     a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Panel) Id(value string) *Panel {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Panel) Static(value string) *Panel {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Panel) StaticClassName(value string) *Panel {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Panel) StaticInputClassName(value string) *Panel {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 底部内容区域
+ */
+func (a *Panel) Footer(value string) *Panel {
+    a.Set("footer", value)
+    return a
+}
+
+/**
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
+ */
+func (a *Panel) SubFormMode(value string) *Panel {
+    a.Set("subFormMode", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Panel) ClassName(value string) *Panel {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Panel) Disabled(value string) *Panel {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * footer 和 actions 外层 div 类名。
+ */
+func (a *Panel) FooterWrapClassName(value string) *Panel {
+    a.Set("footerWrapClassName", value)
+    return a
+}
+
+/**
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ */
+func (a *Panel) SubFormHorizontal(value string) *Panel {
+    a.Set("subFormHorizontal", value)
     return a
 }

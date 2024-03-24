@@ -16,19 +16,20 @@ func NewGridColumn() *GridColumn {
     return a
 }
 /**
- * 小屏时（>=768px）宽度占比
- */
-func (a *GridColumn) Sm(value string) *GridColumn {
-    a.Set("sm", value)
-    return a
-}
-
-/**
  * 垂直对齐方式
  * 可选值: top | middle | bottom | between
  */
 func (a *GridColumn) Valign(value string) *GridColumn {
     a.Set("valign", value)
+    return a
+}
+
+/**
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
+ */
+func (a *GridColumn) Mode(value string) *GridColumn {
+    a.Set("mode", value)
     return a
 }
 
@@ -73,11 +74,10 @@ func (a *GridColumn) Lg(value string) *GridColumn {
 }
 
 /**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
+ * 小屏时（>=768px）宽度占比
  */
-func (a *GridColumn) Mode(value string) *GridColumn {
-    a.Set("mode", value)
+func (a *GridColumn) Sm(value string) *GridColumn {
+    a.Set("sm", value)
     return a
 }
 

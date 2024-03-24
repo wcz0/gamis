@@ -19,10 +19,10 @@ func NewCollapse() *Collapse {
     return a
 }
 /**
- * 自定义切换图标
+ * 是否隐藏表达式
  */
-func (a *Collapse) ExpandIcon(value string) *Collapse {
-    a.Set("expandIcon", value)
+func (a *Collapse) HiddenOn(value string) *Collapse {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -35,18 +35,18 @@ func (a *Collapse) UnmountOnExit(value string) *Collapse {
 }
 
 /**
- * 是否禁用
+ * 是否显示表达式
  */
-func (a *Collapse) Disabled(value string) *Collapse {
-    a.Set("disabled", value)
+func (a *Collapse) VisibleOn(value string) *Collapse {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 事件动作配置
  */
-func (a *Collapse) StaticPlaceholder(value string) *Collapse {
-    a.Set("staticPlaceholder", value)
+func (a *Collapse) OnEvent(value string) *Collapse {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -59,26 +59,10 @@ func (a *Collapse) Style(value string) *Collapse {
 }
 
 /**
- * 标识
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Collapse) Key(value string) *Collapse {
-    a.Set("key", value)
-    return a
-}
-
-/**
- * 配置 Body 容器 className
- */
-func (a *Collapse) BodyClassName(value string) *Collapse {
-    a.Set("bodyClassName", value)
-    return a
-}
-
-/**
- * 标题 CSS 类名
- */
-func (a *Collapse) HeadingClassName(value string) *Collapse {
-    a.Set("headingClassName", value)
+func (a *Collapse) EditorSetting(value string) *Collapse {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -92,42 +76,10 @@ func (a *Collapse) Size(value string) *Collapse {
 }
 
 /**
- * 点开时才加载内容
+ * 标题 CSS 类名
  */
-func (a *Collapse) MountOnEnter(value string) *Collapse {
-    a.Set("mountOnEnter", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Collapse) StaticOn(value string) *Collapse {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Collapse) UseMobileUI(value string) *Collapse {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 指定为折叠器类型
- */
-func (a *Collapse) Type(value string) *Collapse {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Collapse) Static(value string) *Collapse {
-    a.Set("static", value)
+func (a *Collapse) HeadingClassName(value string) *Collapse {
+    a.Set("headingClassName", value)
     return a
 }
 
@@ -140,10 +92,49 @@ func (a *Collapse) CollapseHeader(value string) *Collapse {
 }
 
 /**
- * 标题内容分割线
+ * 点开时才加载内容
  */
-func (a *Collapse) DivideLine(value string) *Collapse {
-    a.Set("divideLine", value)
+func (a *Collapse) MountOnEnter(value string) *Collapse {
+    a.Set("mountOnEnter", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Collapse) Hidden(value string) *Collapse {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Collapse) StaticOn(value string) *Collapse {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Collapse) StaticPlaceholder(value string) *Collapse {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *Collapse) StaticSchema(value string) *Collapse {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Collapse) UseMobileUI(value string) *Collapse {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -156,43 +147,34 @@ func (a *Collapse) ClassName(value string) *Collapse {
 }
 
 /**
- * 是否显示
+ * 是否禁用
  */
-func (a *Collapse) Visible(value string) *Collapse {
-    a.Set("visible", value)
+func (a *Collapse) Disabled(value string) *Collapse {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 配置 Body 容器 className
  */
-func (a *Collapse) VisibleOn(value string) *Collapse {
-    a.Set("visibleOn", value)
+func (a *Collapse) BodyClassName(value string) *Collapse {
+    a.Set("bodyClassName", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 标题内容分割线
  */
-func (a *Collapse) EditorSetting(value string) *Collapse {
-    a.Set("editorSetting", value)
+func (a *Collapse) DivideLine(value string) *Collapse {
+    a.Set("divideLine", value)
     return a
 }
 
 /**
- * 标题展示位置
- * 可选值: top | bottom
+ * 是否静态展示
  */
-func (a *Collapse) HeaderPosition(value string) *Collapse {
-    a.Set("headerPosition", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Collapse) OnEvent(value string) *Collapse {
-    a.Set("onEvent", value)
+func (a *Collapse) Static(value string) *Collapse {
+    a.Set("static", value)
     return a
 }
 
@@ -205,26 +187,10 @@ func (a *Collapse) StaticLabelClassName(value string) *Collapse {
 }
 
 /**
- * 是否隐藏表达式
+ * 是否可折叠
  */
-func (a *Collapse) HiddenOn(value string) *Collapse {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Collapse) StaticClassName(value string) *Collapse {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 默认是否折叠
- */
-func (a *Collapse) Collapsed(value string) *Collapse {
-    a.Set("collapsed", value)
+func (a *Collapse) Collapsable(value string) *Collapse {
+    a.Set("collapsable", value)
     return a
 }
 
@@ -233,6 +199,14 @@ func (a *Collapse) Collapsed(value string) *Collapse {
  */
 func (a *Collapse) ShowArrow(value string) *Collapse {
     a.Set("showArrow", value)
+    return a
+}
+
+/**
+ * 自定义切换图标
+ */
+func (a *Collapse) ExpandIcon(value string) *Collapse {
+    a.Set("expandIcon", value)
     return a
 }
 
@@ -253,10 +227,18 @@ func (a *Collapse) Body(value string) *Collapse {
 }
 
 /**
- * 是否可折叠
+ * 是否禁用表达式
  */
-func (a *Collapse) Collapsable(value string) *Collapse {
-    a.Set("collapsable", value)
+func (a *Collapse) DisabledOn(value string) *Collapse {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Collapse) Visible(value string) *Collapse {
+    a.Set("visible", value)
     return a
 }
 
@@ -269,25 +251,18 @@ func (a *Collapse) StaticInputClassName(value string) *Collapse {
 }
 
 /**
+ * 指定为折叠器类型
  */
-func (a *Collapse) StaticSchema(value string) *Collapse {
-    a.Set("staticSchema", value)
+func (a *Collapse) Type(value string) *Collapse {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 标识
  */
-func (a *Collapse) DisabledOn(value string) *Collapse {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Collapse) Hidden(value string) *Collapse {
-    a.Set("hidden", value)
+func (a *Collapse) Key(value string) *Collapse {
+    a.Set("key", value)
     return a
 }
 
@@ -296,5 +271,30 @@ func (a *Collapse) Hidden(value string) *Collapse {
  */
 func (a *Collapse) Id(value string) *Collapse {
     a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Collapse) StaticClassName(value string) *Collapse {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 标题展示位置
+ * 可选值: top | bottom
+ */
+func (a *Collapse) HeaderPosition(value string) *Collapse {
+    a.Set("headerPosition", value)
+    return a
+}
+
+/**
+ * 默认是否折叠
+ */
+func (a *Collapse) Collapsed(value string) *Collapse {
+    a.Set("collapsed", value)
     return a
 }

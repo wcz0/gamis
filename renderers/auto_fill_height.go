@@ -17,14 +17,14 @@ func NewAutoFillHeight() *AutoFillHeight {
 }
 /**
  */
-func (a *AutoFillHeight) MaxHeight(value string) *AutoFillHeight {
-    a.Set("maxHeight", value)
+func (a *AutoFillHeight) Height(value string) *AutoFillHeight {
+    a.Set("height", value)
     return a
 }
 
 /**
  */
-func (a *AutoFillHeight) Height(value string) *AutoFillHeight {
-    a.Set("height", value)
+func (a *AutoFillHeight) MaxHeight(value string) *AutoFillHeight {
+    a.Set("maxHeight", value)
     return a
 }
