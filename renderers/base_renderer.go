@@ -15,12 +15,12 @@ func NewBaseRenderer() *BaseRenderer {
 	}
 }
 
-func (b *BaseRenderer) ToJson() string {
+func (b *BaseRenderer) ToJson() (string, error) {
 	bytes, err := json.Marshal(b.AmisSchema)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
-	return string(bytes)
+	return string(bytes), nil
 }
 
 func (b *BaseRenderer) Set(name string, value interface{}) *BaseRenderer {
@@ -34,7 +34,11 @@ func (b *BaseRenderer) Set(name string, value interface{}) *BaseRenderer {
 }
 
 func (b *BaseRenderer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(b.AmisSchema)
+	byte, err := json.Marshal(b.AmisSchema)
+	if err != nil {
+		return nil, err
+	}
+	return byte, nil
 }
 
 func (b *BaseRenderer) ToArray() map[string]interface{} {
