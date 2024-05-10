@@ -1,6 +1,6 @@
 package gamis
 
-import "github.com/wcz0/gamis/renderers"
+import "github.com/wcz0/gamis/v6/renderers"
 
 func Action() *renderers.Action {
 	return renderers.NewAction();
