@@ -18,6 +18,53 @@ func NewGrid2D() *Grid2D {
     a.Set("type", "grid-2d")
     return a
 }
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Grid2D) StaticPlaceholder(value interface{}) *Grid2D {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Grid2D) Style(value interface{}) *Grid2D {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 列数量，默认是 12
+ */
+func (a *Grid2D) Cols(value interface{}) *Grid2D {
+    a.Set("cols", value)
+    return a
+}
+
+/**
+ */
+func (a *Grid2D) TestIdBuilder(value interface{}) *Grid2D {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ */
+func (a *Grid2D) Testid(value interface{}) *Grid2D {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 每个格子的配置
+ */
+func (a *Grid2D) Grids(value interface{}) *Grid2D {
+    a.Set("grids", value)
+    return a
+}
+
 /**
  * 组件唯一 id，主要用于日志采集
  */
@@ -35,26 +82,10 @@ func (a *Grid2D) StaticLabelClassName(value interface{}) *Grid2D {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 格子间距，默认 0，包含行和列
  */
-func (a *Grid2D) StaticInputClassName(value interface{}) *Grid2D {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Grid2D) Style(value interface{}) *Grid2D {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 单位行高度，默认 50 px
- */
-func (a *Grid2D) RowHeight(value interface{}) *Grid2D {
-    a.Set("rowHeight", value)
+func (a *Grid2D) Gap(value interface{}) *Grid2D {
+    a.Set("gap", value)
     return a
 }
 
@@ -67,18 +98,17 @@ func (a *Grid2D) DisabledOn(value interface{}) *Grid2D {
 }
 
 /**
- * 是否隐藏表达式
  */
-func (a *Grid2D) HiddenOn(value interface{}) *Grid2D {
-    a.Set("hiddenOn", value)
+func (a *Grid2D) StaticSchema(value interface{}) *Grid2D {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Grid2D) StaticPlaceholder(value interface{}) *Grid2D {
-    a.Set("staticPlaceholder", value)
+func (a *Grid2D) UseMobileUI(value interface{}) *Grid2D {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -99,81 +129,10 @@ func (a *Grid2D) Width(value interface{}) *Grid2D {
 }
 
 /**
- * 是否禁用
- */
-func (a *Grid2D) Disabled(value interface{}) *Grid2D {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Grid2D) VisibleOn(value interface{}) *Grid2D {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- */
-func (a *Grid2D) StaticSchema(value interface{}) *Grid2D {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Grid2D) EditorSetting(value interface{}) *Grid2D {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
  * 是否静态展示
  */
 func (a *Grid2D) Static(value interface{}) *Grid2D {
     a.Set("static", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Grid2D) StaticOn(value interface{}) *Grid2D {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 列数量，默认是 12
- */
-func (a *Grid2D) Cols(value interface{}) *Grid2D {
-    a.Set("cols", value)
-    return a
-}
-
-/**
- * 格子间距，默认 0，包含行和列
- */
-func (a *Grid2D) Gap(value interface{}) *Grid2D {
-    a.Set("gap", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Grid2D) ClassName(value interface{}) *Grid2D {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Grid2D) Visible(value interface{}) *Grid2D {
-    a.Set("visible", value)
     return a
 }
 
@@ -186,10 +145,26 @@ func (a *Grid2D) StaticClassName(value interface{}) *Grid2D {
 }
 
 /**
- * 是否隐藏
+ * 静态展示表单项Value类名
  */
-func (a *Grid2D) Hidden(value interface{}) *Grid2D {
-    a.Set("hidden", value)
+func (a *Grid2D) StaticInputClassName(value interface{}) *Grid2D {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Grid2D) ClassName(value interface{}) *Grid2D {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Grid2D) VisibleOn(value interface{}) *Grid2D {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -202,14 +177,6 @@ func (a *Grid2D) OnEvent(value interface{}) *Grid2D {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Grid2D) UseMobileUI(value interface{}) *Grid2D {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
  * 格子行级别的间距，如果不设置就和 gap 一样
  */
 func (a *Grid2D) GapRow(value interface{}) *Grid2D {
@@ -218,9 +185,57 @@ func (a *Grid2D) GapRow(value interface{}) *Grid2D {
 }
 
 /**
- * 每个格子的配置
+ * 单位行高度，默认 50 px
  */
-func (a *Grid2D) Grids(value interface{}) *Grid2D {
-    a.Set("grids", value)
+func (a *Grid2D) RowHeight(value interface{}) *Grid2D {
+    a.Set("rowHeight", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Grid2D) Disabled(value interface{}) *Grid2D {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Grid2D) Hidden(value interface{}) *Grid2D {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Grid2D) HiddenOn(value interface{}) *Grid2D {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Grid2D) Visible(value interface{}) *Grid2D {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Grid2D) StaticOn(value interface{}) *Grid2D {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Grid2D) EditorSetting(value interface{}) *Grid2D {
+    a.Set("editorSetting", value)
     return a
 }

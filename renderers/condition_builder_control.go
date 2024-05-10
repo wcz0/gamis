@@ -18,178 +18,12 @@ func NewConditionBuilderControl() *ConditionBuilderControl {
     a.Set("type", "condition-builder")
     return a
 }
-/**
- * 展现模式
- * 可选值: simple | full
- */
-func (a *ConditionBuilderControl) BuilderMode(value interface{}) *ConditionBuilderControl {
-    a.Set("builderMode", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *ConditionBuilderControl) Id(value interface{}) *ConditionBuilderControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *ConditionBuilderControl) LabelAlign(value interface{}) *ConditionBuilderControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 将字段输入控件变成公式编辑器。
- */
-func (a *ConditionBuilderControl) Formula(value interface{}) *ConditionBuilderControl {
-    a.Set("formula", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *ConditionBuilderControl) Label(value interface{}) *ConditionBuilderControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- */
-func (a *ConditionBuilderControl) Validations(value interface{}) *ConditionBuilderControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- */
-func (a *ConditionBuilderControl) StaticSchema(value interface{}) *ConditionBuilderControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *ConditionBuilderControl) LabelWidth(value interface{}) *ConditionBuilderControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *ConditionBuilderControl) StaticClassName(value interface{}) *ConditionBuilderControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *ConditionBuilderControl) StaticInputClassName(value interface{}) *ConditionBuilderControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *ConditionBuilderControl) Width(value interface{}) *ConditionBuilderControl {
-    a.Set("width", value)
-    return a
-}
 
 /**
  * 是否隐藏表达式
  */
 func (a *ConditionBuilderControl) HiddenOn(value interface{}) *ConditionBuilderControl {
     a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *ConditionBuilderControl) Placeholder(value interface{}) *ConditionBuilderControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *ConditionBuilderControl) Style(value interface{}) *ConditionBuilderControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *ConditionBuilderControl) UseMobileUI(value interface{}) *ConditionBuilderControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
- */
-func (a *ConditionBuilderControl) Size(value interface{}) *ConditionBuilderControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *ConditionBuilderControl) Static(value interface{}) *ConditionBuilderControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *ConditionBuilderControl) StaticOn(value interface{}) *ConditionBuilderControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *ConditionBuilderControl) Desc(value interface{}) *ConditionBuilderControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *ConditionBuilderControl) ClearValueOnHidden(value interface{}) *ConditionBuilderControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *ConditionBuilderControl) LabelRemark(value interface{}) *ConditionBuilderControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *ConditionBuilderControl) Description(value interface{}) *ConditionBuilderControl {
-    a.Set("description", value)
     return a
 }
 
@@ -210,10 +44,10 @@ func (a *ConditionBuilderControl) Disabled(value interface{}) *ConditionBuilderC
 }
 
 /**
- * 字段集合
+ * 描述内容，支持 Html 片段。
  */
-func (a *ConditionBuilderControl) Fields(value interface{}) *ConditionBuilderControl {
-    a.Set("fields", value)
+func (a *ConditionBuilderControl) Description(value interface{}) *ConditionBuilderControl {
+    a.Set("description", value)
     return a
 }
 
@@ -226,50 +60,10 @@ func (a *ConditionBuilderControl) Inline(value interface{}) *ConditionBuilderCon
 }
 
 /**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ * 非内嵌模式时 弹窗触发icon
  */
-func (a *ConditionBuilderControl) Value(value interface{}) *ConditionBuilderControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *ConditionBuilderControl) ClassName(value interface{}) *ConditionBuilderControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *ConditionBuilderControl) DisabledOn(value interface{}) *ConditionBuilderControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *ConditionBuilderControl) ReadOnlyOn(value interface{}) *ConditionBuilderControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *ConditionBuilderControl) ValidateOnChange(value interface{}) *ConditionBuilderControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
- * 是否显示并或切换键按钮，只在简单模式下有用
- */
-func (a *ConditionBuilderControl) ShowANDOR(value interface{}) *ConditionBuilderControl {
-    a.Set("showANDOR", value)
+func (a *ConditionBuilderControl) PickerIcon(value interface{}) *ConditionBuilderControl {
+    a.Set("pickerIcon", value)
     return a
 }
 
@@ -282,42 +76,25 @@ func (a *ConditionBuilderControl) StaticPlaceholder(value interface{}) *Conditio
 }
 
 /**
- * 静态展示表单项Label类名
+ * 描述标题
  */
-func (a *ConditionBuilderControl) StaticLabelClassName(value interface{}) *ConditionBuilderControl {
-    a.Set("staticLabelClassName", value)
+func (a *ConditionBuilderControl) Label(value interface{}) *ConditionBuilderControl {
+    a.Set("label", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
  */
-func (a *ConditionBuilderControl) Remark(value interface{}) *ConditionBuilderControl {
-    a.Set("remark", value)
+func (a *ConditionBuilderControl) AutoFill(value interface{}) *ConditionBuilderControl {
+    a.Set("autoFill", value)
     return a
 }
 
 /**
- * 当修改完的时候是否提交表单。
  */
-func (a *ConditionBuilderControl) SubmitOnChange(value interface{}) *ConditionBuilderControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *ConditionBuilderControl) Horizontal(value interface{}) *ConditionBuilderControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 非内嵌模式时 弹窗触发icon
- */
-func (a *ConditionBuilderControl) PickerIcon(value interface{}) *ConditionBuilderControl {
-    a.Set("pickerIcon", value)
+func (a *ConditionBuilderControl) InitAutoFill(value interface{}) *ConditionBuilderControl {
+    a.Set("initAutoFill", value)
     return a
 }
 
@@ -330,18 +107,73 @@ func (a *ConditionBuilderControl) AddGroupBtnVisibleOn(value interface{}) *Condi
 }
 
 /**
- * 是否隐藏
+ * if 里面公式编辑器配置
  */
-func (a *ConditionBuilderControl) Hidden(value interface{}) *ConditionBuilderControl {
-    a.Set("hidden", value)
+func (a *ConditionBuilderControl) FormulaForIf(value interface{}) *ConditionBuilderControl {
+    a.Set("formulaForIf", value)
     return a
 }
 
 /**
- * 配置 label className
+ * 静态展示表单项Value类名
  */
-func (a *ConditionBuilderControl) LabelClassName(value interface{}) *ConditionBuilderControl {
-    a.Set("labelClassName", value)
+func (a *ConditionBuilderControl) StaticInputClassName(value interface{}) *ConditionBuilderControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *ConditionBuilderControl) Horizontal(value interface{}) *ConditionBuilderControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ */
+func (a *ConditionBuilderControl) Validations(value interface{}) *ConditionBuilderControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 通过远程拉取配置项
+ */
+func (a *ConditionBuilderControl) Source(value interface{}) *ConditionBuilderControl {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *ConditionBuilderControl) Visible(value interface{}) *ConditionBuilderControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 函数集合
+ */
+func (a *ConditionBuilderControl) Funcs(value interface{}) *ConditionBuilderControl {
+    a.Set("funcs", value)
+    return a
+}
+
+/**
+ * 是否显示并或切换键按钮，只在简单模式下有用
+ */
+func (a *ConditionBuilderControl) ShowANDOR(value interface{}) *ConditionBuilderControl {
+    a.Set("showANDOR", value)
+    return a
+}
+
+/**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *ConditionBuilderControl) ValidateOnChange(value interface{}) *ConditionBuilderControl {
+    a.Set("validateOnChange", value)
     return a
 }
 
@@ -350,6 +182,244 @@ func (a *ConditionBuilderControl) LabelClassName(value interface{}) *ConditionBu
  */
 func (a *ConditionBuilderControl) Config(value interface{}) *ConditionBuilderControl {
     a.Set("config", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *ConditionBuilderControl) Width(value interface{}) *ConditionBuilderControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *ConditionBuilderControl) StaticClassName(value interface{}) *ConditionBuilderControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *ConditionBuilderControl) StaticLabelClassName(value interface{}) *ConditionBuilderControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *ConditionBuilderControl) LabelWidth(value interface{}) *ConditionBuilderControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *ConditionBuilderControl) Placeholder(value interface{}) *ConditionBuilderControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 内嵌模式，默认为 true
+ */
+func (a *ConditionBuilderControl) Embed(value interface{}) *ConditionBuilderControl {
+    a.Set("embed", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *ConditionBuilderControl) ReadOnly(value interface{}) *ConditionBuilderControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *ConditionBuilderControl) DisabledOn(value interface{}) *ConditionBuilderControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *ConditionBuilderControl) Static(value interface{}) *ConditionBuilderControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *ConditionBuilderControl) Style(value interface{}) *ConditionBuilderControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *ConditionBuilderControl) SubmitOnChange(value interface{}) *ConditionBuilderControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *ConditionBuilderControl) Id(value interface{}) *ConditionBuilderControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ */
+func (a *ConditionBuilderControl) StaticSchema(value interface{}) *ConditionBuilderControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *ConditionBuilderControl) VisibleOn(value interface{}) *ConditionBuilderControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *ConditionBuilderControl) InputClassName(value interface{}) *ConditionBuilderControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 指定为
+ */
+func (a *ConditionBuilderControl) Type(value interface{}) *ConditionBuilderControl {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ */
+func (a *ConditionBuilderControl) AddBtnVisibleOn(value interface{}) *ConditionBuilderControl {
+    a.Set("addBtnVisibleOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *ConditionBuilderControl) UseMobileUI(value interface{}) *ConditionBuilderControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 展现模式
+ * 可选值: simple | full
+ */
+func (a *ConditionBuilderControl) BuilderMode(value interface{}) *ConditionBuilderControl {
+    a.Set("builderMode", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *ConditionBuilderControl) Remark(value interface{}) *ConditionBuilderControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *ConditionBuilderControl) LabelRemark(value interface{}) *ConditionBuilderControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *ConditionBuilderControl) Required(value interface{}) *ConditionBuilderControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *ConditionBuilderControl) ClearValueOnHidden(value interface{}) *ConditionBuilderControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 将字段输入控件变成公式编辑器。
+ */
+func (a *ConditionBuilderControl) Formula(value interface{}) *ConditionBuilderControl {
+    a.Set("formula", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *ConditionBuilderControl) OnEvent(value interface{}) *ConditionBuilderControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *ConditionBuilderControl) EditorSetting(value interface{}) *ConditionBuilderControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *ConditionBuilderControl) ValidationErrors(value interface{}) *ConditionBuilderControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *ConditionBuilderControl) ValidateApi(value interface{}) *ConditionBuilderControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *ConditionBuilderControl) Hint(value interface{}) *ConditionBuilderControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ */
+func (a *ConditionBuilderControl) Desc(value interface{}) *ConditionBuilderControl {
+    a.Set("desc", value)
     return a
 }
 
@@ -363,58 +433,35 @@ func (a *ConditionBuilderControl) Mode(value interface{}) *ConditionBuilderContr
 }
 
 /**
- * 验证失败的提示信息
+ * 字段集合
  */
-func (a *ConditionBuilderControl) ValidationErrors(value interface{}) *ConditionBuilderControl {
-    a.Set("validationErrors", value)
+func (a *ConditionBuilderControl) Fields(value interface{}) *ConditionBuilderControl {
+    a.Set("fields", value)
     return a
 }
 
 /**
- * 内嵌模式，默认为 true
+ * 容器 css 类名
  */
-func (a *ConditionBuilderControl) Embed(value interface{}) *ConditionBuilderControl {
-    a.Set("embed", value)
+func (a *ConditionBuilderControl) ClassName(value interface{}) *ConditionBuilderControl {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 通过远程拉取配置项
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
  */
-func (a *ConditionBuilderControl) Source(value interface{}) *ConditionBuilderControl {
-    a.Set("source", value)
+func (a *ConditionBuilderControl) Size(value interface{}) *ConditionBuilderControl {
+    a.Set("size", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 描述标题
  */
-func (a *ConditionBuilderControl) OnEvent(value interface{}) *ConditionBuilderControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *ConditionBuilderControl) ReadOnly(value interface{}) *ConditionBuilderControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *ConditionBuilderControl) Required(value interface{}) *ConditionBuilderControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 函数集合
- */
-func (a *ConditionBuilderControl) Funcs(value interface{}) *ConditionBuilderControl {
-    a.Set("funcs", value)
+func (a *ConditionBuilderControl) LabelAlign(value interface{}) *ConditionBuilderControl {
+    a.Set("labelAlign", value)
     return a
 }
 
@@ -435,26 +482,10 @@ func (a *ConditionBuilderControl) ExtraName(value interface{}) *ConditionBuilder
 }
 
 /**
- * 指定为
+ * 只读条件
  */
-func (a *ConditionBuilderControl) Type(value interface{}) *ConditionBuilderControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *ConditionBuilderControl) Visible(value interface{}) *ConditionBuilderControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *ConditionBuilderControl) InputClassName(value interface{}) *ConditionBuilderControl {
-    a.Set("inputClassName", value)
+func (a *ConditionBuilderControl) ReadOnlyOn(value interface{}) *ConditionBuilderControl {
+    a.Set("readOnlyOn", value)
     return a
 }
 
@@ -467,40 +498,40 @@ func (a *ConditionBuilderControl) DescriptionClassName(value interface{}) *Condi
 }
 
 /**
- * 远端校验表单项接口
+ * 是否隐藏
  */
-func (a *ConditionBuilderControl) ValidateApi(value interface{}) *ConditionBuilderControl {
-    a.Set("validateApi", value)
+func (a *ConditionBuilderControl) Hidden(value interface{}) *ConditionBuilderControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *ConditionBuilderControl) StaticOn(value interface{}) *ConditionBuilderControl {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
  */
-func (a *ConditionBuilderControl) AddBtnVisibleOn(value interface{}) *ConditionBuilderControl {
-    a.Set("addBtnVisibleOn", value)
+func (a *ConditionBuilderControl) TestIdBuilder(value interface{}) *ConditionBuilderControl {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 输入提示，聚焦的时候显示
+ * 配置 label className
  */
-func (a *ConditionBuilderControl) Hint(value interface{}) *ConditionBuilderControl {
-    a.Set("hint", value)
+func (a *ConditionBuilderControl) LabelClassName(value interface{}) *ConditionBuilderControl {
+    a.Set("labelClassName", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
  */
-func (a *ConditionBuilderControl) VisibleOn(value interface{}) *ConditionBuilderControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *ConditionBuilderControl) EditorSetting(value interface{}) *ConditionBuilderControl {
-    a.Set("editorSetting", value)
+func (a *ConditionBuilderControl) Value(value interface{}) *ConditionBuilderControl {
+    a.Set("value", value)
     return a
 }

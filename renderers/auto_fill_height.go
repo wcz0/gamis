@@ -16,6 +16,7 @@ func NewAutoFillHeight() *AutoFillHeight {
     }
     return a
 }
+
 /**
  */
 func (a *AutoFillHeight) Height(value interface{}) *AutoFillHeight {

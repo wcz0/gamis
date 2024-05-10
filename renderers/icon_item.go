@@ -16,6 +16,7 @@ func NewIconItem() *IconItem {
     }
     return a
 }
+
 /**
  */
 func (a *IconItem) Icon(value interface{}) *IconItem {

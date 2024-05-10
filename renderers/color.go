@@ -18,11 +18,12 @@ func NewColor() *Color {
     a.Set("type", "color")
     return a
 }
+
 /**
- * 是否显示
+ * 是否显示表达式
  */
-func (a *Color) Visible(value interface{}) *Color {
-    a.Set("visible", value)
+func (a *Color) VisibleOn(value interface{}) *Color {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -35,18 +36,10 @@ func (a *Color) OnEvent(value interface{}) *Color {
 }
 
 /**
- * 静态展示空值占位
+ * 是否静态展示
  */
-func (a *Color) StaticPlaceholder(value interface{}) *Color {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Color) StaticClassName(value interface{}) *Color {
-    a.Set("staticClassName", value)
+func (a *Color) Static(value interface{}) *Color {
+    a.Set("static", value)
     return a
 }
 
@@ -67,26 +60,33 @@ func (a *Color) ClassName(value interface{}) *Color {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否禁用表达式
  */
-func (a *Color) Id(value interface{}) *Color {
-    a.Set("id", value)
+func (a *Color) DisabledOn(value interface{}) *Color {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否显示
  */
-func (a *Color) UseMobileUI(value interface{}) *Color {
-    a.Set("useMobileUI", value)
+func (a *Color) Visible(value interface{}) *Color {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 是否显示表达式
  */
-func (a *Color) VisibleOn(value interface{}) *Color {
-    a.Set("visibleOn", value)
+func (a *Color) TestIdBuilder(value interface{}) *Color {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Color) Disabled(value interface{}) *Color {
+    a.Set("disabled", value)
     return a
 }
 
@@ -99,9 +99,10 @@ func (a *Color) StaticLabelClassName(value interface{}) *Color {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *Color) StaticSchema(value interface{}) *Color {
-    a.Set("staticSchema", value)
+func (a *Color) StaticInputClassName(value interface{}) *Color {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -122,14 +123,6 @@ func (a *Color) EditorSetting(value interface{}) *Color {
 }
 
 /**
- * 默认颜色
- */
-func (a *Color) DefaultColor(value interface{}) *Color {
-    a.Set("defaultColor", value)
-    return a
-}
-
-/**
  * 指定为颜色显示控件
  */
 func (a *Color) Type(value interface{}) *Color {
@@ -138,18 +131,10 @@ func (a *Color) Type(value interface{}) *Color {
 }
 
 /**
- * 是否禁用
+ * 默认颜色
  */
-func (a *Color) Disabled(value interface{}) *Color {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Color) DisabledOn(value interface{}) *Color {
-    a.Set("disabledOn", value)
+func (a *Color) DefaultColor(value interface{}) *Color {
+    a.Set("defaultColor", value)
     return a
 }
 
@@ -170,10 +155,40 @@ func (a *Color) HiddenOn(value interface{}) *Color {
 }
 
 /**
- * 是否静态展示
+ * 静态展示表单项类名
  */
-func (a *Color) Static(value interface{}) *Color {
-    a.Set("static", value)
+func (a *Color) StaticClassName(value interface{}) *Color {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Color) StaticSchema(value interface{}) *Color {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Color) UseMobileUI(value interface{}) *Color {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ */
+func (a *Color) Testid(value interface{}) *Color {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Color) Id(value interface{}) *Color {
+    a.Set("id", value)
     return a
 }
 
@@ -186,9 +201,9 @@ func (a *Color) StaticOn(value interface{}) *Color {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 静态展示空值占位
  */
-func (a *Color) StaticInputClassName(value interface{}) *Color {
-    a.Set("staticInputClassName", value)
+func (a *Color) StaticPlaceholder(value interface{}) *Color {
+    a.Set("staticPlaceholder", value)
     return a
 }

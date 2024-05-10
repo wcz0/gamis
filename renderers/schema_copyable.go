@@ -16,13 +16,6 @@ func NewSchemaCopyable() *SchemaCopyable {
     }
     return a
 }
-/**
- * 提示文字内容
- */
-func (a *SchemaCopyable) Tooltip(value interface{}) *SchemaCopyable {
-    a.Set("tooltip", value)
-    return a
-}
 
 /**
  * 可以配置图标
@@ -37,5 +30,13 @@ func (a *SchemaCopyable) Icon(value interface{}) *SchemaCopyable {
  */
 func (a *SchemaCopyable) Content(value interface{}) *SchemaCopyable {
     a.Set("content", value)
+    return a
+}
+
+/**
+ * 提示文字内容
+ */
+func (a *SchemaCopyable) Tooltip(value interface{}) *SchemaCopyable {
+    a.Set("tooltip", value)
     return a
 }

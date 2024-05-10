@@ -16,6 +16,14 @@ func NewQRCodeImageSettings() *QRCodeImageSettings {
     }
     return a
 }
+
+/**
+ */
+func (a *QRCodeImageSettings) Src(value interface{}) *QRCodeImageSettings {
+    a.Set("src", value)
+    return a
+}
+
 /**
  */
 func (a *QRCodeImageSettings) Height(value interface{}) *QRCodeImageSettings {
@@ -48,12 +56,5 @@ func (a *QRCodeImageSettings) X(value interface{}) *QRCodeImageSettings {
  */
 func (a *QRCodeImageSettings) Y(value interface{}) *QRCodeImageSettings {
     a.Set("y", value)
-    return a
-}
-
-/**
- */
-func (a *QRCodeImageSettings) Src(value interface{}) *QRCodeImageSettings {
-    a.Set("src", value)
     return a
 }

@@ -16,6 +16,24 @@ func NewHBoxColumn() *HBoxColumn {
     }
     return a
 }
+
+/**
+ * 列上 CSS 类名
+ */
+func (a *HBoxColumn) ColumnClassName(value interface{}) *HBoxColumn {
+    a.Set("columnClassName", value)
+    return a
+}
+
+/**
+ * 垂直对齐方式
+ * 可选值: top | middle | bottom | between
+ */
+func (a *HBoxColumn) Valign(value interface{}) *HBoxColumn {
+    a.Set("valign", value)
+    return a
+}
+
 /**
  * 宽度
  */
@@ -34,27 +52,10 @@ func (a *HBoxColumn) Mode(value interface{}) *HBoxColumn {
 }
 
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ * 是否显示表达式
  */
-func (a *HBoxColumn) Horizontal(value interface{}) *HBoxColumn {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 列上 CSS 类名
- */
-func (a *HBoxColumn) ColumnClassName(value interface{}) *HBoxColumn {
-    a.Set("columnClassName", value)
-    return a
-}
-
-/**
- * 垂直对齐方式
- * 可选值: top | middle | bottom | between
- */
-func (a *HBoxColumn) Valign(value interface{}) *HBoxColumn {
-    a.Set("valign", value)
+func (a *HBoxColumn) VisibleOn(value interface{}) *HBoxColumn {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -75,6 +76,14 @@ func (a *HBoxColumn) Style(value interface{}) *HBoxColumn {
 }
 
 /**
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ */
+func (a *HBoxColumn) Horizontal(value interface{}) *HBoxColumn {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
  * 内容区
  */
 func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
@@ -87,13 +96,5 @@ func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
  */
 func (a *HBoxColumn) Visible(value interface{}) *HBoxColumn {
     a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *HBoxColumn) VisibleOn(value interface{}) *HBoxColumn {
-    a.Set("visibleOn", value)
     return a
 }

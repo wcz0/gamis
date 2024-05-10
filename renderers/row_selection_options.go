@@ -16,6 +16,7 @@ func NewRowSelectionOptions() *RowSelectionOptions {
     }
     return a
 }
+
 /**
  * 选择类型 选择全部
  */

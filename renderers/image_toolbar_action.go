@@ -17,6 +17,7 @@ func NewImageToolbarAction() *ImageToolbarAction {
     a.Set("key", "ROTATE_RIGHT")
     return a
 }
+
 /**
  * 可选值: ROTATE_RIGHT | ROTATE_LEFT | ZOOM_IN | ZOOM_OUT | SCALE_ORIGIN
  */

@@ -378,6 +378,10 @@ func InputKVS() *renderers.InputKVS {
 	return renderers.NewInputKVS();
 }
 
+func InputSignature() *renderers.InputSignature {
+	return renderers.NewInputSignature();
+}
+
 func InputTimeRange() *renderers.InputTimeRange {
 	return renderers.NewInputTimeRange();
 }
