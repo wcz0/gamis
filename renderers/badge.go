@@ -19,41 +19,18 @@ func NewBadge() *Badge {
 }
 
 /**
- * 提示类型
+ * 文本内容
  */
-func (a *Badge) Level(value interface{}) *Badge {
-    a.Set("level", value)
+func (a *Badge) Text(value interface{}) *Badge {
+    a.Set("text", value)
     return a
 }
 
 /**
+ * 角标位置，相对于position的位置进行偏移
  */
-func (a *Badge) ClassName(value interface{}) *Badge {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 动态控制是否显示
- */
-func (a *Badge) VisibleOn(value interface{}) *Badge {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否显示动画
- */
-func (a *Badge) Animation(value interface{}) *Badge {
-    a.Set("animation", value)
-    return a
-}
-
-/**
- * 角标的自定义样式
- */
-func (a *Badge) Style(value interface{}) *Badge {
-    a.Set("style", value)
+func (a *Badge) Offset(value interface{}) *Badge {
+    a.Set("offset", value)
     return a
 }
 
@@ -75,10 +52,25 @@ func (a *Badge) OverflowCount(value interface{}) *Badge {
 }
 
 /**
- * 文本内容
+ * 动态控制是否显示
  */
-func (a *Badge) Text(value interface{}) *Badge {
-    a.Set("text", value)
+func (a *Badge) VisibleOn(value interface{}) *Badge {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 提示类型
+ */
+func (a *Badge) Level(value interface{}) *Badge {
+    a.Set("level", value)
+    return a
+}
+
+/**
+ */
+func (a *Badge) ClassName(value interface{}) *Badge {
+    a.Set("className", value)
     return a
 }
 
@@ -100,9 +92,17 @@ func (a *Badge) Mode(value interface{}) *Badge {
 }
 
 /**
- * 角标位置，相对于position的位置进行偏移
+ * 是否显示动画
  */
-func (a *Badge) Offset(value interface{}) *Badge {
-    a.Set("offset", value)
+func (a *Badge) Animation(value interface{}) *Badge {
+    a.Set("animation", value)
+    return a
+}
+
+/**
+ * 角标的自定义样式
+ */
+func (a *Badge) Style(value interface{}) *Badge {
+    a.Set("style", value)
     return a
 }

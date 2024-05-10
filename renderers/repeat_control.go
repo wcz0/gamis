@@ -20,48 +20,10 @@ func NewRepeatControl() *RepeatControl {
 }
 
 /**
- * 是否只读
+ * 是否隐藏表达式
  */
-func (a *RepeatControl) ReadOnly(value interface{}) *RepeatControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- */
-func (a *RepeatControl) InitAutoFill(value interface{}) *RepeatControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *RepeatControl) StaticLabelClassName(value interface{}) *RepeatControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *RepeatControl) TestIdBuilder(value interface{}) *RepeatControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *RepeatControl) Label(value interface{}) *RepeatControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *RepeatControl) Value(value interface{}) *RepeatControl {
-    a.Set("value", value)
+func (a *RepeatControl) HiddenOn(value interface{}) *RepeatControl {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -74,10 +36,65 @@ func (a *RepeatControl) OnEvent(value interface{}) *RepeatControl {
 }
 
 /**
+ * 组件样式
+ */
+func (a *RepeatControl) Style(value interface{}) *RepeatControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *RepeatControl) SubmitOnChange(value interface{}) *RepeatControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ */
+func (a *RepeatControl) InitAutoFill(value interface{}) *RepeatControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *RepeatControl) Width(value interface{}) *RepeatControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
  * 是否静态展示
  */
 func (a *RepeatControl) Static(value interface{}) *RepeatControl {
     a.Set("static", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *RepeatControl) Label(value interface{}) *RepeatControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *RepeatControl) Required(value interface{}) *RepeatControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *RepeatControl) Remark(value interface{}) *RepeatControl {
+    a.Set("remark", value)
     return a
 }
 
@@ -98,10 +115,26 @@ func (a *RepeatControl) ClearValueOnHidden(value interface{}) *RepeatControl {
 }
 
 /**
- * 占位符
+ * 静态展示表单项Value类名
  */
-func (a *RepeatControl) Placeholder(value interface{}) *RepeatControl {
-    a.Set("placeholder", value)
+func (a *RepeatControl) StaticInputClassName(value interface{}) *RepeatControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
+ */
+func (a *RepeatControl) Size(value interface{}) *RepeatControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ */
+func (a *RepeatControl) TestIdBuilder(value interface{}) *RepeatControl {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -113,10 +146,18 @@ func (a *RepeatControl) Validations(value interface{}) *RepeatControl {
 }
 
 /**
- * 表单项类型
+ * 编辑器配置，运行时可以忽略
  */
-func (a *RepeatControl) Type(value interface{}) *RepeatControl {
-    a.Set("type", value)
+func (a *RepeatControl) EditorSetting(value interface{}) *RepeatControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *RepeatControl) UseMobileUI(value interface{}) *RepeatControl {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -125,6 +166,68 @@ func (a *RepeatControl) Type(value interface{}) *RepeatControl {
  */
 func (a *RepeatControl) LabelRemark(value interface{}) *RepeatControl {
     a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *RepeatControl) DescriptionClassName(value interface{}) *RepeatControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *RepeatControl) StaticOn(value interface{}) *RepeatControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *RepeatControl) StaticPlaceholder(value interface{}) *RepeatControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *RepeatControl) StaticClassName(value interface{}) *RepeatControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *RepeatControl) ReadOnly(value interface{}) *RepeatControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ */
+func (a *RepeatControl) Options(value interface{}) *RepeatControl {
+    a.Set("options", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *RepeatControl) Disabled(value interface{}) *RepeatControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ */
+func (a *RepeatControl) StaticSchema(value interface{}) *RepeatControl {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -145,147 +248,11 @@ func (a *RepeatControl) Description(value interface{}) *RepeatControl {
 }
 
 /**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *RepeatControl) Name(value interface{}) *RepeatControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *RepeatControl) ExtraName(value interface{}) *RepeatControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *RepeatControl) ValidateApi(value interface{}) *RepeatControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *RepeatControl) AutoFill(value interface{}) *RepeatControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *RepeatControl) Disabled(value interface{}) *RepeatControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *RepeatControl) UseMobileUI(value interface{}) *RepeatControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *RepeatControl) LabelAlign(value interface{}) *RepeatControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *RepeatControl) Horizontal(value interface{}) *RepeatControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *RepeatControl) StaticClassName(value interface{}) *RepeatControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *RepeatControl) StaticInputClassName(value interface{}) *RepeatControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *RepeatControl) Style(value interface{}) *RepeatControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
  * 配置当前表单项展示模式
  * 可选值: normal | inline | horizontal
  */
 func (a *RepeatControl) Mode(value interface{}) *RepeatControl {
     a.Set("mode", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *RepeatControl) Inline(value interface{}) *RepeatControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *RepeatControl) ClassName(value interface{}) *RepeatControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *RepeatControl) Id(value interface{}) *RepeatControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *RepeatControl) StaticOn(value interface{}) *RepeatControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *RepeatControl) SubmitOnChange(value interface{}) *RepeatControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *RepeatControl) Width(value interface{}) *RepeatControl {
-    a.Set("width", value)
     return a
 }
 
@@ -298,26 +265,18 @@ func (a *RepeatControl) DisabledOn(value interface{}) *RepeatControl {
 }
 
 /**
- * 配置 label className
+ * 静态展示表单项Label类名
  */
-func (a *RepeatControl) LabelClassName(value interface{}) *RepeatControl {
-    a.Set("labelClassName", value)
+func (a *RepeatControl) StaticLabelClassName(value interface{}) *RepeatControl {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
  */
-func (a *RepeatControl) Remark(value interface{}) *RepeatControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *RepeatControl) Required(value interface{}) *RepeatControl {
-    a.Set("required", value)
+func (a *RepeatControl) Name(value interface{}) *RepeatControl {
+    a.Set("name", value)
     return a
 }
 
@@ -329,35 +288,42 @@ func (a *RepeatControl) Desc(value interface{}) *RepeatControl {
 }
 
 /**
- * 只读条件
+ * 配置 input className
  */
-func (a *RepeatControl) ReadOnlyOn(value interface{}) *RepeatControl {
-    a.Set("readOnlyOn", value)
+func (a *RepeatControl) InputClassName(value interface{}) *RepeatControl {
+    a.Set("inputClassName", value)
     return a
 }
 
 /**
- * 验证失败的提示信息
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *RepeatControl) ValidationErrors(value interface{}) *RepeatControl {
-    a.Set("validationErrors", value)
+func (a *RepeatControl) Id(value interface{}) *RepeatControl {
+    a.Set("id", value)
     return a
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
  */
-func (a *RepeatControl) Size(value interface{}) *RepeatControl {
-    a.Set("size", value)
+func (a *RepeatControl) ExtraName(value interface{}) *RepeatControl {
+    a.Set("extraName", value)
     return a
 }
 
 /**
- * 配置描述上的 className
+ * 占位符
  */
-func (a *RepeatControl) DescriptionClassName(value interface{}) *RepeatControl {
-    a.Set("descriptionClassName", value)
+func (a *RepeatControl) Placeholder(value interface{}) *RepeatControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *RepeatControl) AutoFill(value interface{}) *RepeatControl {
+    a.Set("autoFill", value)
     return a
 }
 
@@ -370,56 +336,26 @@ func (a *RepeatControl) Hidden(value interface{}) *RepeatControl {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 表单 control 是否为 inline 模式。
  */
-func (a *RepeatControl) EditorSetting(value interface{}) *RepeatControl {
-    a.Set("editorSetting", value)
+func (a *RepeatControl) Inline(value interface{}) *RepeatControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
- * label自定义宽度，默认单位为px
+ * 验证失败的提示信息
  */
-func (a *RepeatControl) LabelWidth(value interface{}) *RepeatControl {
-    a.Set("labelWidth", value)
+func (a *RepeatControl) ValidationErrors(value interface{}) *RepeatControl {
+    a.Set("validationErrors", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 描述标题
  */
-func (a *RepeatControl) StaticPlaceholder(value interface{}) *RepeatControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- */
-func (a *RepeatControl) Options(value interface{}) *RepeatControl {
-    a.Set("options", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *RepeatControl) HiddenOn(value interface{}) *RepeatControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *RepeatControl) Visible(value interface{}) *RepeatControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- */
-func (a *RepeatControl) StaticSchema(value interface{}) *RepeatControl {
-    a.Set("staticSchema", value)
+func (a *RepeatControl) LabelAlign(value interface{}) *RepeatControl {
+    a.Set("labelAlign", value)
     return a
 }
 
@@ -432,9 +368,73 @@ func (a *RepeatControl) ValidateOnChange(value interface{}) *RepeatControl {
 }
 
 /**
- * 配置 input className
+ * 容器 css 类名
  */
-func (a *RepeatControl) InputClassName(value interface{}) *RepeatControl {
-    a.Set("inputClassName", value)
+func (a *RepeatControl) ClassName(value interface{}) *RepeatControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *RepeatControl) LabelWidth(value interface{}) *RepeatControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *RepeatControl) LabelClassName(value interface{}) *RepeatControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *RepeatControl) Value(value interface{}) *RepeatControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 表单项类型
+ */
+func (a *RepeatControl) Type(value interface{}) *RepeatControl {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *RepeatControl) Visible(value interface{}) *RepeatControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *RepeatControl) ReadOnlyOn(value interface{}) *RepeatControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *RepeatControl) Horizontal(value interface{}) *RepeatControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *RepeatControl) ValidateApi(value interface{}) *RepeatControl {
+    a.Set("validateApi", value)
     return a
 }

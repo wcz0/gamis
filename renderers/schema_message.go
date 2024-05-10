@@ -19,14 +19,6 @@ func NewSchemaMessage() *SchemaMessage {
 }
 
 /**
- * 保存成功时的提示。
- */
-func (a *SchemaMessage) SaveSuccess(value interface{}) *SchemaMessage {
-    a.Set("saveSuccess", value)
-    return a
-}
-
-/**
  * 获取失败时的提示
  */
 func (a *SchemaMessage) FetchFailed(value interface{}) *SchemaMessage {
@@ -47,5 +39,13 @@ func (a *SchemaMessage) FetchSuccess(value interface{}) *SchemaMessage {
  */
 func (a *SchemaMessage) SaveFailed(value interface{}) *SchemaMessage {
     a.Set("saveFailed", value)
+    return a
+}
+
+/**
+ * 保存成功时的提示。
+ */
+func (a *SchemaMessage) SaveSuccess(value interface{}) *SchemaMessage {
+    a.Set("saveSuccess", value)
     return a
 }

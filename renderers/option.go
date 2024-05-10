@@ -18,34 +18,10 @@ func NewOption() *Option {
 }
 
 /**
- * 用来显示的文字
+ * 最好不要用！因为有 visible 就够了。
  */
-func (a *Option) Label(value interface{}) *Option {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 支持嵌套
- */
-func (a *Option) Children(value interface{}) *Option {
-    a.Set("children", value)
-    return a
-}
-
-/**
- * 是否可见
- */
-func (a *Option) Visible(value interface{}) *Option {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 如果设置了，优先级更高，不设置走 source 接口加载。
- */
-func (a *Option) DeferApi(value interface{}) *Option {
-    a.Set("deferApi", value)
+func (a *Option) Hidden(value interface{}) *Option {
+    a.Set("hidden", value)
     return a
 }
 
@@ -90,10 +66,34 @@ func (a *Option) Disabled(value interface{}) *Option {
 }
 
 /**
- * 最好不要用！因为有 visible 就够了。
+ * 是否可见
  */
-func (a *Option) Hidden(value interface{}) *Option {
-    a.Set("hidden", value)
+func (a *Option) Visible(value interface{}) *Option {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 如果设置了，优先级更高，不设置走 source 接口加载。
+ */
+func (a *Option) DeferApi(value interface{}) *Option {
+    a.Set("deferApi", value)
+    return a
+}
+
+/**
+ * 用来显示的文字
+ */
+func (a *Option) Label(value interface{}) *Option {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 支持嵌套
+ */
+func (a *Option) Children(value interface{}) *Option {
+    a.Set("children", value)
     return a
 }
 

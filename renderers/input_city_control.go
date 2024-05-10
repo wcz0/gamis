@@ -20,73 +20,58 @@ func NewInputCityControl() *InputCityControl {
 }
 
 /**
+ * 静态展示表单项Label类名
  */
-func (a *InputCityControl) TestIdBuilder(value interface{}) *InputCityControl {
-    a.Set("testIdBuilder", value)
+func (a *InputCityControl) StaticLabelClassName(value interface{}) *InputCityControl {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 描述标题
+ * 是否显示表达式
  */
-func (a *InputCityControl) Label(value interface{}) *InputCityControl {
-    a.Set("label", value)
+func (a *InputCityControl) VisibleOn(value interface{}) *InputCityControl {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 表单 control 是否为 inline 模式。
+ * 拼接的符号是啥？
  */
-func (a *InputCityControl) Inline(value interface{}) *InputCityControl {
-    a.Set("inline", value)
+func (a *InputCityControl) Delimiter(value interface{}) *InputCityControl {
+    a.Set("delimiter", value)
     return a
 }
 
 /**
- * 配置 input className
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
  */
-func (a *InputCityControl) InputClassName(value interface{}) *InputCityControl {
-    a.Set("inputClassName", value)
+func (a *InputCityControl) Value(value interface{}) *InputCityControl {
+    a.Set("value", value)
     return a
 }
 
 /**
- * 占位符
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
  */
-func (a *InputCityControl) Placeholder(value interface{}) *InputCityControl {
-    a.Set("placeholder", value)
+func (a *InputCityControl) AutoFill(value interface{}) *InputCityControl {
+    a.Set("autoFill", value)
     return a
 }
 
 /**
- * 开启后只会存城市的 code 信息
+ * 指定为城市选择框。
  */
-func (a *InputCityControl) ExtractValue(value interface{}) *InputCityControl {
-    a.Set("extractValue", value)
+func (a *InputCityControl) Type(value interface{}) *InputCityControl {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 允许选择街道？
  */
-func (a *InputCityControl) HiddenOn(value interface{}) *InputCityControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *InputCityControl) StaticClassName(value interface{}) *InputCityControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 允许选择地区？
- */
-func (a *InputCityControl) AllowDistrict(value interface{}) *InputCityControl {
-    a.Set("allowDistrict", value)
+func (a *InputCityControl) AllowStreet(value interface{}) *InputCityControl {
+    a.Set("allowStreet", value)
     return a
 }
 
@@ -99,33 +84,58 @@ func (a *InputCityControl) Searchable(value interface{}) *InputCityControl {
 }
 
 /**
- * 是否禁用表达式
+ * 静态展示空值占位
  */
-func (a *InputCityControl) DisabledOn(value interface{}) *InputCityControl {
-    a.Set("disabledOn", value)
+func (a *InputCityControl) StaticPlaceholder(value interface{}) *InputCityControl {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ * 占位符
  */
-func (a *InputCityControl) ClearValueOnHidden(value interface{}) *InputCityControl {
-    a.Set("clearValueOnHidden", value)
+func (a *InputCityControl) Placeholder(value interface{}) *InputCityControl {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
+ * 是否静态展示
  */
-func (a *InputCityControl) StaticSchema(value interface{}) *InputCityControl {
-    a.Set("staticSchema", value)
+func (a *InputCityControl) Static(value interface{}) *InputCityControl {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 只读条件
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
  */
-func (a *InputCityControl) ReadOnlyOn(value interface{}) *InputCityControl {
-    a.Set("readOnlyOn", value)
+func (a *InputCityControl) LabelRemark(value interface{}) *InputCityControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 下拉框className
+ */
+func (a *InputCityControl) ItemClassName(value interface{}) *InputCityControl {
+    a.Set("itemClassName", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *InputCityControl) OnEvent(value interface{}) *InputCityControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *InputCityControl) LabelWidth(value interface{}) *InputCityControl {
+    a.Set("labelWidth", value)
     return a
 }
 
@@ -138,6 +148,173 @@ func (a *InputCityControl) ValidateOnChange(value interface{}) *InputCityControl
 }
 
 /**
+ * 是否禁用表达式
+ */
+func (a *InputCityControl) DisabledOn(value interface{}) *InputCityControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *InputCityControl) Label(value interface{}) *InputCityControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *InputCityControl) ClearValueOnHidden(value interface{}) *InputCityControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *InputCityControl) Visible(value interface{}) *InputCityControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *InputCityControl) StaticOn(value interface{}) *InputCityControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *InputCityControl) Inline(value interface{}) *InputCityControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *InputCityControl) HiddenOn(value interface{}) *InputCityControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *InputCityControl) Id(value interface{}) *InputCityControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *InputCityControl) InputClassName(value interface{}) *InputCityControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *InputCityControl) Hidden(value interface{}) *InputCityControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ */
+func (a *InputCityControl) TestIdBuilder(value interface{}) *InputCityControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *InputCityControl) DescriptionClassName(value interface{}) *InputCityControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 允许选择地区？
+ */
+func (a *InputCityControl) AllowDistrict(value interface{}) *InputCityControl {
+    a.Set("allowDistrict", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *InputCityControl) Width(value interface{}) *InputCityControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *InputCityControl) ExtraName(value interface{}) *InputCityControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *InputCityControl) Remark(value interface{}) *InputCityControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ */
+func (a *InputCityControl) StaticSchema(value interface{}) *InputCityControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *InputCityControl) SubmitOnChange(value interface{}) *InputCityControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *InputCityControl) ReadOnly(value interface{}) *InputCityControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *InputCityControl) Description(value interface{}) *InputCityControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
+ */
+func (a *InputCityControl) Mode(value interface{}) *InputCityControl {
+    a.Set("mode", value)
+    return a
+}
+
+/**
  * 当配置为水平布局的时候，用来配置具体的左右分配。
  */
 func (a *InputCityControl) Horizontal(value interface{}) *InputCityControl {
@@ -146,10 +323,33 @@ func (a *InputCityControl) Horizontal(value interface{}) *InputCityControl {
 }
 
 /**
- * 静态展示表单项Value类名
  */
-func (a *InputCityControl) StaticInputClassName(value interface{}) *InputCityControl {
-    a.Set("staticInputClassName", value)
+func (a *InputCityControl) Validations(value interface{}) *InputCityControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *InputCityControl) EditorSetting(value interface{}) *InputCityControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *InputCityControl) Name(value interface{}) *InputCityControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *InputCityControl) UseMobileUI(value interface{}) *InputCityControl {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -163,48 +363,18 @@ func (a *InputCityControl) Size(value interface{}) *InputCityControl {
 }
 
 /**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ * 验证失败的提示信息
  */
-func (a *InputCityControl) ExtraName(value interface{}) *InputCityControl {
-    a.Set("extraName", value)
+func (a *InputCityControl) ValidationErrors(value interface{}) *InputCityControl {
+    a.Set("validationErrors", value)
     return a
 }
 
 /**
- * 输入提示，聚焦的时候显示
+ * 是否将各个信息拼接成字符串。
  */
-func (a *InputCityControl) Hint(value interface{}) *InputCityControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *InputCityControl) ReadOnly(value interface{}) *InputCityControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- */
-func (a *InputCityControl) Validations(value interface{}) *InputCityControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *InputCityControl) AutoFill(value interface{}) *InputCityControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- */
-func (a *InputCityControl) InitAutoFill(value interface{}) *InputCityControl {
-    a.Set("initAutoFill", value)
+func (a *InputCityControl) JoinValues(value interface{}) *InputCityControl {
+    a.Set("joinValues", value)
     return a
 }
 
@@ -217,146 +387,26 @@ func (a *InputCityControl) AllowCity(value interface{}) *InputCityControl {
 }
 
 /**
- * 在Table中调整宽度
+ * 静态展示表单项类名
  */
-func (a *InputCityControl) Width(value interface{}) *InputCityControl {
-    a.Set("width", value)
+func (a *InputCityControl) StaticClassName(value interface{}) *InputCityControl {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 组件样式
  */
-func (a *InputCityControl) Disabled(value interface{}) *InputCityControl {
-    a.Set("disabled", value)
+func (a *InputCityControl) Style(value interface{}) *InputCityControl {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 输入提示，聚焦的时候显示
  */
-func (a *InputCityControl) Static(value interface{}) *InputCityControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *InputCityControl) StaticPlaceholder(value interface{}) *InputCityControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *InputCityControl) Remark(value interface{}) *InputCityControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *InputCityControl) LabelRemark(value interface{}) *InputCityControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *InputCityControl) SubmitOnChange(value interface{}) *InputCityControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *InputCityControl) ValidateApi(value interface{}) *InputCityControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *InputCityControl) OnEvent(value interface{}) *InputCityControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *InputCityControl) DescriptionClassName(value interface{}) *InputCityControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *InputCityControl) LabelAlign(value interface{}) *InputCityControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *InputCityControl) Description(value interface{}) *InputCityControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 允许选择街道？
- */
-func (a *InputCityControl) AllowStreet(value interface{}) *InputCityControl {
-    a.Set("allowStreet", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *InputCityControl) StaticLabelClassName(value interface{}) *InputCityControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *InputCityControl) Hidden(value interface{}) *InputCityControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *InputCityControl) EditorSetting(value interface{}) *InputCityControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *InputCityControl) ValidationErrors(value interface{}) *InputCityControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *InputCityControl) UseMobileUI(value interface{}) *InputCityControl {
-    a.Set("useMobileUI", value)
+func (a *InputCityControl) Hint(value interface{}) *InputCityControl {
+    a.Set("hint", value)
     return a
 }
 
@@ -376,106 +426,9 @@ func (a *InputCityControl) Required(value interface{}) *InputCityControl {
 }
 
 /**
- * 下拉框className
- */
-func (a *InputCityControl) ItemClassName(value interface{}) *InputCityControl {
-    a.Set("itemClassName", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *InputCityControl) Visible(value interface{}) *InputCityControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *InputCityControl) VisibleOn(value interface{}) *InputCityControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *InputCityControl) Style(value interface{}) *InputCityControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *InputCityControl) Name(value interface{}) *InputCityControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
- */
-func (a *InputCityControl) Mode(value interface{}) *InputCityControl {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *InputCityControl) ClassName(value interface{}) *InputCityControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *InputCityControl) Value(value interface{}) *InputCityControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
  */
 func (a *InputCityControl) LoadingConfig(value interface{}) *InputCityControl {
     a.Set("loadingConfig", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *InputCityControl) LabelWidth(value interface{}) *InputCityControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 指定为城市选择框。
- */
-func (a *InputCityControl) Type(value interface{}) *InputCityControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *InputCityControl) Id(value interface{}) *InputCityControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *InputCityControl) StaticOn(value interface{}) *InputCityControl {
-    a.Set("staticOn", value)
     return a
 }
 
@@ -488,17 +441,64 @@ func (a *InputCityControl) LabelClassName(value interface{}) *InputCityControl {
 }
 
 /**
- * 是否将各个信息拼接成字符串。
+ * 远端校验表单项接口
  */
-func (a *InputCityControl) JoinValues(value interface{}) *InputCityControl {
-    a.Set("joinValues", value)
+func (a *InputCityControl) ValidateApi(value interface{}) *InputCityControl {
+    a.Set("validateApi", value)
     return a
 }
 
 /**
- * 拼接的符号是啥？
+ * 静态展示表单项Value类名
  */
-func (a *InputCityControl) Delimiter(value interface{}) *InputCityControl {
-    a.Set("delimiter", value)
+func (a *InputCityControl) StaticInputClassName(value interface{}) *InputCityControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *InputCityControl) ReadOnlyOn(value interface{}) *InputCityControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *InputCityControl) Disabled(value interface{}) *InputCityControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *InputCityControl) LabelAlign(value interface{}) *InputCityControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ */
+func (a *InputCityControl) InitAutoFill(value interface{}) *InputCityControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 开启后只会存城市的 code 信息
+ */
+func (a *InputCityControl) ExtractValue(value interface{}) *InputCityControl {
+    a.Set("extractValue", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *InputCityControl) ClassName(value interface{}) *InputCityControl {
+    a.Set("className", value)
     return a
 }

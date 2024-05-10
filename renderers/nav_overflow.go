@@ -18,10 +18,42 @@ func NewNavOverflow() *NavOverflow {
 }
 
 /**
- * 是否开启响应式收纳
+ * 导航横向布局时，开启开启响应式收纳后最大可显示数量，超出此数量的导航将被收纳到下拉菜单中
  */
-func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
-    a.Set("enable", value)
+func (a *NavOverflow) MaxVisibleCount(value interface{}) *NavOverflow {
+    a.Set("maxVisibleCount", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *NavOverflow) Style(value interface{}) *NavOverflow {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 菜单触发按钮的文字
+ */
+func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
+    a.Set("overflowLabel", value)
+    return a
+}
+
+/**
+ * 菜单触发按钮CSS类名
+ */
+func (a *NavOverflow) OverflowClassName(value interface{}) *NavOverflow {
+    a.Set("overflowClassName", value)
+    return a
+}
+
+/**
+ * Popover浮层CSS类名
+ */
+func (a *NavOverflow) OverflowPopoverClassName(value interface{}) *NavOverflow {
+    a.Set("overflowPopoverClassName", value)
     return a
 }
 
@@ -50,18 +82,18 @@ func (a *NavOverflow) ItemWidth(value interface{}) *NavOverflow {
 }
 
 /**
- * 自定义样式
+ * 导航列表后缀节点
  */
-func (a *NavOverflow) Style(value interface{}) *NavOverflow {
-    a.Set("style", value)
+func (a *NavOverflow) OverflowSuffix(value interface{}) *NavOverflow {
+    a.Set("overflowSuffix", value)
     return a
 }
 
 /**
- * 菜单触发按钮的文字
+ * 是否开启响应式收纳
  */
-func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
-    a.Set("overflowLabel", value)
+func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
+    a.Set("enable", value)
     return a
 }
 
@@ -70,37 +102,5 @@ func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
  */
 func (a *NavOverflow) OverflowIndicator(value interface{}) *NavOverflow {
     a.Set("overflowIndicator", value)
-    return a
-}
-
-/**
- * 菜单触发按钮CSS类名
- */
-func (a *NavOverflow) OverflowClassName(value interface{}) *NavOverflow {
-    a.Set("overflowClassName", value)
-    return a
-}
-
-/**
- * Popover浮层CSS类名
- */
-func (a *NavOverflow) OverflowPopoverClassName(value interface{}) *NavOverflow {
-    a.Set("overflowPopoverClassName", value)
-    return a
-}
-
-/**
- * 导航横向布局时，开启开启响应式收纳后最大可显示数量，超出此数量的导航将被收纳到下拉菜单中
- */
-func (a *NavOverflow) MaxVisibleCount(value interface{}) *NavOverflow {
-    a.Set("maxVisibleCount", value)
-    return a
-}
-
-/**
- * 导航列表后缀节点
- */
-func (a *NavOverflow) OverflowSuffix(value interface{}) *NavOverflow {
-    a.Set("overflowSuffix", value)
     return a
 }

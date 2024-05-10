@@ -18,6 +18,14 @@ func NewRowSelection() *RowSelection {
 }
 
 /**
+ * 对应数据源的key值
+ */
+func (a *RowSelection) KeyField(value interface{}) *RowSelection {
+    a.Set("keyField", value)
+    return a
+}
+
+/**
  * 行是否禁用表达式
  */
 func (a *RowSelection) DisableOn(value interface{}) *RowSelection {
@@ -70,13 +78,5 @@ func (a *RowSelection) RowClick(value interface{}) *RowSelection {
  */
 func (a *RowSelection) Type(value interface{}) *RowSelection {
     a.Set("type", value)
-    return a
-}
-
-/**
- * 对应数据源的key值
- */
-func (a *RowSelection) KeyField(value interface{}) *RowSelection {
-    a.Set("keyField", value)
     return a
 }

@@ -19,6 +19,14 @@ func NewListBodyField() *ListBodyField {
 }
 
 /**
+ * label 类名
+ */
+func (a *ListBodyField) LabelClassName(value interface{}) *ListBodyField {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
  * 内层组件的CSS类名
  */
 func (a *ListBodyField) InnerClassName(value interface{}) *ListBodyField {
@@ -63,13 +71,5 @@ func (a *ListBodyField) Copyable(value interface{}) *ListBodyField {
  */
 func (a *ListBodyField) Label(value interface{}) *ListBodyField {
     a.Set("label", value)
-    return a
-}
-
-/**
- * label 类名
- */
-func (a *ListBodyField) LabelClassName(value interface{}) *ListBodyField {
-    a.Set("labelClassName", value)
     return a
 }

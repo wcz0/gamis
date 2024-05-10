@@ -20,34 +20,25 @@ func NewDrawer() *Drawer {
 }
 
 /**
- * 是否显示
+ * 是否禁用
  */
-func (a *Drawer) Visible(value interface{}) *Drawer {
-    a.Set("visible", value)
+func (a *Drawer) Disabled(value interface{}) *Drawer {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否隐藏表达式
  */
-func (a *Drawer) Static(value interface{}) *Drawer {
-    a.Set("static", value)
+func (a *Drawer) HiddenOn(value interface{}) *Drawer {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 组件样式
  */
-func (a *Drawer) Style(value interface{}) *Drawer {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 默认不用填写，自动会创建确认和取消按钮。
- */
-func (a *Drawer) Actions(value interface{}) *Drawer {
-    a.Set("actions", value)
+func (a *Drawer) TestIdBuilder(value interface{}) *Drawer {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -60,42 +51,42 @@ func (a *Drawer) HeaderClassName(value interface{}) *Drawer {
 }
 
 /**
- * 是否可以拖动弹窗大小
+ * 配置 外层 className
  */
-func (a *Drawer) Resizable(value interface{}) *Drawer {
-    a.Set("resizable", value)
+func (a *Drawer) ClassName(value interface{}) *Drawer {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 是否隐藏
  */
-func (a *Drawer) Disabled(value interface{}) *Drawer {
-    a.Set("disabled", value)
+func (a *Drawer) Hidden(value interface{}) *Drawer {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Drawer) DisabledOn(value interface{}) *Drawer {
-    a.Set("disabledOn", value)
+func (a *Drawer) EditorSetting(value interface{}) *Drawer {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否显示错误信息
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Drawer) ShowErrorMsg(value interface{}) *Drawer {
-    a.Set("showErrorMsg", value)
+func (a *Drawer) UseMobileUI(value interface{}) *Drawer {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 是否显示表达式
  */
-func (a *Drawer) StaticPlaceholder(value interface{}) *Drawer {
-    a.Set("staticPlaceholder", value)
+func (a *Drawer) VisibleOn(value interface{}) *Drawer {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -108,10 +99,49 @@ func (a *Drawer) StaticClassName(value interface{}) *Drawer {
 }
 
 /**
- * 内容区域
  */
-func (a *Drawer) Body(value interface{}) *Drawer {
-    a.Set("body", value)
+func (a *Drawer) StaticSchema(value interface{}) *Drawer {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 底部
+ */
+func (a *Drawer) Footer(value interface{}) *Drawer {
+    a.Set("footer", value)
+    return a
+}
+
+/**
+ * 点击外部的时候是否关闭弹框。
+ */
+func (a *Drawer) CloseOnOutside(value interface{}) *Drawer {
+    a.Set("closeOnOutside", value)
+    return a
+}
+
+/**
+ * 数据映射
+ */
+func (a *Drawer) Data(value interface{}) *Drawer {
+    a.Set("data", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Drawer) OnEvent(value interface{}) *Drawer {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Drawer) StaticOn(value interface{}) *Drawer {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -132,96 +162,10 @@ func (a *Drawer) ShowCloseButton(value interface{}) *Drawer {
 }
 
 /**
- * 事件动作配置
+ * 头部
  */
-func (a *Drawer) OnEvent(value interface{}) *Drawer {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 弹窗参数说明，值格式为 JSONSchema。
- */
-func (a *Drawer) InputParams(value interface{}) *Drawer {
-    a.Set("inputParams", value)
-    return a
-}
-
-/**
- * Dialog 大小
- * 可选值: xs | sm | md | lg | full
- */
-func (a *Drawer) Size(value interface{}) *Drawer {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Drawer) HiddenOn(value interface{}) *Drawer {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Drawer) UseMobileUI(value interface{}) *Drawer {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *Drawer) StaticSchema(value interface{}) *Drawer {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Drawer) EditorSetting(value interface{}) *Drawer {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *Drawer) TestIdBuilder(value interface{}) *Drawer {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- */
-func (a *Drawer) Name(value interface{}) *Drawer {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 是否显示蒙层
- */
-func (a *Drawer) Overlay(value interface{}) *Drawer {
-    a.Set("overlay", value)
-    return a
-}
-
-/**
- * 数据映射
- */
-func (a *Drawer) Data(value interface{}) *Drawer {
-    a.Set("data", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Drawer) VisibleOn(value interface{}) *Drawer {
-    a.Set("visibleOn", value)
+func (a *Drawer) Header(value interface{}) *Drawer {
+    a.Set("header", value)
     return a
 }
 
@@ -234,45 +178,6 @@ func (a *Drawer) StaticInputClassName(value interface{}) *Drawer {
 }
 
 /**
- * 头部
- */
-func (a *Drawer) Header(value interface{}) *Drawer {
-    a.Set("header", value)
-    return a
-}
-
-/**
- * 配置 头部 容器 className
- */
-func (a *Drawer) FooterClassName(value interface{}) *Drawer {
-    a.Set("footerClassName", value)
-    return a
-}
-
-/**
- * 请通过配置 title 设置标题
- */
-func (a *Drawer) Title(value interface{}) *Drawer {
-    a.Set("title", value)
-    return a
-}
-
-/**
- */
-func (a *Drawer) Testid(value interface{}) *Drawer {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Drawer) StaticOn(value interface{}) *Drawer {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
  */
 func (a *Drawer) Type(value interface{}) *Drawer {
     a.Set("type", value)
@@ -280,34 +185,43 @@ func (a *Drawer) Type(value interface{}) *Drawer {
 }
 
 /**
- * 配置 Body 容器 className
+ * 默认不用填写，自动会创建确认和取消按钮。
  */
-func (a *Drawer) BodyClassName(value interface{}) *Drawer {
-    a.Set("bodyClassName", value)
+func (a *Drawer) Actions(value interface{}) *Drawer {
+    a.Set("actions", value)
     return a
 }
 
 /**
- * 底部
+ * 内容区域
  */
-func (a *Drawer) Footer(value interface{}) *Drawer {
-    a.Set("footer", value)
+func (a *Drawer) Body(value interface{}) *Drawer {
+    a.Set("body", value)
     return a
 }
 
 /**
- * 影响自动生成的按钮，如果自己配置了按钮这个配置无效。
+ * 从什么位置弹出
+ * 可选值: left | right | top | bottom
  */
-func (a *Drawer) Confirm(value interface{}) *Drawer {
-    a.Set("confirm", value)
+func (a *Drawer) Position(value interface{}) *Drawer {
+    a.Set("position", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 是否显示错误信息
  */
-func (a *Drawer) Hidden(value interface{}) *Drawer {
-    a.Set("hidden", value)
+func (a *Drawer) ShowErrorMsg(value interface{}) *Drawer {
+    a.Set("showErrorMsg", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Drawer) DisabledOn(value interface{}) *Drawer {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -320,11 +234,25 @@ func (a *Drawer) Id(value interface{}) *Drawer {
 }
 
 /**
- * 从什么位置弹出
- * 可选值: left | right | top | bottom
+ * 弹窗参数说明，值格式为 JSONSchema。
  */
-func (a *Drawer) Position(value interface{}) *Drawer {
-    a.Set("position", value)
+func (a *Drawer) InputParams(value interface{}) *Drawer {
+    a.Set("inputParams", value)
+    return a
+}
+
+/**
+ * 配置 头部 容器 className
+ */
+func (a *Drawer) FooterClassName(value interface{}) *Drawer {
+    a.Set("footerClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Drawer) Name(value interface{}) *Drawer {
+    a.Set("name", value)
     return a
 }
 
@@ -345,18 +273,18 @@ func (a *Drawer) Height(value interface{}) *Drawer {
 }
 
 /**
- * 点击外部的时候是否关闭弹框。
+ * 是否可以拖动弹窗大小
  */
-func (a *Drawer) CloseOnOutside(value interface{}) *Drawer {
-    a.Set("closeOnOutside", value)
+func (a *Drawer) Resizable(value interface{}) *Drawer {
+    a.Set("resizable", value)
     return a
 }
 
 /**
- * 配置 外层 className
+ * 是否显示
  */
-func (a *Drawer) ClassName(value interface{}) *Drawer {
-    a.Set("className", value)
+func (a *Drawer) Visible(value interface{}) *Drawer {
+    a.Set("visible", value)
     return a
 }
 
@@ -365,5 +293,77 @@ func (a *Drawer) ClassName(value interface{}) *Drawer {
  */
 func (a *Drawer) StaticLabelClassName(value interface{}) *Drawer {
     a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Drawer) Testid(value interface{}) *Drawer {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 配置 Body 容器 className
+ */
+func (a *Drawer) BodyClassName(value interface{}) *Drawer {
+    a.Set("bodyClassName", value)
+    return a
+}
+
+/**
+ * Dialog 大小
+ * 可选值: xs | sm | md | lg | full
+ */
+func (a *Drawer) Size(value interface{}) *Drawer {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Drawer) Static(value interface{}) *Drawer {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Drawer) StaticPlaceholder(value interface{}) *Drawer {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Drawer) Style(value interface{}) *Drawer {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 请通过配置 title 设置标题
+ */
+func (a *Drawer) Title(value interface{}) *Drawer {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 影响自动生成的按钮，如果自己配置了按钮这个配置无效。
+ */
+func (a *Drawer) Confirm(value interface{}) *Drawer {
+    a.Set("confirm", value)
+    return a
+}
+
+/**
+ * 是否显示蒙层
+ */
+func (a *Drawer) Overlay(value interface{}) *Drawer {
+    a.Set("overlay", value)
     return a
 }

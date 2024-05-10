@@ -19,8 +19,15 @@ func NewListenerAction() *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) IgnoreError(value interface{}) *ListenerAction {
-    a.Set("ignoreError", value)
+func (a *ListenerAction) ComponentName(value interface{}) *ListenerAction {
+    a.Set("componentName", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) Data(value interface{}) *ListenerAction {
+    a.Set("data", value)
     return a
 }
 
@@ -41,34 +48,6 @@ func (a *ListenerAction) OutputVar(value interface{}) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) StopPropagation(value interface{}) *ListenerAction {
-    a.Set("stopPropagation", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ActionType(value interface{}) *ListenerAction {
-    a.Set("actionType", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ComponentId(value interface{}) *ListenerAction {
-    a.Set("componentId", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ComponentName(value interface{}) *ListenerAction {
-    a.Set("componentName", value)
-    return a
-}
-
-/**
- */
 func (a *ListenerAction) PreventDefault(value interface{}) *ListenerAction {
     a.Set("preventDefault", value)
     return a
@@ -76,15 +55,15 @@ func (a *ListenerAction) PreventDefault(value interface{}) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) Expression(value interface{}) *ListenerAction {
-    a.Set("expression", value)
+func (a *ListenerAction) ExecOn(value interface{}) *ListenerAction {
+    a.Set("execOn", value)
     return a
 }
 
 /**
  */
-func (a *ListenerAction) ExecOn(value interface{}) *ListenerAction {
-    a.Set("execOn", value)
+func (a *ListenerAction) ActionType(value interface{}) *ListenerAction {
+    a.Set("actionType", value)
     return a
 }
 
@@ -104,7 +83,28 @@ func (a *ListenerAction) Args(value interface{}) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) Data(value interface{}) *ListenerAction {
-    a.Set("data", value)
+func (a *ListenerAction) StopPropagation(value interface{}) *ListenerAction {
+    a.Set("stopPropagation", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) Expression(value interface{}) *ListenerAction {
+    a.Set("expression", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ComponentId(value interface{}) *ListenerAction {
+    a.Set("componentId", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) IgnoreError(value interface{}) *ListenerAction {
+    a.Set("ignoreError", value)
     return a
 }
