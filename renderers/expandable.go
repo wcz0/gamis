@@ -14,7 +14,6 @@ func NewExpandable() *Expandable {
     a := &Expandable{
         BaseRenderer: NewBaseRenderer(),
     }
-
     return a
 }
 /**

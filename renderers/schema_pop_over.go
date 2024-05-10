@@ -14,40 +14,20 @@ func NewSchemaPopOver() *SchemaPopOver {
     a := &SchemaPopOver{
         BaseRenderer: NewBaseRenderer(),
     }
-
     return a
 }
 /**
- * 类名
+ * 是否显示查看更多的 icon，通常是放大图标。
  */
-func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 弹出模式
- * 可选值: dialog | drawer | popOver
- */
-func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
-    a.Set("mode", value)
+func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
+    a.Set("showIcon", value)
     return a
 }
 
 /**
- * 触发条件，默认是 click
- * 可选值: click | hover
  */
-func (a *SchemaPopOver) Trigger(value interface{}) *SchemaPopOver {
-    a.Set("trigger", value)
-    return a
-}
-
-/**
- * 偏移量
- */
-func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
-    a.Set("offset", value)
+func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
+    a.Set("body", value)
     return a
 }
 
@@ -68,11 +48,11 @@ func (a *SchemaPopOver) PopOverEnableOn(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 是弹窗形式的时候有用。
- * 可选值: sm | md | lg | xl
+ * 弹出模式
+ * 可选值: dialog | drawer | popOver
  */
-func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
-    a.Set("size", value)
+func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
+    a.Set("mode", value)
     return a
 }
 
@@ -86,10 +66,36 @@ func (a *SchemaPopOver) Position(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 是否显示查看更多的 icon，通常是放大图标。
+ * 触发条件，默认是 click
+ * 可选值: click | hover
  */
-func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
-    a.Set("showIcon", value)
+func (a *SchemaPopOver) Trigger(value interface{}) *SchemaPopOver {
+    a.Set("trigger", value)
+    return a
+}
+
+/**
+ * 类名
+ */
+func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是弹窗形式的时候有用。
+ * 可选值: sm | md | lg | xl
+ */
+func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 偏移量
+ */
+func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
+    a.Set("offset", value)
     return a
 }
 
@@ -98,12 +104,5 @@ func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
  */
 func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
     a.Set("title", value)
-    return a
-}
-
-/**
- */
-func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
-    a.Set("body", value)
     return a
 }

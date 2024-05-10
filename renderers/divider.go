@@ -15,15 +15,35 @@ func NewDivider() *Divider {
     a := &Divider{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "divider")
     return a
 }
 /**
- * 是否显示
  */
-func (a *Divider) Visible(value interface{}) *Divider {
-    a.Set("visible", value)
+func (a *Divider) Type(value interface{}) *Divider {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ */
+func (a *Divider) Title(value interface{}) *Divider {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Divider) Disabled(value interface{}) *Divider {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ */
+func (a *Divider) StaticSchema(value interface{}) *Divider {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -36,87 +56,10 @@ func (a *Divider) StaticLabelClassName(value interface{}) *Divider {
 }
 
 /**
- * 静态展示表单项Value类名
- */
-func (a *Divider) StaticInputClassName(value interface{}) *Divider {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) Color(value interface{}) *Divider {
-    a.Set("color", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Divider) StaticPlaceholder(value interface{}) *Divider {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
  * 可以组件级别用来关闭移动端样式
  */
 func (a *Divider) UseMobileUI(value interface{}) *Divider {
     a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 可选值: left | center | right
- */
-func (a *Divider) TitlePosition(value interface{}) *Divider {
-    a.Set("titlePosition", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Divider) VisibleOn(value interface{}) *Divider {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Divider) ClassName(value interface{}) *Divider {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Divider) DisabledOn(value interface{}) *Divider {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) StaticSchema(value interface{}) *Divider {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Divider) EditorSetting(value interface{}) *Divider {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) Type(value interface{}) *Divider {
-    a.Set("type", value)
     return a
 }
 
@@ -129,18 +72,25 @@ func (a *Divider) LineStyle(value interface{}) *Divider {
 }
 
 /**
- * 是否静态展示
  */
-func (a *Divider) Static(value interface{}) *Divider {
-    a.Set("static", value)
+func (a *Divider) Color(value interface{}) *Divider {
+    a.Set("color", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 是否显示
  */
-func (a *Divider) StaticOn(value interface{}) *Divider {
-    a.Set("staticOn", value)
+func (a *Divider) Visible(value interface{}) *Divider {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Divider) StaticClassName(value interface{}) *Divider {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -153,6 +103,37 @@ func (a *Divider) Style(value interface{}) *Divider {
 }
 
 /**
+ */
+func (a *Divider) Rotate(value interface{}) *Divider {
+    a.Set("rotate", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Divider) Static(value interface{}) *Divider {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Divider) StaticPlaceholder(value interface{}) *Divider {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Divider) ClassName(value interface{}) *Divider {
+    a.Set("className", value)
+    return a
+}
+
+/**
  * 可选值: horizontal | vertical
  */
 func (a *Divider) Direction(value interface{}) *Divider {
@@ -161,9 +142,18 @@ func (a *Divider) Direction(value interface{}) *Divider {
 }
 
 /**
+ * 是否静态展示表达式
  */
-func (a *Divider) Rotate(value interface{}) *Divider {
-    a.Set("rotate", value)
+func (a *Divider) StaticOn(value interface{}) *Divider {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Divider) EditorSetting(value interface{}) *Divider {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -176,10 +166,41 @@ func (a *Divider) Hidden(value interface{}) *Divider {
 }
 
 /**
- * 是否禁用
+ * 静态展示表单项Value类名
  */
-func (a *Divider) Disabled(value interface{}) *Divider {
-    a.Set("disabled", value)
+func (a *Divider) StaticInputClassName(value interface{}) *Divider {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Divider) VisibleOn(value interface{}) *Divider {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Divider) OnEvent(value interface{}) *Divider {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *Divider) TitleClassName(value interface{}) *Divider {
+    a.Set("titleClassName", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Divider) DisabledOn(value interface{}) *Divider {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -200,31 +221,9 @@ func (a *Divider) Id(value interface{}) *Divider {
 }
 
 /**
- * 事件动作配置
+ * 可选值: left | center | right
  */
-func (a *Divider) OnEvent(value interface{}) *Divider {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Divider) StaticClassName(value interface{}) *Divider {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) Title(value interface{}) *Divider {
-    a.Set("title", value)
-    return a
-}
-
-/**
- */
-func (a *Divider) TitleClassName(value interface{}) *Divider {
-    a.Set("titleClassName", value)
+func (a *Divider) TitlePosition(value interface{}) *Divider {
+    a.Set("titlePosition", value)
     return a
 }

@@ -14,104 +14,31 @@ func NewAvatar() *Avatar {
     a := &Avatar{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "avatar")
     a.Set("crossOrigin", "anonymous")
     return a
 }
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否静态展示
  */
-func (a *Avatar) Id(value interface{}) *Avatar {
-    a.Set("id", value)
+func (a *Avatar) Static(value interface{}) *Avatar {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 图片无法显示时的替换文字地址
  */
-func (a *Avatar) EditorSetting(value interface{}) *Avatar {
-    a.Set("editorSetting", value)
+func (a *Avatar) Alt(value interface{}) *Avatar {
+    a.Set("alt", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否静态展示表达式
  */
-func (a *Avatar) UseMobileUI(value interface{}) *Avatar {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *Avatar) Type(value interface{}) *Avatar {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 图片地址
- */
-func (a *Avatar) Src(value interface{}) *Avatar {
-    a.Set("src", value)
-    return a
-}
-
-/**
- * 形状
- * 可选值: circle | square | rounded
- */
-func (a *Avatar) Shape(value interface{}) *Avatar {
-    a.Set("shape", value)
-    return a
-}
-
-/**
- * 大小
- */
-func (a *Avatar) Size(value interface{}) *Avatar {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 文本
- */
-func (a *Avatar) Text(value interface{}) *Avatar {
-    a.Set("text", value)
-    return a
-}
-
-/**
- * 图片是否允许拖动
- */
-func (a *Avatar) Draggable(value interface{}) *Avatar {
-    a.Set("draggable", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Avatar) Disabled(value interface{}) *Avatar {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Avatar) Hidden(value interface{}) *Avatar {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Avatar) StaticPlaceholder(value interface{}) *Avatar {
-    a.Set("staticPlaceholder", value)
+func (a *Avatar) StaticOn(value interface{}) *Avatar {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -124,18 +51,10 @@ func (a *Avatar) StaticInputClassName(value interface{}) *Avatar {
 }
 
 /**
- * 自定义样式
+ * 图片地址
  */
-func (a *Avatar) Style(value interface{}) *Avatar {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *Avatar) Badge(value interface{}) *Avatar {
-    a.Set("badge", value)
+func (a *Avatar) Src(value interface{}) *Avatar {
+    a.Set("src", value)
     return a
 }
 
@@ -144,6 +63,53 @@ func (a *Avatar) Badge(value interface{}) *Avatar {
  */
 func (a *Avatar) Icon(value interface{}) *Avatar {
     a.Set("icon", value)
+    return a
+}
+
+/**
+ * 文本
+ */
+func (a *Avatar) Text(value interface{}) *Avatar {
+    a.Set("text", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Avatar) Hidden(value interface{}) *Avatar {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ */
+func (a *Avatar) Type(value interface{}) *Avatar {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Avatar) Visible(value interface{}) *Avatar {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Avatar) VisibleOn(value interface{}) *Avatar {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Avatar) StaticLabelClassName(value interface{}) *Avatar {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -157,97 +123,26 @@ func (a *Avatar) CrossOrigin(value interface{}) *Avatar {
 }
 
 /**
+ * 是否禁用
  */
-func (a *Avatar) StaticSchema(value interface{}) *Avatar {
-    a.Set("staticSchema", value)
+func (a *Avatar) Disabled(value interface{}) *Avatar {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 大小
  */
-func (a *Avatar) VisibleOn(value interface{}) *Avatar {
-    a.Set("visibleOn", value)
+func (a *Avatar) Size(value interface{}) *Avatar {
+    a.Set("size", value)
     return a
 }
 
 /**
- * 默认头像
+ * 图片是否允许拖动
  */
-func (a *Avatar) DefaultAvatar(value interface{}) *Avatar {
-    a.Set("defaultAvatar", value)
-    return a
-}
-
-/**
- * 类名
- */
-func (a *Avatar) ClassName(value interface{}) *Avatar {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Avatar) DisabledOn(value interface{}) *Avatar {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Avatar) Static(value interface{}) *Avatar {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Avatar) StaticOn(value interface{}) *Avatar {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Avatar) StaticClassName(value interface{}) *Avatar {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 字符类型距离左右两侧边界单位像素
- */
-func (a *Avatar) Gap(value interface{}) *Avatar {
-    a.Set("gap", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Avatar) HiddenOn(value interface{}) *Avatar {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Avatar) Visible(value interface{}) *Avatar {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Avatar) OnEvent(value interface{}) *Avatar {
-    a.Set("onEvent", value)
+func (a *Avatar) Draggable(value interface{}) *Avatar {
+    a.Set("draggable", value)
     return a
 }
 
@@ -260,10 +155,43 @@ func (a *Avatar) OnError(value interface{}) *Avatar {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 默认头像
  */
-func (a *Avatar) StaticLabelClassName(value interface{}) *Avatar {
-    a.Set("staticLabelClassName", value)
+func (a *Avatar) DefaultAvatar(value interface{}) *Avatar {
+    a.Set("defaultAvatar", value)
+    return a
+}
+
+/**
+ * 形状
+ * 可选值: circle | square | rounded
+ */
+func (a *Avatar) Shape(value interface{}) *Avatar {
+    a.Set("shape", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Avatar) StaticClassName(value interface{}) *Avatar {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *Avatar) Style(value interface{}) *Avatar {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Avatar) UseMobileUI(value interface{}) *Avatar {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -277,9 +205,80 @@ func (a *Avatar) Fit(value interface{}) *Avatar {
 }
 
 /**
- * 图片无法显示时的替换文字地址
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Avatar) Alt(value interface{}) *Avatar {
-    a.Set("alt", value)
+func (a *Avatar) Id(value interface{}) *Avatar {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Avatar) StaticPlaceholder(value interface{}) *Avatar {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Avatar) OnEvent(value interface{}) *Avatar {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *Avatar) StaticSchema(value interface{}) *Avatar {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Avatar) EditorSetting(value interface{}) *Avatar {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 字符类型距离左右两侧边界单位像素
+ */
+func (a *Avatar) Gap(value interface{}) *Avatar {
+    a.Set("gap", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Avatar) DisabledOn(value interface{}) *Avatar {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Avatar) HiddenOn(value interface{}) *Avatar {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 类名
+ */
+func (a *Avatar) ClassName(value interface{}) *Avatar {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 角标
+ */
+func (a *Avatar) Badge(value interface{}) *Avatar {
+    a.Set("badge", value)
     return a
 }

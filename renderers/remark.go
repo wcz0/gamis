@@ -15,15 +15,22 @@ func NewRemark() *Remark {
     a := &Remark{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "remark")
     return a
 }
 /**
- * 容器 css 类名
+ * 事件动作配置
  */
-func (a *Remark) ClassName(value interface{}) *Remark {
-    a.Set("className", value)
+func (a *Remark) OnEvent(value interface{}) *Remark {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Remark) StaticPlaceholder(value interface{}) *Remark {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -45,8 +52,8 @@ func (a *Remark) Type(value interface{}) *Remark {
 
 /**
  */
-func (a *Remark) TooltipClassName(value interface{}) *Remark {
-    a.Set("tooltipClassName", value)
+func (a *Remark) Icon(value interface{}) *Remark {
+    a.Set("icon", value)
     return a
 }
 
@@ -55,149 +62,6 @@ func (a *Remark) TooltipClassName(value interface{}) *Remark {
  */
 func (a *Remark) Trigger(value interface{}) *Remark {
     a.Set("trigger", value)
-    return a
-}
-
-/**
- */
-func (a *Remark) Label(value interface{}) *Remark {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 提示标题
- */
-func (a *Remark) Title(value interface{}) *Remark {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Remark) HiddenOn(value interface{}) *Remark {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Remark) VisibleOn(value interface{}) *Remark {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Remark) OnEvent(value interface{}) *Remark {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Remark) StaticPlaceholder(value interface{}) *Remark {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Remark) EditorSetting(value interface{}) *Remark {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Remark) DisabledOn(value interface{}) *Remark {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Remark) Style(value interface{}) *Remark {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Remark) StaticClassName(value interface{}) *Remark {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 显示位置
- * 可选值: top | right | bottom | left
- */
-func (a *Remark) Placement(value interface{}) *Remark {
-    a.Set("placement", value)
-    return a
-}
-
-/**
- * 点击其他内容时是否关闭弹框信息
- */
-func (a *Remark) RootClose(value interface{}) *Remark {
-    a.Set("rootClose", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Remark) Disabled(value interface{}) *Remark {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Remark) Hidden(value interface{}) *Remark {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- */
-func (a *Remark) StaticSchema(value interface{}) *Remark {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 提示内容
- */
-func (a *Remark) Content(value interface{}) *Remark {
-    a.Set("content", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Remark) Visible(value interface{}) *Remark {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Remark) StaticOn(value interface{}) *Remark {
-    a.Set("staticOn", value)
     return a
 }
 
@@ -211,6 +75,14 @@ func (a *Remark) Shape(value interface{}) *Remark {
 }
 
 /**
+ * 是否隐藏表达式
+ */
+func (a *Remark) HiddenOn(value interface{}) *Remark {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
  * 组件唯一 id，主要用于日志采集
  */
 func (a *Remark) Id(value interface{}) *Remark {
@@ -219,18 +91,66 @@ func (a *Remark) Id(value interface{}) *Remark {
 }
 
 /**
- * 是否静态展示
- */
-func (a *Remark) Static(value interface{}) *Remark {
-    a.Set("static", value)
-    return a
-}
-
-/**
  * 静态展示表单项Label类名
  */
 func (a *Remark) StaticLabelClassName(value interface{}) *Remark {
     a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Remark) Hidden(value interface{}) *Remark {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 提示标题
+ */
+func (a *Remark) Title(value interface{}) *Remark {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Remark) Style(value interface{}) *Remark {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 提示内容
+ */
+func (a *Remark) Content(value interface{}) *Remark {
+    a.Set("content", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Remark) StaticOn(value interface{}) *Remark {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Remark) StaticClassName(value interface{}) *Remark {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Remark) Visible(value interface{}) *Remark {
+    a.Set("visible", value)
     return a
 }
 
@@ -244,7 +164,86 @@ func (a *Remark) UseMobileUI(value interface{}) *Remark {
 
 /**
  */
-func (a *Remark) Icon(value interface{}) *Remark {
-    a.Set("icon", value)
+func (a *Remark) Label(value interface{}) *Remark {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Remark) ClassName(value interface{}) *Remark {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Remark) DisabledOn(value interface{}) *Remark {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Remark) EditorSetting(value interface{}) *Remark {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Remark) Disabled(value interface{}) *Remark {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Remark) Static(value interface{}) *Remark {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ */
+func (a *Remark) StaticSchema(value interface{}) *Remark {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 点击其他内容时是否关闭弹框信息
+ */
+func (a *Remark) RootClose(value interface{}) *Remark {
+    a.Set("rootClose", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Remark) VisibleOn(value interface{}) *Remark {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Remark) TooltipClassName(value interface{}) *Remark {
+    a.Set("tooltipClassName", value)
+    return a
+}
+
+/**
+ * 显示位置
+ * 可选值: top | right | bottom | left
+ */
+func (a *Remark) Placement(value interface{}) *Remark {
+    a.Set("placement", value)
     return a
 }

@@ -14,63 +14,14 @@ func NewSpinner() *Spinner {
     a := &Spinner{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "spinner")
     return a
 }
 /**
- * 静态展示表单项Value类名
+ * 事件动作配置
  */
-func (a *Spinner) StaticInputClassName(value interface{}) *Spinner {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 组件类型
- */
-func (a *Spinner) Type(value interface{}) *Spinner {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * spin图标位置包裹元素的自定义class
- */
-func (a *Spinner) SpinnerClassName(value interface{}) *Spinner {
-    a.Set("spinnerClassName", value)
-    return a
-}
-
-/**
- * 自定义spinner的class
- */
-func (a *Spinner) ClassName(value interface{}) *Spinner {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Spinner) Visible(value interface{}) *Spinner {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Spinner) StaticOn(value interface{}) *Spinner {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Spinner) StaticClassName(value interface{}) *Spinner {
-    a.Set("staticClassName", value)
+func (a *Spinner) OnEvent(value interface{}) *Spinner {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -83,10 +34,81 @@ func (a *Spinner) SpinnerWrapClassName(value interface{}) *Spinner {
 }
 
 /**
- * spinner文案
+ * 静态展示表单项类名
  */
-func (a *Spinner) Tip(value interface{}) *Spinner {
-    a.Set("tip", value)
+func (a *Spinner) StaticClassName(value interface{}) *Spinner {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Spinner) UseMobileUI(value interface{}) *Spinner {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 延迟显示
+ */
+func (a *Spinner) Delay(value interface{}) *Spinner {
+    a.Set("delay", value)
+    return a
+}
+
+/**
+ * 是否显示遮罩层
+ */
+func (a *Spinner) Overlay(value interface{}) *Spinner {
+    a.Set("overlay", value)
+    return a
+}
+
+/**
+ */
+func (a *Spinner) LoadingConfig(value interface{}) *Spinner {
+    a.Set("loadingConfig", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Spinner) Visible(value interface{}) *Spinner {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Spinner) Static(value interface{}) *Spinner {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Spinner) Disabled(value interface{}) *Spinner {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 控制Spinner显示与隐藏
+ */
+func (a *Spinner) Show(value interface{}) *Spinner {
+    a.Set("show", value)
+    return a
+}
+
+/**
+ * spin图标位置包裹元素的自定义class
+ */
+func (a *Spinner) SpinnerClassName(value interface{}) *Spinner {
+    a.Set("spinnerClassName", value)
     return a
 }
 
@@ -100,42 +122,18 @@ func (a *Spinner) TipPlacement(value interface{}) *Spinner {
 }
 
 /**
- * 是否禁用表达式
+ * 作为容器使用时内容
  */
-func (a *Spinner) DisabledOn(value interface{}) *Spinner {
-    a.Set("disabledOn", value)
+func (a *Spinner) Body(value interface{}) *Spinner {
+    a.Set("body", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 自定义spinner的class
  */
-func (a *Spinner) HiddenOn(value interface{}) *Spinner {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 自定义icon
- */
-func (a *Spinner) Icon(value interface{}) *Spinner {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Spinner) Hidden(value interface{}) *Spinner {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Spinner) OnEvent(value interface{}) *Spinner {
-    a.Set("onEvent", value)
+func (a *Spinner) ClassName(value interface{}) *Spinner {
+    a.Set("className", value)
     return a
 }
 
@@ -148,26 +146,10 @@ func (a *Spinner) StaticPlaceholder(value interface{}) *Spinner {
 }
 
 /**
- * 延迟显示
+ * 静态展示表单项Label类名
  */
-func (a *Spinner) Delay(value interface{}) *Spinner {
-    a.Set("delay", value)
-    return a
-}
-
-/**
- * 作为容器使用时内容
- */
-func (a *Spinner) Body(value interface{}) *Spinner {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Spinner) Id(value interface{}) *Spinner {
-    a.Set("id", value)
+func (a *Spinner) StaticLabelClassName(value interface{}) *Spinner {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -189,56 +171,33 @@ func (a *Spinner) Size(value interface{}) *Spinner {
 }
 
 /**
- * 是否静态展示
+ * spinner文案
  */
-func (a *Spinner) Static(value interface{}) *Spinner {
-    a.Set("static", value)
+func (a *Spinner) Tip(value interface{}) *Spinner {
+    a.Set("tip", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否隐藏
  */
-func (a *Spinner) UseMobileUI(value interface{}) *Spinner {
-    a.Set("useMobileUI", value)
+func (a *Spinner) Hidden(value interface{}) *Spinner {
+    a.Set("hidden", value)
     return a
 }
 
 /**
+ * 是否隐藏表达式
  */
-func (a *Spinner) Mode(value interface{}) *Spinner {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 是否显示遮罩层
- */
-func (a *Spinner) Overlay(value interface{}) *Spinner {
-    a.Set("overlay", value)
+func (a *Spinner) HiddenOn(value interface{}) *Spinner {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
  */
-func (a *Spinner) LoadingConfig(value interface{}) *Spinner {
-    a.Set("loadingConfig", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Spinner) VisibleOn(value interface{}) *Spinner {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Spinner) StaticLabelClassName(value interface{}) *Spinner {
-    a.Set("staticLabelClassName", value)
+func (a *Spinner) StaticSchema(value interface{}) *Spinner {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -251,24 +210,64 @@ func (a *Spinner) Style(value interface{}) *Spinner {
 }
 
 /**
- * 控制Spinner显示与隐藏
+ * 组件类型
  */
-func (a *Spinner) Show(value interface{}) *Spinner {
-    a.Set("show", value)
+func (a *Spinner) Type(value interface{}) *Spinner {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 自定义icon
  */
-func (a *Spinner) Disabled(value interface{}) *Spinner {
-    a.Set("disabled", value)
+func (a *Spinner) Icon(value interface{}) *Spinner {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Spinner) VisibleOn(value interface{}) *Spinner {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Spinner) Id(value interface{}) *Spinner {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Spinner) StaticInputClassName(value interface{}) *Spinner {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Spinner) StaticOn(value interface{}) *Spinner {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
  */
-func (a *Spinner) StaticSchema(value interface{}) *Spinner {
-    a.Set("staticSchema", value)
+func (a *Spinner) Mode(value interface{}) *Spinner {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Spinner) DisabledOn(value interface{}) *Spinner {
+    a.Set("disabledOn", value)
     return a
 }

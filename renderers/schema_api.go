@@ -14,14 +14,13 @@ func NewSchemaApi() *SchemaApi {
     a := &SchemaApi{
         BaseRenderer: NewBaseRenderer(),
     }
-
     return a
 }
 /**
- * API 发送目标地址
+ * 用来控制携带数据. 当key 为 `&` 值为 `$$` 时, 将所有原始数据打平设置到 data 中. 当值为 $$ 将所有原始数据赋值到对应的 key 中. 当值为 $ 打头时, 将变量值设置到 key 中.
  */
-func (a *SchemaApi) Url(value interface{}) *SchemaApi {
-    a.Set("url", value)
+func (a *SchemaApi) Data(value interface{}) *SchemaApi {
+    a.Set("data", value)
     return a
 }
 
@@ -30,6 +29,15 @@ func (a *SchemaApi) Url(value interface{}) *SchemaApi {
  */
 func (a *SchemaApi) ResponseData(value interface{}) *SchemaApi {
     a.Set("responseData", value)
+    return a
+}
+
+/**
+ * 发送体的格式
+ * 可选值: json | form-data | form
+ */
+func (a *SchemaApi) DataType(value interface{}) *SchemaApi {
+    a.Set("dataType", value)
     return a
 }
 
@@ -50,6 +58,47 @@ func (a *SchemaApi) TrackExpression(value interface{}) *SchemaApi {
 }
 
 /**
+ * 如果设置了值，同一个接口，相同参数，指定的时间（单位：ms）内请求将直接走缓存。
+ */
+func (a *SchemaApi) Cache(value interface{}) *SchemaApi {
+    a.Set("cache", value)
+    return a
+}
+
+/**
+ * API 发送类型
+ * 可选值: get | post | put | delete | patch | jsonp | js
+ */
+func (a *SchemaApi) Method(value interface{}) *SchemaApi {
+    a.Set("method", value)
+    return a
+}
+
+/**
+ * API 发送目标地址
+ */
+func (a *SchemaApi) Url(value interface{}) *SchemaApi {
+    a.Set("url", value)
+    return a
+}
+
+/**
+ * 默认数据映射中的key如果带点，或者带大括号，会转成对象比如：{   'a.b': '123' }经过数据映射后变成 {  a: {   b: '123  } }如果想要关闭此功能，请设置 convertKeyToPath 为 false
+ */
+func (a *SchemaApi) ConvertKeyToPath(value interface{}) *SchemaApi {
+    a.Set("convertKeyToPath", value)
+    return a
+}
+
+/**
+ * 默认都是追加模式，如果想完全替换把这个配置成 true
+ */
+func (a *SchemaApi) ReplaceData(value interface{}) *SchemaApi {
+    a.Set("replaceData", value)
+    return a
+}
+
+/**
  * qs 配置项
  */
 func (a *SchemaApi) QsOptions(value interface{}) *SchemaApi {
@@ -66,10 +115,10 @@ func (a *SchemaApi) Silent(value interface{}) *SchemaApi {
 }
 
 /**
- * 默认数据映射中的key如果带点，或者带大括号，会转成对象比如：{   'a.b': '123' }经过数据映射后变成 {  a: {   b: '123  } }如果想要关闭此功能，请设置 convertKeyToPath 为 false
+ * 文件下载时，指定文件名
  */
-func (a *SchemaApi) ConvertKeyToPath(value interface{}) *SchemaApi {
-    a.Set("convertKeyToPath", value)
+func (a *SchemaApi) DownloadFileName(value interface{}) *SchemaApi {
+    a.Set("downloadFileName", value)
     return a
 }
 
@@ -82,44 +131,10 @@ func (a *SchemaApi) AttachDataToQuery(value interface{}) *SchemaApi {
 }
 
 /**
- * 发送体的格式
- * 可选值: json | form-data | form
- */
-func (a *SchemaApi) DataType(value interface{}) *SchemaApi {
-    a.Set("dataType", value)
-    return a
-}
-
-/**
- * 携带 headers，用法和 data 一样，可以用变量。
- */
-func (a *SchemaApi) Headers(value interface{}) *SchemaApi {
-    a.Set("headers", value)
-    return a
-}
-
-/**
  * 设置发送条件
  */
 func (a *SchemaApi) SendOn(value interface{}) *SchemaApi {
     a.Set("sendOn", value)
-    return a
-}
-
-/**
- * 强制将数据附加在 query，默认只有 api 地址中没有用变量的时候 crud 查询接口才会 自动附加数据到 query 部分，如果想强制附加请设置这个属性。 对于那种临时加了个变量但是又不想全部参数写一遍的时候配置很有用。
- */
-func (a *SchemaApi) ForceAppendDataToQuery(value interface{}) *SchemaApi {
-    a.Set("forceAppendDataToQuery", value)
-    return a
-}
-
-/**
- * API 发送类型
- * 可选值: get | post | put | delete | patch | jsonp | js
- */
-func (a *SchemaApi) Method(value interface{}) *SchemaApi {
-    a.Set("method", value)
     return a
 }
 
@@ -132,33 +147,17 @@ func (a *SchemaApi) AutoRefresh(value interface{}) *SchemaApi {
 }
 
 /**
- * 用来控制携带数据. 当key 为 `&` 值为 `$$` 时, 将所有原始数据打平设置到 data 中. 当值为 $$ 将所有原始数据赋值到对应的 key 中. 当值为 $ 打头时, 将变量值设置到 key 中.
+ * 携带 headers，用法和 data 一样，可以用变量。
  */
-func (a *SchemaApi) Data(value interface{}) *SchemaApi {
-    a.Set("data", value)
+func (a *SchemaApi) Headers(value interface{}) *SchemaApi {
+    a.Set("headers", value)
     return a
 }
 
 /**
- * 默认都是追加模式，如果想完全替换把这个配置成 true
+ * 强制将数据附加在 query，默认只有 api 地址中没有用变量的时候 crud 查询接口才会 自动附加数据到 query 部分，如果想强制附加请设置这个属性。 对于那种临时加了个变量但是又不想全部参数写一遍的时候配置很有用。
  */
-func (a *SchemaApi) ReplaceData(value interface{}) *SchemaApi {
-    a.Set("replaceData", value)
-    return a
-}
-
-/**
- * 如果设置了值，同一个接口，相同参数，指定的时间（单位：ms）内请求将直接走缓存。
- */
-func (a *SchemaApi) Cache(value interface{}) *SchemaApi {
-    a.Set("cache", value)
-    return a
-}
-
-/**
- * 文件下载时，指定文件名
- */
-func (a *SchemaApi) DownloadFileName(value interface{}) *SchemaApi {
-    a.Set("downloadFileName", value)
+func (a *SchemaApi) ForceAppendDataToQuery(value interface{}) *SchemaApi {
+    a.Set("forceAppendDataToQuery", value)
     return a
 }

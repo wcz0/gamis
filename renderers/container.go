@@ -15,10 +15,57 @@ func NewContainer() *Container {
     a := &Container{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "container")
     return a
 }
+/**
+ * 使用的标签
+ */
+func (a *Container) WrapperComponent(value interface{}) *Container {
+    a.Set("wrapperComponent", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Container) Hidden(value interface{}) *Container {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Container) VisibleOn(value interface{}) *Container {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Container) Static(value interface{}) *Container {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 指定为 container 类型
+ */
+func (a *Container) Type(value interface{}) *Container {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Container) UseMobileUI(value interface{}) *Container {
+    a.Set("useMobileUI", value)
+    return a
+}
+
 /**
  * 是否禁用
  */
@@ -28,34 +75,26 @@ func (a *Container) Disabled(value interface{}) *Container {
 }
 
 /**
- * 静态展示表单项类名
- */
-func (a *Container) StaticClassName(value interface{}) *Container {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Container) Visible(value interface{}) *Container {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Container) ClassName(value interface{}) *Container {
-    a.Set("className", value)
-    return a
-}
-
-/**
  * 是否禁用表达式
  */
 func (a *Container) DisabledOn(value interface{}) *Container {
     a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Container) OnEvent(value interface{}) *Container {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *Container) Style(value interface{}) *Container {
+    a.Set("style", value)
     return a
 }
 
@@ -83,74 +122,10 @@ func (a *Container) EditorSetting(value interface{}) *Container {
 }
 
 /**
- * 内容
- */
-func (a *Container) Body(value interface{}) *Container {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Container) StaticPlaceholder(value interface{}) *Container {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 使用的标签
- */
-func (a *Container) WrapperComponent(value interface{}) *Container {
-    a.Set("wrapperComponent", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Container) VisibleOn(value interface{}) *Container {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否开启容器拖拽配置
- */
-func (a *Container) DraggableConfig(value interface{}) *Container {
-    a.Set("draggableConfig", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Container) Hidden(value interface{}) *Container {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
  * 是否需要对body加一层div包裹，默认为 true
  */
 func (a *Container) WrapperBody(value interface{}) *Container {
     a.Set("wrapperBody", value)
-    return a
-}
-
-/**
- * body 类名
- */
-func (a *Container) BodyClassName(value interface{}) *Container {
-    a.Set("bodyClassName", value)
-    return a
-}
-
-/**
- * 是否开启容器拖拽
- */
-func (a *Container) Draggable(value interface{}) *Container {
-    a.Set("draggable", value)
     return a
 }
 
@@ -163,14 +138,6 @@ func (a *Container) StaticOn(value interface{}) *Container {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Container) UseMobileUI(value interface{}) *Container {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
  * 静态展示表单项Label类名
  */
 func (a *Container) StaticLabelClassName(value interface{}) *Container {
@@ -179,10 +146,10 @@ func (a *Container) StaticLabelClassName(value interface{}) *Container {
 }
 
 /**
- * 自定义样式
+ * 静态展示空值占位
  */
-func (a *Container) Style(value interface{}) *Container {
-    a.Set("style", value)
+func (a *Container) StaticPlaceholder(value interface{}) *Container {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -203,25 +170,57 @@ func (a *Container) Id(value interface{}) *Container {
 }
 
 /**
- * 事件动作配置
+ * 静态展示表单项类名
  */
-func (a *Container) OnEvent(value interface{}) *Container {
-    a.Set("onEvent", value)
+func (a *Container) StaticClassName(value interface{}) *Container {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * body 类名
  */
-func (a *Container) Static(value interface{}) *Container {
-    a.Set("static", value)
+func (a *Container) BodyClassName(value interface{}) *Container {
+    a.Set("bodyClassName", value)
     return a
 }
 
 /**
- * 指定为 container 类型
+ * 容器 css 类名
  */
-func (a *Container) Type(value interface{}) *Container {
-    a.Set("type", value)
+func (a *Container) ClassName(value interface{}) *Container {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Container) Visible(value interface{}) *Container {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 内容
+ */
+func (a *Container) Body(value interface{}) *Container {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否开启容器拖拽
+ */
+func (a *Container) Draggable(value interface{}) *Container {
+    a.Set("draggable", value)
+    return a
+}
+
+/**
+ * 是否开启容器拖拽配置
+ */
+func (a *Container) DraggableConfig(value interface{}) *Container {
+    a.Set("draggableConfig", value)
     return a
 }

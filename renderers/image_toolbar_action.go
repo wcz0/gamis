@@ -14,7 +14,6 @@ func NewImageToolbarAction() *ImageToolbarAction {
     a := &ImageToolbarAction{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("key", "ROTATE_RIGHT")
     return a
 }

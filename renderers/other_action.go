@@ -14,55 +14,15 @@ func NewOtherAction() *OtherAction {
     a := &OtherAction{
         BaseRenderer: NewBaseRenderer(),
     }
-
-    a.Set("type", "button")
     a.Set("actionType", "prev")
+    a.Set("type", "button")
     return a
 }
 /**
- * 提示文字，配置了操作前会要求用户确认。
+ * 静态展示表单项Value类名
  */
-func (a *OtherAction) ConfirmText(value interface{}) *OtherAction {
-    a.Set("confirmText", value)
-    return a
-}
-
-/**
- * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
- */
-func (a *OtherAction) Required(value interface{}) *OtherAction {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
- */
-func (a *OtherAction) Close(value interface{}) *OtherAction {
-    a.Set("close", value)
-    return a
-}
-
-/**
- */
-func (a *OtherAction) Testid(value interface{}) *OtherAction {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否为块状展示，默认为内联。
- */
-func (a *OtherAction) Block(value interface{}) *OtherAction {
-    a.Set("block", value)
-    return a
-}
-
-/**
- * 按钮图标， iconfont 的类名
- */
-func (a *OtherAction) Icon(value interface{}) *OtherAction {
-    a.Set("icon", value)
+func (a *OtherAction) StaticInputClassName(value interface{}) *OtherAction {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -75,33 +35,128 @@ func (a *OtherAction) IconClassName(value interface{}) *OtherAction {
 }
 
 /**
+ * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
  */
-func (a *OtherAction) Tooltip(value interface{}) *OtherAction {
-    a.Set("tooltip", value)
+func (a *OtherAction) RequireSelected(value interface{}) *OtherAction {
+    a.Set("requireSelected", value)
     return a
 }
 
 /**
- * 可以指定让谁来触发这个动作。
+ * 角标
  */
-func (a *OtherAction) Target(value interface{}) *OtherAction {
-    a.Set("target", value)
+func (a *OtherAction) Badge(value interface{}) *OtherAction {
+    a.Set("badge", value)
     return a
 }
 
 /**
- * 点击后的禁止倒计时（秒）
+ * 是否为块状展示，默认为内联。
  */
-func (a *OtherAction) CountDown(value interface{}) *OtherAction {
-    a.Set("countDown", value)
+func (a *OtherAction) Block(value interface{}) *OtherAction {
+    a.Set("block", value)
     return a
 }
 
 /**
- * 键盘快捷键
+ * 右侧按钮图标， iconfont 的类名
  */
-func (a *OtherAction) HotKey(value interface{}) *OtherAction {
-    a.Set("hotKey", value)
+func (a *OtherAction) RightIcon(value interface{}) *OtherAction {
+    a.Set("rightIcon", value)
+    return a
+}
+
+/**
+ * 右侧 icon 上的 css 类名
+ */
+func (a *OtherAction) RightIconClassName(value interface{}) *OtherAction {
+    a.Set("rightIconClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *OtherAction) Primary(value interface{}) *OtherAction {
+    a.Set("primary", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *OtherAction) Hidden(value interface{}) *OtherAction {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *OtherAction) Static(value interface{}) *OtherAction {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *OtherAction) StaticPlaceholder(value interface{}) *OtherAction {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *OtherAction) Testid(value interface{}) *OtherAction {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 可选值: prev | next | cancel | close | submit | confirm | add | reset | reset-and-submit
+ */
+func (a *OtherAction) ActionType(value interface{}) *OtherAction {
+    a.Set("actionType", value)
+    return a
+}
+
+/**
+ * 提示文字，配置了操作前会要求用户确认。
+ */
+func (a *OtherAction) ConfirmText(value interface{}) *OtherAction {
+    a.Set("confirmText", value)
+    return a
+}
+
+/**
+ * 倒计时文字自定义
+ */
+func (a *OtherAction) CountDownTpl(value interface{}) *OtherAction {
+    a.Set("countDownTpl", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *OtherAction) LoadingOn(value interface{}) *OtherAction {
+    a.Set("loadingOn", value)
+    return a
+}
+
+/**
+ * 自定义事件处理函数
+ */
+func (a *OtherAction) OnClick(value interface{}) *OtherAction {
+    a.Set("onClick", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *OtherAction) Disabled(value interface{}) *OtherAction {
+    a.Set("disabled", value)
     return a
 }
 
@@ -110,30 +165,6 @@ func (a *OtherAction) HotKey(value interface{}) *OtherAction {
  */
 func (a *OtherAction) HiddenOn(value interface{}) *OtherAction {
     a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *OtherAction) StaticInputClassName(value interface{}) *OtherAction {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *OtherAction) EditorSetting(value interface{}) *OtherAction {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 禁用时的文案提示。
- */
-func (a *OtherAction) DisabledTip(value interface{}) *OtherAction {
-    a.Set("disabledTip", value)
     return a
 }
 
@@ -147,24 +178,63 @@ func (a *OtherAction) ActiveClassName(value interface{}) *OtherAction {
 
 /**
  */
-func (a *OtherAction) Primary(value interface{}) *OtherAction {
-    a.Set("primary", value)
+func (a *OtherAction) Tooltip(value interface{}) *OtherAction {
+    a.Set("tooltip", value)
     return a
 }
 
 /**
- * 是否显示loading效果
+ * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
  */
-func (a *OtherAction) LoadingOn(value interface{}) *OtherAction {
-    a.Set("loadingOn", value)
+func (a *OtherAction) Close(value interface{}) *OtherAction {
+    a.Set("close", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 子内容
  */
-func (a *OtherAction) Hidden(value interface{}) *OtherAction {
-    a.Set("hidden", value)
+func (a *OtherAction) Body(value interface{}) *OtherAction {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *OtherAction) StaticClassName(value interface{}) *OtherAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *OtherAction) StaticSchema(value interface{}) *OtherAction {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *OtherAction) UseMobileUI(value interface{}) *OtherAction {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 禁用时的文案提示。
+ */
+func (a *OtherAction) DisabledTip(value interface{}) *OtherAction {
+    a.Set("disabledTip", value)
+    return a
+}
+
+/**
+ * 激活状态时的样式
+ */
+func (a *OtherAction) ActiveLevel(value interface{}) *OtherAction {
+    a.Set("activeLevel", value)
     return a
 }
 
@@ -177,9 +247,10 @@ func (a *OtherAction) VisibleOn(value interface{}) *OtherAction {
 }
 
 /**
+ * 静态展示表单项Label类名
  */
-func (a *OtherAction) StaticSchema(value interface{}) *OtherAction {
-    a.Set("staticSchema", value)
+func (a *OtherAction) StaticLabelClassName(value interface{}) *OtherAction {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -193,35 +264,26 @@ func (a *OtherAction) Type(value interface{}) *OtherAction {
 }
 
 /**
- * 激活状态时的样式
+ * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
  */
-func (a *OtherAction) ActiveLevel(value interface{}) *OtherAction {
-    a.Set("activeLevel", value)
+func (a *OtherAction) Required(value interface{}) *OtherAction {
+    a.Set("required", value)
     return a
 }
 
 /**
- * 是否显示
+ * 组件样式
  */
-func (a *OtherAction) Visible(value interface{}) *OtherAction {
-    a.Set("visible", value)
+func (a *OtherAction) Style(value interface{}) *OtherAction {
+    a.Set("style", value)
     return a
 }
 
 /**
- * loading 上的css 类名
+ * 按钮图标， iconfont 的类名
  */
-func (a *OtherAction) LoadingClassName(value interface{}) *OtherAction {
-    a.Set("loadingClassName", value)
-    return a
-}
-
-/**
- * 按钮样式
- * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
- */
-func (a *OtherAction) Level(value interface{}) *OtherAction {
-    a.Set("level", value)
+func (a *OtherAction) Icon(value interface{}) *OtherAction {
+    a.Set("icon", value)
     return a
 }
 
@@ -243,62 +305,6 @@ func (a *OtherAction) TooltipPlacement(value interface{}) *OtherAction {
 }
 
 /**
- * 是否静态展示表达式
- */
-func (a *OtherAction) StaticOn(value interface{}) *OtherAction {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *OtherAction) StaticLabelClassName(value interface{}) *OtherAction {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 右侧按钮图标， iconfont 的类名
- */
-func (a *OtherAction) RightIcon(value interface{}) *OtherAction {
-    a.Set("rightIcon", value)
-    return a
-}
-
-/**
- * 子内容
- */
-func (a *OtherAction) Body(value interface{}) *OtherAction {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *OtherAction) Style(value interface{}) *OtherAction {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *OtherAction) UseMobileUI(value interface{}) *OtherAction {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 按钮文字
- */
-func (a *OtherAction) Label(value interface{}) *OtherAction {
-    a.Set("label", value)
-    return a
-}
-
-/**
  * 容器 css 类名
  */
 func (a *OtherAction) ClassName(value interface{}) *OtherAction {
@@ -315,50 +321,18 @@ func (a *OtherAction) DisabledOn(value interface{}) *OtherAction {
 }
 
 /**
+ * 是否显示
+ */
+func (a *OtherAction) Visible(value interface{}) *OtherAction {
+    a.Set("visible", value)
+    return a
+}
+
+/**
  * 事件动作配置
  */
 func (a *OtherAction) OnEvent(value interface{}) *OtherAction {
     a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *OtherAction) StaticPlaceholder(value interface{}) *OtherAction {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *OtherAction) StaticClassName(value interface{}) *OtherAction {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
- */
-func (a *OtherAction) RequireSelected(value interface{}) *OtherAction {
-    a.Set("requireSelected", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *OtherAction) Badge(value interface{}) *OtherAction {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 可选值: prev | next | cancel | close | submit | confirm | add | reset | reset-and-submit
- */
-func (a *OtherAction) ActionType(value interface{}) *OtherAction {
-    a.Set("actionType", value)
     return a
 }
 
@@ -371,42 +345,27 @@ func (a *OtherAction) Id(value interface{}) *OtherAction {
 }
 
 /**
- * 倒计时文字自定义
+ * 点击后的禁止倒计时（秒）
  */
-func (a *OtherAction) CountDownTpl(value interface{}) *OtherAction {
-    a.Set("countDownTpl", value)
+func (a *OtherAction) CountDown(value interface{}) *OtherAction {
+    a.Set("countDown", value)
     return a
 }
 
 /**
- * 自定义事件处理函数
+ * 键盘快捷键
  */
-func (a *OtherAction) OnClick(value interface{}) *OtherAction {
-    a.Set("onClick", value)
+func (a *OtherAction) HotKey(value interface{}) *OtherAction {
+    a.Set("hotKey", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 按钮样式
+ * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
  */
-func (a *OtherAction) Disabled(value interface{}) *OtherAction {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *OtherAction) Static(value interface{}) *OtherAction {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 右侧 icon 上的 css 类名
- */
-func (a *OtherAction) RightIconClassName(value interface{}) *OtherAction {
-    a.Set("rightIconClassName", value)
+func (a *OtherAction) Level(value interface{}) *OtherAction {
+    a.Set("level", value)
     return a
 }
 
@@ -415,5 +374,45 @@ func (a *OtherAction) RightIconClassName(value interface{}) *OtherAction {
  */
 func (a *OtherAction) MergeData(value interface{}) *OtherAction {
     a.Set("mergeData", value)
+    return a
+}
+
+/**
+ * 可以指定让谁来触发这个动作。
+ */
+func (a *OtherAction) Target(value interface{}) *OtherAction {
+    a.Set("target", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *OtherAction) StaticOn(value interface{}) *OtherAction {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *OtherAction) EditorSetting(value interface{}) *OtherAction {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * loading 上的css 类名
+ */
+func (a *OtherAction) LoadingClassName(value interface{}) *OtherAction {
+    a.Set("loadingClassName", value)
+    return a
+}
+
+/**
+ * 按钮文字
+ */
+func (a *OtherAction) Label(value interface{}) *OtherAction {
+    a.Set("label", value)
     return a
 }

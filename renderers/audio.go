@@ -15,7 +15,6 @@ func NewAudio() *Audio {
     a := &Audio{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "audio")
     return a
 }
@@ -28,18 +27,9 @@ func (a *Audio) Static(value interface{}) *Audio {
 }
 
 /**
- * 是否静态展示表达式
  */
-func (a *Audio) StaticOn(value interface{}) *Audio {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Audio) Style(value interface{}) *Audio {
-    a.Set("style", value)
+func (a *Audio) StaticSchema(value interface{}) *Audio {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -52,81 +42,18 @@ func (a *Audio) EditorSetting(value interface{}) *Audio {
 }
 
 /**
- * 是否隐藏
+ * "视频播放地址, 支持 $ 取变量。
  */
-func (a *Audio) Hidden(value interface{}) *Audio {
-    a.Set("hidden", value)
+func (a *Audio) Src(value interface{}) *Audio {
+    a.Set("src", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 组件样式
  */
-func (a *Audio) HiddenOn(value interface{}) *Audio {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Audio) StaticInputClassName(value interface{}) *Audio {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 是否是内联模式
- */
-func (a *Audio) Inline(value interface{}) *Audio {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 配置可选播放倍速
- */
-func (a *Audio) Rates(value interface{}) *Audio {
-    a.Set("rates", value)
-    return a
-}
-
-/**
- * 可以配置控制器
- */
-func (a *Audio) Controls(value interface{}) *Audio {
-    a.Set("controls", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Audio) DisabledOn(value interface{}) *Audio {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否自动播放
- */
-func (a *Audio) AutoPlay(value interface{}) *Audio {
-    a.Set("autoPlay", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Audio) Id(value interface{}) *Audio {
-    a.Set("id", value)
-    return a
-}
-
-/**
- */
-func (a *Audio) StaticSchema(value interface{}) *Audio {
-    a.Set("staticSchema", value)
+func (a *Audio) Style(value interface{}) *Audio {
+    a.Set("style", value)
     return a
 }
 
@@ -139,18 +66,10 @@ func (a *Audio) Type(value interface{}) *Audio {
 }
 
 /**
- * 是否显示
+ * 是否禁用
  */
-func (a *Audio) Visible(value interface{}) *Audio {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Audio) StaticClassName(value interface{}) *Audio {
-    a.Set("staticClassName", value)
+func (a *Audio) Disabled(value interface{}) *Audio {
+    a.Set("disabled", value)
     return a
 }
 
@@ -163,6 +82,14 @@ func (a *Audio) OnEvent(value interface{}) *Audio {
 }
 
 /**
+ * 是否静态展示表达式
+ */
+func (a *Audio) StaticOn(value interface{}) *Audio {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
  * 静态展示空值占位
  */
 func (a *Audio) StaticPlaceholder(value interface{}) *Audio {
@@ -171,10 +98,10 @@ func (a *Audio) StaticPlaceholder(value interface{}) *Audio {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否是内联模式
  */
-func (a *Audio) StaticLabelClassName(value interface{}) *Audio {
-    a.Set("staticLabelClassName", value)
+func (a *Audio) Inline(value interface{}) *Audio {
+    a.Set("inline", value)
     return a
 }
 
@@ -187,10 +114,66 @@ func (a *Audio) ClassName(value interface{}) *Audio {
 }
 
 /**
- * 是否显示表达式
+ * 静态展示表单项Label类名
  */
-func (a *Audio) VisibleOn(value interface{}) *Audio {
-    a.Set("visibleOn", value)
+func (a *Audio) StaticLabelClassName(value interface{}) *Audio {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 是否自动播放
+ */
+func (a *Audio) AutoPlay(value interface{}) *Audio {
+    a.Set("autoPlay", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Audio) Hidden(value interface{}) *Audio {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Audio) Visible(value interface{}) *Audio {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Audio) StaticInputClassName(value interface{}) *Audio {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Audio) Id(value interface{}) *Audio {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 配置可选播放倍速
+ */
+func (a *Audio) Rates(value interface{}) *Audio {
+    a.Set("rates", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Audio) StaticClassName(value interface{}) *Audio {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -211,17 +194,33 @@ func (a *Audio) Loop(value interface{}) *Audio {
 }
 
 /**
- * 是否禁用
+ * 可以配置控制器
  */
-func (a *Audio) Disabled(value interface{}) *Audio {
-    a.Set("disabled", value)
+func (a *Audio) Controls(value interface{}) *Audio {
+    a.Set("controls", value)
     return a
 }
 
 /**
- * "视频播放地址, 支持 $ 取变量。
+ * 是否禁用表达式
  */
-func (a *Audio) Src(value interface{}) *Audio {
-    a.Set("src", value)
+func (a *Audio) DisabledOn(value interface{}) *Audio {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Audio) HiddenOn(value interface{}) *Audio {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Audio) VisibleOn(value interface{}) *Audio {
+    a.Set("visibleOn", value)
     return a
 }

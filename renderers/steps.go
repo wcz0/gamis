@@ -14,23 +14,125 @@ func NewSteps() *Steps {
     a := &Steps{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "steps")
     return a
 }
 /**
+ * 是否显示
  */
-func (a *Steps) StaticSchema(value interface{}) *Steps {
-    a.Set("staticSchema", value)
+func (a *Steps) Visible(value interface{}) *Steps {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 展示模式
- * 可选值: horizontal | vertical
+ * API 或 数据映射
  */
-func (a *Steps) Mode(value interface{}) *Steps {
-    a.Set("mode", value)
+func (a *Steps) Source(value interface{}) *Steps {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Steps) EditorSetting(value interface{}) *Steps {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 点状步骤条
+ */
+func (a *Steps) ProgressDot(value interface{}) *Steps {
+    a.Set("progressDot", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Steps) ClassName(value interface{}) *Steps {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Steps) DisabledOn(value interface{}) *Steps {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Steps) OnEvent(value interface{}) *Steps {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Steps) StaticInputClassName(value interface{}) *Steps {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Steps) Hidden(value interface{}) *Steps {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Steps) StaticOn(value interface{}) *Steps {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 变量映射
+ */
+func (a *Steps) Name(value interface{}) *Steps {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ */
+func (a *Steps) Status(value interface{}) *Steps {
+    a.Set("status", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Steps) Id(value interface{}) *Steps {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Steps) StaticClassName(value interface{}) *Steps {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Steps) UseMobileUI(value interface{}) *Steps {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -44,41 +146,10 @@ func (a *Steps) LabelPlacement(value interface{}) *Steps {
 }
 
 /**
- * 是否显示
+ * 是否静态展示
  */
-func (a *Steps) Visible(value interface{}) *Steps {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- */
-func (a *Steps) Status(value interface{}) *Steps {
-    a.Set("status", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Steps) Disabled(value interface{}) *Steps {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Steps) VisibleOn(value interface{}) *Steps {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Steps) StaticOn(value interface{}) *Steps {
-    a.Set("staticOn", value)
+func (a *Steps) Static(value interface{}) *Steps {
+    a.Set("static", value)
     return a
 }
 
@@ -91,86 +162,6 @@ func (a *Steps) Style(value interface{}) *Steps {
 }
 
 /**
- * 指定当前步骤
- */
-func (a *Steps) Value(value interface{}) *Steps {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Steps) ClassName(value interface{}) *Steps {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Steps) HiddenOn(value interface{}) *Steps {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Steps) Static(value interface{}) *Steps {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Steps) StaticClassName(value interface{}) *Steps {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Steps) EditorSetting(value interface{}) *Steps {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Steps) UseMobileUI(value interface{}) *Steps {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 变量映射
- */
-func (a *Steps) Name(value interface{}) *Steps {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Steps) Id(value interface{}) *Steps {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Steps) StaticInputClassName(value interface{}) *Steps {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
  * 指定为 Steps 步骤条渲染器
  */
 func (a *Steps) Type(value interface{}) *Steps {
@@ -179,50 +170,25 @@ func (a *Steps) Type(value interface{}) *Steps {
 }
 
 /**
- * 是否隐藏
+ * 指定当前步骤
  */
-func (a *Steps) Hidden(value interface{}) *Steps {
-    a.Set("hidden", value)
+func (a *Steps) Value(value interface{}) *Steps {
+    a.Set("value", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 是否显示表达式
  */
-func (a *Steps) OnEvent(value interface{}) *Steps {
-    a.Set("onEvent", value)
+func (a *Steps) VisibleOn(value interface{}) *Steps {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
  */
-func (a *Steps) StaticLabelClassName(value interface{}) *Steps {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * API 或 数据映射
- */
-func (a *Steps) Source(value interface{}) *Steps {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Steps) DisabledOn(value interface{}) *Steps {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Steps) StaticPlaceholder(value interface{}) *Steps {
-    a.Set("staticPlaceholder", value)
+func (a *Steps) StaticSchema(value interface{}) *Steps {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -235,9 +201,42 @@ func (a *Steps) Steps(value interface{}) *Steps {
 }
 
 /**
- * 点状步骤条
+ * 展示模式
+ * 可选值: horizontal | vertical
  */
-func (a *Steps) ProgressDot(value interface{}) *Steps {
-    a.Set("progressDot", value)
+func (a *Steps) Mode(value interface{}) *Steps {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Steps) Disabled(value interface{}) *Steps {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Steps) HiddenOn(value interface{}) *Steps {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Steps) StaticPlaceholder(value interface{}) *Steps {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Steps) StaticLabelClassName(value interface{}) *Steps {
+    a.Set("staticLabelClassName", value)
     return a
 }

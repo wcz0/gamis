@@ -14,7 +14,6 @@ func NewAutoFillHeight() *AutoFillHeight {
     a := &AutoFillHeight{
         BaseRenderer: NewBaseRenderer(),
     }
-
     return a
 }
 /**

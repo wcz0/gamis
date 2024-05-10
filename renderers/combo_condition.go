@@ -14,7 +14,6 @@ func NewComboCondition() *ComboCondition {
     a := &ComboCondition{
         BaseRenderer: NewBaseRenderer(),
     }
-
     return a
 }
 /**

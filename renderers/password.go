@@ -15,31 +15,37 @@ func NewPassword() *Password {
     a := &Password{
         BaseRenderer: NewBaseRenderer(),
     }
-
     a.Set("type", "password")
     return a
 }
 /**
- * 是否静态展示表达式
+ * 事件动作配置
  */
-func (a *Password) StaticOn(value interface{}) *Password {
-    a.Set("staticOn", value)
+func (a *Password) OnEvent(value interface{}) *Password {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 静态展示空值占位
  */
-func (a *Password) StaticLabelClassName(value interface{}) *Password {
-    a.Set("staticLabelClassName", value)
+func (a *Password) StaticPlaceholder(value interface{}) *Password {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 组件样式
  */
-func (a *Password) Style(value interface{}) *Password {
-    a.Set("style", value)
+func (a *Password) Type(value interface{}) *Password {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Password) EditorSetting(value interface{}) *Password {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -60,64 +66,10 @@ func (a *Password) MosaicText(value interface{}) *Password {
 }
 
 /**
- * 是否隐藏表达式
+ * 容器 css 类名
  */
-func (a *Password) HiddenOn(value interface{}) *Password {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Password) Id(value interface{}) *Password {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Password) OnEvent(value interface{}) *Password {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Password) StaticInputClassName(value interface{}) *Password {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Password) StaticSchema(value interface{}) *Password {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Password) EditorSetting(value interface{}) *Password {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *Password) Type(value interface{}) *Password {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Password) Disabled(value interface{}) *Password {
-    a.Set("disabled", value)
+func (a *Password) ClassName(value interface{}) *Password {
+    a.Set("className", value)
     return a
 }
 
@@ -130,42 +82,41 @@ func (a *Password) DisabledOn(value interface{}) *Password {
 }
 
 /**
- * 是否显示表达式
+ * 是否隐藏表达式
  */
-func (a *Password) VisibleOn(value interface{}) *Password {
-    a.Set("visibleOn", value)
+func (a *Password) HiddenOn(value interface{}) *Password {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 静态展示表单项Label类名
  */
-func (a *Password) Static(value interface{}) *Password {
-    a.Set("static", value)
+func (a *Password) StaticLabelClassName(value interface{}) *Password {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 静态展示空值占位
  */
-func (a *Password) StaticPlaceholder(value interface{}) *Password {
-    a.Set("staticPlaceholder", value)
+func (a *Password) StaticSchema(value interface{}) *Password {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 静态展示表单项类名
+ * 组件样式
  */
-func (a *Password) StaticClassName(value interface{}) *Password {
-    a.Set("staticClassName", value)
+func (a *Password) Style(value interface{}) *Password {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * 是否禁用
  */
-func (a *Password) ClassName(value interface{}) *Password {
-    a.Set("className", value)
+func (a *Password) Disabled(value interface{}) *Password {
+    a.Set("disabled", value)
     return a
 }
 
@@ -182,5 +133,53 @@ func (a *Password) Hidden(value interface{}) *Password {
  */
 func (a *Password) Visible(value interface{}) *Password {
     a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Password) StaticOn(value interface{}) *Password {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Password) StaticClassName(value interface{}) *Password {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Password) VisibleOn(value interface{}) *Password {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Password) Id(value interface{}) *Password {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Password) Static(value interface{}) *Password {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Password) StaticInputClassName(value interface{}) *Password {
+    a.Set("staticInputClassName", value)
     return a
 }

@@ -14,7 +14,6 @@ func NewIconItem() *IconItem {
     a := &IconItem{
         BaseRenderer: NewBaseRenderer(),
     }
-
     return a
 }
 /**
