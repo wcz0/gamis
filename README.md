@@ -9,7 +9,7 @@ amis 低代码框架, json 映射
 ## Use
 
 ```go
-import github.com/wcz0/gamis
+import github.com/wcz0/gamis/v6
 
 str := gamis.Page().Title("这是一个标题").ToJson()
 
