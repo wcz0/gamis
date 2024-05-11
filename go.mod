@@ -1,3 +1,3 @@
-module github.com/wcz0/gamis/v6
+module github.com/wcz0/gamis
 
 go 1.12

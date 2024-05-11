@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/wcz0/gamis/v6"
+	"github.com/wcz0/gamis"
 )
 
 func TestAmis(t *testing.T) {
