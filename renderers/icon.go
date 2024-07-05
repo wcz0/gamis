@@ -20,37 +20,6 @@ func NewIcon() *Icon {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Icon) UseMobileUI(value interface{}) *Icon {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *Icon) Testid(value interface{}) *Icon {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Icon) EditorSetting(value interface{}) *Icon {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Icon) Disabled(value interface{}) *Icon {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
  * 是否隐藏表达式
  */
 func (a *Icon) HiddenOn(value interface{}) *Icon {
@@ -75,33 +44,26 @@ func (a *Icon) StaticInputClassName(value interface{}) *Icon {
 }
 
 /**
- * 按钮类型
+ * 组件样式
  */
-func (a *Icon) Icon(value interface{}) *Icon {
-    a.Set("icon", value)
+func (a *Icon) Style(value interface{}) *Icon {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Icon) ClassName(value interface{}) *Icon {
-    a.Set("className", value)
+func (a *Icon) UseMobileUI(value interface{}) *Icon {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
+ * 是否禁用
  */
-func (a *Icon) TestIdBuilder(value interface{}) *Icon {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Icon) Id(value interface{}) *Icon {
-    a.Set("id", value)
+func (a *Icon) Disabled(value interface{}) *Icon {
+    a.Set("disabled", value)
     return a
 }
 
@@ -114,10 +76,32 @@ func (a *Icon) OnEvent(value interface{}) *Icon {
 }
 
 /**
- * 角标
  */
-func (a *Icon) Badge(value interface{}) *Icon {
-    a.Set("badge", value)
+func (a *Icon) Testid(value interface{}) *Icon {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 按钮类型
+ */
+func (a *Icon) Icon(value interface{}) *Icon {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ */
+func (a *Icon) Type(value interface{}) *Icon {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Icon) Hidden(value interface{}) *Icon {
+    a.Set("hidden", value)
     return a
 }
 
@@ -130,33 +114,10 @@ func (a *Icon) DisabledOn(value interface{}) *Icon {
 }
 
 /**
- * 是否静态展示表达式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Icon) StaticOn(value interface{}) *Icon {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Icon) StaticLabelClassName(value interface{}) *Icon {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Icon) StaticSchema(value interface{}) *Icon {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Icon) Hidden(value interface{}) *Icon {
-    a.Set("hidden", value)
+func (a *Icon) EditorSetting(value interface{}) *Icon {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -177,17 +138,10 @@ func (a *Icon) VisibleOn(value interface{}) *Icon {
 }
 
 /**
- * 是否静态展示
+ * 静态展示空值占位
  */
-func (a *Icon) Static(value interface{}) *Icon {
-    a.Set("static", value)
-    return a
-}
-
-/**
- */
-func (a *Icon) Type(value interface{}) *Icon {
-    a.Set("type", value)
+func (a *Icon) StaticPlaceholder(value interface{}) *Icon {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -200,17 +154,63 @@ func (a *Icon) Vendor(value interface{}) *Icon {
 }
 
 /**
- * 组件样式
+ * 角标
  */
-func (a *Icon) Style(value interface{}) *Icon {
-    a.Set("style", value)
+func (a *Icon) Badge(value interface{}) *Icon {
+    a.Set("badge", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 容器 css 类名
  */
-func (a *Icon) StaticPlaceholder(value interface{}) *Icon {
-    a.Set("staticPlaceholder", value)
+func (a *Icon) ClassName(value interface{}) *Icon {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Icon) StaticLabelClassName(value interface{}) *Icon {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Icon) StaticSchema(value interface{}) *Icon {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Icon) Id(value interface{}) *Icon {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Icon) Static(value interface{}) *Icon {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Icon) StaticOn(value interface{}) *Icon {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Icon) TestIdBuilder(value interface{}) *Icon {
+    a.Set("testIdBuilder", value)
     return a
 }

@@ -19,20 +19,6 @@ func NewComboCondition() *ComboCondition {
 
 /**
  */
-func (a *ComboCondition) Test(value interface{}) *ComboCondition {
-    a.Set("test", value)
-    return a
-}
-
-/**
- */
-func (a *ComboCondition) Items(value interface{}) *ComboCondition {
-    a.Set("items", value)
-    return a
-}
-
-/**
- */
 func (a *ComboCondition) Label(value interface{}) *ComboCondition {
     a.Set("label", value)
     return a
@@ -49,5 +35,19 @@ func (a *ComboCondition) Scaffold(value interface{}) *ComboCondition {
  */
 func (a *ComboCondition) Mode(value interface{}) *ComboCondition {
     a.Set("mode", value)
+    return a
+}
+
+/**
+ */
+func (a *ComboCondition) Test(value interface{}) *ComboCondition {
+    a.Set("test", value)
+    return a
+}
+
+/**
+ */
+func (a *ComboCondition) Items(value interface{}) *ComboCondition {
+    a.Set("items", value)
     return a
 }

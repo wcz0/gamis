@@ -18,25 +18,19 @@ func NewGridColumn() *GridColumn {
 }
 
 /**
- * 小屏时（>=768px）宽度占比
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
  */
-func (a *GridColumn) Sm(value interface{}) *GridColumn {
-    a.Set("sm", value)
+func (a *GridColumn) Mode(value interface{}) *GridColumn {
+    a.Set("mode", value)
     return a
 }
 
 /**
- * 中屏时(>=992px)宽度占比
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  */
-func (a *GridColumn) Md(value interface{}) *GridColumn {
-    a.Set("md", value)
-    return a
-}
-
-/**
- */
-func (a *GridColumn) Body(value interface{}) *GridColumn {
-    a.Set("body", value)
+func (a *GridColumn) Horizontal(value interface{}) *GridColumn {
+    a.Set("horizontal", value)
     return a
 }
 
@@ -65,6 +59,14 @@ func (a *GridColumn) Xs(value interface{}) *GridColumn {
 }
 
 /**
+ * 中屏时(>=992px)宽度占比
+ */
+func (a *GridColumn) Md(value interface{}) *GridColumn {
+    a.Set("md", value)
+    return a
+}
+
+/**
  * 大屏时(>=1200px)宽度占比
  */
 func (a *GridColumn) Lg(value interface{}) *GridColumn {
@@ -82,18 +84,16 @@ func (a *GridColumn) Valign(value interface{}) *GridColumn {
 }
 
 /**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
  */
-func (a *GridColumn) Mode(value interface{}) *GridColumn {
-    a.Set("mode", value)
+func (a *GridColumn) Body(value interface{}) *GridColumn {
+    a.Set("body", value)
     return a
 }
 
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ * 小屏时（>=768px）宽度占比
  */
-func (a *GridColumn) Horizontal(value interface{}) *GridColumn {
-    a.Set("horizontal", value)
+func (a *GridColumn) Sm(value interface{}) *GridColumn {
+    a.Set("sm", value)
     return a
 }

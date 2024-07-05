@@ -19,6 +19,20 @@ func NewImageToolbarAction() *ImageToolbarAction {
 }
 
 /**
+ */
+func (a *ImageToolbarAction) IconClassName(value interface{}) *ImageToolbarAction {
+    a.Set("iconClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *ImageToolbarAction) Disabled(value interface{}) *ImageToolbarAction {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
  * 可选值: ROTATE_RIGHT | ROTATE_LEFT | ZOOM_IN | ZOOM_OUT | SCALE_ORIGIN
  */
 func (a *ImageToolbarAction) Key(value interface{}) *ImageToolbarAction {
@@ -37,19 +51,5 @@ func (a *ImageToolbarAction) Label(value interface{}) *ImageToolbarAction {
  */
 func (a *ImageToolbarAction) Icon(value interface{}) *ImageToolbarAction {
     a.Set("icon", value)
-    return a
-}
-
-/**
- */
-func (a *ImageToolbarAction) IconClassName(value interface{}) *ImageToolbarAction {
-    a.Set("iconClassName", value)
-    return a
-}
-
-/**
- */
-func (a *ImageToolbarAction) Disabled(value interface{}) *ImageToolbarAction {
-    a.Set("disabled", value)
     return a
 }

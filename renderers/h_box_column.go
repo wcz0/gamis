@@ -18,30 +18,6 @@ func NewHBoxColumn() *HBoxColumn {
 }
 
 /**
- * 其他样式
- */
-func (a *HBoxColumn) Style(value interface{}) *HBoxColumn {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *HBoxColumn) Visible(value interface{}) *HBoxColumn {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *HBoxColumn) VisibleOn(value interface{}) *HBoxColumn {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
  * 列上 CSS 类名
  */
 func (a *HBoxColumn) ColumnClassName(value interface{}) *HBoxColumn {
@@ -67,14 +43,6 @@ func (a *HBoxColumn) Width(value interface{}) *HBoxColumn {
 }
 
 /**
- * 高度
- */
-func (a *HBoxColumn) Height(value interface{}) *HBoxColumn {
-    a.Set("height", value)
-    return a
-}
-
-/**
  * 配置子表单项默认的展示方式。
  * 可选值: normal | inline | horizontal
  */
@@ -96,5 +64,37 @@ func (a *HBoxColumn) Horizontal(value interface{}) *HBoxColumn {
  */
 func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
     a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *HBoxColumn) VisibleOn(value interface{}) *HBoxColumn {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 高度
+ */
+func (a *HBoxColumn) Height(value interface{}) *HBoxColumn {
+    a.Set("height", value)
+    return a
+}
+
+/**
+ * 其他样式
+ */
+func (a *HBoxColumn) Style(value interface{}) *HBoxColumn {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *HBoxColumn) Visible(value interface{}) *HBoxColumn {
+    a.Set("visible", value)
     return a
 }

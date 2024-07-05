@@ -19,29 +19,6 @@ func NewPortlet() *Portlet {
 }
 
 /**
- * 是否显示表达式
- */
-func (a *Portlet) VisibleOn(value interface{}) *Portlet {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Portlet) StaticLabelClassName(value interface{}) *Portlet {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Portlet) StaticSchema(value interface{}) *Portlet {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
  * 内容类名
  */
 func (a *Portlet) ContentClassName(value interface{}) *Portlet {
@@ -58,18 +35,34 @@ func (a *Portlet) UnmountOnExit(value interface{}) *Portlet {
 }
 
 /**
- * 链接外层类名
+ * 是否隐藏表达式
  */
-func (a *Portlet) LinksClassName(value interface{}) *Portlet {
-    a.Set("linksClassName", value)
+func (a *Portlet) HiddenOn(value interface{}) *Portlet {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 静态展示表单项Label类名
  */
-func (a *Portlet) Hidden(value interface{}) *Portlet {
-    a.Set("hidden", value)
+func (a *Portlet) StaticLabelClassName(value interface{}) *Portlet {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 关联已有数据，选项卡直接根据目标数据重复。
+ */
+func (a *Portlet) Source(value interface{}) *Portlet {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *Portlet) Style(value interface{}) *Portlet {
+    a.Set("style", value)
     return a
 }
 
@@ -83,129 +76,10 @@ func (a *Portlet) TabsMode(value interface{}) *Portlet {
 }
 
 /**
- * header和内容是否展示分割线
+ * 静态展示表单项Value类名
  */
-func (a *Portlet) Divider(value interface{}) *Portlet {
-    a.Set("divider", value)
-    return a
-}
-
-/**
- * 类名
- */
-func (a *Portlet) TabsClassName(value interface{}) *Portlet {
-    a.Set("tabsClassName", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Portlet) HiddenOn(value interface{}) *Portlet {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Portlet) Static(value interface{}) *Portlet {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Portlet) StaticPlaceholder(value interface{}) *Portlet {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 自定义样式
- */
-func (a *Portlet) Style(value interface{}) *Portlet {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *Portlet) TestIdBuilder(value interface{}) *Portlet {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Portlet) ClassName(value interface{}) *Portlet {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Portlet) OnEvent(value interface{}) *Portlet {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Portlet) StaticOn(value interface{}) *Portlet {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 指定为 portlet 类型
- */
-func (a *Portlet) Type(value interface{}) *Portlet {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 卡片是否只有在点开的时候加载？
- */
-func (a *Portlet) MountOnEnter(value interface{}) *Portlet {
-    a.Set("mountOnEnter", value)
-    return a
-}
-
-/**
- * 可以在右侧配置点其他功能按钮。不会随着tab切换
- */
-func (a *Portlet) Toolbar(value interface{}) *Portlet {
-    a.Set("toolbar", value)
-    return a
-}
-
-/**
- * 是否支持溢出滚动
- */
-func (a *Portlet) Scrollable(value interface{}) *Portlet {
-    a.Set("scrollable", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Portlet) DisabledOn(value interface{}) *Portlet {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Portlet) StaticClassName(value interface{}) *Portlet {
-    a.Set("staticClassName", value)
+func (a *Portlet) StaticInputClassName(value interface{}) *Portlet {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -218,18 +92,10 @@ func (a *Portlet) EditorSetting(value interface{}) *Portlet {
 }
 
 /**
- * 关联已有数据，选项卡直接根据目标数据重复。
+ * 指定为 portlet 类型
  */
-func (a *Portlet) Source(value interface{}) *Portlet {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Portlet) Disabled(value interface{}) *Portlet {
-    a.Set("disabled", value)
+func (a *Portlet) Type(value interface{}) *Portlet {
+    a.Set("type", value)
     return a
 }
 
@@ -242,10 +108,74 @@ func (a *Portlet) Id(value interface{}) *Portlet {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否静态展示表达式
  */
-func (a *Portlet) StaticInputClassName(value interface{}) *Portlet {
-    a.Set("staticInputClassName", value)
+func (a *Portlet) StaticOn(value interface{}) *Portlet {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Portlet) StaticClassName(value interface{}) *Portlet {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 链接外层类名
+ */
+func (a *Portlet) LinksClassName(value interface{}) *Portlet {
+    a.Set("linksClassName", value)
+    return a
+}
+
+/**
+ * 是否支持溢出滚动
+ */
+func (a *Portlet) Scrollable(value interface{}) *Portlet {
+    a.Set("scrollable", value)
+    return a
+}
+
+/**
+ * 隐藏头部
+ */
+func (a *Portlet) HideHeader(value interface{}) *Portlet {
+    a.Set("hideHeader", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Portlet) ClassName(value interface{}) *Portlet {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Portlet) DisabledOn(value interface{}) *Portlet {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Portlet) Visible(value interface{}) *Portlet {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 类名
+ */
+func (a *Portlet) TabsClassName(value interface{}) *Portlet {
+    a.Set("tabsClassName", value)
     return a
 }
 
@@ -265,9 +195,65 @@ func (a *Portlet) Tabs(value interface{}) *Portlet {
 }
 
 /**
+ * 是否禁用
  */
-func (a *Portlet) Testid(value interface{}) *Portlet {
-    a.Set("testid", value)
+func (a *Portlet) Disabled(value interface{}) *Portlet {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Portlet) OnEvent(value interface{}) *Portlet {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Portlet) Static(value interface{}) *Portlet {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ */
+func (a *Portlet) StaticSchema(value interface{}) *Portlet {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Portlet) Hidden(value interface{}) *Portlet {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 可以在右侧配置点其他功能按钮。不会随着tab切换
+ */
+func (a *Portlet) Toolbar(value interface{}) *Portlet {
+    a.Set("toolbar", value)
+    return a
+}
+
+/**
+ * 卡片是否只有在点开的时候加载？
+ */
+func (a *Portlet) MountOnEnter(value interface{}) *Portlet {
+    a.Set("mountOnEnter", value)
+    return a
+}
+
+/**
+ * header和内容是否展示分割线
+ */
+func (a *Portlet) Divider(value interface{}) *Portlet {
+    a.Set("divider", value)
     return a
 }
 
@@ -280,17 +266,31 @@ func (a *Portlet) Description(value interface{}) *Portlet {
 }
 
 /**
- * 隐藏头部
  */
-func (a *Portlet) HideHeader(value interface{}) *Portlet {
-    a.Set("hideHeader", value)
+func (a *Portlet) Testid(value interface{}) *Portlet {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 是否显示
+ * 是否显示表达式
  */
-func (a *Portlet) Visible(value interface{}) *Portlet {
-    a.Set("visible", value)
+func (a *Portlet) VisibleOn(value interface{}) *Portlet {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Portlet) StaticPlaceholder(value interface{}) *Portlet {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *Portlet) TestIdBuilder(value interface{}) *Portlet {
+    a.Set("testIdBuilder", value)
     return a
 }
