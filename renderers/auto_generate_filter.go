@@ -15,6 +15,10 @@ func NewAutoGenerateFilter() *AutoGenerateFilter {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *AutoGenerateFilter) Set(name string, value interface{}) *AutoGenerateFilter {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,7 +28,11 @@ func (a *AutoGenerateFilter) Set(name string, value interface{}) *AutoGenerateFi
     a.AmisSchema[name] = value
     return a
 }
-
+/**
+ * 是否默认收起
+ */
+func (a *AutoGenerateFilter) Defaultcollapsed(value interface{}) *AutoGenerateFilter {
+    a.Set("defaultCollapsed", value)
     return a
 }
 
@@ -41,13 +49,5 @@ func (a *AutoGenerateFilter) Columnsnum(value interface{}) *AutoGenerateFilter {
  */
 func (a *AutoGenerateFilter) Showbtntoolbar(value interface{}) *AutoGenerateFilter {
     a.Set("showBtnToolbar", value)
-    return a
-}
-
-/**
- * 是否默认收起
- */
-func (a *AutoGenerateFilter) Defaultcollapsed(value interface{}) *AutoGenerateFilter {
-    a.Set("defaultCollapsed", value)
     return a
 }

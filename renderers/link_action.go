@@ -15,6 +15,12 @@ func NewLinkAction() *LinkAction {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("actionType", "link")
+    a.Set("type", "button")
+    return a
+}
+
+
 func (a *LinkAction) Set(name string, value interface{}) *LinkAction {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,18 +30,121 @@ func (a *LinkAction) Set(name string, value interface{}) *LinkAction {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("actionType", "link")
-    a.Set("type", "button")
+/**
+ * 是否为块状展示，默认为内联。
+ */
+func (a *LinkAction) Block(value interface{}) *LinkAction {
+    a.Set("block", value)
     return a
 }
 
 /**
- * 按钮大小
- * 可选值: xs | sm | md | lg
+ * icon 上的css 类名
  */
-func (a *LinkAction) Size(value interface{}) *LinkAction {
-    a.Set("size", value)
+func (a *LinkAction) Iconclassname(value interface{}) *LinkAction {
+    a.Set("iconClassName", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *LinkAction) Onevent(value interface{}) *LinkAction {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *LinkAction) Staticschema(value interface{}) *LinkAction {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ */
+func (a *LinkAction) Testidbuilder(value interface{}) *LinkAction {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *LinkAction) Editorsetting(value interface{}) *LinkAction {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * loading 上的css 类名
+ */
+func (a *LinkAction) Loadingclassname(value interface{}) *LinkAction {
+    a.Set("loadingClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *LinkAction) Staticon(value interface{}) *LinkAction {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 主要用于用户行为跟踪里区分是哪个按钮
+ */
+func (a *LinkAction) Id(value interface{}) *LinkAction {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *LinkAction) Staticclassname(value interface{}) *LinkAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 按钮图标， iconfont 的类名
+ */
+func (a *LinkAction) Icon(value interface{}) *LinkAction {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 键盘快捷键
+ */
+func (a *LinkAction) Hotkey(value interface{}) *LinkAction {
+    a.Set("hotKey", value)
+    return a
+}
+
+/**
+ * 子内容
+ */
+func (a *LinkAction) Body(value interface{}) *LinkAction {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 跳转到哪？支持配置相对路径。
+ */
+func (a *LinkAction) Link(value interface{}) *LinkAction {
+    a.Set("link", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *LinkAction) Visible(value interface{}) *LinkAction {
+    a.Set("visible", value)
     return a
 }
 
@@ -56,10 +165,178 @@ func (a *LinkAction) Target(value interface{}) *LinkAction {
 }
 
 /**
- * 指定为打开链接行为，跟 url 不同的时这个行为为单页模式。
+ * 静态展示空值占位
  */
-func (a *LinkAction) Actiontype(value interface{}) *LinkAction {
-    a.Set("actionType", value)
+func (a *LinkAction) Staticplaceholder(value interface{}) *LinkAction {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *LinkAction) Testid(value interface{}) *LinkAction {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 倒计时文字自定义
+ */
+func (a *LinkAction) Countdowntpl(value interface{}) *LinkAction {
+    a.Set("countDownTpl", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *LinkAction) Hiddenon(value interface{}) *LinkAction {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 按钮样式
+ * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
+ */
+func (a *LinkAction) Level(value interface{}) *LinkAction {
+    a.Set("level", value)
+    return a
+}
+
+/**
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
+ */
+func (a *LinkAction) Size(value interface{}) *LinkAction {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 提示文字，配置了操作前会要求用户确认。
+ */
+func (a *LinkAction) Confirmtext(value interface{}) *LinkAction {
+    a.Set("confirmText", value)
+    return a
+}
+
+/**
+ * 激活状态时的样式
+ */
+func (a *LinkAction) Activelevel(value interface{}) *LinkAction {
+    a.Set("activeLevel", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *LinkAction) Style(value interface{}) *LinkAction {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *LinkAction) Visibleon(value interface{}) *LinkAction {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *LinkAction) Usemobileui(value interface{}) *LinkAction {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ */
+func (a *LinkAction) Close(value interface{}) *LinkAction {
+    a.Set("close", value)
+    return a
+}
+
+/**
+ * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+ */
+func (a *LinkAction) Requireselected(value interface{}) *LinkAction {
+    a.Set("requireSelected", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *LinkAction) Loadingon(value interface{}) *LinkAction {
+    a.Set("loadingOn", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *LinkAction) Disabledon(value interface{}) *LinkAction {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 右侧按钮图标， iconfont 的类名
+ */
+func (a *LinkAction) Righticon(value interface{}) *LinkAction {
+    a.Set("rightIcon", value)
+    return a
+}
+
+/**
+ */
+func (a *LinkAction) Primary(value interface{}) *LinkAction {
+    a.Set("primary", value)
+    return a
+}
+
+/**
+ * 点击后的禁止倒计时（秒）
+ */
+func (a *LinkAction) Countdown(value interface{}) *LinkAction {
+    a.Set("countDown", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *LinkAction) Staticlabelclassname(value interface{}) *LinkAction {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 激活状态时的类名
+ */
+func (a *LinkAction) Activeclassname(value interface{}) *LinkAction {
+    a.Set("activeClassName", value)
+    return a
+}
+
+/**
+ * 角标
+ */
+func (a *LinkAction) Badge(value interface{}) *LinkAction {
+    a.Set("badge", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *LinkAction) Hidden(value interface{}) *LinkAction {
+    a.Set("hidden", value)
     return a
 }
 
@@ -72,10 +349,18 @@ func (a *LinkAction) Label(value interface{}) *LinkAction {
 }
 
 /**
- * 提示文字，配置了操作前会要求用户确认。
+ * 自定义事件处理函数
  */
-func (a *LinkAction) Confirmtext(value interface{}) *LinkAction {
-    a.Set("confirmText", value)
+func (a *LinkAction) Onclick(value interface{}) *LinkAction {
+    a.Set("onClick", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *LinkAction) Classname(value interface{}) *LinkAction {
+    a.Set("className", value)
     return a
 }
 
@@ -89,17 +374,10 @@ func (a *LinkAction) Type(value interface{}) *LinkAction {
 }
 
 /**
+ * 指定为打开链接行为，跟 url 不同的时这个行为为单页模式。
  */
-func (a *LinkAction) Testid(value interface{}) *LinkAction {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *LinkAction) Editorsetting(value interface{}) *LinkAction {
-    a.Set("editorSetting", value)
+func (a *LinkAction) Actiontype(value interface{}) *LinkAction {
+    a.Set("actionType", value)
     return a
 }
 
@@ -119,115 +397,10 @@ func (a *LinkAction) Tooltip(value interface{}) *LinkAction {
 }
 
 /**
- * 激活状态时的类名
+ * 是否将弹框中数据 merge 到父级作用域。
  */
-func (a *LinkAction) Activeclassname(value interface{}) *LinkAction {
-    a.Set("activeClassName", value)
-    return a
-}
-
-/**
- * 倒计时文字自定义
- */
-func (a *LinkAction) Countdowntpl(value interface{}) *LinkAction {
-    a.Set("countDownTpl", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *LinkAction) Badge(value interface{}) *LinkAction {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 主要用于用户行为跟踪里区分是哪个按钮
- */
-func (a *LinkAction) Id(value interface{}) *LinkAction {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *LinkAction) Static(value interface{}) *LinkAction {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *LinkAction) Staticclassname(value interface{}) *LinkAction {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *LinkAction) Staticon(value interface{}) *LinkAction {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * icon 上的css 类名
- */
-func (a *LinkAction) Iconclassname(value interface{}) *LinkAction {
-    a.Set("iconClassName", value)
-    return a
-}
-
-/**
- * 是否显示loading效果
- */
-func (a *LinkAction) Loadingon(value interface{}) *LinkAction {
-    a.Set("loadingOn", value)
-    return a
-}
-
-/**
- * 按钮图标， iconfont 的类名
- */
-func (a *LinkAction) Icon(value interface{}) *LinkAction {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 按钮样式
- * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
- */
-func (a *LinkAction) Level(value interface{}) *LinkAction {
-    a.Set("level", value)
-    return a
-}
-
-/**
- * 点击后的禁止倒计时（秒）
- */
-func (a *LinkAction) Countdown(value interface{}) *LinkAction {
-    a.Set("countDown", value)
-    return a
-}
-
-/**
- * 键盘快捷键
- */
-func (a *LinkAction) Hotkey(value interface{}) *LinkAction {
-    a.Set("hotKey", value)
-    return a
-}
-
-/**
- * 自定义事件处理函数
- */
-func (a *LinkAction) Onclick(value interface{}) *LinkAction {
-    a.Set("onClick", value)
+func (a *LinkAction) Mergedata(value interface{}) *LinkAction {
+    a.Set("mergeData", value)
     return a
 }
 
@@ -240,97 +413,10 @@ func (a *LinkAction) Disabled(value interface{}) *LinkAction {
 }
 
 /**
- * 跳转到哪？支持配置相对路径。
- */
-func (a *LinkAction) Link(value interface{}) *LinkAction {
-    a.Set("link", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *LinkAction) Visibleon(value interface{}) *LinkAction {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 激活状态时的样式
- */
-func (a *LinkAction) Activelevel(value interface{}) *LinkAction {
-    a.Set("activeLevel", value)
-    return a
-}
-
-/**
- * 是否将弹框中数据 merge 到父级作用域。
- */
-func (a *LinkAction) Mergedata(value interface{}) *LinkAction {
-    a.Set("mergeData", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *LinkAction) Classname(value interface{}) *LinkAction {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *LinkAction) Staticplaceholder(value interface{}) *LinkAction {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
  * 静态展示表单项Value类名
  */
 func (a *LinkAction) Staticinputclassname(value interface{}) *LinkAction {
     a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 是否为块状展示，默认为内联。
- */
-func (a *LinkAction) Block(value interface{}) *LinkAction {
-    a.Set("block", value)
-    return a
-}
-
-/**
- * 右侧按钮图标， iconfont 的类名
- */
-func (a *LinkAction) Righticon(value interface{}) *LinkAction {
-    a.Set("rightIcon", value)
-    return a
-}
-
-/**
- * loading 上的css 类名
- */
-func (a *LinkAction) Loadingclassname(value interface{}) *LinkAction {
-    a.Set("loadingClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *LinkAction) Style(value interface{}) *LinkAction {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *LinkAction) Primary(value interface{}) *LinkAction {
-    a.Set("primary", value)
     return a
 }
 
@@ -351,95 +437,9 @@ func (a *LinkAction) Required(value interface{}) *LinkAction {
 }
 
 /**
- * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+ * 是否静态展示
  */
-func (a *LinkAction) Requireselected(value interface{}) *LinkAction {
-    a.Set("requireSelected", value)
-    return a
-}
-
-/**
- * 子内容
- */
-func (a *LinkAction) Body(value interface{}) *LinkAction {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *LinkAction) Hiddenon(value interface{}) *LinkAction {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- */
-func (a *LinkAction) Testidbuilder(value interface{}) *LinkAction {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
- */
-func (a *LinkAction) Close(value interface{}) *LinkAction {
-    a.Set("close", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *LinkAction) Disabledon(value interface{}) *LinkAction {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *LinkAction) Hidden(value interface{}) *LinkAction {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *LinkAction) Visible(value interface{}) *LinkAction {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- */
-func (a *LinkAction) Staticschema(value interface{}) *LinkAction {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *LinkAction) Onevent(value interface{}) *LinkAction {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *LinkAction) Staticlabelclassname(value interface{}) *LinkAction {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *LinkAction) Usemobileui(value interface{}) *LinkAction {
-    a.Set("useMobileUI", value)
+func (a *LinkAction) Static(value interface{}) *LinkAction {
+    a.Set("static", value)
     return a
 }

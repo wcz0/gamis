@@ -16,6 +16,11 @@ func NewEach() *Each {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "each")
+    return a
+}
+
+
 func (a *Each) Set(name string, value interface{}) *Each {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,40 +30,11 @@ func (a *Each) Set(name string, value interface{}) *Each {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "each")
-    return a
-}
-
 /**
- * 用来控制通过什么字段读取序号，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Each) Indexkeyname(value interface{}) *Each {
-    a.Set("indexKeyName", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Each) Disabled(value interface{}) *Each {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Each) Staticinputclassname(value interface{}) *Each {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Each) Staticlabelclassname(value interface{}) *Each {
-    a.Set("staticLabelClassName", value)
+func (a *Each) Editorsetting(value interface{}) *Each {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -72,24 +48,8 @@ func (a *Each) Usemobileui(value interface{}) *Each {
 
 /**
  */
-func (a *Each) Testidbuilder(value interface{}) *Each {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Each) Hiddenon(value interface{}) *Each {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Each) Onevent(value interface{}) *Each {
-    a.Set("onEvent", value)
+func (a *Each) Placeholder(value interface{}) *Each {
+    a.Set("placeholder", value)
     return a
 }
 
@@ -102,25 +62,32 @@ func (a *Each) Staticplaceholder(value interface{}) *Each {
 }
 
 /**
+ * 静态展示表单项Label类名
  */
-func (a *Each) Staticschema(value interface{}) *Each {
-    a.Set("staticSchema", value)
+func (a *Each) Staticlabelclassname(value interface{}) *Each {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 用来控制通过什么字段读取成员数据，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下
  */
-func (a *Each) Itemkeyname(value interface{}) *Each {
-    a.Set("itemKeyName", value)
+func (a *Each) Testid(value interface{}) *Each {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 事件动作配置
  */
-func (a *Each) Hidden(value interface{}) *Each {
-    a.Set("hidden", value)
+func (a *Each) Onevent(value interface{}) *Each {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *Each) Testidbuilder(value interface{}) *Each {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -141,18 +108,10 @@ func (a *Each) Static(value interface{}) *Each {
 }
 
 /**
- * 容器 css 类名
+ * 关联字段名
  */
-func (a *Each) Classname(value interface{}) *Each {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Each) Id(value interface{}) *Each {
-    a.Set("id", value)
+func (a *Each) Name(value interface{}) *Each {
+    a.Set("name", value)
     return a
 }
 
@@ -165,41 +124,10 @@ func (a *Each) Disabledon(value interface{}) *Each {
 }
 
 /**
- * 关联字段名
+ * 是否隐藏
  */
-func (a *Each) Name(value interface{}) *Each {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Each) Editorsetting(value interface{}) *Each {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 指定为each展示类型
- */
-func (a *Each) Type(value interface{}) *Each {
-    a.Set("type", value)
-    return a
-}
-
-/**
- */
-func (a *Each) Testid(value interface{}) *Each {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 关联字段名 支持数据映射
- */
-func (a *Each) Source(value interface{}) *Each {
-    a.Set("source", value)
+func (a *Each) Hidden(value interface{}) *Each {
+    a.Set("hidden", value)
     return a
 }
 
@@ -212,10 +140,57 @@ func (a *Each) Visible(value interface{}) *Each {
 }
 
 /**
- * 是否静态展示表达式
  */
-func (a *Each) Staticon(value interface{}) *Each {
-    a.Set("staticOn", value)
+func (a *Each) Staticschema(value interface{}) *Each {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 用来控制通过什么字段读取成员数据，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下
+ */
+func (a *Each) Itemkeyname(value interface{}) *Each {
+    a.Set("itemKeyName", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Each) Disabled(value interface{}) *Each {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Each) Staticinputclassname(value interface{}) *Each {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 指定为each展示类型
+ */
+func (a *Each) Type(value interface{}) *Each {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 关联字段名 支持数据映射
+ */
+func (a *Each) Source(value interface{}) *Each {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 用来控制通过什么字段读取序号，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下
+ */
+func (a *Each) Indexkeyname(value interface{}) *Each {
+    a.Set("indexKeyName", value)
     return a
 }
 
@@ -227,9 +202,18 @@ func (a *Each) Items(value interface{}) *Each {
 }
 
 /**
+ * 容器 css 类名
  */
-func (a *Each) Placeholder(value interface{}) *Each {
-    a.Set("placeholder", value)
+func (a *Each) Classname(value interface{}) *Each {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Each) Hiddenon(value interface{}) *Each {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -238,6 +222,22 @@ func (a *Each) Placeholder(value interface{}) *Each {
  */
 func (a *Each) Staticclassname(value interface{}) *Each {
     a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Each) Id(value interface{}) *Each {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Each) Staticon(value interface{}) *Each {
+    a.Set("staticOn", value)
     return a
 }
 

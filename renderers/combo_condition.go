@@ -15,6 +15,10 @@ func NewComboCondition() *ComboCondition {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *ComboCondition) Set(name string, value interface{}) *ComboCondition {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,7 +28,17 @@ func (a *ComboCondition) Set(name string, value interface{}) *ComboCondition {
     a.AmisSchema[name] = value
     return a
 }
+/**
+ */
+func (a *ComboCondition) Scaffold(value interface{}) *ComboCondition {
+    a.Set("scaffold", value)
+    return a
+}
 
+/**
+ */
+func (a *ComboCondition) Mode(value interface{}) *ComboCondition {
+    a.Set("mode", value)
     return a
 }
 
@@ -46,19 +60,5 @@ func (a *ComboCondition) Items(value interface{}) *ComboCondition {
  */
 func (a *ComboCondition) Label(value interface{}) *ComboCondition {
     a.Set("label", value)
-    return a
-}
-
-/**
- */
-func (a *ComboCondition) Scaffold(value interface{}) *ComboCondition {
-    a.Set("scaffold", value)
-    return a
-}
-
-/**
- */
-func (a *ComboCondition) Mode(value interface{}) *ComboCondition {
-    a.Set("mode", value)
     return a
 }

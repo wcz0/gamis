@@ -16,6 +16,10 @@ func NewSchemaMessage() *SchemaMessage {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *SchemaMessage) Set(name string, value interface{}) *SchemaMessage {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,10 +29,6 @@ func (a *SchemaMessage) Set(name string, value interface{}) *SchemaMessage {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
 /**
  * 获取成功的提示，默认为空。
  */

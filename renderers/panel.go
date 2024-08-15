@@ -16,6 +16,11 @@ func NewPanel() *Panel {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "panel")
+    return a
+}
+
+
 func (a *Panel) Set(name string, value interface{}) *Panel {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,40 +30,11 @@ func (a *Panel) Set(name string, value interface{}) *Panel {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "panel")
-    return a
-}
-
 /**
- * 配置 Body 容器 className
+ * 是否静态展示
  */
-func (a *Panel) Bodyclassname(value interface{}) *Panel {
-    a.Set("bodyClassName", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Panel) Disabled(value interface{}) *Panel {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Panel) Hidden(value interface{}) *Panel {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Panel) Style(value interface{}) *Panel {
-    a.Set("style", value)
+func (a *Panel) Static(value interface{}) *Panel {
+    a.Set("static", value)
     return a
 }
 
@@ -71,96 +47,10 @@ func (a *Panel) Usemobileui(value interface{}) *Panel {
 }
 
 /**
- * 指定为Panel渲染器。
- */
-func (a *Panel) Type(value interface{}) *Panel {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 底部内容区域
- */
-func (a *Panel) Footer(value interface{}) *Panel {
-    a.Set("footer", value)
-    return a
-}
-
-/**
- * Panel 标题
- */
-func (a *Panel) Title(value interface{}) *Panel {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 固定底部, 想要把按钮固定在底部的时候配置。
- */
-func (a *Panel) Affixfooter(value interface{}) *Panel {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * 外观配置的classname
- */
-func (a *Panel) Headercontrolclassname(value interface{}) *Panel {
-    a.Set("headerControlClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Panel) Bodycontrolclassname(value interface{}) *Panel {
-    a.Set("bodyControlClassName", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Panel) Disabledon(value interface{}) *Panel {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Panel) Staticplaceholder(value interface{}) *Panel {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Panel) Staticinputclassname(value interface{}) *Panel {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Panel) Testid(value interface{}) *Panel {
-    a.Set("testid", value)
-    return a
-}
-
-/**
  * 按钮集合
  */
 func (a *Panel) Actions(value interface{}) *Panel {
     a.Set("actions", value)
-    return a
-}
-
-/**
- * 按钮集合外层类名
- */
-func (a *Panel) Actionsclassname(value interface{}) *Panel {
-    a.Set("actionsClassName", value)
     return a
 }
 
@@ -173,50 +63,66 @@ func (a *Panel) Header(value interface{}) *Panel {
 }
 
 /**
- * 是否静态展示表达式
+ * 外观配置的classname
  */
-func (a *Panel) Staticon(value interface{}) *Panel {
-    a.Set("staticOn", value)
+func (a *Panel) Headercontrolclassname(value interface{}) *Panel {
+    a.Set("headerControlClassName", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否禁用
  */
-func (a *Panel) Staticlabelclassname(value interface{}) *Panel {
-    a.Set("staticLabelClassName", value)
+func (a *Panel) Disabled(value interface{}) *Panel {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 内容区域
+ * 事件动作配置
  */
-func (a *Panel) Body(value interface{}) *Panel {
-    a.Set("body", value)
+func (a *Panel) Onevent(value interface{}) *Panel {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 静态展示空值占位
  */
-func (a *Panel) Id(value interface{}) *Panel {
-    a.Set("id", value)
+func (a *Panel) Staticplaceholder(value interface{}) *Panel {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 静态展示表单项类名
  */
-func (a *Panel) Editorsetting(value interface{}) *Panel {
-    a.Set("editorSetting", value)
+func (a *Panel) Staticclassname(value interface{}) *Panel {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 组件样式
  */
-func (a *Panel) Hiddenon(value interface{}) *Panel {
-    a.Set("hiddenOn", value)
+func (a *Panel) Style(value interface{}) *Panel {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * footer 和 actions 外层 div 类名。
+ */
+func (a *Panel) Footerwrapclassname(value interface{}) *Panel {
+    a.Set("footerWrapClassName", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Panel) Hidden(value interface{}) *Panel {
+    a.Set("hidden", value)
     return a
 }
 
@@ -229,18 +135,33 @@ func (a *Panel) Visibleon(value interface{}) *Panel {
 }
 
 /**
- * 是否静态展示
+ * 指定为Panel渲染器。
  */
-func (a *Panel) Static(value interface{}) *Panel {
-    a.Set("static", value)
+func (a *Panel) Type(value interface{}) *Panel {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 配置 footer 容器 className
+ * 是否显示
  */
-func (a *Panel) Footerclassname(value interface{}) *Panel {
-    a.Set("footerClassName", value)
+func (a *Panel) Visible(value interface{}) *Panel {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ */
+func (a *Panel) Staticschema(value interface{}) *Panel {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 按钮集合外层类名
+ */
+func (a *Panel) Actionsclassname(value interface{}) *Panel {
+    a.Set("actionsClassName", value)
     return a
 }
 
@@ -254,24 +175,49 @@ func (a *Panel) Subformmode(value interface{}) *Panel {
 }
 
 /**
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Panel) Staticschema(value interface{}) *Panel {
-    a.Set("staticSchema", value)
+func (a *Panel) Id(value interface{}) *Panel {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Panel) Staticlabelclassname(value interface{}) *Panel {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Panel) Editorsetting(value interface{}) *Panel {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 底部内容区域
+ */
+func (a *Panel) Footer(value interface{}) *Panel {
+    a.Set("footer", value)
+    return a
+}
+
+/**
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ */
+func (a *Panel) Subformhorizontal(value interface{}) *Panel {
+    a.Set("subFormHorizontal", value)
     return a
 }
 
 /**
  */
-func (a *Panel) Testidbuilder(value interface{}) *Panel {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * footer 和 actions 外层 div 类名。
- */
-func (a *Panel) Footerwrapclassname(value interface{}) *Panel {
-    a.Set("footerWrapClassName", value)
+func (a *Panel) Bodycontrolclassname(value interface{}) *Panel {
+    a.Set("bodyControlClassName", value)
     return a
 }
 
@@ -279,22 +225,6 @@ func (a *Panel) Footerwrapclassname(value interface{}) *Panel {
  */
 func (a *Panel) Actionscontrolclassname(value interface{}) *Panel {
     a.Set("actionsControlClassName", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Panel) Visible(value interface{}) *Panel {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Panel) Onevent(value interface{}) *Panel {
-    a.Set("onEvent", value)
     return a
 }
 
@@ -307,10 +237,33 @@ func (a *Panel) Classname(value interface{}) *Panel {
 }
 
 /**
- * 静态展示表单项类名
+ * 是否隐藏表达式
  */
-func (a *Panel) Staticclassname(value interface{}) *Panel {
-    a.Set("staticClassName", value)
+func (a *Panel) Hiddenon(value interface{}) *Panel {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 固定底部, 想要把按钮固定在底部的时候配置。
+ */
+func (a *Panel) Affixfooter(value interface{}) *Panel {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ */
+func (a *Panel) Testid(value interface{}) *Panel {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 配置 footer 容器 className
+ */
+func (a *Panel) Footerclassname(value interface{}) *Panel {
+    a.Set("footerClassName", value)
     return a
 }
 
@@ -323,9 +276,56 @@ func (a *Panel) Headerclassname(value interface{}) *Panel {
 }
 
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ * Panel 标题
  */
-func (a *Panel) Subformhorizontal(value interface{}) *Panel {
-    a.Set("subFormHorizontal", value)
+func (a *Panel) Title(value interface{}) *Panel {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Panel) Disabledon(value interface{}) *Panel {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Panel) Staticinputclassname(value interface{}) *Panel {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 内容区域
+ */
+func (a *Panel) Body(value interface{}) *Panel {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 配置 Body 容器 className
+ */
+func (a *Panel) Bodyclassname(value interface{}) *Panel {
+    a.Set("bodyClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Panel) Staticon(value interface{}) *Panel {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Panel) Testidbuilder(value interface{}) *Panel {
+    a.Set("testIdBuilder", value)
     return a
 }

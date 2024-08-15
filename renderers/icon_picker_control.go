@@ -16,6 +16,11 @@ func NewIconPickerControl() *IconPickerControl {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "icon-picker")
+    return a
+}
+
+
 func (a *IconPickerControl) Set(name string, value interface{}) *IconPickerControl {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,260 +30,11 @@ func (a *IconPickerControl) Set(name string, value interface{}) *IconPickerContr
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "icon-picker")
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *IconPickerControl) Usemobileui(value interface{}) *IconPickerControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *IconPickerControl) Labelwidth(value interface{}) *IconPickerControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *IconPickerControl) Validateapi(value interface{}) *IconPickerControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- */
-func (a *IconPickerControl) Staticschema(value interface{}) *IconPickerControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *IconPickerControl) Initautofill(value interface{}) *IconPickerControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *IconPickerControl) Disabledon(value interface{}) *IconPickerControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *IconPickerControl) Name(value interface{}) *IconPickerControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- */
-func (a *IconPickerControl) Desc(value interface{}) *IconPickerControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *IconPickerControl) Hidden(value interface{}) *IconPickerControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *IconPickerControl) Validateonchange(value interface{}) *IconPickerControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *IconPickerControl) Inline(value interface{}) *IconPickerControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *IconPickerControl) Required(value interface{}) *IconPickerControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *IconPickerControl) Staticplaceholder(value interface{}) *IconPickerControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- */
-func (a *IconPickerControl) Testidbuilder(value interface{}) *IconPickerControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *IconPickerControl) Readonly(value interface{}) *IconPickerControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 表单项类型
- */
-func (a *IconPickerControl) Type(value interface{}) *IconPickerControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *IconPickerControl) Disabled(value interface{}) *IconPickerControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *IconPickerControl) Visible(value interface{}) *IconPickerControl {
-    a.Set("visible", value)
-    return a
-}
-
 /**
  * 静态展示表单项Label类名
  */
 func (a *IconPickerControl) Staticlabelclassname(value interface{}) *IconPickerControl {
     a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *IconPickerControl) Extraname(value interface{}) *IconPickerControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *IconPickerControl) Horizontal(value interface{}) *IconPickerControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *IconPickerControl) Hiddenon(value interface{}) *IconPickerControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *IconPickerControl) Static(value interface{}) *IconPickerControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *IconPickerControl) Inputclassname(value interface{}) *IconPickerControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *IconPickerControl) Validationerrors(value interface{}) *IconPickerControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *IconPickerControl) Value(value interface{}) *IconPickerControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *IconPickerControl) Classname(value interface{}) *IconPickerControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *IconPickerControl) Onevent(value interface{}) *IconPickerControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *IconPickerControl) Labelclassname(value interface{}) *IconPickerControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *IconPickerControl) Autofill(value interface{}) *IconPickerControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *IconPickerControl) Description(value interface{}) *IconPickerControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *IconPickerControl) Style(value interface{}) *IconPickerControl {
-    a.Set("style", value)
     return a
 }
 
@@ -291,26 +47,10 @@ func (a *IconPickerControl) Label(value interface{}) *IconPickerControl {
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * 输入提示，聚焦的时候显示
  */
-func (a *IconPickerControl) Remark(value interface{}) *IconPickerControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
- */
-func (a *IconPickerControl) Mode(value interface{}) *IconPickerControl {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- */
-func (a *IconPickerControl) Validations(value interface{}) *IconPickerControl {
-    a.Set("validations", value)
+func (a *IconPickerControl) Hint(value interface{}) *IconPickerControl {
+    a.Set("hint", value)
     return a
 }
 
@@ -323,43 +63,18 @@ func (a *IconPickerControl) Visibleon(value interface{}) *IconPickerControl {
 }
 
 /**
- * 是否静态展示表达式
+ * 占位符
  */
-func (a *IconPickerControl) Staticon(value interface{}) *IconPickerControl {
-    a.Set("staticOn", value)
+func (a *IconPickerControl) Placeholder(value interface{}) *IconPickerControl {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
  */
-func (a *IconPickerControl) Size(value interface{}) *IconPickerControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *IconPickerControl) Labelalign(value interface{}) *IconPickerControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *IconPickerControl) Staticclassname(value interface{}) *IconPickerControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *IconPickerControl) Hint(value interface{}) *IconPickerControl {
-    a.Set("hint", value)
+func (a *IconPickerControl) Value(value interface{}) *IconPickerControl {
+    a.Set("value", value)
     return a
 }
 
@@ -372,18 +87,34 @@ func (a *IconPickerControl) Width(value interface{}) *IconPickerControl {
 }
 
 /**
- * 占位符
+ * 是否禁用
  */
-func (a *IconPickerControl) Placeholder(value interface{}) *IconPickerControl {
-    a.Set("placeholder", value)
+func (a *IconPickerControl) Disabled(value interface{}) *IconPickerControl {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ * 是否静态展示
  */
-func (a *IconPickerControl) Clearvalueonhidden(value interface{}) *IconPickerControl {
-    a.Set("clearValueOnHidden", value)
+func (a *IconPickerControl) Static(value interface{}) *IconPickerControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *IconPickerControl) Style(value interface{}) *IconPickerControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *IconPickerControl) Classname(value interface{}) *IconPickerControl {
+    a.Set("className", value)
     return a
 }
 
@@ -404,26 +135,26 @@ func (a *IconPickerControl) Labelremark(value interface{}) *IconPickerControl {
 }
 
 /**
- * 当修改完的时候是否提交表单。
+ * 只读条件
  */
-func (a *IconPickerControl) Submitonchange(value interface{}) *IconPickerControl {
-    a.Set("submitOnChange", value)
+func (a *IconPickerControl) Readonlyon(value interface{}) *IconPickerControl {
+    a.Set("readOnlyOn", value)
     return a
 }
 
 /**
- * 配置描述上的 className
+ * 表单 control 是否为 inline 模式。
  */
-func (a *IconPickerControl) Descriptionclassname(value interface{}) *IconPickerControl {
-    a.Set("descriptionClassName", value)
+func (a *IconPickerControl) Inline(value interface{}) *IconPickerControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 表单项类型
  */
-func (a *IconPickerControl) Staticinputclassname(value interface{}) *IconPickerControl {
-    a.Set("staticInputClassName", value)
+func (a *IconPickerControl) Type(value interface{}) *IconPickerControl {
+    a.Set("type", value)
     return a
 }
 
@@ -436,10 +167,169 @@ func (a *IconPickerControl) Editorsetting(value interface{}) *IconPickerControl 
 }
 
 /**
- * 只读条件
+ * 描述内容，支持 Html 片段。
  */
-func (a *IconPickerControl) Readonlyon(value interface{}) *IconPickerControl {
-    a.Set("readOnlyOn", value)
+func (a *IconPickerControl) Description(value interface{}) *IconPickerControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *IconPickerControl) Validationerrors(value interface{}) *IconPickerControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
+ */
+func (a *IconPickerControl) Size(value interface{}) *IconPickerControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *IconPickerControl) Extraname(value interface{}) *IconPickerControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *IconPickerControl) Descriptionclassname(value interface{}) *IconPickerControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
+ */
+func (a *IconPickerControl) Mode(value interface{}) *IconPickerControl {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *IconPickerControl) Staticon(value interface{}) *IconPickerControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *IconPickerControl) Usemobileui(value interface{}) *IconPickerControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *IconPickerControl) Labelwidth(value interface{}) *IconPickerControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *IconPickerControl) Readonly(value interface{}) *IconPickerControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *IconPickerControl) Horizontal(value interface{}) *IconPickerControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *IconPickerControl) Required(value interface{}) *IconPickerControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *IconPickerControl) Staticinputclassname(value interface{}) *IconPickerControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *IconPickerControl) Staticschema(value interface{}) *IconPickerControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *IconPickerControl) Labelalign(value interface{}) *IconPickerControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *IconPickerControl) Hidden(value interface{}) *IconPickerControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *IconPickerControl) Clearvalueonhidden(value interface{}) *IconPickerControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *IconPickerControl) Disabledon(value interface{}) *IconPickerControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ */
+func (a *IconPickerControl) Desc(value interface{}) *IconPickerControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *IconPickerControl) Labelclassname(value interface{}) *IconPickerControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *IconPickerControl) Validations(value interface{}) *IconPickerControl {
+    a.Set("validations", value)
     return a
 }
 
@@ -447,5 +337,115 @@ func (a *IconPickerControl) Readonlyon(value interface{}) *IconPickerControl {
  */
 func (a *IconPickerControl) Row(value interface{}) *IconPickerControl {
     a.Set("row", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *IconPickerControl) Staticplaceholder(value interface{}) *IconPickerControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *IconPickerControl) Remark(value interface{}) *IconPickerControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *IconPickerControl) Submitonchange(value interface{}) *IconPickerControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *IconPickerControl) Hiddenon(value interface{}) *IconPickerControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *IconPickerControl) Staticclassname(value interface{}) *IconPickerControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *IconPickerControl) Validateapi(value interface{}) *IconPickerControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ */
+func (a *IconPickerControl) Testidbuilder(value interface{}) *IconPickerControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *IconPickerControl) Name(value interface{}) *IconPickerControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *IconPickerControl) Visible(value interface{}) *IconPickerControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *IconPickerControl) Onevent(value interface{}) *IconPickerControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *IconPickerControl) Validateonchange(value interface{}) *IconPickerControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *IconPickerControl) Inputclassname(value interface{}) *IconPickerControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *IconPickerControl) Autofill(value interface{}) *IconPickerControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ */
+func (a *IconPickerControl) Initautofill(value interface{}) *IconPickerControl {
+    a.Set("initAutoFill", value)
     return a
 }

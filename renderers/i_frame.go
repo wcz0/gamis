@@ -16,6 +16,11 @@ func NewIFrame() *IFrame {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "iframe")
+    return a
+}
+
+
 func (a *IFrame) Set(name string, value interface{}) *IFrame {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,46 +30,11 @@ func (a *IFrame) Set(name string, value interface{}) *IFrame {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "iframe")
-    return a
-}
-
-/**
- */
-func (a *IFrame) Sandbox(value interface{}) *IFrame {
-    a.Set("sandbox", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *IFrame) Hiddenon(value interface{}) *IFrame {
-    a.Set("hiddenOn", value)
-    return a
-}
-
 /**
  * 静态展示表单项类名
  */
 func (a *IFrame) Staticclassname(value interface{}) *IFrame {
     a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 事件相应，配置后当 iframe 通过 postMessage 发送事件时，可以触发 AMIS 内部的动作。
- */
-func (a *IFrame) Events(value interface{}) *IFrame {
-    a.Set("events", value)
-    return a
-}
-
-/**
- */
-func (a *IFrame) Width(value interface{}) *IFrame {
-    a.Set("width", value)
     return a
 }
 
@@ -76,37 +46,6 @@ func (a *IFrame) Height(value interface{}) *IFrame {
 }
 
 /**
- * 容器 css 类名
- */
-func (a *IFrame) Classname(value interface{}) *IFrame {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *IFrame) Disabled(value interface{}) *IFrame {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *IFrame) Staticon(value interface{}) *IFrame {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *IFrame) Type(value interface{}) *IFrame {
-    a.Set("type", value)
-    return a
-}
-
-/**
  */
 func (a *IFrame) Allow(value interface{}) *IFrame {
     a.Set("allow", value)
@@ -114,71 +53,10 @@ func (a *IFrame) Allow(value interface{}) *IFrame {
 }
 
 /**
+ * 是否显示
  */
-func (a *IFrame) Name(value interface{}) *IFrame {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *IFrame) Onevent(value interface{}) *IFrame {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *IFrame) Staticinputclassname(value interface{}) *IFrame {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *IFrame) Usemobileui(value interface{}) *IFrame {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *IFrame) Editorsetting(value interface{}) *IFrame {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *IFrame) Staticschema(value interface{}) *IFrame {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *IFrame) Style(value interface{}) *IFrame {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *IFrame) Testidbuilder(value interface{}) *IFrame {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *IFrame) Disabledon(value interface{}) *IFrame {
-    a.Set("disabledOn", value)
+func (a *IFrame) Visible(value interface{}) *IFrame {
+    a.Set("visible", value)
     return a
 }
 
@@ -199,41 +77,55 @@ func (a *IFrame) Staticplaceholder(value interface{}) *IFrame {
 }
 
 /**
- */
-func (a *IFrame) Testid(value interface{}) *IFrame {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 页面地址
- */
-func (a *IFrame) Src(value interface{}) *IFrame {
-    a.Set("src", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *IFrame) Visible(value interface{}) *IFrame {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *IFrame) Id(value interface{}) *IFrame {
-    a.Set("id", value)
-    return a
-}
-
-/**
  * 静态展示表单项Label类名
  */
 func (a *IFrame) Staticlabelclassname(value interface{}) *IFrame {
     a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *IFrame) Staticinputclassname(value interface{}) *IFrame {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Width(value interface{}) *IFrame {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *IFrame) Staticon(value interface{}) *IFrame {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Testidbuilder(value interface{}) *IFrame {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Sandbox(value interface{}) *IFrame {
+    a.Set("sandbox", value)
+    return a
+}
+
+/**
+ * 可选值: no-referrer | no-referrer-when-downgrade | origin | origin-when-cross-origin | same-origin | strict-origin | strict-origin-when-cross-origin | unsafe-url
+ */
+func (a *IFrame) Referrerpolicy(value interface{}) *IFrame {
+    a.Set("referrerpolicy", value)
     return a
 }
 
@@ -246,6 +138,98 @@ func (a *IFrame) Hidden(value interface{}) *IFrame {
 }
 
 /**
+ * 事件动作配置
+ */
+func (a *IFrame) Onevent(value interface{}) *IFrame {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Staticschema(value interface{}) *IFrame {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Testid(value interface{}) *IFrame {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 事件相应，配置后当 iframe 通过 postMessage 发送事件时，可以触发 AMIS 内部的动作。
+ */
+func (a *IFrame) Events(value interface{}) *IFrame {
+    a.Set("events", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Name(value interface{}) *IFrame {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *IFrame) Style(value interface{}) *IFrame {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *IFrame) Disabledon(value interface{}) *IFrame {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *IFrame) Hiddenon(value interface{}) *IFrame {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *IFrame) Id(value interface{}) *IFrame {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *IFrame) Editorsetting(value interface{}) *IFrame {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ */
+func (a *IFrame) Type(value interface{}) *IFrame {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *IFrame) Disabled(value interface{}) *IFrame {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
  * 是否显示表达式
  */
 func (a *IFrame) Visibleon(value interface{}) *IFrame {
@@ -254,9 +238,25 @@ func (a *IFrame) Visibleon(value interface{}) *IFrame {
 }
 
 /**
- * 可选值: no-referrer | no-referrer-when-downgrade | origin | origin-when-cross-origin | same-origin | strict-origin | strict-origin-when-cross-origin | unsafe-url
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *IFrame) Referrerpolicy(value interface{}) *IFrame {
-    a.Set("referrerpolicy", value)
+func (a *IFrame) Usemobileui(value interface{}) *IFrame {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *IFrame) Classname(value interface{}) *IFrame {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 页面地址
+ */
+func (a *IFrame) Src(value interface{}) *IFrame {
+    a.Set("src", value)
     return a
 }

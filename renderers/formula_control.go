@@ -16,6 +16,11 @@ func NewFormulaControl() *FormulaControl {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "formula")
+    return a
+}
+
+
 func (a *FormulaControl) Set(name string, value interface{}) *FormulaControl {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,153 +30,82 @@ func (a *FormulaControl) Set(name string, value interface{}) *FormulaControl {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "formula")
+/**
+ * 是否禁用表达式
+ */
+func (a *FormulaControl) Disabledon(value interface{}) *FormulaControl {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * label自定义宽度，默认单位为px
+ * 静态展示表单项类名
  */
-func (a *FormulaControl) Labelwidth(value interface{}) *FormulaControl {
-    a.Set("labelWidth", value)
+func (a *FormulaControl) Staticclassname(value interface{}) *FormulaControl {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 当修改完的时候是否提交表单。
  */
-func (a *FormulaControl) Submitonchange(value interface{}) *FormulaControl {
-    a.Set("submitOnChange", value)
+func (a *FormulaControl) Desc(value interface{}) *FormulaControl {
+    a.Set("desc", value)
     return a
 }
 
 /**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
+ * 指定为公式功能控件。
  */
-func (a *FormulaControl) Mode(value interface{}) *FormulaControl {
-    a.Set("mode", value)
+func (a *FormulaControl) Type(value interface{}) *FormulaControl {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 触发公式的作用条件，如 data.xxx == \"a\" 或者 ${xx}
  */
-func (a *FormulaControl) Visibleon(value interface{}) *FormulaControl {
-    a.Set("visibleOn", value)
+func (a *FormulaControl) Condition(value interface{}) *FormulaControl {
+    a.Set("condition", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 事件动作配置
  */
-func (a *FormulaControl) Staticinputclassname(value interface{}) *FormulaControl {
-    a.Set("staticInputClassName", value)
+func (a *FormulaControl) Onevent(value interface{}) *FormulaControl {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 是否静态展示
  */
-func (a *FormulaControl) Editorsetting(value interface{}) *FormulaControl {
-    a.Set("editorSetting", value)
+func (a *FormulaControl) Static(value interface{}) *FormulaControl {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ * 组件样式
  */
-func (a *FormulaControl) Extraname(value interface{}) *FormulaControl {
-    a.Set("extraName", value)
+func (a *FormulaControl) Style(value interface{}) *FormulaControl {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 是否为必填
+ * 配置 label className
  */
-func (a *FormulaControl) Required(value interface{}) *FormulaControl {
-    a.Set("required", value)
+func (a *FormulaControl) Labelclassname(value interface{}) *FormulaControl {
+    a.Set("labelClassName", value)
     return a
 }
 
 /**
- * 输入提示，聚焦的时候显示
+ * 静态展示空值占位
  */
-func (a *FormulaControl) Hint(value interface{}) *FormulaControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *FormulaControl) Label(value interface{}) *FormulaControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *FormulaControl) Validateapi(value interface{}) *FormulaControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 公式
- */
-func (a *FormulaControl) Formula(value interface{}) *FormulaControl {
-    a.Set("formula", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *FormulaControl) Visible(value interface{}) *FormulaControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *FormulaControl) Usemobileui(value interface{}) *FormulaControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *FormulaControl) Inputclassname(value interface{}) *FormulaControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *FormulaControl) Clearvalueonhidden(value interface{}) *FormulaControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *FormulaControl) Classname(value interface{}) *FormulaControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *FormulaControl) Inline(value interface{}) *FormulaControl {
-    a.Set("inline", value)
+func (a *FormulaControl) Staticplaceholder(value interface{}) *FormulaControl {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -184,10 +118,143 @@ func (a *FormulaControl) Value(value interface{}) *FormulaControl {
 }
 
 /**
- * 是否自动应用
+ * 远端校验表单项接口
  */
-func (a *FormulaControl) Autoset(value interface{}) *FormulaControl {
-    a.Set("autoSet", value)
+func (a *FormulaControl) Validateapi(value interface{}) *FormulaControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *FormulaControl) Staticon(value interface{}) *FormulaControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *FormulaControl) Testidbuilder(value interface{}) *FormulaControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *FormulaControl) Labelalign(value interface{}) *FormulaControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *FormulaControl) Horizontal(value interface{}) *FormulaControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *FormulaControl) Hidden(value interface{}) *FormulaControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *FormulaControl) Staticlabelclassname(value interface{}) *FormulaControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *FormulaControl) Usemobileui(value interface{}) *FormulaControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *FormulaControl) Label(value interface{}) *FormulaControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *FormulaControl) Validateonchange(value interface{}) *FormulaControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *FormulaControl) Description(value interface{}) *FormulaControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *FormulaControl) Required(value interface{}) *FormulaControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *FormulaControl) Clearvalueonhidden(value interface{}) *FormulaControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *FormulaControl) Hiddenon(value interface{}) *FormulaControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *FormulaControl) Visible(value interface{}) *FormulaControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ */
+func (a *FormulaControl) Staticschema(value interface{}) *FormulaControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *FormulaControl) Submitonchange(value interface{}) *FormulaControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ */
+func (a *FormulaControl) Validations(value interface{}) *FormulaControl {
+    a.Set("validations", value)
     return a
 }
 
@@ -200,6 +267,14 @@ func (a *FormulaControl) Width(value interface{}) *FormulaControl {
 }
 
 /**
+ * 当某个按钮的目标指定为此值后，会触发一次公式应用。这个机制可以在 autoSet 为 false 时用来手动触发
+ */
+func (a *FormulaControl) Id(value interface{}) *FormulaControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
  * 字段名，公式结果将作用到此处指定的变量中去
  */
 func (a *FormulaControl) Name(value interface{}) *FormulaControl {
@@ -208,17 +283,26 @@ func (a *FormulaControl) Name(value interface{}) *FormulaControl {
 }
 
 /**
- * 验证失败的提示信息
+ * 表单 control 是否为 inline 模式。
  */
-func (a *FormulaControl) Validationerrors(value interface{}) *FormulaControl {
-    a.Set("validationErrors", value)
+func (a *FormulaControl) Inline(value interface{}) *FormulaControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *FormulaControl) Desc(value interface{}) *FormulaControl {
-    a.Set("desc", value)
+func (a *FormulaControl) Staticinputclassname(value interface{}) *FormulaControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *FormulaControl) Labelwidth(value interface{}) *FormulaControl {
+    a.Set("labelWidth", value)
     return a
 }
 
@@ -239,18 +323,27 @@ func (a *FormulaControl) Initset(value interface{}) *FormulaControl {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
  */
-func (a *FormulaControl) Staticlabelclassname(value interface{}) *FormulaControl {
-    a.Set("staticLabelClassName", value)
+func (a *FormulaControl) Mode(value interface{}) *FormulaControl {
+    a.Set("mode", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ * 配置 input className
  */
-func (a *FormulaControl) Labelremark(value interface{}) *FormulaControl {
-    a.Set("labelRemark", value)
+func (a *FormulaControl) Inputclassname(value interface{}) *FormulaControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *FormulaControl) Validationerrors(value interface{}) *FormulaControl {
+    a.Set("validationErrors", value)
     return a
 }
 
@@ -263,127 +356,10 @@ func (a *FormulaControl) Readonly(value interface{}) *FormulaControl {
 }
 
 /**
- * 描述内容，支持 Html 片段。
+ * 只读条件
  */
-func (a *FormulaControl) Description(value interface{}) *FormulaControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *FormulaControl) Staticon(value interface{}) *FormulaControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *FormulaControl) Staticschema(value interface{}) *FormulaControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *FormulaControl) Static(value interface{}) *FormulaControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *FormulaControl) Disabled(value interface{}) *FormulaControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *FormulaControl) Onevent(value interface{}) *FormulaControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *FormulaControl) Remark(value interface{}) *FormulaControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *FormulaControl) Horizontal(value interface{}) *FormulaControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- */
-func (a *FormulaControl) Initautofill(value interface{}) *FormulaControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 指定为公式功能控件。
- */
-func (a *FormulaControl) Type(value interface{}) *FormulaControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *FormulaControl) Hiddenon(value interface{}) *FormulaControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *FormulaControl) Labelalign(value interface{}) *FormulaControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *FormulaControl) Placeholder(value interface{}) *FormulaControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 触发公式的作用条件，如 data.xxx == \"a\" 或者 ${xx}
- */
-func (a *FormulaControl) Condition(value interface{}) *FormulaControl {
-    a.Set("condition", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *FormulaControl) Staticclassname(value interface{}) *FormulaControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *FormulaControl) Testidbuilder(value interface{}) *FormulaControl {
-    a.Set("testIdBuilder", value)
+func (a *FormulaControl) Readonlyon(value interface{}) *FormulaControl {
+    a.Set("readOnlyOn", value)
     return a
 }
 
@@ -396,26 +372,65 @@ func (a *FormulaControl) Descriptionclassname(value interface{}) *FormulaControl
 }
 
 /**
- * 当某个按钮的目标指定为此值后，会触发一次公式应用。这个机制可以在 autoSet 为 false 时用来手动触发
+ * 是否自动应用
  */
-func (a *FormulaControl) Id(value interface{}) *FormulaControl {
-    a.Set("id", value)
+func (a *FormulaControl) Autoset(value interface{}) *FormulaControl {
+    a.Set("autoSet", value)
     return a
 }
 
 /**
- * 组件样式
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
  */
-func (a *FormulaControl) Style(value interface{}) *FormulaControl {
-    a.Set("style", value)
+func (a *FormulaControl) Extraname(value interface{}) *FormulaControl {
+    a.Set("extraName", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
  */
-func (a *FormulaControl) Hidden(value interface{}) *FormulaControl {
-    a.Set("hidden", value)
+func (a *FormulaControl) Remark(value interface{}) *FormulaControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ */
+func (a *FormulaControl) Initautofill(value interface{}) *FormulaControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *FormulaControl) Disabled(value interface{}) *FormulaControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *FormulaControl) Visibleon(value interface{}) *FormulaControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *FormulaControl) Hint(value interface{}) *FormulaControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *FormulaControl) Placeholder(value interface{}) *FormulaControl {
+    a.Set("placeholder", value)
     return a
 }
 
@@ -429,10 +444,26 @@ func (a *FormulaControl) Size(value interface{}) *FormulaControl {
 }
 
 /**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ * 容器 css 类名
  */
-func (a *FormulaControl) Validateonchange(value interface{}) *FormulaControl {
-    a.Set("validateOnChange", value)
+func (a *FormulaControl) Classname(value interface{}) *FormulaControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *FormulaControl) Editorsetting(value interface{}) *FormulaControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *FormulaControl) Labelremark(value interface{}) *FormulaControl {
+    a.Set("labelRemark", value)
     return a
 }
 
@@ -444,40 +475,9 @@ func (a *FormulaControl) Row(value interface{}) *FormulaControl {
 }
 
 /**
- * 配置 label className
+ * 公式
  */
-func (a *FormulaControl) Labelclassname(value interface{}) *FormulaControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *FormulaControl) Readonlyon(value interface{}) *FormulaControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- */
-func (a *FormulaControl) Validations(value interface{}) *FormulaControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *FormulaControl) Disabledon(value interface{}) *FormulaControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *FormulaControl) Staticplaceholder(value interface{}) *FormulaControl {
-    a.Set("staticPlaceholder", value)
+func (a *FormulaControl) Formula(value interface{}) *FormulaControl {
+    a.Set("formula", value)
     return a
 }

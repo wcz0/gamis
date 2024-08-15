@@ -15,6 +15,10 @@ func NewIconItem() *IconItem {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *IconItem) Set(name string, value interface{}) *IconItem {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,7 +28,10 @@ func (a *IconItem) Set(name string, value interface{}) *IconItem {
     a.AmisSchema[name] = value
     return a
 }
-
+/**
+ */
+func (a *IconItem) Position(value interface{}) *IconItem {
+    a.Set("position", value)
     return a
 }
 
@@ -32,12 +39,5 @@ func (a *IconItem) Set(name string, value interface{}) *IconItem {
  */
 func (a *IconItem) Icon(value interface{}) *IconItem {
     a.Set("icon", value)
-    return a
-}
-
-/**
- */
-func (a *IconItem) Position(value interface{}) *IconItem {
-    a.Set("position", value)
     return a
 }

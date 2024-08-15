@@ -16,6 +16,11 @@ func NewPage() *Page {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "page")
+    return a
+}
+
+
 func (a *Page) Set(name string, value interface{}) *Page {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,16 +30,136 @@ func (a *Page) Set(name string, value interface{}) *Page {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "page")
+/**
+ */
+func (a *Page) Loadingconfig(value interface{}) *Page {
+    a.Set("loadingConfig", value)
     return a
 }
 
 /**
- * 是否显示
+ * 是否禁用表达式
  */
-func (a *Page) Visible(value interface{}) *Page {
-    a.Set("visible", value)
+func (a *Page) Disabledon(value interface{}) *Page {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Page) Visibleon(value interface{}) *Page {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 内容区域
+ */
+func (a *Page) Body(value interface{}) *Page {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *Page) Style(value interface{}) *Page {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 下拉刷新配置
+ */
+func (a *Page) Pullrefresh(value interface{}) *Page {
+    a.Set("pullRefresh", value)
+    return a
+}
+
+/**
+ */
+func (a *Page) Name(value interface{}) *Page {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Page) Staticon(value interface{}) *Page {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 指定为 page 渲染器。
+ */
+func (a *Page) Type(value interface{}) *Page {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否显示错误信息，默认是显示的。
+ */
+func (a *Page) Showerrormsg(value interface{}) *Page {
+    a.Set("showErrorMsg", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Page) Hiddenon(value interface{}) *Page {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 边栏内容是否粘住，即不跟随滚动。
+ */
+func (a *Page) Asidesticky(value interface{}) *Page {
+    a.Set("asideSticky", value)
+    return a
+}
+
+/**
+ * 是否默认就拉取表达式
+ */
+func (a *Page) Initfetchon(value interface{}) *Page {
+    a.Set("initFetchOn", value)
+    return a
+}
+
+/**
+ * 页面顶部区域，当存在 title 时在右上角显示。
+ */
+func (a *Page) Toolbar(value interface{}) *Page {
+    a.Set("toolbar", value)
+    return a
+}
+
+/**
+ * 配置 toolbar 容器 className
+ */
+func (a *Page) Toolbarclassname(value interface{}) *Page {
+    a.Set("toolbarClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Page) Testidbuilder(value interface{}) *Page {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 配置 header 容器 className
+ */
+func (a *Page) Headerclassname(value interface{}) *Page {
+    a.Set("headerClassName", value)
     return a
 }
 
@@ -55,25 +180,18 @@ func (a *Page) Static(value interface{}) *Page {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *Page) Testidbuilder(value interface{}) *Page {
-    a.Set("testIdBuilder", value)
+func (a *Page) Staticinputclassname(value interface{}) *Page {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 配置 toolbar 容器 className
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Page) Toolbarclassname(value interface{}) *Page {
-    a.Set("toolbarClassName", value)
-    return a
-}
-
-/**
- * 默认不设置自动感觉内容来决定要不要展示这些区域 如果配置了，以配置为主。
- */
-func (a *Page) Regions(value interface{}) *Page {
-    a.Set("regions", value)
+func (a *Page) Editorsetting(value interface{}) *Page {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -93,6 +211,21 @@ func (a *Page) Messages(value interface{}) *Page {
 }
 
 /**
+ */
+func (a *Page) Definitions(value interface{}) *Page {
+    a.Set("definitions", value)
+    return a
+}
+
+/**
+ * 配置轮询间隔，配置后 initApi 将轮询加载。
+ */
+func (a *Page) Interval(value interface{}) *Page {
+    a.Set("interval", value)
+    return a
+}
+
+/**
  * 配置容器 className
  */
 func (a *Page) Classname(value interface{}) *Page {
@@ -101,129 +234,18 @@ func (a *Page) Classname(value interface{}) *Page {
 }
 
 /**
- * 是否隐藏
+ * 是否显示
  */
-func (a *Page) Hidden(value interface{}) *Page {
-    a.Set("hidden", value)
+func (a *Page) Visible(value interface{}) *Page {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 页面标题
+ * 是否默认就拉取？
  */
-func (a *Page) Title(value interface{}) *Page {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Page) Disabledon(value interface{}) *Page {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Page) Onevent(value interface{}) *Page {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 边栏内容是否粘住，即不跟随滚动。
- */
-func (a *Page) Asidesticky(value interface{}) *Page {
-    a.Set("asideSticky", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Page) Visibleon(value interface{}) *Page {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Page) Staticon(value interface{}) *Page {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 边栏最小宽度
- */
-func (a *Page) Asideminwidth(value interface{}) *Page {
-    a.Set("asideMinWidth", value)
-    return a
-}
-
-/**
- * 是否默认就拉取表达式
- */
-func (a *Page) Initfetchon(value interface{}) *Page {
-    a.Set("initFetchOn", value)
-    return a
-}
-
-/**
- */
-func (a *Page) Name(value interface{}) *Page {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 是否显示错误信息，默认是显示的。
- */
-func (a *Page) Showerrormsg(value interface{}) *Page {
-    a.Set("showErrorMsg", value)
-    return a
-}
-
-/**
- * css 变量
- */
-func (a *Page) Cssvars(value interface{}) *Page {
-    a.Set("cssVars", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Page) Hiddenon(value interface{}) *Page {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 自定义样式
- */
-func (a *Page) Style(value interface{}) *Page {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Page) Staticinputclassname(value interface{}) *Page {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 下拉刷新配置
- */
-func (a *Page) Pullrefresh(value interface{}) *Page {
-    a.Set("pullRefresh", value)
+func (a *Page) Initfetch(value interface{}) *Page {
+    a.Set("initFetch", value)
     return a
 }
 
@@ -244,18 +266,34 @@ func (a *Page) Id(value interface{}) *Page {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 静态展示表单项类名
  */
-func (a *Page) Editorsetting(value interface{}) *Page {
-    a.Set("editorSetting", value)
+func (a *Page) Staticclassname(value interface{}) *Page {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 配置轮询间隔，配置后 initApi 将轮询加载。
+ * 内容区 css 类名
  */
-func (a *Page) Interval(value interface{}) *Page {
-    a.Set("interval", value)
+func (a *Page) Bodyclassname(value interface{}) *Page {
+    a.Set("bodyClassName", value)
+    return a
+}
+
+/**
+ * css 变量
+ */
+func (a *Page) Cssvars(value interface{}) *Page {
+    a.Set("cssVars", value)
+    return a
+}
+
+/**
+ * 页面副标题
+ */
+func (a *Page) Subtitle(value interface{}) *Page {
+    a.Set("subTitle", value)
     return a
 }
 
@@ -276,10 +314,25 @@ func (a *Page) Initapi(value interface{}) *Page {
 }
 
 /**
- * 页面副标题
+ * 默认不设置自动感觉内容来决定要不要展示这些区域 如果配置了，以配置为主。
  */
-func (a *Page) Subtitle(value interface{}) *Page {
-    a.Set("subTitle", value)
+func (a *Page) Regions(value interface{}) *Page {
+    a.Set("regions", value)
+    return a
+}
+
+/**
+ */
+func (a *Page) Staticschema(value interface{}) *Page {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 边栏最小宽度
+ */
+func (a *Page) Asideminwidth(value interface{}) *Page {
+    a.Set("asideMinWidth", value)
     return a
 }
 
@@ -292,17 +345,18 @@ func (a *Page) Asidemaxwidth(value interface{}) *Page {
 }
 
 /**
+ * 边栏区 css 类名
  */
-func (a *Page) Staticschema(value interface{}) *Page {
-    a.Set("staticSchema", value)
+func (a *Page) Asideclassname(value interface{}) *Page {
+    a.Set("asideClassName", value)
     return a
 }
 
 /**
- * 是否默认就拉取？
+ * 事件动作配置
  */
-func (a *Page) Initfetch(value interface{}) *Page {
-    a.Set("initFetch", value)
+func (a *Page) Onevent(value interface{}) *Page {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -314,112 +368,10 @@ func (a *Page) Testid(value interface{}) *Page {
 }
 
 /**
- * 内容区域
+ * 页面标题
  */
-func (a *Page) Body(value interface{}) *Page {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 边栏区 css 类名
- */
-func (a *Page) Asideclassname(value interface{}) *Page {
-    a.Set("asideClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Page) Loadingconfig(value interface{}) *Page {
-    a.Set("loadingConfig", value)
-    return a
-}
-
-/**
- * 指定为 page 渲染器。
- */
-func (a *Page) Type(value interface{}) *Page {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 内容区 css 类名
- */
-func (a *Page) Bodyclassname(value interface{}) *Page {
-    a.Set("bodyClassName", value)
-    return a
-}
-
-/**
- * 页面级别的初始数据
- */
-func (a *Page) Data(value interface{}) *Page {
-    a.Set("data", value)
-    return a
-}
-
-/**
- * 边栏是否允许拖动
- */
-func (a *Page) Asideresizor(value interface{}) *Page {
-    a.Set("asideResizor", value)
-    return a
-}
-
-/**
- * 移动端下的样式表
- */
-func (a *Page) Mobilecss(value interface{}) *Page {
-    a.Set("mobileCSS", value)
-    return a
-}
-
-/**
- * 页面顶部区域，当存在 title 时在右上角显示。
- */
-func (a *Page) Toolbar(value interface{}) *Page {
-    a.Set("toolbar", value)
-    return a
-}
-
-/**
- */
-func (a *Page) Definitions(value interface{}) *Page {
-    a.Set("definitions", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Page) Staticplaceholder(value interface{}) *Page {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Page) Staticclassname(value interface{}) *Page {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Page) Staticlabelclassname(value interface{}) *Page {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Page) Usemobileui(value interface{}) *Page {
-    a.Set("useMobileUI", value)
+func (a *Page) Title(value interface{}) *Page {
+    a.Set("title", value)
     return a
 }
 
@@ -432,10 +384,18 @@ func (a *Page) Aside(value interface{}) *Page {
 }
 
 /**
- * 配置 header 容器 className
+ * 静态展示空值占位
  */
-func (a *Page) Headerclassname(value interface{}) *Page {
-    a.Set("headerClassName", value)
+func (a *Page) Staticplaceholder(value interface{}) *Page {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 边栏是否允许拖动
+ */
+func (a *Page) Asideresizor(value interface{}) *Page {
+    a.Set("asideResizor", value)
     return a
 }
 
@@ -444,5 +404,45 @@ func (a *Page) Headerclassname(value interface{}) *Page {
  */
 func (a *Page) Stopautorefreshwhen(value interface{}) *Page {
     a.Set("stopAutoRefreshWhen", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Page) Hidden(value interface{}) *Page {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Page) Usemobileui(value interface{}) *Page {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 页面级别的初始数据
+ */
+func (a *Page) Data(value interface{}) *Page {
+    a.Set("data", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Page) Staticlabelclassname(value interface{}) *Page {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 移动端下的样式表
+ */
+func (a *Page) Mobilecss(value interface{}) *Page {
+    a.Set("mobileCSS", value)
     return a
 }

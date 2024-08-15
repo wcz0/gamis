@@ -16,6 +16,11 @@ func NewVideo() *Video {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "video")
+    return a
+}
+
+
 func (a *Video) Set(name string, value interface{}) *Video {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,8 +30,163 @@ func (a *Video) Set(name string, value interface{}) *Video {
     a.AmisSchema[name] = value
     return a
 }
+/**
+ * 视频比率
+ * 可选值: auto | 4:3 | 16:9
+ */
+func (a *Video) Aspectratio(value interface{}) *Video {
+    a.Set("aspectRatio", value)
+    return a
+}
 
-    a.Set("type", "video")
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Video) Editorsetting(value interface{}) *Video {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 是否自动播放
+ */
+func (a *Video) Autoplay(value interface{}) *Video {
+    a.Set("autoPlay", value)
+    return a
+}
+
+/**
+ * 视频类型如： video/x-flv
+ */
+func (a *Video) Videotype(value interface{}) *Video {
+    a.Set("videoType", value)
+    return a
+}
+
+/**
+ */
+func (a *Video) Testid(value interface{}) *Video {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。frames: {  '01:22': 'http://domain/xxx.jpg' }
+ */
+func (a *Video) Frames(value interface{}) *Video {
+    a.Set("frames", value)
+    return a
+}
+
+/**
+ * 如果是实时的，请标记一下
+ */
+func (a *Video) Islive(value interface{}) *Video {
+    a.Set("isLive", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Video) Staticclassname(value interface{}) *Video {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Video) Staticlabelclassname(value interface{}) *Video {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 指定为视频类型
+ */
+func (a *Video) Type(value interface{}) *Video {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 点击帧画面时是否跳转视频对应的点
+ */
+func (a *Video) Jumpframe(value interface{}) *Video {
+    a.Set("jumpFrame", value)
+    return a
+}
+
+/**
+ * 是否初始静音
+ */
+func (a *Video) Muted(value interface{}) *Video {
+    a.Set("muted", value)
+    return a
+}
+
+/**
+ * 视频播放地址
+ */
+func (a *Video) Src(value interface{}) *Video {
+    a.Set("src", value)
+    return a
+}
+
+/**
+ * 视频速率
+ */
+func (a *Video) Rates(value interface{}) *Video {
+    a.Set("rates", value)
+    return a
+}
+
+/**
+ * 跳转到帧时，往前多少秒。
+ */
+func (a *Video) Jumpbufferduration(value interface{}) *Video {
+    a.Set("jumpBufferDuration", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Video) Disabled(value interface{}) *Video {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Video) Disabledon(value interface{}) *Video {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Video) Visible(value interface{}) *Video {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Video) Style(value interface{}) *Video {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 配置帧列表容器className
+ */
+func (a *Video) Framesclassname(value interface{}) *Video {
+    a.Set("framesClassName", value)
     return a
 }
 
@@ -39,18 +199,34 @@ func (a *Video) Hiddenon(value interface{}) *Video {
 }
 
 /**
- * 是否显示表达式
+ * 静态展示空值占位
  */
-func (a *Video) Visibleon(value interface{}) *Video {
-    a.Set("visibleOn", value)
+func (a *Video) Staticplaceholder(value interface{}) *Video {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否隐藏
  */
-func (a *Video) Usemobileui(value interface{}) *Video {
-    a.Set("useMobileUI", value)
+func (a *Video) Hidden(value interface{}) *Video {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 视频封面地址
+ */
+func (a *Video) Poster(value interface{}) *Video {
+    a.Set("poster", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Video) Visibleon(value interface{}) *Video {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -71,58 +247,18 @@ func (a *Video) Stoponnextframe(value interface{}) *Video {
 }
 
 /**
- * 是否禁用
+ * 静态展示表单项Value类名
  */
-func (a *Video) Disabled(value interface{}) *Video {
-    a.Set("disabled", value)
+func (a *Video) Staticinputclassname(value interface{}) *Video {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Video) Testid(value interface{}) *Video {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否初始静音
- */
-func (a *Video) Muted(value interface{}) *Video {
-    a.Set("muted", value)
-    return a
-}
-
-/**
- * 视频类型如： video/x-flv
- */
-func (a *Video) Videotype(value interface{}) *Video {
-    a.Set("videoType", value)
-    return a
-}
-
-/**
- * 视频比率
- * 可选值: auto | 4:3 | 16:9
- */
-func (a *Video) Aspectratio(value interface{}) *Video {
-    a.Set("aspectRatio", value)
-    return a
-}
-
-/**
- * 跳转到帧时，往前多少秒。
- */
-func (a *Video) Jumpbufferduration(value interface{}) *Video {
-    a.Set("jumpBufferDuration", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Video) Disabledon(value interface{}) *Video {
-    a.Set("disabledOn", value)
+func (a *Video) Usemobileui(value interface{}) *Video {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -130,14 +266,6 @@ func (a *Video) Disabledon(value interface{}) *Video {
  */
 func (a *Video) Testidbuilder(value interface{}) *Video {
     a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Video) Staticplaceholder(value interface{}) *Video {
-    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -150,122 +278,10 @@ func (a *Video) Columnscount(value interface{}) *Video {
 }
 
 /**
- * 是否自动播放
- */
-func (a *Video) Autoplay(value interface{}) *Video {
-    a.Set("autoPlay", value)
-    return a
-}
-
-/**
- * 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。frames: {  '01:22': 'http://domain/xxx.jpg' }
- */
-func (a *Video) Frames(value interface{}) *Video {
-    a.Set("frames", value)
-    return a
-}
-
-/**
  * 是否循环播放
  */
 func (a *Video) Loop(value interface{}) *Video {
     a.Set("loop", value)
-    return a
-}
-
-/**
- * 视频封面地址
- */
-func (a *Video) Poster(value interface{}) *Video {
-    a.Set("poster", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Video) Hidden(value interface{}) *Video {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Video) Staticlabelclassname(value interface{}) *Video {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Video) Editorsetting(value interface{}) *Video {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 指定为视频类型
- */
-func (a *Video) Type(value interface{}) *Video {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 视频速率
- */
-func (a *Video) Rates(value interface{}) *Video {
-    a.Set("rates", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Video) Visible(value interface{}) *Video {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Video) Staticclassname(value interface{}) *Video {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 配置帧列表容器className
- */
-func (a *Video) Framesclassname(value interface{}) *Video {
-    a.Set("framesClassName", value)
-    return a
-}
-
-/**
- * 配置播放器 className
- */
-func (a *Video) Playerclassname(value interface{}) *Video {
-    a.Set("playerClassName", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Video) Staticon(value interface{}) *Video {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Video) Style(value interface{}) *Video {
-    a.Set("style", value)
     return a
 }
 
@@ -286,14 +302,6 @@ func (a *Video) Onevent(value interface{}) *Video {
 }
 
 /**
- * 是否静态展示
- */
-func (a *Video) Static(value interface{}) *Video {
-    a.Set("static", value)
-    return a
-}
-
-/**
  */
 func (a *Video) Staticschema(value interface{}) *Video {
     a.Set("staticSchema", value)
@@ -301,10 +309,10 @@ func (a *Video) Staticschema(value interface{}) *Video {
 }
 
 /**
- * 视频播放地址
+ * 配置播放器 className
  */
-func (a *Video) Src(value interface{}) *Video {
-    a.Set("src", value)
+func (a *Video) Playerclassname(value interface{}) *Video {
+    a.Set("playerClassName", value)
     return a
 }
 
@@ -317,25 +325,17 @@ func (a *Video) Classname(value interface{}) *Video {
 }
 
 /**
- * 点击帧画面时是否跳转视频对应的点
+ * 是否静态展示
  */
-func (a *Video) Jumpframe(value interface{}) *Video {
-    a.Set("jumpFrame", value)
+func (a *Video) Static(value interface{}) *Video {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否静态展示表达式
  */
-func (a *Video) Staticinputclassname(value interface{}) *Video {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 如果是实时的，请标记一下
- */
-func (a *Video) Islive(value interface{}) *Video {
-    a.Set("isLive", value)
+func (a *Video) Staticon(value interface{}) *Video {
+    a.Set("staticOn", value)
     return a
 }

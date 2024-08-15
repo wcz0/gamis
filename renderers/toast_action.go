@@ -15,6 +15,12 @@ func NewToastAction() *ToastAction {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("actionType", "toast")
+    a.Set("type", "button")
+    return a
+}
+
+
 func (a *ToastAction) Set(name string, value interface{}) *ToastAction {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,71 +30,27 @@ func (a *ToastAction) Set(name string, value interface{}) *ToastAction {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "button")
-    a.Set("actionType", "toast")
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *ToastAction) Usemobileui(value interface{}) *ToastAction {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 右侧 icon 上的 css 类名
+ * loading 上的css 类名
  */
-func (a *ToastAction) Righticonclassname(value interface{}) *ToastAction {
-    a.Set("rightIconClassName", value)
+func (a *ToastAction) Loadingclassname(value interface{}) *ToastAction {
+    a.Set("loadingClassName", value)
     return a
 }
 
 /**
- * 右侧按钮图标， iconfont 的类名
+ * 是否将弹框中数据 merge 到父级作用域。
  */
-func (a *ToastAction) Righticon(value interface{}) *ToastAction {
-    a.Set("rightIcon", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *ToastAction) Staticlabelclassname(value interface{}) *ToastAction {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *ToastAction) Editorsetting(value interface{}) *ToastAction {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 激活状态时的样式
- */
-func (a *ToastAction) Activelevel(value interface{}) *ToastAction {
-    a.Set("activeLevel", value)
-    return a
-}
-
-/**
- */
-func (a *ToastAction) Primary(value interface{}) *ToastAction {
-    a.Set("primary", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *ToastAction) Visibleon(value interface{}) *ToastAction {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- */
-func (a *ToastAction) Tooltip(value interface{}) *ToastAction {
-    a.Set("tooltip", value)
+func (a *ToastAction) Mergedata(value interface{}) *ToastAction {
+    a.Set("mergeData", value)
     return a
 }
 
@@ -101,97 +63,26 @@ func (a *ToastAction) Badge(value interface{}) *ToastAction {
 }
 
 /**
- * 键盘快捷键
+ * 主要用于用户行为跟踪里区分是哪个按钮
  */
-func (a *ToastAction) Hotkey(value interface{}) *ToastAction {
-    a.Set("hotKey", value)
+func (a *ToastAction) Id(value interface{}) *ToastAction {
+    a.Set("id", value)
     return a
 }
 
 /**
- * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+ * 静态展示表单项Label类名
  */
-func (a *ToastAction) Requireselected(value interface{}) *ToastAction {
-    a.Set("requireSelected", value)
+func (a *ToastAction) Staticlabelclassname(value interface{}) *ToastAction {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 子内容
+ * 是否为块状展示，默认为内联。
  */
-func (a *ToastAction) Body(value interface{}) *ToastAction {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *ToastAction) Staticplaceholder(value interface{}) *ToastAction {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *ToastAction) Visible(value interface{}) *ToastAction {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *ToastAction) Onevent(value interface{}) *ToastAction {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *ToastAction) Usemobileui(value interface{}) *ToastAction {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 提示文字，配置了操作前会要求用户确认。
- */
-func (a *ToastAction) Confirmtext(value interface{}) *ToastAction {
-    a.Set("confirmText", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *ToastAction) Classname(value interface{}) *ToastAction {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 轻提示详情 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/toast
- */
-func (a *ToastAction) Toast(value interface{}) *ToastAction {
-    a.Set("toast", value)
-    return a
-}
-
-/**
- */
-func (a *ToastAction) Testidbuilder(value interface{}) *ToastAction {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *ToastAction) Staticclassname(value interface{}) *ToastAction {
-    a.Set("staticClassName", value)
+func (a *ToastAction) Block(value interface{}) *ToastAction {
+    a.Set("block", value)
     return a
 }
 
@@ -204,10 +95,11 @@ func (a *ToastAction) Style(value interface{}) *ToastAction {
 }
 
 /**
- * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
+ * 指定按钮类型，支持 button、submit或者reset三种类型。
+ * 可选值: button | submit | reset
  */
-func (a *ToastAction) Required(value interface{}) *ToastAction {
-    a.Set("required", value)
+func (a *ToastAction) Type(value interface{}) *ToastAction {
+    a.Set("type", value)
     return a
 }
 
@@ -220,6 +112,22 @@ func (a *ToastAction) Countdowntpl(value interface{}) *ToastAction {
 }
 
 /**
+ * 激活状态时的样式
+ */
+func (a *ToastAction) Activelevel(value interface{}) *ToastAction {
+    a.Set("activeLevel", value)
+    return a
+}
+
+/**
+ * 可以指定让谁来触发这个动作。
+ */
+func (a *ToastAction) Target(value interface{}) *ToastAction {
+    a.Set("target", value)
+    return a
+}
+
+/**
  * 是否隐藏表达式
  */
 func (a *ToastAction) Hiddenon(value interface{}) *ToastAction {
@@ -228,11 +136,208 @@ func (a *ToastAction) Hiddenon(value interface{}) *ToastAction {
 }
 
 /**
- * 按钮样式
- * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
+ * 是否显示
  */
-func (a *ToastAction) Level(value interface{}) *ToastAction {
-    a.Set("level", value)
+func (a *ToastAction) Visible(value interface{}) *ToastAction {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 禁用时的文案提示。
+ */
+func (a *ToastAction) Disabledtip(value interface{}) *ToastAction {
+    a.Set("disabledTip", value)
+    return a
+}
+
+/**
+ * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+ */
+func (a *ToastAction) Requireselected(value interface{}) *ToastAction {
+    a.Set("requireSelected", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *ToastAction) Classname(value interface{}) *ToastAction {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *ToastAction) Disabled(value interface{}) *ToastAction {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * icon 上的css 类名
+ */
+func (a *ToastAction) Iconclassname(value interface{}) *ToastAction {
+    a.Set("iconClassName", value)
+    return a
+}
+
+/**
+ * 子内容
+ */
+func (a *ToastAction) Body(value interface{}) *ToastAction {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 右侧 icon 上的 css 类名
+ */
+func (a *ToastAction) Righticonclassname(value interface{}) *ToastAction {
+    a.Set("rightIconClassName", value)
+    return a
+}
+
+/**
+ * 提示文字，配置了操作前会要求用户确认。
+ */
+func (a *ToastAction) Confirmtext(value interface{}) *ToastAction {
+    a.Set("confirmText", value)
+    return a
+}
+
+/**
+ * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ */
+func (a *ToastAction) Close(value interface{}) *ToastAction {
+    a.Set("close", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *ToastAction) Onevent(value interface{}) *ToastAction {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *ToastAction) Staticon(value interface{}) *ToastAction {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *ToastAction) Testidbuilder(value interface{}) *ToastAction {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 轻提示详情 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/toast
+ */
+func (a *ToastAction) Toast(value interface{}) *ToastAction {
+    a.Set("toast", value)
+    return a
+}
+
+/**
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
+ */
+func (a *ToastAction) Size(value interface{}) *ToastAction {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 键盘快捷键
+ */
+func (a *ToastAction) Hotkey(value interface{}) *ToastAction {
+    a.Set("hotKey", value)
+    return a
+}
+
+/**
+ * 自定义事件处理函数
+ */
+func (a *ToastAction) Onclick(value interface{}) *ToastAction {
+    a.Set("onClick", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *ToastAction) Staticclassname(value interface{}) *ToastAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 激活状态时的类名
+ */
+func (a *ToastAction) Activeclassname(value interface{}) *ToastAction {
+    a.Set("activeClassName", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *ToastAction) Hidden(value interface{}) *ToastAction {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ */
+func (a *ToastAction) Primary(value interface{}) *ToastAction {
+    a.Set("primary", value)
+    return a
+}
+
+/**
+ * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
+ */
+func (a *ToastAction) Required(value interface{}) *ToastAction {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 点击后的禁止倒计时（秒）
+ */
+func (a *ToastAction) Countdown(value interface{}) *ToastAction {
+    a.Set("countDown", value)
+    return a
+}
+
+/**
+ */
+func (a *ToastAction) Testid(value interface{}) *ToastAction {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 按钮文字
+ */
+func (a *ToastAction) Label(value interface{}) *ToastAction {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *ToastAction) Loadingon(value interface{}) *ToastAction {
+    a.Set("loadingOn", value)
     return a
 }
 
@@ -245,17 +350,18 @@ func (a *ToastAction) Actiontype(value interface{}) *ToastAction {
 }
 
 /**
- */
-func (a *ToastAction) Testid(value interface{}) *ToastAction {
-    a.Set("testid", value)
-    return a
-}
-
-/**
  * 是否静态展示
  */
 func (a *ToastAction) Static(value interface{}) *ToastAction {
     a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *ToastAction) Staticplaceholder(value interface{}) *ToastAction {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -275,26 +381,9 @@ func (a *ToastAction) Icon(value interface{}) *ToastAction {
 }
 
 /**
- * 按钮文字
  */
-func (a *ToastAction) Label(value interface{}) *ToastAction {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *ToastAction) Staticon(value interface{}) *ToastAction {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 禁用时的文案提示。
- */
-func (a *ToastAction) Disabledtip(value interface{}) *ToastAction {
-    a.Set("disabledTip", value)
+func (a *ToastAction) Tooltip(value interface{}) *ToastAction {
+    a.Set("tooltip", value)
     return a
 }
 
@@ -307,68 +396,18 @@ func (a *ToastAction) Staticinputclassname(value interface{}) *ToastAction {
 }
 
 /**
- * 按钮大小
- * 可选值: xs | sm | md | lg
+ * 编辑器配置，运行时可以忽略
  */
-func (a *ToastAction) Size(value interface{}) *ToastAction {
-    a.Set("size", value)
+func (a *ToastAction) Editorsetting(value interface{}) *ToastAction {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ * 右侧按钮图标， iconfont 的类名
  */
-func (a *ToastAction) Close(value interface{}) *ToastAction {
-    a.Set("close", value)
-    return a
-}
-
-/**
- * 可以指定让谁来触发这个动作。
- */
-func (a *ToastAction) Target(value interface{}) *ToastAction {
-    a.Set("target", value)
-    return a
-}
-
-/**
- * 点击后的禁止倒计时（秒）
- */
-func (a *ToastAction) Countdown(value interface{}) *ToastAction {
-    a.Set("countDown", value)
-    return a
-}
-
-/**
- * 是否显示loading效果
- */
-func (a *ToastAction) Loadingon(value interface{}) *ToastAction {
-    a.Set("loadingOn", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *ToastAction) Disabledon(value interface{}) *ToastAction {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 指定按钮类型，支持 button、submit或者reset三种类型。
- * 可选值: button | submit | reset
- */
-func (a *ToastAction) Type(value interface{}) *ToastAction {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * icon 上的css 类名
- */
-func (a *ToastAction) Iconclassname(value interface{}) *ToastAction {
-    a.Set("iconClassName", value)
+func (a *ToastAction) Righticon(value interface{}) *ToastAction {
+    a.Set("rightIcon", value)
     return a
 }
 
@@ -381,65 +420,26 @@ func (a *ToastAction) Tooltipplacement(value interface{}) *ToastAction {
 }
 
 /**
- * 是否禁用
+ * 是否禁用表达式
  */
-func (a *ToastAction) Disabled(value interface{}) *ToastAction {
-    a.Set("disabled", value)
+func (a *ToastAction) Disabledon(value interface{}) *ToastAction {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 主要用于用户行为跟踪里区分是哪个按钮
+ * 是否显示表达式
  */
-func (a *ToastAction) Id(value interface{}) *ToastAction {
-    a.Set("id", value)
+func (a *ToastAction) Visibleon(value interface{}) *ToastAction {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 激活状态时的类名
+ * 按钮样式
+ * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
  */
-func (a *ToastAction) Activeclassname(value interface{}) *ToastAction {
-    a.Set("activeClassName", value)
-    return a
-}
-
-/**
- * 是否将弹框中数据 merge 到父级作用域。
- */
-func (a *ToastAction) Mergedata(value interface{}) *ToastAction {
-    a.Set("mergeData", value)
-    return a
-}
-
-/**
- * 自定义事件处理函数
- */
-func (a *ToastAction) Onclick(value interface{}) *ToastAction {
-    a.Set("onClick", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *ToastAction) Hidden(value interface{}) *ToastAction {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否为块状展示，默认为内联。
- */
-func (a *ToastAction) Block(value interface{}) *ToastAction {
-    a.Set("block", value)
-    return a
-}
-
-/**
- * loading 上的css 类名
- */
-func (a *ToastAction) Loadingclassname(value interface{}) *ToastAction {
-    a.Set("loadingClassName", value)
+func (a *ToastAction) Level(value interface{}) *ToastAction {
+    a.Set("level", value)
     return a
 }

@@ -15,6 +15,10 @@ func NewState() *State {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *State) Set(name string, value interface{}) *State {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,96 +28,6 @@ func (a *State) Set(name string, value interface{}) *State {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *State) Static(value interface{}) *State {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *State) Staticon(value interface{}) *State {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *State) Testidbuilder(value interface{}) *State {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 内容
- */
-func (a *State) Body(value interface{}) *State {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *State) Classname(value interface{}) *State {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *State) Disabled(value interface{}) *State {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *State) Visible(value interface{}) *State {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 状态标题
- */
-func (a *State) Title(value interface{}) *State {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *State) Hidden(value interface{}) *State {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *State) Hiddenon(value interface{}) *State {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- */
-func (a *State) Staticschema(value interface{}) *State {
-    a.Set("staticSchema", value)
-    return a
-}
-
 /**
  * 静态展示空值占位
  */
@@ -131,10 +45,80 @@ func (a *State) Staticclassname(value interface{}) *State {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *State) Staticlabelclassname(value interface{}) *State {
-    a.Set("staticLabelClassName", value)
+func (a *State) Usemobileui(value interface{}) *State {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *State) Hiddenon(value interface{}) *State {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *State) Visible(value interface{}) *State {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *State) Static(value interface{}) *State {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ */
+func (a *State) Staticschema(value interface{}) *State {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ */
+func (a *State) Testidbuilder(value interface{}) *State {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *State) Editorsetting(value interface{}) *State {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 内容
+ */
+func (a *State) Body(value interface{}) *State {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *State) Disabled(value interface{}) *State {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *State) Hidden(value interface{}) *State {
+    a.Set("hidden", value)
     return a
 }
 
@@ -147,9 +131,10 @@ func (a *State) Staticinputclassname(value interface{}) *State {
 }
 
 /**
+ * 是否禁用表达式
  */
-func (a *State) Testid(value interface{}) *State {
-    a.Set("testid", value)
+func (a *State) Disabledon(value interface{}) *State {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -178,6 +163,37 @@ func (a *State) Onevent(value interface{}) *State {
 }
 
 /**
+ * 是否静态展示表达式
+ */
+func (a *State) Staticon(value interface{}) *State {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ */
+func (a *State) Testid(value interface{}) *State {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *State) Classname(value interface{}) *State {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *State) Staticlabelclassname(value interface{}) *State {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
  * 组件样式
  */
 func (a *State) Style(value interface{}) *State {
@@ -186,25 +202,9 @@ func (a *State) Style(value interface{}) *State {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 状态标题
  */
-func (a *State) Editorsetting(value interface{}) *State {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *State) Disabledon(value interface{}) *State {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *State) Usemobileui(value interface{}) *State {
-    a.Set("useMobileUI", value)
+func (a *State) Title(value interface{}) *State {
+    a.Set("title", value)
     return a
 }

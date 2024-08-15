@@ -15,6 +15,12 @@ func NewEmailAction() *EmailAction {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("actionType", "email")
+    a.Set("type", "button")
+    return a
+}
+
+
 func (a *EmailAction) Set(name string, value interface{}) *EmailAction {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,86 +30,6 @@ func (a *EmailAction) Set(name string, value interface{}) *EmailAction {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("actionType", "email")
-    a.Set("type", "button")
-    return a
-}
-
-/**
- * 收件人邮箱
- */
-func (a *EmailAction) To(value interface{}) *EmailAction {
-    a.Set("to", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *EmailAction) Onevent(value interface{}) *EmailAction {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *EmailAction) Staticinputclassname(value interface{}) *EmailAction {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 右侧按钮图标， iconfont 的类名
- */
-func (a *EmailAction) Righticon(value interface{}) *EmailAction {
-    a.Set("rightIcon", value)
-    return a
-}
-
-/**
- * 按钮大小
- * 可选值: xs | sm | md | lg
- */
-func (a *EmailAction) Size(value interface{}) *EmailAction {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 指定按钮类型，支持 button、submit或者reset三种类型。
- * 可选值: button | submit | reset
- */
-func (a *EmailAction) Type(value interface{}) *EmailAction {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 主要用于用户行为跟踪里区分是哪个按钮
- */
-func (a *EmailAction) Id(value interface{}) *EmailAction {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *EmailAction) Static(value interface{}) *EmailAction {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * loading 上的css 类名
- */
-func (a *EmailAction) Loadingclassname(value interface{}) *EmailAction {
-    a.Set("loadingClassName", value)
-    return a
-}
-
 /**
  */
 func (a *EmailAction) Tooltip(value interface{}) *EmailAction {
@@ -112,50 +38,10 @@ func (a *EmailAction) Tooltip(value interface{}) *EmailAction {
 }
 
 /**
- * 是否显示
+ * 抄送邮箱
  */
-func (a *EmailAction) Visible(value interface{}) *EmailAction {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
- */
-func (a *EmailAction) Required(value interface{}) *EmailAction {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 点击后的禁止倒计时（秒）
- */
-func (a *EmailAction) Countdown(value interface{}) *EmailAction {
-    a.Set("countDown", value)
-    return a
-}
-
-/**
- * 邮件主题
- */
-func (a *EmailAction) Subject(value interface{}) *EmailAction {
-    a.Set("subject", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *EmailAction) Hiddenon(value interface{}) *EmailAction {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 右侧 icon 上的 css 类名
- */
-func (a *EmailAction) Righticonclassname(value interface{}) *EmailAction {
-    a.Set("rightIconClassName", value)
+func (a *EmailAction) Cc(value interface{}) *EmailAction {
+    a.Set("cc", value)
     return a
 }
 
@@ -169,176 +55,10 @@ func (a *EmailAction) Level(value interface{}) *EmailAction {
 }
 
 /**
- * 是否隐藏
- */
-func (a *EmailAction) Hidden(value interface{}) *EmailAction {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- */
-func (a *EmailAction) Staticschema(value interface{}) *EmailAction {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *EmailAction) Editorsetting(value interface{}) *EmailAction {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 键盘快捷键
- */
-func (a *EmailAction) Hotkey(value interface{}) *EmailAction {
-    a.Set("hotKey", value)
-    return a
-}
-
-/**
- * 按钮文字
- */
-func (a *EmailAction) Label(value interface{}) *EmailAction {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 可选值: top | right | bottom | left
- */
-func (a *EmailAction) Tooltipplacement(value interface{}) *EmailAction {
-    a.Set("tooltipPlacement", value)
-    return a
-}
-
-/**
- * 是否将弹框中数据 merge 到父级作用域。
- */
-func (a *EmailAction) Mergedata(value interface{}) *EmailAction {
-    a.Set("mergeData", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *EmailAction) Badge(value interface{}) *EmailAction {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *EmailAction) Visibleon(value interface{}) *EmailAction {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *EmailAction) Staticclassname(value interface{}) *EmailAction {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 是否显示loading效果
- */
-func (a *EmailAction) Loadingon(value interface{}) *EmailAction {
-    a.Set("loadingOn", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *EmailAction) Disabled(value interface{}) *EmailAction {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *EmailAction) Staticon(value interface{}) *EmailAction {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *EmailAction) Style(value interface{}) *EmailAction {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *EmailAction) Primary(value interface{}) *EmailAction {
-    a.Set("primary", value)
-    return a
-}
-
-/**
  * 激活状态时的类名
  */
 func (a *EmailAction) Activeclassname(value interface{}) *EmailAction {
     a.Set("activeClassName", value)
-    return a
-}
-
-/**
- * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
- */
-func (a *EmailAction) Close(value interface{}) *EmailAction {
-    a.Set("close", value)
-    return a
-}
-
-/**
- * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
- */
-func (a *EmailAction) Requireselected(value interface{}) *EmailAction {
-    a.Set("requireSelected", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *EmailAction) Classname(value interface{}) *EmailAction {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *EmailAction) Disabledon(value interface{}) *EmailAction {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否为块状展示，默认为内联。
- */
-func (a *EmailAction) Block(value interface{}) *EmailAction {
-    a.Set("block", value)
-    return a
-}
-
-/**
- * 禁用时的文案提示。
- */
-func (a *EmailAction) Disabledtip(value interface{}) *EmailAction {
-    a.Set("disabledTip", value)
     return a
 }
 
@@ -351,89 +71,10 @@ func (a *EmailAction) Activelevel(value interface{}) *EmailAction {
 }
 
 /**
- * 自定义事件处理函数
+ * 右侧 icon 上的 css 类名
  */
-func (a *EmailAction) Onclick(value interface{}) *EmailAction {
-    a.Set("onClick", value)
-    return a
-}
-
-/**
- * 指定为打开邮箱行为
- */
-func (a *EmailAction) Actiontype(value interface{}) *EmailAction {
-    a.Set("actionType", value)
-    return a
-}
-
-/**
- * 匿名抄送邮箱
- */
-func (a *EmailAction) Bcc(value interface{}) *EmailAction {
-    a.Set("bcc", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *EmailAction) Staticplaceholder(value interface{}) *EmailAction {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *EmailAction) Staticlabelclassname(value interface{}) *EmailAction {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 邮件正文
- */
-func (a *EmailAction) Body(value interface{}) *EmailAction {
-    a.Set("body", value)
-    return a
-}
-
-/**
- */
-func (a *EmailAction) Testidbuilder(value interface{}) *EmailAction {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 提示文字，配置了操作前会要求用户确认。
- */
-func (a *EmailAction) Confirmtext(value interface{}) *EmailAction {
-    a.Set("confirmText", value)
-    return a
-}
-
-/**
- * 可以指定让谁来触发这个动作。
- */
-func (a *EmailAction) Target(value interface{}) *EmailAction {
-    a.Set("target", value)
-    return a
-}
-
-/**
- * 抄送邮箱
- */
-func (a *EmailAction) Cc(value interface{}) *EmailAction {
-    a.Set("cc", value)
-    return a
-}
-
-/**
- * 倒计时文字自定义
- */
-func (a *EmailAction) Countdowntpl(value interface{}) *EmailAction {
-    a.Set("countDownTpl", value)
+func (a *EmailAction) Righticonclassname(value interface{}) *EmailAction {
+    a.Set("rightIconClassName", value)
     return a
 }
 
@@ -446,9 +87,105 @@ func (a *EmailAction) Usemobileui(value interface{}) *EmailAction {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *EmailAction) Testid(value interface{}) *EmailAction {
-    a.Set("testid", value)
+func (a *EmailAction) Staticinputclassname(value interface{}) *EmailAction {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *EmailAction) Style(value interface{}) *EmailAction {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 可以指定让谁来触发这个动作。
+ */
+func (a *EmailAction) Target(value interface{}) *EmailAction {
+    a.Set("target", value)
+    return a
+}
+
+/**
+ * 倒计时文字自定义
+ */
+func (a *EmailAction) Countdowntpl(value interface{}) *EmailAction {
+    a.Set("countDownTpl", value)
+    return a
+}
+
+/**
+ * 自定义事件处理函数
+ */
+func (a *EmailAction) Onclick(value interface{}) *EmailAction {
+    a.Set("onClick", value)
+    return a
+}
+
+/**
+ */
+func (a *EmailAction) Staticschema(value interface{}) *EmailAction {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *EmailAction) Staticclassname(value interface{}) *EmailAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ */
+func (a *EmailAction) Close(value interface{}) *EmailAction {
+    a.Set("close", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *EmailAction) Loadingon(value interface{}) *EmailAction {
+    a.Set("loadingOn", value)
+    return a
+}
+
+/**
+ * 收件人邮箱
+ */
+func (a *EmailAction) To(value interface{}) *EmailAction {
+    a.Set("to", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *EmailAction) Visibleon(value interface{}) *EmailAction {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *EmailAction) Staticon(value interface{}) *EmailAction {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *EmailAction) Editorsetting(value interface{}) *EmailAction {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -461,9 +198,272 @@ func (a *EmailAction) Icon(value interface{}) *EmailAction {
 }
 
 /**
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
+ */
+func (a *EmailAction) Size(value interface{}) *EmailAction {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 是否将弹框中数据 merge 到父级作用域。
+ */
+func (a *EmailAction) Mergedata(value interface{}) *EmailAction {
+    a.Set("mergeData", value)
+    return a
+}
+
+/**
+ * 主要用于用户行为跟踪里区分是哪个按钮
+ */
+func (a *EmailAction) Id(value interface{}) *EmailAction {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 禁用时的文案提示。
+ */
+func (a *EmailAction) Disabledtip(value interface{}) *EmailAction {
+    a.Set("disabledTip", value)
+    return a
+}
+
+/**
+ * 右侧按钮图标， iconfont 的类名
+ */
+func (a *EmailAction) Righticon(value interface{}) *EmailAction {
+    a.Set("rightIcon", value)
+    return a
+}
+
+/**
+ * 可选值: top | right | bottom | left
+ */
+func (a *EmailAction) Tooltipplacement(value interface{}) *EmailAction {
+    a.Set("tooltipPlacement", value)
+    return a
+}
+
+/**
+ * 邮件正文
+ */
+func (a *EmailAction) Body(value interface{}) *EmailAction {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否为块状展示，默认为内联。
+ */
+func (a *EmailAction) Block(value interface{}) *EmailAction {
+    a.Set("block", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *EmailAction) Disabled(value interface{}) *EmailAction {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *EmailAction) Disabledon(value interface{}) *EmailAction {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ */
+func (a *EmailAction) Testid(value interface{}) *EmailAction {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * loading 上的css 类名
+ */
+func (a *EmailAction) Loadingclassname(value interface{}) *EmailAction {
+    a.Set("loadingClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *EmailAction) Primary(value interface{}) *EmailAction {
+    a.Set("primary", value)
+    return a
+}
+
+/**
+ * 点击后的禁止倒计时（秒）
+ */
+func (a *EmailAction) Countdown(value interface{}) *EmailAction {
+    a.Set("countDown", value)
+    return a
+}
+
+/**
+ * 匿名抄送邮箱
+ */
+func (a *EmailAction) Bcc(value interface{}) *EmailAction {
+    a.Set("bcc", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *EmailAction) Classname(value interface{}) *EmailAction {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 指定为打开邮箱行为
+ */
+func (a *EmailAction) Actiontype(value interface{}) *EmailAction {
+    a.Set("actionType", value)
+    return a
+}
+
+/**
  * icon 上的css 类名
  */
 func (a *EmailAction) Iconclassname(value interface{}) *EmailAction {
     a.Set("iconClassName", value)
+    return a
+}
+
+/**
+ * 提示文字，配置了操作前会要求用户确认。
+ */
+func (a *EmailAction) Confirmtext(value interface{}) *EmailAction {
+    a.Set("confirmText", value)
+    return a
+}
+
+/**
+ * 邮件主题
+ */
+func (a *EmailAction) Subject(value interface{}) *EmailAction {
+    a.Set("subject", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *EmailAction) Staticlabelclassname(value interface{}) *EmailAction {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *EmailAction) Onevent(value interface{}) *EmailAction {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *EmailAction) Static(value interface{}) *EmailAction {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
+ */
+func (a *EmailAction) Required(value interface{}) *EmailAction {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 角标
+ */
+func (a *EmailAction) Badge(value interface{}) *EmailAction {
+    a.Set("badge", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *EmailAction) Visible(value interface{}) *EmailAction {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+ */
+func (a *EmailAction) Requireselected(value interface{}) *EmailAction {
+    a.Set("requireSelected", value)
+    return a
+}
+
+/**
+ * 键盘快捷键
+ */
+func (a *EmailAction) Hotkey(value interface{}) *EmailAction {
+    a.Set("hotKey", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *EmailAction) Staticplaceholder(value interface{}) *EmailAction {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 按钮文字
+ */
+func (a *EmailAction) Label(value interface{}) *EmailAction {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *EmailAction) Hiddenon(value interface{}) *EmailAction {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ */
+func (a *EmailAction) Testidbuilder(value interface{}) *EmailAction {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 指定按钮类型，支持 button、submit或者reset三种类型。
+ * 可选值: button | submit | reset
+ */
+func (a *EmailAction) Type(value interface{}) *EmailAction {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *EmailAction) Hidden(value interface{}) *EmailAction {
+    a.Set("hidden", value)
     return a
 }

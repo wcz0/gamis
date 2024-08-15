@@ -15,6 +15,11 @@ func NewImageToolbarAction() *ImageToolbarAction {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("key", "ROTATE_RIGHT")
+    return a
+}
+
+
 func (a *ImageToolbarAction) Set(name string, value interface{}) *ImageToolbarAction {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,8 +29,11 @@ func (a *ImageToolbarAction) Set(name string, value interface{}) *ImageToolbarAc
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("key", "ROTATE_RIGHT")
+/**
+ * 可选值: ROTATE_RIGHT | ROTATE_LEFT | ZOOM_IN | ZOOM_OUT | SCALE_ORIGIN
+ */
+func (a *ImageToolbarAction) Key(value interface{}) *ImageToolbarAction {
+    a.Set("key", value)
     return a
 }
 
@@ -54,13 +62,5 @@ func (a *ImageToolbarAction) Iconclassname(value interface{}) *ImageToolbarActio
  */
 func (a *ImageToolbarAction) Disabled(value interface{}) *ImageToolbarAction {
     a.Set("disabled", value)
-    return a
-}
-
-/**
- * 可选值: ROTATE_RIGHT | ROTATE_LEFT | ZOOM_IN | ZOOM_OUT | SCALE_ORIGIN
- */
-func (a *ImageToolbarAction) Key(value interface{}) *ImageToolbarAction {
-    a.Set("key", value)
     return a
 }

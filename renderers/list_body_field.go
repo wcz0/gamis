@@ -16,6 +16,10 @@ func NewListBodyField() *ListBodyField {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *ListBodyField) Set(name string, value interface{}) *ListBodyField {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,10 +29,6 @@ func (a *ListBodyField) Set(name string, value interface{}) *ListBodyField {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
 /**
  * 列标题
  */

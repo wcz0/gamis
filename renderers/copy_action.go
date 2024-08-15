@@ -15,6 +15,12 @@ func NewCopyAction() *CopyAction {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "button")
+    a.Set("actionType", "copy")
+    return a
+}
+
+
 func (a *CopyAction) Set(name string, value interface{}) *CopyAction {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,113 +30,10 @@ func (a *CopyAction) Set(name string, value interface{}) *CopyAction {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "button")
-    a.Set("actionType", "copy")
-    return a
-}
-
 /**
- * 激活状态时的样式
  */
-func (a *CopyAction) Activelevel(value interface{}) *CopyAction {
-    a.Set("activeLevel", value)
-    return a
-}
-
-/**
- * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
- */
-func (a *CopyAction) Close(value interface{}) *CopyAction {
-    a.Set("close", value)
-    return a
-}
-
-/**
- * 复制啥内容由此配置，支持模板语法。
- */
-func (a *CopyAction) Copy(value interface{}) *CopyAction {
-    a.Set("copy", value)
-    return a
-}
-
-/**
- * 按钮文字
- */
-func (a *CopyAction) Label(value interface{}) *CopyAction {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *CopyAction) Visible(value interface{}) *CopyAction {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *CopyAction) Editorsetting(value interface{}) *CopyAction {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 右侧 icon 上的 css 类名
- */
-func (a *CopyAction) Righticonclassname(value interface{}) *CopyAction {
-    a.Set("rightIconClassName", value)
-    return a
-}
-
-/**
- * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
- */
-func (a *CopyAction) Requireselected(value interface{}) *CopyAction {
-    a.Set("requireSelected", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *CopyAction) Hidden(value interface{}) *CopyAction {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 可选值: top | right | bottom | left
- */
-func (a *CopyAction) Tooltipplacement(value interface{}) *CopyAction {
-    a.Set("tooltipPlacement", value)
-    return a
-}
-
-/**
- * 激活状态时的类名
- */
-func (a *CopyAction) Activeclassname(value interface{}) *CopyAction {
-    a.Set("activeClassName", value)
-    return a
-}
-
-/**
- * 是否将弹框中数据 merge 到父级作用域。
- */
-func (a *CopyAction) Mergedata(value interface{}) *CopyAction {
-    a.Set("mergeData", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *CopyAction) Staticplaceholder(value interface{}) *CopyAction {
-    a.Set("staticPlaceholder", value)
+func (a *CopyAction) Testidbuilder(value interface{}) *CopyAction {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -143,81 +46,10 @@ func (a *CopyAction) Icon(value interface{}) *CopyAction {
 }
 
 /**
- * 是否静态展示
- */
-func (a *CopyAction) Static(value interface{}) *CopyAction {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *CopyAction) Style(value interface{}) *CopyAction {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *CopyAction) Staticschema(value interface{}) *CopyAction {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *CopyAction) Staticclassname(value interface{}) *CopyAction {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
  * 是否隐藏表达式
  */
 func (a *CopyAction) Hiddenon(value interface{}) *CopyAction {
     a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *CopyAction) Staticinputclassname(value interface{}) *CopyAction {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *CopyAction) Usemobileui(value interface{}) *CopyAction {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *CopyAction) Badge(value interface{}) *CopyAction {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 自定义事件处理函数
- */
-func (a *CopyAction) Onclick(value interface{}) *CopyAction {
-    a.Set("onClick", value)
-    return a
-}
-
-/**
- * 禁用时的文案提示。
- */
-func (a *CopyAction) Disabledtip(value interface{}) *CopyAction {
-    a.Set("disabledTip", value)
     return a
 }
 
@@ -231,106 +63,17 @@ func (a *CopyAction) Level(value interface{}) *CopyAction {
 }
 
 /**
- * 容器 css 类名
  */
-func (a *CopyAction) Classname(value interface{}) *CopyAction {
-    a.Set("className", value)
+func (a *CopyAction) Primary(value interface{}) *CopyAction {
+    a.Set("primary", value)
     return a
 }
 
 /**
- * 主要用于用户行为跟踪里区分是哪个按钮
+ * 编辑器配置，运行时可以忽略
  */
-func (a *CopyAction) Id(value interface{}) *CopyAction {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否显示loading效果
- */
-func (a *CopyAction) Loadingon(value interface{}) *CopyAction {
-    a.Set("loadingOn", value)
-    return a
-}
-
-/**
- * icon 上的css 类名
- */
-func (a *CopyAction) Iconclassname(value interface{}) *CopyAction {
-    a.Set("iconClassName", value)
-    return a
-}
-
-/**
- * 按钮大小
- * 可选值: xs | sm | md | lg
- */
-func (a *CopyAction) Size(value interface{}) *CopyAction {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 倒计时文字自定义
- */
-func (a *CopyAction) Countdowntpl(value interface{}) *CopyAction {
-    a.Set("countDownTpl", value)
-    return a
-}
-
-/**
- * 指定按钮类型，支持 button、submit或者reset三种类型。
- * 可选值: button | submit | reset
- */
-func (a *CopyAction) Type(value interface{}) *CopyAction {
-    a.Set("type", value)
-    return a
-}
-
-/**
- */
-func (a *CopyAction) Testid(value interface{}) *CopyAction {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否为块状展示，默认为内联。
- */
-func (a *CopyAction) Block(value interface{}) *CopyAction {
-    a.Set("block", value)
-    return a
-}
-
-/**
- * 右侧按钮图标， iconfont 的类名
- */
-func (a *CopyAction) Righticon(value interface{}) *CopyAction {
-    a.Set("rightIcon", value)
-    return a
-}
-
-/**
- * loading 上的css 类名
- */
-func (a *CopyAction) Loadingclassname(value interface{}) *CopyAction {
-    a.Set("loadingClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *CopyAction) Staticlabelclassname(value interface{}) *CopyAction {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *CopyAction) Testidbuilder(value interface{}) *CopyAction {
-    a.Set("testIdBuilder", value)
+func (a *CopyAction) Editorsetting(value interface{}) *CopyAction {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -343,26 +86,34 @@ func (a *CopyAction) Target(value interface{}) *CopyAction {
 }
 
 /**
- * 是否显示表达式
+ * 点击后的禁止倒计时（秒）
  */
-func (a *CopyAction) Visibleon(value interface{}) *CopyAction {
-    a.Set("visibleOn", value)
+func (a *CopyAction) Countdown(value interface{}) *CopyAction {
+    a.Set("countDown", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 倒计时文字自定义
  */
-func (a *CopyAction) Staticon(value interface{}) *CopyAction {
-    a.Set("staticOn", value)
+func (a *CopyAction) Countdowntpl(value interface{}) *CopyAction {
+    a.Set("countDownTpl", value)
     return a
 }
 
 /**
- * 键盘快捷键
+ * 是否将弹框中数据 merge 到父级作用域。
  */
-func (a *CopyAction) Hotkey(value interface{}) *CopyAction {
-    a.Set("hotKey", value)
+func (a *CopyAction) Mergedata(value interface{}) *CopyAction {
+    a.Set("mergeData", value)
+    return a
+}
+
+/**
+ * 角标
+ */
+func (a *CopyAction) Badge(value interface{}) *CopyAction {
+    a.Set("badge", value)
     return a
 }
 
@@ -375,33 +126,10 @@ func (a *CopyAction) Actiontype(value interface{}) *CopyAction {
 }
 
 /**
- * 是否禁用表达式
+ * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
  */
-func (a *CopyAction) Disabledon(value interface{}) *CopyAction {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *CopyAction) Disabled(value interface{}) *CopyAction {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- */
-func (a *CopyAction) Tooltip(value interface{}) *CopyAction {
-    a.Set("tooltip", value)
-    return a
-}
-
-/**
- * 点击后的禁止倒计时（秒）
- */
-func (a *CopyAction) Countdown(value interface{}) *CopyAction {
-    a.Set("countDown", value)
+func (a *CopyAction) Requireselected(value interface{}) *CopyAction {
+    a.Set("requireSelected", value)
     return a
 }
 
@@ -410,6 +138,14 @@ func (a *CopyAction) Countdown(value interface{}) *CopyAction {
  */
 func (a *CopyAction) Body(value interface{}) *CopyAction {
     a.Set("body", value)
+    return a
+}
+
+/**
+ * 复制啥内容由此配置，支持模板语法。
+ */
+func (a *CopyAction) Copy(value interface{}) *CopyAction {
+    a.Set("copy", value)
     return a
 }
 
@@ -423,8 +159,239 @@ func (a *CopyAction) Onevent(value interface{}) *CopyAction {
 
 /**
  */
-func (a *CopyAction) Primary(value interface{}) *CopyAction {
-    a.Set("primary", value)
+func (a *CopyAction) Testid(value interface{}) *CopyAction {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * icon 上的css 类名
+ */
+func (a *CopyAction) Iconclassname(value interface{}) *CopyAction {
+    a.Set("iconClassName", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *CopyAction) Loadingon(value interface{}) *CopyAction {
+    a.Set("loadingOn", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *CopyAction) Classname(value interface{}) *CopyAction {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 右侧按钮图标， iconfont 的类名
+ */
+func (a *CopyAction) Righticon(value interface{}) *CopyAction {
+    a.Set("rightIcon", value)
+    return a
+}
+
+/**
+ * 按钮文字
+ */
+func (a *CopyAction) Label(value interface{}) *CopyAction {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 可选值: top | right | bottom | left
+ */
+func (a *CopyAction) Tooltipplacement(value interface{}) *CopyAction {
+    a.Set("tooltipPlacement", value)
+    return a
+}
+
+/**
+ * 主要用于用户行为跟踪里区分是哪个按钮
+ */
+func (a *CopyAction) Id(value interface{}) *CopyAction {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *CopyAction) Staticclassname(value interface{}) *CopyAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *CopyAction) Staticlabelclassname(value interface{}) *CopyAction {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 自定义事件处理函数
+ */
+func (a *CopyAction) Onclick(value interface{}) *CopyAction {
+    a.Set("onClick", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *CopyAction) Disabled(value interface{}) *CopyAction {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *CopyAction) Disabledon(value interface{}) *CopyAction {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *CopyAction) Visibleon(value interface{}) *CopyAction {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * loading 上的css 类名
+ */
+func (a *CopyAction) Loadingclassname(value interface{}) *CopyAction {
+    a.Set("loadingClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *CopyAction) Staticschema(value interface{}) *CopyAction {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 右侧 icon 上的 css 类名
+ */
+func (a *CopyAction) Righticonclassname(value interface{}) *CopyAction {
+    a.Set("rightIconClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *CopyAction) Staticinputclassname(value interface{}) *CopyAction {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 禁用时的文案提示。
+ */
+func (a *CopyAction) Disabledtip(value interface{}) *CopyAction {
+    a.Set("disabledTip", value)
+    return a
+}
+
+/**
+ * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ */
+func (a *CopyAction) Close(value interface{}) *CopyAction {
+    a.Set("close", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *CopyAction) Hidden(value interface{}) *CopyAction {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *CopyAction) Visible(value interface{}) *CopyAction {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *CopyAction) Staticon(value interface{}) *CopyAction {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *CopyAction) Staticplaceholder(value interface{}) *CopyAction {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *CopyAction) Style(value interface{}) *CopyAction {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否为块状展示，默认为内联。
+ */
+func (a *CopyAction) Block(value interface{}) *CopyAction {
+    a.Set("block", value)
+    return a
+}
+
+/**
+ * 激活状态时的样式
+ */
+func (a *CopyAction) Activelevel(value interface{}) *CopyAction {
+    a.Set("activeLevel", value)
+    return a
+}
+
+/**
+ */
+func (a *CopyAction) Tooltip(value interface{}) *CopyAction {
+    a.Set("tooltip", value)
+    return a
+}
+
+/**
+ * 键盘快捷键
+ */
+func (a *CopyAction) Hotkey(value interface{}) *CopyAction {
+    a.Set("hotKey", value)
+    return a
+}
+
+/**
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
+ */
+func (a *CopyAction) Size(value interface{}) *CopyAction {
+    a.Set("size", value)
     return a
 }
 
@@ -441,5 +408,38 @@ func (a *CopyAction) Confirmtext(value interface{}) *CopyAction {
  */
 func (a *CopyAction) Required(value interface{}) *CopyAction {
     a.Set("required", value)
+    return a
+}
+
+/**
+ * 激活状态时的类名
+ */
+func (a *CopyAction) Activeclassname(value interface{}) *CopyAction {
+    a.Set("activeClassName", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *CopyAction) Static(value interface{}) *CopyAction {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *CopyAction) Usemobileui(value interface{}) *CopyAction {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 指定按钮类型，支持 button、submit或者reset三种类型。
+ * 可选值: button | submit | reset
+ */
+func (a *CopyAction) Type(value interface{}) *CopyAction {
+    a.Set("type", value)
     return a
 }

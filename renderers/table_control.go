@@ -15,6 +15,11 @@ func NewTableControl() *TableControl {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "input-table")
+    return a
+}
+
+
 func (a *TableControl) Set(name string, value interface{}) *TableControl {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,23 +29,408 @@ func (a *TableControl) Set(name string, value interface{}) *TableControl {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "input-table")
+/**
+ */
+func (a *TableControl) Staticschema(value interface{}) *TableControl {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 是否开启底部展示功能，适合移动端展示
+ * 当修改完的时候是否提交表单。
  */
-func (a *TableControl) Footable(value interface{}) *TableControl {
-    a.Set("footable", value)
+func (a *TableControl) Submitonchange(value interface{}) *TableControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *TableControl) Readonlyon(value interface{}) *TableControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 初始值，新增的时候
+ */
+func (a *TableControl) Scaffold(value interface{}) *TableControl {
+    a.Set("scaffold", value)
+    return a
+}
+
+/**
+ * 是否显示表格操作栏新增按钮
+ */
+func (a *TableControl) Showtableaddbtn(value interface{}) *TableControl {
+    a.Set("showTableAddBtn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *TableControl) Id(value interface{}) *TableControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *TableControl) Staticon(value interface{}) *TableControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *TableControl) Name(value interface{}) *TableControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *TableControl) Descriptionclassname(value interface{}) *TableControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 底部新增按钮配置
+ */
+func (a *TableControl) Footeraddbtn(value interface{}) *TableControl {
+    a.Set("footerAddBtn", value)
+    return a
+}
+
+/**
+ * 表格自动计算高度
+ */
+func (a *TableControl) Autofillheight(value interface{}) *TableControl {
+    a.Set("autoFillHeight", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *TableControl) Visible(value interface{}) *TableControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 新增 API
+ */
+func (a *TableControl) Addapi(value interface{}) *TableControl {
+    a.Set("addApi", value)
+    return a
+}
+
+/**
+ * 更新 API
+ */
+func (a *TableControl) Updateapi(value interface{}) *TableControl {
+    a.Set("updateApi", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *TableControl) Visibleon(value interface{}) *TableControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *TableControl) Validateonchange(value interface{}) *TableControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * 确认按钮文字
+ */
+func (a *TableControl) Confirmbtnlabel(value interface{}) *TableControl {
+    a.Set("confirmBtnLabel", value)
     return a
 }
 
 /**
  */
-func (a *TableControl) Initautofill(value interface{}) *TableControl {
-    a.Set("initAutoFill", value)
+func (a *TableControl) Testid(value interface{}) *TableControl {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 可否编辑
+ */
+func (a *TableControl) Editable(value interface{}) *TableControl {
+    a.Set("editable", value)
+    return a
+}
+
+/**
+ * 标题
+ */
+func (a *TableControl) Title(value interface{}) *TableControl {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 更新按钮名称
+ */
+func (a *TableControl) Editbtnlabel(value interface{}) *TableControl {
+    a.Set("editBtnLabel", value)
+    return a
+}
+
+/**
+ * 是否固底
+ */
+func (a *TableControl) Affixfooter(value interface{}) *TableControl {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ * 表格 CSS 类名
+ */
+func (a *TableControl) Tableclassname(value interface{}) *TableControl {
+    a.Set("tableClassName", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *TableControl) Validationerrors(value interface{}) *TableControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 新增按钮文字
+ */
+func (a *TableControl) Addbtnlabel(value interface{}) *TableControl {
+    a.Set("addBtnLabel", value)
+    return a
+}
+
+/**
+ * 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单
+ */
+func (a *TableControl) Autogeneratefilter(value interface{}) *TableControl {
+    a.Set("autoGenerateFilter", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *TableControl) Extraname(value interface{}) *TableControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * 新增按钮图标
+ */
+func (a *TableControl) Addbtnicon(value interface{}) *TableControl {
+    a.Set("addBtnIcon", value)
+    return a
+}
+
+/**
+ * 分页个数，默认不分页
+ */
+func (a *TableControl) Perpage(value interface{}) *TableControl {
+    a.Set("perPage", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *TableControl) Labelalign(value interface{}) *TableControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *TableControl) Labelremark(value interface{}) *TableControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *TableControl) Staticinputclassname(value interface{}) *TableControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 确认按钮图标
+ */
+func (a *TableControl) Confirmbtnicon(value interface{}) *TableControl {
+    a.Set("confirmBtnIcon", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *TableControl) Required(value interface{}) *TableControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 是否显示序号
+ */
+func (a *TableControl) Showindex(value interface{}) *TableControl {
+    a.Set("showIndex", value)
+    return a
+}
+
+/**
+ * 是否开启 static 状态切换
+ */
+func (a *TableControl) Enablestatictransform(value interface{}) *TableControl {
+    a.Set("enableStaticTransform", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *TableControl) Width(value interface{}) *TableControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 是否可调整列宽
+ */
+func (a *TableControl) Resizable(value interface{}) *TableControl {
+    a.Set("resizable", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *TableControl) Hidden(value interface{}) *TableControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *TableControl) Disabledon(value interface{}) *TableControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *TableControl) Readonly(value interface{}) *TableControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ */
+func (a *TableControl) Validations(value interface{}) *TableControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 复制的时候用来配置复制映射的数据。默认值是 {&:$$}，相当与复制整个行数据 通常有时候需要用来标记是复制过来的，也可能需要删掉一下主键字段。
+ */
+func (a *TableControl) Copydata(value interface{}) *TableControl {
+    a.Set("copyData", value)
+    return a
+}
+
+/**
+ * 是否显示底部新增按钮
+ */
+func (a *TableControl) Showfooteraddbtn(value interface{}) *TableControl {
+    a.Set("showFooterAddBtn", value)
+    return a
+}
+
+/**
+ * 底部总结行
+ */
+func (a *TableControl) Affixrow(value interface{}) *TableControl {
+    a.Set("affixRow", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *TableControl) Hint(value interface{}) *TableControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *TableControl) Autofill(value interface{}) *TableControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *TableControl) Staticplaceholder(value interface{}) *TableControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *TableControl) Value(value interface{}) *TableControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 删除确认文字
+ */
+func (a *TableControl) Deleteconfirmtext(value interface{}) *TableControl {
+    a.Set("deleteConfirmText", value)
+    return a
+}
+
+/**
+ * 展示列显示开关，自动即：列数量大于或等于5个时自动开启
+ */
+func (a *TableControl) Columnstogglable(value interface{}) *TableControl {
+    a.Set("columnsTogglable", value)
     return a
 }
 
@@ -49,6 +439,14 @@ func (a *TableControl) Initautofill(value interface{}) *TableControl {
  */
 func (a *TableControl) Showheader(value interface{}) *TableControl {
     a.Set("showHeader", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *TableControl) Validateapi(value interface{}) *TableControl {
+    a.Set("validateApi", value)
     return a
 }
 
@@ -62,10 +460,128 @@ func (a *TableControl) Tablelayout(value interface{}) *TableControl {
 }
 
 /**
- * 是否显示表达式
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
  */
-func (a *TableControl) Visibleon(value interface{}) *TableControl {
-    a.Set("visibleOn", value)
+func (a *TableControl) Clearvalueonhidden(value interface{}) *TableControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 取消按钮文字
+ */
+func (a *TableControl) Cancelbtnlabel(value interface{}) *TableControl {
+    a.Set("cancelBtnLabel", value)
+    return a
+}
+
+/**
+ * 限制最大个数
+ */
+func (a *TableControl) Maxlength(value interface{}) *TableControl {
+    a.Set("maxLength", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *TableControl) Hiddenon(value interface{}) *TableControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 可新增
+ */
+func (a *TableControl) Addable(value interface{}) *TableControl {
+    a.Set("addable", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *TableControl) Inputclassname(value interface{}) *TableControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 孩子新增按钮图标
+ */
+func (a *TableControl) Subaddbtnicon(value interface{}) *TableControl {
+    a.Set("subAddBtnIcon", value)
+    return a
+}
+
+/**
+ * 懒加载 API，当行数据中用 defer: true 标记了，则其孩子节点将会用这个 API 来拉取数据。
+ */
+func (a *TableControl) Deferapi(value interface{}) *TableControl {
+    a.Set("deferApi", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *TableControl) Staticlabelclassname(value interface{}) *TableControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *TableControl) Remark(value interface{}) *TableControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 是否显示复制按钮
+ */
+func (a *TableControl) Copyaddbtn(value interface{}) *TableControl {
+    a.Set("copyAddBtn", value)
+    return a
+}
+
+/**
+ * 是否为确认的编辑模式。
+ */
+func (a *TableControl) Needconfirm(value interface{}) *TableControl {
+    a.Set("needConfirm", value)
+    return a
+}
+
+/**
+ * 底部外层 CSS 类名
+ */
+func (a *TableControl) Footerclassname(value interface{}) *TableControl {
+    a.Set("footerClassName", value)
+    return a
+}
+
+/**
+ * 顶部外层 CSS 类名
+ */
+func (a *TableControl) Headerclassname(value interface{}) *TableControl {
+    a.Set("headerClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *TableControl) Initautofill(value interface{}) *TableControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ */
+func (a *TableControl) Desc(value interface{}) *TableControl {
+    a.Set("desc", value)
     return a
 }
 
@@ -78,10 +594,90 @@ func (a *TableControl) Copybtnlabel(value interface{}) *TableControl {
 }
 
 /**
- * 标题
+ * 是否开启底部展示功能，适合移动端展示
  */
-func (a *TableControl) Title(value interface{}) *TableControl {
-    a.Set("title", value)
+func (a *TableControl) Footable(value interface{}) *TableControl {
+    a.Set("footable", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *TableControl) Disabled(value interface{}) *TableControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *TableControl) Staticclassname(value interface{}) *TableControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *TableControl) Label(value interface{}) *TableControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *TableControl) Description(value interface{}) *TableControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 值字段
+ */
+func (a *TableControl) Valuefield(value interface{}) *TableControl {
+    a.Set("valueField", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *TableControl) Classname(value interface{}) *TableControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *TableControl) Static(value interface{}) *TableControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 复制按钮图标
+ */
+func (a *TableControl) Copybtnicon(value interface{}) *TableControl {
+    a.Set("copyBtnIcon", value)
+    return a
+}
+
+/**
+ * 是否显示底部
+ */
+func (a *TableControl) Showfooter(value interface{}) *TableControl {
+    a.Set("showFooter", value)
+    return a
+}
+
+/**
+ * 顶部总结行
+ */
+func (a *TableControl) Prefixrow(value interface{}) *TableControl {
+    a.Set("prefixRow", value)
     return a
 }
 
@@ -95,708 +691,10 @@ func (a *TableControl) Size(value interface{}) *TableControl {
 }
 
 /**
- * 是否为确认的编辑模式。
- */
-func (a *TableControl) Needconfirm(value interface{}) *TableControl {
-    a.Set("needConfirm", value)
-    return a
-}
-
-/**
- * 表格的列信息
- */
-func (a *TableControl) Columns(value interface{}) *TableControl {
-    a.Set("columns", value)
-    return a
-}
-
-/**
- * 底部工具栏CSS样式类
- */
-func (a *TableControl) Toolbarclassname(value interface{}) *TableControl {
-    a.Set("toolbarClassName", value)
-    return a
-}
-
-/**
- * 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单
- */
-func (a *TableControl) Autogeneratefilter(value interface{}) *TableControl {
-    a.Set("autoGenerateFilter", value)
-    return a
-}
-
-/**
- * 懒加载 API，当行数据中用 defer: true 标记了，则其孩子节点将会用这个 API 来拉取数据。
- */
-func (a *TableControl) Deferapi(value interface{}) *TableControl {
-    a.Set("deferApi", value)
-    return a
-}
-
-/**
- * 是否固底
- */
-func (a *TableControl) Affixfooter(value interface{}) *TableControl {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Testid(value interface{}) *TableControl {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *TableControl) Onevent(value interface{}) *TableControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *TableControl) Name(value interface{}) *TableControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *TableControl) Extraname(value interface{}) *TableControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *TableControl) Required(value interface{}) *TableControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 更新 API
- */
-func (a *TableControl) Updateapi(value interface{}) *TableControl {
-    a.Set("updateApi", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *TableControl) Staticplaceholder(value interface{}) *TableControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *TableControl) Labelclassname(value interface{}) *TableControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 更新按钮图标
- */
-func (a *TableControl) Editbtnicon(value interface{}) *TableControl {
-    a.Set("editBtnIcon", value)
-    return a
-}
-
-/**
- * 底部新增按钮配置
- */
-func (a *TableControl) Footeraddbtn(value interface{}) *TableControl {
-    a.Set("footerAddBtn", value)
-    return a
-}
-
-/**
- * 数据源：绑定当前环境变量
- */
-func (a *TableControl) Source(value interface{}) *TableControl {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *TableControl) Description(value interface{}) *TableControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 取消按钮文字
- */
-func (a *TableControl) Cancelbtnlabel(value interface{}) *TableControl {
-    a.Set("cancelBtnLabel", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *TableControl) Descriptionclassname(value interface{}) *TableControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 新增 API
- */
-func (a *TableControl) Addapi(value interface{}) *TableControl {
-    a.Set("addApi", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *TableControl) Placeholder(value interface{}) *TableControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Testidbuilder(value interface{}) *TableControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *TableControl) Inline(value interface{}) *TableControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否显示底部
- */
-func (a *TableControl) Showfooter(value interface{}) *TableControl {
-    a.Set("showFooter", value)
-    return a
-}
-
-/**
- * 删除确认文字
- */
-func (a *TableControl) Deleteconfirmtext(value interface{}) *TableControl {
-    a.Set("deleteConfirmText", value)
-    return a
-}
-
-/**
- * 顶部外层 CSS 类名
- */
-func (a *TableControl) Headerclassname(value interface{}) *TableControl {
-    a.Set("headerClassName", value)
-    return a
-}
-
-/**
- * 合并单元格配置，配置从第几列开始合并。
- */
-func (a *TableControl) Combinefromindex(value interface{}) *TableControl {
-    a.Set("combineFromIndex", value)
-    return a
-}
-
-/**
- * 顶部总结行
- */
-func (a *TableControl) Prefixrow(value interface{}) *TableControl {
-    a.Set("prefixRow", value)
-    return a
-}
-
-/**
- * 是否显示底部新增按钮
- */
-func (a *TableControl) Showfooteraddbtn(value interface{}) *TableControl {
-    a.Set("showFooterAddBtn", value)
-    return a
-}
-
-/**
- * 是否固定表头
- */
-func (a *TableControl) Affixheader(value interface{}) *TableControl {
-    a.Set("affixHeader", value)
-    return a
-}
-
-/**
- * 表格自动计算高度
- */
-func (a *TableControl) Autofillheight(value interface{}) *TableControl {
-    a.Set("autoFillHeight", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *TableControl) Id(value interface{}) *TableControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *TableControl) Remark(value interface{}) *TableControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 初始值，新增的时候
- */
-func (a *TableControl) Scaffold(value interface{}) *TableControl {
-    a.Set("scaffold", value)
-    return a
-}
-
-/**
- * 是否开启 static 状态切换
- */
-func (a *TableControl) Enablestatictransform(value interface{}) *TableControl {
-    a.Set("enableStaticTransform", value)
-    return a
-}
-
-/**
- * 可否删除
- */
-func (a *TableControl) Removable(value interface{}) *TableControl {
-    a.Set("removable", value)
-    return a
-}
-
-/**
- * 删除的 API
- */
-func (a *TableControl) Deleteapi(value interface{}) *TableControl {
-    a.Set("deleteApi", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *TableControl) Staticon(value interface{}) *TableControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *TableControl) Readonlyon(value interface{}) *TableControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *TableControl) Readonly(value interface{}) *TableControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 行样式表表达式
- */
-func (a *TableControl) Rowclassnameexpr(value interface{}) *TableControl {
-    a.Set("rowClassNameExpr", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *TableControl) Disabledon(value interface{}) *TableControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *TableControl) Labelalign(value interface{}) *TableControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
  * 是否可以新增子项
  */
 func (a *TableControl) Childrenaddable(value interface{}) *TableControl {
     a.Set("childrenAddable", value)
-    return a
-}
-
-/**
- * 是否显示表格操作栏新增按钮
- */
-func (a *TableControl) Showtableaddbtn(value interface{}) *TableControl {
-    a.Set("showTableAddBtn", value)
-    return a
-}
-
-/**
- * 复制按钮图标
- */
-func (a *TableControl) Copybtnicon(value interface{}) *TableControl {
-    a.Set("copyBtnIcon", value)
-    return a
-}
-
-/**
- * 是否可以拖拽排序
- */
-func (a *TableControl) Draggable(value interface{}) *TableControl {
-    a.Set("draggable", value)
-    return a
-}
-
-/**
- * 是否显示复制按钮
- */
-func (a *TableControl) Copyaddbtn(value interface{}) *TableControl {
-    a.Set("copyAddBtn", value)
-    return a
-}
-
-/**
- * 合并单元格配置，配置数字表示从左到右的多少列自动合并单元格。
- */
-func (a *TableControl) Combinenum(value interface{}) *TableControl {
-    a.Set("combineNum", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *TableControl) Classname(value interface{}) *TableControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *TableControl) Disabled(value interface{}) *TableControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Staticschema(value interface{}) *TableControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 可新增
- */
-func (a *TableControl) Addable(value interface{}) *TableControl {
-    a.Set("addable", value)
-    return a
-}
-
-/**
- * 复制的时候用来配置复制映射的数据。默认值是 {&:$$}，相当与复制整个行数据 通常有时候需要用来标记是复制过来的，也可能需要删掉一下主键字段。
- */
-func (a *TableControl) Copydata(value interface{}) *TableControl {
-    a.Set("copyData", value)
-    return a
-}
-
-/**
- * 底部外层 CSS 类名
- */
-func (a *TableControl) Footerclassname(value interface{}) *TableControl {
-    a.Set("footerClassName", value)
-    return a
-}
-
-/**
- * 是否可以访问父级数据，正常 combo 已经关联到数组成员，是不能访问父级数据的。
- */
-func (a *TableControl) Canaccesssuperdata(value interface{}) *TableControl {
-    a.Set("canAccessSuperData", value)
-    return a
-}
-
-/**
- * 可复制新增
- */
-func (a *TableControl) Copyable(value interface{}) *TableControl {
-    a.Set("copyable", value)
-    return a
-}
-
-/**
- * 确认按钮图标
- */
-func (a *TableControl) Confirmbtnicon(value interface{}) *TableControl {
-    a.Set("confirmBtnIcon", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *TableControl) Hiddenon(value interface{}) *TableControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Desc(value interface{}) *TableControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 孩子新增按钮文字
- */
-func (a *TableControl) Subaddbtnlabel(value interface{}) *TableControl {
-    a.Set("subAddBtnLabel", value)
-    return a
-}
-
-/**
- * 孩子新增按钮图标
- */
-func (a *TableControl) Subaddbtnicon(value interface{}) *TableControl {
-    a.Set("subAddBtnIcon", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *TableControl) Validationerrors(value interface{}) *TableControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 新增按钮图标
- */
-func (a *TableControl) Addbtnicon(value interface{}) *TableControl {
-    a.Set("addBtnIcon", value)
-    return a
-}
-
-/**
- * 确认按钮文字
- */
-func (a *TableControl) Confirmbtnlabel(value interface{}) *TableControl {
-    a.Set("confirmBtnLabel", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *TableControl) Visible(value interface{}) *TableControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *TableControl) Style(value interface{}) *TableControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *TableControl) Usemobileui(value interface{}) *TableControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *TableControl) Label(value interface{}) *TableControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *TableControl) Horizontal(value interface{}) *TableControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Validations(value interface{}) *TableControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *TableControl) Clearvalueonhidden(value interface{}) *TableControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Row(value interface{}) *TableControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 限制最小个数
- */
-func (a *TableControl) Minlength(value interface{}) *TableControl {
-    a.Set("minLength", value)
-    return a
-}
-
-/**
- * 底部总结行
- */
-func (a *TableControl) Affixrow(value interface{}) *TableControl {
-    a.Set("affixRow", value)
-    return a
-}
-
-/**
- * 是否可调整列宽
- */
-func (a *TableControl) Resizable(value interface{}) *TableControl {
-    a.Set("resizable", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *TableControl) Static(value interface{}) *TableControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *TableControl) Staticinputclassname(value interface{}) *TableControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *TableControl) Labelremark(value interface{}) *TableControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *TableControl) Validateonchange(value interface{}) *TableControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *TableControl) Value(value interface{}) *TableControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 新增按钮文字
- */
-func (a *TableControl) Addbtnlabel(value interface{}) *TableControl {
-    a.Set("addBtnLabel", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *TableControl) Labelwidth(value interface{}) *TableControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 可否编辑
- */
-func (a *TableControl) Editable(value interface{}) *TableControl {
-    a.Set("editable", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *TableControl) Staticlabelclassname(value interface{}) *TableControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *TableControl) Hint(value interface{}) *TableControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *TableControl) Inputclassname(value interface{}) *TableControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *TableControl) Validateapi(value interface{}) *TableControl {
-    a.Set("validateApi", value)
     return a
 }
 
@@ -809,42 +707,89 @@ func (a *TableControl) Deletebtnlabel(value interface{}) *TableControl {
 }
 
 /**
- * 在Table中调整宽度
+ * 限制最小个数
  */
-func (a *TableControl) Width(value interface{}) *TableControl {
-    a.Set("width", value)
+func (a *TableControl) Minlength(value interface{}) *TableControl {
+    a.Set("minLength", value)
     return a
 }
 
 /**
- * 展示列显示开关，自动即：列数量大于或等于5个时自动开启
+ * 合并单元格配置，配置从第几列开始合并。
  */
-func (a *TableControl) Columnstogglable(value interface{}) *TableControl {
-    a.Set("columnsTogglable", value)
+func (a *TableControl) Combinefromindex(value interface{}) *TableControl {
+    a.Set("combineFromIndex", value)
     return a
 }
 
 /**
- * 当修改完的时候是否提交表单。
+ * 组件样式
  */
-func (a *TableControl) Submitonchange(value interface{}) *TableControl {
-    a.Set("submitOnChange", value)
+func (a *TableControl) Style(value interface{}) *TableControl {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 是否显示序号
+ * 孩子新增按钮文字
  */
-func (a *TableControl) Showindex(value interface{}) *TableControl {
-    a.Set("showIndex", value)
+func (a *TableControl) Subaddbtnlabel(value interface{}) *TableControl {
+    a.Set("subAddBtnLabel", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 行角标
  */
-func (a *TableControl) Hidden(value interface{}) *TableControl {
-    a.Set("hidden", value)
+func (a *TableControl) Itembadge(value interface{}) *TableControl {
+    a.Set("itemBadge", value)
+    return a
+}
+
+/**
+ */
+func (a *TableControl) Testidbuilder(value interface{}) *TableControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 是否可以拖拽排序
+ */
+func (a *TableControl) Draggable(value interface{}) *TableControl {
+    a.Set("draggable", value)
+    return a
+}
+
+/**
+ * 删除的 API
+ */
+func (a *TableControl) Deleteapi(value interface{}) *TableControl {
+    a.Set("deleteApi", value)
+    return a
+}
+
+/**
+ * 取消按钮图标
+ */
+func (a *TableControl) Cancelbtnicon(value interface{}) *TableControl {
+    a.Set("cancelBtnIcon", value)
+    return a
+}
+
+/**
+ * 是否固定表头
+ */
+func (a *TableControl) Affixheader(value interface{}) *TableControl {
+    a.Set("affixHeader", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *TableControl) Placeholder(value interface{}) *TableControl {
+    a.Set("placeholder", value)
     return a
 }
 
@@ -858,81 +803,34 @@ func (a *TableControl) Mode(value interface{}) *TableControl {
 }
 
 /**
- * 行角标
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
  */
-func (a *TableControl) Itembadge(value interface{}) *TableControl {
-    a.Set("itemBadge", value)
+func (a *TableControl) Horizontal(value interface{}) *TableControl {
+    a.Set("horizontal", value)
     return a
 }
 
 /**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ * 是否可以访问父级数据，正常 combo 已经关联到数组成员，是不能访问父级数据的。
  */
-func (a *TableControl) Autofill(value interface{}) *TableControl {
-    a.Set("autoFill", value)
+func (a *TableControl) Canaccesssuperdata(value interface{}) *TableControl {
+    a.Set("canAccessSuperData", value)
     return a
 }
 
 /**
- * 值字段
+ * 事件动作配置
  */
-func (a *TableControl) Valuefield(value interface{}) *TableControl {
-    a.Set("valueField", value)
+func (a *TableControl) Onevent(value interface{}) *TableControl {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 静态展示表单项类名
+ * 可复制新增
  */
-func (a *TableControl) Staticclassname(value interface{}) *TableControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *TableControl) Type(value interface{}) *TableControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 更新按钮名称
- */
-func (a *TableControl) Editbtnlabel(value interface{}) *TableControl {
-    a.Set("editBtnLabel", value)
-    return a
-}
-
-/**
- * 分页个数，默认不分页
- */
-func (a *TableControl) Perpage(value interface{}) *TableControl {
-    a.Set("perPage", value)
-    return a
-}
-
-/**
- * 限制最大个数
- */
-func (a *TableControl) Maxlength(value interface{}) *TableControl {
-    a.Set("maxLength", value)
-    return a
-}
-
-/**
- * 取消按钮图标
- */
-func (a *TableControl) Cancelbtnicon(value interface{}) *TableControl {
-    a.Set("cancelBtnIcon", value)
-    return a
-}
-
-/**
- * 表格 CSS 类名
- */
-func (a *TableControl) Tableclassname(value interface{}) *TableControl {
-    a.Set("tableClassName", value)
+func (a *TableControl) Copyable(value interface{}) *TableControl {
+    a.Set("copyable", value)
     return a
 }
 
@@ -945,9 +843,111 @@ func (a *TableControl) Editorsetting(value interface{}) *TableControl {
 }
 
 /**
+ * label自定义宽度，默认单位为px
+ */
+func (a *TableControl) Labelwidth(value interface{}) *TableControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 可否删除
+ */
+func (a *TableControl) Removable(value interface{}) *TableControl {
+    a.Set("removable", value)
+    return a
+}
+
+/**
+ * 更新按钮图标
+ */
+func (a *TableControl) Editbtnicon(value interface{}) *TableControl {
+    a.Set("editBtnIcon", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *TableControl) Labelclassname(value interface{}) *TableControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 数据源：绑定当前环境变量
+ */
+func (a *TableControl) Source(value interface{}) *TableControl {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 合并单元格配置，配置数字表示从左到右的多少列自动合并单元格。
+ */
+func (a *TableControl) Combinenum(value interface{}) *TableControl {
+    a.Set("combineNum", value)
+    return a
+}
+
+/**
+ * 底部工具栏CSS样式类
+ */
+func (a *TableControl) Toolbarclassname(value interface{}) *TableControl {
+    a.Set("toolbarClassName", value)
+    return a
+}
+
+/**
  * 删除按钮图标
  */
 func (a *TableControl) Deletebtnicon(value interface{}) *TableControl {
     a.Set("deleteBtnIcon", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *TableControl) Inline(value interface{}) *TableControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ */
+func (a *TableControl) Row(value interface{}) *TableControl {
+    a.Set("row", value)
+    return a
+}
+
+/**
+ * 表格的列信息
+ */
+func (a *TableControl) Columns(value interface{}) *TableControl {
+    a.Set("columns", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *TableControl) Usemobileui(value interface{}) *TableControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 行样式表表达式
+ */
+func (a *TableControl) Rowclassnameexpr(value interface{}) *TableControl {
+    a.Set("rowClassNameExpr", value)
+    return a
+}
+
+/**
+ */
+func (a *TableControl) Type(value interface{}) *TableControl {
+    a.Set("type", value)
     return a
 }

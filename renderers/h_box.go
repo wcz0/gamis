@@ -16,6 +16,11 @@ func NewHBox() *HBox {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "hbox")
+    return a
+}
+
+
 func (a *HBox) Set(name string, value interface{}) *HBox {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,24 +30,58 @@ func (a *HBox) Set(name string, value interface{}) *HBox {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "hbox")
+/**
+ * 是否隐藏表达式
+ */
+func (a *HBox) Hiddenon(value interface{}) *HBox {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 静态展示表单项类名
  */
-func (a *HBox) Id(value interface{}) *HBox {
-    a.Set("id", value)
+func (a *HBox) Staticclassname(value interface{}) *HBox {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *HBox) Staticlabelclassname(value interface{}) *HBox {
-    a.Set("staticLabelClassName", value)
+func (a *HBox) Usemobileui(value interface{}) *HBox {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ */
+func (a *HBox) Columns(value interface{}) *HBox {
+    a.Set("columns", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *HBox) Visibleon(value interface{}) *HBox {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *HBox) Disabledon(value interface{}) *HBox {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *HBox) Onevent(value interface{}) *HBox {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -63,23 +102,6 @@ func (a *HBox) Subformmode(value interface{}) *HBox {
 }
 
 /**
- * 水平对齐方式
- * 可选值: left | right | between | center
- */
-func (a *HBox) Align(value interface{}) *HBox {
-    a.Set("align", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *HBox) Disabled(value interface{}) *HBox {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
  * 容器 css 类名
  */
 func (a *HBox) Classname(value interface{}) *HBox {
@@ -88,18 +110,43 @@ func (a *HBox) Classname(value interface{}) *HBox {
 }
 
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ * 静态展示表单项Label类名
  */
-func (a *HBox) Subformhorizontal(value interface{}) *HBox {
-    a.Set("subFormHorizontal", value)
+func (a *HBox) Staticlabelclassname(value interface{}) *HBox {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 组件样式
  */
-func (a *HBox) Onevent(value interface{}) *HBox {
-    a.Set("onEvent", value)
+func (a *HBox) Style(value interface{}) *HBox {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 垂直对齐方式
+ * 可选值: top | middle | bottom | between
+ */
+func (a *HBox) Valign(value interface{}) *HBox {
+    a.Set("valign", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *HBox) Visible(value interface{}) *HBox {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *HBox) Staticon(value interface{}) *HBox {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -112,41 +159,59 @@ func (a *HBox) Staticinputclassname(value interface{}) *HBox {
 }
 
 /**
+ * 编辑器配置，运行时可以忽略
  */
-func (a *HBox) Testidbuilder(value interface{}) *HBox {
-    a.Set("testIdBuilder", value)
+func (a *HBox) Editorsetting(value interface{}) *HBox {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 水平间距
+ * 可选值: xs | sm | base | none | md | lg
  */
-func (a *HBox) Hiddenon(value interface{}) *HBox {
-    a.Set("hiddenOn", value)
+func (a *HBox) Gap(value interface{}) *HBox {
+    a.Set("gap", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否隐藏
  */
-func (a *HBox) Static(value interface{}) *HBox {
-    a.Set("static", value)
+func (a *HBox) Hidden(value interface{}) *HBox {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 指定为each展示类型
  */
-func (a *HBox) Usemobileui(value interface{}) *HBox {
-    a.Set("useMobileUI", value)
+func (a *HBox) Type(value interface{}) *HBox {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否显示
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *HBox) Visible(value interface{}) *HBox {
-    a.Set("visible", value)
+func (a *HBox) Id(value interface{}) *HBox {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ */
+func (a *HBox) Subformhorizontal(value interface{}) *HBox {
+    a.Set("subFormHorizontal", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *HBox) Disabled(value interface{}) *HBox {
+    a.Set("disabled", value)
     return a
 }
 
@@ -166,90 +231,25 @@ func (a *HBox) Staticschema(value interface{}) *HBox {
 }
 
 /**
- * 组件样式
  */
-func (a *HBox) Style(value interface{}) *HBox {
-    a.Set("style", value)
+func (a *HBox) Testidbuilder(value interface{}) *HBox {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
+ * 水平对齐方式
+ * 可选值: left | right | between | center
  */
-func (a *HBox) Columns(value interface{}) *HBox {
-    a.Set("columns", value)
+func (a *HBox) Align(value interface{}) *HBox {
+    a.Set("align", value)
     return a
 }
 
 /**
- * 水平间距
- * 可选值: xs | sm | base | none | md | lg
+ * 是否静态展示
  */
-func (a *HBox) Gap(value interface{}) *HBox {
-    a.Set("gap", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *HBox) Disabledon(value interface{}) *HBox {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *HBox) Hidden(value interface{}) *HBox {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 垂直对齐方式
- * 可选值: top | middle | bottom | between
- */
-func (a *HBox) Valign(value interface{}) *HBox {
-    a.Set("valign", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *HBox) Visibleon(value interface{}) *HBox {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *HBox) Editorsetting(value interface{}) *HBox {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 指定为each展示类型
- */
-func (a *HBox) Type(value interface{}) *HBox {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *HBox) Staticon(value interface{}) *HBox {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *HBox) Staticclassname(value interface{}) *HBox {
-    a.Set("staticClassName", value)
+func (a *HBox) Static(value interface{}) *HBox {
+    a.Set("static", value)
     return a
 }

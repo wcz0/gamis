@@ -16,6 +16,10 @@ func NewBadge() *Badge {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *Badge) Set(name string, value interface{}) *Badge {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,22 +29,37 @@ func (a *Badge) Set(name string, value interface{}) *Badge {
     a.AmisSchema[name] = value
     return a
 }
-
+/**
+ * 角标位置，相对于position的位置进行偏移
+ */
+func (a *Badge) Offset(value interface{}) *Badge {
+    a.Set("offset", value)
     return a
 }
 
 /**
+ * 角标位置
+ * 可选值: top-right | top-left | bottom-right | bottom-left
  */
-func (a *Badge) Classname(value interface{}) *Badge {
-    a.Set("className", value)
+func (a *Badge) Position(value interface{}) *Badge {
+    a.Set("position", value)
     return a
 }
 
 /**
- * 大小
+ * 文本内容
  */
-func (a *Badge) Size(value interface{}) *Badge {
-    a.Set("size", value)
+func (a *Badge) Text(value interface{}) *Badge {
+    a.Set("text", value)
+    return a
+}
+
+/**
+ * 角标类型
+ * 可选值: text | dot | ribbon
+ */
+func (a *Badge) Mode(value interface{}) *Badge {
+    a.Set("mode", value)
     return a
 }
 
@@ -49,6 +68,14 @@ func (a *Badge) Size(value interface{}) *Badge {
  */
 func (a *Badge) Overflowcount(value interface{}) *Badge {
     a.Set("overflowCount", value)
+    return a
+}
+
+/**
+ * 动态控制是否显示
+ */
+func (a *Badge) Visibleon(value interface{}) *Badge {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -77,43 +104,16 @@ func (a *Badge) Level(value interface{}) *Badge {
 }
 
 /**
- * 文本内容
  */
-func (a *Badge) Text(value interface{}) *Badge {
-    a.Set("text", value)
+func (a *Badge) Classname(value interface{}) *Badge {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 角标类型
- * 可选值: text | dot | ribbon
+ * 大小
  */
-func (a *Badge) Mode(value interface{}) *Badge {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 角标位置，相对于position的位置进行偏移
- */
-func (a *Badge) Offset(value interface{}) *Badge {
-    a.Set("offset", value)
-    return a
-}
-
-/**
- * 角标位置
- * 可选值: top-right | top-left | bottom-right | bottom-left
- */
-func (a *Badge) Position(value interface{}) *Badge {
-    a.Set("position", value)
-    return a
-}
-
-/**
- * 动态控制是否显示
- */
-func (a *Badge) Visibleon(value interface{}) *Badge {
-    a.Set("visibleOn", value)
+func (a *Badge) Size(value interface{}) *Badge {
+    a.Set("size", value)
     return a
 }

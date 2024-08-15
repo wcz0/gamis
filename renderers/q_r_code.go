@@ -16,6 +16,11 @@ func NewQRCode() *QRCode {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "qrcode")
+    return a
+}
+
+
 func (a *QRCode) Set(name string, value interface{}) *QRCode {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,16 +30,26 @@ func (a *QRCode) Set(name string, value interface{}) *QRCode {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "qrcode")
-    return a
-}
-
 /**
  * 编辑器配置，运行时可以忽略
  */
 func (a *QRCode) Editorsetting(value interface{}) *QRCode {
     a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *QRCode) Staticinputclassname(value interface{}) *QRCode {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *QRCode) Staticschema(value interface{}) *QRCode {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -47,42 +62,58 @@ func (a *QRCode) Type(value interface{}) *QRCode {
 }
 
 /**
- * 前景色
+ * 是否禁用
  */
-func (a *QRCode) Foregroundcolor(value interface{}) *QRCode {
-    a.Set("foregroundColor", value)
+func (a *QRCode) Disabled(value interface{}) *QRCode {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 图片配置
+ * 是否禁用表达式
  */
-func (a *QRCode) Imagesettings(value interface{}) *QRCode {
-    a.Set("imageSettings", value)
+func (a *QRCode) Disabledon(value interface{}) *QRCode {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * css 类名
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *QRCode) Qrcodeclassname(value interface{}) *QRCode {
-    a.Set("qrcodeClassName", value)
+func (a *QRCode) Id(value interface{}) *QRCode {
+    a.Set("id", value)
     return a
 }
 
 /**
- * 背景色
+ * 是否静态展示表达式
  */
-func (a *QRCode) Backgroundcolor(value interface{}) *QRCode {
-    a.Set("backgroundColor", value)
+func (a *QRCode) Staticon(value interface{}) *QRCode {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 组件样式
  */
-func (a *QRCode) Visibleon(value interface{}) *QRCode {
-    a.Set("visibleOn", value)
+func (a *QRCode) Style(value interface{}) *QRCode {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *QRCode) Usemobileui(value interface{}) *QRCode {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *QRCode) Hidden(value interface{}) *QRCode {
+    a.Set("hidden", value)
     return a
 }
 
@@ -95,10 +126,98 @@ func (a *QRCode) Staticplaceholder(value interface{}) *QRCode {
 }
 
 /**
- * 静态展示表单项类名
+ * 二维码的宽高大小，默认 128
  */
-func (a *QRCode) Staticclassname(value interface{}) *QRCode {
-    a.Set("staticClassName", value)
+func (a *QRCode) Codesize(value interface{}) *QRCode {
+    a.Set("codeSize", value)
+    return a
+}
+
+/**
+ * 前景色
+ */
+func (a *QRCode) Foregroundcolor(value interface{}) *QRCode {
+    a.Set("foregroundColor", value)
+    return a
+}
+
+/**
+ */
+func (a *QRCode) Testid(value interface{}) *QRCode {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 关联字段名。
+ */
+func (a *QRCode) Name(value interface{}) *QRCode {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 背景色
+ */
+func (a *QRCode) Backgroundcolor(value interface{}) *QRCode {
+    a.Set("backgroundColor", value)
+    return a
+}
+
+/**
+ * 渲染模式
+ * 可选值: canvas | svg
+ */
+func (a *QRCode) Mode(value interface{}) *QRCode {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *QRCode) Classname(value interface{}) *QRCode {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *QRCode) Visible(value interface{}) *QRCode {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *QRCode) Static(value interface{}) *QRCode {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 图片配置
+ */
+func (a *QRCode) Imagesettings(value interface{}) *QRCode {
+    a.Set("imageSettings", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *QRCode) Visibleon(value interface{}) *QRCode {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *QRCode) Onevent(value interface{}) *QRCode {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -120,41 +239,10 @@ func (a *QRCode) Level(value interface{}) *QRCode {
 }
 
 /**
- * 是否隐藏
+ * css 类名
  */
-func (a *QRCode) Hidden(value interface{}) *QRCode {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *QRCode) Hiddenon(value interface{}) *QRCode {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *QRCode) Staticon(value interface{}) *QRCode {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *QRCode) Testid(value interface{}) *QRCode {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 二维码的宽高大小，默认 128
- */
-func (a *QRCode) Codesize(value interface{}) *QRCode {
-    a.Set("codeSize", value)
+func (a *QRCode) Qrcodeclassname(value interface{}) *QRCode {
+    a.Set("qrcodeClassName", value)
     return a
 }
 
@@ -167,98 +255,18 @@ func (a *QRCode) Placeholder(value interface{}) *QRCode {
 }
 
 /**
- * 渲染模式
- * 可选值: canvas | svg
+ * 是否隐藏表达式
  */
-func (a *QRCode) Mode(value interface{}) *QRCode {
-    a.Set("mode", value)
+func (a *QRCode) Hiddenon(value interface{}) *QRCode {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 静态展示表单项类名
  */
-func (a *QRCode) Onevent(value interface{}) *QRCode {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *QRCode) Usemobileui(value interface{}) *QRCode {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *QRCode) Disabledon(value interface{}) *QRCode {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *QRCode) Style(value interface{}) *QRCode {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *QRCode) Static(value interface{}) *QRCode {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *QRCode) Staticinputclassname(value interface{}) *QRCode {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *QRCode) Staticschema(value interface{}) *QRCode {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *QRCode) Classname(value interface{}) *QRCode {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *QRCode) Disabled(value interface{}) *QRCode {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *QRCode) Visible(value interface{}) *QRCode {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *QRCode) Id(value interface{}) *QRCode {
-    a.Set("id", value)
+func (a *QRCode) Staticclassname(value interface{}) *QRCode {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -266,13 +274,5 @@ func (a *QRCode) Id(value interface{}) *QRCode {
  */
 func (a *QRCode) Testidbuilder(value interface{}) *QRCode {
     a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 关联字段名。
- */
-func (a *QRCode) Name(value interface{}) *QRCode {
-    a.Set("name", value)
     return a
 }

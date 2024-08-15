@@ -15,6 +15,11 @@ func NewTooltipWrapper() *TooltipWrapper {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "tooltip-wrapper")
+    return a
+}
+
+
 func (a *TooltipWrapper) Set(name string, value interface{}) *TooltipWrapper {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,209 +29,6 @@ func (a *TooltipWrapper) Set(name string, value interface{}) *TooltipWrapper {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "tooltip-wrapper")
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *TooltipWrapper) Staticon(value interface{}) *TooltipWrapper {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *TooltipWrapper) Staticinputclassname(value interface{}) *TooltipWrapper {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 浮层位置相对偏移量
- */
-func (a *TooltipWrapper) Offset(value interface{}) *TooltipWrapper {
-    a.Set("offset", value)
-    return a
-}
-
-/**
- * 浮层延迟显示时间, 单位 ms
- */
-func (a *TooltipWrapper) Mouseenterdelay(value interface{}) *TooltipWrapper {
-    a.Set("mouseEnterDelay", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *TooltipWrapper) Static(value interface{}) *TooltipWrapper {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *TooltipWrapper) Staticclassname(value interface{}) *TooltipWrapper {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *TooltipWrapper) Editorsetting(value interface{}) *TooltipWrapper {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *TooltipWrapper) Testid(value interface{}) *TooltipWrapper {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- */
-func (a *TooltipWrapper) Tooltip(value interface{}) *TooltipWrapper {
-    a.Set("tooltip", value)
-    return a
-}
-
-/**
- * 是否点击非内容区域关闭提示，默认为true
- */
-func (a *TooltipWrapper) Rootclose(value interface{}) *TooltipWrapper {
-    a.Set("rootClose", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *TooltipWrapper) Hiddenon(value interface{}) *TooltipWrapper {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *TooltipWrapper) Id(value interface{}) *TooltipWrapper {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 内容区是否内联显示，默认为false
- */
-func (a *TooltipWrapper) Inline(value interface{}) *TooltipWrapper {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否禁用提示
- */
-func (a *TooltipWrapper) Disabled(value interface{}) *TooltipWrapper {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- */
-func (a *TooltipWrapper) Staticschema(value interface{}) *TooltipWrapper {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 文字提示浮层出现位置，默认为top
- * 可选值: top | right | bottom | left
- */
-func (a *TooltipWrapper) Placement(value interface{}) *TooltipWrapper {
-    a.Set("placement", value)
-    return a
-}
-
-/**
- * 是否可以移入浮层中, 默认true
- */
-func (a *TooltipWrapper) Enterable(value interface{}) *TooltipWrapper {
-    a.Set("enterable", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *TooltipWrapper) Disabledon(value interface{}) *TooltipWrapper {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *TooltipWrapper) Visible(value interface{}) *TooltipWrapper {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 浮层延迟隐藏时间, 单位 ms
- */
-func (a *TooltipWrapper) Mouseleavedelay(value interface{}) *TooltipWrapper {
-    a.Set("mouseLeaveDelay", value)
-    return a
-}
-
-/**
- * 内容区域
- */
-func (a *TooltipWrapper) Body(value interface{}) *TooltipWrapper {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 文字提示内容，兼容 tooltip，但建议通过 content 来实现提示内容
- */
-func (a *TooltipWrapper) Content(value interface{}) *TooltipWrapper {
-    a.Set("content", value)
-    return a
-}
-
-/**
- * 是否展示浮层指向箭头
- */
-func (a *TooltipWrapper) Showarrow(value interface{}) *TooltipWrapper {
-    a.Set("showArrow", value)
-    return a
-}
-
-/**
- * 文字提示容器
- */
-func (a *TooltipWrapper) Type(value interface{}) *TooltipWrapper {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 文字提示标题
- */
-func (a *TooltipWrapper) Title(value interface{}) *TooltipWrapper {
-    a.Set("title", value)
-    return a
-}
-
 /**
  * 主题样式， 默认为light
  * 可选值: light | dark
@@ -237,25 +39,10 @@ func (a *TooltipWrapper) Tooltiptheme(value interface{}) *TooltipWrapper {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 文字提示浮层CSS类名
  */
-func (a *TooltipWrapper) Usemobileui(value interface{}) *TooltipWrapper {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *TooltipWrapper) Testidbuilder(value interface{}) *TooltipWrapper {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *TooltipWrapper) Visibleon(value interface{}) *TooltipWrapper {
-    a.Set("visibleOn", value)
+func (a *TooltipWrapper) Tooltipclassname(value interface{}) *TooltipWrapper {
+    a.Set("tooltipClassName", value)
     return a
 }
 
@@ -268,26 +55,42 @@ func (a *TooltipWrapper) Onevent(value interface{}) *TooltipWrapper {
 }
 
 /**
- * 静态展示空值占位
+ * 是否静态展示
  */
-func (a *TooltipWrapper) Staticplaceholder(value interface{}) *TooltipWrapper {
-    a.Set("staticPlaceholder", value)
+func (a *TooltipWrapper) Static(value interface{}) *TooltipWrapper {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *TooltipWrapper) Staticlabelclassname(value interface{}) *TooltipWrapper {
-    a.Set("staticLabelClassName", value)
+func (a *TooltipWrapper) Usemobileui(value interface{}) *TooltipWrapper {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 内容区自定义样式
+ * 浮层位置相对偏移量
  */
-func (a *TooltipWrapper) Style(value interface{}) *TooltipWrapper {
-    a.Set("style", value)
+func (a *TooltipWrapper) Offset(value interface{}) *TooltipWrapper {
+    a.Set("offset", value)
+    return a
+}
+
+/**
+ * 浮层延迟隐藏时间, 单位 ms
+ */
+func (a *TooltipWrapper) Mouseleavedelay(value interface{}) *TooltipWrapper {
+    a.Set("mouseLeaveDelay", value)
+    return a
+}
+
+/**
+ * 文字提示标题
+ */
+func (a *TooltipWrapper) Title(value interface{}) *TooltipWrapper {
+    a.Set("title", value)
     return a
 }
 
@@ -308,18 +111,89 @@ func (a *TooltipWrapper) Classname(value interface{}) *TooltipWrapper {
 }
 
 /**
- * 是否隐藏
+ * 是否静态展示表达式
  */
-func (a *TooltipWrapper) Hidden(value interface{}) *TooltipWrapper {
-    a.Set("hidden", value)
+func (a *TooltipWrapper) Staticon(value interface{}) *TooltipWrapper {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 文字提示浮层CSS类名
+ * 静态展示空值占位
  */
-func (a *TooltipWrapper) Tooltipclassname(value interface{}) *TooltipWrapper {
-    a.Set("tooltipClassName", value)
+func (a *TooltipWrapper) Staticplaceholder(value interface{}) *TooltipWrapper {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *TooltipWrapper) Editorsetting(value interface{}) *TooltipWrapper {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *TooltipWrapper) Id(value interface{}) *TooltipWrapper {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ */
+func (a *TooltipWrapper) Staticschema(value interface{}) *TooltipWrapper {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否展示浮层指向箭头
+ */
+func (a *TooltipWrapper) Showarrow(value interface{}) *TooltipWrapper {
+    a.Set("showArrow", value)
+    return a
+}
+
+/**
+ * 是否可以移入浮层中, 默认true
+ */
+func (a *TooltipWrapper) Enterable(value interface{}) *TooltipWrapper {
+    a.Set("enterable", value)
+    return a
+}
+
+/**
+ * 是否禁用提示
+ */
+func (a *TooltipWrapper) Disabled(value interface{}) *TooltipWrapper {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *TooltipWrapper) Visible(value interface{}) *TooltipWrapper {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 内容区自定义样式
+ */
+func (a *TooltipWrapper) Style(value interface{}) *TooltipWrapper {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 浮层延迟显示时间, 单位 ms
+ */
+func (a *TooltipWrapper) Mouseenterdelay(value interface{}) *TooltipWrapper {
+    a.Set("mouseEnterDelay", value)
     return a
 }
 
@@ -332,9 +206,135 @@ func (a *TooltipWrapper) Wrappercomponent(value interface{}) *TooltipWrapper {
 }
 
 /**
+ * 是否隐藏
+ */
+func (a *TooltipWrapper) Hidden(value interface{}) *TooltipWrapper {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *TooltipWrapper) Visibleon(value interface{}) *TooltipWrapper {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 文字提示容器
+ */
+func (a *TooltipWrapper) Type(value interface{}) *TooltipWrapper {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 内容区是否内联显示，默认为false
+ */
+func (a *TooltipWrapper) Inline(value interface{}) *TooltipWrapper {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *TooltipWrapper) Disabledon(value interface{}) *TooltipWrapper {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *TooltipWrapper) Hiddenon(value interface{}) *TooltipWrapper {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *TooltipWrapper) Staticclassname(value interface{}) *TooltipWrapper {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *TooltipWrapper) Staticinputclassname(value interface{}) *TooltipWrapper {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *TooltipWrapper) Testidbuilder(value interface{}) *TooltipWrapper {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *TooltipWrapper) Staticlabelclassname(value interface{}) *TooltipWrapper {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 文字提示内容，兼容 tooltip，但建议通过 content 来实现提示内容
+ */
+func (a *TooltipWrapper) Content(value interface{}) *TooltipWrapper {
+    a.Set("content", value)
+    return a
+}
+
+/**
+ */
+func (a *TooltipWrapper) Tooltip(value interface{}) *TooltipWrapper {
+    a.Set("tooltip", value)
+    return a
+}
+
+/**
+ * 文字提示浮层出现位置，默认为top
+ * 可选值: top | right | bottom | left
+ */
+func (a *TooltipWrapper) Placement(value interface{}) *TooltipWrapper {
+    a.Set("placement", value)
+    return a
+}
+
+/**
  * 自定义提示浮层样式
  */
 func (a *TooltipWrapper) Tooltipstyle(value interface{}) *TooltipWrapper {
     a.Set("tooltipStyle", value)
+    return a
+}
+
+/**
+ */
+func (a *TooltipWrapper) Testid(value interface{}) *TooltipWrapper {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否点击非内容区域关闭提示，默认为true
+ */
+func (a *TooltipWrapper) Rootclose(value interface{}) *TooltipWrapper {
+    a.Set("rootClose", value)
+    return a
+}
+
+/**
+ * 内容区域
+ */
+func (a *TooltipWrapper) Body(value interface{}) *TooltipWrapper {
+    a.Set("body", value)
     return a
 }

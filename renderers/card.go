@@ -16,6 +16,11 @@ func NewCard() *Card {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "card")
+    return a
+}
+
+
 func (a *Card) Set(name string, value interface{}) *Card {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,63 +30,27 @@ func (a *Card) Set(name string, value interface{}) *Card {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "card")
+/**
+ * 头部配置
+ */
+func (a *Card) Header(value interface{}) *Card {
+    a.Set("header", value)
     return a
 }
 
 /**
+ * 内容区域
  */
-func (a *Card) Testid(value interface{}) *Card {
-    a.Set("testid", value)
+func (a *Card) Body(value interface{}) *Card {
+    a.Set("body", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 是否隐藏
  */
-func (a *Card) Disabledon(value interface{}) *Card {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Card) Staticplaceholder(value interface{}) *Card {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Card) Staticinputclassname(value interface{}) *Card {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Card) Style(value interface{}) *Card {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Card) Usemobileui(value interface{}) *Card {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 指定为 card 类型
- */
-func (a *Card) Type(value interface{}) *Card {
-    a.Set("type", value)
+func (a *Card) Hidden(value interface{}) *Card {
+    a.Set("hidden", value)
     return a
 }
 
@@ -94,26 +63,74 @@ func (a *Card) Hiddenon(value interface{}) *Card {
 }
 
 /**
- * 是否显示
+ * 是否静态展示表达式
  */
-func (a *Card) Visible(value interface{}) *Card {
-    a.Set("visible", value)
+func (a *Card) Staticon(value interface{}) *Card {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 次要说明
+ * 静态展示表单项Value类名
  */
-func (a *Card) Secondary(value interface{}) *Card {
-    a.Set("secondary", value)
+func (a *Card) Staticinputclassname(value interface{}) *Card {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 指定为 card 类型
  */
-func (a *Card) Hidden(value interface{}) *Card {
-    a.Set("hidden", value)
+func (a *Card) Type(value interface{}) *Card {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 卡片内容区的表单项label是否使用Card内部的样式，默认为true
+ */
+func (a *Card) Usecardlabel(value interface{}) *Card {
+    a.Set("useCardLabel", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Card) Classname(value interface{}) *Card {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Card) Id(value interface{}) *Card {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Card) Staticplaceholder(value interface{}) *Card {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Card) Style(value interface{}) *Card {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Card) Onevent(value interface{}) *Card {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -133,82 +150,18 @@ func (a *Card) Staticschema(value interface{}) *Card {
 }
 
 /**
- * 内容区域
- */
-func (a *Card) Body(value interface{}) *Card {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 工具栏按钮
- */
-func (a *Card) Toolbar(value interface{}) *Card {
-    a.Set("toolbar", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Card) Classname(value interface{}) *Card {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Card) Onevent(value interface{}) *Card {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Card) Editorsetting(value interface{}) *Card {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 卡片内容区的表单项label是否使用Card内部的样式，默认为true
- */
-func (a *Card) Usecardlabel(value interface{}) *Card {
-    a.Set("useCardLabel", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Card) Visibleon(value interface{}) *Card {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Card) Id(value interface{}) *Card {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Card) Staticon(value interface{}) *Card {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
  * 是否禁用
  */
 func (a *Card) Disabled(value interface{}) *Card {
     a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Card) Usemobileui(value interface{}) *Card {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -221,10 +174,10 @@ func (a *Card) Staticclassname(value interface{}) *Card {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Card) Staticlabelclassname(value interface{}) *Card {
-    a.Set("staticLabelClassName", value)
+func (a *Card) Editorsetting(value interface{}) *Card {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -236,10 +189,10 @@ func (a *Card) Testidbuilder(value interface{}) *Card {
 }
 
 /**
- * 头部配置
+ * 工具栏按钮
  */
-func (a *Card) Header(value interface{}) *Card {
-    a.Set("header", value)
+func (a *Card) Toolbar(value interface{}) *Card {
+    a.Set("toolbar", value)
     return a
 }
 
@@ -256,5 +209,52 @@ func (a *Card) Media(value interface{}) *Card {
  */
 func (a *Card) Actions(value interface{}) *Card {
     a.Set("actions", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Card) Visibleon(value interface{}) *Card {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ */
+func (a *Card) Testid(value interface{}) *Card {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Card) Staticlabelclassname(value interface{}) *Card {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 次要说明
+ */
+func (a *Card) Secondary(value interface{}) *Card {
+    a.Set("secondary", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Card) Disabledon(value interface{}) *Card {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Card) Visible(value interface{}) *Card {
+    a.Set("visible", value)
     return a
 }

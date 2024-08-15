@@ -16,6 +16,11 @@ func NewVBox() *VBox {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "vbox")
+    return a
+}
+
+
 func (a *VBox) Set(name string, value interface{}) *VBox {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,11 +30,6 @@ func (a *VBox) Set(name string, value interface{}) *VBox {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "vbox")
-    return a
-}
-
 /**
  * 是否隐藏表达式
  */
@@ -39,17 +39,65 @@ func (a *VBox) Hiddenon(value interface{}) *VBox {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否显示表达式
  */
-func (a *VBox) Staticlabelclassname(value interface{}) *VBox {
-    a.Set("staticLabelClassName", value)
+func (a *VBox) Visibleon(value interface{}) *VBox {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *VBox) Id(value interface{}) *VBox {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *VBox) Onevent(value interface{}) *VBox {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *VBox) Style(value interface{}) *VBox {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *VBox) Usemobileui(value interface{}) *VBox {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *VBox) Staticinputclassname(value interface{}) *VBox {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
  */
-func (a *VBox) Testidbuilder(value interface{}) *VBox {
-    a.Set("testIdBuilder", value)
+func (a *VBox) Staticschema(value interface{}) *VBox {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *VBox) Editorsetting(value interface{}) *VBox {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -61,25 +109,18 @@ func (a *VBox) Type(value interface{}) *VBox {
 }
 
 /**
+ * 容器 css 类名
  */
-func (a *VBox) Testid(value interface{}) *VBox {
-    a.Set("testid", value)
+func (a *VBox) Classname(value interface{}) *VBox {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 行集合
+ * 是否禁用
  */
-func (a *VBox) Rows(value interface{}) *VBox {
-    a.Set("rows", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *VBox) Editorsetting(value interface{}) *VBox {
-    a.Set("editorSetting", value)
+func (a *VBox) Disabled(value interface{}) *VBox {
+    a.Set("disabled", value)
     return a
 }
 
@@ -100,18 +141,33 @@ func (a *VBox) Hidden(value interface{}) *VBox {
 }
 
 /**
- * 是否显示
+ * 静态展示表单项Label类名
  */
-func (a *VBox) Visible(value interface{}) *VBox {
-    a.Set("visible", value)
+func (a *VBox) Staticlabelclassname(value interface{}) *VBox {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
  */
-func (a *VBox) Id(value interface{}) *VBox {
-    a.Set("id", value)
+func (a *VBox) Testidbuilder(value interface{}) *VBox {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 行集合
+ */
+func (a *VBox) Rows(value interface{}) *VBox {
+    a.Set("rows", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *VBox) Visible(value interface{}) *VBox {
+    a.Set("visible", value)
     return a
 }
 
@@ -124,30 +180,6 @@ func (a *VBox) Static(value interface{}) *VBox {
 }
 
 /**
- * 静态展示空值占位
- */
-func (a *VBox) Staticplaceholder(value interface{}) *VBox {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *VBox) Classname(value interface{}) *VBox {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *VBox) Visibleon(value interface{}) *VBox {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
  * 是否静态展示表达式
  */
 func (a *VBox) Staticon(value interface{}) *VBox {
@@ -156,33 +188,10 @@ func (a *VBox) Staticon(value interface{}) *VBox {
 }
 
 /**
+ * 静态展示空值占位
  */
-func (a *VBox) Staticschema(value interface{}) *VBox {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *VBox) Style(value interface{}) *VBox {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *VBox) Disabled(value interface{}) *VBox {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *VBox) Onevent(value interface{}) *VBox {
-    a.Set("onEvent", value)
+func (a *VBox) Staticplaceholder(value interface{}) *VBox {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -195,17 +204,8 @@ func (a *VBox) Staticclassname(value interface{}) *VBox {
 }
 
 /**
- * 静态展示表单项Value类名
  */
-func (a *VBox) Staticinputclassname(value interface{}) *VBox {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *VBox) Usemobileui(value interface{}) *VBox {
-    a.Set("useMobileUI", value)
+func (a *VBox) Testid(value interface{}) *VBox {
+    a.Set("testid", value)
     return a
 }

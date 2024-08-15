@@ -15,6 +15,10 @@ func NewExpandable() *Expandable {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *Expandable) Set(name string, value interface{}) *Expandable {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,18 +28,6 @@ func (a *Expandable) Set(name string, value interface{}) *Expandable {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
-/**
- * 已展开的key值表达式
- */
-func (a *Expandable) Expandedrowkeysexpr(value interface{}) *Expandable {
-    a.Set("expandedRowKeysExpr", value)
-    return a
-}
-
 /**
  * 对应渲染器类型
  */
@@ -73,5 +65,13 @@ func (a *Expandable) Expandedrowclassnameexpr(value interface{}) *Expandable {
  */
 func (a *Expandable) Expandedrowkeys(value interface{}) *Expandable {
     a.Set("expandedRowKeys", value)
+    return a
+}
+
+/**
+ * 已展开的key值表达式
+ */
+func (a *Expandable) Expandedrowkeysexpr(value interface{}) *Expandable {
+    a.Set("expandedRowKeysExpr", value)
     return a
 }

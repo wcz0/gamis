@@ -16,6 +16,11 @@ func NewQuarterControl() *QuarterControl {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "input-quarter")
+    return a
+}
+
+
 func (a *QuarterControl) Set(name string, value interface{}) *QuarterControl {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,119 +30,10 @@ func (a *QuarterControl) Set(name string, value interface{}) *QuarterControl {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "input-quarter")
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *QuarterControl) Static(value interface{}) *QuarterControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *QuarterControl) Disabledon(value interface{}) *QuarterControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *QuarterControl) Hidden(value interface{}) *QuarterControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *QuarterControl) Hiddenon(value interface{}) *QuarterControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *QuarterControl) Label(value interface{}) *QuarterControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *QuarterControl) Labelwidth(value interface{}) *QuarterControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *QuarterControl) Clearvalueonhidden(value interface{}) *QuarterControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *QuarterControl) Remark(value interface{}) *QuarterControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *QuarterControl) Validateapi(value interface{}) *QuarterControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 字符串函数，用来决定是否禁用某个日期。(currentDate: moment.Moment, props: any) => boolean;
- */
-func (a *QuarterControl) Disableddate(value interface{}) *QuarterControl {
-    a.Set("disabledDate", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *QuarterControl) Classname(value interface{}) *QuarterControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *QuarterControl) Style(value interface{}) *QuarterControl {
-    a.Set("style", value)
-    return a
-}
-
 /**
  */
-func (a *QuarterControl) Testidbuilder(value interface{}) *QuarterControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *QuarterControl) Value(value interface{}) *QuarterControl {
-    a.Set("value", value)
+func (a *QuarterControl) Validations(value interface{}) *QuarterControl {
+    a.Set("validations", value)
     return a
 }
 
@@ -150,113 +46,35 @@ func (a *QuarterControl) Type(value interface{}) *QuarterControl {
 }
 
 /**
- * 在Table中调整宽度
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
  */
-func (a *QuarterControl) Width(value interface{}) *QuarterControl {
-    a.Set("width", value)
+func (a *QuarterControl) Size(value interface{}) *QuarterControl {
+    a.Set("size", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 当修改完的时候是否提交表单。
  */
-func (a *QuarterControl) Staticinputclassname(value interface{}) *QuarterControl {
-    a.Set("staticInputClassName", value)
+func (a *QuarterControl) Submitonchange(value interface{}) *QuarterControl {
+    a.Set("submitOnChange", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ * 是否只读
  */
-func (a *QuarterControl) Labelremark(value interface{}) *QuarterControl {
-    a.Set("labelRemark", value)
+func (a *QuarterControl) Readonly(value interface{}) *QuarterControl {
+    a.Set("readOnly", value)
     return a
 }
 
 /**
- * 只读条件
+ * 日期展示格式(新：替代inputFormat)
  */
-func (a *QuarterControl) Readonlyon(value interface{}) *QuarterControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *QuarterControl) Labelclassname(value interface{}) *QuarterControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *QuarterControl) Validationerrors(value interface{}) *QuarterControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *QuarterControl) Inline(value interface{}) *QuarterControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *QuarterControl) Inputclassname(value interface{}) *QuarterControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *QuarterControl) Initautofill(value interface{}) *QuarterControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 月份存储格式
- */
-func (a *QuarterControl) Format(value interface{}) *QuarterControl {
-    a.Set("format", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *QuarterControl) Onevent(value interface{}) *QuarterControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *QuarterControl) Hint(value interface{}) *QuarterControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *QuarterControl) Horizontal(value interface{}) *QuarterControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *QuarterControl) Staticon(value interface{}) *QuarterControl {
-    a.Set("staticOn", value)
+func (a *QuarterControl) Displayformat(value interface{}) *QuarterControl {
+    a.Set("displayFormat", value)
     return a
 }
 
@@ -269,57 +87,50 @@ func (a *QuarterControl) Staticplaceholder(value interface{}) *QuarterControl {
 }
 
 /**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ * 描述标题
  */
-func (a *QuarterControl) Extraname(value interface{}) *QuarterControl {
-    a.Set("extraName", value)
+func (a *QuarterControl) Labelalign(value interface{}) *QuarterControl {
+    a.Set("labelAlign", value)
     return a
 }
 
 /**
- * 日期快捷键
+ * 是否显示清除按钮
  */
-func (a *QuarterControl) Shortcuts(value interface{}) *QuarterControl {
-    a.Set("shortcuts", value)
+func (a *QuarterControl) Clearable(value interface{}) *QuarterControl {
+    a.Set("clearable", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 是否为内联模式？
  */
-func (a *QuarterControl) Disabled(value interface{}) *QuarterControl {
-    a.Set("disabled", value)
+func (a *QuarterControl) Emebed(value interface{}) *QuarterControl {
+    a.Set("emebed", value)
     return a
 }
 
 /**
- * 是否显示
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
  */
-func (a *QuarterControl) Visible(value interface{}) *QuarterControl {
-    a.Set("visible", value)
+func (a *QuarterControl) Validateonchange(value interface{}) *QuarterControl {
+    a.Set("validateOnChange", value)
     return a
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 配置 input className
  */
-func (a *QuarterControl) Id(value interface{}) *QuarterControl {
-    a.Set("id", value)
+func (a *QuarterControl) Inputclassname(value interface{}) *QuarterControl {
+    a.Set("inputClassName", value)
     return a
 }
 
 /**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
  */
-func (a *QuarterControl) Staticschema(value interface{}) *QuarterControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *QuarterControl) Name(value interface{}) *QuarterControl {
-    a.Set("name", value)
+func (a *QuarterControl) Autofill(value interface{}) *QuarterControl {
+    a.Set("autoFill", value)
     return a
 }
 
@@ -332,10 +143,89 @@ func (a *QuarterControl) Required(value interface{}) *QuarterControl {
 }
 
 /**
- * 日期展示格式(新：替代inputFormat)
+ * 容器 css 类名
  */
-func (a *QuarterControl) Displayformat(value interface{}) *QuarterControl {
-    a.Set("displayFormat", value)
+func (a *QuarterControl) Classname(value interface{}) *QuarterControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *QuarterControl) Staticclassname(value interface{}) *QuarterControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *QuarterControl) Style(value interface{}) *QuarterControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *QuarterControl) Inline(value interface{}) *QuarterControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *QuarterControl) Validateapi(value interface{}) *QuarterControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *QuarterControl) Staticinputclassname(value interface{}) *QuarterControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 设定是否存储 utc 时间。
+ */
+func (a *QuarterControl) Utc(value interface{}) *QuarterControl {
+    a.Set("utc", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *QuarterControl) Description(value interface{}) *QuarterControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *QuarterControl) Clearvalueonhidden(value interface{}) *QuarterControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ */
+func (a *QuarterControl) Testidbuilder(value interface{}) *QuarterControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *QuarterControl) Extraname(value interface{}) *QuarterControl {
+    a.Set("extraName", value)
     return a
 }
 
@@ -357,9 +247,255 @@ func (a *QuarterControl) Placeholder(value interface{}) *QuarterControl {
 }
 
 /**
+ * 在Table中调整宽度
  */
-func (a *QuarterControl) Validations(value interface{}) *QuarterControl {
-    a.Set("validations", value)
+func (a *QuarterControl) Width(value interface{}) *QuarterControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *QuarterControl) Id(value interface{}) *QuarterControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *QuarterControl) Onevent(value interface{}) *QuarterControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *QuarterControl) Staticlabelclassname(value interface{}) *QuarterControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *QuarterControl) Remark(value interface{}) *QuarterControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *QuarterControl) Hidden(value interface{}) *QuarterControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *QuarterControl) Labelwidth(value interface{}) *QuarterControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *QuarterControl) Readonlyon(value interface{}) *QuarterControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 字符串函数，用来决定是否禁用某个日期。(currentDate: moment.Moment, props: any) => boolean;
+ */
+func (a *QuarterControl) Disableddate(value interface{}) *QuarterControl {
+    a.Set("disabledDate", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *QuarterControl) Visibleon(value interface{}) *QuarterControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *QuarterControl) Editorsetting(value interface{}) *QuarterControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *QuarterControl) Labelclassname(value interface{}) *QuarterControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *QuarterControl) Label(value interface{}) *QuarterControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ */
+func (a *QuarterControl) Staticschema(value interface{}) *QuarterControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *QuarterControl) Descriptionclassname(value interface{}) *QuarterControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 日期快捷键
+ */
+func (a *QuarterControl) Shortcuts(value interface{}) *QuarterControl {
+    a.Set("shortcuts", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *QuarterControl) Visible(value interface{}) *QuarterControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *QuarterControl) Staticon(value interface{}) *QuarterControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *QuarterControl) Name(value interface{}) *QuarterControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ */
+func (a *QuarterControl) Desc(value interface{}) *QuarterControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 替代format
+ */
+func (a *QuarterControl) Valueformat(value interface{}) *QuarterControl {
+    a.Set("valueFormat", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *QuarterControl) Disabled(value interface{}) *QuarterControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *QuarterControl) Disabledon(value interface{}) *QuarterControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *QuarterControl) Hiddenon(value interface{}) *QuarterControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 月份展示格式
+ */
+func (a *QuarterControl) Inputformat(value interface{}) *QuarterControl {
+    a.Set("inputFormat", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *QuarterControl) Static(value interface{}) *QuarterControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *QuarterControl) Labelremark(value interface{}) *QuarterControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *QuarterControl) Validationerrors(value interface{}) *QuarterControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *QuarterControl) Usemobileui(value interface{}) *QuarterControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *QuarterControl) Horizontal(value interface{}) *QuarterControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ */
+func (a *QuarterControl) Row(value interface{}) *QuarterControl {
+    a.Set("row", value)
+    return a
+}
+
+/**
+ * 月份存储格式
+ */
+func (a *QuarterControl) Format(value interface{}) *QuarterControl {
+    a.Set("format", value)
     return a
 }
 
@@ -373,160 +509,24 @@ func (a *QuarterControl) Bordermode(value interface{}) *QuarterControl {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 输入提示，聚焦的时候显示
  */
-func (a *QuarterControl) Usemobileui(value interface{}) *QuarterControl {
-    a.Set("useMobileUI", value)
+func (a *QuarterControl) Hint(value interface{}) *QuarterControl {
+    a.Set("hint", value)
     return a
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
  */
-func (a *QuarterControl) Size(value interface{}) *QuarterControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *QuarterControl) Labelalign(value interface{}) *QuarterControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *QuarterControl) Editorsetting(value interface{}) *QuarterControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 月份展示格式
- */
-func (a *QuarterControl) Inputformat(value interface{}) *QuarterControl {
-    a.Set("inputFormat", value)
-    return a
-}
-
-/**
- * 替代format
- */
-func (a *QuarterControl) Valueformat(value interface{}) *QuarterControl {
-    a.Set("valueFormat", value)
-    return a
-}
-
-/**
- * 是否显示清除按钮
- */
-func (a *QuarterControl) Clearable(value interface{}) *QuarterControl {
-    a.Set("clearable", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *QuarterControl) Staticclassname(value interface{}) *QuarterControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *QuarterControl) Descriptionclassname(value interface{}) *QuarterControl {
-    a.Set("descriptionClassName", value)
+func (a *QuarterControl) Value(value interface{}) *QuarterControl {
+    a.Set("value", value)
     return a
 }
 
 /**
  */
-func (a *QuarterControl) Row(value interface{}) *QuarterControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *QuarterControl) Visibleon(value interface{}) *QuarterControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *QuarterControl) Submitonchange(value interface{}) *QuarterControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *QuarterControl) Description(value interface{}) *QuarterControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- */
-func (a *QuarterControl) Desc(value interface{}) *QuarterControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 设定是否存储 utc 时间。
- */
-func (a *QuarterControl) Utc(value interface{}) *QuarterControl {
-    a.Set("utc", value)
-    return a
-}
-
-/**
- * 是否为内联模式？
- */
-func (a *QuarterControl) Emebed(value interface{}) *QuarterControl {
-    a.Set("emebed", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *QuarterControl) Autofill(value interface{}) *QuarterControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *QuarterControl) Staticlabelclassname(value interface{}) *QuarterControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *QuarterControl) Readonly(value interface{}) *QuarterControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *QuarterControl) Validateonchange(value interface{}) *QuarterControl {
-    a.Set("validateOnChange", value)
+func (a *QuarterControl) Initautofill(value interface{}) *QuarterControl {
+    a.Set("initAutoFill", value)
     return a
 }

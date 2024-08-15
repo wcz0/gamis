@@ -15,6 +15,10 @@ func NewColumn() *Column {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *Column) Set(name string, value interface{}) *Column {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,10 +28,6 @@ func (a *Column) Set(name string, value interface{}) *Column {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
 /**
  * 指定列合并表达式
  */
@@ -37,10 +37,26 @@ func (a *Column) Colspanexpr(value interface{}) *Column {
 }
 
 /**
- * 列表头提示
+ * 列样式
  */
-func (a *Column) Remark(value interface{}) *Column {
-    a.Set("remark", value)
+func (a *Column) Classname(value interface{}) *Column {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 单元格样式
+ */
+func (a *Column) Classnameexpr(value interface{}) *Column {
+    a.Set("classNameExpr", value)
+    return a
+}
+
+/**
+ * 配置快速编辑功能
+ */
+func (a *Column) Quickedit(value interface{}) *Column {
+    a.Set("quickEdit", value)
     return a
 }
 
@@ -48,6 +64,14 @@ func (a *Column) Remark(value interface{}) *Column {
  */
 func (a *Column) Width(value interface{}) *Column {
     a.Set("width", value)
+    return a
+}
+
+/**
+ * 是否固定在左侧/右侧
+ */
+func (a *Column) Fixed(value interface{}) *Column {
+    a.Set("fixed", value)
     return a
 }
 
@@ -68,10 +92,10 @@ func (a *Column) Name(value interface{}) *Column {
 }
 
 /**
- * 指定列内容渲染器
+ * 指定列标题
  */
-func (a *Column) Type(value interface{}) *Column {
-    a.Set("type", value)
+func (a *Column) Title(value interface{}) *Column {
+    a.Set("title", value)
     return a
 }
 
@@ -100,42 +124,10 @@ func (a *Column) Searchable(value interface{}) *Column {
 }
 
 /**
- * 是否固定在左侧/右侧
+ * 兼容table快速排序
  */
-func (a *Column) Fixed(value interface{}) *Column {
-    a.Set("fixed", value)
-    return a
-}
-
-/**
- * 当前列是否展示
- */
-func (a *Column) Toggled(value interface{}) *Column {
-    a.Set("toggled", value)
-    return a
-}
-
-/**
- * 指定行合并表达式
- */
-func (a *Column) Rowspanexpr(value interface{}) *Column {
-    a.Set("rowSpanExpr", value)
-    return a
-}
-
-/**
- * 兼容table列筛选
- */
-func (a *Column) Filterable(value interface{}) *Column {
-    a.Set("filterable", value)
-    return a
-}
-
-/**
- * 单元格样式
- */
-func (a *Column) Classnameexpr(value interface{}) *Column {
-    a.Set("classNameExpr", value)
+func (a *Column) Sortable(value interface{}) *Column {
+    a.Set("sortable", value)
     return a
 }
 
@@ -148,10 +140,10 @@ func (a *Column) Canaccesssuperdata(value interface{}) *Column {
 }
 
 /**
- * 指定列标题
+ * 指定行合并表达式
  */
-func (a *Column) Title(value interface{}) *Column {
-    a.Set("title", value)
+func (a *Column) Rowspanexpr(value interface{}) *Column {
+    a.Set("rowSpanExpr", value)
     return a
 }
 
@@ -164,14 +156,6 @@ func (a *Column) Sorter(value interface{}) *Column {
 }
 
 /**
- * 兼容table快速排序
- */
-func (a *Column) Sortable(value interface{}) *Column {
-    a.Set("sortable", value)
-    return a
-}
-
-/**
  * 内容居左、居中、居右
  */
 func (a *Column) Align(value interface{}) *Column {
@@ -180,17 +164,33 @@ func (a *Column) Align(value interface{}) *Column {
 }
 
 /**
- * 列样式
+ * 指定列内容渲染器
  */
-func (a *Column) Classname(value interface{}) *Column {
-    a.Set("className", value)
+func (a *Column) Type(value interface{}) *Column {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 配置快速编辑功能
+ * 列表头提示
  */
-func (a *Column) Quickedit(value interface{}) *Column {
-    a.Set("quickEdit", value)
+func (a *Column) Remark(value interface{}) *Column {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 兼容table列筛选
+ */
+func (a *Column) Filterable(value interface{}) *Column {
+    a.Set("filterable", value)
+    return a
+}
+
+/**
+ * 当前列是否展示
+ */
+func (a *Column) Toggled(value interface{}) *Column {
+    a.Set("toggled", value)
     return a
 }

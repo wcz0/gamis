@@ -16,6 +16,11 @@ func NewOperation() *Operation {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "operation")
+    return a
+}
+
+
 func (a *Operation) Set(name string, value interface{}) *Operation {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,16 +30,11 @@ func (a *Operation) Set(name string, value interface{}) *Operation {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "operation")
-    return a
-}
-
 /**
- * 是否隐藏表达式
+ * 是否显示表达式
  */
-func (a *Operation) Hiddenon(value interface{}) *Operation {
-    a.Set("hiddenOn", value)
+func (a *Operation) Visibleon(value interface{}) *Operation {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -47,58 +47,17 @@ func (a *Operation) Onevent(value interface{}) *Operation {
 }
 
 /**
- * 是否静态展示
  */
-func (a *Operation) Static(value interface{}) *Operation {
-    a.Set("static", value)
+func (a *Operation) Staticschema(value interface{}) *Operation {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否显示
  */
-func (a *Operation) Staticinputclassname(value interface{}) *Operation {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Operation) Classname(value interface{}) *Operation {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Operation) Visibleon(value interface{}) *Operation {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Operation) Style(value interface{}) *Operation {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Operation) Disabled(value interface{}) *Operation {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Operation) Disabledon(value interface{}) *Operation {
-    a.Set("disabledOn", value)
+func (a *Operation) Visible(value interface{}) *Operation {
+    a.Set("visible", value)
     return a
 }
 
@@ -111,17 +70,50 @@ func (a *Operation) Staticclassname(value interface{}) *Operation {
 }
 
 /**
- * 指定为操作栏
+ * 静态展示表单项Label类名
  */
-func (a *Operation) Type(value interface{}) *Operation {
-    a.Set("type", value)
+func (a *Operation) Staticlabelclassname(value interface{}) *Operation {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *Operation) Buttons(value interface{}) *Operation {
-    a.Set("buttons", value)
+func (a *Operation) Staticinputclassname(value interface{}) *Operation {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Operation) Disabled(value interface{}) *Operation {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Operation) Id(value interface{}) *Operation {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Operation) Style(value interface{}) *Operation {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *Operation) Placeholder(value interface{}) *Operation {
+    a.Set("placeholder", value)
     return a
 }
 
@@ -135,62 +127,16 @@ func (a *Operation) Staticplaceholder(value interface{}) *Operation {
 
 /**
  */
-func (a *Operation) Staticschema(value interface{}) *Operation {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Operation) Usemobileui(value interface{}) *Operation {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *Operation) Testidbuilder(value interface{}) *Operation {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- */
 func (a *Operation) Testid(value interface{}) *Operation {
     a.Set("testid", value)
     return a
 }
 
 /**
- * 设置label
+ * 是否隐藏表达式
  */
-func (a *Operation) Label(value interface{}) *Operation {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Operation) Visible(value interface{}) *Operation {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Operation) Hidden(value interface{}) *Operation {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Operation) Id(value interface{}) *Operation {
-    a.Set("id", value)
+func (a *Operation) Hiddenon(value interface{}) *Operation {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -203,10 +149,40 @@ func (a *Operation) Staticon(value interface{}) *Operation {
 }
 
 /**
- * 静态展示表单项Label类名
  */
-func (a *Operation) Staticlabelclassname(value interface{}) *Operation {
-    a.Set("staticLabelClassName", value)
+func (a *Operation) Testidbuilder(value interface{}) *Operation {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 设置label
+ */
+func (a *Operation) Label(value interface{}) *Operation {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ */
+func (a *Operation) Buttons(value interface{}) *Operation {
+    a.Set("buttons", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Operation) Classname(value interface{}) *Operation {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Operation) Disabledon(value interface{}) *Operation {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -219,9 +195,33 @@ func (a *Operation) Editorsetting(value interface{}) *Operation {
 }
 
 /**
- * 占位符
+ * 指定为操作栏
  */
-func (a *Operation) Placeholder(value interface{}) *Operation {
-    a.Set("placeholder", value)
+func (a *Operation) Type(value interface{}) *Operation {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Operation) Hidden(value interface{}) *Operation {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Operation) Static(value interface{}) *Operation {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Operation) Usemobileui(value interface{}) *Operation {
+    a.Set("useMobileUI", value)
     return a
 }

@@ -15,6 +15,10 @@ func NewRowSelection() *RowSelection {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *RowSelection) Set(name string, value interface{}) *RowSelection {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,7 +28,35 @@ func (a *RowSelection) Set(name string, value interface{}) *RowSelection {
     a.AmisSchema[name] = value
     return a
 }
+/**
+ * 对应数据源的key值
+ */
+func (a *RowSelection) Keyfield(value interface{}) *RowSelection {
+    a.Set("keyField", value)
+    return a
+}
 
+/**
+ * 行是否禁用表达式
+ */
+func (a *RowSelection) Disableon(value interface{}) *RowSelection {
+    a.Set("disableOn", value)
+    return a
+}
+
+/**
+ * 自定义选择菜单
+ */
+func (a *RowSelection) Selections(value interface{}) *RowSelection {
+    a.Set("selections", value)
+    return a
+}
+
+/**
+ * 已选择的key值
+ */
+func (a *RowSelection) Selectedrowkeys(value interface{}) *RowSelection {
+    a.Set("selectedRowKeys", value)
     return a
 }
 
@@ -57,37 +89,5 @@ func (a *RowSelection) Rowclick(value interface{}) *RowSelection {
  */
 func (a *RowSelection) Type(value interface{}) *RowSelection {
     a.Set("type", value)
-    return a
-}
-
-/**
- * 对应数据源的key值
- */
-func (a *RowSelection) Keyfield(value interface{}) *RowSelection {
-    a.Set("keyField", value)
-    return a
-}
-
-/**
- * 行是否禁用表达式
- */
-func (a *RowSelection) Disableon(value interface{}) *RowSelection {
-    a.Set("disableOn", value)
-    return a
-}
-
-/**
- * 自定义选择菜单
- */
-func (a *RowSelection) Selections(value interface{}) *RowSelection {
-    a.Set("selections", value)
-    return a
-}
-
-/**
- * 已选择的key值
- */
-func (a *RowSelection) Selectedrowkeys(value interface{}) *RowSelection {
-    a.Set("selectedRowKeys", value)
     return a
 }

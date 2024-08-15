@@ -16,6 +16,11 @@ func NewButtonToolbar() *ButtonToolbar {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "button-toolbar")
+    return a
+}
+
+
 func (a *ButtonToolbar) Set(name string, value interface{}) *ButtonToolbar {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,39 +30,19 @@ func (a *ButtonToolbar) Set(name string, value interface{}) *ButtonToolbar {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "button-toolbar")
+/**
+ * 是否禁用
+ */
+func (a *ButtonToolbar) Disabled(value interface{}) *ButtonToolbar {
+    a.Set("disabled", value)
     return a
 }
 
 /**
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *ButtonToolbar) Testidbuilder(value interface{}) *ButtonToolbar {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 指定为按钮工具集合类型
- */
-func (a *ButtonToolbar) Type(value interface{}) *ButtonToolbar {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *ButtonToolbar) Style(value interface{}) *ButtonToolbar {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *ButtonToolbar) Hidden(value interface{}) *ButtonToolbar {
-    a.Set("hidden", value)
+func (a *ButtonToolbar) Id(value interface{}) *ButtonToolbar {
+    a.Set("id", value)
     return a
 }
 
@@ -86,9 +71,18 @@ func (a *ButtonToolbar) Staticlabelclassname(value interface{}) *ButtonToolbar {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *ButtonToolbar) Staticschema(value interface{}) *ButtonToolbar {
-    a.Set("staticSchema", value)
+func (a *ButtonToolbar) Staticinputclassname(value interface{}) *ButtonToolbar {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *ButtonToolbar) Classname(value interface{}) *ButtonToolbar {
+    a.Set("className", value)
     return a
 }
 
@@ -101,26 +95,41 @@ func (a *ButtonToolbar) Disabledon(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 是否静态展示表达式
+ * 是否隐藏
  */
-func (a *ButtonToolbar) Staticon(value interface{}) *ButtonToolbar {
-    a.Set("staticOn", value)
+func (a *ButtonToolbar) Hidden(value interface{}) *ButtonToolbar {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否显示
  */
-func (a *ButtonToolbar) Staticinputclassname(value interface{}) *ButtonToolbar {
-    a.Set("staticInputClassName", value)
+func (a *ButtonToolbar) Visible(value interface{}) *ButtonToolbar {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 是否显示表达式
  */
-func (a *ButtonToolbar) Editorsetting(value interface{}) *ButtonToolbar {
-    a.Set("editorSetting", value)
+func (a *ButtonToolbar) Visibleon(value interface{}) *ButtonToolbar {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *ButtonToolbar) Onevent(value interface{}) *ButtonToolbar {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *ButtonToolbar) Staticschema(value interface{}) *ButtonToolbar {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -134,8 +143,24 @@ func (a *ButtonToolbar) Usemobileui(value interface{}) *ButtonToolbar {
 
 /**
  */
-func (a *ButtonToolbar) Testid(value interface{}) *ButtonToolbar {
-    a.Set("testid", value)
+func (a *ButtonToolbar) Testidbuilder(value interface{}) *ButtonToolbar {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 指定为按钮工具集合类型
+ */
+func (a *ButtonToolbar) Type(value interface{}) *ButtonToolbar {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *ButtonToolbar) Style(value interface{}) *ButtonToolbar {
+    a.Set("style", value)
     return a
 }
 
@@ -143,14 +168,6 @@ func (a *ButtonToolbar) Testid(value interface{}) *ButtonToolbar {
  */
 func (a *ButtonToolbar) Buttons(value interface{}) *ButtonToolbar {
     a.Set("buttons", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *ButtonToolbar) Disabled(value interface{}) *ButtonToolbar {
-    a.Set("disabled", value)
     return a
 }
 
@@ -163,26 +180,10 @@ func (a *ButtonToolbar) Hiddenon(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 是否显示表达式
+ * 是否静态展示表达式
  */
-func (a *ButtonToolbar) Visibleon(value interface{}) *ButtonToolbar {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *ButtonToolbar) Id(value interface{}) *ButtonToolbar {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *ButtonToolbar) Onevent(value interface{}) *ButtonToolbar {
-    a.Set("onEvent", value)
+func (a *ButtonToolbar) Staticon(value interface{}) *ButtonToolbar {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -195,17 +196,16 @@ func (a *ButtonToolbar) Staticplaceholder(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 容器 css 类名
+ * 编辑器配置，运行时可以忽略
  */
-func (a *ButtonToolbar) Classname(value interface{}) *ButtonToolbar {
-    a.Set("className", value)
+func (a *ButtonToolbar) Editorsetting(value interface{}) *ButtonToolbar {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否显示
  */
-func (a *ButtonToolbar) Visible(value interface{}) *ButtonToolbar {
-    a.Set("visible", value)
+func (a *ButtonToolbar) Testid(value interface{}) *ButtonToolbar {
+    a.Set("testid", value)
     return a
 }

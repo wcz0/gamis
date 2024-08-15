@@ -15,6 +15,10 @@ func NewRowSelectionOptions() *RowSelectionOptions {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *RowSelectionOptions) Set(name string, value interface{}) *RowSelectionOptions {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,7 +28,11 @@ func (a *RowSelectionOptions) Set(name string, value interface{}) *RowSelectionO
     a.AmisSchema[name] = value
     return a
 }
-
+/**
+ * 选项显示文本
+ */
+func (a *RowSelectionOptions) Text(value interface{}) *RowSelectionOptions {
+    a.Set("text", value)
     return a
 }
 
@@ -33,13 +41,5 @@ func (a *RowSelectionOptions) Set(name string, value interface{}) *RowSelectionO
  */
 func (a *RowSelectionOptions) Key(value interface{}) *RowSelectionOptions {
     a.Set("key", value)
-    return a
-}
-
-/**
- * 选项显示文本
- */
-func (a *RowSelectionOptions) Text(value interface{}) *RowSelectionOptions {
-    a.Set("text", value)
     return a
 }

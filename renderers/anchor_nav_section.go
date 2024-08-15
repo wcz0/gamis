@@ -16,6 +16,10 @@ func NewAnchorNavSection() *AnchorNavSection {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *AnchorNavSection) Set(name string, value interface{}) *AnchorNavSection {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -25,39 +29,19 @@ func (a *AnchorNavSection) Set(name string, value interface{}) *AnchorNavSection
     a.AmisSchema[name] = value
     return a
 }
-
+/**
+ * 是否禁用表达式
+ */
+func (a *AnchorNavSection) Disabledon(value interface{}) *AnchorNavSection {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 是否显示
  */
-func (a *AnchorNavSection) Hiddenon(value interface{}) *AnchorNavSection {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *AnchorNavSection) Id(value interface{}) *AnchorNavSection {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 导航文字说明
- */
-func (a *AnchorNavSection) Title(value interface{}) *AnchorNavSection {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *AnchorNavSection) Staticlabelclassname(value interface{}) *AnchorNavSection {
-    a.Set("staticLabelClassName", value)
+func (a *AnchorNavSection) Visible(value interface{}) *AnchorNavSection {
+    a.Set("visible", value)
     return a
 }
 
@@ -69,32 +53,10 @@ func (a *AnchorNavSection) Staticschema(value interface{}) *AnchorNavSection {
 }
 
 /**
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *AnchorNavSection) Testidbuilder(value interface{}) *AnchorNavSection {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 子节点
- */
-func (a *AnchorNavSection) Children(value interface{}) *AnchorNavSection {
-    a.Set("children", value)
-    return a
-}
-
-/**
- */
-func (a *AnchorNavSection) Testid(value interface{}) *AnchorNavSection {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *AnchorNavSection) Staticon(value interface{}) *AnchorNavSection {
-    a.Set("staticOn", value)
+func (a *AnchorNavSection) Usemobileui(value interface{}) *AnchorNavSection {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -107,10 +69,18 @@ func (a *AnchorNavSection) Hidden(value interface{}) *AnchorNavSection {
 }
 
 /**
- * 静态展示表单项类名
+ * 事件动作配置
  */
-func (a *AnchorNavSection) Staticclassname(value interface{}) *AnchorNavSection {
-    a.Set("staticClassName", value)
+func (a *AnchorNavSection) Onevent(value interface{}) *AnchorNavSection {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *AnchorNavSection) Static(value interface{}) *AnchorNavSection {
+    a.Set("static", value)
     return a
 }
 
@@ -123,10 +93,104 @@ func (a *AnchorNavSection) Style(value interface{}) *AnchorNavSection {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否禁用
  */
-func (a *AnchorNavSection) Usemobileui(value interface{}) *AnchorNavSection {
-    a.Set("useMobileUI", value)
+func (a *AnchorNavSection) Disabled(value interface{}) *AnchorNavSection {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *AnchorNavSection) Staticplaceholder(value interface{}) *AnchorNavSection {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *AnchorNavSection) Testidbuilder(value interface{}) *AnchorNavSection {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 导航文字说明
+ */
+func (a *AnchorNavSection) Title(value interface{}) *AnchorNavSection {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *AnchorNavSection) Staticon(value interface{}) *AnchorNavSection {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *AnchorNavSection) Staticinputclassname(value interface{}) *AnchorNavSection {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *AnchorNavSection) Testid(value interface{}) *AnchorNavSection {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *AnchorNavSection) Classname(value interface{}) *AnchorNavSection {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *AnchorNavSection) Hiddenon(value interface{}) *AnchorNavSection {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *AnchorNavSection) Editorsetting(value interface{}) *AnchorNavSection {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 子节点
+ */
+func (a *AnchorNavSection) Children(value interface{}) *AnchorNavSection {
+    a.Set("children", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *AnchorNavSection) Id(value interface{}) *AnchorNavSection {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *AnchorNavSection) Staticclassname(value interface{}) *AnchorNavSection {
+    a.Set("staticClassName", value)
     return a
 }
 
@@ -147,30 +211,6 @@ func (a *AnchorNavSection) Visibleon(value interface{}) *AnchorNavSection {
 }
 
 /**
- * 事件动作配置
- */
-func (a *AnchorNavSection) Onevent(value interface{}) *AnchorNavSection {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *AnchorNavSection) Staticinputclassname(value interface{}) *AnchorNavSection {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *AnchorNavSection) Editorsetting(value interface{}) *AnchorNavSection {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
  * 锚点链接
  */
 func (a *AnchorNavSection) Href(value interface{}) *AnchorNavSection {
@@ -179,49 +219,9 @@ func (a *AnchorNavSection) Href(value interface{}) *AnchorNavSection {
 }
 
 /**
- * 是否禁用表达式
+ * 静态展示表单项Label类名
  */
-func (a *AnchorNavSection) Disabledon(value interface{}) *AnchorNavSection {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *AnchorNavSection) Staticplaceholder(value interface{}) *AnchorNavSection {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *AnchorNavSection) Disabled(value interface{}) *AnchorNavSection {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *AnchorNavSection) Visible(value interface{}) *AnchorNavSection {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *AnchorNavSection) Static(value interface{}) *AnchorNavSection {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *AnchorNavSection) Classname(value interface{}) *AnchorNavSection {
-    a.Set("className", value)
+func (a *AnchorNavSection) Staticlabelclassname(value interface{}) *AnchorNavSection {
+    a.Set("staticLabelClassName", value)
     return a
 }

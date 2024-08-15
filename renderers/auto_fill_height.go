@@ -15,6 +15,10 @@ func NewAutoFillHeight() *AutoFillHeight {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *AutoFillHeight) Set(name string, value interface{}) *AutoFillHeight {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,10 +28,6 @@ func (a *AutoFillHeight) Set(name string, value interface{}) *AutoFillHeight {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
 /**
  */
 func (a *AutoFillHeight) Height(value interface{}) *AutoFillHeight {

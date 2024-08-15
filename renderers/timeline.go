@@ -15,6 +15,11 @@ func NewTimeline() *Timeline {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    a.Set("type", "timeline")
+    return a
+}
+
+
 func (a *Timeline) Set(name string, value interface{}) *Timeline {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,25 +29,26 @@ func (a *Timeline) Set(name string, value interface{}) *Timeline {
     a.AmisSchema[name] = value
     return a
 }
-
-    a.Set("type", "timeline")
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Timeline) Usemobileui(value interface{}) *Timeline {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 容器 css 类名
  */
-func (a *Timeline) Disabledon(value interface{}) *Timeline {
-    a.Set("disabledOn", value)
+func (a *Timeline) Classname(value interface{}) *Timeline {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 展示方向
- * 可选值: horizontal | vertical
  */
-func (a *Timeline) Direction(value interface{}) *Timeline {
-    a.Set("direction", value)
+func (a *Timeline) Testid(value interface{}) *Timeline {
+    a.Set("testid", value)
     return a
 }
 
@@ -55,72 +61,18 @@ func (a *Timeline) Timeclassname(value interface{}) *Timeline {
 }
 
 /**
- * 节点详情的CSS类名
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Timeline) Detailclassname(value interface{}) *Timeline {
-    a.Set("detailClassName", value)
+func (a *Timeline) Id(value interface{}) *Timeline {
+    a.Set("id", value)
     return a
 }
 
 /**
+ * 是否静态展示表达式
  */
-func (a *Timeline) Testid(value interface{}) *Timeline {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 图标的CSS类名
- */
-func (a *Timeline) Iconclassname(value interface{}) *Timeline {
-    a.Set("iconClassName", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Timeline) Visible(value interface{}) *Timeline {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Timeline) Onevent(value interface{}) *Timeline {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Timeline) Style(value interface{}) *Timeline {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *Timeline) Testidbuilder(value interface{}) *Timeline {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 节点title自定一展示模板
- */
-func (a *Timeline) Itemtitleschema(value interface{}) *Timeline {
-    a.Set("itemTitleSchema", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Timeline) Staticplaceholder(value interface{}) *Timeline {
-    a.Set("staticPlaceholder", value)
+func (a *Timeline) Staticon(value interface{}) *Timeline {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -133,18 +85,17 @@ func (a *Timeline) Staticinputclassname(value interface{}) *Timeline {
 }
 
 /**
- * 指定为 Timeline 时间轴渲染器
  */
-func (a *Timeline) Type(value interface{}) *Timeline {
-    a.Set("type", value)
+func (a *Timeline) Testidbuilder(value interface{}) *Timeline {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 节点数据
+ * 是否禁用
  */
-func (a *Timeline) Items(value interface{}) *Timeline {
-    a.Set("items", value)
+func (a *Timeline) Disabled(value interface{}) *Timeline {
+    a.Set("disabled", value)
     return a
 }
 
@@ -158,42 +109,59 @@ func (a *Timeline) Mode(value interface{}) *Timeline {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 展示方向
+ * 可选值: horizontal | vertical
  */
-func (a *Timeline) Id(value interface{}) *Timeline {
-    a.Set("id", value)
+func (a *Timeline) Direction(value interface{}) *Timeline {
+    a.Set("direction", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否禁用表达式
  */
-func (a *Timeline) Staticlabelclassname(value interface{}) *Timeline {
-    a.Set("staticLabelClassName", value)
+func (a *Timeline) Disabledon(value interface{}) *Timeline {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 节点标题的CSS类名
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Timeline) Titleclassname(value interface{}) *Timeline {
-    a.Set("titleClassName", value)
+func (a *Timeline) Editorsetting(value interface{}) *Timeline {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 指定为 Timeline 时间轴渲染器
  */
-func (a *Timeline) Disabled(value interface{}) *Timeline {
-    a.Set("disabled", value)
+func (a *Timeline) Type(value interface{}) *Timeline {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 节点title自定一展示模板
  */
-func (a *Timeline) Hidden(value interface{}) *Timeline {
-    a.Set("hidden", value)
+func (a *Timeline) Itemtitleschema(value interface{}) *Timeline {
+    a.Set("itemTitleSchema", value)
+    return a
+}
+
+/**
+ * 节点详情的CSS类名
+ */
+func (a *Timeline) Detailclassname(value interface{}) *Timeline {
+    a.Set("detailClassName", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Timeline) Onevent(value interface{}) *Timeline {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -214,33 +182,42 @@ func (a *Timeline) Staticclassname(value interface{}) *Timeline {
 }
 
 /**
+ * 图标的CSS类名
  */
-func (a *Timeline) Staticschema(value interface{}) *Timeline {
-    a.Set("staticSchema", value)
+func (a *Timeline) Iconclassname(value interface{}) *Timeline {
+    a.Set("iconClassName", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 节点标题的CSS类名
  */
-func (a *Timeline) Editorsetting(value interface{}) *Timeline {
-    a.Set("editorSetting", value)
+func (a *Timeline) Titleclassname(value interface{}) *Timeline {
+    a.Set("titleClassName", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否显示
  */
-func (a *Timeline) Usemobileui(value interface{}) *Timeline {
-    a.Set("useMobileUI", value)
+func (a *Timeline) Visible(value interface{}) *Timeline {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * 静态展示空值占位
  */
-func (a *Timeline) Classname(value interface{}) *Timeline {
-    a.Set("className", value)
+func (a *Timeline) Staticplaceholder(value interface{}) *Timeline {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Timeline) Hidden(value interface{}) *Timeline {
+    a.Set("hidden", value)
     return a
 }
 
@@ -261,6 +238,37 @@ func (a *Timeline) Visibleon(value interface{}) *Timeline {
 }
 
 /**
+ * 静态展示表单项Label类名
+ */
+func (a *Timeline) Staticlabelclassname(value interface{}) *Timeline {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Timeline) Staticschema(value interface{}) *Timeline {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Timeline) Style(value interface{}) *Timeline {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 节点数据
+ */
+func (a *Timeline) Items(value interface{}) *Timeline {
+    a.Set("items", value)
+    return a
+}
+
+/**
  * API 或 数据映射
  */
 func (a *Timeline) Source(value interface{}) *Timeline {
@@ -273,13 +281,5 @@ func (a *Timeline) Source(value interface{}) *Timeline {
  */
 func (a *Timeline) Reverse(value interface{}) *Timeline {
     a.Set("reverse", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Timeline) Staticon(value interface{}) *Timeline {
-    a.Set("staticOn", value)
     return a
 }

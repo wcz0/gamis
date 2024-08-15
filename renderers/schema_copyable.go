@@ -15,6 +15,10 @@ func NewSchemaCopyable() *SchemaCopyable {
         BaseRenderer: NewBaseRenderer(),
     }
 
+    return a
+}
+
+
 func (a *SchemaCopyable) Set(name string, value interface{}) *SchemaCopyable {
     if name == "map" {
         if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
@@ -24,10 +28,6 @@ func (a *SchemaCopyable) Set(name string, value interface{}) *SchemaCopyable {
     a.AmisSchema[name] = value
     return a
 }
-
-    return a
-}
-
 /**
  * 配置复制时的内容模板。
  */
