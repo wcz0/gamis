@@ -20,18 +20,10 @@ func NewFlex() *Flex {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否禁用表达式
  */
-func (a *Flex) Id(value interface{}) *Flex {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Flex) OnEvent(value interface{}) *Flex {
-    a.Set("onEvent", value)
+func (a *Flex) DisabledOn(value interface{}) *Flex {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -51,6 +43,48 @@ func (a *Flex) StaticSchema(value interface{}) *Flex {
 }
 
 /**
+ * 垂直布局
+ * 可选值: stretch | start | flex-start | flex-end | end | center | baseline
+ */
+func (a *Flex) AlignItems(value interface{}) *Flex {
+    a.Set("alignItems", value)
+    return a
+}
+
+/**
+ * 方向
+ * 可选值: row | column | row-reverse | column-reverse
+ */
+func (a *Flex) Direction(value interface{}) *Flex {
+    a.Set("direction", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Flex) Id(value interface{}) *Flex {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Flex) StaticLabelClassName(value interface{}) *Flex {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 自定义样式
+ */
+func (a *Flex) Style(value interface{}) *Flex {
+    a.Set("style", value)
+    return a
+}
+
+/**
  * 编辑器配置，运行时可以忽略
  */
 func (a *Flex) EditorSetting(value interface{}) *Flex {
@@ -59,57 +93,9 @@ func (a *Flex) EditorSetting(value interface{}) *Flex {
 }
 
 /**
- * 容器 css 类名
- */
-func (a *Flex) ClassName(value interface{}) *Flex {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Flex) VisibleOn(value interface{}) *Flex {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Flex) StaticOn(value interface{}) *Flex {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Flex) Visible(value interface{}) *Flex {
-    a.Set("visible", value)
-    return a
-}
-
-/**
  */
 func (a *Flex) TestIdBuilder(value interface{}) *Flex {
     a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Flex) Hidden(value interface{}) *Flex {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Flex) HiddenOn(value interface{}) *Flex {
-    a.Set("hiddenOn", value)
     return a
 }
 
@@ -123,43 +109,26 @@ func (a *Flex) AlignContent(value interface{}) *Flex {
 }
 
 /**
+ * 容器 css 类名
+ */
+func (a *Flex) ClassName(value interface{}) *Flex {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Flex) Hidden(value interface{}) *Flex {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
  * 是否静态展示
  */
 func (a *Flex) Static(value interface{}) *Flex {
     a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Flex) StaticClassName(value interface{}) *Flex {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Flex) StaticLabelClassName(value interface{}) *Flex {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 指定为 flex 展示类型
- */
-func (a *Flex) Type(value interface{}) *Flex {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 垂直布局
- * 可选值: stretch | start | flex-start | flex-end | end | center | baseline
- */
-func (a *Flex) AlignItems(value interface{}) *Flex {
-    a.Set("alignItems", value)
     return a
 }
 
@@ -173,11 +142,26 @@ func (a *Flex) Justify(value interface{}) *Flex {
 }
 
 /**
- * 方向
- * 可选值: row | column | row-reverse | column-reverse
+ * 是否静态展示表达式
  */
-func (a *Flex) Direction(value interface{}) *Flex {
-    a.Set("direction", value)
+func (a *Flex) StaticOn(value interface{}) *Flex {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Flex) StaticClassName(value interface{}) *Flex {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 指定为 flex 展示类型
+ */
+func (a *Flex) Type(value interface{}) *Flex {
+    a.Set("type", value)
     return a
 }
 
@@ -198,14 +182,6 @@ func (a *Flex) Disabled(value interface{}) *Flex {
 }
 
 /**
- * 是否禁用表达式
- */
-func (a *Flex) DisabledOn(value interface{}) *Flex {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
  * 静态展示空值占位
  */
 func (a *Flex) StaticPlaceholder(value interface{}) *Flex {
@@ -214,10 +190,10 @@ func (a *Flex) StaticPlaceholder(value interface{}) *Flex {
 }
 
 /**
- * 自定义样式
+ * 事件动作配置
  */
-func (a *Flex) Style(value interface{}) *Flex {
-    a.Set("style", value)
+func (a *Flex) OnEvent(value interface{}) *Flex {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -230,8 +206,32 @@ func (a *Flex) UseMobileUI(value interface{}) *Flex {
 }
 
 /**
+ * 是否隐藏表达式
+ */
+func (a *Flex) HiddenOn(value interface{}) *Flex {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Flex) VisibleOn(value interface{}) *Flex {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
  */
 func (a *Flex) Testid(value interface{}) *Flex {
     a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Flex) Visible(value interface{}) *Flex {
+    a.Set("visible", value)
     return a
 }

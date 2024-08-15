@@ -20,34 +20,32 @@ func NewColor() *Color {
 }
 
 /**
- * 是否显示
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Color) Visible(value interface{}) *Color {
-    a.Set("visible", value)
+func (a *Color) EditorSetting(value interface{}) *Color {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否显示表达式
  */
-func (a *Color) VisibleOn(value interface{}) *Color {
-    a.Set("visibleOn", value)
+func (a *Color) TestIdBuilder(value interface{}) *Color {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
  */
-func (a *Color) StaticOn(value interface{}) *Color {
-    a.Set("staticOn", value)
+func (a *Color) Testid(value interface{}) *Color {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 静态展示表单项类名
+ * 是否静态展示
  */
-func (a *Color) StaticClassName(value interface{}) *Color {
-    a.Set("staticClassName", value)
+func (a *Color) Static(value interface{}) *Color {
+    a.Set("static", value)
     return a
 }
 
@@ -59,34 +57,10 @@ func (a *Color) StaticSchema(value interface{}) *Color {
 }
 
 /**
- * 指定为颜色显示控件
+ * 静态展示表单项Label类名
  */
-func (a *Color) Type(value interface{}) *Color {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Color) Disabled(value interface{}) *Color {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Color) OnEvent(value interface{}) *Color {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Color) StaticInputClassName(value interface{}) *Color {
-    a.Set("staticInputClassName", value)
+func (a *Color) StaticLabelClassName(value interface{}) *Color {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -107,18 +81,42 @@ func (a *Color) ShowValue(value interface{}) *Color {
 }
 
 /**
- * 是否隐藏
+ * 是否隐藏表达式
  */
-func (a *Color) Hidden(value interface{}) *Color {
-    a.Set("hidden", value)
+func (a *Color) HiddenOn(value interface{}) *Color {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 是否显示
  */
-func (a *Color) Static(value interface{}) *Color {
-    a.Set("static", value)
+func (a *Color) Visible(value interface{}) *Color {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Color) OnEvent(value interface{}) *Color {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Color) StaticOn(value interface{}) *Color {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Color) StaticPlaceholder(value interface{}) *Color {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -139,10 +137,18 @@ func (a *Color) DisabledOn(value interface{}) *Color {
 }
 
 /**
- * 是否隐藏表达式
+ * 是否隐藏
  */
-func (a *Color) HiddenOn(value interface{}) *Color {
-    a.Set("hiddenOn", value)
+func (a *Color) Hidden(value interface{}) *Color {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Color) VisibleOn(value interface{}) *Color {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -155,41 +161,18 @@ func (a *Color) Id(value interface{}) *Color {
 }
 
 /**
- * 静态展示空值占位
+ * 静态展示表单项类名
  */
-func (a *Color) StaticPlaceholder(value interface{}) *Color {
-    a.Set("staticPlaceholder", value)
+func (a *Color) StaticClassName(value interface{}) *Color {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 静态展示表单项Value类名
  */
-func (a *Color) StaticLabelClassName(value interface{}) *Color {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Color) Style(value interface{}) *Color {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Color) EditorSetting(value interface{}) *Color {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *Color) TestIdBuilder(value interface{}) *Color {
-    a.Set("testIdBuilder", value)
+func (a *Color) StaticInputClassName(value interface{}) *Color {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -202,8 +185,25 @@ func (a *Color) ClassName(value interface{}) *Color {
 }
 
 /**
+ * 是否禁用
  */
-func (a *Color) Testid(value interface{}) *Color {
-    a.Set("testid", value)
+func (a *Color) Disabled(value interface{}) *Color {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Color) Style(value interface{}) *Color {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 指定为颜色显示控件
+ */
+func (a *Color) Type(value interface{}) *Color {
+    a.Set("type", value)
     return a
 }

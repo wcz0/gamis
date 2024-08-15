@@ -14,143 +14,8 @@ func NewDialogAction() *DialogAction {
     a := &DialogAction{
         BaseRenderer: NewBaseRenderer(),
     }
-    a.Set("type", "button")
     a.Set("actionType", "dialog")
-    return a
-}
-
-/**
- * 指定为打开弹窗
- */
-func (a *DialogAction) ActionType(value interface{}) *DialogAction {
-    a.Set("actionType", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *DialogAction) StaticOn(value interface{}) *DialogAction {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 倒计时文字自定义
- */
-func (a *DialogAction) CountDownTpl(value interface{}) *DialogAction {
-    a.Set("countDownTpl", value)
-    return a
-}
-
-/**
- * 子内容
- */
-func (a *DialogAction) Body(value interface{}) *DialogAction {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 禁用时的文案提示。
- */
-func (a *DialogAction) DisabledTip(value interface{}) *DialogAction {
-    a.Set("disabledTip", value)
-    return a
-}
-
-/**
- * 可选值: top | right | bottom | left
- */
-func (a *DialogAction) TooltipPlacement(value interface{}) *DialogAction {
-    a.Set("tooltipPlacement", value)
-    return a
-}
-
-/**
- * 弹框详情 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dialog
- */
-func (a *DialogAction) Dialog(value interface{}) *DialogAction {
-    a.Set("dialog", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *DialogAction) StaticPlaceholder(value interface{}) *DialogAction {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *DialogAction) StaticInputClassName(value interface{}) *DialogAction {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 是否为块状展示，默认为内联。
- */
-func (a *DialogAction) Block(value interface{}) *DialogAction {
-    a.Set("block", value)
-    return a
-}
-
-/**
- * 可以指定让谁来触发这个动作。
- */
-func (a *DialogAction) Target(value interface{}) *DialogAction {
-    a.Set("target", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *DialogAction) Badge(value interface{}) *DialogAction {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- */
-func (a *DialogAction) TestIdBuilder(value interface{}) *DialogAction {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * loading 上的css 类名
- */
-func (a *DialogAction) LoadingClassName(value interface{}) *DialogAction {
-    a.Set("loadingClassName", value)
-    return a
-}
-
-/**
- * 按钮图标， iconfont 的类名
- */
-func (a *DialogAction) Icon(value interface{}) *DialogAction {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 点击后的禁止倒计时（秒）
- */
-func (a *DialogAction) CountDown(value interface{}) *DialogAction {
-    a.Set("countDown", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *DialogAction) Hidden(value interface{}) *DialogAction {
-    a.Set("hidden", value)
+    a.Set("type", "button")
     return a
 }
 
@@ -159,22 +24,6 @@ func (a *DialogAction) Hidden(value interface{}) *DialogAction {
  */
 func (a *DialogAction) Id(value interface{}) *DialogAction {
     a.Set("id", value)
-    return a
-}
-
-/**
- * 提示文字，配置了操作前会要求用户确认。
- */
-func (a *DialogAction) ConfirmText(value interface{}) *DialogAction {
-    a.Set("confirmText", value)
-    return a
-}
-
-/**
- * 自定义事件处理函数
- */
-func (a *DialogAction) OnClick(value interface{}) *DialogAction {
-    a.Set("onClick", value)
     return a
 }
 
@@ -188,88 +37,10 @@ func (a *DialogAction) Level(value interface{}) *DialogAction {
 }
 
 /**
- * 激活状态时的样式
- */
-func (a *DialogAction) ActiveLevel(value interface{}) *DialogAction {
-    a.Set("activeLevel", value)
-    return a
-}
-
-/**
- * 激活状态时的类名
- */
-func (a *DialogAction) ActiveClassName(value interface{}) *DialogAction {
-    a.Set("activeClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *DialogAction) StaticClassName(value interface{}) *DialogAction {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *DialogAction) UseMobileUI(value interface{}) *DialogAction {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *DialogAction) DisabledOn(value interface{}) *DialogAction {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *DialogAction) Visible(value interface{}) *DialogAction {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *DialogAction) OnEvent(value interface{}) *DialogAction {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
  * 是否有下一个的表达式，正常可以不用配置，如果想要刷掉某些数据可以配置这个。
  */
 func (a *DialogAction) NextCondition(value interface{}) *DialogAction {
     a.Set("nextCondition", value)
-    return a
-}
-
-/**
- */
-func (a *DialogAction) Reload(value interface{}) *DialogAction {
-    a.Set("reload", value)
-    return a
-}
-
-/**
- */
-func (a *DialogAction) Testid(value interface{}) *DialogAction {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 右侧按钮图标， iconfont 的类名
- */
-func (a *DialogAction) RightIcon(value interface{}) *DialogAction {
-    a.Set("rightIcon", value)
     return a
 }
 
@@ -282,11 +53,10 @@ func (a *DialogAction) Label(value interface{}) *DialogAction {
 }
 
 /**
- * 按钮大小
- * 可选值: xs | sm | md | lg
+ * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
  */
-func (a *DialogAction) Size(value interface{}) *DialogAction {
-    a.Set("size", value)
+func (a *DialogAction) Required(value interface{}) *DialogAction {
+    a.Set("required", value)
     return a
 }
 
@@ -299,26 +69,42 @@ func (a *DialogAction) RequireSelected(value interface{}) *DialogAction {
 }
 
 /**
- * 是否禁用
+ * 事件动作配置
  */
-func (a *DialogAction) Disabled(value interface{}) *DialogAction {
-    a.Set("disabled", value)
+func (a *DialogAction) OnEvent(value interface{}) *DialogAction {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 静态展示表单项Label类名
  */
-func (a *DialogAction) VisibleOn(value interface{}) *DialogAction {
-    a.Set("visibleOn", value)
+func (a *DialogAction) StaticLabelClassName(value interface{}) *DialogAction {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 是否为块状展示，默认为内联。
  */
-func (a *DialogAction) EditorSetting(value interface{}) *DialogAction {
-    a.Set("editorSetting", value)
+func (a *DialogAction) Block(value interface{}) *DialogAction {
+    a.Set("block", value)
+    return a
+}
+
+/**
+ * 可选值: top | right | bottom | left
+ */
+func (a *DialogAction) TooltipPlacement(value interface{}) *DialogAction {
+    a.Set("tooltipPlacement", value)
+    return a
+}
+
+/**
+ * 可以指定让谁来触发这个动作。
+ */
+func (a *DialogAction) Target(value interface{}) *DialogAction {
+    a.Set("target", value)
     return a
 }
 
@@ -331,22 +117,6 @@ func (a *DialogAction) ClassName(value interface{}) *DialogAction {
 }
 
 /**
- * 是否静态展示
- */
-func (a *DialogAction) Static(value interface{}) *DialogAction {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
- */
-func (a *DialogAction) Required(value interface{}) *DialogAction {
-    a.Set("required", value)
-    return a
-}
-
-/**
  * 是否隐藏表达式
  */
 func (a *DialogAction) HiddenOn(value interface{}) *DialogAction {
@@ -355,26 +125,18 @@ func (a *DialogAction) HiddenOn(value interface{}) *DialogAction {
 }
 
 /**
- * 键盘快捷键
+ * 倒计时文字自定义
  */
-func (a *DialogAction) HotKey(value interface{}) *DialogAction {
-    a.Set("hotKey", value)
+func (a *DialogAction) CountDownTpl(value interface{}) *DialogAction {
+    a.Set("countDownTpl", value)
     return a
 }
 
 /**
+ * 是否禁用表达式
  */
-func (a *DialogAction) Redirect(value interface{}) *DialogAction {
-    a.Set("redirect", value)
-    return a
-}
-
-/**
- * 指定按钮类型，支持 button、submit或者reset三种类型。
- * 可选值: button | submit | reset
- */
-func (a *DialogAction) Type(value interface{}) *DialogAction {
-    a.Set("type", value)
+func (a *DialogAction) DisabledOn(value interface{}) *DialogAction {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -394,10 +156,49 @@ func (a *DialogAction) Close(value interface{}) *DialogAction {
 }
 
 /**
- * 是否显示loading效果
+ * 静态展示空值占位
  */
-func (a *DialogAction) LoadingOn(value interface{}) *DialogAction {
-    a.Set("loadingOn", value)
+func (a *DialogAction) StaticPlaceholder(value interface{}) *DialogAction {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *DialogAction) EditorSetting(value interface{}) *DialogAction {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 激活状态时的类名
+ */
+func (a *DialogAction) ActiveClassName(value interface{}) *DialogAction {
+    a.Set("activeClassName", value)
+    return a
+}
+
+/**
+ * 按钮图标， iconfont 的类名
+ */
+func (a *DialogAction) Icon(value interface{}) *DialogAction {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 子内容
+ */
+func (a *DialogAction) Body(value interface{}) *DialogAction {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ */
+func (a *DialogAction) Redirect(value interface{}) *DialogAction {
+    a.Set("redirect", value)
     return a
 }
 
@@ -409,10 +210,81 @@ func (a *DialogAction) StaticSchema(value interface{}) *DialogAction {
 }
 
 /**
- * 组件样式
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *DialogAction) Style(value interface{}) *DialogAction {
-    a.Set("style", value)
+func (a *DialogAction) UseMobileUI(value interface{}) *DialogAction {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 右侧按钮图标， iconfont 的类名
+ */
+func (a *DialogAction) RightIcon(value interface{}) *DialogAction {
+    a.Set("rightIcon", value)
+    return a
+}
+
+/**
+ */
+func (a *DialogAction) Reload(value interface{}) *DialogAction {
+    a.Set("reload", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *DialogAction) Hidden(value interface{}) *DialogAction {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 键盘快捷键
+ */
+func (a *DialogAction) HotKey(value interface{}) *DialogAction {
+    a.Set("hotKey", value)
+    return a
+}
+
+/**
+ * 弹框详情 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dialog
+ */
+func (a *DialogAction) Dialog(value interface{}) *DialogAction {
+    a.Set("dialog", value)
+    return a
+}
+
+/**
+ * 指定为打开弹窗
+ */
+func (a *DialogAction) ActionType(value interface{}) *DialogAction {
+    a.Set("actionType", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *DialogAction) StaticClassName(value interface{}) *DialogAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *DialogAction) StaticInputClassName(value interface{}) *DialogAction {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 点击后的禁止倒计时（秒）
+ */
+func (a *DialogAction) CountDown(value interface{}) *DialogAction {
+    a.Set("countDown", value)
     return a
 }
 
@@ -433,18 +305,105 @@ func (a *DialogAction) MergeData(value interface{}) *DialogAction {
 }
 
 /**
- * 数据映射
+ * 是否静态展示
  */
-func (a *DialogAction) Data(value interface{}) *DialogAction {
-    a.Set("data", value)
+func (a *DialogAction) Static(value interface{}) *DialogAction {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 组件样式
  */
-func (a *DialogAction) StaticLabelClassName(value interface{}) *DialogAction {
-    a.Set("staticLabelClassName", value)
+func (a *DialogAction) Style(value interface{}) *DialogAction {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *DialogAction) LoadingOn(value interface{}) *DialogAction {
+    a.Set("loadingOn", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *DialogAction) Disabled(value interface{}) *DialogAction {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 禁用时的文案提示。
+ */
+func (a *DialogAction) DisabledTip(value interface{}) *DialogAction {
+    a.Set("disabledTip", value)
+    return a
+}
+
+/**
+ */
+func (a *DialogAction) Tooltip(value interface{}) *DialogAction {
+    a.Set("tooltip", value)
+    return a
+}
+
+/**
+ */
+func (a *DialogAction) Testid(value interface{}) *DialogAction {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
+ */
+func (a *DialogAction) Size(value interface{}) *DialogAction {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 激活状态时的样式
+ */
+func (a *DialogAction) ActiveLevel(value interface{}) *DialogAction {
+    a.Set("activeLevel", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *DialogAction) VisibleOn(value interface{}) *DialogAction {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ */
+func (a *DialogAction) TestIdBuilder(value interface{}) *DialogAction {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 指定按钮类型，支持 button、submit或者reset三种类型。
+ * 可选值: button | submit | reset
+ */
+func (a *DialogAction) Type(value interface{}) *DialogAction {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 角标
+ */
+func (a *DialogAction) Badge(value interface{}) *DialogAction {
+    a.Set("badge", value)
     return a
 }
 
@@ -457,8 +416,49 @@ func (a *DialogAction) RightIconClassName(value interface{}) *DialogAction {
 }
 
 /**
+ * loading 上的css 类名
  */
-func (a *DialogAction) Tooltip(value interface{}) *DialogAction {
-    a.Set("tooltip", value)
+func (a *DialogAction) LoadingClassName(value interface{}) *DialogAction {
+    a.Set("loadingClassName", value)
+    return a
+}
+
+/**
+ * 提示文字，配置了操作前会要求用户确认。
+ */
+func (a *DialogAction) ConfirmText(value interface{}) *DialogAction {
+    a.Set("confirmText", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *DialogAction) StaticOn(value interface{}) *DialogAction {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 数据映射
+ */
+func (a *DialogAction) Data(value interface{}) *DialogAction {
+    a.Set("data", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *DialogAction) Visible(value interface{}) *DialogAction {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 自定义事件处理函数
+ */
+func (a *DialogAction) OnClick(value interface{}) *DialogAction {
+    a.Set("onClick", value)
     return a
 }

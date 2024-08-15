@@ -18,73 +18,10 @@ func NewTab() *Tab {
 }
 
 /**
- * 按钮图标
+ * 内容
  */
-func (a *Tab) Icon(value interface{}) *Tab {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Tab) StaticPlaceholder(value interface{}) *Tab {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Tab) Style(value interface{}) *Tab {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Tab) UseMobileUI(value interface{}) *Tab {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- */
-func (a *Tab) Testid(value interface{}) *Tab {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Tab) ClassName(value interface{}) *Tab {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Tab) VisibleOn(value interface{}) *Tab {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Tab) Static(value interface{}) *Tab {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 徽标
- */
-func (a *Tab) Badge(value interface{}) *Tab {
-    a.Set("badge", value)
+func (a *Tab) Body(value interface{}) *Tab {
+    a.Set("body", value)
     return a
 }
 
@@ -97,34 +34,10 @@ func (a *Tab) IconPosition(value interface{}) *Tab {
 }
 
 /**
- * 是否可关闭，优先级高于 tabs 的 closable
+ * 点开时才加载卡片内容
  */
-func (a *Tab) Closable(value interface{}) *Tab {
-    a.Set("closable", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Tab) OnEvent(value interface{}) *Tab {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Tab) StaticOn(value interface{}) *Tab {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 设置以后将跟url的hash对应
- */
-func (a *Tab) Hash(value interface{}) *Tab {
-    a.Set("hash", value)
+func (a *Tab) MountOnEnter(value interface{}) *Tab {
+    a.Set("mountOnEnter", value)
     return a
 }
 
@@ -145,18 +58,18 @@ func (a *Tab) Horizontal(value interface{}) *Tab {
 }
 
 /**
- * 是否禁用表达式
+ * Tab 标题
  */
-func (a *Tab) DisabledOn(value interface{}) *Tab {
-    a.Set("disabledOn", value)
+func (a *Tab) Title(value interface{}) *Tab {
+    a.Set("title", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 是否静态展示表达式
  */
-func (a *Tab) Hidden(value interface{}) *Tab {
-    a.Set("hidden", value)
+func (a *Tab) StaticOn(value interface{}) *Tab {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -169,6 +82,55 @@ func (a *Tab) StaticClassName(value interface{}) *Tab {
 }
 
 /**
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
+ */
+func (a *Tab) Mode(value interface{}) *Tab {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Tab) ClassName(value interface{}) *Tab {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Tab) Id(value interface{}) *Tab {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 徽标
+ */
+func (a *Tab) Badge(value interface{}) *Tab {
+    a.Set("badge", value)
+    return a
+}
+
+/**
+ * 按钮图标
+ */
+func (a *Tab) Icon(value interface{}) *Tab {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Tab) HiddenOn(value interface{}) *Tab {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
  * 静态展示表单项Value类名
  */
 func (a *Tab) StaticInputClassName(value interface{}) *Tab {
@@ -177,10 +139,89 @@ func (a *Tab) StaticInputClassName(value interface{}) *Tab {
 }
 
 /**
- * 内容
+ * 设置以后内容每次都会重新渲染
  */
-func (a *Tab) Tab(value interface{}) *Tab {
-    a.Set("tab", value)
+func (a *Tab) Reload(value interface{}) *Tab {
+    a.Set("reload", value)
+    return a
+}
+
+/**
+ * 是否可关闭，优先级高于 tabs 的 closable
+ */
+func (a *Tab) Closable(value interface{}) *Tab {
+    a.Set("closable", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Tab) VisibleOn(value interface{}) *Tab {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Tab) Style(value interface{}) *Tab {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Tab) EditorSetting(value interface{}) *Tab {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Tab) UseMobileUI(value interface{}) *Tab {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Tab) Hidden(value interface{}) *Tab {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Tab) Static(value interface{}) *Tab {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Tab) StaticPlaceholder(value interface{}) *Tab {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Tab) OnEvent(value interface{}) *Tab {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *Tab) Testid(value interface{}) *Tab {
+    a.Set("testid", value)
     return a
 }
 
@@ -208,30 +249,6 @@ func (a *Tab) StaticSchema(value interface{}) *Tab {
 }
 
 /**
- * 点开时才加载卡片内容
- */
-func (a *Tab) MountOnEnter(value interface{}) *Tab {
-    a.Set("mountOnEnter", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Tab) Id(value interface{}) *Tab {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Tab) EditorSetting(value interface{}) *Tab {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
  */
 func (a *Tab) TestIdBuilder(value interface{}) *Tab {
     a.Set("testIdBuilder", value)
@@ -239,34 +256,18 @@ func (a *Tab) TestIdBuilder(value interface{}) *Tab {
 }
 
 /**
- * Tab 标题
- */
-func (a *Tab) Title(value interface{}) *Tab {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 设置以后内容每次都会重新渲染
- */
-func (a *Tab) Reload(value interface{}) *Tab {
-    a.Set("reload", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Tab) HiddenOn(value interface{}) *Tab {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
  * 内容
  */
-func (a *Tab) Body(value interface{}) *Tab {
-    a.Set("body", value)
+func (a *Tab) Tab(value interface{}) *Tab {
+    a.Set("tab", value)
+    return a
+}
+
+/**
+ * 设置以后将跟url的hash对应
+ */
+func (a *Tab) Hash(value interface{}) *Tab {
+    a.Set("hash", value)
     return a
 }
 
@@ -279,10 +280,9 @@ func (a *Tab) Disabled(value interface{}) *Tab {
 }
 
 /**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
+ * 是否禁用表达式
  */
-func (a *Tab) Mode(value interface{}) *Tab {
-    a.Set("mode", value)
+func (a *Tab) DisabledOn(value interface{}) *Tab {
+    a.Set("disabledOn", value)
     return a
 }

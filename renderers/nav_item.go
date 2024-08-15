@@ -19,24 +19,31 @@ func NewNavItem() *NavItem {
 
 /**
  */
-func (a *NavItem) ClassName(value interface{}) *NavItem {
-    a.Set("className", value)
+func (a *NavItem) Disabled(value interface{}) *NavItem {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 组件样式
  */
-func (a *NavItem) Static(value interface{}) *NavItem {
-    a.Set("static", value)
+func (a *NavItem) Style(value interface{}) *NavItem {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 图标类名，参考 fontawesome 4。
  */
-func (a *NavItem) Icon(value interface{}) *NavItem {
-    a.Set("icon", value)
+func (a *NavItem) Key(value interface{}) *NavItem {
+    a.Set("key", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *NavItem) Hidden(value interface{}) *NavItem {
+    a.Set("hidden", value)
     return a
 }
 
@@ -49,8 +56,8 @@ func (a *NavItem) DeferApi(value interface{}) *NavItem {
 
 /**
  */
-func (a *NavItem) Children(value interface{}) *NavItem {
-    a.Set("children", value)
+func (a *NavItem) Active(value interface{}) *NavItem {
+    a.Set("active", value)
     return a
 }
 
@@ -63,10 +70,26 @@ func (a *NavItem) Visible(value interface{}) *NavItem {
 }
 
 /**
- * 是否显示表达式
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *NavItem) VisibleOn(value interface{}) *NavItem {
-    a.Set("visibleOn", value)
+func (a *NavItem) Id(value interface{}) *NavItem {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *NavItem) Static(value interface{}) *NavItem {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *NavItem) StaticOn(value interface{}) *NavItem {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -80,105 +103,15 @@ func (a *NavItem) UseMobileUI(value interface{}) *NavItem {
 
 /**
  */
-func (a *NavItem) Unfolded(value interface{}) *NavItem {
-    a.Set("unfolded", value)
+func (a *NavItem) To(value interface{}) *NavItem {
+    a.Set("to", value)
     return a
 }
 
 /**
  */
-func (a *NavItem) Defer(value interface{}) *NavItem {
-    a.Set("defer", value)
-    return a
-}
-
-/**
- */
-func (a *NavItem) TestIdBuilder(value interface{}) *NavItem {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- */
-func (a *NavItem) Target(value interface{}) *NavItem {
-    a.Set("target", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *NavItem) Hidden(value interface{}) *NavItem {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *NavItem) Id(value interface{}) *NavItem {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *NavItem) EditorSetting(value interface{}) *NavItem {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *NavItem) Key(value interface{}) *NavItem {
-    a.Set("key", value)
-    return a
-}
-
-/**
- */
-func (a *NavItem) DisabledTip(value interface{}) *NavItem {
-    a.Set("disabledTip", value)
-    return a
-}
-
-/**
- */
-func (a *NavItem) Mode(value interface{}) *NavItem {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- */
-func (a *NavItem) Testid(value interface{}) *NavItem {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *NavItem) DisabledOn(value interface{}) *NavItem {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *NavItem) OnEvent(value interface{}) *NavItem {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *NavItem) StaticPlaceholder(value interface{}) *NavItem {
-    a.Set("staticPlaceholder", value)
+func (a *NavItem) ClassName(value interface{}) *NavItem {
+    a.Set("className", value)
     return a
 }
 
@@ -198,56 +131,48 @@ func (a *NavItem) Label(value interface{}) *NavItem {
 }
 
 /**
+ * 图标类名，参考 fontawesome 4。
  */
-func (a *NavItem) Active(value interface{}) *NavItem {
-    a.Set("active", value)
+func (a *NavItem) Icon(value interface{}) *NavItem {
+    a.Set("icon", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 是否显示表达式
  */
-func (a *NavItem) StaticLabelClassName(value interface{}) *NavItem {
-    a.Set("staticLabelClassName", value)
+func (a *NavItem) VisibleOn(value interface{}) *NavItem {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 编辑器配置，运行时可以忽略
  */
-func (a *NavItem) StaticInputClassName(value interface{}) *NavItem {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *NavItem) Style(value interface{}) *NavItem {
-    a.Set("style", value)
+func (a *NavItem) EditorSetting(value interface{}) *NavItem {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
  */
-func (a *NavItem) Disabled(value interface{}) *NavItem {
-    a.Set("disabled", value)
+func (a *NavItem) TestIdBuilder(value interface{}) *NavItem {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
  */
-func (a *NavItem) HiddenOn(value interface{}) *NavItem {
-    a.Set("hiddenOn", value)
+func (a *NavItem) Unfolded(value interface{}) *NavItem {
+    a.Set("unfolded", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 静态展示空值占位
  */
-func (a *NavItem) StaticOn(value interface{}) *NavItem {
-    a.Set("staticOn", value)
+func (a *NavItem) StaticPlaceholder(value interface{}) *NavItem {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
@@ -261,7 +186,82 @@ func (a *NavItem) StaticClassName(value interface{}) *NavItem {
 
 /**
  */
-func (a *NavItem) To(value interface{}) *NavItem {
-    a.Set("to", value)
+func (a *NavItem) Defer(value interface{}) *NavItem {
+    a.Set("defer", value)
+    return a
+}
+
+/**
+ */
+func (a *NavItem) Mode(value interface{}) *NavItem {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ */
+func (a *NavItem) Children(value interface{}) *NavItem {
+    a.Set("children", value)
+    return a
+}
+
+/**
+ */
+func (a *NavItem) Testid(value interface{}) *NavItem {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *NavItem) DisabledOn(value interface{}) *NavItem {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *NavItem) HiddenOn(value interface{}) *NavItem {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *NavItem) StaticInputClassName(value interface{}) *NavItem {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *NavItem) Target(value interface{}) *NavItem {
+    a.Set("target", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *NavItem) OnEvent(value interface{}) *NavItem {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *NavItem) StaticLabelClassName(value interface{}) *NavItem {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *NavItem) DisabledTip(value interface{}) *NavItem {
+    a.Set("disabledTip", value)
     return a
 }

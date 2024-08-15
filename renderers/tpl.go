@@ -20,6 +20,38 @@ func NewTpl() *Tpl {
 }
 
 /**
+ * 容器 css 类名
+ */
+func (a *Tpl) ClassName(value interface{}) *Tpl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Tpl) StaticPlaceholder(value interface{}) *Tpl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Tpl) StaticClassName(value interface{}) *Tpl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Tpl) UseMobileUI(value interface{}) *Tpl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
  * 是否禁用表达式
  */
 func (a *Tpl) DisabledOn(value interface{}) *Tpl {
@@ -28,17 +60,17 @@ func (a *Tpl) DisabledOn(value interface{}) *Tpl {
 }
 
 /**
- * 事件动作配置
  */
-func (a *Tpl) OnEvent(value interface{}) *Tpl {
-    a.Set("onEvent", value)
+func (a *Tpl) Text(value interface{}) *Tpl {
+    a.Set("text", value)
     return a
 }
 
 /**
+ * 是否内联显示？
  */
-func (a *Tpl) TestIdBuilder(value interface{}) *Tpl {
-    a.Set("testIdBuilder", value)
+func (a *Tpl) Inline(value interface{}) *Tpl {
+    a.Set("inline", value)
     return a
 }
 
@@ -51,26 +83,48 @@ func (a *Tpl) Badge(value interface{}) *Tpl {
 }
 
 /**
- * 静态展示表单项Value类名
  */
-func (a *Tpl) StaticInputClassName(value interface{}) *Tpl {
-    a.Set("staticInputClassName", value)
+func (a *Tpl) TestidBuilder(value interface{}) *Tpl {
+    a.Set("testidBuilder", value)
     return a
 }
 
 /**
- * 自定义样式
+ * 是否隐藏表达式
  */
-func (a *Tpl) Style(value interface{}) *Tpl {
-    a.Set("style", value)
+func (a *Tpl) HiddenOn(value interface{}) *Tpl {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 是否内联显示？
  */
-func (a *Tpl) Inline(value interface{}) *Tpl {
-    a.Set("inline", value)
+func (a *Tpl) Testid(value interface{}) *Tpl {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Tpl) Disabled(value interface{}) *Tpl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Tpl) VisibleOn(value interface{}) *Tpl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *Tpl) Id(value interface{}) *Tpl {
+    a.Set("id", value)
     return a
 }
 
@@ -90,87 +144,18 @@ func (a *Tpl) Visible(value interface{}) *Tpl {
 }
 
 /**
+ * 事件动作配置
+ */
+func (a *Tpl) OnEvent(value interface{}) *Tpl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
  * 是否静态展示表达式
  */
 func (a *Tpl) StaticOn(value interface{}) *Tpl {
     a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 标签类型
- */
-func (a *Tpl) WrapperComponent(value interface{}) *Tpl {
-    a.Set("wrapperComponent", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Tpl) HiddenOn(value interface{}) *Tpl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- */
-func (a *Tpl) Tpl(value interface{}) *Tpl {
-    a.Set("tpl", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Tpl) StaticPlaceholder(value interface{}) *Tpl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- */
-func (a *Tpl) TestidBuilder(value interface{}) *Tpl {
-    a.Set("testidBuilder", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Tpl) ClassName(value interface{}) *Tpl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Tpl) StaticClassName(value interface{}) *Tpl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Tpl) Html(value interface{}) *Tpl {
-    a.Set("html", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Tpl) Id(value interface{}) *Tpl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Tpl) Static(value interface{}) *Tpl {
-    a.Set("static", value)
     return a
 }
 
@@ -183,9 +168,17 @@ func (a *Tpl) StaticLabelClassName(value interface{}) *Tpl {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *Tpl) Text(value interface{}) *Tpl {
-    a.Set("text", value)
+func (a *Tpl) StaticInputClassName(value interface{}) *Tpl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Tpl) Tpl(value interface{}) *Tpl {
+    a.Set("tpl", value)
     return a
 }
 
@@ -197,33 +190,18 @@ func (a *Tpl) Raw(value interface{}) *Tpl {
 }
 
 /**
- * 是否禁用
+ * 是否静态展示
  */
-func (a *Tpl) Disabled(value interface{}) *Tpl {
-    a.Set("disabled", value)
+func (a *Tpl) Static(value interface{}) *Tpl {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 自定义样式
  */
-func (a *Tpl) Hidden(value interface{}) *Tpl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Tpl) VisibleOn(value interface{}) *Tpl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- */
-func (a *Tpl) Testid(value interface{}) *Tpl {
-    a.Set("testid", value)
+func (a *Tpl) Style(value interface{}) *Tpl {
+    a.Set("style", value)
     return a
 }
 
@@ -236,10 +214,17 @@ func (a *Tpl) EditorSetting(value interface{}) *Tpl {
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
  */
-func (a *Tpl) UseMobileUI(value interface{}) *Tpl {
-    a.Set("useMobileUI", value)
+func (a *Tpl) TestIdBuilder(value interface{}) *Tpl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Tpl) Hidden(value interface{}) *Tpl {
+    a.Set("hidden", value)
     return a
 }
 
@@ -249,5 +234,20 @@ func (a *Tpl) UseMobileUI(value interface{}) *Tpl {
  */
 func (a *Tpl) Type(value interface{}) *Tpl {
     a.Set("type", value)
+    return a
+}
+
+/**
+ */
+func (a *Tpl) Html(value interface{}) *Tpl {
+    a.Set("html", value)
+    return a
+}
+
+/**
+ * 标签类型
+ */
+func (a *Tpl) WrapperComponent(value interface{}) *Tpl {
+    a.Set("wrapperComponent", value)
     return a
 }

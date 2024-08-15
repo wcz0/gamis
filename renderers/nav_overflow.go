@@ -26,6 +26,14 @@ func (a *NavOverflow) OverflowIndicator(value interface{}) *NavOverflow {
 }
 
 /**
+ * 菜单触发按钮CSS类名
+ */
+func (a *NavOverflow) OverflowClassName(value interface{}) *NavOverflow {
+    a.Set("overflowClassName", value)
+    return a
+}
+
+/**
  * 菜单外层CSS类名
  */
 func (a *NavOverflow) OverflowListClassName(value interface{}) *NavOverflow {
@@ -50,14 +58,6 @@ func (a *NavOverflow) ItemWidth(value interface{}) *NavOverflow {
 }
 
 /**
- * 导航列表后缀节点
- */
-func (a *NavOverflow) OverflowSuffix(value interface{}) *NavOverflow {
-    a.Set("overflowSuffix", value)
-    return a
-}
-
-/**
  * 自定义样式
  */
 func (a *NavOverflow) Style(value interface{}) *NavOverflow {
@@ -66,18 +66,10 @@ func (a *NavOverflow) Style(value interface{}) *NavOverflow {
 }
 
 /**
- * 菜单触发按钮的文字
+ * 是否开启响应式收纳
  */
-func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
-    a.Set("overflowLabel", value)
-    return a
-}
-
-/**
- * 菜单触发按钮CSS类名
- */
-func (a *NavOverflow) OverflowClassName(value interface{}) *NavOverflow {
-    a.Set("overflowClassName", value)
+func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
+    a.Set("enable", value)
     return a
 }
 
@@ -98,9 +90,17 @@ func (a *NavOverflow) WrapperComponent(value interface{}) *NavOverflow {
 }
 
 /**
- * 是否开启响应式收纳
+ * 导航列表后缀节点
  */
-func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
-    a.Set("enable", value)
+func (a *NavOverflow) OverflowSuffix(value interface{}) *NavOverflow {
+    a.Set("overflowSuffix", value)
+    return a
+}
+
+/**
+ * 菜单触发按钮的文字
+ */
+func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
+    a.Set("overflowLabel", value)
     return a
 }
