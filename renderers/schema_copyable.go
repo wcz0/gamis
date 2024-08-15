@@ -29,6 +29,14 @@ func (a *SchemaCopyable) Set(name string, value interface{}) *SchemaCopyable {
     return a
 }
 /**
+ * 可以配置图标
+ */
+func (a *SchemaCopyable) Icon(value interface{}) *SchemaCopyable {
+    a.Set("icon", value)
+    return a
+}
+
+/**
  * 配置复制时的内容模板。
  */
 func (a *SchemaCopyable) Content(value interface{}) *SchemaCopyable {
@@ -41,13 +49,5 @@ func (a *SchemaCopyable) Content(value interface{}) *SchemaCopyable {
  */
 func (a *SchemaCopyable) Tooltip(value interface{}) *SchemaCopyable {
     a.Set("tooltip", value)
-    return a
-}
-
-/**
- * 可以配置图标
- */
-func (a *SchemaCopyable) Icon(value interface{}) *SchemaCopyable {
-    a.Set("icon", value)
     return a
 }

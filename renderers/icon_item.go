@@ -30,14 +30,14 @@ func (a *IconItem) Set(name string, value interface{}) *IconItem {
 }
 /**
  */
-func (a *IconItem) Position(value interface{}) *IconItem {
-    a.Set("position", value)
+func (a *IconItem) Icon(value interface{}) *IconItem {
+    a.Set("icon", value)
     return a
 }
 
 /**
  */
-func (a *IconItem) Icon(value interface{}) *IconItem {
-    a.Set("icon", value)
+func (a *IconItem) Position(value interface{}) *IconItem {
+    a.Set("position", value)
     return a
 }

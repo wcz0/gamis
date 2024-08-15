@@ -30,17 +30,9 @@ func (a *Calendar) Set(name string, value interface{}) *Calendar {
     return a
 }
 /**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Calendar) Usemobileui(value interface{}) *Calendar {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
  * 容器 css 类名
  */
-func (a *Calendar) Classname(value interface{}) *Calendar {
+func (a *Calendar) ClassName(value interface{}) *Calendar {
     a.Set("className", value)
     return a
 }
@@ -48,63 +40,31 @@ func (a *Calendar) Classname(value interface{}) *Calendar {
 /**
  * 是否显示表达式
  */
-func (a *Calendar) Visibleon(value interface{}) *Calendar {
+func (a *Calendar) VisibleOn(value interface{}) *Calendar {
     a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 是否静态展示表达式
  */
-func (a *Calendar) Staticinputclassname(value interface{}) *Calendar {
-    a.Set("staticInputClassName", value)
+func (a *Calendar) StaticOn(value interface{}) *Calendar {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 组件样式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Calendar) Style(value interface{}) *Calendar {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Calendar) Disabled(value interface{}) *Calendar {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Calendar) Hiddenon(value interface{}) *Calendar {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Calendar) Staticlabelclassname(value interface{}) *Calendar {
-    a.Set("staticLabelClassName", value)
+func (a *Calendar) EditorSetting(value interface{}) *Calendar {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
  */
-func (a *Calendar) Testidbuilder(value interface{}) *Calendar {
+func (a *Calendar) TestIdBuilder(value interface{}) *Calendar {
     a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 今日激活时的自定义样式
- */
-func (a *Calendar) Todayactivestyle(value interface{}) *Calendar {
-    a.Set("todayActiveStyle", value)
     return a
 }
 
@@ -119,55 +79,8 @@ func (a *Calendar) Hidden(value interface{}) *Calendar {
 /**
  * 事件动作配置
  */
-func (a *Calendar) Onevent(value interface{}) *Calendar {
+func (a *Calendar) OnEvent(value interface{}) *Calendar {
     a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 日程显示颜色自定义
- */
-func (a *Calendar) Scheduleclassnames(value interface{}) *Calendar {
-    a.Set("scheduleClassNames", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Calendar) Staticplaceholder(value interface{}) *Calendar {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- */
-func (a *Calendar) Staticschema(value interface{}) *Calendar {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Calendar) Visible(value interface{}) *Calendar {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Calendar) Static(value interface{}) *Calendar {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 指定为日历选择控件
- */
-func (a *Calendar) Type(value interface{}) *Calendar {
-    a.Set("type", value)
     return a
 }
 
@@ -180,18 +93,58 @@ func (a *Calendar) Schedules(value interface{}) *Calendar {
 }
 
 /**
- * 是否开启放大模式
+ * 静态展示表单项Label类名
  */
-func (a *Calendar) Largemode(value interface{}) *Calendar {
-    a.Set("largeMode", value)
+func (a *Calendar) StaticLabelClassName(value interface{}) *Calendar {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Calendar) Style(value interface{}) *Calendar {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 指定为日历选择控件
+ */
+func (a *Calendar) Type(value interface{}) *Calendar {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 日程显示颜色自定义
+ */
+func (a *Calendar) ScheduleClassNames(value interface{}) *Calendar {
+    a.Set("scheduleClassNames", value)
     return a
 }
 
 /**
  * 是否禁用表达式
  */
-func (a *Calendar) Disabledon(value interface{}) *Calendar {
+func (a *Calendar) DisabledOn(value interface{}) *Calendar {
     a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否开启放大模式
+ */
+func (a *Calendar) LargeMode(value interface{}) *Calendar {
+    a.Set("largeMode", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Calendar) HiddenOn(value interface{}) *Calendar {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -204,26 +157,41 @@ func (a *Calendar) Id(value interface{}) *Calendar {
 }
 
 /**
- * 是否静态展示表达式
- */
-func (a *Calendar) Staticon(value interface{}) *Calendar {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Calendar) Editorsetting(value interface{}) *Calendar {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
  * 静态展示表单项类名
  */
-func (a *Calendar) Staticclassname(value interface{}) *Calendar {
+func (a *Calendar) StaticClassName(value interface{}) *Calendar {
     a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Calendar) StaticSchema(value interface{}) *Calendar {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Calendar) UseMobileUI(value interface{}) *Calendar {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Calendar) Static(value interface{}) *Calendar {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Calendar) StaticInputClassName(value interface{}) *Calendar {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -237,7 +205,39 @@ func (a *Calendar) Testid(value interface{}) *Calendar {
 /**
  * 日程点击展示
  */
-func (a *Calendar) Scheduleaction(value interface{}) *Calendar {
+func (a *Calendar) ScheduleAction(value interface{}) *Calendar {
     a.Set("scheduleAction", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Calendar) Disabled(value interface{}) *Calendar {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 今日激活时的自定义样式
+ */
+func (a *Calendar) TodayActiveStyle(value interface{}) *Calendar {
+    a.Set("todayActiveStyle", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Calendar) Visible(value interface{}) *Calendar {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Calendar) StaticPlaceholder(value interface{}) *Calendar {
+    a.Set("staticPlaceholder", value)
     return a
 }

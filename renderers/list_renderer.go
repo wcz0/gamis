@@ -31,48 +31,257 @@ func (a *ListRenderer) Set(name string, value interface{}) *ListRenderer {
     return a
 }
 /**
+ * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+ */
+func (a *ListRenderer) ItemDraggableOn(value interface{}) *ListRenderer {
+    a.Set("itemDraggableOn", value)
+    return a
+}
+
+/**
  * 静态展示空值占位
  */
-func (a *ListRenderer) Staticplaceholder(value interface{}) *ListRenderer {
+func (a *ListRenderer) StaticPlaceholder(value interface{}) *ListRenderer {
     a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
+ * 静态展示表单项Label类名
  */
-func (a *ListRenderer) Testid(value interface{}) *ListRenderer {
-    a.Set("testid", value)
+func (a *ListRenderer) StaticLabelClassName(value interface{}) *ListRenderer {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
- * 标题
+ * 点击列表单行时，是否选择
  */
-func (a *ListRenderer) Title(value interface{}) *ListRenderer {
-    a.Set("title", value)
+func (a *ListRenderer) CheckOnItemClick(value interface{}) *ListRenderer {
+    a.Set("checkOnItemClick", value)
     return a
 }
 
 /**
- * 是否显示头部
+ * 可以用来作为值的字段
  */
-func (a *ListRenderer) Showheader(value interface{}) *ListRenderer {
-    a.Set("showHeader", value)
+func (a *ListRenderer) ValueField(value interface{}) *ListRenderer {
+    a.Set("valueField", value)
+    return a
+}
+
+/**
+ * 顶部区域
+ */
+func (a *ListRenderer) Header(value interface{}) *ListRenderer {
+    a.Set("header", value)
+    return a
+}
+
+/**
+ * 是否隐藏勾选框
+ */
+func (a *ListRenderer) HideCheckToggler(value interface{}) *ListRenderer {
+    a.Set("hideCheckToggler", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *ListRenderer) StaticOn(value interface{}) *ListRenderer {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *ListRenderer) Style(value interface{}) *ListRenderer {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *ListRenderer) EditorSetting(value interface{}) *ListRenderer {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 顶部区域类名
+ */
+func (a *ListRenderer) HeaderClassName(value interface{}) *ListRenderer {
+    a.Set("headerClassName", value)
+    return a
+}
+
+/**
+ * 单条数据展示内容配置
+ */
+func (a *ListRenderer) ListItem(value interface{}) *ListRenderer {
+    a.Set("listItem", value)
+    return a
+}
+
+/**
+ * 是否固顶
+ */
+func (a *ListRenderer) AffixHeader(value interface{}) *ListRenderer {
+    a.Set("affixHeader", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *ListRenderer) Disabled(value interface{}) *ListRenderer {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *ListRenderer) Visible(value interface{}) *ListRenderer {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *ListRenderer) StaticInputClassName(value interface{}) *ListRenderer {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 数据源: 绑定当前环境变量
+ */
+func (a *ListRenderer) Source(value interface{}) *ListRenderer {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 配置某项是否可以点选
+ */
+func (a *ListRenderer) ItemCheckableOn(value interface{}) *ListRenderer {
+    a.Set("itemCheckableOn", value)
     return a
 }
 
 /**
  * 点击列表项的行为
  */
-func (a *ListRenderer) Itemaction(value interface{}) *ListRenderer {
+func (a *ListRenderer) ItemAction(value interface{}) *ListRenderer {
     a.Set("itemAction", value)
     return a
 }
 
 /**
+ * 是否隐藏
  */
-func (a *ListRenderer) Staticschema(value interface{}) *ListRenderer {
-    a.Set("staticSchema", value)
+func (a *ListRenderer) Hidden(value interface{}) *ListRenderer {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *ListRenderer) Static(value interface{}) *ListRenderer {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 底部区域类名
+ */
+func (a *ListRenderer) FooterClassName(value interface{}) *ListRenderer {
+    a.Set("footerClassName", value)
+    return a
+}
+
+/**
+ * 是否显示底部
+ */
+func (a *ListRenderer) ShowFooter(value interface{}) *ListRenderer {
+    a.Set("showFooter", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *ListRenderer) Id(value interface{}) *ListRenderer {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ */
+func (a *ListRenderer) TestIdBuilder(value interface{}) *ListRenderer {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *ListRenderer) DisabledOn(value interface{}) *ListRenderer {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *ListRenderer) HiddenOn(value interface{}) *ListRenderer {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *ListRenderer) VisibleOn(value interface{}) *ListRenderer {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *ListRenderer) StaticClassName(value interface{}) *ListRenderer {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 是否显示头部
+ */
+func (a *ListRenderer) ShowHeader(value interface{}) *ListRenderer {
+    a.Set("showHeader", value)
+    return a
+}
+
+/**
+ * 是否固底
+ */
+func (a *ListRenderer) AffixFooter(value interface{}) *ListRenderer {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *ListRenderer) ClassName(value interface{}) *ListRenderer {
+    a.Set("className", value)
     return a
 }
 
@@ -86,241 +295,10 @@ func (a *ListRenderer) Size(value interface{}) *ListRenderer {
 }
 
 /**
- * 是否禁用
- */
-func (a *ListRenderer) Disabled(value interface{}) *ListRenderer {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *ListRenderer) Style(value interface{}) *ListRenderer {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 是否固底
- */
-func (a *ListRenderer) Affixfooter(value interface{}) *ListRenderer {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *ListRenderer) Hidden(value interface{}) *ListRenderer {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *ListRenderer) Id(value interface{}) *ListRenderer {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *ListRenderer) Staticinputclassname(value interface{}) *ListRenderer {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *ListRenderer) Editorsetting(value interface{}) *ListRenderer {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- */
-func (a *ListRenderer) Testidbuilder(value interface{}) *ListRenderer {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 顶部区域
- */
-func (a *ListRenderer) Header(value interface{}) *ListRenderer {
-    a.Set("header", value)
-    return a
-}
-
-/**
- * 无数据提示
- */
-func (a *ListRenderer) Placeholder(value interface{}) *ListRenderer {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *ListRenderer) Disabledon(value interface{}) *ListRenderer {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *ListRenderer) Visibleon(value interface{}) *ListRenderer {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否隐藏勾选框
- */
-func (a *ListRenderer) Hidechecktoggler(value interface{}) *ListRenderer {
-    a.Set("hideCheckToggler", value)
-    return a
-}
-
-/**
- * 是否固顶
- */
-func (a *ListRenderer) Affixheader(value interface{}) *ListRenderer {
-    a.Set("affixHeader", value)
-    return a
-}
-
-/**
- * 配置某项是否可拖拽排序，前提是要开启拖拽功能
- */
-func (a *ListRenderer) Itemdraggableon(value interface{}) *ListRenderer {
-    a.Set("itemDraggableOn", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *ListRenderer) Classname(value interface{}) *ListRenderer {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *ListRenderer) Visible(value interface{}) *ListRenderer {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *ListRenderer) Static(value interface{}) *ListRenderer {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *ListRenderer) Staticon(value interface{}) *ListRenderer {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 单条数据展示内容配置
- */
-func (a *ListRenderer) Listitem(value interface{}) *ListRenderer {
-    a.Set("listItem", value)
-    return a
-}
-
-/**
- * 数据源: 绑定当前环境变量
- */
-func (a *ListRenderer) Source(value interface{}) *ListRenderer {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *ListRenderer) Staticclassname(value interface{}) *ListRenderer {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *ListRenderer) Staticlabelclassname(value interface{}) *ListRenderer {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
  * 可以组件级别用来关闭移动端样式
  */
-func (a *ListRenderer) Usemobileui(value interface{}) *ListRenderer {
+func (a *ListRenderer) UseMobileUI(value interface{}) *ListRenderer {
     a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 底部区域类名
- */
-func (a *ListRenderer) Footerclassname(value interface{}) *ListRenderer {
-    a.Set("footerClassName", value)
-    return a
-}
-
-/**
- * 是否显示底部
- */
-func (a *ListRenderer) Showfooter(value interface{}) *ListRenderer {
-    a.Set("showFooter", value)
-    return a
-}
-
-/**
- * 配置某项是否可以点选
- */
-func (a *ListRenderer) Itemcheckableon(value interface{}) *ListRenderer {
-    a.Set("itemCheckableOn", value)
-    return a
-}
-
-/**
- * 点击列表单行时，是否选择
- */
-func (a *ListRenderer) Checkonitemclick(value interface{}) *ListRenderer {
-    a.Set("checkOnItemClick", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *ListRenderer) Hiddenon(value interface{}) *ListRenderer {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *ListRenderer) Onevent(value interface{}) *ListRenderer {
-    a.Set("onEvent", value)
     return a
 }
 
@@ -342,17 +320,39 @@ func (a *ListRenderer) Footer(value interface{}) *ListRenderer {
 }
 
 /**
- * 顶部区域类名
+ * 无数据提示
  */
-func (a *ListRenderer) Headerclassname(value interface{}) *ListRenderer {
-    a.Set("headerClassName", value)
+func (a *ListRenderer) Placeholder(value interface{}) *ListRenderer {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 可以用来作为值的字段
  */
-func (a *ListRenderer) Valuefield(value interface{}) *ListRenderer {
-    a.Set("valueField", value)
+func (a *ListRenderer) StaticSchema(value interface{}) *ListRenderer {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 标题
+ */
+func (a *ListRenderer) Title(value interface{}) *ListRenderer {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *ListRenderer) OnEvent(value interface{}) *ListRenderer {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ */
+func (a *ListRenderer) Testid(value interface{}) *ListRenderer {
+    a.Set("testid", value)
     return a
 }

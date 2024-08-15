@@ -32,7 +32,7 @@ func (a *SchemaMessage) Set(name string, value interface{}) *SchemaMessage {
 /**
  * 获取成功的提示，默认为空。
  */
-func (a *SchemaMessage) Fetchsuccess(value interface{}) *SchemaMessage {
+func (a *SchemaMessage) FetchSuccess(value interface{}) *SchemaMessage {
     a.Set("fetchSuccess", value)
     return a
 }
@@ -40,7 +40,7 @@ func (a *SchemaMessage) Fetchsuccess(value interface{}) *SchemaMessage {
 /**
  * 保存失败时的提示。
  */
-func (a *SchemaMessage) Savefailed(value interface{}) *SchemaMessage {
+func (a *SchemaMessage) SaveFailed(value interface{}) *SchemaMessage {
     a.Set("saveFailed", value)
     return a
 }
@@ -48,7 +48,7 @@ func (a *SchemaMessage) Savefailed(value interface{}) *SchemaMessage {
 /**
  * 保存成功时的提示。
  */
-func (a *SchemaMessage) Savesuccess(value interface{}) *SchemaMessage {
+func (a *SchemaMessage) SaveSuccess(value interface{}) *SchemaMessage {
     a.Set("saveSuccess", value)
     return a
 }
@@ -56,7 +56,7 @@ func (a *SchemaMessage) Savesuccess(value interface{}) *SchemaMessage {
 /**
  * 获取失败时的提示
  */
-func (a *SchemaMessage) Fetchfailed(value interface{}) *SchemaMessage {
+func (a *SchemaMessage) FetchFailed(value interface{}) *SchemaMessage {
     a.Set("fetchFailed", value)
     return a
 }

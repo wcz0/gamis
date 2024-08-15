@@ -31,65 +31,9 @@ func (a *Operation) Set(name string, value interface{}) *Operation {
     return a
 }
 /**
- * 是否显示表达式
  */
-func (a *Operation) Visibleon(value interface{}) *Operation {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Operation) Onevent(value interface{}) *Operation {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- */
-func (a *Operation) Staticschema(value interface{}) *Operation {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Operation) Visible(value interface{}) *Operation {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Operation) Staticclassname(value interface{}) *Operation {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Operation) Staticlabelclassname(value interface{}) *Operation {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Operation) Staticinputclassname(value interface{}) *Operation {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Operation) Disabled(value interface{}) *Operation {
-    a.Set("disabled", value)
+func (a *Operation) Testid(value interface{}) *Operation {
+    a.Set("testid", value)
     return a
 }
 
@@ -102,10 +46,34 @@ func (a *Operation) Id(value interface{}) *Operation {
 }
 
 /**
+ * 是否静态展示表达式
+ */
+func (a *Operation) StaticOn(value interface{}) *Operation {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
  * 组件样式
  */
 func (a *Operation) Style(value interface{}) *Operation {
     a.Set("style", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Operation) EditorSetting(value interface{}) *Operation {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 指定为操作栏
+ */
+func (a *Operation) Type(value interface{}) *Operation {
+    a.Set("type", value)
     return a
 }
 
@@ -118,87 +86,17 @@ func (a *Operation) Placeholder(value interface{}) *Operation {
 }
 
 /**
- * 静态展示空值占位
+ * 是否显示表达式
  */
-func (a *Operation) Staticplaceholder(value interface{}) *Operation {
-    a.Set("staticPlaceholder", value)
+func (a *Operation) VisibleOn(value interface{}) *Operation {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
  */
-func (a *Operation) Testid(value interface{}) *Operation {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Operation) Hiddenon(value interface{}) *Operation {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Operation) Staticon(value interface{}) *Operation {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *Operation) Testidbuilder(value interface{}) *Operation {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 设置label
- */
-func (a *Operation) Label(value interface{}) *Operation {
-    a.Set("label", value)
-    return a
-}
-
-/**
- */
-func (a *Operation) Buttons(value interface{}) *Operation {
-    a.Set("buttons", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Operation) Classname(value interface{}) *Operation {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Operation) Disabledon(value interface{}) *Operation {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Operation) Editorsetting(value interface{}) *Operation {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 指定为操作栏
- */
-func (a *Operation) Type(value interface{}) *Operation {
-    a.Set("type", value)
+func (a *Operation) StaticSchema(value interface{}) *Operation {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -219,9 +117,111 @@ func (a *Operation) Static(value interface{}) *Operation {
 }
 
 /**
+ * 静态展示空值占位
+ */
+func (a *Operation) StaticPlaceholder(value interface{}) *Operation {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *Operation) Buttons(value interface{}) *Operation {
+    a.Set("buttons", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Operation) StaticInputClassName(value interface{}) *Operation {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Operation) HiddenOn(value interface{}) *Operation {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 设置label
+ */
+func (a *Operation) Label(value interface{}) *Operation {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Operation) DisabledOn(value interface{}) *Operation {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Operation) StaticClassName(value interface{}) *Operation {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Operation) ClassName(value interface{}) *Operation {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Operation) OnEvent(value interface{}) *Operation {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Operation) StaticLabelClassName(value interface{}) *Operation {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
  * 可以组件级别用来关闭移动端样式
  */
-func (a *Operation) Usemobileui(value interface{}) *Operation {
+func (a *Operation) UseMobileUI(value interface{}) *Operation {
     a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ */
+func (a *Operation) TestIdBuilder(value interface{}) *Operation {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Operation) Disabled(value interface{}) *Operation {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Operation) Visible(value interface{}) *Operation {
+    a.Set("visible", value)
     return a
 }

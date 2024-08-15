@@ -29,10 +29,34 @@ func (a *Option) Set(name string, value interface{}) *Option {
     return a
 }
 /**
- * 标记正在加载。只有 defer 为 true 时有意义。内部字段不可以外部设置
+ * 用来显示的文字
  */
-func (a *Option) Loading(value interface{}) *Option {
-    a.Set("loading", value)
+func (a *Option) Label(value interface{}) *Option {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 是否可见
+ */
+func (a *Option) Visible(value interface{}) *Option {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 只有设置了 defer 才有意义，内部字段不可以外部设置
+ */
+func (a *Option) Loaded(value interface{}) *Option {
+    a.Set("loaded", value)
+    return a
+}
+
+/**
+ * 可以用来给 Option 标记个范围，让数据展示更清晰。这个只有在数值展示的时候显示。
+ */
+func (a *Option) ScopeLabel(value interface{}) *Option {
+    a.Set("scopeLabel", value)
     return a
 }
 
@@ -57,14 +81,6 @@ func (a *Option) Disabled(value interface{}) *Option {
  */
 func (a *Option) Children(value interface{}) *Option {
     a.Set("children", value)
-    return a
-}
-
-/**
- * 是否可见
- */
-func (a *Option) Visible(value interface{}) *Option {
-    a.Set("visible", value)
     return a
 }
 
@@ -95,31 +111,15 @@ func (a *Option) Defer(value interface{}) *Option {
 /**
  * 如果设置了，优先级更高，不设置走 source 接口加载。
  */
-func (a *Option) Deferapi(value interface{}) *Option {
+func (a *Option) DeferApi(value interface{}) *Option {
     a.Set("deferApi", value)
     return a
 }
 
 /**
- * 用来显示的文字
+ * 标记正在加载。只有 defer 为 true 时有意义。内部字段不可以外部设置
  */
-func (a *Option) Label(value interface{}) *Option {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 可以用来给 Option 标记个范围，让数据展示更清晰。这个只有在数值展示的时候显示。
- */
-func (a *Option) Scopelabel(value interface{}) *Option {
-    a.Set("scopeLabel", value)
-    return a
-}
-
-/**
- * 只有设置了 defer 才有意义，内部字段不可以外部设置
- */
-func (a *Option) Loaded(value interface{}) *Option {
-    a.Set("loaded", value)
+func (a *Option) Loading(value interface{}) *Option {
+    a.Set("loading", value)
     return a
 }

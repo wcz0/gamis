@@ -31,88 +31,56 @@ func (a *Icon) Set(name string, value interface{}) *Icon {
     return a
 }
 /**
- * 是否禁用表达式
- */
-func (a *Icon) Disabledon(value interface{}) *Icon {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Icon) Staticinputclassname(value interface{}) *Icon {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 可选值: iconfont | fa | 
- */
-func (a *Icon) Vendor(value interface{}) *Icon {
-    a.Set("vendor", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Icon) Staticclassname(value interface{}) *Icon {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
  * 静态展示表单项Label类名
  */
-func (a *Icon) Staticlabelclassname(value interface{}) *Icon {
+func (a *Icon) StaticLabelClassName(value interface{}) *Icon {
     a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
  */
-func (a *Icon) Testidbuilder(value interface{}) *Icon {
+func (a *Icon) TestIdBuilder(value interface{}) *Icon {
     a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * 是否隐藏
  */
-func (a *Icon) Classname(value interface{}) *Icon {
-    a.Set("className", value)
+func (a *Icon) Hidden(value interface{}) *Icon {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 是否隐藏表达式
  */
-func (a *Icon) Staticon(value interface{}) *Icon {
-    a.Set("staticOn", value)
+func (a *Icon) HiddenOn(value interface{}) *Icon {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 按钮类型
+ * 是否禁用表达式
  */
-func (a *Icon) Icon(value interface{}) *Icon {
-    a.Set("icon", value)
+func (a *Icon) DisabledOn(value interface{}) *Icon {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Icon) VisibleOn(value interface{}) *Icon {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
  */
-func (a *Icon) Staticschema(value interface{}) *Icon {
+func (a *Icon) StaticSchema(value interface{}) *Icon {
     a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Icon) Usemobileui(value interface{}) *Icon {
-    a.Set("useMobileUI", value)
     return a
 }
 
@@ -132,58 +100,10 @@ func (a *Icon) Badge(value interface{}) *Icon {
 }
 
 /**
- * 是否禁用
+ * 是否静态展示
  */
-func (a *Icon) Disabled(value interface{}) *Icon {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Icon) Visibleon(value interface{}) *Icon {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Icon) Id(value interface{}) *Icon {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Icon) Onevent(value interface{}) *Icon {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Icon) Editorsetting(value interface{}) *Icon {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Icon) Hidden(value interface{}) *Icon {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Icon) Visible(value interface{}) *Icon {
-    a.Set("visible", value)
+func (a *Icon) Static(value interface{}) *Icon {
+    a.Set("static", value)
     return a
 }
 
@@ -203,25 +123,105 @@ func (a *Icon) Type(value interface{}) *Icon {
 }
 
 /**
- * 是否隐藏表达式
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Icon) Hiddenon(value interface{}) *Icon {
-    a.Set("hiddenOn", value)
+func (a *Icon) Id(value interface{}) *Icon {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Icon) StaticOn(value interface{}) *Icon {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Icon) UseMobileUI(value interface{}) *Icon {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 按钮类型
+ */
+func (a *Icon) Icon(value interface{}) *Icon {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Icon) ClassName(value interface{}) *Icon {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Icon) OnEvent(value interface{}) *Icon {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Icon) StaticClassName(value interface{}) *Icon {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Icon) Disabled(value interface{}) *Icon {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Icon) EditorSetting(value interface{}) *Icon {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Icon) Visible(value interface{}) *Icon {
+    a.Set("visible", value)
     return a
 }
 
 /**
  * 静态展示空值占位
  */
-func (a *Icon) Staticplaceholder(value interface{}) *Icon {
+func (a *Icon) StaticPlaceholder(value interface{}) *Icon {
     a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 静态展示表单项Value类名
  */
-func (a *Icon) Static(value interface{}) *Icon {
-    a.Set("static", value)
+func (a *Icon) StaticInputClassName(value interface{}) *Icon {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 可选值: iconfont | fa | 
+ */
+func (a *Icon) Vendor(value interface{}) *Icon {
+    a.Set("vendor", value)
     return a
 }

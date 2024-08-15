@@ -37,7 +37,7 @@ func (a *AutoFillHeight) Height(value interface{}) *AutoFillHeight {
 
 /**
  */
-func (a *AutoFillHeight) Maxheight(value interface{}) *AutoFillHeight {
+func (a *AutoFillHeight) MaxHeight(value interface{}) *AutoFillHeight {
     a.Set("maxHeight", value)
     return a
 }

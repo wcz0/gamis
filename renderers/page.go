@@ -31,49 +31,40 @@ func (a *Page) Set(name string, value interface{}) *Page {
     return a
 }
 /**
+ * 配置轮询间隔，配置后 initApi 将轮询加载。
  */
-func (a *Page) Loadingconfig(value interface{}) *Page {
-    a.Set("loadingConfig", value)
+func (a *Page) Interval(value interface{}) *Page {
+    a.Set("interval", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *Page) Disabledon(value interface{}) *Page {
-    a.Set("disabledOn", value)
+func (a *Page) EditorSetting(value interface{}) *Page {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 边栏最小宽度
  */
-func (a *Page) Visibleon(value interface{}) *Page {
-    a.Set("visibleOn", value)
+func (a *Page) AsideMaxWidth(value interface{}) *Page {
+    a.Set("asideMaxWidth", value)
     return a
 }
 
 /**
- * 内容区域
  */
-func (a *Page) Body(value interface{}) *Page {
-    a.Set("body", value)
+func (a *Page) Messages(value interface{}) *Page {
+    a.Set("messages", value)
     return a
 }
 
 /**
- * 自定义样式
  */
-func (a *Page) Style(value interface{}) *Page {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 下拉刷新配置
- */
-func (a *Page) Pullrefresh(value interface{}) *Page {
-    a.Set("pullRefresh", value)
+func (a *Page) Testid(value interface{}) *Page {
+    a.Set("testid", value)
     return a
 }
 
@@ -85,10 +76,73 @@ func (a *Page) Name(value interface{}) *Page {
 }
 
 /**
+ * 页面描述, 标题旁边会出现个小图标，放上去会显示这个属性配置的内容。
+ */
+func (a *Page) Remark(value interface{}) *Page {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Page) VisibleOn(value interface{}) *Page {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Page) StaticPlaceholder(value interface{}) *Page {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *Page) StaticSchema(value interface{}) *Page {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Page) Visible(value interface{}) *Page {
+    a.Set("visible", value)
+    return a
+}
+
+/**
  * 是否静态展示表达式
  */
-func (a *Page) Staticon(value interface{}) *Page {
+func (a *Page) StaticOn(value interface{}) *Page {
     a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。
+ */
+func (a *Page) InitApi(value interface{}) *Page {
+    a.Set("initApi", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Page) HiddenOn(value interface{}) *Page {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Page) UseMobileUI(value interface{}) *Page {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -101,34 +155,18 @@ func (a *Page) Type(value interface{}) *Page {
 }
 
 /**
- * 是否显示错误信息，默认是显示的。
- */
-func (a *Page) Showerrormsg(value interface{}) *Page {
-    a.Set("showErrorMsg", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Page) Hiddenon(value interface{}) *Page {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
  * 边栏内容是否粘住，即不跟随滚动。
  */
-func (a *Page) Asidesticky(value interface{}) *Page {
+func (a *Page) AsideSticky(value interface{}) *Page {
     a.Set("asideSticky", value)
     return a
 }
 
 /**
- * 是否默认就拉取表达式
+ * 边栏区 css 类名
  */
-func (a *Page) Initfetchon(value interface{}) *Page {
-    a.Set("initFetchOn", value)
+func (a *Page) AsideClassName(value interface{}) *Page {
+    a.Set("asideClassName", value)
     return a
 }
 
@@ -141,57 +179,42 @@ func (a *Page) Toolbar(value interface{}) *Page {
 }
 
 /**
- * 配置 toolbar 容器 className
+ * 是否禁用表达式
  */
-func (a *Page) Toolbarclassname(value interface{}) *Page {
-    a.Set("toolbarClassName", value)
+func (a *Page) DisabledOn(value interface{}) *Page {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
+ * 页面标题
  */
-func (a *Page) Testidbuilder(value interface{}) *Page {
-    a.Set("testIdBuilder", value)
+func (a *Page) Title(value interface{}) *Page {
+    a.Set("title", value)
     return a
 }
 
 /**
- * 配置 header 容器 className
+ * 边栏是否允许拖动
  */
-func (a *Page) Headerclassname(value interface{}) *Page {
-    a.Set("headerClassName", value)
+func (a *Page) AsideResizor(value interface{}) *Page {
+    a.Set("asideResizor", value)
     return a
 }
 
 /**
- * 是否要静默加载，也就是说不显示进度
+ * 页面副标题
  */
-func (a *Page) Silentpolling(value interface{}) *Page {
-    a.Set("silentPolling", value)
+func (a *Page) SubTitle(value interface{}) *Page {
+    a.Set("subTitle", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 下拉刷新配置
  */
-func (a *Page) Static(value interface{}) *Page {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Page) Staticinputclassname(value interface{}) *Page {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Page) Editorsetting(value interface{}) *Page {
-    a.Set("editorSetting", value)
+func (a *Page) PullRefresh(value interface{}) *Page {
+    a.Set("pullRefresh", value)
     return a
 }
 
@@ -205,55 +228,16 @@ func (a *Page) Css(value interface{}) *Page {
 
 /**
  */
-func (a *Page) Messages(value interface{}) *Page {
-    a.Set("messages", value)
+func (a *Page) TestIdBuilder(value interface{}) *Page {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
+ * 是否要静默加载，也就是说不显示进度
  */
-func (a *Page) Definitions(value interface{}) *Page {
-    a.Set("definitions", value)
-    return a
-}
-
-/**
- * 配置轮询间隔，配置后 initApi 将轮询加载。
- */
-func (a *Page) Interval(value interface{}) *Page {
-    a.Set("interval", value)
-    return a
-}
-
-/**
- * 配置容器 className
- */
-func (a *Page) Classname(value interface{}) *Page {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Page) Visible(value interface{}) *Page {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否默认就拉取？
- */
-func (a *Page) Initfetch(value interface{}) *Page {
-    a.Set("initFetch", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Page) Disabled(value interface{}) *Page {
-    a.Set("disabled", value)
+func (a *Page) SilentPolling(value interface{}) *Page {
+    a.Set("silentPolling", value)
     return a
 }
 
@@ -266,50 +250,89 @@ func (a *Page) Id(value interface{}) *Page {
 }
 
 /**
- * 静态展示表单项类名
+ * 内容区域
  */
-func (a *Page) Staticclassname(value interface{}) *Page {
-    a.Set("staticClassName", value)
+func (a *Page) Body(value interface{}) *Page {
+    a.Set("body", value)
     return a
 }
 
 /**
- * 内容区 css 类名
+ * 事件动作配置
  */
-func (a *Page) Bodyclassname(value interface{}) *Page {
-    a.Set("bodyClassName", value)
+func (a *Page) OnEvent(value interface{}) *Page {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否默认就拉取表达式
+ */
+func (a *Page) InitFetchOn(value interface{}) *Page {
+    a.Set("initFetchOn", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Page) Disabled(value interface{}) *Page {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Page) Static(value interface{}) *Page {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ */
+func (a *Page) Definitions(value interface{}) *Page {
+    a.Set("definitions", value)
+    return a
+}
+
+/**
+ * 配置 toolbar 容器 className
+ */
+func (a *Page) ToolbarClassName(value interface{}) *Page {
+    a.Set("toolbarClassName", value)
     return a
 }
 
 /**
  * css 变量
  */
-func (a *Page) Cssvars(value interface{}) *Page {
+func (a *Page) CssVars(value interface{}) *Page {
     a.Set("cssVars", value)
     return a
 }
 
 /**
- * 页面副标题
+ * 静态展示表单项Value类名
  */
-func (a *Page) Subtitle(value interface{}) *Page {
-    a.Set("subTitle", value)
+func (a *Page) StaticInputClassName(value interface{}) *Page {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 页面描述, 标题旁边会出现个小图标，放上去会显示这个属性配置的内容。
+ * 自定义样式
  */
-func (a *Page) Remark(value interface{}) *Page {
-    a.Set("remark", value)
+func (a *Page) Style(value interface{}) *Page {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。
+ * 内容区 css 类名
  */
-func (a *Page) Initapi(value interface{}) *Page {
-    a.Set("initApi", value)
+func (a *Page) BodyClassName(value interface{}) *Page {
+    a.Set("bodyClassName", value)
     return a
 }
 
@@ -322,56 +345,10 @@ func (a *Page) Regions(value interface{}) *Page {
 }
 
 /**
+ * 配置容器 className
  */
-func (a *Page) Staticschema(value interface{}) *Page {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 边栏最小宽度
- */
-func (a *Page) Asideminwidth(value interface{}) *Page {
-    a.Set("asideMinWidth", value)
-    return a
-}
-
-/**
- * 边栏最小宽度
- */
-func (a *Page) Asidemaxwidth(value interface{}) *Page {
-    a.Set("asideMaxWidth", value)
-    return a
-}
-
-/**
- * 边栏区 css 类名
- */
-func (a *Page) Asideclassname(value interface{}) *Page {
-    a.Set("asideClassName", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Page) Onevent(value interface{}) *Page {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- */
-func (a *Page) Testid(value interface{}) *Page {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 页面标题
- */
-func (a *Page) Title(value interface{}) *Page {
-    a.Set("title", value)
+func (a *Page) ClassName(value interface{}) *Page {
+    a.Set("className", value)
     return a
 }
 
@@ -384,42 +361,10 @@ func (a *Page) Aside(value interface{}) *Page {
 }
 
 /**
- * 静态展示空值占位
+ * 边栏最小宽度
  */
-func (a *Page) Staticplaceholder(value interface{}) *Page {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 边栏是否允许拖动
- */
-func (a *Page) Asideresizor(value interface{}) *Page {
-    a.Set("asideResizor", value)
-    return a
-}
-
-/**
- * 配置停止轮询的条件。
- */
-func (a *Page) Stopautorefreshwhen(value interface{}) *Page {
-    a.Set("stopAutoRefreshWhen", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Page) Hidden(value interface{}) *Page {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Page) Usemobileui(value interface{}) *Page {
-    a.Set("useMobileUI", value)
+func (a *Page) AsideMinWidth(value interface{}) *Page {
+    a.Set("asideMinWidth", value)
     return a
 }
 
@@ -432,17 +377,72 @@ func (a *Page) Data(value interface{}) *Page {
 }
 
 /**
+ * 是否默认就拉取？
+ */
+func (a *Page) InitFetch(value interface{}) *Page {
+    a.Set("initFetch", value)
+    return a
+}
+
+/**
+ */
+func (a *Page) LoadingConfig(value interface{}) *Page {
+    a.Set("loadingConfig", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Page) StaticClassName(value interface{}) *Page {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
  * 静态展示表单项Label类名
  */
-func (a *Page) Staticlabelclassname(value interface{}) *Page {
+func (a *Page) StaticLabelClassName(value interface{}) *Page {
     a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 配置停止轮询的条件。
+ */
+func (a *Page) StopAutoRefreshWhen(value interface{}) *Page {
+    a.Set("stopAutoRefreshWhen", value)
+    return a
+}
+
+/**
+ * 是否显示错误信息，默认是显示的。
+ */
+func (a *Page) ShowErrorMsg(value interface{}) *Page {
+    a.Set("showErrorMsg", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Page) Hidden(value interface{}) *Page {
+    a.Set("hidden", value)
     return a
 }
 
 /**
  * 移动端下的样式表
  */
-func (a *Page) Mobilecss(value interface{}) *Page {
+func (a *Page) MobileCSS(value interface{}) *Page {
     a.Set("mobileCSS", value)
+    return a
+}
+
+/**
+ * 配置 header 容器 className
+ */
+func (a *Page) HeaderClassName(value interface{}) *Page {
+    a.Set("headerClassName", value)
     return a
 }
