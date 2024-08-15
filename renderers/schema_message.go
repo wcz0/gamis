@@ -15,29 +15,24 @@ func NewSchemaMessage() *SchemaMessage {
     a := &SchemaMessage{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *SchemaMessage) Set(name string, value interface{}) *SchemaMessage {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
     return a
 }
 
-/**
- * 保存成功时的提示。
- */
-func (a *SchemaMessage) SaveSuccess(value interface{}) *SchemaMessage {
-    a.Set("saveSuccess", value)
-    return a
-}
-
-/**
- * 获取失败时的提示
- */
-func (a *SchemaMessage) FetchFailed(value interface{}) *SchemaMessage {
-    a.Set("fetchFailed", value)
     return a
 }
 
 /**
  * 获取成功的提示，默认为空。
  */
-func (a *SchemaMessage) FetchSuccess(value interface{}) *SchemaMessage {
+func (a *SchemaMessage) Fetchsuccess(value interface{}) *SchemaMessage {
     a.Set("fetchSuccess", value)
     return a
 }
@@ -45,7 +40,23 @@ func (a *SchemaMessage) FetchSuccess(value interface{}) *SchemaMessage {
 /**
  * 保存失败时的提示。
  */
-func (a *SchemaMessage) SaveFailed(value interface{}) *SchemaMessage {
+func (a *SchemaMessage) Savefailed(value interface{}) *SchemaMessage {
     a.Set("saveFailed", value)
+    return a
+}
+
+/**
+ * 保存成功时的提示。
+ */
+func (a *SchemaMessage) Savesuccess(value interface{}) *SchemaMessage {
+    a.Set("saveSuccess", value)
+    return a
+}
+
+/**
+ * 获取失败时的提示
+ */
+func (a *SchemaMessage) Fetchfailed(value interface{}) *SchemaMessage {
+    a.Set("fetchFailed", value)
     return a
 }

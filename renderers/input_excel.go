@@ -12,6 +12,16 @@ func NewInputExcel() *InputExcel {
 	return i
 }
 
+func (i *InputExcel) Set(name string, value interface{}) *InputExcel {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	i.AmisSchema[name] = value
+	return i
+}
+
 /**
  * 是否解析所有 sheet
  */

@@ -14,45 +14,39 @@ func NewGridColumn() *GridColumn {
     a := &GridColumn{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *GridColumn) Set(name string, value interface{}) *GridColumn {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 
 /**
- * 极小屏（<768px）时宽度占比
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  */
-func (a *GridColumn) Xs(value interface{}) *GridColumn {
-    a.Set("xs", value)
-    return a
-}
-
-/**
- * 小屏时（>=768px）宽度占比
- */
-func (a *GridColumn) Sm(value interface{}) *GridColumn {
-    a.Set("sm", value)
-    return a
-}
-
-/**
- * 列类名
- */
-func (a *GridColumn) ColumnClassName(value interface{}) *GridColumn {
-    a.Set("columnClassName", value)
+func (a *GridColumn) Horizontal(value interface{}) *GridColumn {
+    a.Set("horizontal", value)
     return a
 }
 
 /**
  */
-func (a *GridColumn) WrapperCustomStyle(value interface{}) *GridColumn {
+func (a *GridColumn) Body(value interface{}) *GridColumn {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ */
+func (a *GridColumn) Wrappercustomstyle(value interface{}) *GridColumn {
     a.Set("wrapperCustomStyle", value)
-    return a
-}
-
-/**
- * 样式
- */
-func (a *GridColumn) Style(value interface{}) *GridColumn {
-    a.Set("style", value)
     return a
 }
 
@@ -81,15 +75,6 @@ func (a *GridColumn) Lg(value interface{}) *GridColumn {
 }
 
 /**
- * 垂直对齐方式
- * 可选值: top | middle | bottom | between
- */
-func (a *GridColumn) Valign(value interface{}) *GridColumn {
-    a.Set("valign", value)
-    return a
-}
-
-/**
  * 配置子表单项默认的展示方式。
  * 可选值: normal | inline | horizontal
  */
@@ -99,23 +84,49 @@ func (a *GridColumn) Mode(value interface{}) *GridColumn {
 }
 
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+ * 样式
  */
-func (a *GridColumn) Horizontal(value interface{}) *GridColumn {
-    a.Set("horizontal", value)
+func (a *GridColumn) Style(value interface{}) *GridColumn {
+    a.Set("style", value)
     return a
 }
 
 /**
  */
-func (a *GridColumn) Body(value interface{}) *GridColumn {
-    a.Set("body", value)
-    return a
-}
-
-/**
- */
-func (a *GridColumn) ThemeCss(value interface{}) *GridColumn {
+func (a *GridColumn) Themecss(value interface{}) *GridColumn {
     a.Set("themeCss", value)
+    return a
+}
+
+/**
+ * 极小屏（<768px）时宽度占比
+ */
+func (a *GridColumn) Xs(value interface{}) *GridColumn {
+    a.Set("xs", value)
+    return a
+}
+
+/**
+ * 小屏时（>=768px）宽度占比
+ */
+func (a *GridColumn) Sm(value interface{}) *GridColumn {
+    a.Set("sm", value)
+    return a
+}
+
+/**
+ * 垂直对齐方式
+ * 可选值: top | middle | bottom | between
+ */
+func (a *GridColumn) Valign(value interface{}) *GridColumn {
+    a.Set("valign", value)
+    return a
+}
+
+/**
+ * 列类名
+ */
+func (a *GridColumn) Columnclassname(value interface{}) *GridColumn {
+    a.Set("columnClassName", value)
     return a
 }

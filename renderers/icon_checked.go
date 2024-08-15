@@ -14,6 +14,17 @@ func NewIconChecked() *IconChecked {
     a := &IconChecked{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *IconChecked) Set(name string, value interface{}) *IconChecked {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 

@@ -14,6 +14,24 @@ func NewQRCodeImageSettings() *QRCodeImageSettings {
     a := &QRCodeImageSettings{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *QRCodeImageSettings) Set(name string, value interface{}) *QRCodeImageSettings {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
+    return a
+}
+
+/**
+ */
+func (a *QRCodeImageSettings) Height(value interface{}) *QRCodeImageSettings {
+    a.Set("height", value)
     return a
 }
 
@@ -49,12 +67,5 @@ func (a *QRCodeImageSettings) Y(value interface{}) *QRCodeImageSettings {
  */
 func (a *QRCodeImageSettings) Src(value interface{}) *QRCodeImageSettings {
     a.Set("src", value)
-    return a
-}
-
-/**
- */
-func (a *QRCodeImageSettings) Height(value interface{}) *QRCodeImageSettings {
-    a.Set("height", value)
     return a
 }

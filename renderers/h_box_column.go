@@ -14,14 +14,17 @@ func NewHBoxColumn() *HBoxColumn {
     a := &HBoxColumn{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *HBoxColumn) Set(name string, value interface{}) *HBoxColumn {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
     return a
 }
 
-/**
- * 其他样式
- */
-func (a *HBoxColumn) Style(value interface{}) *HBoxColumn {
-    a.Set("style", value)
     return a
 }
 
@@ -43,18 +46,42 @@ func (a *HBoxColumn) Horizontal(value interface{}) *HBoxColumn {
 }
 
 /**
- * 内容区
+ * 是否显示
  */
-func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
-    a.Set("body", value)
+func (a *HBoxColumn) Visible(value interface{}) *HBoxColumn {
+    a.Set("visible", value)
     return a
 }
 
 /**
  * 列上 CSS 类名
  */
-func (a *HBoxColumn) ColumnClassName(value interface{}) *HBoxColumn {
+func (a *HBoxColumn) Columnclassname(value interface{}) *HBoxColumn {
     a.Set("columnClassName", value)
+    return a
+}
+
+/**
+ * 宽度
+ */
+func (a *HBoxColumn) Width(value interface{}) *HBoxColumn {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 高度
+ */
+func (a *HBoxColumn) Height(value interface{}) *HBoxColumn {
+    a.Set("height", value)
+    return a
+}
+
+/**
+ * 其他样式
+ */
+func (a *HBoxColumn) Style(value interface{}) *HBoxColumn {
+    a.Set("style", value)
     return a
 }
 
@@ -68,33 +95,17 @@ func (a *HBoxColumn) Valign(value interface{}) *HBoxColumn {
 }
 
 /**
- * 高度
+ * 内容区
  */
-func (a *HBoxColumn) Height(value interface{}) *HBoxColumn {
-    a.Set("height", value)
-    return a
-}
-
-/**
- * 宽度
- */
-func (a *HBoxColumn) Width(value interface{}) *HBoxColumn {
-    a.Set("width", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *HBoxColumn) Visible(value interface{}) *HBoxColumn {
-    a.Set("visible", value)
+func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
+    a.Set("body", value)
     return a
 }
 
 /**
  * 是否显示表达式
  */
-func (a *HBoxColumn) VisibleOn(value interface{}) *HBoxColumn {
+func (a *HBoxColumn) Visibleon(value interface{}) *HBoxColumn {
     a.Set("visibleOn", value)
     return a
 }

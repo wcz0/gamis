@@ -12,6 +12,16 @@ func NewWebComponent() *WebComponent {
 	return w
 }
 
+func (w *WebComponent) Set(name string, value interface{}) *WebComponent {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	w.AmisSchema[name] = value
+	return w
+}
+
 func (w *WebComponent) body(value interface{}) *WebComponent {
 	w.Set("body", value)
 	return w

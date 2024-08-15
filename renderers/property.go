@@ -12,6 +12,16 @@ func NewProperty() *Property {
 	return p
 }
 
+func (p *Property) Set(name string, value interface{}) *Property {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	p.AmisSchema[name] = value
+	return p
+}
+
 /**
  * 外层 dom 的类名
  */

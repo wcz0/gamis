@@ -12,6 +12,16 @@ func NewBreadcrumb() *Breadcrumb {
 	return b
 }
 
+func (b *Breadcrumb) Set(name string, value interface{}) *Breadcrumb {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	b.AmisSchema[name] = value
+	return b
+}
+
 /**
  * 外层类名
  */

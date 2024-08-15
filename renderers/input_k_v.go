@@ -12,6 +12,16 @@ func NewInputKV() *InputKV {
 	return a
 }
 
+func (a *InputKV) Set(name string, value interface{}) *InputKV {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	a.AmisSchema[name] = value
+	return a
+}
+
 /**
  * 数据录入配置，自动填充或者参照录入
  */

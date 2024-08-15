@@ -12,6 +12,16 @@ func NewChartRadios() *ChartRadios {
 	return c
 }
 
+func (c *ChartRadios) Set(name string, value interface{}) *ChartRadios {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	c.AmisSchema[name] = value
+	return c
+}
+
 /**
  * 图表数值字段名
  */

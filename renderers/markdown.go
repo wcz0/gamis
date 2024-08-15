@@ -12,6 +12,16 @@ func NewMarkdown() *Markdown {
 	return m
 }
 
+func (m *Markdown) Set(name string, value interface{}) *Markdown {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	m.AmisSchema[name] = value
+	return m
+}
+
 /**
  * 类名
  */

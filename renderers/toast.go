@@ -12,6 +12,16 @@ func NewToast() *Toast {
 	return t
 }
 
+func (t *Toast) Set(name string, value interface{}) *Toast {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	t.AmisSchema[name] = value
+	return t
+}
+
 /**
  * 内容
  */

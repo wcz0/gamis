@@ -14,6 +14,17 @@ func NewIconItem() *IconItem {
     a := &IconItem{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *IconItem) Set(name string, value interface{}) *IconItem {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 

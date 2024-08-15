@@ -12,6 +12,16 @@ func NewGridNav() *GridNav {
 	return g
 }
 
+func (g *GridNav) Set(name string, value interface{}) *GridNav {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	g.AmisSchema[name] = value
+	return g
+}
+
 /**
  * 是否显示列表项边框
  */

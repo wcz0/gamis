@@ -12,6 +12,16 @@ func NewLog() *Log {
 	return l
 }
 
+func (l *Log) Set(name string, value interface{}) *Log {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	l.AmisSchema[name] = value
+	return l
+}
+
 /**
  * 是否自动滚动到底部
  */

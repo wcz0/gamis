@@ -14,6 +14,17 @@ func NewRowSelectionOptions() *RowSelectionOptions {
     a := &RowSelectionOptions{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *RowSelectionOptions) Set(name string, value interface{}) *RowSelectionOptions {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 

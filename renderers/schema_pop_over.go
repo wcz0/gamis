@@ -14,23 +14,34 @@ func NewSchemaPopOver() *SchemaPopOver {
     a := &SchemaPopOver{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *SchemaPopOver) Set(name string, value interface{}) *SchemaPopOver {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 
 /**
  * 配置当前行是否启动，要用表达式
  */
-func (a *SchemaPopOver) PopOverEnableOn(value interface{}) *SchemaPopOver {
+func (a *SchemaPopOver) Popoverenableon(value interface{}) *SchemaPopOver {
     a.Set("popOverEnableOn", value)
     return a
 }
 
 /**
- * 弹出模式
- * 可选值: dialog | drawer | popOver
+ * 是弹窗形式的时候有用。
+ * 可选值: sm | md | lg | xl
  */
-func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
-    a.Set("mode", value)
+func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
+    a.Set("size", value)
     return a
 }
 
@@ -44,11 +55,17 @@ func (a *SchemaPopOver) Position(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 触发条件，默认是 click
- * 可选值: click | hover
  */
-func (a *SchemaPopOver) Trigger(value interface{}) *SchemaPopOver {
-    a.Set("trigger", value)
+func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否显示查看更多的 icon，通常是放大图标。
+ */
+func (a *SchemaPopOver) Showicon(value interface{}) *SchemaPopOver {
+    a.Set("showIcon", value)
     return a
 }
 
@@ -71,39 +88,33 @@ func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
 /**
  * 类名
  */
-func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
+func (a *SchemaPopOver) Classname(value interface{}) *SchemaPopOver {
     a.Set("className", value)
-    return a
-}
-
-/**
- * 是弹窗形式的时候有用。
- * 可选值: sm | md | lg | xl
- */
-func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 是否显示查看更多的 icon，通常是放大图标。
- */
-func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
-    a.Set("showIcon", value)
-    return a
-}
-
-/**
- */
-func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
-    a.Set("body", value)
     return a
 }
 
 /**
  * 弹框外层类名
  */
-func (a *SchemaPopOver) PopOverClassName(value interface{}) *SchemaPopOver {
+func (a *SchemaPopOver) Popoverclassname(value interface{}) *SchemaPopOver {
     a.Set("popOverClassName", value)
+    return a
+}
+
+/**
+ * 弹出模式
+ * 可选值: dialog | drawer | popOver
+ */
+func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 触发条件，默认是 click
+ * 可选值: click | hover
+ */
+func (a *SchemaPopOver) Trigger(value interface{}) *SchemaPopOver {
+    a.Set("trigger", value)
     return a
 }

@@ -14,13 +14,24 @@ func NewAutoGenerateFilter() *AutoGenerateFilter {
     a := &AutoGenerateFilter{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *AutoGenerateFilter) Set(name string, value interface{}) *AutoGenerateFilter {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 
 /**
  * 过滤条件单行列数
  */
-func (a *AutoGenerateFilter) ColumnsNum(value interface{}) *AutoGenerateFilter {
+func (a *AutoGenerateFilter) Columnsnum(value interface{}) *AutoGenerateFilter {
     a.Set("columnsNum", value)
     return a
 }
@@ -28,7 +39,7 @@ func (a *AutoGenerateFilter) ColumnsNum(value interface{}) *AutoGenerateFilter {
 /**
  * 是否显示设置查询字段
  */
-func (a *AutoGenerateFilter) ShowBtnToolbar(value interface{}) *AutoGenerateFilter {
+func (a *AutoGenerateFilter) Showbtntoolbar(value interface{}) *AutoGenerateFilter {
     a.Set("showBtnToolbar", value)
     return a
 }
@@ -36,7 +47,7 @@ func (a *AutoGenerateFilter) ShowBtnToolbar(value interface{}) *AutoGenerateFilt
 /**
  * 是否默认收起
  */
-func (a *AutoGenerateFilter) DefaultCollapsed(value interface{}) *AutoGenerateFilter {
+func (a *AutoGenerateFilter) Defaultcollapsed(value interface{}) *AutoGenerateFilter {
     a.Set("defaultCollapsed", value)
     return a
 }

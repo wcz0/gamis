@@ -12,6 +12,16 @@ func NewInputYearRange() *InputYearRange {
 	return i
 }
 
+func (i *InputYearRange) Set(name string, value interface{}) *InputYearRange {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	i.AmisSchema[name] = value
+	return i
+}
+
 /**
  * 数据录入配置，自动填充或者参照录入
  */

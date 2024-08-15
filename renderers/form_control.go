@@ -15,47 +15,41 @@ func NewFormControl() *FormControl {
     a := &FormControl{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *FormControl) Set(name string, value interface{}) *FormControl {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     a.Set("type", "control")
     return a
 }
 
 /**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ * label自定义宽度，默认单位为px
  */
-func (a *FormControl) Value(value interface{}) *FormControl {
-    a.Set("value", value)
+func (a *FormControl) Labelwidth(value interface{}) *FormControl {
+    a.Set("labelWidth", value)
     return a
 }
 
 /**
- * 是否显示
+ * 表单 control 是否为 inline 模式。
  */
-func (a *FormControl) Visible(value interface{}) *FormControl {
-    a.Set("visible", value)
+func (a *FormControl) Inline(value interface{}) *FormControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
- * 静态展示空值占位
  */
-func (a *FormControl) StaticPlaceholder(value interface{}) *FormControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *FormControl) LabelAlign(value interface{}) *FormControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *FormControl) ReadOnlyOn(value interface{}) *FormControl {
-    a.Set("readOnlyOn", value)
+func (a *FormControl) Testidbuilder(value interface{}) *FormControl {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -68,200 +62,10 @@ func (a *FormControl) Description(value interface{}) *FormControl {
 }
 
 /**
- * 事件动作配置
+ * 验证失败的提示信息
  */
-func (a *FormControl) OnEvent(value interface{}) *FormControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *FormControl) Remark(value interface{}) *FormControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- */
-func (a *FormControl) Desc(value interface{}) *FormControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *FormControl) ValidateApi(value interface{}) *FormControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *FormControl) UseMobileUI(value interface{}) *FormControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *FormControl) LabelWidth(value interface{}) *FormControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *FormControl) Width(value interface{}) *FormControl {
-    a.Set("width", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *FormControl) HiddenOn(value interface{}) *FormControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *FormControl) StaticLabelClassName(value interface{}) *FormControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *FormControl) Validations(value interface{}) *FormControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *FormControl) LabelRemark(value interface{}) *FormControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *FormControl) SubmitOnChange(value interface{}) *FormControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *FormControl) InputClassName(value interface{}) *FormControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *FormControl) Static(value interface{}) *FormControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *FormControl) StaticInputClassName(value interface{}) *FormControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *FormControl) Placeholder(value interface{}) *FormControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *FormControl) AutoFill(value interface{}) *FormControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *FormControl) ClassName(value interface{}) *FormControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *FormControl) Disabled(value interface{}) *FormControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *FormControl) VisibleOn(value interface{}) *FormControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *FormControl) StaticClassName(value interface{}) *FormControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *FormControl) StaticSchema(value interface{}) *FormControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *FormControl) Id(value interface{}) *FormControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *FormControl) LabelClassName(value interface{}) *FormControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
- */
-func (a *FormControl) Mode(value interface{}) *FormControl {
-    a.Set("mode", value)
+func (a *FormControl) Validationerrors(value interface{}) *FormControl {
+    a.Set("validationErrors", value)
     return a
 }
 
@@ -274,33 +78,49 @@ func (a *FormControl) Body(value interface{}) *FormControl {
 }
 
 /**
- * 是否为必填
+ * 静态展示表单项Value类名
  */
-func (a *FormControl) Required(value interface{}) *FormControl {
-    a.Set("required", value)
+func (a *FormControl) Staticinputclassname(value interface{}) *FormControl {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
  * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
  */
-func (a *FormControl) ValidateOnChange(value interface{}) *FormControl {
+func (a *FormControl) Validateonchange(value interface{}) *FormControl {
     a.Set("validateOnChange", value)
     return a
 }
 
 /**
+ * 配置描述上的 className
  */
-func (a *FormControl) TestIdBuilder(value interface{}) *FormControl {
-    a.Set("testIdBuilder", value)
+func (a *FormControl) Descriptionclassname(value interface{}) *FormControl {
+    a.Set("descriptionClassName", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 静态展示表单项Label类名
  */
-func (a *FormControl) Hidden(value interface{}) *FormControl {
-    a.Set("hidden", value)
+func (a *FormControl) Staticlabelclassname(value interface{}) *FormControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *FormControl) Initautofill(value interface{}) *FormControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *FormControl) Disabled(value interface{}) *FormControl {
+    a.Set("disabled", value)
     return a
 }
 
@@ -313,10 +133,33 @@ func (a *FormControl) Name(value interface{}) *FormControl {
 }
 
 /**
- * 是否只读
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
  */
-func (a *FormControl) ReadOnly(value interface{}) *FormControl {
-    a.Set("readOnly", value)
+func (a *FormControl) Remark(value interface{}) *FormControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *FormControl) Hint(value interface{}) *FormControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ */
+func (a *FormControl) Validations(value interface{}) *FormControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *FormControl) Disabledon(value interface{}) *FormControl {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -325,6 +168,38 @@ func (a *FormControl) ReadOnly(value interface{}) *FormControl {
  */
 func (a *FormControl) Style(value interface{}) *FormControl {
     a.Set("style", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *FormControl) Labelclassname(value interface{}) *FormControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *FormControl) Labelalign(value interface{}) *FormControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *FormControl) Classname(value interface{}) *FormControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *FormControl) Id(value interface{}) *FormControl {
+    a.Set("id", value)
     return a
 }
 
@@ -346,64 +221,129 @@ func (a *FormControl) Horizontal(value interface{}) *FormControl {
 }
 
 /**
+ * 是否隐藏
  */
-func (a *FormControl) InitAutoFill(value interface{}) *FormControl {
-    a.Set("initAutoFill", value)
+func (a *FormControl) Hidden(value interface{}) *FormControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *FormControl) Static(value interface{}) *FormControl {
+    a.Set("static", value)
     return a
 }
 
 /**
  */
-func (a *FormControl) Row(value interface{}) *FormControl {
-    a.Set("row", value)
+func (a *FormControl) Staticschema(value interface{}) *FormControl {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
  */
-func (a *FormControl) DisabledOn(value interface{}) *FormControl {
-    a.Set("disabledOn", value)
+func (a *FormControl) Extraname(value interface{}) *FormControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *FormControl) Submitonchange(value interface{}) *FormControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *FormControl) Readonly(value interface{}) *FormControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *FormControl) Usemobileui(value interface{}) *FormControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *FormControl) Value(value interface{}) *FormControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *FormControl) Validateapi(value interface{}) *FormControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *FormControl) Visible(value interface{}) *FormControl {
+    a.Set("visible", value)
     return a
 }
 
 /**
  * 是否静态展示表达式
  */
-func (a *FormControl) StaticOn(value interface{}) *FormControl {
+func (a *FormControl) Staticon(value interface{}) *FormControl {
     a.Set("staticOn", value)
     return a
 }
 
 /**
- * 描述标题
+ * 是否隐藏表达式
  */
-func (a *FormControl) Label(value interface{}) *FormControl {
-    a.Set("label", value)
+func (a *FormControl) Hiddenon(value interface{}) *FormControl {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 配置描述上的 className
+ * 编辑器配置，运行时可以忽略
  */
-func (a *FormControl) DescriptionClassName(value interface{}) *FormControl {
-    a.Set("descriptionClassName", value)
+func (a *FormControl) Editorsetting(value interface{}) *FormControl {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ * 占位符
  */
-func (a *FormControl) ClearValueOnHidden(value interface{}) *FormControl {
-    a.Set("clearValueOnHidden", value)
+func (a *FormControl) Placeholder(value interface{}) *FormControl {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 验证失败的提示信息
+ * 配置 input className
  */
-func (a *FormControl) ValidationErrors(value interface{}) *FormControl {
-    a.Set("validationErrors", value)
+func (a *FormControl) Inputclassname(value interface{}) *FormControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 是否为必填
+ */
+func (a *FormControl) Required(value interface{}) *FormControl {
+    a.Set("required", value)
     return a
 }
 
@@ -416,33 +356,104 @@ func (a *FormControl) Type(value interface{}) *FormControl {
 }
 
 /**
- * 输入提示，聚焦的时候显示
+ * 静态展示空值占位
  */
-func (a *FormControl) Hint(value interface{}) *FormControl {
-    a.Set("hint", value)
+func (a *FormControl) Staticplaceholder(value interface{}) *FormControl {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 表单 control 是否为 inline 模式。
+ * 静态展示表单项类名
  */
-func (a *FormControl) Inline(value interface{}) *FormControl {
-    a.Set("inline", value)
+func (a *FormControl) Staticclassname(value interface{}) *FormControl {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
  */
-func (a *FormControl) EditorSetting(value interface{}) *FormControl {
-    a.Set("editorSetting", value)
+func (a *FormControl) Autofill(value interface{}) *FormControl {
+    a.Set("autoFill", value)
     return a
 }
 
 /**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
  */
-func (a *FormControl) ExtraName(value interface{}) *FormControl {
-    a.Set("extraName", value)
+func (a *FormControl) Desc(value interface{}) *FormControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 配置当前表单项展示模式
+ * 可选值: normal | inline | horizontal
+ */
+func (a *FormControl) Mode(value interface{}) *FormControl {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *FormControl) Clearvalueonhidden(value interface{}) *FormControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *FormControl) Visibleon(value interface{}) *FormControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *FormControl) Onevent(value interface{}) *FormControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *FormControl) Readonlyon(value interface{}) *FormControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *FormControl) Width(value interface{}) *FormControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *FormControl) Label(value interface{}) *FormControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *FormControl) Labelremark(value interface{}) *FormControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ */
+func (a *FormControl) Row(value interface{}) *FormControl {
+    a.Set("row", value)
     return a
 }

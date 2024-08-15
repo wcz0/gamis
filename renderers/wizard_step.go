@@ -14,138 +14,33 @@ func NewWizardStep() *WizardStep {
     a := &WizardStep{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *WizardStep) Set(name string, value interface{}) *WizardStep {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 
 /**
- * 是否隐藏
+ * 按钮集合，会固定在底部显示。
  */
-func (a *WizardStep) Hidden(value interface{}) *WizardStep {
-    a.Set("hidden", value)
+func (a *WizardStep) Actions(value interface{}) *WizardStep {
+    a.Set("actions", value)
     return a
 }
 
 /**
- * 展示态时的className
+ * 默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型的 name 值。 如果 target 目标是一个 `Form` ，则目标 `Form` 会重新触发 `initApi` 和 `schemaApi`，api 可以拿到当前 form 数据。如果目标是一个 `CRUD` 模型，则目标模型会重新触发搜索，参数为当前 Form 数据。
  */
-func (a *WizardStep) Static(value interface{}) *WizardStep {
-    a.Set("static", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) StaticClassName(value interface{}) *WizardStep {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *WizardStep) EditorSetting(value interface{}) *WizardStep {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 如果决定结束的字段名不是 `finished` 请设置此属性，比如 `is_success`
- */
-func (a *WizardStep) FinishedField(value interface{}) *WizardStep {
-    a.Set("finishedField", value)
-    return a
-}
-
-/**
- * 配置容器 panel className
- */
-func (a *WizardStep) PanelClassName(value interface{}) *WizardStep {
-    a.Set("panelClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *WizardStep) StaticInputClassName(value interface{}) *WizardStep {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) StaticSchema(value interface{}) *WizardStep {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否开启本地缓存
- */
-func (a *WizardStep) PersistData(value interface{}) *WizardStep {
-    a.Set("persistData", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) Label(value interface{}) *WizardStep {
-    a.Set("label", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) Value(value interface{}) *WizardStep {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 表单项集合
- */
-func (a *WizardStep) Body(value interface{}) *WizardStep {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 建议改成 api 的 sendOn 属性。
- */
-func (a *WizardStep) InitFetchOn(value interface{}) *WizardStep {
-    a.Set("initFetchOn", value)
-    return a
-}
-
-/**
- * 配置停止轮询的条件
- */
-func (a *WizardStep) StopAutoRefreshWhen(value interface{}) *WizardStep {
-    a.Set("stopAutoRefreshWhen", value)
-    return a
-}
-
-/**
- * 是否自动将第一个表单元素聚焦。
- */
-func (a *WizardStep) AutoFocus(value interface{}) *WizardStep {
-    a.Set("autoFocus", value)
-    return a
-}
-
-/**
- * 设置此属性后，表单提交发送保存接口后，还会继续轮询请求该接口，直到返回 finished 属性为 true 才 结束。
- */
-func (a *WizardStep) AsyncApi(value interface{}) *WizardStep {
-    a.Set("asyncApi", value)
-    return a
-}
-
-/**
- * 通过 JS 表达式来配置当前步骤可否被直接跳转到。
- */
-func (a *WizardStep) JumpableOn(value interface{}) *WizardStep {
-    a.Set("jumpableOn", value)
+func (a *WizardStep) Target(value interface{}) *WizardStep {
+    a.Set("target", value)
     return a
 }
 
@@ -158,10 +53,189 @@ func (a *WizardStep) Visible(value interface{}) *WizardStep {
 }
 
 /**
- * 事件动作配置
+ * 是否显示表达式
  */
-func (a *WizardStep) OnEvent(value interface{}) *WizardStep {
-    a.Set("onEvent", value)
+func (a *WizardStep) Visibleon(value interface{}) *WizardStep {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Fieldset(value interface{}) *WizardStep {
+    a.Set("fieldSet", value)
+    return a
+}
+
+/**
+ * 配置停止轮询的条件
+ */
+func (a *WizardStep) Stopautorefreshwhen(value interface{}) *WizardStep {
+    a.Set("stopAutoRefreshWhen", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *WizardStep) Labelwidth(value interface{}) *WizardStep {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 是否初始加载
+ */
+func (a *WizardStep) Initfetch(value interface{}) *WizardStep {
+    a.Set("initFetch", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Testid(value interface{}) *WizardStep {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *WizardStep) Classname(value interface{}) *WizardStep {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *WizardStep) Staticinputclassname(value interface{}) *WizardStep {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *WizardStep) Usemobileui(value interface{}) *WizardStep {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 图标
+ */
+func (a *WizardStep) Icon(value interface{}) *WizardStep {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Data(value interface{}) *WizardStep {
+    a.Set("data", value)
+    return a
+}
+
+/**
+ * Form 用来获取初始数据的 api,与initApi不同的是，会一直轮询请求该接口，直到返回 finished 属性为 true 才 结束。
+ */
+func (a *WizardStep) Initasyncapi(value interface{}) *WizardStep {
+    a.Set("initAsyncApi", value)
+    return a
+}
+
+/**
+ * 表单标题
+ */
+func (a *WizardStep) Title(value interface{}) *WizardStep {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *WizardStep) Hiddenon(value interface{}) *WizardStep {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 提交成功后清空本地缓存
+ */
+func (a *WizardStep) Clearpersistdataaftersubmit(value interface{}) *WizardStep {
+    a.Set("clearPersistDataAfterSubmit", value)
+    return a
+}
+
+/**
+ * 修改的时候是否直接提交表单。
+ */
+func (a *WizardStep) Submitonchange(value interface{}) *WizardStep {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Label(value interface{}) *WizardStep {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 描述
+ */
+func (a *WizardStep) Description(value interface{}) *WizardStep {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Tabs(value interface{}) *WizardStep {
+    a.Set("tabs", value)
+    return a
+}
+
+/**
+ * 是否静默拉取
+ */
+func (a *WizardStep) Silentpolling(value interface{}) *WizardStep {
+    a.Set("silentPolling", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *WizardStep) Staticlabelclassname(value interface{}) *WizardStep {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 表单初始先提交一次，联动的时候有用
+ */
+func (a *WizardStep) Submitoninit(value interface{}) *WizardStep {
+    a.Set("submitOnInit", value)
+    return a
+}
+
+/**
+ * 禁用回车提交
+ */
+func (a *WizardStep) Prevententersubmit(value interface{}) *WizardStep {
+    a.Set("preventEnterSubmit", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *WizardStep) Disabledon(value interface{}) *WizardStep {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -175,6 +249,179 @@ func (a *WizardStep) Mode(value interface{}) *WizardStep {
 }
 
 /**
+ * 具体的提示信息，选填。
+ */
+func (a *WizardStep) Promptpageleavemessage(value interface{}) *WizardStep {
+    a.Set("promptPageLeaveMessage", value)
+    return a
+}
+
+/**
+ * 用来初始化表单数据
+ */
+func (a *WizardStep) Initapi(value interface{}) *WizardStep {
+    a.Set("initApi", value)
+    return a
+}
+
+/**
+ * 是否可直接跳转到该步骤，一般编辑模式需要可直接跳转查看。
+ */
+func (a *WizardStep) Jumpable(value interface{}) *WizardStep {
+    a.Set("jumpable", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Redirect(value interface{}) *WizardStep {
+    a.Set("redirect", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *WizardStep) Style(value interface{}) *WizardStep {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 表单项集合
+ */
+func (a *WizardStep) Body(value interface{}) *WizardStep {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 表单label的对齐方式
+ */
+func (a *WizardStep) Labelalign(value interface{}) *WizardStep {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Staticon(value interface{}) *WizardStep {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 建议改成 api 的 sendOn 属性。
+ */
+func (a *WizardStep) Initfetchon(value interface{}) *WizardStep {
+    a.Set("initFetchOn", value)
+    return a
+}
+
+/**
+ * 如果决定结束的字段名不是 `finished` 请设置此属性，比如 `is_success`
+ */
+func (a *WizardStep) Finishedfield(value interface{}) *WizardStep {
+    a.Set("finishedField", value)
+    return a
+}
+
+/**
+ * 是否自动将第一个表单元素聚焦。
+ */
+func (a *WizardStep) Autofocus(value interface{}) *WizardStep {
+    a.Set("autoFocus", value)
+    return a
+}
+
+/**
+ * 通过 JS 表达式来配置当前步骤可否被直接跳转到。
+ */
+func (a *WizardStep) Jumpableon(value interface{}) *WizardStep {
+    a.Set("jumpableOn", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *WizardStep) Disabled(value interface{}) *WizardStep {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 展示态时的className
+ */
+func (a *WizardStep) Static(value interface{}) *WizardStep {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *WizardStep) Staticplaceholder(value interface{}) *WizardStep {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 是否开启调试，开启后会在顶部实时显示表单项数据。
+ */
+func (a *WizardStep) Debug(value interface{}) *WizardStep {
+    a.Set("debug", value)
+    return a
+}
+
+/**
+ * Debug面板配置
+ */
+func (a *WizardStep) Debugconfig(value interface{}) *WizardStep {
+    a.Set("debugConfig", value)
+    return a
+}
+
+/**
+ * 提交后清空表单
+ */
+func (a *WizardStep) Clearaftersubmit(value interface{}) *WizardStep {
+    a.Set("clearAfterSubmit", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Reload(value interface{}) *WizardStep {
+    a.Set("reload", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *WizardStep) Editorsetting(value interface{}) *WizardStep {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * Form 也可以配置 feedback。
+ */
+func (a *WizardStep) Feedback(value interface{}) *WizardStep {
+    a.Set("feedback", value)
+    return a
+}
+
+/**
+ * 表单项显示为几列
+ */
+func (a *WizardStep) Columncount(value interface{}) *WizardStep {
+    a.Set("columnCount", value)
+    return a
+}
+
+/**
  * 组合校验规则，选填
  */
 func (a *WizardStep) Rules(value interface{}) *WizardStep {
@@ -183,25 +430,57 @@ func (a *WizardStep) Rules(value interface{}) *WizardStep {
 }
 
 /**
- * 禁用回车提交
+ * 是否固定底下的按钮在底部。
  */
-func (a *WizardStep) PreventEnterSubmit(value interface{}) *WizardStep {
-    a.Set("preventEnterSubmit", value)
+func (a *WizardStep) Affixfooter(value interface{}) *WizardStep {
+    a.Set("affixFooter", value)
     return a
 }
 
 /**
- * 默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型的 name 值。 如果 target 目标是一个 `Form` ，则目标 `Form` 会重新触发 `initApi` 和 `schemaApi`，api 可以拿到当前 form 数据。如果目标是一个 `CRUD` 模型，则目标模型会重新触发搜索，参数为当前 Form 数据。
+ * 设置此属性后，表单提交发送保存接口后，还会继续轮询请求该接口，直到返回 finished 属性为 true 才 结束。
  */
-func (a *WizardStep) Target(value interface{}) *WizardStep {
-    a.Set("target", value)
+func (a *WizardStep) Asyncapi(value interface{}) *WizardStep {
+    a.Set("asyncApi", value)
     return a
 }
 
 /**
  */
-func (a *WizardStep) Data(value interface{}) *WizardStep {
-    a.Set("data", value)
+func (a *WizardStep) Testidbuilder(value interface{}) *WizardStep {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 设置后将轮询调用 initApi
+ */
+func (a *WizardStep) Interval(value interface{}) *WizardStep {
+    a.Set("interval", value)
+    return a
+}
+
+/**
+ * 是否开启本地缓存
+ */
+func (a *WizardStep) Persistdata(value interface{}) *WizardStep {
+    a.Set("persistData", value)
+    return a
+}
+
+/**
+ * 开启本地缓存后限制保存哪些 key
+ */
+func (a *WizardStep) Persistdatakeys(value interface{}) *WizardStep {
+    a.Set("persistDataKeys", value)
+    return a
+}
+
+/**
+ * 提交完后重置表单
+ */
+func (a *WizardStep) Resetaftersubmit(value interface{}) *WizardStep {
+    a.Set("resetAfterSubmit", value)
     return a
 }
 
@@ -216,7 +495,7 @@ func (a *WizardStep) Horizontal(value interface{}) *WizardStep {
 /**
  * 页面离开提示，为了防止页面不小心跳转而导致表单没有保存。
  */
-func (a *WizardStep) PromptPageLeave(value interface{}) *WizardStep {
+func (a *WizardStep) Promptpageleave(value interface{}) *WizardStep {
     a.Set("promptPageLeave", value)
     return a
 }
@@ -230,208 +509,10 @@ func (a *WizardStep) Api(value interface{}) *WizardStep {
 }
 
 /**
- * 是否静默拉取
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *WizardStep) SilentPolling(value interface{}) *WizardStep {
-    a.Set("silentPolling", value)
-    return a
-}
-
-/**
- * 提交成功后清空本地缓存
- */
-func (a *WizardStep) ClearPersistDataAfterSubmit(value interface{}) *WizardStep {
-    a.Set("clearPersistDataAfterSubmit", value)
-    return a
-}
-
-/**
- * Form 也可以配置 feedback。
- */
-func (a *WizardStep) Feedback(value interface{}) *WizardStep {
-    a.Set("feedback", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *WizardStep) HiddenOn(value interface{}) *WizardStep {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 表单初始先提交一次，联动的时候有用
- */
-func (a *WizardStep) SubmitOnInit(value interface{}) *WizardStep {
-    a.Set("submitOnInit", value)
-    return a
-}
-
-/**
- * 是否可直接跳转到该步骤，一般编辑模式需要可直接跳转查看。
- */
-func (a *WizardStep) Jumpable(value interface{}) *WizardStep {
-    a.Set("jumpable", value)
-    return a
-}
-
-/**
- * 表单标题
- */
-func (a *WizardStep) Title(value interface{}) *WizardStep {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *WizardStep) Disabled(value interface{}) *WizardStep {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *WizardStep) DisabledOn(value interface{}) *WizardStep {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 图标
- */
-func (a *WizardStep) Icon(value interface{}) *WizardStep {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) FieldSet(value interface{}) *WizardStep {
-    a.Set("fieldSet", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) Reload(value interface{}) *WizardStep {
-    a.Set("reload", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *WizardStep) StaticLabelClassName(value interface{}) *WizardStep {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 子标题
- */
-func (a *WizardStep) SubTitle(value interface{}) *WizardStep {
-    a.Set("subTitle", value)
-    return a
-}
-
-/**
- * 描述
- */
-func (a *WizardStep) Description(value interface{}) *WizardStep {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 开启本地缓存后限制保存哪些 key
- */
-func (a *WizardStep) PersistDataKeys(value interface{}) *WizardStep {
-    a.Set("persistDataKeys", value)
-    return a
-}
-
-/**
- * 是否固定底下的按钮在底部。
- */
-func (a *WizardStep) AffixFooter(value interface{}) *WizardStep {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * Debug面板配置
- */
-func (a *WizardStep) DebugConfig(value interface{}) *WizardStep {
-    a.Set("debugConfig", value)
-    return a
-}
-
-/**
- * 是否初始加载
- */
-func (a *WizardStep) InitFetch(value interface{}) *WizardStep {
-    a.Set("initFetch", value)
-    return a
-}
-
-/**
- * 是否用 panel 包裹起来
- */
-func (a *WizardStep) WrapWithPanel(value interface{}) *WizardStep {
-    a.Set("wrapWithPanel", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *WizardStep) VisibleOn(value interface{}) *WizardStep {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *WizardStep) StaticPlaceholder(value interface{}) *WizardStep {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 是否开启调试，开启后会在顶部实时显示表单项数据。
- */
-func (a *WizardStep) Debug(value interface{}) *WizardStep {
-    a.Set("debug", value)
-    return a
-}
-
-/**
- * Form 用来获取初始数据的 api,与initApi不同的是，会一直轮询请求该接口，直到返回 finished 属性为 true 才 结束。
- */
-func (a *WizardStep) InitAsyncApi(value interface{}) *WizardStep {
-    a.Set("initAsyncApi", value)
-    return a
-}
-
-/**
- * 设置了initAsyncApi后，默认会从返回数据的data.finished来判断是否完成，也可以设置成其他的xxx，就会从data.xxx中获取
- */
-func (a *WizardStep) InitFinishedField(value interface{}) *WizardStep {
-    a.Set("initFinishedField", value)
-    return a
-}
-
-/**
- * 设置了initAsyncApi以后，默认拉取的时间间隔
- */
-func (a *WizardStep) InitCheckInterval(value interface{}) *WizardStep {
-    a.Set("initCheckInterval", value)
+func (a *WizardStep) Id(value interface{}) *WizardStep {
+    a.Set("id", value)
     return a
 }
 
@@ -443,165 +524,57 @@ func (a *WizardStep) Name(value interface{}) *WizardStep {
 }
 
 /**
- * 具体的提示信息，选填。
+ * 配置容器 panel className
  */
-func (a *WizardStep) PromptPageLeaveMessage(value interface{}) *WizardStep {
-    a.Set("promptPageLeaveMessage", value)
-    return a
-}
-
-/**
- * 表单label的对齐方式
- */
-func (a *WizardStep) LabelAlign(value interface{}) *WizardStep {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 按钮集合，会固定在底部显示。
- */
-func (a *WizardStep) Actions(value interface{}) *WizardStep {
-    a.Set("actions", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *WizardStep) Style(value interface{}) *WizardStep {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) Tabs(value interface{}) *WizardStep {
-    a.Set("tabs", value)
-    return a
-}
-
-/**
- * 提交完后重置表单
- */
-func (a *WizardStep) ResetAfterSubmit(value interface{}) *WizardStep {
-    a.Set("resetAfterSubmit", value)
-    return a
-}
-
-/**
- * 提交后清空表单
- */
-func (a *WizardStep) ClearAfterSubmit(value interface{}) *WizardStep {
-    a.Set("clearAfterSubmit", value)
-    return a
-}
-
-/**
- * 表单项显示为几列
- */
-func (a *WizardStep) ColumnCount(value interface{}) *WizardStep {
-    a.Set("columnCount", value)
-    return a
-}
-
-/**
- * 设置主键 id, 当设置后，检测表单是否完成时（asyncApi），只会携带此数据。
- */
-func (a *WizardStep) PrimaryField(value interface{}) *WizardStep {
-    a.Set("primaryField", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *WizardStep) ClassName(value interface{}) *WizardStep {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 设置后将轮询调用 initApi
- */
-func (a *WizardStep) Interval(value interface{}) *WizardStep {
-    a.Set("interval", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *WizardStep) UseMobileUI(value interface{}) *WizardStep {
-    a.Set("useMobileUI", value)
+func (a *WizardStep) Panelclassname(value interface{}) *WizardStep {
+    a.Set("panelClassName", value)
     return a
 }
 
 /**
  * 默认的提交按钮名称，如果设置成空，则可以把默认按钮去掉。
  */
-func (a *WizardStep) SubmitText(value interface{}) *WizardStep {
+func (a *WizardStep) Submittext(value interface{}) *WizardStep {
     a.Set("submitText", value)
     return a
 }
 
 /**
- * label自定义宽度，默认单位为px
+ * 是否用 panel 包裹起来
  */
-func (a *WizardStep) LabelWidth(value interface{}) *WizardStep {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 用来初始化表单数据
- */
-func (a *WizardStep) InitApi(value interface{}) *WizardStep {
-    a.Set("initApi", value)
+func (a *WizardStep) Wrapwithpanel(value interface{}) *WizardStep {
+    a.Set("wrapWithPanel", value)
     return a
 }
 
 /**
  */
-func (a *WizardStep) Redirect(value interface{}) *WizardStep {
-    a.Set("redirect", value)
+func (a *WizardStep) Value(value interface{}) *WizardStep {
+    a.Set("value", value)
     return a
 }
 
 /**
+ * 事件动作配置
  */
-func (a *WizardStep) Testid(value interface{}) *WizardStep {
-    a.Set("testid", value)
+func (a *WizardStep) Onevent(value interface{}) *WizardStep {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 设置了initAsyncApi后，默认会从返回数据的data.finished来判断是否完成，也可以设置成其他的xxx，就会从data.xxx中获取
  */
-func (a *WizardStep) Id(value interface{}) *WizardStep {
-    a.Set("id", value)
+func (a *WizardStep) Initfinishedfield(value interface{}) *WizardStep {
+    a.Set("initFinishedField", value)
     return a
 }
 
 /**
+ * 设置了initAsyncApi以后，默认拉取的时间间隔
  */
-func (a *WizardStep) StaticOn(value interface{}) *WizardStep {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- */
-func (a *WizardStep) TestIdBuilder(value interface{}) *WizardStep {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 轮询请求的时间间隔，默认为 3秒。设置 asyncApi 才有效
- */
-func (a *WizardStep) CheckInterval(value interface{}) *WizardStep {
-    a.Set("checkInterval", value)
+func (a *WizardStep) Initcheckinterval(value interface{}) *WizardStep {
+    a.Set("initCheckInterval", value)
     return a
 }
 
@@ -614,9 +587,47 @@ func (a *WizardStep) Messages(value interface{}) *WizardStep {
 }
 
 /**
- * 修改的时候是否直接提交表单。
+ * 设置主键 id, 当设置后，检测表单是否完成时（asyncApi），只会携带此数据。
  */
-func (a *WizardStep) SubmitOnChange(value interface{}) *WizardStep {
-    a.Set("submitOnChange", value)
+func (a *WizardStep) Primaryfield(value interface{}) *WizardStep {
+    a.Set("primaryField", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *WizardStep) Hidden(value interface{}) *WizardStep {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Staticclassname(value interface{}) *WizardStep {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *WizardStep) Staticschema(value interface{}) *WizardStep {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 子标题
+ */
+func (a *WizardStep) Subtitle(value interface{}) *WizardStep {
+    a.Set("subTitle", value)
+    return a
+}
+
+/**
+ * 轮询请求的时间间隔，默认为 3秒。设置 asyncApi 才有效
+ */
+func (a *WizardStep) Checkinterval(value interface{}) *WizardStep {
+    a.Set("checkInterval", value)
     return a
 }

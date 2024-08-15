@@ -12,6 +12,16 @@ func NewOptions() *Options {
 	return o
 }
 
+func (o *Options) Set(name string, value interface{}) *Options {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	o.AmisSchema[name] = value
+	return o
+}
+
 /**
  * 数据录入配置，自动填充或者参照录入
  */

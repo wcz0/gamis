@@ -14,70 +14,25 @@ func NewTab() *Tab {
     a := &Tab{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *Tab) Set(name string, value interface{}) *Tab {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 
 /**
- * 内容
+ * 按钮图标
  */
-func (a *Tab) Body(value interface{}) *Tab {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 可选值: left | right
- */
-func (a *Tab) IconPosition(value interface{}) *Tab {
-    a.Set("iconPosition", value)
-    return a
-}
-
-/**
- * 点开时才加载卡片内容
- */
-func (a *Tab) MountOnEnter(value interface{}) *Tab {
-    a.Set("mountOnEnter", value)
-    return a
-}
-
-/**
- * 卡片隐藏就销毁卡片节点。
- */
-func (a *Tab) UnmountOnExit(value interface{}) *Tab {
-    a.Set("unmountOnExit", value)
-    return a
-}
-
-/**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
- */
-func (a *Tab) Horizontal(value interface{}) *Tab {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * Tab 标题
- */
-func (a *Tab) Title(value interface{}) *Tab {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Tab) StaticOn(value interface{}) *Tab {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Tab) StaticClassName(value interface{}) *Tab {
-    a.Set("staticClassName", value)
+func (a *Tab) Icon(value interface{}) *Tab {
+    a.Set("icon", value)
     return a
 }
 
@@ -91,9 +46,151 @@ func (a *Tab) Mode(value interface{}) *Tab {
 }
 
 /**
+ * 是否可关闭，优先级高于 tabs 的 closable
+ */
+func (a *Tab) Closable(value interface{}) *Tab {
+    a.Set("closable", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Tab) Disabledon(value interface{}) *Tab {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Tab) Static(value interface{}) *Tab {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *Tab) Staticinputclassname(value interface{}) *Tab {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Tab) Testidbuilder(value interface{}) *Tab {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 内容
+ */
+func (a *Tab) Body(value interface{}) *Tab {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Tab) Disabled(value interface{}) *Tab {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Tab) Hidden(value interface{}) *Tab {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ */
+func (a *Tab) Staticschema(value interface{}) *Tab {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * 徽标
+ */
+func (a *Tab) Badge(value interface{}) *Tab {
+    a.Set("badge", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Tab) Hiddenon(value interface{}) *Tab {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Tab) Staticplaceholder(value interface{}) *Tab {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Tab) Editorsetting(value interface{}) *Tab {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 设置以后将跟url的hash对应
+ */
+func (a *Tab) Hash(value interface{}) *Tab {
+    a.Set("hash", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Tab) Visible(value interface{}) *Tab {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Tab) Onevent(value interface{}) *Tab {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Tab) Staticlabelclassname(value interface{}) *Tab {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 内容
+ */
+func (a *Tab) Tab(value interface{}) *Tab {
+    a.Set("tab", value)
+    return a
+}
+
+/**
  * 容器 css 类名
  */
-func (a *Tab) ClassName(value interface{}) *Tab {
+func (a *Tab) Classname(value interface{}) *Tab {
     a.Set("className", value)
     return a
 }
@@ -107,58 +204,41 @@ func (a *Tab) Id(value interface{}) *Tab {
 }
 
 /**
- * 徽标
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  */
-func (a *Tab) Badge(value interface{}) *Tab {
-    a.Set("badge", value)
+func (a *Tab) Horizontal(value interface{}) *Tab {
+    a.Set("horizontal", value)
     return a
 }
 
 /**
- * 按钮图标
  */
-func (a *Tab) Icon(value interface{}) *Tab {
-    a.Set("icon", value)
+func (a *Tab) Testid(value interface{}) *Tab {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 是否静态展示表达式
  */
-func (a *Tab) HiddenOn(value interface{}) *Tab {
-    a.Set("hiddenOn", value)
+func (a *Tab) Staticon(value interface{}) *Tab {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 静态展示表单项类名
  */
-func (a *Tab) StaticInputClassName(value interface{}) *Tab {
-    a.Set("staticInputClassName", value)
+func (a *Tab) Staticclassname(value interface{}) *Tab {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 设置以后内容每次都会重新渲染
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *Tab) Reload(value interface{}) *Tab {
-    a.Set("reload", value)
-    return a
-}
-
-/**
- * 是否可关闭，优先级高于 tabs 的 closable
- */
-func (a *Tab) Closable(value interface{}) *Tab {
-    a.Set("closable", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Tab) VisibleOn(value interface{}) *Tab {
-    a.Set("visibleOn", value)
+func (a *Tab) Usemobileui(value interface{}) *Tab {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -171,118 +251,49 @@ func (a *Tab) Style(value interface{}) *Tab {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * Tab 标题
  */
-func (a *Tab) EditorSetting(value interface{}) *Tab {
-    a.Set("editorSetting", value)
+func (a *Tab) Title(value interface{}) *Tab {
+    a.Set("title", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 是否显示表达式
  */
-func (a *Tab) UseMobileUI(value interface{}) *Tab {
-    a.Set("useMobileUI", value)
+func (a *Tab) Visibleon(value interface{}) *Tab {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 可选值: left | right
  */
-func (a *Tab) Hidden(value interface{}) *Tab {
-    a.Set("hidden", value)
+func (a *Tab) Iconposition(value interface{}) *Tab {
+    a.Set("iconPosition", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 设置以后内容每次都会重新渲染
  */
-func (a *Tab) Static(value interface{}) *Tab {
-    a.Set("static", value)
+func (a *Tab) Reload(value interface{}) *Tab {
+    a.Set("reload", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 点开时才加载卡片内容
  */
-func (a *Tab) StaticPlaceholder(value interface{}) *Tab {
-    a.Set("staticPlaceholder", value)
+func (a *Tab) Mountonenter(value interface{}) *Tab {
+    a.Set("mountOnEnter", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 卡片隐藏就销毁卡片节点。
  */
-func (a *Tab) OnEvent(value interface{}) *Tab {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- */
-func (a *Tab) Testid(value interface{}) *Tab {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Tab) Visible(value interface{}) *Tab {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Tab) StaticLabelClassName(value interface{}) *Tab {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Tab) StaticSchema(value interface{}) *Tab {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *Tab) TestIdBuilder(value interface{}) *Tab {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 内容
- */
-func (a *Tab) Tab(value interface{}) *Tab {
-    a.Set("tab", value)
-    return a
-}
-
-/**
- * 设置以后将跟url的hash对应
- */
-func (a *Tab) Hash(value interface{}) *Tab {
-    a.Set("hash", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Tab) Disabled(value interface{}) *Tab {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Tab) DisabledOn(value interface{}) *Tab {
-    a.Set("disabledOn", value)
+func (a *Tab) Unmountonexit(value interface{}) *Tab {
+    a.Set("unmountOnExit", value)
     return a
 }

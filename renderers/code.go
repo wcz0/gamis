@@ -12,6 +12,16 @@ func NewCode() *Code {
 	return c
 }
 
+func (c *Code) Set(name string, value interface{}) *Code {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	c.AmisSchema[name] = value
+	return c
+}
+
 /**
  * 外层 CSS 类名
  */

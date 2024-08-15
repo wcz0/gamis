@@ -12,6 +12,16 @@ func NewAction() *Action {
 	return a
 }
 
+func (a *Action) Set(name string, value interface{}) *Action {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	a.AmisSchema[name] = value
+	return a
+}
+
 /**
  * 【必填】这是 action 最核心的配置，来指定该 action 的作用类型，支持：ajax、link、url、drawer、dialog、confirm、cancel、prev、next、copy、close。
  */

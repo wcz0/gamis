@@ -14,6 +14,17 @@ func NewComboCondition() *ComboCondition {
     a := &ComboCondition{
         BaseRenderer: NewBaseRenderer(),
     }
+
+func (a *ComboCondition) Set(name string, value interface{}) *ComboCondition {
+    if name == "map" {
+        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+            value = mapOfArrays(v)
+        }
+    }
+    a.AmisSchema[name] = value
+    return a
+}
+
     return a
 }
 

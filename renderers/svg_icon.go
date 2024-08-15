@@ -12,6 +12,16 @@ func NewSvgIcon() *SvgIcon {
 	return s
 }
 
+func (s *SvgIcon) Set(name string, value interface{}) *SvgIcon {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	s.AmisSchema[name] = value
+	return s
+}
+
 func (s *SvgIcon) ClassName(value interface{}) *SvgIcon {
 	s.Set("className", value)
 	return s
