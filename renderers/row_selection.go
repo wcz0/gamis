@@ -29,22 +29,6 @@ func (a *RowSelection) Set(name string, value interface{}) *RowSelection {
     return a
 }
 /**
- * 选择类型 单选/多选
- */
-func (a *RowSelection) Type(value interface{}) *RowSelection {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 对应数据源的key值
- */
-func (a *RowSelection) KeyField(value interface{}) *RowSelection {
-    a.Set("keyField", value)
-    return a
-}
-
-/**
  * 行是否禁用表达式
  */
 func (a *RowSelection) DisableOn(value interface{}) *RowSelection {
@@ -89,5 +73,21 @@ func (a *RowSelection) ColumnWidth(value interface{}) *RowSelection {
  */
 func (a *RowSelection) RowClick(value interface{}) *RowSelection {
     a.Set("rowClick", value)
+    return a
+}
+
+/**
+ * 选择类型 单选/多选
+ */
+func (a *RowSelection) Type(value interface{}) *RowSelection {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 对应数据源的key值
+ */
+func (a *RowSelection) KeyField(value interface{}) *RowSelection {
+    a.Set("keyField", value)
     return a
 }

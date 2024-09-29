@@ -31,6 +31,93 @@ func (a *Cards) Set(name string, value interface{}) *Cards {
     return a
 }
 /**
+ * 顶部区域
+ */
+func (a *Cards) Header(value interface{}) *Cards {
+    a.Set("header", value)
+    return a
+}
+
+/**
+ * 是否为瀑布流布局？
+ */
+func (a *Cards) MasonryLayout(value interface{}) *Cards {
+    a.Set("masonryLayout", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *Cards) Hidden(value interface{}) *Cards {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Cards) Visible(value interface{}) *Cards {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ */
+func (a *Cards) Card(value interface{}) *Cards {
+    a.Set("card", value)
+    return a
+}
+
+/**
+ * 是否显示底部
+ */
+func (a *Cards) ShowFooter(value interface{}) *Cards {
+    a.Set("showFooter", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Cards) OnEvent(value interface{}) *Cards {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否显示头部
+ */
+func (a *Cards) ShowHeader(value interface{}) *Cards {
+    a.Set("showHeader", value)
+    return a
+}
+
+/**
+ * 无数据提示
+ */
+func (a *Cards) Placeholder(value interface{}) *Cards {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 是否固顶
+ */
+func (a *Cards) AffixHeader(value interface{}) *Cards {
+    a.Set("affixHeader", value)
+    return a
+}
+
+/**
+ * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+ */
+func (a *Cards) ItemDraggableOn(value interface{}) *Cards {
+    a.Set("itemDraggableOn", value)
+    return a
+}
+
+/**
  * 是否禁用
  */
 func (a *Cards) Disabled(value interface{}) *Cards {
@@ -55,6 +142,14 @@ func (a *Cards) StaticClassName(value interface{}) *Cards {
 }
 
 /**
+ * 静态展示表单项Value类名
+ */
+func (a *Cards) StaticInputClassName(value interface{}) *Cards {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
  */
 func (a *Cards) Testid(value interface{}) *Cards {
     a.Set("testid", value)
@@ -62,89 +157,10 @@ func (a *Cards) Testid(value interface{}) *Cards {
 }
 
 /**
- * 是否显示头部
+ * 点击卡片的时候是否勾选卡片。
  */
-func (a *Cards) ShowHeader(value interface{}) *Cards {
-    a.Set("showHeader", value)
-    return a
-}
-
-/**
- * 底部区域
- */
-func (a *Cards) Footer(value interface{}) *Cards {
-    a.Set("footer", value)
-    return a
-}
-
-/**
- * 是否显示底部
- */
-func (a *Cards) ShowFooter(value interface{}) *Cards {
-    a.Set("showFooter", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *Cards) ClassName(value interface{}) *Cards {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Cards) DisabledOn(value interface{}) *Cards {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Cards) VisibleOn(value interface{}) *Cards {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Cards) Static(value interface{}) *Cards {
-    a.Set("static", value)
-    return a
-}
-
-/**
- */
-func (a *Cards) TestIdBuilder(value interface{}) *Cards {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 指定为 cards 类型
- */
-func (a *Cards) Type(value interface{}) *Cards {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 无数据提示
- */
-func (a *Cards) Placeholder(value interface{}) *Cards {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否为瀑布流布局？
- */
-func (a *Cards) MasonryLayout(value interface{}) *Cards {
-    a.Set("masonryLayout", value)
+func (a *Cards) CheckOnItemClick(value interface{}) *Cards {
+    a.Set("checkOnItemClick", value)
     return a
 }
 
@@ -173,6 +189,14 @@ func (a *Cards) StaticOn(value interface{}) *Cards {
 }
 
 /**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Cards) UseMobileUI(value interface{}) *Cards {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
  * 静态展示表单项Label类名
  */
 func (a *Cards) StaticLabelClassName(value interface{}) *Cards {
@@ -181,18 +205,10 @@ func (a *Cards) StaticLabelClassName(value interface{}) *Cards {
 }
 
 /**
- * 静态展示表单项Value类名
+ * 头部 CSS 类名
  */
-func (a *Cards) StaticInputClassName(value interface{}) *Cards {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 底部 CSS 类名
- */
-func (a *Cards) FooterClassName(value interface{}) *Cards {
-    a.Set("footerClassName", value)
+func (a *Cards) HeaderClassName(value interface{}) *Cards {
+    a.Set("headerClassName", value)
     return a
 }
 
@@ -205,10 +221,10 @@ func (a *Cards) Source(value interface{}) *Cards {
 }
 
 /**
- * 标题
+ * 底部区域
  */
-func (a *Cards) Title(value interface{}) *Cards {
-    a.Set("title", value)
+func (a *Cards) Footer(value interface{}) *Cards {
+    a.Set("footer", value)
     return a
 }
 
@@ -222,16 +238,8 @@ func (a *Cards) ItemCheckableOn(value interface{}) *Cards {
 
 /**
  */
-func (a *Cards) LoadingConfig(value interface{}) *Cards {
-    a.Set("loadingConfig", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Cards) StaticPlaceholder(value interface{}) *Cards {
-    a.Set("staticPlaceholder", value)
+func (a *Cards) StaticSchema(value interface{}) *Cards {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -244,104 +252,10 @@ func (a *Cards) EditorSetting(value interface{}) *Cards {
 }
 
 /**
- * 是否固底
+ * 底部 CSS 类名
  */
-func (a *Cards) AffixFooter(value interface{}) *Cards {
-    a.Set("affixFooter", value)
-    return a
-}
-
-/**
- * 点击卡片的时候是否勾选卡片。
- */
-func (a *Cards) CheckOnItemClick(value interface{}) *Cards {
-    a.Set("checkOnItemClick", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Cards) Visible(value interface{}) *Cards {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- */
-func (a *Cards) StaticSchema(value interface{}) *Cards {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Cards) Style(value interface{}) *Cards {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 头部 CSS 类名
- */
-func (a *Cards) HeaderClassName(value interface{}) *Cards {
-    a.Set("headerClassName", value)
-    return a
-}
-
-/**
- * 配置某项是否可拖拽排序，前提是要开启拖拽功能
- */
-func (a *Cards) ItemDraggableOn(value interface{}) *Cards {
-    a.Set("itemDraggableOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Cards) OnEvent(value interface{}) *Cards {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- */
-func (a *Cards) Card(value interface{}) *Cards {
-    a.Set("card", value)
-    return a
-}
-
-/**
- * 是否隐藏勾选框
- */
-func (a *Cards) HideCheckToggler(value interface{}) *Cards {
-    a.Set("hideCheckToggler", value)
-    return a
-}
-
-/**
- * 顶部区域
- */
-func (a *Cards) Header(value interface{}) *Cards {
-    a.Set("header", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Cards) Hidden(value interface{}) *Cards {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Cards) UseMobileUI(value interface{}) *Cards {
-    a.Set("useMobileUI", value)
+func (a *Cards) FooterClassName(value interface{}) *Cards {
+    a.Set("footerClassName", value)
     return a
 }
 
@@ -354,9 +268,95 @@ func (a *Cards) ItemClassName(value interface{}) *Cards {
 }
 
 /**
- * 是否固顶
+ * 是否隐藏勾选框
  */
-func (a *Cards) AffixHeader(value interface{}) *Cards {
-    a.Set("affixHeader", value)
+func (a *Cards) HideCheckToggler(value interface{}) *Cards {
+    a.Set("hideCheckToggler", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *Cards) ClassName(value interface{}) *Cards {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *Cards) DisabledOn(value interface{}) *Cards {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Cards) Static(value interface{}) *Cards {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 是否固底
+ */
+func (a *Cards) AffixFooter(value interface{}) *Cards {
+    a.Set("affixFooter", value)
+    return a
+}
+
+/**
+ * 指定为 cards 类型
+ */
+func (a *Cards) Type(value interface{}) *Cards {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 标题
+ */
+func (a *Cards) Title(value interface{}) *Cards {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ */
+func (a *Cards) LoadingConfig(value interface{}) *Cards {
+    a.Set("loadingConfig", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *Cards) VisibleOn(value interface{}) *Cards {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *Cards) StaticPlaceholder(value interface{}) *Cards {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Cards) Style(value interface{}) *Cards {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ */
+func (a *Cards) TestIdBuilder(value interface{}) *Cards {
+    a.Set("testIdBuilder", value)
     return a
 }

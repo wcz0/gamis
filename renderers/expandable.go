@@ -29,22 +29,6 @@ func (a *Expandable) Set(name string, value interface{}) *Expandable {
     return a
 }
 /**
- * 已展开的key值
- */
-func (a *Expandable) ExpandedRowKeys(value interface{}) *Expandable {
-    a.Set("expandedRowKeys", value)
-    return a
-}
-
-/**
- * 已展开的key值表达式
- */
-func (a *Expandable) ExpandedRowKeysExpr(value interface{}) *Expandable {
-    a.Set("expandedRowKeysExpr", value)
-    return a
-}
-
-/**
  * 对应渲染器类型
  */
 func (a *Expandable) Type(value interface{}) *Expandable {
@@ -73,5 +57,21 @@ func (a *Expandable) ExpandableOn(value interface{}) *Expandable {
  */
 func (a *Expandable) ExpandedRowClassNameExpr(value interface{}) *Expandable {
     a.Set("expandedRowClassNameExpr", value)
+    return a
+}
+
+/**
+ * 已展开的key值
+ */
+func (a *Expandable) ExpandedRowKeys(value interface{}) *Expandable {
+    a.Set("expandedRowKeys", value)
+    return a
+}
+
+/**
+ * 已展开的key值表达式
+ */
+func (a *Expandable) ExpandedRowKeysExpr(value interface{}) *Expandable {
+    a.Set("expandedRowKeysExpr", value)
     return a
 }

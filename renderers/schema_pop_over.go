@@ -37,10 +37,19 @@ func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 配置当前行是否启动，要用表达式
+ * 弹框外层类名
  */
-func (a *SchemaPopOver) PopOverEnableOn(value interface{}) *SchemaPopOver {
-    a.Set("popOverEnableOn", value)
+func (a *SchemaPopOver) PopOverClassName(value interface{}) *SchemaPopOver {
+    a.Set("popOverClassName", value)
+    return a
+}
+
+/**
+ * 是弹窗形式的时候有用。
+ * 可选值: sm | md | lg | xl
+ */
+func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
+    a.Set("size", value)
     return a
 }
 
@@ -63,10 +72,10 @@ func (a *SchemaPopOver) Trigger(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 是否显示查看更多的 icon，通常是放大图标。
+ * 标题
  */
-func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
-    a.Set("showIcon", value)
+func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
+    a.Set("title", value)
     return a
 }
 
@@ -78,10 +87,10 @@ func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 弹框外层类名
+ * 配置当前行是否启动，要用表达式
  */
-func (a *SchemaPopOver) PopOverClassName(value interface{}) *SchemaPopOver {
-    a.Set("popOverClassName", value)
+func (a *SchemaPopOver) PopOverEnableOn(value interface{}) *SchemaPopOver {
+    a.Set("popOverEnableOn", value)
     return a
 }
 
@@ -95,11 +104,10 @@ func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 是弹窗形式的时候有用。
- * 可选值: sm | md | lg | xl
+ * 是否显示查看更多的 icon，通常是放大图标。
  */
-func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
-    a.Set("size", value)
+func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
+    a.Set("showIcon", value)
     return a
 }
 
@@ -108,13 +116,5 @@ func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
  */
 func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
     a.Set("offset", value)
-    return a
-}
-
-/**
- * 标题
- */
-func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
-    a.Set("title", value)
     return a
 }

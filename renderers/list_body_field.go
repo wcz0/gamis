@@ -30,14 +30,6 @@ func (a *ListBodyField) Set(name string, value interface{}) *ListBodyField {
     return a
 }
 /**
- * 配置点击复制功能
- */
-func (a *ListBodyField) Copyable(value interface{}) *ListBodyField {
-    a.Set("copyable", value)
-    return a
-}
-
-/**
  * 列标题
  */
 func (a *ListBodyField) Label(value interface{}) *ListBodyField {
@@ -82,5 +74,13 @@ func (a *ListBodyField) PopOver(value interface{}) *ListBodyField {
  */
 func (a *ListBodyField) QuickEdit(value interface{}) *ListBodyField {
     a.Set("quickEdit", value)
+    return a
+}
+
+/**
+ * 配置点击复制功能
+ */
+func (a *ListBodyField) Copyable(value interface{}) *ListBodyField {
+    a.Set("copyable", value)
     return a
 }

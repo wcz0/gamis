@@ -31,10 +31,18 @@ func (a *DateRange) Set(name string, value interface{}) *DateRange {
     return a
 }
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否隐藏
  */
-func (a *DateRange) Id(value interface{}) *DateRange {
-    a.Set("id", value)
+func (a *DateRange) Hidden(value interface{}) *DateRange {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *DateRange) OnEvent(value interface{}) *DateRange {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -50,6 +58,61 @@ func (a *DateRange) StaticSchema(value interface{}) *DateRange {
  */
 func (a *DateRange) Format(value interface{}) *DateRange {
     a.Set("format", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *DateRange) VisibleOn(value interface{}) *DateRange {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *DateRange) Id(value interface{}) *DateRange {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *DateRange) Static(value interface{}) *DateRange {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 指定为日期展示类型
+ */
+func (a *DateRange) Type(value interface{}) *DateRange {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ */
+func (a *DateRange) Testid(value interface{}) *DateRange {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 值的时间格式，参考 moment 中的格式说明。
+ */
+func (a *DateRange) ValueFormat(value interface{}) *DateRange {
+    a.Set("valueFormat", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *DateRange) DisabledOn(value interface{}) *DateRange {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -70,50 +133,10 @@ func (a *DateRange) StaticClassName(value interface{}) *DateRange {
 }
 
 /**
- * 值的时间格式，参考 moment 中的格式说明。
+ * 静态展示表单项Value类名
  */
-func (a *DateRange) ValueFormat(value interface{}) *DateRange {
-    a.Set("valueFormat", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *DateRange) ClassName(value interface{}) *DateRange {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *DateRange) Style(value interface{}) *DateRange {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 连接符
- */
-func (a *DateRange) Connector(value interface{}) *DateRange {
-    a.Set("connector", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *DateRange) DisabledOn(value interface{}) *DateRange {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *DateRange) Hidden(value interface{}) *DateRange {
-    a.Set("hidden", value)
+func (a *DateRange) StaticInputClassName(value interface{}) *DateRange {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -126,42 +149,18 @@ func (a *DateRange) Visible(value interface{}) *DateRange {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 静态展示空值占位
  */
-func (a *DateRange) StaticLabelClassName(value interface{}) *DateRange {
-    a.Set("staticLabelClassName", value)
+func (a *DateRange) StaticPlaceholder(value interface{}) *DateRange {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 组件样式
  */
-func (a *DateRange) Disabled(value interface{}) *DateRange {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *DateRange) HiddenOn(value interface{}) *DateRange {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *DateRange) VisibleOn(value interface{}) *DateRange {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *DateRange) StaticInputClassName(value interface{}) *DateRange {
-    a.Set("staticInputClassName", value)
+func (a *DateRange) Style(value interface{}) *DateRange {
+    a.Set("style", value)
     return a
 }
 
@@ -173,26 +172,10 @@ func (a *DateRange) TestIdBuilder(value interface{}) *DateRange {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 容器 css 类名
  */
-func (a *DateRange) EditorSetting(value interface{}) *DateRange {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 指定为日期展示类型
- */
-func (a *DateRange) Type(value interface{}) *DateRange {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 展示的时间格式，参考 moment 中的格式说明。（新：同format）
- */
-func (a *DateRange) DisplayFormat(value interface{}) *DateRange {
-    a.Set("displayFormat", value)
+func (a *DateRange) ClassName(value interface{}) *DateRange {
+    a.Set("className", value)
     return a
 }
 
@@ -205,26 +188,42 @@ func (a *DateRange) Delimiter(value interface{}) *DateRange {
 }
 
 /**
- * 事件动作配置
+ * 是否禁用
  */
-func (a *DateRange) OnEvent(value interface{}) *DateRange {
-    a.Set("onEvent", value)
+func (a *DateRange) Disabled(value interface{}) *DateRange {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 连接符
  */
-func (a *DateRange) Static(value interface{}) *DateRange {
-    a.Set("static", value)
+func (a *DateRange) Connector(value interface{}) *DateRange {
+    a.Set("connector", value)
     return a
 }
 
 /**
- * 静态展示空值占位
+ * 是否隐藏表达式
  */
-func (a *DateRange) StaticPlaceholder(value interface{}) *DateRange {
-    a.Set("staticPlaceholder", value)
+func (a *DateRange) HiddenOn(value interface{}) *DateRange {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *DateRange) StaticLabelClassName(value interface{}) *DateRange {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *DateRange) EditorSetting(value interface{}) *DateRange {
+    a.Set("editorSetting", value)
     return a
 }
 
@@ -237,8 +236,9 @@ func (a *DateRange) UseMobileUI(value interface{}) *DateRange {
 }
 
 /**
+ * 展示的时间格式，参考 moment 中的格式说明。（新：同format）
  */
-func (a *DateRange) Testid(value interface{}) *DateRange {
-    a.Set("testid", value)
+func (a *DateRange) DisplayFormat(value interface{}) *DateRange {
+    a.Set("displayFormat", value)
     return a
 }

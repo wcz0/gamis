@@ -31,56 +31,18 @@ func (a *Chart) Set(name string, value interface{}) *Chart {
     return a
 }
 /**
- * 是否禁用表达式
+ * 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression
  */
-func (a *Chart) DisabledOn(value interface{}) *Chart {
-    a.Set("disabledOn", value)
+func (a *Chart) Config(value interface{}) *Chart {
+    a.Set("config", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 刷新时间
  */
-func (a *Chart) HiddenOn(value interface{}) *Chart {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 指定为 chart 类型
- */
-func (a *Chart) Type(value interface{}) *Chart {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * Chart 主题配置
- */
-func (a *Chart) ChartTheme(value interface{}) *Chart {
-    a.Set("chartTheme", value)
-    return a
-}
-
-/**
- * 高度设置
- */
-func (a *Chart) Height(value interface{}) *Chart {
-    a.Set("height", value)
-    return a
-}
-
-/**
- */
-func (a *Chart) Name(value interface{}) *Chart {
-    a.Set("name", value)
-    return a
-}
-
-/**
- */
-func (a *Chart) DataFilter(value interface{}) *Chart {
-    a.Set("dataFilter", value)
+func (a *Chart) Interval(value interface{}) *Chart {
+    a.Set("interval", value)
     return a
 }
 
@@ -93,81 +55,10 @@ func (a *Chart) ClassName(value interface{}) *Chart {
 }
 
 /**
- * 是否静态展示表达式
+ * 是否禁用表达式
  */
-func (a *Chart) StaticOn(value interface{}) *Chart {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Chart) StaticPlaceholder(value interface{}) *Chart {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Chart) StaticClassName(value interface{}) *Chart {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Chart) EditorSetting(value interface{}) *Chart {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *Chart) UseMobileUI(value interface{}) *Chart {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 宽度设置
- */
-func (a *Chart) Width(value interface{}) *Chart {
-    a.Set("width", value)
-    return a
-}
-
-/**
- */
-func (a *Chart) Source(value interface{}) *Chart {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Chart) OnEvent(value interface{}) *Chart {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 获取 geo json 文件的地址
- */
-func (a *Chart) MapURL(value interface{}) *Chart {
-    a.Set("mapURL", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Chart) Visible(value interface{}) *Chart {
-    a.Set("visible", value)
+func (a *Chart) DisabledOn(value interface{}) *Chart {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -180,6 +71,14 @@ func (a *Chart) Id(value interface{}) *Chart {
 }
 
 /**
+ * 静态展示表单项类名
+ */
+func (a *Chart) StaticClassName(value interface{}) *Chart {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
  * 静态展示表单项Label类名
  */
 func (a *Chart) StaticLabelClassName(value interface{}) *Chart {
@@ -188,41 +87,34 @@ func (a *Chart) StaticLabelClassName(value interface{}) *Chart {
 }
 
 /**
+ * 静态展示表单项Value类名
  */
-func (a *Chart) Testid(value interface{}) *Chart {
-    a.Set("testid", value)
+func (a *Chart) StaticInputClassName(value interface{}) *Chart {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 跟踪表达式，如果这个表达式的运行结果发生变化了，则会更新 Echart，当 config 中用了数据映射时有用。
+ * 是否禁用
  */
-func (a *Chart) TrackExpression(value interface{}) *Chart {
-    a.Set("trackExpression", value)
+func (a *Chart) Disabled(value interface{}) *Chart {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 点击行为配置，可以用来满足下钻操作等。
+ * 是否初始加载。
  */
-func (a *Chart) ClickAction(value interface{}) *Chart {
-    a.Set("clickAction", value)
+func (a *Chart) InitFetch(value interface{}) *Chart {
+    a.Set("initFetch", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 默认开启 Config 中的数据映射，如果想关闭，请开启此功能。
  */
-func (a *Chart) Static(value interface{}) *Chart {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否初始加载用表达式来配置
- */
-func (a *Chart) InitFetchOn(value interface{}) *Chart {
-    a.Set("initFetchOn", value)
+func (a *Chart) DisableDataMapping(value interface{}) *Chart {
+    a.Set("disableDataMapping", value)
     return a
 }
 
@@ -231,14 +123,6 @@ func (a *Chart) InitFetchOn(value interface{}) *Chart {
  */
 func (a *Chart) ReplaceChartOption(value interface{}) *Chart {
     a.Set("replaceChartOption", value)
-    return a
-}
-
-/**
- * 地图名称
- */
-func (a *Chart) MapName(value interface{}) *Chart {
-    a.Set("mapName", value)
     return a
 }
 
@@ -259,6 +143,116 @@ func (a *Chart) Hidden(value interface{}) *Chart {
 }
 
 /**
+ */
+func (a *Chart) TestIdBuilder(value interface{}) *Chart {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 跟踪表达式，如果这个表达式的运行结果发生变化了，则会更新 Echart，当 config 中用了数据映射时有用。
+ */
+func (a *Chart) TrackExpression(value interface{}) *Chart {
+    a.Set("trackExpression", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Chart) HiddenOn(value interface{}) *Chart {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Chart) Visible(value interface{}) *Chart {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否静态展示
+ */
+func (a *Chart) Static(value interface{}) *Chart {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *Chart) UseMobileUI(value interface{}) *Chart {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ */
+func (a *Chart) Source(value interface{}) *Chart {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * 地图名称
+ */
+func (a *Chart) MapName(value interface{}) *Chart {
+    a.Set("mapName", value)
+    return a
+}
+
+/**
+ * style样式
+ */
+func (a *Chart) Style(value interface{}) *Chart {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *Chart) EditorSetting(value interface{}) *Chart {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 指定为 chart 类型
+ */
+func (a *Chart) Type(value interface{}) *Chart {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 是否初始加载用表达式来配置
+ */
+func (a *Chart) InitFetchOn(value interface{}) *Chart {
+    a.Set("initFetchOn", value)
+    return a
+}
+
+/**
+ * 宽度设置
+ */
+func (a *Chart) Width(value interface{}) *Chart {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 获取 geo json 文件的地址
+ */
+func (a *Chart) MapURL(value interface{}) *Chart {
+    a.Set("mapURL", value)
+    return a
+}
+
+/**
  * 是否显示表达式
  */
 func (a *Chart) VisibleOn(value interface{}) *Chart {
@@ -267,10 +261,17 @@ func (a *Chart) VisibleOn(value interface{}) *Chart {
 }
 
 /**
- * 默认开启 Config 中的数据映射，如果想关闭，请开启此功能。
+ * 静态展示空值占位
  */
-func (a *Chart) DisableDataMapping(value interface{}) *Chart {
-    a.Set("disableDataMapping", value)
+func (a *Chart) StaticPlaceholder(value interface{}) *Chart {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *Chart) Testid(value interface{}) *Chart {
+    a.Set("testid", value)
     return a
 }
 
@@ -284,16 +285,54 @@ func (a *Chart) UnMountOnHidden(value interface{}) *Chart {
 
 /**
  */
+func (a *Chart) DataFilter(value interface{}) *Chart {
+    a.Set("dataFilter", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *Chart) OnEvent(value interface{}) *Chart {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *Chart) StaticOn(value interface{}) *Chart {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 高度设置
+ */
+func (a *Chart) Height(value interface{}) *Chart {
+    a.Set("height", value)
+    return a
+}
+
+/**
+ */
+func (a *Chart) Name(value interface{}) *Chart {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ */
 func (a *Chart) StaticSchema(value interface{}) *Chart {
     a.Set("staticSchema", value)
     return a
 }
 
 /**
- * style样式
+ * Chart 主题配置
  */
-func (a *Chart) Style(value interface{}) *Chart {
-    a.Set("style", value)
+func (a *Chart) ChartTheme(value interface{}) *Chart {
+    a.Set("chartTheme", value)
     return a
 }
 
@@ -306,48 +345,9 @@ func (a *Chart) Api(value interface{}) *Chart {
 }
 
 /**
- * 是否初始加载。
+ * 点击行为配置，可以用来满足下钻操作等。
  */
-func (a *Chart) InitFetch(value interface{}) *Chart {
-    a.Set("initFetch", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Chart) Disabled(value interface{}) *Chart {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Chart) StaticInputClassName(value interface{}) *Chart {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Chart) TestIdBuilder(value interface{}) *Chart {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression
- */
-func (a *Chart) Config(value interface{}) *Chart {
-    a.Set("config", value)
-    return a
-}
-
-/**
- * 刷新时间
- */
-func (a *Chart) Interval(value interface{}) *Chart {
-    a.Set("interval", value)
+func (a *Chart) ClickAction(value interface{}) *Chart {
+    a.Set("clickAction", value)
     return a
 }

@@ -31,26 +31,34 @@ func (a *EditorControl) Set(name string, value interface{}) *EditorControl {
     return a
 }
 /**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ * 是否为必填
  */
-func (a *EditorControl) Value(value interface{}) *EditorControl {
-    a.Set("value", value)
+func (a *EditorControl) Required(value interface{}) *EditorControl {
+    a.Set("required", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 事件动作配置
  */
-func (a *EditorControl) VisibleOn(value interface{}) *EditorControl {
-    a.Set("visibleOn", value)
+func (a *EditorControl) OnEvent(value interface{}) *EditorControl {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *EditorControl) UseMobileUI(value interface{}) *EditorControl {
-    a.Set("useMobileUI", value)
+func (a *EditorControl) EditorSetting(value interface{}) *EditorControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *EditorControl) LabelClassName(value interface{}) *EditorControl {
+    a.Set("labelClassName", value)
     return a
 }
 
@@ -71,65 +79,18 @@ func (a *EditorControl) Description(value interface{}) *EditorControl {
 }
 
 /**
+ * 是否隐藏
+ */
+func (a *EditorControl) Hidden(value interface{}) *EditorControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
  * 静态展示表单项Value类名
  */
 func (a *EditorControl) StaticInputClassName(value interface{}) *EditorControl {
     a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *EditorControl) TestIdBuilder(value interface{}) *EditorControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *EditorControl) ClassName(value interface{}) *EditorControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 获取编辑器底层实例
- */
-func (a *EditorControl) EditorDidMount(value interface{}) *EditorControl {
-    a.Set("editorDidMount", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *EditorControl) Label(value interface{}) *EditorControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *EditorControl) Inline(value interface{}) *EditorControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *EditorControl) DisabledOn(value interface{}) *EditorControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *EditorControl) StaticLabelClassName(value interface{}) *EditorControl {
-    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -141,203 +102,10 @@ func (a *EditorControl) StaticSchema(value interface{}) *EditorControl {
 }
 
 /**
- * 语言类型
- * 可选值: bat | c | coffeescript | cpp | csharp | css | dockerfile | fsharp | go | handlebars | html | ini | java | javascript | json | less | lua | markdown | msdax | objective-c | php | plaintext | postiats | powershell | pug | python | r | razor | ruby | sb | scss | shell | sol | sql | swift | typescript | vb | xml | yaml
- */
-func (a *EditorControl) Language(value interface{}) *EditorControl {
-    a.Set("language", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *EditorControl) Id(value interface{}) *EditorControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
  * label自定义宽度，默认单位为px
  */
 func (a *EditorControl) LabelWidth(value interface{}) *EditorControl {
     a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *EditorControl) Hint(value interface{}) *EditorControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *EditorControl) Placeholder(value interface{}) *EditorControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *EditorControl) StaticPlaceholder(value interface{}) *EditorControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 是否展示全屏模式开关
- */
-func (a *EditorControl) AllowFullscreen(value interface{}) *EditorControl {
-    a.Set("allowFullscreen", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *EditorControl) SubmitOnChange(value interface{}) *EditorControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- */
-func (a *EditorControl) Desc(value interface{}) *EditorControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *EditorControl) Required(value interface{}) *EditorControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *EditorControl) ValidateApi(value interface{}) *EditorControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *EditorControl) AutoFill(value interface{}) *EditorControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *EditorControl) Visible(value interface{}) *EditorControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *EditorControl) OnEvent(value interface{}) *EditorControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *EditorControl) Static(value interface{}) *EditorControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *EditorControl) EditorSetting(value interface{}) *EditorControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *EditorControl) Remark(value interface{}) *EditorControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *EditorControl) LabelRemark(value interface{}) *EditorControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *EditorControl) ReadOnly(value interface{}) *EditorControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *EditorControl) DescriptionClassName(value interface{}) *EditorControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *EditorControl) ValidationErrors(value interface{}) *EditorControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *EditorControl) Hidden(value interface{}) *EditorControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *EditorControl) StaticClassName(value interface{}) *EditorControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *EditorControl) Style(value interface{}) *EditorControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 编辑器大小
- * 可选值: sm | md | lg | xl | xxl
- */
-func (a *EditorControl) Size(value interface{}) *EditorControl {
-    a.Set("size", value)
     return a
 }
 
@@ -351,26 +119,43 @@ func (a *EditorControl) Mode(value interface{}) *EditorControl {
 }
 
 /**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
  */
-func (a *EditorControl) ValidateOnChange(value interface{}) *EditorControl {
-    a.Set("validateOnChange", value)
+func (a *EditorControl) Value(value interface{}) *EditorControl {
+    a.Set("value", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 是否静态展示
  */
-func (a *EditorControl) Disabled(value interface{}) *EditorControl {
-    a.Set("disabled", value)
+func (a *EditorControl) Static(value interface{}) *EditorControl {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 语言类型
+ * 可选值: bat | c | coffeescript | cpp | csharp | css | dockerfile | fsharp | go | handlebars | html | ini | java | javascript | json | less | lua | markdown | msdax | objective-c | php | plaintext | postiats | powershell | pug | python | r | razor | ruby | sb | scss | shell | sol | sql | swift | typescript | vb | xml | yaml
  */
-func (a *EditorControl) HiddenOn(value interface{}) *EditorControl {
-    a.Set("hiddenOn", value)
+func (a *EditorControl) Language(value interface{}) *EditorControl {
+    a.Set("language", value)
+    return a
+}
+
+/**
+ * 获取编辑器底层实例
+ */
+func (a *EditorControl) EditorDidMount(value interface{}) *EditorControl {
+    a.Set("editorDidMount", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *EditorControl) ValidateApi(value interface{}) *EditorControl {
+    a.Set("validateApi", value)
     return a
 }
 
@@ -383,25 +168,66 @@ func (a *EditorControl) Type(value interface{}) *EditorControl {
 }
 
 /**
- * 描述标题
+ * 表单 control 是否为 inline 模式。
  */
-func (a *EditorControl) LabelAlign(value interface{}) *EditorControl {
-    a.Set("labelAlign", value)
+func (a *EditorControl) Inline(value interface{}) *EditorControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
+ * 占位符
  */
-func (a *EditorControl) Validations(value interface{}) *EditorControl {
-    a.Set("validations", value)
+func (a *EditorControl) Placeholder(value interface{}) *EditorControl {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ * 验证失败的提示信息
  */
-func (a *EditorControl) ClearValueOnHidden(value interface{}) *EditorControl {
-    a.Set("clearValueOnHidden", value)
+func (a *EditorControl) ValidationErrors(value interface{}) *EditorControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *EditorControl) Width(value interface{}) *EditorControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *EditorControl) SubmitOnChange(value interface{}) *EditorControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *EditorControl) ReadOnly(value interface{}) *EditorControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *EditorControl) InputClassName(value interface{}) *EditorControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *EditorControl) LabelRemark(value interface{}) *EditorControl {
+    a.Set("labelRemark", value)
     return a
 }
 
@@ -414,10 +240,82 @@ func (a *EditorControl) ReadOnlyOn(value interface{}) *EditorControl {
 }
 
 /**
- * 配置 label className
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
  */
-func (a *EditorControl) LabelClassName(value interface{}) *EditorControl {
-    a.Set("labelClassName", value)
+func (a *EditorControl) ValidateOnChange(value interface{}) *EditorControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *EditorControl) Id(value interface{}) *EditorControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *EditorControl) StaticClassName(value interface{}) *EditorControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ */
+func (a *EditorControl) Remark(value interface{}) *EditorControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ */
+func (a *EditorControl) InitAutoFill(value interface{}) *EditorControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *EditorControl) StaticLabelClassName(value interface{}) *EditorControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 编辑器大小
+ * 可选值: sm | md | lg | xl | xxl
+ */
+func (a *EditorControl) Size(value interface{}) *EditorControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 输入提示，聚焦的时候显示
+ */
+func (a *EditorControl) Hint(value interface{}) *EditorControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *EditorControl) ClearValueOnHidden(value interface{}) *EditorControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *EditorControl) StaticOn(value interface{}) *EditorControl {
+    a.Set("staticOn", value)
     return a
 }
 
@@ -426,6 +324,37 @@ func (a *EditorControl) LabelClassName(value interface{}) *EditorControl {
  */
 func (a *EditorControl) Name(value interface{}) *EditorControl {
     a.Set("name", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *EditorControl) DescriptionClassName(value interface{}) *EditorControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *EditorControl) ClassName(value interface{}) *EditorControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *EditorControl) Visible(value interface{}) *EditorControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ */
+func (a *EditorControl) Desc(value interface{}) *EditorControl {
+    a.Set("desc", value)
     return a
 }
 
@@ -439,38 +368,109 @@ func (a *EditorControl) Horizontal(value interface{}) *EditorControl {
 
 /**
  */
+func (a *EditorControl) Validations(value interface{}) *EditorControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ */
+func (a *EditorControl) TestIdBuilder(value interface{}) *EditorControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *EditorControl) AutoFill(value interface{}) *EditorControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *EditorControl) HiddenOn(value interface{}) *EditorControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *EditorControl) UseMobileUI(value interface{}) *EditorControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ */
 func (a *EditorControl) Row(value interface{}) *EditorControl {
     a.Set("row", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 描述标题
  */
-func (a *EditorControl) StaticOn(value interface{}) *EditorControl {
-    a.Set("staticOn", value)
+func (a *EditorControl) LabelAlign(value interface{}) *EditorControl {
+    a.Set("labelAlign", value)
     return a
 }
 
 /**
- * 在Table中调整宽度
+ * 是否禁用
  */
-func (a *EditorControl) Width(value interface{}) *EditorControl {
-    a.Set("width", value)
+func (a *EditorControl) Disabled(value interface{}) *EditorControl {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 配置 input className
+ * 描述标题
  */
-func (a *EditorControl) InputClassName(value interface{}) *EditorControl {
-    a.Set("inputClassName", value)
+func (a *EditorControl) Label(value interface{}) *EditorControl {
+    a.Set("label", value)
     return a
 }
 
 /**
+ * 是否禁用表达式
  */
-func (a *EditorControl) InitAutoFill(value interface{}) *EditorControl {
-    a.Set("initAutoFill", value)
+func (a *EditorControl) DisabledOn(value interface{}) *EditorControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *EditorControl) VisibleOn(value interface{}) *EditorControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *EditorControl) StaticPlaceholder(value interface{}) *EditorControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *EditorControl) Style(value interface{}) *EditorControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否展示全屏模式开关
+ */
+func (a *EditorControl) AllowFullscreen(value interface{}) *EditorControl {
+    a.Set("allowFullscreen", value)
     return a
 }

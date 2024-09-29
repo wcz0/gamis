@@ -31,57 +31,40 @@ func (a *RadioControl) Set(name string, value interface{}) *RadioControl {
     return a
 }
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
  */
-func (a *RadioControl) ClearValueOnHidden(value interface{}) *RadioControl {
-    a.Set("clearValueOnHidden", value)
+func (a *RadioControl) Validations(value interface{}) *RadioControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * 指定为多行文本输入框
+ */
+func (a *RadioControl) Type(value interface{}) *RadioControl {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 可选值: default | button
+ */
+func (a *RadioControl) OptionType(value interface{}) *RadioControl {
+    a.Set("optionType", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *RadioControl) Width(value interface{}) *RadioControl {
+    a.Set("width", value)
     return a
 }
 
 /**
  */
-func (a *RadioControl) Row(value interface{}) *RadioControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *RadioControl) DisabledOn(value interface{}) *RadioControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *RadioControl) UseMobileUI(value interface{}) *RadioControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *RadioControl) LabelAlign(value interface{}) *RadioControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *RadioControl) Id(value interface{}) *RadioControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *RadioControl) ReadOnlyOn(value interface{}) *RadioControl {
-    a.Set("readOnlyOn", value)
+func (a *RadioControl) StaticSchema(value interface{}) *RadioControl {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -94,26 +77,49 @@ func (a *RadioControl) Placeholder(value interface{}) *RadioControl {
 }
 
 /**
- * 选项说明
+ * 是否为必填
  */
-func (a *RadioControl) Option(value interface{}) *RadioControl {
-    a.Set("option", value)
+func (a *RadioControl) Required(value interface{}) *RadioControl {
+    a.Set("required", value)
     return a
 }
 
 /**
- * 是否静态展示表达式
+ * 是否禁用表达式
  */
-func (a *RadioControl) StaticOn(value interface{}) *RadioControl {
-    a.Set("staticOn", value)
+func (a *RadioControl) DisabledOn(value interface{}) *RadioControl {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 是否只读
+ * 静态展示表单项Label类名
  */
-func (a *RadioControl) ReadOnly(value interface{}) *RadioControl {
-    a.Set("readOnly", value)
+func (a *RadioControl) StaticLabelClassName(value interface{}) *RadioControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *RadioControl) DescriptionClassName(value interface{}) *RadioControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *RadioControl) StaticClassName(value interface{}) *RadioControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *RadioControl) InitAutoFill(value interface{}) *RadioControl {
+    a.Set("initAutoFill", value)
     return a
 }
 
@@ -133,33 +139,10 @@ func (a *RadioControl) TrueValue(value interface{}) *RadioControl {
 }
 
 /**
- * 配置 input className
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *RadioControl) InputClassName(value interface{}) *RadioControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *RadioControl) AutoFill(value interface{}) *RadioControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- */
-func (a *RadioControl) TestIdBuilder(value interface{}) *RadioControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *RadioControl) LabelClassName(value interface{}) *RadioControl {
-    a.Set("labelClassName", value)
+func (a *RadioControl) Id(value interface{}) *RadioControl {
+    a.Set("id", value)
     return a
 }
 
@@ -172,64 +155,18 @@ func (a *RadioControl) Name(value interface{}) *RadioControl {
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * 组件样式
  */
-func (a *RadioControl) Remark(value interface{}) *RadioControl {
-    a.Set("remark", value)
+func (a *RadioControl) Style(value interface{}) *RadioControl {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 当修改完的时候是否提交表单。
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
  */
-func (a *RadioControl) SubmitOnChange(value interface{}) *RadioControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *RadioControl) Horizontal(value interface{}) *RadioControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- */
-func (a *RadioControl) InitAutoFill(value interface{}) *RadioControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *RadioControl) Badge(value interface{}) *RadioControl {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *RadioControl) StaticPlaceholder(value interface{}) *RadioControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *RadioControl) StaticClassName(value interface{}) *RadioControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *RadioControl) StaticSchema(value interface{}) *RadioControl {
-    a.Set("staticSchema", value)
+func (a *RadioControl) AutoFill(value interface{}) *RadioControl {
+    a.Set("autoFill", value)
     return a
 }
 
@@ -242,58 +179,57 @@ func (a *RadioControl) Label(value interface{}) *RadioControl {
 }
 
 /**
- * 静态展示表单项Label类名
+ * 只读条件
  */
-func (a *RadioControl) StaticLabelClassName(value interface{}) *RadioControl {
-    a.Set("staticLabelClassName", value)
+func (a *RadioControl) ReadOnlyOn(value interface{}) *RadioControl {
+    a.Set("readOnlyOn", value)
     return a
 }
 
 /**
- * label自定义宽度，默认单位为px
+ * 配置 input className
  */
-func (a *RadioControl) LabelWidth(value interface{}) *RadioControl {
-    a.Set("labelWidth", value)
+func (a *RadioControl) InputClassName(value interface{}) *RadioControl {
+    a.Set("inputClassName", value)
     return a
 }
 
 /**
- * 描述内容，支持 Html 片段。
  */
-func (a *RadioControl) Description(value interface{}) *RadioControl {
-    a.Set("description", value)
+func (a *RadioControl) Row(value interface{}) *RadioControl {
+    a.Set("row", value)
     return a
 }
 
 /**
- * 远端校验表单项接口
+ * 事件动作配置
  */
-func (a *RadioControl) ValidateApi(value interface{}) *RadioControl {
-    a.Set("validateApi", value)
+func (a *RadioControl) OnEvent(value interface{}) *RadioControl {
+    a.Set("onEvent", value)
     return a
 }
 
 /**
- * 指定为多行文本输入框
+ * 是否静态展示
  */
-func (a *RadioControl) Type(value interface{}) *RadioControl {
-    a.Set("type", value)
+func (a *RadioControl) Static(value interface{}) *RadioControl {
+    a.Set("static", value)
     return a
 }
 
 /**
- * 是否为必填
+ * 静态展示空值占位
  */
-func (a *RadioControl) Required(value interface{}) *RadioControl {
-    a.Set("required", value)
+func (a *RadioControl) StaticPlaceholder(value interface{}) *RadioControl {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 未勾选值
+ * 描述标题
  */
-func (a *RadioControl) FalseValue(value interface{}) *RadioControl {
-    a.Set("falseValue", value)
+func (a *RadioControl) LabelAlign(value interface{}) *RadioControl {
+    a.Set("labelAlign", value)
     return a
 }
 
@@ -306,6 +242,55 @@ func (a *RadioControl) ExtraName(value interface{}) *RadioControl {
 }
 
 /**
+ * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+ */
+func (a *RadioControl) ValidateOnChange(value interface{}) *RadioControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *RadioControl) Disabled(value interface{}) *RadioControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *RadioControl) Hidden(value interface{}) *RadioControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
+ */
+func (a *RadioControl) Size(value interface{}) *RadioControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *RadioControl) VisibleOn(value interface{}) *RadioControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 当修改完的时候是否提交表单。
+ */
+func (a *RadioControl) SubmitOnChange(value interface{}) *RadioControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
  * 表单 control 是否为 inline 模式。
  */
 func (a *RadioControl) Inline(value interface{}) *RadioControl {
@@ -314,10 +299,34 @@ func (a *RadioControl) Inline(value interface{}) *RadioControl {
 }
 
 /**
- * 输入提示，聚焦的时候显示
+ * 静态展示表单项Value类名
  */
-func (a *RadioControl) Hint(value interface{}) *RadioControl {
-    a.Set("hint", value)
+func (a *RadioControl) StaticInputClassName(value interface{}) *RadioControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *RadioControl) EditorSetting(value interface{}) *RadioControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ */
+func (a *RadioControl) ClearValueOnHidden(value interface{}) *RadioControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * 未勾选值
+ */
+func (a *RadioControl) FalseValue(value interface{}) *RadioControl {
+    a.Set("falseValue", value)
     return a
 }
 
@@ -337,22 +346,6 @@ func (a *RadioControl) ClassName(value interface{}) *RadioControl {
 }
 
 /**
- * 是否显示表达式
- */
-func (a *RadioControl) VisibleOn(value interface{}) *RadioControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *RadioControl) OnEvent(value interface{}) *RadioControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
  * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
  */
 func (a *RadioControl) LabelRemark(value interface{}) *RadioControl {
@@ -361,10 +354,73 @@ func (a *RadioControl) LabelRemark(value interface{}) *RadioControl {
 }
 
 /**
- * 是否禁用
+ * 是否只读
  */
-func (a *RadioControl) Disabled(value interface{}) *RadioControl {
-    a.Set("disabled", value)
+func (a *RadioControl) ReadOnly(value interface{}) *RadioControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ */
+func (a *RadioControl) TestIdBuilder(value interface{}) *RadioControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *RadioControl) Value(value interface{}) *RadioControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *RadioControl) LabelClassName(value interface{}) *RadioControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *RadioControl) Horizontal(value interface{}) *RadioControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *RadioControl) LabelWidth(value interface{}) *RadioControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *RadioControl) ValidationErrors(value interface{}) *RadioControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 远端校验表单项接口
+ */
+func (a *RadioControl) ValidateApi(value interface{}) *RadioControl {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * 选项说明
+ */
+func (a *RadioControl) Option(value interface{}) *RadioControl {
+    a.Set("option", value)
     return a
 }
 
@@ -377,42 +433,34 @@ func (a *RadioControl) Visible(value interface{}) *RadioControl {
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *RadioControl) Size(value interface{}) *RadioControl {
-    a.Set("size", value)
+func (a *RadioControl) UseMobileUI(value interface{}) *RadioControl {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
+ * 描述内容，支持 Html 片段。
  */
-func (a *RadioControl) Validations(value interface{}) *RadioControl {
-    a.Set("validations", value)
+func (a *RadioControl) Description(value interface{}) *RadioControl {
+    a.Set("description", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
  */
-func (a *RadioControl) Hidden(value interface{}) *RadioControl {
-    a.Set("hidden", value)
+func (a *RadioControl) Remark(value interface{}) *RadioControl {
+    a.Set("remark", value)
     return a
 }
 
 /**
- * 组件样式
+ * 输入提示，聚焦的时候显示
  */
-func (a *RadioControl) Style(value interface{}) *RadioControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *RadioControl) ValidateOnChange(value interface{}) *RadioControl {
-    a.Set("validateOnChange", value)
+func (a *RadioControl) Hint(value interface{}) *RadioControl {
+    a.Set("hint", value)
     return a
 }
 
@@ -426,14 +474,6 @@ func (a *RadioControl) Mode(value interface{}) *RadioControl {
 }
 
 /**
- * 验证失败的提示信息
- */
-func (a *RadioControl) ValidationErrors(value interface{}) *RadioControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
  * 是否隐藏表达式
  */
 func (a *RadioControl) HiddenOn(value interface{}) *RadioControl {
@@ -442,57 +482,17 @@ func (a *RadioControl) HiddenOn(value interface{}) *RadioControl {
 }
 
 /**
- * 是否静态展示
+ * 是否静态展示表达式
  */
-func (a *RadioControl) Static(value interface{}) *RadioControl {
-    a.Set("static", value)
+func (a *RadioControl) StaticOn(value interface{}) *RadioControl {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 角标
  */
-func (a *RadioControl) EditorSetting(value interface{}) *RadioControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 可选值: default | button
- */
-func (a *RadioControl) OptionType(value interface{}) *RadioControl {
-    a.Set("optionType", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *RadioControl) StaticInputClassName(value interface{}) *RadioControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *RadioControl) DescriptionClassName(value interface{}) *RadioControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *RadioControl) Value(value interface{}) *RadioControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *RadioControl) Width(value interface{}) *RadioControl {
-    a.Set("width", value)
+func (a *RadioControl) Badge(value interface{}) *RadioControl {
+    a.Set("badge", value)
     return a
 }
