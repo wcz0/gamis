@@ -29,27 +29,33 @@ func (a *SchemaPopOver) Set(name string, value interface{}) *SchemaPopOver {
     return a
 }
 /**
+ * 是否显示查看更多的 icon，通常是放大图标。
+ */
+func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
+    a.Set("showIcon", value)
+    return a
+}
+
+/**
+ * 偏移量
+ */
+func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
+    a.Set("offset", value)
+    return a
+}
+
+/**
+ */
+func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
+    a.Set("body", value)
+    return a
+}
+
+/**
  * 类名
  */
 func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
     a.Set("className", value)
-    return a
-}
-
-/**
- * 弹框外层类名
- */
-func (a *SchemaPopOver) PopOverClassName(value interface{}) *SchemaPopOver {
-    a.Set("popOverClassName", value)
-    return a
-}
-
-/**
- * 是弹窗形式的时候有用。
- * 可选值: sm | md | lg | xl
- */
-func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
-    a.Set("size", value)
     return a
 }
 
@@ -59,6 +65,24 @@ func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
  */
 func (a *SchemaPopOver) Position(value interface{}) *SchemaPopOver {
     a.Set("position", value)
+    return a
+}
+
+/**
+ * 弹出模式
+ * 可选值: dialog | drawer | popOver
+ */
+func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是弹窗形式的时候有用。
+ * 可选值: sm | md | lg | xl
+ */
+func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
+    a.Set("size", value)
     return a
 }
 
@@ -80,9 +104,10 @@ func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
 }
 
 /**
+ * 弹框外层类名
  */
-func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
-    a.Set("body", value)
+func (a *SchemaPopOver) PopOverClassName(value interface{}) *SchemaPopOver {
+    a.Set("popOverClassName", value)
     return a
 }
 
@@ -91,30 +116,5 @@ func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
  */
 func (a *SchemaPopOver) PopOverEnableOn(value interface{}) *SchemaPopOver {
     a.Set("popOverEnableOn", value)
-    return a
-}
-
-/**
- * 弹出模式
- * 可选值: dialog | drawer | popOver
- */
-func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 是否显示查看更多的 icon，通常是放大图标。
- */
-func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
-    a.Set("showIcon", value)
-    return a
-}
-
-/**
- * 偏移量
- */
-func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
-    a.Set("offset", value)
     return a
 }

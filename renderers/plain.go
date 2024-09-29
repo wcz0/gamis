@@ -31,42 +31,17 @@ func (a *Plain) Set(name string, value interface{}) *Plain {
     return a
 }
 /**
- * 是否禁用
- */
-func (a *Plain) Disabled(value interface{}) *Plain {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Plain) OnEvent(value interface{}) *Plain {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Plain) StaticClassName(value interface{}) *Plain {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Plain) StaticLabelClassName(value interface{}) *Plain {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
  * 静态展示表单项Value类名
  */
 func (a *Plain) StaticInputClassName(value interface{}) *Plain {
     a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Plain) StaticSchema(value interface{}) *Plain {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -80,26 +55,26 @@ func (a *Plain) Type(value interface{}) *Plain {
 }
 
 /**
- * 是否内联显示？
+ * 容器 css 类名
  */
-func (a *Plain) Inline(value interface{}) *Plain {
-    a.Set("inline", value)
+func (a *Plain) ClassName(value interface{}) *Plain {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 占位符
  */
-func (a *Plain) HiddenOn(value interface{}) *Plain {
-    a.Set("hiddenOn", value)
+func (a *Plain) Placeholder(value interface{}) *Plain {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 是否隐藏
  */
-func (a *Plain) VisibleOn(value interface{}) *Plain {
-    a.Set("visibleOn", value)
+func (a *Plain) Hidden(value interface{}) *Plain {
+    a.Set("hidden", value)
     return a
 }
 
@@ -113,30 +88,8 @@ func (a *Plain) Static(value interface{}) *Plain {
 
 /**
  */
-func (a *Plain) StaticSchema(value interface{}) *Plain {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *Plain) TestIdBuilder(value interface{}) *Plain {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- */
 func (a *Plain) Text(value interface{}) *Plain {
     a.Set("text", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Plain) Hidden(value interface{}) *Plain {
-    a.Set("hidden", value)
     return a
 }
 
@@ -149,14 +102,6 @@ func (a *Plain) StaticOn(value interface{}) *Plain {
 }
 
 /**
- * 组件样式
- */
-func (a *Plain) Style(value interface{}) *Plain {
-    a.Set("style", value)
-    return a
-}
-
-/**
  */
 func (a *Plain) Tpl(value interface{}) *Plain {
     a.Set("tpl", value)
@@ -164,18 +109,26 @@ func (a *Plain) Tpl(value interface{}) *Plain {
 }
 
 /**
- * 占位符
+ * 组件唯一 id，主要用于日志采集
  */
-func (a *Plain) Placeholder(value interface{}) *Plain {
-    a.Set("placeholder", value)
+func (a *Plain) Id(value interface{}) *Plain {
+    a.Set("id", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * 是否内联显示？
  */
-func (a *Plain) ClassName(value interface{}) *Plain {
-    a.Set("className", value)
+func (a *Plain) Inline(value interface{}) *Plain {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *Plain) Disabled(value interface{}) *Plain {
+    a.Set("disabled", value)
     return a
 }
 
@@ -188,10 +141,72 @@ func (a *Plain) DisabledOn(value interface{}) *Plain {
 }
 
 /**
+ * 事件动作配置
+ */
+func (a *Plain) OnEvent(value interface{}) *Plain {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
  * 静态展示空值占位
  */
 func (a *Plain) StaticPlaceholder(value interface{}) *Plain {
     a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *Plain) StaticClassName(value interface{}) *Plain {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ */
+func (a *Plain) TestIdBuilder(value interface{}) *Plain {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ */
+func (a *Plain) Testid(value interface{}) *Plain {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *Plain) HiddenOn(value interface{}) *Plain {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *Plain) Visible(value interface{}) *Plain {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *Plain) StaticLabelClassName(value interface{}) *Plain {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *Plain) Style(value interface{}) *Plain {
+    a.Set("style", value)
     return a
 }
 
@@ -212,24 +227,9 @@ func (a *Plain) UseMobileUI(value interface{}) *Plain {
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否显示表达式
  */
-func (a *Plain) Id(value interface{}) *Plain {
-    a.Set("id", value)
-    return a
-}
-
-/**
- */
-func (a *Plain) Testid(value interface{}) *Plain {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Plain) Visible(value interface{}) *Plain {
-    a.Set("visible", value)
+func (a *Plain) VisibleOn(value interface{}) *Plain {
+    a.Set("visibleOn", value)
     return a
 }

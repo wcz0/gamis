@@ -29,14 +29,6 @@ func (a *RowSelection) Set(name string, value interface{}) *RowSelection {
     return a
 }
 /**
- * 行是否禁用表达式
- */
-func (a *RowSelection) DisableOn(value interface{}) *RowSelection {
-    a.Set("disableOn", value)
-    return a
-}
-
-/**
  * 自定义选择菜单
  */
 func (a *RowSelection) Selections(value interface{}) *RowSelection {
@@ -89,5 +81,13 @@ func (a *RowSelection) Type(value interface{}) *RowSelection {
  */
 func (a *RowSelection) KeyField(value interface{}) *RowSelection {
     a.Set("keyField", value)
+    return a
+}
+
+/**
+ * 行是否禁用表达式
+ */
+func (a *RowSelection) DisableOn(value interface{}) *RowSelection {
+    a.Set("disableOn", value)
     return a
 }

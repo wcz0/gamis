@@ -30,22 +30,8 @@ func (a *ListenerAction) Set(name string, value interface{}) *ListenerAction {
 }
 /**
  */
-func (a *ListenerAction) ActionType(value interface{}) *ListenerAction {
-    a.Set("actionType", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) Description(value interface{}) *ListenerAction {
-    a.Set("description", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) ComponentId(value interface{}) *ListenerAction {
-    a.Set("componentId", value)
+func (a *ListenerAction) ComponentName(value interface{}) *ListenerAction {
+    a.Set("componentName", value)
     return a
 }
 
@@ -64,6 +50,14 @@ func (a *ListenerAction) Data(value interface{}) *ListenerAction {
 }
 
 /**
+ * 可选值: merge | override
+ */
+func (a *ListenerAction) DataMergeMode(value interface{}) *ListenerAction {
+    a.Set("dataMergeMode", value)
+    return a
+}
+
+/**
  */
 func (a *ListenerAction) StopPropagation(value interface{}) *ListenerAction {
     a.Set("stopPropagation", value)
@@ -72,30 +66,15 @@ func (a *ListenerAction) StopPropagation(value interface{}) *ListenerAction {
 
 /**
  */
-func (a *ListenerAction) ExecOn(value interface{}) *ListenerAction {
-    a.Set("execOn", value)
+func (a *ListenerAction) ActionType(value interface{}) *ListenerAction {
+    a.Set("actionType", value)
     return a
 }
 
 /**
  */
-func (a *ListenerAction) ComponentName(value interface{}) *ListenerAction {
-    a.Set("componentName", value)
-    return a
-}
-
-/**
- */
-func (a *ListenerAction) IgnoreError(value interface{}) *ListenerAction {
-    a.Set("ignoreError", value)
-    return a
-}
-
-/**
- * 可选值: merge | override
- */
-func (a *ListenerAction) DataMergeMode(value interface{}) *ListenerAction {
-    a.Set("dataMergeMode", value)
+func (a *ListenerAction) Description(value interface{}) *ListenerAction {
+    a.Set("description", value)
     return a
 }
 
@@ -117,5 +96,26 @@ func (a *ListenerAction) PreventDefault(value interface{}) *ListenerAction {
  */
 func (a *ListenerAction) Expression(value interface{}) *ListenerAction {
     a.Set("expression", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ExecOn(value interface{}) *ListenerAction {
+    a.Set("execOn", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) ComponentId(value interface{}) *ListenerAction {
+    a.Set("componentId", value)
+    return a
+}
+
+/**
+ */
+func (a *ListenerAction) IgnoreError(value interface{}) *ListenerAction {
+    a.Set("ignoreError", value)
     return a
 }

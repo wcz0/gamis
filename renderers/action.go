@@ -183,3 +183,8 @@ func (a *Action) Type(value interface{}) *Action {
 	a.Set("type", value)
 	return a
 }
+
+func (c *Action) ConfirmTitle(value interface{}) *Action {
+	c.Set("confirmTitle", value)
+	return c
+}

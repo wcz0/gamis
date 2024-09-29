@@ -29,10 +29,26 @@ func (a *Option) Set(name string, value interface{}) *Option {
     return a
 }
 /**
- * 标记后数据延时加载
+ * 可以用来给 Option 标记个范围，让数据展示更清晰。这个只有在数值展示的时候显示。
  */
-func (a *Option) Defer(value interface{}) *Option {
-    a.Set("defer", value)
+func (a *Option) ScopeLabel(value interface{}) *Option {
+    a.Set("scopeLabel", value)
+    return a
+}
+
+/**
+ * 支持嵌套
+ */
+func (a *Option) Children(value interface{}) *Option {
+    a.Set("children", value)
+    return a
+}
+
+/**
+ * 描述，部分控件支持
+ */
+func (a *Option) Description(value interface{}) *Option {
+    a.Set("description", value)
     return a
 }
 
@@ -53,10 +69,10 @@ func (a *Option) Label(value interface{}) *Option {
 }
 
 /**
- * 可以用来给 Option 标记个范围，让数据展示更清晰。这个只有在数值展示的时候显示。
+ * 是否禁用
  */
-func (a *Option) ScopeLabel(value interface{}) *Option {
-    a.Set("scopeLabel", value)
+func (a *Option) Disabled(value interface{}) *Option {
+    a.Set("disabled", value)
     return a
 }
 
@@ -73,6 +89,14 @@ func (a *Option) Visible(value interface{}) *Option {
  */
 func (a *Option) Hidden(value interface{}) *Option {
     a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 标记后数据延时加载
+ */
+func (a *Option) Defer(value interface{}) *Option {
+    a.Set("defer", value)
     return a
 }
 
@@ -97,29 +121,5 @@ func (a *Option) Loading(value interface{}) *Option {
  */
 func (a *Option) Value(value interface{}) *Option {
     a.Set("value", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *Option) Disabled(value interface{}) *Option {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 支持嵌套
- */
-func (a *Option) Children(value interface{}) *Option {
-    a.Set("children", value)
-    return a
-}
-
-/**
- * 描述，部分控件支持
- */
-func (a *Option) Description(value interface{}) *Option {
-    a.Set("description", value)
     return a
 }

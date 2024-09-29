@@ -38,11 +38,21 @@ func (m *Markdown) Name(value interface{}) *Markdown {
 	return m
 }
 
+func (m *Markdown) Options(value interface{}) *Markdown {
+	m.Set("options", value)
+	return m
+}
+
 /**
  * 外部地址
  */
 func (m *Markdown) Src(value interface{}) *Markdown {
 	m.Set("src", value)
+	return m
+}
+
+func (m *Markdown) Type(value interface{}) *Markdown {
+	m.Set("type", value)
 	return m
 }
 

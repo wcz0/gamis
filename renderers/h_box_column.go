@@ -29,14 +29,6 @@ func (a *HBoxColumn) Set(name string, value interface{}) *HBoxColumn {
     return a
 }
 /**
- * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
- */
-func (a *HBoxColumn) Horizontal(value interface{}) *HBoxColumn {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
  * 内容区
  */
 func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
@@ -45,10 +37,19 @@ func (a *HBoxColumn) Body(value interface{}) *HBoxColumn {
 }
 
 /**
- * 列上 CSS 类名
+ * 高度
  */
-func (a *HBoxColumn) ColumnClassName(value interface{}) *HBoxColumn {
-    a.Set("columnClassName", value)
+func (a *HBoxColumn) Height(value interface{}) *HBoxColumn {
+    a.Set("height", value)
+    return a
+}
+
+/**
+ * 配置子表单项默认的展示方式。
+ * 可选值: normal | inline | horizontal
+ */
+func (a *HBoxColumn) Mode(value interface{}) *HBoxColumn {
+    a.Set("mode", value)
     return a
 }
 
@@ -69,11 +70,10 @@ func (a *HBoxColumn) Style(value interface{}) *HBoxColumn {
 }
 
 /**
- * 配置子表单项默认的展示方式。
- * 可选值: normal | inline | horizontal
+ * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  */
-func (a *HBoxColumn) Mode(value interface{}) *HBoxColumn {
-    a.Set("mode", value)
+func (a *HBoxColumn) Horizontal(value interface{}) *HBoxColumn {
+    a.Set("horizontal", value)
     return a
 }
 
@@ -94,18 +94,18 @@ func (a *HBoxColumn) VisibleOn(value interface{}) *HBoxColumn {
 }
 
 /**
+ * 列上 CSS 类名
+ */
+func (a *HBoxColumn) ColumnClassName(value interface{}) *HBoxColumn {
+    a.Set("columnClassName", value)
+    return a
+}
+
+/**
  * 垂直对齐方式
  * 可选值: top | middle | bottom | between
  */
 func (a *HBoxColumn) Valign(value interface{}) *HBoxColumn {
     a.Set("valign", value)
-    return a
-}
-
-/**
- * 高度
- */
-func (a *HBoxColumn) Height(value interface{}) *HBoxColumn {
-    a.Set("height", value)
     return a
 }

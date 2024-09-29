@@ -31,6 +31,293 @@ func (a *CheckboxesControl) Set(name string, value interface{}) *CheckboxesContr
     return a
 }
 /**
+ * 编辑时调用的 API
+ */
+func (a *CheckboxesControl) EditApi(value interface{}) *CheckboxesControl {
+    a.Set("editApi", value)
+    return a
+}
+
+/**
+ * 只读条件
+ */
+func (a *CheckboxesControl) ReadOnlyOn(value interface{}) *CheckboxesControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+ */
+func (a *CheckboxesControl) AutoFill(value interface{}) *CheckboxesControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *CheckboxesControl) Disabled(value interface{}) *CheckboxesControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *CheckboxesControl) Placeholder(value interface{}) *CheckboxesControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * 是否为多选模式
+ */
+func (a *CheckboxesControl) Multiple(value interface{}) *CheckboxesControl {
+    a.Set("multiple", value)
+    return a
+}
+
+/**
+ * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+ */
+func (a *CheckboxesControl) JoinValues(value interface{}) *CheckboxesControl {
+    a.Set("joinValues", value)
+    return a
+}
+
+/**
+ * 是否可清除。
+ */
+func (a *CheckboxesControl) Clearable(value interface{}) *CheckboxesControl {
+    a.Set("clearable", value)
+    return a
+}
+
+/**
+ * 是否可以新增
+ */
+func (a *CheckboxesControl) Creatable(value interface{}) *CheckboxesControl {
+    a.Set("creatable", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *CheckboxesControl) LabelAlign(value interface{}) *CheckboxesControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *CheckboxesControl) LabelWidth(value interface{}) *CheckboxesControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *CheckboxesControl) LabelClassName(value interface{}) *CheckboxesControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 新增文字
+ */
+func (a *CheckboxesControl) CreateBtnLabel(value interface{}) *CheckboxesControl {
+    a.Set("createBtnLabel", value)
+    return a
+}
+
+/**
+ * 描述标题
+ */
+func (a *CheckboxesControl) Label(value interface{}) *CheckboxesControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *CheckboxesControl) ValidationErrors(value interface{}) *CheckboxesControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *CheckboxesControl) Hidden(value interface{}) *CheckboxesControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *CheckboxesControl) OnEvent(value interface{}) *CheckboxesControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 新增时的表单项。
+ */
+func (a *CheckboxesControl) AddControls(value interface{}) *CheckboxesControl {
+    a.Set("addControls", value)
+    return a
+}
+
+/**
+ * 控制新增弹框设置项
+ */
+func (a *CheckboxesControl) AddDialog(value interface{}) *CheckboxesControl {
+    a.Set("addDialog", value)
+    return a
+}
+
+/**
+ * 全选/不选文案
+ */
+func (a *CheckboxesControl) CheckAllText(value interface{}) *CheckboxesControl {
+    a.Set("checkAllText", value)
+    return a
+}
+
+/**
+ * 每行显示多少个
+ */
+func (a *CheckboxesControl) ColumnsCount(value interface{}) *CheckboxesControl {
+    a.Set("columnsCount", value)
+    return a
+}
+
+/**
+ * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ */
+func (a *CheckboxesControl) ExtraName(value interface{}) *CheckboxesControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * 当配置为水平布局的时候，用来配置具体的左右分配。
+ */
+func (a *CheckboxesControl) Horizontal(value interface{}) *CheckboxesControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * 表单 control 是否为 inline 模式。
+ */
+func (a *CheckboxesControl) Inline(value interface{}) *CheckboxesControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *CheckboxesControl) Visible(value interface{}) *CheckboxesControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否可以编辑
+ */
+func (a *CheckboxesControl) Editable(value interface{}) *CheckboxesControl {
+    a.Set("editable", value)
+    return a
+}
+
+/**
+ * 选项删除 API
+ */
+func (a *CheckboxesControl) DeleteApi(value interface{}) *CheckboxesControl {
+    a.Set("deleteApi", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *CheckboxesControl) DescriptionClassName(value interface{}) *CheckboxesControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *CheckboxesControl) StaticPlaceholder(value interface{}) *CheckboxesControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *CheckboxesControl) LabelRemark(value interface{}) *CheckboxesControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 是否默认全选
+ */
+func (a *CheckboxesControl) DefaultCheckAll(value interface{}) *CheckboxesControl {
+    a.Set("defaultCheckAll", value)
+    return a
+}
+
+/**
+ * 是否可删除
+ */
+func (a *CheckboxesControl) Removable(value interface{}) *CheckboxesControl {
+    a.Set("removable", value)
+    return a
+}
+
+/**
+ * 描述内容，支持 Html 片段。
+ */
+func (a *CheckboxesControl) Description(value interface{}) *CheckboxesControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ */
+func (a *CheckboxesControl) InitAutoFill(value interface{}) *CheckboxesControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *CheckboxesControl) StaticClassName(value interface{}) *CheckboxesControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *CheckboxesControl) ReadOnly(value interface{}) *CheckboxesControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
  * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
  */
 func (a *CheckboxesControl) ValidateOnChange(value interface{}) *CheckboxesControl {
@@ -39,10 +326,34 @@ func (a *CheckboxesControl) ValidateOnChange(value interface{}) *CheckboxesContr
 }
 
 /**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ * 是否隐藏表达式
  */
-func (a *CheckboxesControl) Value(value interface{}) *CheckboxesControl {
-    a.Set("value", value)
+func (a *CheckboxesControl) HiddenOn(value interface{}) *CheckboxesControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *CheckboxesControl) Width(value interface{}) *CheckboxesControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *CheckboxesControl) UseMobileUI(value interface{}) *CheckboxesControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * 可用来通过 API 拉取 options。
+ */
+func (a *CheckboxesControl) Source(value interface{}) *CheckboxesControl {
+    a.Set("source", value)
     return a
 }
 
@@ -63,26 +374,34 @@ func (a *CheckboxesControl) ResetValue(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 懒加载字段
+ * 输入提示，聚焦的时候显示
  */
-func (a *CheckboxesControl) DeferField(value interface{}) *CheckboxesControl {
-    a.Set("deferField", value)
+func (a *CheckboxesControl) Hint(value interface{}) *CheckboxesControl {
+    a.Set("hint", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 容器 css 类名
  */
-func (a *CheckboxesControl) DisabledOn(value interface{}) *CheckboxesControl {
-    a.Set("disabledOn", value)
+func (a *CheckboxesControl) ClassName(value interface{}) *CheckboxesControl {
+    a.Set("className", value)
     return a
 }
 
 /**
- * 全选/不选文案
+ * 静态展示表单项Label类名
  */
-func (a *CheckboxesControl) CheckAllText(value interface{}) *CheckboxesControl {
-    a.Set("checkAllText", value)
+func (a *CheckboxesControl) StaticLabelClassName(value interface{}) *CheckboxesControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *CheckboxesControl) StaticInputClassName(value interface{}) *CheckboxesControl {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -95,26 +414,58 @@ func (a *CheckboxesControl) Type(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 在Table中调整宽度
+ * 添加时调用的接口
  */
-func (a *CheckboxesControl) Width(value interface{}) *CheckboxesControl {
-    a.Set("width", value)
+func (a *CheckboxesControl) AddApi(value interface{}) *CheckboxesControl {
+    a.Set("addApi", value)
     return a
 }
 
 /**
- * 选项集合
+ * 是否为必填
  */
-func (a *CheckboxesControl) Options(value interface{}) *CheckboxesControl {
-    a.Set("options", value)
+func (a *CheckboxesControl) Required(value interface{}) *CheckboxesControl {
+    a.Set("required", value)
     return a
 }
 
 /**
- * 用表达式来配置 source 接口初始要不要拉取
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
  */
-func (a *CheckboxesControl) InitFetchOn(value interface{}) *CheckboxesControl {
-    a.Set("initFetchOn", value)
+func (a *CheckboxesControl) Remark(value interface{}) *CheckboxesControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 编辑器配置，运行时可以忽略
+ */
+func (a *CheckboxesControl) EditorSetting(value interface{}) *CheckboxesControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 多选模式，值太多时是否避免折行
+ */
+func (a *CheckboxesControl) ValuesNoWrap(value interface{}) *CheckboxesControl {
+    a.Set("valuesNoWrap", value)
+    return a
+}
+
+/**
+ * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+ */
+func (a *CheckboxesControl) ExtractValue(value interface{}) *CheckboxesControl {
+    a.Set("extractValue", value)
+    return a
+}
+
+/**
+ * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+ */
+func (a *CheckboxesControl) DeferApi(value interface{}) *CheckboxesControl {
+    a.Set("deferApi", value)
     return a
 }
 
@@ -127,6 +478,60 @@ func (a *CheckboxesControl) DeleteConfirmText(value interface{}) *CheckboxesCont
 }
 
 /**
+ */
+func (a *CheckboxesControl) Desc(value interface{}) *CheckboxesControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * 配置 input className
+ */
+func (a *CheckboxesControl) InputClassName(value interface{}) *CheckboxesControl {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *CheckboxesControl) Style(value interface{}) *CheckboxesControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ */
+func (a *CheckboxesControl) TestIdBuilder(value interface{}) *CheckboxesControl {
+    a.Set("testIdBuilder", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *CheckboxesControl) Value(value interface{}) *CheckboxesControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 是否静态展示表达式
+ */
+func (a *CheckboxesControl) StaticOn(value interface{}) *CheckboxesControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * 自定义选项展示
+ */
+func (a *CheckboxesControl) MenuTpl(value interface{}) *CheckboxesControl {
+    a.Set("menuTpl", value)
+    return a
+}
+
+/**
  * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
  */
 func (a *CheckboxesControl) Name(value interface{}) *CheckboxesControl {
@@ -135,33 +540,10 @@ func (a *CheckboxesControl) Name(value interface{}) *CheckboxesControl {
 }
 
 /**
+ * 当修改完的时候是否提交表单。
  */
-func (a *CheckboxesControl) Row(value interface{}) *CheckboxesControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 新增时的表单项。
- */
-func (a *CheckboxesControl) AddControls(value interface{}) *CheckboxesControl {
-    a.Set("addControls", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *CheckboxesControl) LabelAlign(value interface{}) *CheckboxesControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *CheckboxesControl) ReadOnly(value interface{}) *CheckboxesControl {
-    a.Set("readOnly", value)
+func (a *CheckboxesControl) SubmitOnChange(value interface{}) *CheckboxesControl {
+    a.Set("submitOnChange", value)
     return a
 }
 
@@ -175,329 +557,10 @@ func (a *CheckboxesControl) Mode(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 每行显示多少个
- */
-func (a *CheckboxesControl) ColumnsCount(value interface{}) *CheckboxesControl {
-    a.Set("columnsCount", value)
-    return a
-}
-
-/**
- * 编辑时调用的 API
- */
-func (a *CheckboxesControl) EditApi(value interface{}) *CheckboxesControl {
-    a.Set("editApi", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *CheckboxesControl) Horizontal(value interface{}) *CheckboxesControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *CheckboxesControl) StaticClassName(value interface{}) *CheckboxesControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
- */
-func (a *CheckboxesControl) JoinValues(value interface{}) *CheckboxesControl {
-    a.Set("joinValues", value)
-    return a
-}
-
-/**
- * 是否可以编辑
- */
-func (a *CheckboxesControl) Editable(value interface{}) *CheckboxesControl {
-    a.Set("editable", value)
-    return a
-}
-
-/**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
- */
-func (a *CheckboxesControl) Size(value interface{}) *CheckboxesControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *CheckboxesControl) SubmitOnChange(value interface{}) *CheckboxesControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *CheckboxesControl) Placeholder(value interface{}) *CheckboxesControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
  * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
  */
 func (a *CheckboxesControl) ClearValueOnHidden(value interface{}) *CheckboxesControl {
     a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *CheckboxesControl) HiddenOn(value interface{}) *CheckboxesControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *CheckboxesControl) Remark(value interface{}) *CheckboxesControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 验证失败的提示信息
- */
-func (a *CheckboxesControl) ValidationErrors(value interface{}) *CheckboxesControl {
-    a.Set("validationErrors", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *CheckboxesControl) ValidateApi(value interface{}) *CheckboxesControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *CheckboxesControl) Hidden(value interface{}) *CheckboxesControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 多选模式，值太多时是否避免折行
- */
-func (a *CheckboxesControl) ValuesNoWrap(value interface{}) *CheckboxesControl {
-    a.Set("valuesNoWrap", value)
-    return a
-}
-
-/**
- * 是否可清除。
- */
-func (a *CheckboxesControl) Clearable(value interface{}) *CheckboxesControl {
-    a.Set("clearable", value)
-    return a
-}
-
-/**
- * 控制新增弹框设置项
- */
-func (a *CheckboxesControl) AddDialog(value interface{}) *CheckboxesControl {
-    a.Set("addDialog", value)
-    return a
-}
-
-/**
- * 新增文字
- */
-func (a *CheckboxesControl) CreateBtnLabel(value interface{}) *CheckboxesControl {
-    a.Set("createBtnLabel", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *CheckboxesControl) Description(value interface{}) *CheckboxesControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 自定义选项展示
- */
-func (a *CheckboxesControl) MenuTpl(value interface{}) *CheckboxesControl {
-    a.Set("menuTpl", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *CheckboxesControl) LabelClassName(value interface{}) *CheckboxesControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- */
-func (a *CheckboxesControl) Validations(value interface{}) *CheckboxesControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *CheckboxesControl) StaticInputClassName(value interface{}) *CheckboxesControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *CheckboxesControl) LabelRemark(value interface{}) *CheckboxesControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 配置 source 接口初始拉不拉取。
- */
-func (a *CheckboxesControl) InitFetch(value interface{}) *CheckboxesControl {
-    a.Set("initFetch", value)
-    return a
-}
-
-/**
- * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
- */
-func (a *CheckboxesControl) ExtractValue(value interface{}) *CheckboxesControl {
-    a.Set("extractValue", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *CheckboxesControl) ExtraName(value interface{}) *CheckboxesControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *CheckboxesControl) InputClassName(value interface{}) *CheckboxesControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *CheckboxesControl) VisibleOn(value interface{}) *CheckboxesControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否为多选模式
- */
-func (a *CheckboxesControl) Multiple(value interface{}) *CheckboxesControl {
-    a.Set("multiple", value)
-    return a
-}
-
-/**
- * 是否可删除
- */
-func (a *CheckboxesControl) Removable(value interface{}) *CheckboxesControl {
-    a.Set("removable", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *CheckboxesControl) ClassName(value interface{}) *CheckboxesControl {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否默认全选
- */
-func (a *CheckboxesControl) DefaultCheckAll(value interface{}) *CheckboxesControl {
-    a.Set("defaultCheckAll", value)
-    return a
-}
-
-/**
- */
-func (a *CheckboxesControl) TestIdBuilder(value interface{}) *CheckboxesControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 默认选择选项第一个值。
- */
-func (a *CheckboxesControl) SelectFirst(value interface{}) *CheckboxesControl {
-    a.Set("selectFirst", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *CheckboxesControl) Hint(value interface{}) *CheckboxesControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *CheckboxesControl) AutoFill(value interface{}) *CheckboxesControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *CheckboxesControl) EditorSetting(value interface{}) *CheckboxesControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *CheckboxesControl) UseMobileUI(value interface{}) *CheckboxesControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *CheckboxesControl) Required(value interface{}) *CheckboxesControl {
-    a.Set("required", value)
     return a
 }
 
@@ -518,10 +581,18 @@ func (a *CheckboxesControl) Static(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 是否可以新增
+ * 选项集合
  */
-func (a *CheckboxesControl) Creatable(value interface{}) *CheckboxesControl {
-    a.Set("creatable", value)
+func (a *CheckboxesControl) Options(value interface{}) *CheckboxesControl {
+    a.Set("options", value)
+    return a
+}
+
+/**
+ * 用表达式来配置 source 接口初始要不要拉取
+ */
+func (a *CheckboxesControl) InitFetchOn(value interface{}) *CheckboxesControl {
+    a.Set("initFetchOn", value)
     return a
 }
 
@@ -534,34 +605,25 @@ func (a *CheckboxesControl) EditDialog(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 选项删除 API
  */
-func (a *CheckboxesControl) DeleteApi(value interface{}) *CheckboxesControl {
-    a.Set("deleteApi", value)
+func (a *CheckboxesControl) StaticSchema(value interface{}) *CheckboxesControl {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * label自定义宽度，默认单位为px
+ * 远端校验表单项接口
  */
-func (a *CheckboxesControl) LabelWidth(value interface{}) *CheckboxesControl {
-    a.Set("labelWidth", value)
+func (a *CheckboxesControl) ValidateApi(value interface{}) *CheckboxesControl {
+    a.Set("validateApi", value)
     return a
 }
 
 /**
- * 只读条件
+ * 是否显示表达式
  */
-func (a *CheckboxesControl) ReadOnlyOn(value interface{}) *CheckboxesControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *CheckboxesControl) StaticPlaceholder(value interface{}) *CheckboxesControl {
-    a.Set("staticPlaceholder", value)
+func (a *CheckboxesControl) VisibleOn(value interface{}) *CheckboxesControl {
+    a.Set("visibleOn", value)
     return a
 }
 
@@ -574,89 +636,26 @@ func (a *CheckboxesControl) CheckAll(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 是否显示
+ * 默认选择选项第一个值。
  */
-func (a *CheckboxesControl) Visible(value interface{}) *CheckboxesControl {
-    a.Set("visible", value)
+func (a *CheckboxesControl) SelectFirst(value interface{}) *CheckboxesControl {
+    a.Set("selectFirst", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * 配置 source 接口初始拉不拉取。
  */
-func (a *CheckboxesControl) StaticLabelClassName(value interface{}) *CheckboxesControl {
-    a.Set("staticLabelClassName", value)
+func (a *CheckboxesControl) InitFetch(value interface{}) *CheckboxesControl {
+    a.Set("initFetch", value)
     return a
 }
 
 /**
- * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+ * 懒加载字段
  */
-func (a *CheckboxesControl) DeferApi(value interface{}) *CheckboxesControl {
-    a.Set("deferApi", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *CheckboxesControl) Label(value interface{}) *CheckboxesControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- */
-func (a *CheckboxesControl) Desc(value interface{}) *CheckboxesControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *CheckboxesControl) Inline(value interface{}) *CheckboxesControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *CheckboxesControl) Disabled(value interface{}) *CheckboxesControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *CheckboxesControl) OnEvent(value interface{}) *CheckboxesControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *CheckboxesControl) StaticOn(value interface{}) *CheckboxesControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 可用来通过 API 拉取 options。
- */
-func (a *CheckboxesControl) Source(value interface{}) *CheckboxesControl {
-    a.Set("source", value)
-    return a
-}
-
-/**
- * 添加时调用的接口
- */
-func (a *CheckboxesControl) AddApi(value interface{}) *CheckboxesControl {
-    a.Set("addApi", value)
+func (a *CheckboxesControl) DeferField(value interface{}) *CheckboxesControl {
+    a.Set("deferField", value)
     return a
 }
 
@@ -669,31 +668,32 @@ func (a *CheckboxesControl) EditControls(value interface{}) *CheckboxesControl {
 }
 
 /**
- * 配置描述上的 className
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
  */
-func (a *CheckboxesControl) DescriptionClassName(value interface{}) *CheckboxesControl {
-    a.Set("descriptionClassName", value)
+func (a *CheckboxesControl) Size(value interface{}) *CheckboxesControl {
+    a.Set("size", value)
     return a
 }
 
 /**
  */
-func (a *CheckboxesControl) InitAutoFill(value interface{}) *CheckboxesControl {
-    a.Set("initAutoFill", value)
+func (a *CheckboxesControl) Validations(value interface{}) *CheckboxesControl {
+    a.Set("validations", value)
     return a
 }
 
 /**
  */
-func (a *CheckboxesControl) StaticSchema(value interface{}) *CheckboxesControl {
-    a.Set("staticSchema", value)
+func (a *CheckboxesControl) Row(value interface{}) *CheckboxesControl {
+    a.Set("row", value)
     return a
 }
 
 /**
- * 组件样式
+ * 是否禁用表达式
  */
-func (a *CheckboxesControl) Style(value interface{}) *CheckboxesControl {
-    a.Set("style", value)
+func (a *CheckboxesControl) DisabledOn(value interface{}) *CheckboxesControl {
+    a.Set("disabledOn", value)
     return a
 }

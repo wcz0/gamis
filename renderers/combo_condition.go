@@ -30,13 +30,6 @@ func (a *ComboCondition) Set(name string, value interface{}) *ComboCondition {
 }
 /**
  */
-func (a *ComboCondition) Mode(value interface{}) *ComboCondition {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- */
 func (a *ComboCondition) Test(value interface{}) *ComboCondition {
     a.Set("test", value)
     return a
@@ -60,5 +53,12 @@ func (a *ComboCondition) Label(value interface{}) *ComboCondition {
  */
 func (a *ComboCondition) Scaffold(value interface{}) *ComboCondition {
     a.Set("scaffold", value)
+    return a
+}
+
+/**
+ */
+func (a *ComboCondition) Mode(value interface{}) *ComboCondition {
+    a.Set("mode", value)
     return a
 }

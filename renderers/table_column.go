@@ -30,59 +30,35 @@ func (a *TableColumn) Set(name string, value interface{}) *TableColumn {
     return a
 }
 /**
+ * 列垂直对齐方式
+ * 可选值: top | middle | bottom
+ */
+func (a *TableColumn) VAlign(value interface{}) *TableColumn {
+    a.Set("vAlign", value)
+    return a
+}
+
+/**
+ * 单元格样式表达式
+ */
+func (a *TableColumn) ClassNameExpr(value interface{}) *TableColumn {
+    a.Set("classNameExpr", value)
+    return a
+}
+
+/**
+ * 是否唯一, 只有在 inputTable 里面才有用
+ */
+func (a *TableColumn) Unique(value interface{}) *TableColumn {
+    a.Set("unique", value)
+    return a
+}
+
+/**
  * 列标题
  */
 func (a *TableColumn) Label(value interface{}) *TableColumn {
     a.Set("label", value)
-    return a
-}
-
-/**
- * 配置快速编辑功能
- */
-func (a *TableColumn) QuickEdit(value interface{}) *TableColumn {
-    a.Set("quickEdit", value)
-    return a
-}
-
-/**
- * 列头样式表
- */
-func (a *TableColumn) LabelClassName(value interface{}) *TableColumn {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * todo
- */
-func (a *TableColumn) Filterable(value interface{}) *TableColumn {
-    a.Set("filterable", value)
-    return a
-}
-
-/**
- * 表格列单元格是否可以获取父级数据域值，默认为true，该配置对当前列内单元格生效
- */
-func (a *TableColumn) CanAccessSuperData(value interface{}) *TableColumn {
-    a.Set("canAccessSuperData", value)
-    return a
-}
-
-/**
- * 单元格内部组件自定义样式 style作为单元格自定义样式的配置
- */
-func (a *TableColumn) InnerStyle(value interface{}) *TableColumn {
-    a.Set("innerStyle", value)
-    return a
-}
-
-/**
- * 配置是否固定当前列
- * 可选值: left | right | none
- */
-func (a *TableColumn) Fixed(value interface{}) *TableColumn {
-    a.Set("fixed", value)
     return a
 }
 
@@ -112,11 +88,18 @@ func (a *TableColumn) Align(value interface{}) *TableColumn {
 }
 
 /**
- * 列垂直对齐方式
- * 可选值: top | middle | bottom
+ * 列样式表
  */
-func (a *TableColumn) VAlign(value interface{}) *TableColumn {
-    a.Set("vAlign", value)
+func (a *TableColumn) ClassName(value interface{}) *TableColumn {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * 列头样式表
+ */
+func (a *TableColumn) LabelClassName(value interface{}) *TableColumn {
+    a.Set("labelClassName", value)
     return a
 }
 
@@ -130,50 +113,19 @@ func (a *TableColumn) Breakpoint(value interface{}) *TableColumn {
 }
 
 /**
- * 提示信息
+ * 表格列单元格是否可以获取父级数据域值，默认为true，该配置对当前列内单元格生效
  */
-func (a *TableColumn) Remark(value interface{}) *TableColumn {
-    a.Set("remark", value)
+func (a *TableColumn) CanAccessSuperData(value interface{}) *TableColumn {
+    a.Set("canAccessSuperData", value)
     return a
 }
 
 /**
- * 配置点击复制功能
+ * 配置是否固定当前列
+ * 可选值: left | right | none
  */
-func (a *TableColumn) Copyable(value interface{}) *TableColumn {
-    a.Set("copyable", value)
-    return a
-}
-
-/**
- * 配置是否可以排序
- */
-func (a *TableColumn) Sortable(value interface{}) *TableColumn {
-    a.Set("sortable", value)
-    return a
-}
-
-/**
- * 列样式表
- */
-func (a *TableColumn) ClassName(value interface{}) *TableColumn {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 单元格样式表达式
- */
-func (a *TableColumn) ClassNameExpr(value interface{}) *TableColumn {
-    a.Set("classNameExpr", value)
-    return a
-}
-
-/**
- * 是否唯一, 只有在 inputTable 里面才有用
- */
-func (a *TableColumn) Unique(value interface{}) *TableColumn {
-    a.Set("unique", value)
+func (a *TableColumn) Fixed(value interface{}) *TableColumn {
+    a.Set("fixed", value)
     return a
 }
 
@@ -186,18 +138,10 @@ func (a *TableColumn) Name(value interface{}) *TableColumn {
 }
 
 /**
- * 配置查看详情功能
+ * 配置点击复制功能
  */
-func (a *TableColumn) PopOver(value interface{}) *TableColumn {
-    a.Set("popOver", value)
-    return a
-}
-
-/**
- * 是否可快速搜索
- */
-func (a *TableColumn) Searchable(value interface{}) *TableColumn {
-    a.Set("searchable", value)
+func (a *TableColumn) Copyable(value interface{}) *TableColumn {
+    a.Set("copyable", value)
     return a
 }
 
@@ -206,6 +150,54 @@ func (a *TableColumn) Searchable(value interface{}) *TableColumn {
  */
 func (a *TableColumn) Width(value interface{}) *TableColumn {
     a.Set("width", value)
+    return a
+}
+
+/**
+ * 当一次性渲染太多列上有用，默认为 100，可以用来提升表格渲染性能
+ */
+func (a *TableColumn) LazyRenderAfter(value interface{}) *TableColumn {
+    a.Set("lazyRenderAfter", value)
+    return a
+}
+
+/**
+ * 单元格内部组件自定义样式 style作为单元格自定义样式的配置
+ */
+func (a *TableColumn) InnerStyle(value interface{}) *TableColumn {
+    a.Set("innerStyle", value)
+    return a
+}
+
+/**
+ * 配置查看详情功能
+ */
+func (a *TableColumn) PopOver(value interface{}) *TableColumn {
+    a.Set("popOver", value)
+    return a
+}
+
+/**
+ * 配置快速编辑功能
+ */
+func (a *TableColumn) QuickEdit(value interface{}) *TableColumn {
+    a.Set("quickEdit", value)
+    return a
+}
+
+/**
+ * 配置是否可以排序
+ */
+func (a *TableColumn) Sortable(value interface{}) *TableColumn {
+    a.Set("sortable", value)
+    return a
+}
+
+/**
+ * 是否可快速搜索
+ */
+func (a *TableColumn) Searchable(value interface{}) *TableColumn {
+    a.Set("searchable", value)
     return a
 }
 
@@ -219,17 +211,25 @@ func (a *TableColumn) HeaderAlign(value interface{}) *TableColumn {
 }
 
 /**
- * 默认值, 只有在 inputTable 里面才有用
+ * todo
  */
-func (a *TableColumn) Value(value interface{}) *TableColumn {
-    a.Set("value", value)
+func (a *TableColumn) Filterable(value interface{}) *TableColumn {
+    a.Set("filterable", value)
     return a
 }
 
 /**
- * 当一次性渲染太多列上有用，默认为 100，可以用来提升表格渲染性能
+ * 提示信息
  */
-func (a *TableColumn) LazyRenderAfter(value interface{}) *TableColumn {
-    a.Set("lazyRenderAfter", value)
+func (a *TableColumn) Remark(value interface{}) *TableColumn {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 默认值, 只有在 inputTable 里面才有用
+ */
+func (a *TableColumn) Value(value interface{}) *TableColumn {
+    a.Set("value", value)
     return a
 }

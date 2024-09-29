@@ -15,8 +15,8 @@ func NewUrlAction() *UrlAction {
         BaseRenderer: NewBaseRenderer(),
     }
 
-    a.Set("actionType", "url")
     a.Set("type", "button")
+    a.Set("actionType", "url")
     return a
 }
 
@@ -31,9 +31,10 @@ func (a *UrlAction) Set(name string, value interface{}) *UrlAction {
     return a
 }
 /**
+ * 是否为块状展示，默认为内联。
  */
-func (a *UrlAction) Primary(value interface{}) *UrlAction {
-    a.Set("primary", value)
+func (a *UrlAction) Block(value interface{}) *UrlAction {
+    a.Set("block", value)
     return a
 }
 
@@ -46,34 +47,50 @@ func (a *UrlAction) ConfirmText(value interface{}) *UrlAction {
 }
 
 /**
- * 打开的目标地址
+ * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
  */
-func (a *UrlAction) Url(value interface{}) *UrlAction {
-    a.Set("url", value)
+func (a *UrlAction) Required(value interface{}) *UrlAction {
+    a.Set("required", value)
     return a
 }
 
 /**
- * 禁用时的文案提示。
+ * 主要用于用户行为跟踪里区分是哪个按钮
  */
-func (a *UrlAction) DisabledTip(value interface{}) *UrlAction {
-    a.Set("disabledTip", value)
+func (a *UrlAction) Id(value interface{}) *UrlAction {
+    a.Set("id", value)
     return a
 }
 
 /**
- * 右侧 icon 上的 css 类名
+ * 可以组件级别用来关闭移动端样式
  */
-func (a *UrlAction) RightIconClassName(value interface{}) *UrlAction {
-    a.Set("rightIconClassName", value)
+func (a *UrlAction) UseMobileUI(value interface{}) *UrlAction {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
- * 可以指定让谁来触发这个动作。
+ * 子内容
  */
-func (a *UrlAction) Target(value interface{}) *UrlAction {
-    a.Set("target", value)
+func (a *UrlAction) Body(value interface{}) *UrlAction {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 设置链接
+ */
+func (a *UrlAction) Link(value interface{}) *UrlAction {
+    a.Set("link", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *UrlAction) DisabledOn(value interface{}) *UrlAction {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -86,33 +103,89 @@ func (a *UrlAction) Static(value interface{}) *UrlAction {
 }
 
 /**
- * 是否为块状展示，默认为内联。
+ * 静态展示表单项Label类名
  */
-func (a *UrlAction) Block(value interface{}) *UrlAction {
-    a.Set("block", value)
+func (a *UrlAction) StaticLabelClassName(value interface{}) *UrlAction {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
  */
-func (a *UrlAction) Testid(value interface{}) *UrlAction {
-    a.Set("testid", value)
+func (a *UrlAction) StaticSchema(value interface{}) *UrlAction {
+    a.Set("staticSchema", value)
     return a
 }
 
 /**
- * 按钮文字
  */
-func (a *UrlAction) Label(value interface{}) *UrlAction {
-    a.Set("label", value)
+func (a *UrlAction) Primary(value interface{}) *UrlAction {
+    a.Set("primary", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 组件样式
  */
-func (a *UrlAction) Disabled(value interface{}) *UrlAction {
-    a.Set("disabled", value)
+func (a *UrlAction) Style(value interface{}) *UrlAction {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * 是否将弹框中数据 merge 到父级作用域。
+ */
+func (a *UrlAction) MergeData(value interface{}) *UrlAction {
+    a.Set("mergeData", value)
+    return a
+}
+
+/**
+ * 按钮图标， iconfont 的类名
+ */
+func (a *UrlAction) Icon(value interface{}) *UrlAction {
+    a.Set("icon", value)
+    return a
+}
+
+/**
+ * 按钮样式
+ * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
+ */
+func (a *UrlAction) Level(value interface{}) *UrlAction {
+    a.Set("level", value)
+    return a
+}
+
+/**
+ * 指定为打开链接
+ */
+func (a *UrlAction) ActionType(value interface{}) *UrlAction {
+    a.Set("actionType", value)
+    return a
+}
+
+/**
+ * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ */
+func (a *UrlAction) Close(value interface{}) *UrlAction {
+    a.Set("close", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *UrlAction) HiddenOn(value interface{}) *UrlAction {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *UrlAction) ClassName(value interface{}) *UrlAction {
+    a.Set("className", value)
     return a
 }
 
@@ -125,10 +198,50 @@ func (a *UrlAction) Visible(value interface{}) *UrlAction {
 }
 
 /**
- * icon 上的css 类名
+ * 事件动作配置
  */
-func (a *UrlAction) IconClassName(value interface{}) *UrlAction {
-    a.Set("iconClassName", value)
+func (a *UrlAction) OnEvent(value interface{}) *UrlAction {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 是否显示loading效果
+ */
+func (a *UrlAction) LoadingOn(value interface{}) *UrlAction {
+    a.Set("loadingOn", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *UrlAction) Hidden(value interface{}) *UrlAction {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *UrlAction) StaticPlaceholder(value interface{}) *UrlAction {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * 静态展示表单项类名
+ */
+func (a *UrlAction) StaticClassName(value interface{}) *UrlAction {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 禁用时的文案提示。
+ */
+func (a *UrlAction) DisabledTip(value interface{}) *UrlAction {
+    a.Set("disabledTip", value)
     return a
 }
 
@@ -142,65 +255,49 @@ func (a *UrlAction) Size(value interface{}) *UrlAction {
 }
 
 /**
- * 是否显示loading效果
+ * 可以指定让谁来触发这个动作。
  */
-func (a *UrlAction) LoadingOn(value interface{}) *UrlAction {
-    a.Set("loadingOn", value)
+func (a *UrlAction) Target(value interface{}) *UrlAction {
+    a.Set("target", value)
     return a
 }
 
 /**
  */
-func (a *UrlAction) StaticSchema(value interface{}) *UrlAction {
-    a.Set("staticSchema", value)
+func (a *UrlAction) TestIdBuilder(value interface{}) *UrlAction {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 是否将弹框中数据 merge 到父级作用域。
+ * icon 上的css 类名
  */
-func (a *UrlAction) MergeData(value interface{}) *UrlAction {
-    a.Set("mergeData", value)
+func (a *UrlAction) IconClassName(value interface{}) *UrlAction {
+    a.Set("iconClassName", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * 激活状态时的样式
  */
-func (a *UrlAction) StaticInputClassName(value interface{}) *UrlAction {
-    a.Set("staticInputClassName", value)
+func (a *UrlAction) ActiveLevel(value interface{}) *UrlAction {
+    a.Set("activeLevel", value)
     return a
 }
 
 /**
- * 可选值: top | right | bottom | left
+ * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
  */
-func (a *UrlAction) TooltipPlacement(value interface{}) *UrlAction {
-    a.Set("tooltipPlacement", value)
+func (a *UrlAction) RequireSelected(value interface{}) *UrlAction {
+    a.Set("requireSelected", value)
     return a
 }
 
 /**
- * 子内容
+ * 键盘快捷键
  */
-func (a *UrlAction) Body(value interface{}) *UrlAction {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *UrlAction) ClassName(value interface{}) *UrlAction {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *UrlAction) StaticPlaceholder(value interface{}) *UrlAction {
-    a.Set("staticPlaceholder", value)
+func (a *UrlAction) HotKey(value interface{}) *UrlAction {
+    a.Set("hotKey", value)
     return a
 }
 
@@ -221,26 +318,18 @@ func (a *UrlAction) RightIcon(value interface{}) *UrlAction {
 }
 
 /**
- * loading 上的css 类名
+ * 点击后的禁止倒计时（秒）
  */
-func (a *UrlAction) LoadingClassName(value interface{}) *UrlAction {
-    a.Set("loadingClassName", value)
+func (a *UrlAction) CountDown(value interface{}) *UrlAction {
+    a.Set("countDown", value)
     return a
 }
 
 /**
- * 激活状态时的样式
+ * 角标
  */
-func (a *UrlAction) ActiveLevel(value interface{}) *UrlAction {
-    a.Set("activeLevel", value)
-    return a
-}
-
-/**
- * 指定为打开链接
- */
-func (a *UrlAction) ActionType(value interface{}) *UrlAction {
-    a.Set("actionType", value)
+func (a *UrlAction) Badge(value interface{}) *UrlAction {
+    a.Set("badge", value)
     return a
 }
 
@@ -253,25 +342,26 @@ func (a *UrlAction) VisibleOn(value interface{}) *UrlAction {
 }
 
 /**
- * 是否静态展示表达式
+ * 可选值: top | right | bottom | left
  */
-func (a *UrlAction) StaticOn(value interface{}) *UrlAction {
-    a.Set("staticOn", value)
+func (a *UrlAction) TooltipPlacement(value interface{}) *UrlAction {
+    a.Set("tooltipPlacement", value)
     return a
 }
 
 /**
+ * 激活状态时的类名
  */
-func (a *UrlAction) TestIdBuilder(value interface{}) *UrlAction {
-    a.Set("testIdBuilder", value)
+func (a *UrlAction) ActiveClassName(value interface{}) *UrlAction {
+    a.Set("activeClassName", value)
     return a
 }
 
 /**
- * 设置链接
+ * 倒计时文字自定义
  */
-func (a *UrlAction) Link(value interface{}) *UrlAction {
-    a.Set("link", value)
+func (a *UrlAction) CountDownTpl(value interface{}) *UrlAction {
+    a.Set("countDownTpl", value)
     return a
 }
 
@@ -285,114 +375,50 @@ func (a *UrlAction) Type(value interface{}) *UrlAction {
 }
 
 /**
+ * 是否新窗口打开
  */
-func (a *UrlAction) Tooltip(value interface{}) *UrlAction {
-    a.Set("tooltip", value)
+func (a *UrlAction) Blank(value interface{}) *UrlAction {
+    a.Set("blank", value)
     return a
 }
 
 /**
- * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
+ * 打开的目标地址
  */
-func (a *UrlAction) Required(value interface{}) *UrlAction {
-    a.Set("required", value)
+func (a *UrlAction) Url(value interface{}) *UrlAction {
+    a.Set("url", value)
     return a
 }
 
 /**
- * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+ * 是否禁用
  */
-func (a *UrlAction) Close(value interface{}) *UrlAction {
-    a.Set("close", value)
+func (a *UrlAction) Disabled(value interface{}) *UrlAction {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 倒计时文字自定义
+ * 是否静态展示表达式
  */
-func (a *UrlAction) CountDownTpl(value interface{}) *UrlAction {
-    a.Set("countDownTpl", value)
+func (a *UrlAction) StaticOn(value interface{}) *UrlAction {
+    a.Set("staticOn", value)
     return a
 }
 
 /**
- * 是否禁用表达式
+ * 静态展示表单项Value类名
  */
-func (a *UrlAction) DisabledOn(value interface{}) *UrlAction {
-    a.Set("disabledOn", value)
+func (a *UrlAction) StaticInputClassName(value interface{}) *UrlAction {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 组件样式
+ * 右侧 icon 上的 css 类名
  */
-func (a *UrlAction) Style(value interface{}) *UrlAction {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 角标
- */
-func (a *UrlAction) Badge(value interface{}) *UrlAction {
-    a.Set("badge", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *UrlAction) HiddenOn(value interface{}) *UrlAction {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 按钮图标， iconfont 的类名
- */
-func (a *UrlAction) Icon(value interface{}) *UrlAction {
-    a.Set("icon", value)
-    return a
-}
-
-/**
- * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
- */
-func (a *UrlAction) RequireSelected(value interface{}) *UrlAction {
-    a.Set("requireSelected", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *UrlAction) StaticLabelClassName(value interface{}) *UrlAction {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *UrlAction) UseMobileUI(value interface{}) *UrlAction {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 按钮样式
- * 可选值: info | success | warning | danger | link | primary | dark | light | secondary
- */
-func (a *UrlAction) Level(value interface{}) *UrlAction {
-    a.Set("level", value)
-    return a
-}
-
-/**
- * 键盘快捷键
- */
-func (a *UrlAction) HotKey(value interface{}) *UrlAction {
-    a.Set("hotKey", value)
+func (a *UrlAction) RightIconClassName(value interface{}) *UrlAction {
+    a.Set("rightIconClassName", value)
     return a
 }
 
@@ -405,57 +431,31 @@ func (a *UrlAction) OnClick(value interface{}) *UrlAction {
 }
 
 /**
- * 主要用于用户行为跟踪里区分是哪个按钮
  */
-func (a *UrlAction) Id(value interface{}) *UrlAction {
-    a.Set("id", value)
+func (a *UrlAction) Testid(value interface{}) *UrlAction {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 是否隐藏
+ * loading 上的css 类名
  */
-func (a *UrlAction) Hidden(value interface{}) *UrlAction {
-    a.Set("hidden", value)
+func (a *UrlAction) LoadingClassName(value interface{}) *UrlAction {
+    a.Set("loadingClassName", value)
     return a
 }
 
 /**
- * 激活状态时的类名
+ * 按钮文字
  */
-func (a *UrlAction) ActiveClassName(value interface{}) *UrlAction {
-    a.Set("activeClassName", value)
+func (a *UrlAction) Label(value interface{}) *UrlAction {
+    a.Set("label", value)
     return a
 }
 
 /**
- * 点击后的禁止倒计时（秒）
  */
-func (a *UrlAction) CountDown(value interface{}) *UrlAction {
-    a.Set("countDown", value)
-    return a
-}
-
-/**
- * 是否新窗口打开
- */
-func (a *UrlAction) Blank(value interface{}) *UrlAction {
-    a.Set("blank", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *UrlAction) OnEvent(value interface{}) *UrlAction {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *UrlAction) StaticClassName(value interface{}) *UrlAction {
-    a.Set("staticClassName", value)
+func (a *UrlAction) Tooltip(value interface{}) *UrlAction {
+    a.Set("tooltip", value)
     return a
 }
