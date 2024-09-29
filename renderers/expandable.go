@@ -29,22 +29,6 @@ func (a *Expandable) Set(name string, value interface{}) *Expandable {
     return a
 }
 /**
- * 行是否可展开表达式
- */
-func (a *Expandable) ExpandableOn(value interface{}) *Expandable {
-    a.Set("expandableOn", value)
-    return a
-}
-
-/**
- * 展开行自定义样式表达式
- */
-func (a *Expandable) ExpandedRowClassNameExpr(value interface{}) *Expandable {
-    a.Set("expandedRowClassNameExpr", value)
-    return a
-}
-
-/**
  * 已展开的key值
  */
 func (a *Expandable) ExpandedRowKeys(value interface{}) *Expandable {
@@ -73,5 +57,21 @@ func (a *Expandable) Type(value interface{}) *Expandable {
  */
 func (a *Expandable) KeyField(value interface{}) *Expandable {
     a.Set("keyField", value)
+    return a
+}
+
+/**
+ * 行是否可展开表达式
+ */
+func (a *Expandable) ExpandableOn(value interface{}) *Expandable {
+    a.Set("expandableOn", value)
+    return a
+}
+
+/**
+ * 展开行自定义样式表达式
+ */
+func (a *Expandable) ExpandedRowClassNameExpr(value interface{}) *Expandable {
+    a.Set("expandedRowClassNameExpr", value)
     return a
 }

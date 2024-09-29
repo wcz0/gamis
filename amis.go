@@ -310,7 +310,7 @@ func HiddenControl() *renderers.HiddenControl {
 	return renderers.NewHiddenControl();
 }
 
-func Html() *renderers.Html {
+func Html() *renderers.Tpl {
 	return renderers.NewHtml();
 }
 

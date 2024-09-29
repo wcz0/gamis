@@ -29,30 +29,6 @@ func (a *RowSelection) Set(name string, value interface{}) *RowSelection {
     return a
 }
 /**
- * 已选择的key值表达式
- */
-func (a *RowSelection) SelectedRowKeysExpr(value interface{}) *RowSelection {
-    a.Set("selectedRowKeysExpr", value)
-    return a
-}
-
-/**
- * 已选择的key值表达式
- */
-func (a *RowSelection) ColumnWidth(value interface{}) *RowSelection {
-    a.Set("columnWidth", value)
-    return a
-}
-
-/**
- * 是否点击行触发选中或取消选中
- */
-func (a *RowSelection) RowClick(value interface{}) *RowSelection {
-    a.Set("rowClick", value)
-    return a
-}
-
-/**
  * 选择类型 单选/多选
  */
 func (a *RowSelection) Type(value interface{}) *RowSelection {
@@ -89,5 +65,29 @@ func (a *RowSelection) Selections(value interface{}) *RowSelection {
  */
 func (a *RowSelection) SelectedRowKeys(value interface{}) *RowSelection {
     a.Set("selectedRowKeys", value)
+    return a
+}
+
+/**
+ * 已选择的key值表达式
+ */
+func (a *RowSelection) SelectedRowKeysExpr(value interface{}) *RowSelection {
+    a.Set("selectedRowKeysExpr", value)
+    return a
+}
+
+/**
+ * 已选择的key值表达式
+ */
+func (a *RowSelection) ColumnWidth(value interface{}) *RowSelection {
+    a.Set("columnWidth", value)
+    return a
+}
+
+/**
+ * 是否点击行触发选中或取消选中
+ */
+func (a *RowSelection) RowClick(value interface{}) *RowSelection {
+    a.Set("rowClick", value)
     return a
 }

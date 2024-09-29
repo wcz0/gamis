@@ -31,19 +31,18 @@ func (a *ButtonGroup) Set(name string, value interface{}) *ButtonGroup {
     return a
 }
 /**
- * 按钮大小
- * 可选值: xs | sm | md | lg
+ * 是否为禁用状态。
  */
-func (a *ButtonGroup) Size(value interface{}) *ButtonGroup {
-    a.Set("size", value)
+func (a *ButtonGroup) Disabled(value interface{}) *ButtonGroup {
+    a.Set("disabled", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * 是否显示
  */
-func (a *ButtonGroup) HiddenOn(value interface{}) *ButtonGroup {
-    a.Set("hiddenOn", value)
+func (a *ButtonGroup) Visible(value interface{}) *ButtonGroup {
+    a.Set("visible", value)
     return a
 }
 
@@ -56,10 +55,41 @@ func (a *ButtonGroup) StaticLabelClassName(value interface{}) *ButtonGroup {
 }
 
 /**
- * 组件样式
+ * 编辑器配置，运行时可以忽略
  */
-func (a *ButtonGroup) Style(value interface{}) *ButtonGroup {
-    a.Set("style", value)
+func (a *ButtonGroup) EditorSetting(value interface{}) *ButtonGroup {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * 垂直展示？
+ */
+func (a *ButtonGroup) Vertical(value interface{}) *ButtonGroup {
+    a.Set("vertical", value)
+    return a
+}
+
+/**
+ * 平铺展示？
+ */
+func (a *ButtonGroup) Tiled(value interface{}) *ButtonGroup {
+    a.Set("tiled", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *ButtonGroup) StaticPlaceholder(value interface{}) *ButtonGroup {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ */
+func (a *ButtonGroup) StaticSchema(value interface{}) *ButtonGroup {
+    a.Set("staticSchema", value)
     return a
 }
 
@@ -67,6 +97,30 @@ func (a *ButtonGroup) Style(value interface{}) *ButtonGroup {
  */
 func (a *ButtonGroup) Testid(value interface{}) *ButtonGroup {
     a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *ButtonGroup) HiddenOn(value interface{}) *ButtonGroup {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *ButtonGroup) OnEvent(value interface{}) *ButtonGroup {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 组件样式
+ */
+func (a *ButtonGroup) Style(value interface{}) *ButtonGroup {
+    a.Set("style", value)
     return a
 }
 
@@ -79,10 +133,18 @@ func (a *ButtonGroup) Type(value interface{}) *ButtonGroup {
 }
 
 /**
- * 垂直展示？
+ * 按钮样式级别
  */
-func (a *ButtonGroup) Vertical(value interface{}) *ButtonGroup {
-    a.Set("vertical", value)
+func (a *ButtonGroup) BtnLevel(value interface{}) *ButtonGroup {
+    a.Set("btnLevel", value)
+    return a
+}
+
+/**
+ * 通过 JS 表达式来配置当前表单项的禁用状态。
+ */
+func (a *ButtonGroup) DisabledOn(value interface{}) *ButtonGroup {
+    a.Set("disabledOn", value)
     return a
 }
 
@@ -104,16 +166,8 @@ func (a *ButtonGroup) Id(value interface{}) *ButtonGroup {
 
 /**
  */
-func (a *ButtonGroup) StaticSchema(value interface{}) *ButtonGroup {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *ButtonGroup) EditorSetting(value interface{}) *ButtonGroup {
-    a.Set("editorSetting", value)
+func (a *ButtonGroup) TestIdBuilder(value interface{}) *ButtonGroup {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -121,14 +175,6 @@ func (a *ButtonGroup) EditorSetting(value interface{}) *ButtonGroup {
  */
 func (a *ButtonGroup) BtnClassName(value interface{}) *ButtonGroup {
     a.Set("btnClassName", value)
-    return a
-}
-
-/**
- * 按钮样式级别
- */
-func (a *ButtonGroup) BtnLevel(value interface{}) *ButtonGroup {
-    a.Set("btnLevel", value)
     return a
 }
 
@@ -141,37 +187,6 @@ func (a *ButtonGroup) ClassName(value interface{}) *ButtonGroup {
 }
 
 /**
- * 通过 JS 表达式来配置当前表单项是否显示
- */
-func (a *ButtonGroup) VisibleOn(value interface{}) *ButtonGroup {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *ButtonGroup) StaticClassName(value interface{}) *ButtonGroup {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *ButtonGroup) TestIdBuilder(value interface{}) *ButtonGroup {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 是否为禁用状态。
- */
-func (a *ButtonGroup) Disabled(value interface{}) *ButtonGroup {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
  * 可以组件级别用来关闭移动端样式
  */
 func (a *ButtonGroup) UseMobileUI(value interface{}) *ButtonGroup {
@@ -180,42 +195,11 @@ func (a *ButtonGroup) UseMobileUI(value interface{}) *ButtonGroup {
 }
 
 /**
- * 按钮集合
+ * 按钮大小
+ * 可选值: xs | sm | md | lg
  */
-func (a *ButtonGroup) Buttons(value interface{}) *ButtonGroup {
-    a.Set("buttons", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *ButtonGroup) StaticOn(value interface{}) *ButtonGroup {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *ButtonGroup) StaticInputClassName(value interface{}) *ButtonGroup {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 通过 JS 表达式来配置当前表单项的禁用状态。
- */
-func (a *ButtonGroup) DisabledOn(value interface{}) *ButtonGroup {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *ButtonGroup) Visible(value interface{}) *ButtonGroup {
-    a.Set("visible", value)
+func (a *ButtonGroup) Size(value interface{}) *ButtonGroup {
+    a.Set("size", value)
     return a
 }
 
@@ -228,18 +212,34 @@ func (a *ButtonGroup) Static(value interface{}) *ButtonGroup {
 }
 
 /**
- * 静态展示空值占位
+ * 静态展示表单项类名
  */
-func (a *ButtonGroup) StaticPlaceholder(value interface{}) *ButtonGroup {
-    a.Set("staticPlaceholder", value)
+func (a *ButtonGroup) StaticClassName(value interface{}) *ButtonGroup {
+    a.Set("staticClassName", value)
     return a
 }
 
 /**
- * 事件动作配置
+ * 按钮集合
  */
-func (a *ButtonGroup) OnEvent(value interface{}) *ButtonGroup {
-    a.Set("onEvent", value)
+func (a *ButtonGroup) Buttons(value interface{}) *ButtonGroup {
+    a.Set("buttons", value)
+    return a
+}
+
+/**
+ * 通过 JS 表达式来配置当前表单项是否显示
+ */
+func (a *ButtonGroup) VisibleOn(value interface{}) *ButtonGroup {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Value类名
+ */
+func (a *ButtonGroup) StaticInputClassName(value interface{}) *ButtonGroup {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -259,9 +259,9 @@ func (a *ButtonGroup) BtnActiveLevel(value interface{}) *ButtonGroup {
 }
 
 /**
- * 平铺展示？
+ * 是否静态展示表达式
  */
-func (a *ButtonGroup) Tiled(value interface{}) *ButtonGroup {
-    a.Set("tiled", value)
+func (a *ButtonGroup) StaticOn(value interface{}) *ButtonGroup {
+    a.Set("staticOn", value)
     return a
 }

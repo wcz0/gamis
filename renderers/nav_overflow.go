@@ -29,6 +29,14 @@ func (a *NavOverflow) Set(name string, value interface{}) *NavOverflow {
     return a
 }
 /**
+ * 是否开启响应式收纳
+ */
+func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
+    a.Set("enable", value)
+    return a
+}
+
+/**
  * Popover浮层CSS类名
  */
 func (a *NavOverflow) OverflowPopoverClassName(value interface{}) *NavOverflow {
@@ -53,42 +61,10 @@ func (a *NavOverflow) MaxVisibleCount(value interface{}) *NavOverflow {
 }
 
 /**
- * 包裹导航的外层标签名，可以使用其他标签渲染
- */
-func (a *NavOverflow) WrapperComponent(value interface{}) *NavOverflow {
-    a.Set("wrapperComponent", value)
-    return a
-}
-
-/**
  * 导航列表后缀节点
  */
 func (a *NavOverflow) OverflowSuffix(value interface{}) *NavOverflow {
     a.Set("overflowSuffix", value)
-    return a
-}
-
-/**
- * 菜单触发按钮的文字
- */
-func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
-    a.Set("overflowLabel", value)
-    return a
-}
-
-/**
- * 菜单触发按钮CSS类名
- */
-func (a *NavOverflow) OverflowClassName(value interface{}) *NavOverflow {
-    a.Set("overflowClassName", value)
-    return a
-}
-
-/**
- * 导航项目宽度
- */
-func (a *NavOverflow) ItemWidth(value interface{}) *NavOverflow {
-    a.Set("itemWidth", value)
     return a
 }
 
@@ -101,10 +77,10 @@ func (a *NavOverflow) Style(value interface{}) *NavOverflow {
 }
 
 /**
- * 是否开启响应式收纳
+ * 菜单触发按钮的文字
  */
-func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
-    a.Set("enable", value)
+func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
+    a.Set("overflowLabel", value)
     return a
 }
 
@@ -113,5 +89,29 @@ func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
  */
 func (a *NavOverflow) OverflowIndicator(value interface{}) *NavOverflow {
     a.Set("overflowIndicator", value)
+    return a
+}
+
+/**
+ * 菜单触发按钮CSS类名
+ */
+func (a *NavOverflow) OverflowClassName(value interface{}) *NavOverflow {
+    a.Set("overflowClassName", value)
+    return a
+}
+
+/**
+ * 包裹导航的外层标签名，可以使用其他标签渲染
+ */
+func (a *NavOverflow) WrapperComponent(value interface{}) *NavOverflow {
+    a.Set("wrapperComponent", value)
+    return a
+}
+
+/**
+ * 导航项目宽度
+ */
+func (a *NavOverflow) ItemWidth(value interface{}) *NavOverflow {
+    a.Set("itemWidth", value)
     return a
 }

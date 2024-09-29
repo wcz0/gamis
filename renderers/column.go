@@ -29,49 +29,18 @@ func (a *Column) Set(name string, value interface{}) *Column {
     return a
 }
 /**
- * 表头单元格样式
+ * 指定列合并表达式
  */
-func (a *Column) TitleClassName(value interface{}) *Column {
-    a.Set("titleClassName", value)
+func (a *Column) ColSpanExpr(value interface{}) *Column {
+    a.Set("colSpanExpr", value)
     return a
 }
 
 /**
- * 快速排序
+ * 配置快速编辑功能
  */
-func (a *Column) Sorter(value interface{}) *Column {
-    a.Set("sorter", value)
-    return a
-}
-
-/**
- * 列样式
- */
-func (a *Column) ClassName(value interface{}) *Column {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 指定行合并表达式
- */
-func (a *Column) RowSpanExpr(value interface{}) *Column {
-    a.Set("rowSpanExpr", value)
-    return a
-}
-
-/**
- * 快速搜索
- */
-func (a *Column) Searchable(value interface{}) *Column {
-    a.Set("searchable", value)
-    return a
-}
-
-/**
- */
-func (a *Column) Width(value interface{}) *Column {
-    a.Set("width", value)
+func (a *Column) QuickEdit(value interface{}) *Column {
+    a.Set("quickEdit", value)
     return a
 }
 
@@ -84,18 +53,89 @@ func (a *Column) CanAccessSuperData(value interface{}) *Column {
 }
 
 /**
- * 指定列唯一标识
- */
-func (a *Column) Name(value interface{}) *Column {
-    a.Set("name", value)
-    return a
-}
-
-/**
  * 指定列标题
  */
 func (a *Column) Title(value interface{}) *Column {
     a.Set("title", value)
+    return a
+}
+
+/**
+ * 指定行合并表达式
+ */
+func (a *Column) RowSpanExpr(value interface{}) *Column {
+    a.Set("rowSpanExpr", value)
+    return a
+}
+
+/**
+ * 表头分组
+ */
+func (a *Column) Children(value interface{}) *Column {
+    a.Set("children", value)
+    return a
+}
+
+/**
+ * 可复制
+ */
+func (a *Column) Copyable(value interface{}) *Column {
+    a.Set("copyable", value)
+    return a
+}
+
+/**
+ * 快速搜索
+ */
+func (a *Column) Searchable(value interface{}) *Column {
+    a.Set("searchable", value)
+    return a
+}
+
+/**
+ * 快速排序
+ */
+func (a *Column) Sorter(value interface{}) *Column {
+    a.Set("sorter", value)
+    return a
+}
+
+/**
+ * 当前列是否展示
+ */
+func (a *Column) Toggled(value interface{}) *Column {
+    a.Set("toggled", value)
+    return a
+}
+
+/**
+ */
+func (a *Column) Width(value interface{}) *Column {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 指定列内容渲染器
+ */
+func (a *Column) Type(value interface{}) *Column {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * 列表头提示
+ */
+func (a *Column) Remark(value interface{}) *Column {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * 兼容table列筛选
+ */
+func (a *Column) Filterable(value interface{}) *Column {
+    a.Set("filterable", value)
     return a
 }
 
@@ -116,58 +156,26 @@ func (a *Column) Fixed(value interface{}) *Column {
 }
 
 /**
- * 配置快速编辑功能
+ * 表头单元格样式
  */
-func (a *Column) QuickEdit(value interface{}) *Column {
-    a.Set("quickEdit", value)
+func (a *Column) TitleClassName(value interface{}) *Column {
+    a.Set("titleClassName", value)
     return a
 }
 
 /**
- * 表头分组
+ * 指定列唯一标识
  */
-func (a *Column) Children(value interface{}) *Column {
-    a.Set("children", value)
+func (a *Column) Name(value interface{}) *Column {
+    a.Set("name", value)
     return a
 }
 
 /**
- * 列表头提示
+ * 列样式
  */
-func (a *Column) Remark(value interface{}) *Column {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 可复制
- */
-func (a *Column) Copyable(value interface{}) *Column {
-    a.Set("copyable", value)
-    return a
-}
-
-/**
- * 兼容table快速排序
- */
-func (a *Column) Sortable(value interface{}) *Column {
-    a.Set("sortable", value)
-    return a
-}
-
-/**
- * 兼容table列筛选
- */
-func (a *Column) Filterable(value interface{}) *Column {
-    a.Set("filterable", value)
-    return a
-}
-
-/**
- * 当前列是否展示
- */
-func (a *Column) Toggled(value interface{}) *Column {
-    a.Set("toggled", value)
+func (a *Column) ClassName(value interface{}) *Column {
+    a.Set("className", value)
     return a
 }
 
@@ -180,17 +188,9 @@ func (a *Column) ClassNameExpr(value interface{}) *Column {
 }
 
 /**
- * 指定列内容渲染器
+ * 兼容table快速排序
  */
-func (a *Column) Type(value interface{}) *Column {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 指定列合并表达式
- */
-func (a *Column) ColSpanExpr(value interface{}) *Column {
-    a.Set("colSpanExpr", value)
+func (a *Column) Sortable(value interface{}) *Column {
+    a.Set("sortable", value)
     return a
 }

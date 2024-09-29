@@ -30,14 +30,6 @@ func (a *PortletTab) Set(name string, value interface{}) *PortletTab {
     return a
 }
 /**
- * 是否隐藏表达式
- */
-func (a *PortletTab) HiddenOn(value interface{}) *PortletTab {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
  * 静态展示空值占位
  */
 func (a *PortletTab) StaticPlaceholder(value interface{}) *PortletTab {
@@ -46,10 +38,18 @@ func (a *PortletTab) StaticPlaceholder(value interface{}) *PortletTab {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 静态展示表单项类名
  */
-func (a *PortletTab) EditorSetting(value interface{}) *PortletTab {
-    a.Set("editorSetting", value)
+func (a *PortletTab) StaticClassName(value interface{}) *PortletTab {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 容器 css 类名
+ */
+func (a *PortletTab) ClassName(value interface{}) *PortletTab {
+    a.Set("className", value)
     return a
 }
 
@@ -62,26 +62,25 @@ func (a *PortletTab) StaticOn(value interface{}) *PortletTab {
 }
 
 /**
- * Tab 标题
+ * 编辑器配置，运行时可以忽略
  */
-func (a *PortletTab) Title(value interface{}) *PortletTab {
-    a.Set("title", value)
+func (a *PortletTab) EditorSetting(value interface{}) *PortletTab {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 内容
  */
-func (a *PortletTab) Body(value interface{}) *PortletTab {
-    a.Set("body", value)
+func (a *PortletTab) TestIdBuilder(value interface{}) *PortletTab {
+    a.Set("testIdBuilder", value)
     return a
 }
 
 /**
- * 是否禁用
+ * 设置以后内容每次都会重新渲染
  */
-func (a *PortletTab) Disabled(value interface{}) *PortletTab {
-    a.Set("disabled", value)
+func (a *PortletTab) Reload(value interface{}) *PortletTab {
+    a.Set("reload", value)
     return a
 }
 
@@ -90,6 +89,60 @@ func (a *PortletTab) Disabled(value interface{}) *PortletTab {
  */
 func (a *PortletTab) Static(value interface{}) *PortletTab {
     a.Set("static", value)
+    return a
+}
+
+/**
+ */
+func (a *PortletTab) StaticSchema(value interface{}) *PortletTab {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ */
+func (a *PortletTab) Testid(value interface{}) *PortletTab {
+    a.Set("testid", value)
+    return a
+}
+
+/**
+ * 是否显示表达式
+ */
+func (a *PortletTab) VisibleOn(value interface{}) *PortletTab {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *PortletTab) Id(value interface{}) *PortletTab {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * Tab 标题
+ */
+func (a *PortletTab) Title(value interface{}) *PortletTab {
+    a.Set("title", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *PortletTab) Visible(value interface{}) *PortletTab {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 是否隐藏
+ */
+func (a *PortletTab) Hidden(value interface{}) *PortletTab {
+    a.Set("hidden", value)
     return a
 }
 
@@ -110,9 +163,26 @@ func (a *PortletTab) UseMobileUI(value interface{}) *PortletTab {
 }
 
 /**
+ * 可以在右侧配置点其他功能按钮，随着tab切换而切换
  */
-func (a *PortletTab) Testid(value interface{}) *PortletTab {
-    a.Set("testid", value)
+func (a *PortletTab) Toolbar(value interface{}) *PortletTab {
+    a.Set("toolbar", value)
+    return a
+}
+
+/**
+ * 内容
+ */
+func (a *PortletTab) Body(value interface{}) *PortletTab {
+    a.Set("body", value)
+    return a
+}
+
+/**
+ * 是否禁用
+ */
+func (a *PortletTab) Disabled(value interface{}) *PortletTab {
+    a.Set("disabled", value)
     return a
 }
 
@@ -125,18 +195,18 @@ func (a *PortletTab) DisabledOn(value interface{}) *PortletTab {
 }
 
 /**
- * 是否隐藏
- */
-func (a *PortletTab) Hidden(value interface{}) *PortletTab {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
  * 事件动作配置
  */
 func (a *PortletTab) OnEvent(value interface{}) *PortletTab {
     a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * 静态展示表单项Label类名
+ */
+func (a *PortletTab) StaticLabelClassName(value interface{}) *PortletTab {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
@@ -149,56 +219,26 @@ func (a *PortletTab) Icon(value interface{}) *PortletTab {
 }
 
 /**
- * 是否显示
+ * 卡片隐藏就销毁卡片节点。
  */
-func (a *PortletTab) Visible(value interface{}) *PortletTab {
-    a.Set("visible", value)
+func (a *PortletTab) UnmountOnExit(value interface{}) *PortletTab {
+    a.Set("unmountOnExit", value)
     return a
 }
 
 /**
- * 是否显示表达式
+ * 静态展示表单项Value类名
  */
-func (a *PortletTab) VisibleOn(value interface{}) *PortletTab {
-    a.Set("visibleOn", value)
+func (a *PortletTab) StaticInputClassName(value interface{}) *PortletTab {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 可以在右侧配置点其他功能按钮，随着tab切换而切换
+ * 是否隐藏表达式
  */
-func (a *PortletTab) Toolbar(value interface{}) *PortletTab {
-    a.Set("toolbar", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *PortletTab) ClassName(value interface{}) *PortletTab {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *PortletTab) StaticClassName(value interface{}) *PortletTab {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- */
-func (a *PortletTab) StaticSchema(value interface{}) *PortletTab {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *PortletTab) TestIdBuilder(value interface{}) *PortletTab {
-    a.Set("testIdBuilder", value)
+func (a *PortletTab) HiddenOn(value interface{}) *PortletTab {
+    a.Set("hiddenOn", value)
     return a
 }
 
@@ -219,49 +259,9 @@ func (a *PortletTab) IconPosition(value interface{}) *PortletTab {
 }
 
 /**
- * 设置以后内容每次都会重新渲染
- */
-func (a *PortletTab) Reload(value interface{}) *PortletTab {
-    a.Set("reload", value)
-    return a
-}
-
-/**
- * 卡片隐藏就销毁卡片节点。
- */
-func (a *PortletTab) UnmountOnExit(value interface{}) *PortletTab {
-    a.Set("unmountOnExit", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *PortletTab) StaticLabelClassName(value interface{}) *PortletTab {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *PortletTab) StaticInputClassName(value interface{}) *PortletTab {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
  * 点开时才加载卡片内容
  */
 func (a *PortletTab) MountOnEnter(value interface{}) *PortletTab {
     a.Set("mountOnEnter", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *PortletTab) Id(value interface{}) *PortletTab {
-    a.Set("id", value)
     return a
 }

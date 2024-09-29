@@ -29,19 +29,10 @@ func (a *SchemaPopOver) Set(name string, value interface{}) *SchemaPopOver {
     return a
 }
 /**
- * 弹出模式
- * 可选值: dialog | drawer | popOver
+ * 类名
  */
-func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
-    a.Set("mode", value)
-    return a
-}
-
-/**
- * 偏移量
- */
-func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
-    a.Set("offset", value)
+func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
+    a.Set("className", value)
     return a
 }
 
@@ -50,15 +41,6 @@ func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
  */
 func (a *SchemaPopOver) PopOverEnableOn(value interface{}) *SchemaPopOver {
     a.Set("popOverEnableOn", value)
-    return a
-}
-
-/**
- * 是弹窗形式的时候有用。
- * 可选值: sm | md | lg | xl
- */
-func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
-    a.Set("size", value)
     return a
 }
 
@@ -89,18 +71,9 @@ func (a *SchemaPopOver) ShowIcon(value interface{}) *SchemaPopOver {
 }
 
 /**
- * 标题
  */
-func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 类名
- */
-func (a *SchemaPopOver) ClassName(value interface{}) *SchemaPopOver {
-    a.Set("className", value)
+func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
+    a.Set("body", value)
     return a
 }
 
@@ -113,8 +86,35 @@ func (a *SchemaPopOver) PopOverClassName(value interface{}) *SchemaPopOver {
 }
 
 /**
+ * 弹出模式
+ * 可选值: dialog | drawer | popOver
  */
-func (a *SchemaPopOver) Body(value interface{}) *SchemaPopOver {
-    a.Set("body", value)
+func (a *SchemaPopOver) Mode(value interface{}) *SchemaPopOver {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是弹窗形式的时候有用。
+ * 可选值: sm | md | lg | xl
+ */
+func (a *SchemaPopOver) Size(value interface{}) *SchemaPopOver {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * 偏移量
+ */
+func (a *SchemaPopOver) Offset(value interface{}) *SchemaPopOver {
+    a.Set("offset", value)
+    return a
+}
+
+/**
+ * 标题
+ */
+func (a *SchemaPopOver) Title(value interface{}) *SchemaPopOver {
+    a.Set("title", value)
     return a
 }

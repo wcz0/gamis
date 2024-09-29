@@ -31,33 +31,26 @@ func (a *TimeControl) Set(name string, value interface{}) *TimeControl {
     return a
 }
 /**
- * 组件唯一 id，主要用于日志采集
+ * 是否显示表达式
  */
-func (a *TimeControl) Id(value interface{}) *TimeControl {
-    a.Set("id", value)
+func (a *TimeControl) VisibleOn(value interface{}) *TimeControl {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ * 描述标题
  */
-func (a *TimeControl) LabelRemark(value interface{}) *TimeControl {
-    a.Set("labelRemark", value)
+func (a *TimeControl) LabelAlign(value interface{}) *TimeControl {
+    a.Set("labelAlign", value)
     return a
 }
 
 /**
+ * 指定为日期时间选择控件
  */
-func (a *TimeControl) Row(value interface{}) *TimeControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *TimeControl) Visible(value interface{}) *TimeControl {
-    a.Set("visible", value)
+func (a *TimeControl) Type(value interface{}) *TimeControl {
+    a.Set("type", value)
     return a
 }
 
@@ -78,18 +71,89 @@ func (a *TimeControl) Hint(value interface{}) *TimeControl {
 }
 
 /**
- * 验证失败的提示信息
+ * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
  */
-func (a *TimeControl) ValidationErrors(value interface{}) *TimeControl {
-    a.Set("validationErrors", value)
+func (a *TimeControl) ClearValueOnHidden(value interface{}) *TimeControl {
+    a.Set("clearValueOnHidden", value)
     return a
 }
 
 /**
- * 指定为日期时间选择控件
+ * 是否禁用
  */
-func (a *TimeControl) Type(value interface{}) *TimeControl {
-    a.Set("type", value)
+func (a *TimeControl) Disabled(value interface{}) *TimeControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * 是否隐藏表达式
+ */
+func (a *TimeControl) HiddenOn(value interface{}) *TimeControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * 是否显示
+ */
+func (a *TimeControl) Visible(value interface{}) *TimeControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * 组件唯一 id，主要用于日志采集
+ */
+func (a *TimeControl) Id(value interface{}) *TimeControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * 配置 label className
+ */
+func (a *TimeControl) LabelClassName(value interface{}) *TimeControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+ */
+func (a *TimeControl) Name(value interface{}) *TimeControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+ */
+func (a *TimeControl) LabelRemark(value interface{}) *TimeControl {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * 占位符
+ */
+func (a *TimeControl) Placeholder(value interface{}) *TimeControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ */
+func (a *TimeControl) Row(value interface{}) *TimeControl {
+    a.Set("row", value)
+    return a
+}
+
+/**
+ * 事件动作配置
+ */
+func (a *TimeControl) OnEvent(value interface{}) *TimeControl {
+    a.Set("onEvent", value)
     return a
 }
 
@@ -101,18 +165,75 @@ func (a *TimeControl) StaticSchema(value interface{}) *TimeControl {
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * 组件样式
  */
-func (a *TimeControl) EditorSetting(value interface{}) *TimeControl {
-    a.Set("editorSetting", value)
+func (a *TimeControl) Style(value interface{}) *TimeControl {
+    a.Set("style", value)
     return a
 }
 
 /**
- * 当修改完的时候是否提交表单。
+ * 是否为必填
  */
-func (a *TimeControl) SubmitOnChange(value interface{}) *TimeControl {
-    a.Set("submitOnChange", value)
+func (a *TimeControl) Required(value interface{}) *TimeControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * 日期展示格式(新：替代inputFormat)
+ */
+func (a *TimeControl) DisplayFormat(value interface{}) *TimeControl {
+    a.Set("displayFormat", value)
+    return a
+}
+
+/**
+ * 静态展示空值占位
+ */
+func (a *TimeControl) StaticPlaceholder(value interface{}) *TimeControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * label自定义宽度，默认单位为px
+ */
+func (a *TimeControl) LabelWidth(value interface{}) *TimeControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * 配置描述上的 className
+ */
+func (a *TimeControl) DescriptionClassName(value interface{}) *TimeControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * 边框模式，全边框，还是半边框，或者没边框。
+ * 可选值: full | half | none
+ */
+func (a *TimeControl) BorderMode(value interface{}) *TimeControl {
+    a.Set("borderMode", value)
+    return a
+}
+
+/**
+ * 时间输入范围限制
+ */
+func (a *TimeControl) TimeConstraints(value interface{}) *TimeControl {
+    a.Set("timeConstraints", value)
+    return a
+}
+
+/**
+ * 可以组件级别用来关闭移动端样式
+ */
+func (a *TimeControl) UseMobileUI(value interface{}) *TimeControl {
+    a.Set("useMobileUI", value)
     return a
 }
 
@@ -133,57 +254,18 @@ func (a *TimeControl) Description(value interface{}) *TimeControl {
 }
 
 /**
+ * 配置 input className
  */
-func (a *TimeControl) Validations(value interface{}) *TimeControl {
-    a.Set("validations", value)
+func (a *TimeControl) InputClassName(value interface{}) *TimeControl {
+    a.Set("inputClassName", value)
     return a
 }
 
 /**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+ * 是否显示清除按钮
  */
-func (a *TimeControl) ClearValueOnHidden(value interface{}) *TimeControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *TimeControl) Value(value interface{}) *TimeControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 设定是否存储 utc 时间。
- */
-func (a *TimeControl) Utc(value interface{}) *TimeControl {
-    a.Set("utc", value)
-    return a
-}
-
-/**
- * 日期快捷键
- */
-func (a *TimeControl) Shortcuts(value interface{}) *TimeControl {
-    a.Set("shortcuts", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *TimeControl) LabelClassName(value interface{}) *TimeControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 字符串函数，用来决定是否禁用某个日期。(currentDate: moment.Moment, props: any) => boolean;
- */
-func (a *TimeControl) DisabledDate(value interface{}) *TimeControl {
-    a.Set("disabledDate", value)
+func (a *TimeControl) Clearable(value interface{}) *TimeControl {
+    a.Set("clearable", value)
     return a
 }
 
@@ -196,132 +278,26 @@ func (a *TimeControl) ClassName(value interface{}) *TimeControl {
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * 编辑器配置，运行时可以忽略
  */
-func (a *TimeControl) Size(value interface{}) *TimeControl {
-    a.Set("size", value)
+func (a *TimeControl) EditorSetting(value interface{}) *TimeControl {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 配置 input className
+ * 设定是否存储 utc 时间。
  */
-func (a *TimeControl) InputClassName(value interface{}) *TimeControl {
-    a.Set("inputClassName", value)
+func (a *TimeControl) Utc(value interface{}) *TimeControl {
+    a.Set("utc", value)
     return a
 }
 
 /**
- * 日期存储格式
+ * 显示一个小图标, 鼠标放上去的时候显示提示内容
  */
-func (a *TimeControl) Format(value interface{}) *TimeControl {
-    a.Set("format", value)
-    return a
-}
-
-/**
- * 替代format
- */
-func (a *TimeControl) ValueFormat(value interface{}) *TimeControl {
-    a.Set("valueFormat", value)
-    return a
-}
-
-/**
- * 边框模式，全边框，还是半边框，或者没边框。
- * 可选值: full | half | none
- */
-func (a *TimeControl) BorderMode(value interface{}) *TimeControl {
-    a.Set("borderMode", value)
-    return a
-}
-
-/**
- * 时间的格式。
- */
-func (a *TimeControl) TimeFormat(value interface{}) *TimeControl {
-    a.Set("timeFormat", value)
-    return a
-}
-
-/**
- * 在Table中调整宽度
- */
-func (a *TimeControl) Width(value interface{}) *TimeControl {
-    a.Set("width", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *TimeControl) DisabledOn(value interface{}) *TimeControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *TimeControl) VisibleOn(value interface{}) *TimeControl {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *TimeControl) OnEvent(value interface{}) *TimeControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *TimeControl) StaticInputClassName(value interface{}) *TimeControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *TimeControl) DescriptionClassName(value interface{}) *TimeControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *TimeControl) AutoFill(value interface{}) *TimeControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *TimeControl) Hidden(value interface{}) *TimeControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *TimeControl) StaticClassName(value interface{}) *TimeControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *TimeControl) ReadOnly(value interface{}) *TimeControl {
-    a.Set("readOnly", value)
+func (a *TimeControl) Remark(value interface{}) *TimeControl {
+    a.Set("remark", value)
     return a
 }
 
@@ -334,57 +310,33 @@ func (a *TimeControl) Horizontal(value interface{}) *TimeControl {
 }
 
 /**
- * 静态展示空值占位
+ * 字符串函数，用来决定是否禁用某个日期。(currentDate: moment.Moment, props: any) => boolean;
  */
-func (a *TimeControl) StaticPlaceholder(value interface{}) *TimeControl {
-    a.Set("staticPlaceholder", value)
+func (a *TimeControl) DisabledDate(value interface{}) *TimeControl {
+    a.Set("disabledDate", value)
     return a
 }
 
 /**
- * 组件样式
+ * 是否隐藏
  */
-func (a *TimeControl) Style(value interface{}) *TimeControl {
-    a.Set("style", value)
+func (a *TimeControl) Hidden(value interface{}) *TimeControl {
+    a.Set("hidden", value)
     return a
 }
 
 /**
- * 占位符
+ * 是否静态展示
  */
-func (a *TimeControl) Placeholder(value interface{}) *TimeControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 日期展示格式(新：替代inputFormat)
- */
-func (a *TimeControl) DisplayFormat(value interface{}) *TimeControl {
-    a.Set("displayFormat", value)
+func (a *TimeControl) Static(value interface{}) *TimeControl {
+    a.Set("static", value)
     return a
 }
 
 /**
  */
-func (a *TimeControl) InitAutoFill(value interface{}) *TimeControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 日期展示格式
- */
-func (a *TimeControl) InputFormat(value interface{}) *TimeControl {
-    a.Set("inputFormat", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *TimeControl) Disabled(value interface{}) *TimeControl {
-    a.Set("disabled", value)
+func (a *TimeControl) TestIdBuilder(value interface{}) *TimeControl {
+    a.Set("testIdBuilder", value)
     return a
 }
 
@@ -397,9 +349,41 @@ func (a *TimeControl) Label(value interface{}) *TimeControl {
 }
 
 /**
+ * 当修改完的时候是否提交表单。
  */
-func (a *TimeControl) Desc(value interface{}) *TimeControl {
-    a.Set("desc", value)
+func (a *TimeControl) SubmitOnChange(value interface{}) *TimeControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * 验证失败的提示信息
+ */
+func (a *TimeControl) ValidationErrors(value interface{}) *TimeControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ */
+func (a *TimeControl) InitAutoFill(value interface{}) *TimeControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * 时间的格式。
+ */
+func (a *TimeControl) TimeFormat(value interface{}) *TimeControl {
+    a.Set("timeFormat", value)
+    return a
+}
+
+/**
+ * 是否只读
+ */
+func (a *TimeControl) ReadOnly(value interface{}) *TimeControl {
+    a.Set("readOnly", value)
     return a
 }
 
@@ -413,18 +397,17 @@ func (a *TimeControl) Mode(value interface{}) *TimeControl {
 }
 
 /**
- * 是否为必填
  */
-func (a *TimeControl) Required(value interface{}) *TimeControl {
-    a.Set("required", value)
+func (a *TimeControl) Validations(value interface{}) *TimeControl {
+    a.Set("validations", value)
     return a
 }
 
 /**
- * 是否为内联模式？
+ * 日期快捷键
  */
-func (a *TimeControl) Emebed(value interface{}) *TimeControl {
-    a.Set("emebed", value)
+func (a *TimeControl) Shortcuts(value interface{}) *TimeControl {
+    a.Set("shortcuts", value)
     return a
 }
 
@@ -445,34 +428,75 @@ func (a *TimeControl) StaticLabelClassName(value interface{}) *TimeControl {
 }
 
 /**
- * 是否隐藏表达式
+ * 表单项大小
+ * 可选值: xs | sm | md | lg | full
  */
-func (a *TimeControl) HiddenOn(value interface{}) *TimeControl {
-    a.Set("hiddenOn", value)
+func (a *TimeControl) Size(value interface{}) *TimeControl {
+    a.Set("size", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * 表单 control 是否为 inline 模式。
  */
-func (a *TimeControl) Static(value interface{}) *TimeControl {
-    a.Set("static", value)
+func (a *TimeControl) Inline(value interface{}) *TimeControl {
+    a.Set("inline", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
  */
-func (a *TimeControl) UseMobileUI(value interface{}) *TimeControl {
-    a.Set("useMobileUI", value)
+func (a *TimeControl) AutoFill(value interface{}) *TimeControl {
+    a.Set("autoFill", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * 静态展示表单项类名
  */
-func (a *TimeControl) Remark(value interface{}) *TimeControl {
-    a.Set("remark", value)
+func (a *TimeControl) StaticClassName(value interface{}) *TimeControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * 日期存储格式
+ */
+func (a *TimeControl) Format(value interface{}) *TimeControl {
+    a.Set("format", value)
+    return a
+}
+
+/**
+ * 在Table中调整宽度
+ */
+func (a *TimeControl) Width(value interface{}) *TimeControl {
+    a.Set("width", value)
+    return a
+}
+
+/**
+ * 是否禁用表达式
+ */
+func (a *TimeControl) DisabledOn(value interface{}) *TimeControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ */
+func (a *TimeControl) Value(value interface{}) *TimeControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * 日期展示格式
+ */
+func (a *TimeControl) InputFormat(value interface{}) *TimeControl {
+    a.Set("inputFormat", value)
     return a
 }
 
@@ -485,17 +509,18 @@ func (a *TimeControl) ValidateApi(value interface{}) *TimeControl {
 }
 
 /**
+ * 是否为内联模式？
  */
-func (a *TimeControl) TestIdBuilder(value interface{}) *TimeControl {
-    a.Set("testIdBuilder", value)
+func (a *TimeControl) Emebed(value interface{}) *TimeControl {
+    a.Set("emebed", value)
     return a
 }
 
 /**
- * 描述标题
+ * 静态展示表单项Value类名
  */
-func (a *TimeControl) LabelAlign(value interface{}) *TimeControl {
-    a.Set("labelAlign", value)
+func (a *TimeControl) StaticInputClassName(value interface{}) *TimeControl {
+    a.Set("staticInputClassName", value)
     return a
 }
 
@@ -508,41 +533,16 @@ func (a *TimeControl) ReadOnlyOn(value interface{}) *TimeControl {
 }
 
 /**
- * 是否显示清除按钮
  */
-func (a *TimeControl) Clearable(value interface{}) *TimeControl {
-    a.Set("clearable", value)
+func (a *TimeControl) Desc(value interface{}) *TimeControl {
+    a.Set("desc", value)
     return a
 }
 
 /**
- * 时间输入范围限制
+ * 替代format
  */
-func (a *TimeControl) TimeConstraints(value interface{}) *TimeControl {
-    a.Set("timeConstraints", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *TimeControl) LabelWidth(value interface{}) *TimeControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *TimeControl) Name(value interface{}) *TimeControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *TimeControl) Inline(value interface{}) *TimeControl {
-    a.Set("inline", value)
+func (a *TimeControl) ValueFormat(value interface{}) *TimeControl {
+    a.Set("valueFormat", value)
     return a
 }

@@ -30,6 +30,30 @@ func (a *ListBodyField) Set(name string, value interface{}) *ListBodyField {
     return a
 }
 /**
+ * 配置点击复制功能
+ */
+func (a *ListBodyField) Copyable(value interface{}) *ListBodyField {
+    a.Set("copyable", value)
+    return a
+}
+
+/**
+ * 列标题
+ */
+func (a *ListBodyField) Label(value interface{}) *ListBodyField {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * label 类名
+ */
+func (a *ListBodyField) LabelClassName(value interface{}) *ListBodyField {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
  * 内层组件的CSS类名
  */
 func (a *ListBodyField) InnerClassName(value interface{}) *ListBodyField {
@@ -58,29 +82,5 @@ func (a *ListBodyField) PopOver(value interface{}) *ListBodyField {
  */
 func (a *ListBodyField) QuickEdit(value interface{}) *ListBodyField {
     a.Set("quickEdit", value)
-    return a
-}
-
-/**
- * 配置点击复制功能
- */
-func (a *ListBodyField) Copyable(value interface{}) *ListBodyField {
-    a.Set("copyable", value)
-    return a
-}
-
-/**
- * 列标题
- */
-func (a *ListBodyField) Label(value interface{}) *ListBodyField {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * label 类名
- */
-func (a *ListBodyField) LabelClassName(value interface{}) *ListBodyField {
-    a.Set("labelClassName", value)
     return a
 }
