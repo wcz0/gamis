@@ -30,6 +30,30 @@ func (a *ListBodyField) Set(name string, value interface{}) *ListBodyField {
     return a
 }
 /**
+ * 内层组件的CSS类名
+ */
+func (a *ListBodyField) InnerClassName(value interface{}) *ListBodyField {
+    a.Set("innerClassName", value)
+    return a
+}
+
+/**
+ * 绑定字段名
+ */
+func (a *ListBodyField) Name(value interface{}) *ListBodyField {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 配置查看详情功能
+ */
+func (a *ListBodyField) PopOver(value interface{}) *ListBodyField {
+    a.Set("popOver", value)
+    return a
+}
+
+/**
  * 配置快速编辑功能
  */
 func (a *ListBodyField) QuickEdit(value interface{}) *ListBodyField {
@@ -58,29 +82,5 @@ func (a *ListBodyField) Label(value interface{}) *ListBodyField {
  */
 func (a *ListBodyField) LabelClassName(value interface{}) *ListBodyField {
     a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 内层组件的CSS类名
- */
-func (a *ListBodyField) InnerClassName(value interface{}) *ListBodyField {
-    a.Set("innerClassName", value)
-    return a
-}
-
-/**
- * 绑定字段名
- */
-func (a *ListBodyField) Name(value interface{}) *ListBodyField {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 配置查看详情功能
- */
-func (a *ListBodyField) PopOver(value interface{}) *ListBodyField {
-    a.Set("popOver", value)
     return a
 }

@@ -31,125 +31,7 @@ func (a *ImageControl) Set(name string, value interface{}) *ImageControl {
     return a
 }
 /**
- * 裁剪后的图片类型
- */
-func (a *ImageControl) CropFormat(value interface{}) *ImageControl {
-    a.Set("cropFormat", value)
-    return a
-}
-
-/**
- * 配置描述上的 className
- */
-func (a *ImageControl) DescriptionClassName(value interface{}) *ImageControl {
-    a.Set("descriptionClassName", value)
-    return a
-}
-
-/**
- */
-func (a *ImageControl) CompressOptions(value interface{}) *ImageControl {
-    a.Set("compressOptions", value)
-    return a
-}
-
-/**
- */
-func (a *ImageControl) Crop(value interface{}) *ImageControl {
-    a.Set("crop", value)
-    return a
-}
-
-/**
- * 默认 `/api/upload` 如果想自己存储，请设置此选项。
- */
-func (a *ImageControl) Receiver(value interface{}) *ImageControl {
-    a.Set("receiver", value)
-    return a
-}
-
-/**
- * 清除时设置的值
- */
-func (a *ImageControl) ResetValue(value interface{}) *ImageControl {
-    a.Set("resetValue", value)
-    return a
-}
-
-/**
- * 是否开启固定尺寸
- */
-func (a *ImageControl) FixedSize(value interface{}) *ImageControl {
-    a.Set("fixedSize", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *ImageControl) StaticLabelClassName(value interface{}) *ImageControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *ImageControl) UseMobileUI(value interface{}) *ImageControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 配置 label className
- */
-func (a *ImageControl) LabelClassName(value interface{}) *ImageControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 输入提示，聚焦的时候显示
- */
-func (a *ImageControl) Hint(value interface{}) *ImageControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- * 是否自动开始上传
- */
-func (a *ImageControl) AutoUpload(value interface{}) *ImageControl {
-    a.Set("autoUpload", value)
-    return a
-}
-
-/**
- * 上传按钮文案
- */
-func (a *ImageControl) UploadBtnText(value interface{}) *ImageControl {
-    a.Set("uploadBtnText", value)
-    return a
-}
-
-/**
- * 限制图片大小，超出不让上传。
- */
-func (a *ImageControl) Limit(value interface{}) *ImageControl {
-    a.Set("limit", value)
-    return a
-}
-
-/**
- * 可拖拽排序的提示信息。
- */
-func (a *ImageControl) DraggableTip(value interface{}) *ImageControl {
-    a.Set("draggableTip", value)
-    return a
-}
-
-/**
- * 是否禁用
+ * disabled
  */
 func (a *ImageControl) Disabled(value interface{}) *ImageControl {
     a.Set("disabled", value)
@@ -157,32 +39,7 @@ func (a *ImageControl) Disabled(value interface{}) *ImageControl {
 }
 
 /**
- * 静态展示表单项Value类名
- */
-func (a *ImageControl) StaticInputClassName(value interface{}) *ImageControl {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- * 缩路图展示比率。
- * 可选值: 1:1 | 4:3 | 16:9
- */
-func (a *ImageControl) ThumbRatio(value interface{}) *ImageControl {
-    a.Set("thumbRatio", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *ImageControl) ReadOnlyOn(value interface{}) *ImageControl {
-    a.Set("readOnlyOn", value)
-    return a
-}
-
-/**
- * 上传按钮的 CSS 类名
+ * btnUploadClassName
  */
 func (a *ImageControl) BtnUploadClassName(value interface{}) *ImageControl {
     a.Set("btnUploadClassName", value)
@@ -190,175 +47,23 @@ func (a *ImageControl) BtnUploadClassName(value interface{}) *ImageControl {
 }
 
 /**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+ * fixedSize
  */
-func (a *ImageControl) ExtraName(value interface{}) *ImageControl {
-    a.Set("extraName", value)
+func (a *ImageControl) FixedSize(value interface{}) *ImageControl {
+    a.Set("fixedSize", value)
     return a
 }
 
 /**
- * 验证失败的提示信息
+ * name
  */
-func (a *ImageControl) ValidationErrors(value interface{}) *ImageControl {
-    a.Set("validationErrors", value)
+func (a *ImageControl) Name(value interface{}) *ImageControl {
+    a.Set("name", value)
     return a
 }
 
 /**
- * 是否隐藏上传按钮
- */
-func (a *ImageControl) HideUploadButton(value interface{}) *ImageControl {
-    a.Set("hideUploadButton", value)
-    return a
-}
-
-/**
- * 固定尺寸的 CSS类名
- */
-func (a *ImageControl) FixedSizeClassName(value interface{}) *ImageControl {
-    a.Set("fixedSizeClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *ImageControl) StaticClassName(value interface{}) *ImageControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *ImageControl) EditorSetting(value interface{}) *ImageControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 当修改完的时候是否提交表单。
- */
-func (a *ImageControl) SubmitOnChange(value interface{}) *ImageControl {
-    a.Set("submitOnChange", value)
-    return a
-}
-
-/**
- * 分割符
- */
-func (a *ImageControl) Delimiter(value interface{}) *ImageControl {
-    a.Set("delimiter", value)
-    return a
-}
-
-/**
- * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
- */
-func (a *ImageControl) JoinValues(value interface{}) *ImageControl {
-    a.Set("joinValues", value)
-    return a
-}
-
-/**
- * 缩路图展示模式
- * 可选值: w-full | h-full | contain | cover
- */
-func (a *ImageControl) ThumbMode(value interface{}) *ImageControl {
-    a.Set("thumbMode", value)
-    return a
-}
-
-/**
- * 是否可拖拽排序
- */
-func (a *ImageControl) Draggable(value interface{}) *ImageControl {
-    a.Set("draggable", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *ImageControl) DisabledOn(value interface{}) *ImageControl {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- */
-func (a *ImageControl) Row(value interface{}) *ImageControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 表单 control 是否为 inline 模式。
- */
-func (a *ImageControl) Inline(value interface{}) *ImageControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
- */
-func (a *ImageControl) Value(value interface{}) *ImageControl {
-    a.Set("value", value)
-    return a
-}
-
-/**
- * 初始化时是否把其他字段同步到表单内部。
- */
-func (a *ImageControl) InitAutoFill(value interface{}) *ImageControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * 指定为图片上传控件
- */
-func (a *ImageControl) Type(value interface{}) *ImageControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 可配置移动端的拍照功能，比如配置 `camera` 移动端只能拍照，等
- */
-func (a *ImageControl) Capture(value interface{}) *ImageControl {
-    a.Set("capture", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *ImageControl) Hidden(value interface{}) *ImageControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- */
-func (a *ImageControl) StaticSchema(value interface{}) *ImageControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *ImageControl) ReadOnly(value interface{}) *ImageControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
+ * mode
  */
 func (a *ImageControl) Mode(value interface{}) *ImageControl {
     a.Set("mode", value)
@@ -366,90 +71,34 @@ func (a *ImageControl) Mode(value interface{}) *ImageControl {
 }
 
 /**
- * 默认都是通过用户选择图片后上传返回图片地址，如果开启此选项，则可以允许用户图片地址。
+ * editorSetting
  */
-func (a *ImageControl) AllowInput(value interface{}) *ImageControl {
-    a.Set("allowInput", value)
+func (a *ImageControl) EditorSetting(value interface{}) *ImageControl {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+ * thumbMode
  */
-func (a *ImageControl) ExtractValue(value interface{}) *ImageControl {
-    a.Set("extractValue", value)
+func (a *ImageControl) ThumbMode(value interface{}) *ImageControl {
+    a.Set("thumbMode", value)
     return a
 }
 
 /**
- * 描述标题
+ * thumbRatio
  */
-func (a *ImageControl) LabelAlign(value interface{}) *ImageControl {
-    a.Set("labelAlign", value)
+func (a *ImageControl) ThumbRatio(value interface{}) *ImageControl {
+    a.Set("thumbRatio", value)
     return a
 }
 
 /**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
+ * initCrop
  */
-func (a *ImageControl) Remark(value interface{}) *ImageControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * 配置 input className
- */
-func (a *ImageControl) InputClassName(value interface{}) *ImageControl {
-    a.Set("inputClassName", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *ImageControl) Placeholder(value interface{}) *ImageControl {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 配置接收的图片类型建议直接填写文件后缀 如：.txt,.csv多个类型用逗号隔开。
- */
-func (a *ImageControl) Accept(value interface{}) *ImageControl {
-    a.Set("accept", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *ImageControl) Label(value interface{}) *ImageControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *ImageControl) LabelRemark(value interface{}) *ImageControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 最多的个数
- */
-func (a *ImageControl) MaxLength(value interface{}) *ImageControl {
-    a.Set("maxLength", value)
-    return a
-}
-
-/**
- * 默认没有限制，当设置后，文件大小大于此值将不允许上传。
- */
-func (a *ImageControl) MaxSize(value interface{}) *ImageControl {
-    a.Set("maxSize", value)
+func (a *ImageControl) InitCrop(value interface{}) *ImageControl {
+    a.Set("initCrop", value)
     return a
 }
 
@@ -462,229 +111,47 @@ func (a *ImageControl) Width(value interface{}) *ImageControl {
 }
 
 /**
- * 容器 css 类名
+ * inputClassName
  */
-func (a *ImageControl) ClassName(value interface{}) *ImageControl {
-    a.Set("className", value)
+func (a *ImageControl) InputClassName(value interface{}) *ImageControl {
+    a.Set("inputClassName", value)
     return a
 }
 
 /**
- * 是否静态展示
+ * maxSize
  */
-func (a *ImageControl) Static(value interface{}) *ImageControl {
-    a.Set("static", value)
+func (a *ImageControl) MaxSize(value interface{}) *ImageControl {
+    a.Set("maxSize", value)
     return a
 }
 
 /**
+ * capture
  */
-func (a *ImageControl) Desc(value interface{}) *ImageControl {
-    a.Set("desc", value)
+func (a *ImageControl) Capture(value interface{}) *ImageControl {
+    a.Set("capture", value)
     return a
 }
 
 /**
- * 裁剪后的质量
+ * labelRemark
  */
-func (a *ImageControl) CropQuality(value interface{}) *ImageControl {
-    a.Set("cropQuality", value)
+func (a *ImageControl) LabelRemark(value interface{}) *ImageControl {
+    a.Set("labelRemark", value)
     return a
 }
 
 /**
- * 是否为多选
+ * extraName
  */
-func (a *ImageControl) Multiple(value interface{}) *ImageControl {
-    a.Set("multiple", value)
+func (a *ImageControl) ExtraName(value interface{}) *ImageControl {
+    a.Set("extraName", value)
     return a
 }
 
 /**
- * 是否显示
- */
-func (a *ImageControl) Visible(value interface{}) *ImageControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *ImageControl) OnEvent(value interface{}) *ImageControl {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *ImageControl) ClearValueOnHidden(value interface{}) *ImageControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *ImageControl) Name(value interface{}) *ImageControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
- */
-func (a *ImageControl) Horizontal(value interface{}) *ImageControl {
-    a.Set("horizontal", value)
-    return a
-}
-
-/**
- */
-func (a *ImageControl) Validations(value interface{}) *ImageControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 是否允许二次裁剪。
- */
-func (a *ImageControl) ReCropable(value interface{}) *ImageControl {
-    a.Set("reCropable", value)
-    return a
-}
-
-/**
- * 默认为 false, 开启后，允许用户输入压缩选项。
- */
-func (a *ImageControl) ShowCompressOptions(value interface{}) *ImageControl {
-    a.Set("showCompressOptions", value)
-    return a
-}
-
-/**
- * 初始化时是否打开裁剪模式
- */
-func (a *ImageControl) InitCrop(value interface{}) *ImageControl {
-    a.Set("initCrop", value)
-    return a
-}
-
-/**
- * 默认占位图图片地址
- */
-func (a *ImageControl) FrameImage(value interface{}) *ImageControl {
-    a.Set("frameImage", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *ImageControl) LabelWidth(value interface{}) *ImageControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 描述内容，支持 Html 片段。
- */
-func (a *ImageControl) Description(value interface{}) *ImageControl {
-    a.Set("description", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *ImageControl) StaticOn(value interface{}) *ImageControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
- */
-func (a *ImageControl) Size(value interface{}) *ImageControl {
-    a.Set("size", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *ImageControl) ValidateOnChange(value interface{}) *ImageControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
- * 是否为必填
- */
-func (a *ImageControl) Required(value interface{}) *ImageControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- * 默认展示图片的类名
- */
-func (a *ImageControl) ImageClassName(value interface{}) *ImageControl {
-    a.Set("imageClassName", value)
-    return a
-}
-
-/**
- * 图片上传完毕是否进入裁剪模式
- */
-func (a *ImageControl) DropCrop(value interface{}) *ImageControl {
-    a.Set("dropCrop", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *ImageControl) HiddenOn(value interface{}) *ImageControl {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *ImageControl) Id(value interface{}) *ImageControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *ImageControl) StaticPlaceholder(value interface{}) *ImageControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *ImageControl) Style(value interface{}) *ImageControl {
-    a.Set("style", value)
-    return a
-}
-
-/**
- */
-func (a *ImageControl) TestIdBuilder(value interface{}) *ImageControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
+ * validateApi
  */
 func (a *ImageControl) ValidateApi(value interface{}) *ImageControl {
     a.Set("validateApi", value)
@@ -692,7 +159,79 @@ func (a *ImageControl) ValidateApi(value interface{}) *ImageControl {
 }
 
 /**
- * 上传后把其他字段同步到表单内部。
+ * id
+ */
+func (a *ImageControl) Id(value interface{}) *ImageControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * staticLabelClassName
+ */
+func (a *ImageControl) StaticLabelClassName(value interface{}) *ImageControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * crop
+ */
+func (a *ImageControl) Crop(value interface{}) *ImageControl {
+    a.Set("crop", value)
+    return a
+}
+
+/**
+ * maxLength
+ */
+func (a *ImageControl) MaxLength(value interface{}) *ImageControl {
+    a.Set("maxLength", value)
+    return a
+}
+
+/**
+ * multiple
+ */
+func (a *ImageControl) Multiple(value interface{}) *ImageControl {
+    a.Set("multiple", value)
+    return a
+}
+
+/**
+ * draggableTip
+ */
+func (a *ImageControl) DraggableTip(value interface{}) *ImageControl {
+    a.Set("draggableTip", value)
+    return a
+}
+
+/**
+ * useMobileUI
+ */
+func (a *ImageControl) UseMobileUI(value interface{}) *ImageControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * labelOverflow
+ */
+func (a *ImageControl) LabelOverflow(value interface{}) *ImageControl {
+    a.Set("labelOverflow", value)
+    return a
+}
+
+/**
+ * placeholder
+ */
+func (a *ImageControl) Placeholder(value interface{}) *ImageControl {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * autoFill
  */
 func (a *ImageControl) AutoFill(value interface{}) *ImageControl {
     a.Set("autoFill", value)
@@ -700,7 +239,15 @@ func (a *ImageControl) AutoFill(value interface{}) *ImageControl {
 }
 
 /**
- * 默认展示图片的链接
+ * onEvent
+ */
+func (a *ImageControl) OnEvent(value interface{}) *ImageControl {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * src
  */
 func (a *ImageControl) Src(value interface{}) *ImageControl {
     a.Set("src", value)
@@ -708,15 +255,71 @@ func (a *ImageControl) Src(value interface{}) *ImageControl {
 }
 
 /**
- * 是否显示表达式
+ * cropFormat
  */
-func (a *ImageControl) VisibleOn(value interface{}) *ImageControl {
-    a.Set("visibleOn", value)
+func (a *ImageControl) CropFormat(value interface{}) *ImageControl {
+    a.Set("cropFormat", value)
     return a
 }
 
 /**
- * 选择图片按钮的 CSS 类名
+ * delimiter
+ */
+func (a *ImageControl) Delimiter(value interface{}) *ImageControl {
+    a.Set("delimiter", value)
+    return a
+}
+
+/**
+ * staticOn
+ */
+func (a *ImageControl) StaticOn(value interface{}) *ImageControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * staticClassName
+ */
+func (a *ImageControl) StaticClassName(value interface{}) *ImageControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * style
+ */
+func (a *ImageControl) Style(value interface{}) *ImageControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * label
+ */
+func (a *ImageControl) Label(value interface{}) *ImageControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * hint
+ */
+func (a *ImageControl) Hint(value interface{}) *ImageControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * accept
+ */
+func (a *ImageControl) Accept(value interface{}) *ImageControl {
+    a.Set("accept", value)
+    return a
+}
+
+/**
+ * btnClassName
  */
 func (a *ImageControl) BtnClassName(value interface{}) *ImageControl {
     a.Set("btnClassName", value)
@@ -724,8 +327,432 @@ func (a *ImageControl) BtnClassName(value interface{}) *ImageControl {
 }
 
 /**
+ * extractValue
+ */
+func (a *ImageControl) ExtractValue(value interface{}) *ImageControl {
+    a.Set("extractValue", value)
+    return a
+}
+
+/**
+ * labelAlign
+ */
+func (a *ImageControl) LabelAlign(value interface{}) *ImageControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * submitOnChange
+ */
+func (a *ImageControl) SubmitOnChange(value interface{}) *ImageControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * value
+ */
+func (a *ImageControl) Value(value interface{}) *ImageControl {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * disabledOn
+ */
+func (a *ImageControl) DisabledOn(value interface{}) *ImageControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * draggable
+ */
+func (a *ImageControl) Draggable(value interface{}) *ImageControl {
+    a.Set("draggable", value)
+    return a
+}
+
+/**
+ * clearValueOnHidden
+ */
+func (a *ImageControl) ClearValueOnHidden(value interface{}) *ImageControl {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * invalidSizeMessage
+ */
+func (a *ImageControl) InvalidSizeMessage(value interface{}) *ImageControl {
+    a.Set("invalidSizeMessage", value)
+    return a
+}
+
+/**
+ * autoUpload
+ */
+func (a *ImageControl) AutoUpload(value interface{}) *ImageControl {
+    a.Set("autoUpload", value)
+    return a
+}
+
+/**
+ * compress
  */
 func (a *ImageControl) Compress(value interface{}) *ImageControl {
     a.Set("compress", value)
+    return a
+}
+
+/**
+ * fixedSizeClassName
+ */
+func (a *ImageControl) FixedSizeClassName(value interface{}) *ImageControl {
+    a.Set("fixedSizeClassName", value)
+    return a
+}
+
+/**
+ * validationErrors
+ */
+func (a *ImageControl) ValidationErrors(value interface{}) *ImageControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * hidden
+ */
+func (a *ImageControl) Hidden(value interface{}) *ImageControl {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * reCropable
+ */
+func (a *ImageControl) ReCropable(value interface{}) *ImageControl {
+    a.Set("reCropable", value)
+    return a
+}
+
+/**
+ * resetValue
+ */
+func (a *ImageControl) ResetValue(value interface{}) *ImageControl {
+    a.Set("resetValue", value)
+    return a
+}
+
+/**
+ * dropCrop
+ */
+func (a *ImageControl) DropCrop(value interface{}) *ImageControl {
+    a.Set("dropCrop", value)
+    return a
+}
+
+/**
+ * hideUploadButton
+ */
+func (a *ImageControl) HideUploadButton(value interface{}) *ImageControl {
+    a.Set("hideUploadButton", value)
+    return a
+}
+
+/**
+ * initAutoFill
+ */
+func (a *ImageControl) InitAutoFill(value interface{}) *ImageControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * visible
+ */
+func (a *ImageControl) Visible(value interface{}) *ImageControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * size
+ */
+func (a *ImageControl) Size(value interface{}) *ImageControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * showErrorModal
+ */
+func (a *ImageControl) ShowErrorModal(value interface{}) *ImageControl {
+    a.Set("showErrorModal", value)
+    return a
+}
+
+/**
+ * invalidTypeMessage
+ */
+func (a *ImageControl) InvalidTypeMessage(value interface{}) *ImageControl {
+    a.Set("invalidTypeMessage", value)
+    return a
+}
+
+/**
+ * remark
+ */
+func (a *ImageControl) Remark(value interface{}) *ImageControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * description
+ */
+func (a *ImageControl) Description(value interface{}) *ImageControl {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * desc
+ */
+func (a *ImageControl) Desc(value interface{}) *ImageControl {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * inline
+ */
+func (a *ImageControl) Inline(value interface{}) *ImageControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * hiddenOn
+ */
+func (a *ImageControl) HiddenOn(value interface{}) *ImageControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * staticInputClassName
+ */
+func (a *ImageControl) StaticInputClassName(value interface{}) *ImageControl {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * allowInput
+ */
+func (a *ImageControl) AllowInput(value interface{}) *ImageControl {
+    a.Set("allowInput", value)
+    return a
+}
+
+/**
+ * labelWidth
+ */
+func (a *ImageControl) LabelWidth(value interface{}) *ImageControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * staticPlaceholder
+ */
+func (a *ImageControl) StaticPlaceholder(value interface{}) *ImageControl {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * uploadBtnText
+ */
+func (a *ImageControl) UploadBtnText(value interface{}) *ImageControl {
+    a.Set("uploadBtnText", value)
+    return a
+}
+
+/**
+ * compressOptions
+ */
+func (a *ImageControl) CompressOptions(value interface{}) *ImageControl {
+    a.Set("compressOptions", value)
+    return a
+}
+
+/**
+ * receiver
+ */
+func (a *ImageControl) Receiver(value interface{}) *ImageControl {
+    a.Set("receiver", value)
+    return a
+}
+
+/**
+ * joinValues
+ */
+func (a *ImageControl) JoinValues(value interface{}) *ImageControl {
+    a.Set("joinValues", value)
+    return a
+}
+
+/**
+ * frameImage
+ */
+func (a *ImageControl) FrameImage(value interface{}) *ImageControl {
+    a.Set("frameImage", value)
+    return a
+}
+
+/**
+ */
+func (a *ImageControl) Type(value interface{}) *ImageControl {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * horizontal
+ */
+func (a *ImageControl) Horizontal(value interface{}) *ImageControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * required
+ */
+func (a *ImageControl) Required(value interface{}) *ImageControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * row
+ */
+func (a *ImageControl) Row(value interface{}) *ImageControl {
+    a.Set("row", value)
+    return a
+}
+
+/**
+ * visibleOn
+ */
+func (a *ImageControl) VisibleOn(value interface{}) *ImageControl {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * static
+ */
+func (a *ImageControl) Static(value interface{}) *ImageControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * cropQuality
+ */
+func (a *ImageControl) CropQuality(value interface{}) *ImageControl {
+    a.Set("cropQuality", value)
+    return a
+}
+
+/**
+ * staticSchema
+ */
+func (a *ImageControl) StaticSchema(value interface{}) *ImageControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * readOnlyOn
+ */
+func (a *ImageControl) ReadOnlyOn(value interface{}) *ImageControl {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * descriptionClassName
+ */
+func (a *ImageControl) DescriptionClassName(value interface{}) *ImageControl {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * validations
+ */
+func (a *ImageControl) Validations(value interface{}) *ImageControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * className
+ */
+func (a *ImageControl) ClassName(value interface{}) *ImageControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * imageClassName
+ */
+func (a *ImageControl) ImageClassName(value interface{}) *ImageControl {
+    a.Set("imageClassName", value)
+    return a
+}
+
+/**
+ * limit
+ */
+func (a *ImageControl) Limit(value interface{}) *ImageControl {
+    a.Set("limit", value)
+    return a
+}
+
+/**
+ * showCompressOptions
+ */
+func (a *ImageControl) ShowCompressOptions(value interface{}) *ImageControl {
+    a.Set("showCompressOptions", value)
+    return a
+}
+
+/**
+ * labelClassName
+ */
+func (a *ImageControl) LabelClassName(value interface{}) *ImageControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * readOnly
+ */
+func (a *ImageControl) ReadOnly(value interface{}) *ImageControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * validateOnChange
+ */
+func (a *ImageControl) ValidateOnChange(value interface{}) *ImageControl {
+    a.Set("validateOnChange", value)
     return a
 }

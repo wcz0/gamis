@@ -85,6 +85,23 @@ func (a *NavOverflow) Style(value interface{}) *NavOverflow {
 }
 
 /**
+ * 导航超出后响应式收纳方案。
+ * 可选值: popup | swipe
+ */
+func (a *NavOverflow) Mode(value interface{}) *NavOverflow {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * 是否开启响应式收纳
+ */
+func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
+    a.Set("enable", value)
+    return a
+}
+
+/**
  * 菜单触发按钮的文字
  */
 func (a *NavOverflow) OverflowLabel(value interface{}) *NavOverflow {
@@ -105,13 +122,5 @@ func (a *NavOverflow) OverflowIndicator(value interface{}) *NavOverflow {
  */
 func (a *NavOverflow) ItemWidth(value interface{}) *NavOverflow {
     a.Set("itemWidth", value)
-    return a
-}
-
-/**
- * 是否开启响应式收纳
- */
-func (a *NavOverflow) Enable(value interface{}) *NavOverflow {
-    a.Set("enable", value)
     return a
 }

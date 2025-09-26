@@ -29,22 +29,6 @@ func (a *RowSelection) Set(name string, value interface{}) *RowSelection {
     return a
 }
 /**
- * 自定义选择菜单
- */
-func (a *RowSelection) Selections(value interface{}) *RowSelection {
-    a.Set("selections", value)
-    return a
-}
-
-/**
- * 已选择的key值
- */
-func (a *RowSelection) SelectedRowKeys(value interface{}) *RowSelection {
-    a.Set("selectedRowKeys", value)
-    return a
-}
-
-/**
  * 已选择的key值表达式
  */
 func (a *RowSelection) SelectedRowKeysExpr(value interface{}) *RowSelection {
@@ -89,5 +73,21 @@ func (a *RowSelection) KeyField(value interface{}) *RowSelection {
  */
 func (a *RowSelection) DisableOn(value interface{}) *RowSelection {
     a.Set("disableOn", value)
+    return a
+}
+
+/**
+ * 自定义选择菜单
+ */
+func (a *RowSelection) Selections(value interface{}) *RowSelection {
+    a.Set("selections", value)
+    return a
+}
+
+/**
+ * 已选择的key值
+ */
+func (a *RowSelection) SelectedRowKeys(value interface{}) *RowSelection {
+    a.Set("selectedRowKeys", value)
     return a
 }

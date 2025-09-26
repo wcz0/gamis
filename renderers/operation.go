@@ -31,81 +31,10 @@ func (a *Operation) Set(name string, value interface{}) *Operation {
     return a
 }
 /**
+ * buttons
  */
-func (a *Operation) StaticSchema(value interface{}) *Operation {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- * 组件样式
- */
-func (a *Operation) Style(value interface{}) *Operation {
-    a.Set("style", value)
-    return a
-}
-
-/**
- * 占位符
- */
-func (a *Operation) Placeholder(value interface{}) *Operation {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Operation) DisabledOn(value interface{}) *Operation {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Operation) OnEvent(value interface{}) *Operation {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Operation) Visible(value interface{}) *Operation {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *Operation) HiddenOn(value interface{}) *Operation {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *Operation) StaticLabelClassName(value interface{}) *Operation {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Operation) VisibleOn(value interface{}) *Operation {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Operation) StaticClassName(value interface{}) *Operation {
-    a.Set("staticClassName", value)
+func (a *Operation) Buttons(value interface{}) *Operation {
+    a.Set("buttons", value)
     return a
 }
 
@@ -118,69 +47,23 @@ func (a *Operation) Label(value interface{}) *Operation {
 }
 
 /**
+ * disabledOn
  */
-func (a *Operation) Testid(value interface{}) *Operation {
-    a.Set("testid", value)
+func (a *Operation) DisabledOn(value interface{}) *Operation {
+    a.Set("disabledOn", value)
     return a
 }
 
 /**
- * 容器 css 类名
+ * visibleOn
  */
-func (a *Operation) ClassName(value interface{}) *Operation {
-    a.Set("className", value)
+func (a *Operation) VisibleOn(value interface{}) *Operation {
+    a.Set("visibleOn", value)
     return a
 }
 
 /**
- * 是否禁用
- */
-func (a *Operation) Disabled(value interface{}) *Operation {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *Operation) Hidden(value interface{}) *Operation {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Operation) Id(value interface{}) *Operation {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Operation) Static(value interface{}) *Operation {
-    a.Set("static", value)
-    return a
-}
-
-/**
- */
-func (a *Operation) TestIdBuilder(value interface{}) *Operation {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 指定为操作栏
- */
-func (a *Operation) Type(value interface{}) *Operation {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
+ * staticOn
  */
 func (a *Operation) StaticOn(value interface{}) *Operation {
     a.Set("staticOn", value)
@@ -188,31 +71,47 @@ func (a *Operation) StaticOn(value interface{}) *Operation {
 }
 
 /**
- * 静态展示空值占位
+ * placeholder
  */
-func (a *Operation) StaticPlaceholder(value interface{}) *Operation {
-    a.Set("staticPlaceholder", value)
+func (a *Operation) Placeholder(value interface{}) *Operation {
+    a.Set("placeholder", value)
     return a
 }
 
 /**
- * 静态展示表单项Value类名
+ * hiddenOn
  */
-func (a *Operation) StaticInputClassName(value interface{}) *Operation {
-    a.Set("staticInputClassName", value)
+func (a *Operation) HiddenOn(value interface{}) *Operation {
+    a.Set("hiddenOn", value)
     return a
 }
 
 /**
- * 可以组件级别用来关闭移动端样式
+ * visible
  */
-func (a *Operation) UseMobileUI(value interface{}) *Operation {
-    a.Set("useMobileUI", value)
+func (a *Operation) Visible(value interface{}) *Operation {
+    a.Set("visible", value)
     return a
 }
 
 /**
- * 编辑器配置，运行时可以忽略
+ * static
+ */
+func (a *Operation) Static(value interface{}) *Operation {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * staticLabelClassName
+ */
+func (a *Operation) StaticLabelClassName(value interface{}) *Operation {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * editorSetting
  */
 func (a *Operation) EditorSetting(value interface{}) *Operation {
     a.Set("editorSetting", value)
@@ -220,8 +119,104 @@ func (a *Operation) EditorSetting(value interface{}) *Operation {
 }
 
 /**
+ * className
  */
-func (a *Operation) Buttons(value interface{}) *Operation {
-    a.Set("buttons", value)
+func (a *Operation) ClassName(value interface{}) *Operation {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * disabled
+ */
+func (a *Operation) Disabled(value interface{}) *Operation {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * hidden
+ */
+func (a *Operation) Hidden(value interface{}) *Operation {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * onEvent
+ */
+func (a *Operation) OnEvent(value interface{}) *Operation {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * staticClassName
+ */
+func (a *Operation) StaticClassName(value interface{}) *Operation {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * style
+ */
+func (a *Operation) Style(value interface{}) *Operation {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * useMobileUI
+ */
+func (a *Operation) UseMobileUI(value interface{}) *Operation {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ */
+func (a *Operation) Type(value interface{}) *Operation {
+    a.Set("type", value)
+    return a
+}
+
+/**
+ * id
+ */
+func (a *Operation) Id(value interface{}) *Operation {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * staticPlaceholder
+ */
+func (a *Operation) StaticPlaceholder(value interface{}) *Operation {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * staticInputClassName
+ */
+func (a *Operation) StaticInputClassName(value interface{}) *Operation {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * staticSchema
+ */
+func (a *Operation) StaticSchema(value interface{}) *Operation {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * testid
+ */
+func (a *Operation) Testid(value interface{}) *Operation {
+    a.Set("testid", value)
     return a
 }

@@ -29,26 +29,10 @@ func (a *Column) Set(name string, value interface{}) *Column {
     return a
 }
 /**
- * 列样式
+ * 指定列标题
  */
-func (a *Column) ClassName(value interface{}) *Column {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 配置快速编辑功能
- */
-func (a *Column) QuickEdit(value interface{}) *Column {
-    a.Set("quickEdit", value)
-    return a
-}
-
-/**
- * 表格列单元格是否可以获取父级数据域值，默认为true，该配置对当前列内单元格生效
- */
-func (a *Column) CanAccessSuperData(value interface{}) *Column {
-    a.Set("canAccessSuperData", value)
+func (a *Column) Title(value interface{}) *Column {
+    a.Set("title", value)
     return a
 }
 
@@ -61,10 +45,34 @@ func (a *Column) Type(value interface{}) *Column {
 }
 
 /**
- * 快速搜索
+ * 兼容table列筛选
  */
-func (a *Column) Searchable(value interface{}) *Column {
-    a.Set("searchable", value)
+func (a *Column) Filterable(value interface{}) *Column {
+    a.Set("filterable", value)
+    return a
+}
+
+/**
+ * 是否固定在左侧/右侧
+ */
+func (a *Column) Fixed(value interface{}) *Column {
+    a.Set("fixed", value)
+    return a
+}
+
+/**
+ * 指定行合并表达式
+ */
+func (a *Column) RowSpanExpr(value interface{}) *Column {
+    a.Set("rowSpanExpr", value)
+    return a
+}
+
+/**
+ * 表头分组
+ */
+func (a *Column) Children(value interface{}) *Column {
+    a.Set("children", value)
     return a
 }
 
@@ -85,34 +93,35 @@ func (a *Column) Sortable(value interface{}) *Column {
 }
 
 /**
- * 是否固定在左侧/右侧
+ * 标题内容居左、居中、居右
+ * 可选值: left | center | right
  */
-func (a *Column) Fixed(value interface{}) *Column {
-    a.Set("fixed", value)
+func (a *Column) HeaderAlign(value interface{}) *Column {
+    a.Set("headerAlign", value)
     return a
 }
 
 /**
- * 指定列唯一标识
+ * 表头单元格样式
  */
-func (a *Column) Name(value interface{}) *Column {
-    a.Set("name", value)
+func (a *Column) TitleClassName(value interface{}) *Column {
+    a.Set("titleClassName", value)
     return a
 }
 
 /**
- * 内容居左、居中、居右
+ * 配置快速编辑功能
  */
-func (a *Column) Align(value interface{}) *Column {
-    a.Set("align", value)
+func (a *Column) QuickEdit(value interface{}) *Column {
+    a.Set("quickEdit", value)
     return a
 }
 
 /**
- * 单元格样式
+ * 表格列单元格是否可以获取父级数据域值，默认为true，该配置对当前列内单元格生效
  */
-func (a *Column) ClassNameExpr(value interface{}) *Column {
-    a.Set("classNameExpr", value)
+func (a *Column) CanAccessSuperData(value interface{}) *Column {
+    a.Set("canAccessSuperData", value)
     return a
 }
 
@@ -121,14 +130,6 @@ func (a *Column) ClassNameExpr(value interface{}) *Column {
  */
 func (a *Column) ColSpanExpr(value interface{}) *Column {
     a.Set("colSpanExpr", value)
-    return a
-}
-
-/**
- * 表头分组
- */
-func (a *Column) Children(value interface{}) *Column {
-    a.Set("children", value)
     return a
 }
 
@@ -149,6 +150,15 @@ func (a *Column) Remark(value interface{}) *Column {
 }
 
 /**
+ * 列垂直对齐方式
+ * 可选值: top | middle | bottom
+ */
+func (a *Column) VAlign(value interface{}) *Column {
+    a.Set("vAlign", value)
+    return a
+}
+
+/**
  * 当前列是否展示
  */
 func (a *Column) Toggled(value interface{}) *Column {
@@ -157,34 +167,10 @@ func (a *Column) Toggled(value interface{}) *Column {
 }
 
 /**
- * 指定列标题
+ * 单元格样式
  */
-func (a *Column) Title(value interface{}) *Column {
-    a.Set("title", value)
-    return a
-}
-
-/**
- * 指定行合并表达式
- */
-func (a *Column) RowSpanExpr(value interface{}) *Column {
-    a.Set("rowSpanExpr", value)
-    return a
-}
-
-/**
- * 兼容table列筛选
- */
-func (a *Column) Filterable(value interface{}) *Column {
-    a.Set("filterable", value)
-    return a
-}
-
-/**
- * 表头单元格样式
- */
-func (a *Column) TitleClassName(value interface{}) *Column {
-    a.Set("titleClassName", value)
+func (a *Column) ClassNameExpr(value interface{}) *Column {
+    a.Set("classNameExpr", value)
     return a
 }
 
@@ -192,5 +178,37 @@ func (a *Column) TitleClassName(value interface{}) *Column {
  */
 func (a *Column) Width(value interface{}) *Column {
     a.Set("width", value)
+    return a
+}
+
+/**
+ * 指定列唯一标识
+ */
+func (a *Column) Name(value interface{}) *Column {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * 快速搜索
+ */
+func (a *Column) Searchable(value interface{}) *Column {
+    a.Set("searchable", value)
+    return a
+}
+
+/**
+ * 内容居左、居中、居右
+ */
+func (a *Column) Align(value interface{}) *Column {
+    a.Set("align", value)
+    return a
+}
+
+/**
+ * 列样式
+ */
+func (a *Column) ClassName(value interface{}) *Column {
+    a.Set("className", value)
     return a
 }

@@ -50,12 +50,60 @@ func Barcode() *renderers.Barcode {
 	return renderers.NewBarcode();
 }
 
+func Base() *renderers.Base {
+	return renderers.NewBase();
+}
+
 func BaseApi() *renderers.BaseApi {
 	return renderers.NewBaseApi();
 }
 
+func BaseButtonGroup() *renderers.BaseButtonGroup {
+	return renderers.NewBaseButtonGroup();
+}
+
+func BaseCards() *renderers.BaseCards {
+	return renderers.NewBaseCards();
+}
+
+func BaseCollapse() *renderers.BaseCollapse {
+	return renderers.NewBaseCollapse();
+}
+
+func BaseComboControl() *renderers.BaseComboControl {
+	return renderers.NewBaseComboControl();
+}
+
+func BaseDateRangeControl() *renderers.BaseDateRangeControl {
+	return renderers.NewBaseDateRangeControl();
+}
+
+func BaseForm() *renderers.BaseForm {
+	return renderers.NewBaseForm();
+}
+
+func BaseInputFormulaControl() *renderers.BaseInputFormulaControl {
+	return renderers.NewBaseInputFormulaControl();
+}
+
+func BaseList() *renderers.BaseList {
+	return renderers.NewBaseList();
+}
+
+func BaseRemark() *renderers.BaseRemark {
+	return renderers.NewBaseRemark();
+}
+
 func BaseRenderer() *renderers.BaseRenderer {
 	return renderers.NewBaseRenderer();
+}
+
+func BaseTable() *renderers.BaseTable {
+	return renderers.NewBaseTable();
+}
+
+func BaseTransferControl() *renderers.BaseTransferControl {
+	return renderers.NewBaseTransferControl();
 }
 
 func Breadcrumb() *renderers.Breadcrumb {
@@ -100,6 +148,10 @@ func CRUDList() *renderers.CRUDList {
 
 func CRUDTable() *renderers.CRUDTable {
 	return renderers.NewCRUDTable();
+}
+
+func CRUDToolbar() *renderers.CRUDToolbar {
+	return renderers.NewCRUDToolbar();
 }
 
 func Calendar() *renderers.Calendar {
@@ -222,10 +274,6 @@ func DiffControl() *renderers.DiffControl {
 	return renderers.NewDiffControl();
 }
 
-func Divider() *renderers.Divider {
-	return renderers.NewDivider();
-}
-
 func Drawer() *renderers.Drawer {
 	return renderers.NewDrawer();
 }
@@ -270,8 +318,16 @@ func Form() *renderers.Form {
 	return renderers.NewForm();
 }
 
+func FormBaseControl() *renderers.FormBaseControl {
+	return renderers.NewFormBaseControl();
+}
+
 func FormControl() *renderers.FormControl {
 	return renderers.NewFormControl();
+}
+
+func FormOptions() *renderers.FormOptions {
+	return renderers.NewFormOptions();
 }
 
 func FormulaControl() *renderers.FormulaControl {
@@ -310,7 +366,7 @@ func HiddenControl() *renderers.HiddenControl {
 	return renderers.NewHiddenControl();
 }
 
-func Html() *renderers.Tpl {
+func Html() *renderers.Html {
 	return renderers.NewHtml();
 }
 
@@ -358,6 +414,10 @@ func InputColorControl() *renderers.InputColorControl {
 	return renderers.NewInputColorControl();
 }
 
+func InputDateBaseControl() *renderers.InputDateBaseControl {
+	return renderers.NewInputDateBaseControl();
+}
+
 func InputDatetimeRange() *renderers.InputDatetimeRange {
 	return renderers.NewInputDatetimeRange();
 }
@@ -380,6 +440,10 @@ func InputKVS() *renderers.InputKVS {
 
 func InputSignature() *renderers.InputSignature {
 	return renderers.NewInputSignature();
+}
+
+func InputTextAddOn() *renderers.InputTextAddOn {
+	return renderers.NewInputTextAddOn();
 }
 
 func InputTimeRange() *renderers.InputTimeRange {
@@ -622,6 +686,10 @@ func Service() *renderers.Service {
 	return renderers.NewService();
 }
 
+func Slider() *renderers.Slider {
+	return renderers.NewSlider();
+}
+
 func SparkLine() *renderers.SparkLine {
 	return renderers.NewSparkLine();
 }
@@ -776,10 +844,6 @@ func UserSelectControl() *renderers.UserSelectControl {
 
 func VBox() *renderers.VBox {
 	return renderers.NewVBox();
-}
-
-func VanillaAction() *renderers.VanillaAction {
-	return renderers.NewVanillaAction();
 }
 
 func Video() *renderers.Video {

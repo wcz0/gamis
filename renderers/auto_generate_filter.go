@@ -29,14 +29,6 @@ func (a *AutoGenerateFilter) Set(name string, value interface{}) *AutoGenerateFi
     return a
 }
 /**
- * 过滤条件单行列数
- */
-func (a *AutoGenerateFilter) ColumnsNum(value interface{}) *AutoGenerateFilter {
-    a.Set("columnsNum", value)
-    return a
-}
-
-/**
  * 是否显示设置查询字段
  */
 func (a *AutoGenerateFilter) ShowBtnToolbar(value interface{}) *AutoGenerateFilter {
@@ -49,5 +41,29 @@ func (a *AutoGenerateFilter) ShowBtnToolbar(value interface{}) *AutoGenerateFilt
  */
 func (a *AutoGenerateFilter) DefaultCollapsed(value interface{}) *AutoGenerateFilter {
     a.Set("defaultCollapsed", value)
+    return a
+}
+
+/**
+ * 是否启用多选框
+ */
+func (a *AutoGenerateFilter) EnableBulkActions(value interface{}) *AutoGenerateFilter {
+    a.Set("enableBulkActions", value)
+    return a
+}
+
+/**
+ * 启用批量操作的表达式
+ */
+func (a *AutoGenerateFilter) EnableBulkActionsOn(value interface{}) *AutoGenerateFilter {
+    a.Set("enableBulkActionsOn", value)
+    return a
+}
+
+/**
+ * 过滤条件单行列数
+ */
+func (a *AutoGenerateFilter) ColumnsNum(value interface{}) *AutoGenerateFilter {
+    a.Set("columnsNum", value)
     return a
 }

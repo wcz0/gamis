@@ -31,31 +31,7 @@ func (a *ButtonToolbar) Set(name string, value interface{}) *ButtonToolbar {
     return a
 }
 /**
- * 是否禁用表达式
- */
-func (a *ButtonToolbar) DisabledOn(value interface{}) *ButtonToolbar {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *ButtonToolbar) VisibleOn(value interface{}) *ButtonToolbar {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *ButtonToolbar) StaticOn(value interface{}) *ButtonToolbar {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
+ * staticPlaceholder
  */
 func (a *ButtonToolbar) StaticPlaceholder(value interface{}) *ButtonToolbar {
     a.Set("staticPlaceholder", value)
@@ -63,86 +39,7 @@ func (a *ButtonToolbar) StaticPlaceholder(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 静态展示表单项Value类名
- */
-func (a *ButtonToolbar) StaticInputClassName(value interface{}) *ButtonToolbar {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *ButtonToolbar) Testid(value interface{}) *ButtonToolbar {
-    a.Set("testid", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
- */
-func (a *ButtonToolbar) HiddenOn(value interface{}) *ButtonToolbar {
-    a.Set("hiddenOn", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *ButtonToolbar) Visible(value interface{}) *ButtonToolbar {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *ButtonToolbar) UseMobileUI(value interface{}) *ButtonToolbar {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 容器 css 类名
- */
-func (a *ButtonToolbar) ClassName(value interface{}) *ButtonToolbar {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *ButtonToolbar) Hidden(value interface{}) *ButtonToolbar {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *ButtonToolbar) Static(value interface{}) *ButtonToolbar {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *ButtonToolbar) StaticClassName(value interface{}) *ButtonToolbar {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *ButtonToolbar) StaticLabelClassName(value interface{}) *ButtonToolbar {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
+ * editorSetting
  */
 func (a *ButtonToolbar) EditorSetting(value interface{}) *ButtonToolbar {
     a.Set("editorSetting", value)
@@ -150,21 +47,103 @@ func (a *ButtonToolbar) EditorSetting(value interface{}) *ButtonToolbar {
 }
 
 /**
+ * useMobileUI
  */
-func (a *ButtonToolbar) TestIdBuilder(value interface{}) *ButtonToolbar {
-    a.Set("testIdBuilder", value)
+func (a *ButtonToolbar) UseMobileUI(value interface{}) *ButtonToolbar {
+    a.Set("useMobileUI", value)
     return a
 }
 
 /**
+ * testid
  */
-func (a *ButtonToolbar) Buttons(value interface{}) *ButtonToolbar {
-    a.Set("buttons", value)
+func (a *ButtonToolbar) Testid(value interface{}) *ButtonToolbar {
+    a.Set("testid", value)
     return a
 }
 
 /**
- * 组件唯一 id，主要用于日志采集
+ * labelWidth
+ */
+func (a *ButtonToolbar) LabelWidth(value interface{}) *ButtonToolbar {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * hint
+ */
+func (a *ButtonToolbar) Hint(value interface{}) *ButtonToolbar {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * submitOnChange
+ */
+func (a *ButtonToolbar) SubmitOnChange(value interface{}) *ButtonToolbar {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * readOnly
+ */
+func (a *ButtonToolbar) ReadOnly(value interface{}) *ButtonToolbar {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * validations
+ */
+func (a *ButtonToolbar) Validations(value interface{}) *ButtonToolbar {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * clearValueOnHidden
+ */
+func (a *ButtonToolbar) ClearValueOnHidden(value interface{}) *ButtonToolbar {
+    a.Set("clearValueOnHidden", value)
+    return a
+}
+
+/**
+ * row
+ */
+func (a *ButtonToolbar) Row(value interface{}) *ButtonToolbar {
+    a.Set("row", value)
+    return a
+}
+
+/**
+ * horizontal
+ */
+func (a *ButtonToolbar) Horizontal(value interface{}) *ButtonToolbar {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * hiddenOn
+ */
+func (a *ButtonToolbar) HiddenOn(value interface{}) *ButtonToolbar {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * visibleOn
+ */
+func (a *ButtonToolbar) VisibleOn(value interface{}) *ButtonToolbar {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * id
  */
 func (a *ButtonToolbar) Id(value interface{}) *ButtonToolbar {
     a.Set("id", value)
@@ -172,22 +151,55 @@ func (a *ButtonToolbar) Id(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 事件动作配置
+ * staticLabelClassName
  */
-func (a *ButtonToolbar) OnEvent(value interface{}) *ButtonToolbar {
-    a.Set("onEvent", value)
+func (a *ButtonToolbar) StaticLabelClassName(value interface{}) *ButtonToolbar {
+    a.Set("staticLabelClassName", value)
     return a
 }
 
 /**
+ * buttons
  */
-func (a *ButtonToolbar) StaticSchema(value interface{}) *ButtonToolbar {
-    a.Set("staticSchema", value)
+func (a *ButtonToolbar) Buttons(value interface{}) *ButtonToolbar {
+    a.Set("buttons", value)
     return a
 }
 
 /**
- * 组件样式
+ * desc
+ */
+func (a *ButtonToolbar) Desc(value interface{}) *ButtonToolbar {
+    a.Set("desc", value)
+    return a
+}
+
+/**
+ * mode
+ */
+func (a *ButtonToolbar) Mode(value interface{}) *ButtonToolbar {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * inline
+ */
+func (a *ButtonToolbar) Inline(value interface{}) *ButtonToolbar {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * inputClassName
+ */
+func (a *ButtonToolbar) InputClassName(value interface{}) *ButtonToolbar {
+    a.Set("inputClassName", value)
+    return a
+}
+
+/**
+ * style
  */
 func (a *ButtonToolbar) Style(value interface{}) *ButtonToolbar {
     a.Set("style", value)
@@ -195,7 +207,46 @@ func (a *ButtonToolbar) Style(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 指定为按钮工具集合类型
+ * remark
+ */
+func (a *ButtonToolbar) Remark(value interface{}) *ButtonToolbar {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * value
+ */
+func (a *ButtonToolbar) Value(value interface{}) *ButtonToolbar {
+    a.Set("value", value)
+    return a
+}
+
+/**
+ * visible
+ */
+func (a *ButtonToolbar) Visible(value interface{}) *ButtonToolbar {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * staticClassName
+ */
+func (a *ButtonToolbar) StaticClassName(value interface{}) *ButtonToolbar {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * staticSchema
+ */
+func (a *ButtonToolbar) StaticSchema(value interface{}) *ButtonToolbar {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
  */
 func (a *ButtonToolbar) Type(value interface{}) *ButtonToolbar {
     a.Set("type", value)
@@ -203,9 +254,201 @@ func (a *ButtonToolbar) Type(value interface{}) *ButtonToolbar {
 }
 
 /**
- * 是否禁用
+ * validateApi
+ */
+func (a *ButtonToolbar) ValidateApi(value interface{}) *ButtonToolbar {
+    a.Set("validateApi", value)
+    return a
+}
+
+/**
+ * name
+ */
+func (a *ButtonToolbar) Name(value interface{}) *ButtonToolbar {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * labelRemark
+ */
+func (a *ButtonToolbar) LabelRemark(value interface{}) *ButtonToolbar {
+    a.Set("labelRemark", value)
+    return a
+}
+
+/**
+ * static
+ */
+func (a *ButtonToolbar) Static(value interface{}) *ButtonToolbar {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * staticInputClassName
+ */
+func (a *ButtonToolbar) StaticInputClassName(value interface{}) *ButtonToolbar {
+    a.Set("staticInputClassName", value)
+    return a
+}
+
+/**
+ * label
+ */
+func (a *ButtonToolbar) Label(value interface{}) *ButtonToolbar {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * labelAlign
+ */
+func (a *ButtonToolbar) LabelAlign(value interface{}) *ButtonToolbar {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * labelClassName
+ */
+func (a *ButtonToolbar) LabelClassName(value interface{}) *ButtonToolbar {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * extraName
+ */
+func (a *ButtonToolbar) ExtraName(value interface{}) *ButtonToolbar {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * readOnlyOn
+ */
+func (a *ButtonToolbar) ReadOnlyOn(value interface{}) *ButtonToolbar {
+    a.Set("readOnlyOn", value)
+    return a
+}
+
+/**
+ * description
+ */
+func (a *ButtonToolbar) Description(value interface{}) *ButtonToolbar {
+    a.Set("description", value)
+    return a
+}
+
+/**
+ * placeholder
+ */
+func (a *ButtonToolbar) Placeholder(value interface{}) *ButtonToolbar {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * validationErrors
+ */
+func (a *ButtonToolbar) ValidationErrors(value interface{}) *ButtonToolbar {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * labelOverflow
+ */
+func (a *ButtonToolbar) LabelOverflow(value interface{}) *ButtonToolbar {
+    a.Set("labelOverflow", value)
+    return a
+}
+
+/**
+ * descriptionClassName
+ */
+func (a *ButtonToolbar) DescriptionClassName(value interface{}) *ButtonToolbar {
+    a.Set("descriptionClassName", value)
+    return a
+}
+
+/**
+ * required
+ */
+func (a *ButtonToolbar) Required(value interface{}) *ButtonToolbar {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * autoFill
+ */
+func (a *ButtonToolbar) AutoFill(value interface{}) *ButtonToolbar {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * initAutoFill
+ */
+func (a *ButtonToolbar) InitAutoFill(value interface{}) *ButtonToolbar {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * className
+ */
+func (a *ButtonToolbar) ClassName(value interface{}) *ButtonToolbar {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * disabledOn
+ */
+func (a *ButtonToolbar) DisabledOn(value interface{}) *ButtonToolbar {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * hidden
+ */
+func (a *ButtonToolbar) Hidden(value interface{}) *ButtonToolbar {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * validateOnChange
+ */
+func (a *ButtonToolbar) ValidateOnChange(value interface{}) *ButtonToolbar {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * disabled
  */
 func (a *ButtonToolbar) Disabled(value interface{}) *ButtonToolbar {
     a.Set("disabled", value)
+    return a
+}
+
+/**
+ * onEvent
+ */
+func (a *ButtonToolbar) OnEvent(value interface{}) *ButtonToolbar {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * staticOn
+ */
+func (a *ButtonToolbar) StaticOn(value interface{}) *ButtonToolbar {
+    a.Set("staticOn", value)
     return a
 }

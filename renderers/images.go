@@ -31,46 +31,55 @@ func (a *Images) Set(name string, value interface{}) *Images {
     return a
 }
 /**
- * 是否禁用
+ * listClassName
  */
-func (a *Images) Disabled(value interface{}) *Images {
-    a.Set("disabled", value)
+func (a *Images) ListClassName(value interface{}) *Images {
+    a.Set("listClassName", value)
     return a
 }
 
 /**
- * 静态展示表单项Label类名
+ * width
  */
-func (a *Images) StaticLabelClassName(value interface{}) *Images {
-    a.Set("staticLabelClassName", value)
+func (a *Images) Width(value interface{}) *Images {
+    a.Set("width", value)
     return a
 }
 
 /**
+ * staticInputClassName
  */
-func (a *Images) StaticSchema(value interface{}) *Images {
-    a.Set("staticSchema", value)
+func (a *Images) StaticInputClassName(value interface{}) *Images {
+    a.Set("staticInputClassName", value)
     return a
 }
 
 /**
- * 是否显示尺寸。
+ * editorSetting
  */
-func (a *Images) ShowDimensions(value interface{}) *Images {
-    a.Set("showDimensions", value)
+func (a *Images) EditorSetting(value interface{}) *Images {
+    a.Set("editorSetting", value)
     return a
 }
 
 /**
- * 放大详情图 CSS 类名
+ * options
  */
-func (a *Images) ImageGallaryClassName(value interface{}) *Images {
-    a.Set("imageGallaryClassName", value)
+func (a *Images) Options(value interface{}) *Images {
+    a.Set("options", value)
     return a
 }
 
 /**
- * 工具栏配置
+ * enlargeAble
+ */
+func (a *Images) EnlargeAble(value interface{}) *Images {
+    a.Set("enlargeAble", value)
+    return a
+}
+
+/**
+ * toolbarActions
  */
 func (a *Images) ToolbarActions(value interface{}) *Images {
     a.Set("toolbarActions", value)
@@ -78,39 +87,31 @@ func (a *Images) ToolbarActions(value interface{}) *Images {
 }
 
 /**
- * 是否隐藏
+ * currentIndex
  */
-func (a *Images) Hidden(value interface{}) *Images {
-    a.Set("hidden", value)
+func (a *Images) CurrentIndex(value interface{}) *Images {
+    a.Set("currentIndex", value)
     return a
 }
 
 /**
- * 组件样式
+ * thumbMode
  */
-func (a *Images) Style(value interface{}) *Images {
-    a.Set("style", value)
+func (a *Images) ThumbMode(value interface{}) *Images {
+    a.Set("thumbMode", value)
     return a
 }
 
 /**
- * 默认图片地址
+ * height
  */
-func (a *Images) DefaultImage(value interface{}) *Images {
-    a.Set("defaultImage", value)
+func (a *Images) Height(value interface{}) *Images {
+    a.Set("height", value)
     return a
 }
 
 /**
- * 是否展示图片工具栏
- */
-func (a *Images) ShowToolbar(value interface{}) *Images {
-    a.Set("showToolbar", value)
-    return a
-}
-
-/**
- * 是否隐藏表达式
+ * hiddenOn
  */
 func (a *Images) HiddenOn(value interface{}) *Images {
     a.Set("hiddenOn", value)
@@ -118,7 +119,198 @@ func (a *Images) HiddenOn(value interface{}) *Images {
 }
 
 /**
- * 指定为图片集渲染器
+ * id
+ */
+func (a *Images) Id(value interface{}) *Images {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * onEvent
+ */
+func (a *Images) OnEvent(value interface{}) *Images {
+    a.Set("onEvent", value)
+    return a
+}
+
+/**
+ * static
+ */
+func (a *Images) Static(value interface{}) *Images {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * staticClassName
+ */
+func (a *Images) StaticClassName(value interface{}) *Images {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * name
+ */
+func (a *Images) Name(value interface{}) *Images {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * showDimensions
+ */
+func (a *Images) ShowDimensions(value interface{}) *Images {
+    a.Set("showDimensions", value)
+    return a
+}
+
+/**
+ * disabled
+ */
+func (a *Images) Disabled(value interface{}) *Images {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * staticLabelClassName
+ */
+func (a *Images) StaticLabelClassName(value interface{}) *Images {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * placeholder
+ */
+func (a *Images) Placeholder(value interface{}) *Images {
+    a.Set("placeholder", value)
+    return a
+}
+
+/**
+ * source
+ */
+func (a *Images) Source(value interface{}) *Images {
+    a.Set("source", value)
+    return a
+}
+
+/**
+ * fullThumbMode
+ */
+func (a *Images) FullThumbMode(value interface{}) *Images {
+    a.Set("fullThumbMode", value)
+    return a
+}
+
+/**
+ * fontStyle
+ */
+func (a *Images) FontStyle(value interface{}) *Images {
+    a.Set("fontStyle", value)
+    return a
+}
+
+/**
+ * className
+ */
+func (a *Images) ClassName(value interface{}) *Images {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * visible
+ */
+func (a *Images) Visible(value interface{}) *Images {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * thumbRatio
+ */
+func (a *Images) ThumbRatio(value interface{}) *Images {
+    a.Set("thumbRatio", value)
+    return a
+}
+
+/**
+ * originalSrc
+ */
+func (a *Images) OriginalSrc(value interface{}) *Images {
+    a.Set("originalSrc", value)
+    return a
+}
+
+/**
+ * imageGallaryClassName
+ */
+func (a *Images) ImageGallaryClassName(value interface{}) *Images {
+    a.Set("imageGallaryClassName", value)
+    return a
+}
+
+/**
+ * displayMode
+ */
+func (a *Images) DisplayMode(value interface{}) *Images {
+    a.Set("displayMode", value)
+    return a
+}
+
+/**
+ * sortType
+ */
+func (a *Images) SortType(value interface{}) *Images {
+    a.Set("sortType", value)
+    return a
+}
+
+/**
+ * hoverMode
+ */
+func (a *Images) HoverMode(value interface{}) *Images {
+    a.Set("hoverMode", value)
+    return a
+}
+
+/**
+ * delimiter
+ */
+func (a *Images) Delimiter(value interface{}) *Images {
+    a.Set("delimiter", value)
+    return a
+}
+
+/**
+ * disabledOn
+ */
+func (a *Images) DisabledOn(value interface{}) *Images {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * visibleOn
+ */
+func (a *Images) VisibleOn(value interface{}) *Images {
+    a.Set("visibleOn", value)
+    return a
+}
+
+/**
+ * staticSchema
+ */
+func (a *Images) StaticSchema(value interface{}) *Images {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
  * 可选值: images | static-images
  */
 func (a *Images) Type(value interface{}) *Images {
@@ -127,6 +319,7 @@ func (a *Images) Type(value interface{}) *Images {
 }
 
 /**
+ * testid
  */
 func (a *Images) Testid(value interface{}) *Images {
     a.Set("testid", value)
@@ -134,135 +327,23 @@ func (a *Images) Testid(value interface{}) *Images {
 }
 
 /**
- * 预览图比率
- * 可选值: 1:1 | 4:3 | 16:9
+ * defaultImage
  */
-func (a *Images) ThumbRatio(value interface{}) *Images {
-    a.Set("thumbRatio", value)
+func (a *Images) DefaultImage(value interface{}) *Images {
+    a.Set("defaultImage", value)
     return a
 }
 
 /**
- * 图片地址，默认读取数据中的 image 属性，如果不是请配置 ,如  ${imageUrl}
+ * showToolbar
  */
-func (a *Images) Src(value interface{}) *Images {
-    a.Set("src", value)
+func (a *Images) ShowToolbar(value interface{}) *Images {
+    a.Set("showToolbar", value)
     return a
 }
 
 /**
- * 列表 CSS 类名
- */
-func (a *Images) ListClassName(value interface{}) *Images {
-    a.Set("listClassName", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *Images) Visible(value interface{}) *Images {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 事件动作配置
- */
-func (a *Images) OnEvent(value interface{}) *Images {
-    a.Set("onEvent", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *Images) StaticOn(value interface{}) *Images {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *Images) StaticClassName(value interface{}) *Images {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 大图地址，不设置用 src 属性，如果不是请配置，如：${imageOriginUrl}
- */
-func (a *Images) OriginalSrc(value interface{}) *Images {
-    a.Set("originalSrc", value)
-    return a
-}
-
-/**
- * 是否禁用表达式
- */
-func (a *Images) DisabledOn(value interface{}) *Images {
-    a.Set("disabledOn", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *Images) StaticPlaceholder(value interface{}) *Images {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *Images) EditorSetting(value interface{}) *Images {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 预览图模式
- * 可选值: w-full | h-full | contain | cover
- */
-func (a *Images) ThumbMode(value interface{}) *Images {
-    a.Set("thumbMode", value)
-    return a
-}
-
-/**
- */
-func (a *Images) Options(value interface{}) *Images {
-    a.Set("options", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
- */
-func (a *Images) StaticInputClassName(value interface{}) *Images {
-    a.Set("staticInputClassName", value)
-    return a
-}
-
-/**
- */
-func (a *Images) TestIdBuilder(value interface{}) *Images {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 关联字段名，也可以直接配置 src
- */
-func (a *Images) Name(value interface{}) *Images {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
+ * useMobileUI
  */
 func (a *Images) UseMobileUI(value interface{}) *Images {
     a.Set("useMobileUI", value)
@@ -270,22 +351,7 @@ func (a *Images) UseMobileUI(value interface{}) *Images {
 }
 
 /**
- * 列表为空时显示
- */
-func (a *Images) Placeholder(value interface{}) *Images {
-    a.Set("placeholder", value)
-    return a
-}
-
-/**
- * 配置值的连接符
- */
-func (a *Images) Delimiter(value interface{}) *Images {
-    a.Set("delimiter", value)
-    return a
-}
-
-/**
+ * value
  */
 func (a *Images) Value(value interface{}) *Images {
     a.Set("value", value)
@@ -293,56 +359,57 @@ func (a *Images) Value(value interface{}) *Images {
 }
 
 /**
+ * maskColor
  */
-func (a *Images) Source(value interface{}) *Images {
-    a.Set("source", value)
+func (a *Images) MaskColor(value interface{}) *Images {
+    a.Set("maskColor", value)
     return a
 }
 
 /**
- * 放大时是否显示图片集
+ * hidden
+ */
+func (a *Images) Hidden(value interface{}) *Images {
+    a.Set("hidden", value)
+    return a
+}
+
+/**
+ * staticOn
+ */
+func (a *Images) StaticOn(value interface{}) *Images {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * staticPlaceholder
+ */
+func (a *Images) StaticPlaceholder(value interface{}) *Images {
+    a.Set("staticPlaceholder", value)
+    return a
+}
+
+/**
+ * style
+ */
+func (a *Images) Style(value interface{}) *Images {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * src
+ */
+func (a *Images) Src(value interface{}) *Images {
+    a.Set("src", value)
+    return a
+}
+
+/**
+ * enlargetWithImages
  */
 func (a *Images) EnlargetWithImages(value interface{}) *Images {
     a.Set("enlargetWithImages", value)
-    return a
-}
-
-/**
- * 外层 CSS 类名
- */
-func (a *Images) ClassName(value interface{}) *Images {
-    a.Set("className", value)
-    return a
-}
-
-/**
- * 是否显示表达式
- */
-func (a *Images) VisibleOn(value interface{}) *Images {
-    a.Set("visibleOn", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *Images) Id(value interface{}) *Images {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *Images) Static(value interface{}) *Images {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 是否启动放大功能。
- */
-func (a *Images) EnlargeAble(value interface{}) *Images {
-    a.Set("enlargeAble", value)
     return a
 }

@@ -4,6 +4,8 @@ type Html struct {
 	*Tpl
 }
 
-func NewHtml() *Tpl {
-	return NewTpl()
+func NewHtml() *Html {
+	return &Html{
+		Tpl: NewTpl(),
+	}
 }

@@ -31,7 +31,159 @@ func (a *InputGroupControl) Set(name string, value interface{}) *InputGroupContr
     return a
 }
 /**
- * 描述内容，支持 Html 片段。
+ * useMobileUI
+ */
+func (a *InputGroupControl) UseMobileUI(value interface{}) *InputGroupControl {
+    a.Set("useMobileUI", value)
+    return a
+}
+
+/**
+ * hint
+ */
+func (a *InputGroupControl) Hint(value interface{}) *InputGroupControl {
+    a.Set("hint", value)
+    return a
+}
+
+/**
+ * submitOnChange
+ */
+func (a *InputGroupControl) SubmitOnChange(value interface{}) *InputGroupControl {
+    a.Set("submitOnChange", value)
+    return a
+}
+
+/**
+ * horizontal
+ */
+func (a *InputGroupControl) Horizontal(value interface{}) *InputGroupControl {
+    a.Set("horizontal", value)
+    return a
+}
+
+/**
+ * validationConfig
+ */
+func (a *InputGroupControl) ValidationConfig(value interface{}) *InputGroupControl {
+    a.Set("validationConfig", value)
+    return a
+}
+
+/**
+ * autoFill
+ */
+func (a *InputGroupControl) AutoFill(value interface{}) *InputGroupControl {
+    a.Set("autoFill", value)
+    return a
+}
+
+/**
+ * disabledOn
+ */
+func (a *InputGroupControl) DisabledOn(value interface{}) *InputGroupControl {
+    a.Set("disabledOn", value)
+    return a
+}
+
+/**
+ * labelClassName
+ */
+func (a *InputGroupControl) LabelClassName(value interface{}) *InputGroupControl {
+    a.Set("labelClassName", value)
+    return a
+}
+
+/**
+ * staticLabelClassName
+ */
+func (a *InputGroupControl) StaticLabelClassName(value interface{}) *InputGroupControl {
+    a.Set("staticLabelClassName", value)
+    return a
+}
+
+/**
+ * editorSetting
+ */
+func (a *InputGroupControl) EditorSetting(value interface{}) *InputGroupControl {
+    a.Set("editorSetting", value)
+    return a
+}
+
+/**
+ * labelWidth
+ */
+func (a *InputGroupControl) LabelWidth(value interface{}) *InputGroupControl {
+    a.Set("labelWidth", value)
+    return a
+}
+
+/**
+ * validateOnChange
+ */
+func (a *InputGroupControl) ValidateOnChange(value interface{}) *InputGroupControl {
+    a.Set("validateOnChange", value)
+    return a
+}
+
+/**
+ * validationErrors
+ */
+func (a *InputGroupControl) ValidationErrors(value interface{}) *InputGroupControl {
+    a.Set("validationErrors", value)
+    return a
+}
+
+/**
+ * visible
+ */
+func (a *InputGroupControl) Visible(value interface{}) *InputGroupControl {
+    a.Set("visible", value)
+    return a
+}
+
+/**
+ * size
+ */
+func (a *InputGroupControl) Size(value interface{}) *InputGroupControl {
+    a.Set("size", value)
+    return a
+}
+
+/**
+ * validations
+ */
+func (a *InputGroupControl) Validations(value interface{}) *InputGroupControl {
+    a.Set("validations", value)
+    return a
+}
+
+/**
+ * row
+ */
+func (a *InputGroupControl) Row(value interface{}) *InputGroupControl {
+    a.Set("row", value)
+    return a
+}
+
+/**
+ * remark
+ */
+func (a *InputGroupControl) Remark(value interface{}) *InputGroupControl {
+    a.Set("remark", value)
+    return a
+}
+
+/**
+ * readOnly
+ */
+func (a *InputGroupControl) ReadOnly(value interface{}) *InputGroupControl {
+    a.Set("readOnly", value)
+    return a
+}
+
+/**
+ * description
  */
 func (a *InputGroupControl) Description(value interface{}) *InputGroupControl {
     a.Set("description", value)
@@ -39,10 +191,10 @@ func (a *InputGroupControl) Description(value interface{}) *InputGroupControl {
 }
 
 /**
- * 当配置为水平布局的时候，用来配置具体的左右分配。
+ * clearValueOnHidden
  */
-func (a *InputGroupControl) Horizontal(value interface{}) *InputGroupControl {
-    a.Set("horizontal", value)
+func (a *InputGroupControl) ClearValueOnHidden(value interface{}) *InputGroupControl {
+    a.Set("clearValueOnHidden", value)
     return a
 }
 
@@ -55,30 +207,15 @@ func (a *InputGroupControl) Width(value interface{}) *InputGroupControl {
 }
 
 /**
- * 是否禁用表达式
+ * readOnlyOn
  */
-func (a *InputGroupControl) DisabledOn(value interface{}) *InputGroupControl {
-    a.Set("disabledOn", value)
+func (a *InputGroupControl) ReadOnlyOn(value interface{}) *InputGroupControl {
+    a.Set("readOnlyOn", value)
     return a
 }
 
 /**
- * 输入提示，聚焦的时候显示
- */
-func (a *InputGroupControl) Hint(value interface{}) *InputGroupControl {
-    a.Set("hint", value)
-    return a
-}
-
-/**
- */
-func (a *InputGroupControl) Desc(value interface{}) *InputGroupControl {
-    a.Set("desc", value)
-    return a
-}
-
-/**
- * 占位符
+ * placeholder
  */
 func (a *InputGroupControl) Placeholder(value interface{}) *InputGroupControl {
     a.Set("placeholder", value)
@@ -86,157 +223,7 @@ func (a *InputGroupControl) Placeholder(value interface{}) *InputGroupControl {
 }
 
 /**
- * 是否为必填
- */
-func (a *InputGroupControl) Required(value interface{}) *InputGroupControl {
-    a.Set("required", value)
-    return a
-}
-
-/**
- */
-func (a *InputGroupControl) InitAutoFill(value interface{}) *InputGroupControl {
-    a.Set("initAutoFill", value)
-    return a
-}
-
-/**
- * FormItem 集合
- */
-func (a *InputGroupControl) Body(value interface{}) *InputGroupControl {
-    a.Set("body", value)
-    return a
-}
-
-/**
- * 是否显示
- */
-func (a *InputGroupControl) Visible(value interface{}) *InputGroupControl {
-    a.Set("visible", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *InputGroupControl) LabelAlign(value interface{}) *InputGroupControl {
-    a.Set("labelAlign", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容
- */
-func (a *InputGroupControl) Remark(value interface{}) *InputGroupControl {
-    a.Set("remark", value)
-    return a
-}
-
-/**
- * label自定义宽度，默认单位为px
- */
-func (a *InputGroupControl) LabelWidth(value interface{}) *InputGroupControl {
-    a.Set("labelWidth", value)
-    return a
-}
-
-/**
- * 静态展示表单项类名
- */
-func (a *InputGroupControl) StaticClassName(value interface{}) *InputGroupControl {
-    a.Set("staticClassName", value)
-    return a
-}
-
-/**
- * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
- */
-func (a *InputGroupControl) Name(value interface{}) *InputGroupControl {
-    a.Set("name", value)
-    return a
-}
-
-/**
- * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
- */
-func (a *InputGroupControl) ValidateOnChange(value interface{}) *InputGroupControl {
-    a.Set("validateOnChange", value)
-    return a
-}
-
-/**
- */
-func (a *InputGroupControl) Row(value interface{}) *InputGroupControl {
-    a.Set("row", value)
-    return a
-}
-
-/**
- * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
- */
-func (a *InputGroupControl) AutoFill(value interface{}) *InputGroupControl {
-    a.Set("autoFill", value)
-    return a
-}
-
-/**
- * 组件唯一 id，主要用于日志采集
- */
-func (a *InputGroupControl) Id(value interface{}) *InputGroupControl {
-    a.Set("id", value)
-    return a
-}
-
-/**
- * 是否静态展示
- */
-func (a *InputGroupControl) Static(value interface{}) *InputGroupControl {
-    a.Set("static", value)
-    return a
-}
-
-/**
- * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
- */
-func (a *InputGroupControl) ExtraName(value interface{}) *InputGroupControl {
-    a.Set("extraName", value)
-    return a
-}
-
-/**
- * 远端校验表单项接口
- */
-func (a *InputGroupControl) ValidateApi(value interface{}) *InputGroupControl {
-    a.Set("validateApi", value)
-    return a
-}
-
-/**
- * 是否静态展示表达式
- */
-func (a *InputGroupControl) StaticOn(value interface{}) *InputGroupControl {
-    a.Set("staticOn", value)
-    return a
-}
-
-/**
- * 可以组件级别用来关闭移动端样式
- */
-func (a *InputGroupControl) UseMobileUI(value interface{}) *InputGroupControl {
-    a.Set("useMobileUI", value)
-    return a
-}
-
-/**
- * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
- */
-func (a *InputGroupControl) LabelRemark(value interface{}) *InputGroupControl {
-    a.Set("labelRemark", value)
-    return a
-}
-
-/**
- * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+ * value
  */
 func (a *InputGroupControl) Value(value interface{}) *InputGroupControl {
     a.Set("value", value)
@@ -244,117 +231,31 @@ func (a *InputGroupControl) Value(value interface{}) *InputGroupControl {
 }
 
 /**
- * 容器 css 类名
+ * labelRemark
  */
-func (a *InputGroupControl) ClassName(value interface{}) *InputGroupControl {
-    a.Set("className", value)
+func (a *InputGroupControl) LabelRemark(value interface{}) *InputGroupControl {
+    a.Set("labelRemark", value)
     return a
 }
 
 /**
- * 表单项大小
- * 可选值: xs | sm | md | lg | full
+ * body
  */
-func (a *InputGroupControl) Size(value interface{}) *InputGroupControl {
-    a.Set("size", value)
+func (a *InputGroupControl) Body(value interface{}) *InputGroupControl {
+    a.Set("body", value)
     return a
 }
 
 /**
- * 验证失败的提示信息
+ * validateApi
  */
-func (a *InputGroupControl) ValidationErrors(value interface{}) *InputGroupControl {
-    a.Set("validationErrors", value)
+func (a *InputGroupControl) ValidateApi(value interface{}) *InputGroupControl {
+    a.Set("validateApi", value)
     return a
 }
 
 /**
- * 表单项类型
- */
-func (a *InputGroupControl) Type(value interface{}) *InputGroupControl {
-    a.Set("type", value)
-    return a
-}
-
-/**
- * 是否隐藏
- */
-func (a *InputGroupControl) Hidden(value interface{}) *InputGroupControl {
-    a.Set("hidden", value)
-    return a
-}
-
-/**
- * 静态展示空值占位
- */
-func (a *InputGroupControl) StaticPlaceholder(value interface{}) *InputGroupControl {
-    a.Set("staticPlaceholder", value)
-    return a
-}
-
-/**
- */
-func (a *InputGroupControl) StaticSchema(value interface{}) *InputGroupControl {
-    a.Set("staticSchema", value)
-    return a
-}
-
-/**
- */
-func (a *InputGroupControl) TestIdBuilder(value interface{}) *InputGroupControl {
-    a.Set("testIdBuilder", value)
-    return a
-}
-
-/**
- * 描述标题
- */
-func (a *InputGroupControl) Label(value interface{}) *InputGroupControl {
-    a.Set("label", value)
-    return a
-}
-
-/**
- * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
- */
-func (a *InputGroupControl) ClearValueOnHidden(value interface{}) *InputGroupControl {
-    a.Set("clearValueOnHidden", value)
-    return a
-}
-
-/**
- * 是否禁用
- */
-func (a *InputGroupControl) Disabled(value interface{}) *InputGroupControl {
-    a.Set("disabled", value)
-    return a
-}
-
-/**
- * 编辑器配置，运行时可以忽略
- */
-func (a *InputGroupControl) EditorSetting(value interface{}) *InputGroupControl {
-    a.Set("editorSetting", value)
-    return a
-}
-
-/**
- * 是否只读
- */
-func (a *InputGroupControl) ReadOnly(value interface{}) *InputGroupControl {
-    a.Set("readOnly", value)
-    return a
-}
-
-/**
- */
-func (a *InputGroupControl) Validations(value interface{}) *InputGroupControl {
-    a.Set("validations", value)
-    return a
-}
-
-/**
- * 是否显示表达式
+ * visibleOn
  */
 func (a *InputGroupControl) VisibleOn(value interface{}) *InputGroupControl {
     a.Set("visibleOn", value)
@@ -362,7 +263,15 @@ func (a *InputGroupControl) VisibleOn(value interface{}) *InputGroupControl {
 }
 
 /**
- * 事件动作配置
+ * id
+ */
+func (a *InputGroupControl) Id(value interface{}) *InputGroupControl {
+    a.Set("id", value)
+    return a
+}
+
+/**
+ * onEvent
  */
 func (a *InputGroupControl) OnEvent(value interface{}) *InputGroupControl {
     a.Set("onEvent", value)
@@ -370,39 +279,15 @@ func (a *InputGroupControl) OnEvent(value interface{}) *InputGroupControl {
 }
 
 /**
- * 组件样式
+ * staticPlaceholder
  */
-func (a *InputGroupControl) Style(value interface{}) *InputGroupControl {
-    a.Set("style", value)
+func (a *InputGroupControl) StaticPlaceholder(value interface{}) *InputGroupControl {
+    a.Set("staticPlaceholder", value)
     return a
 }
 
 /**
- * 表单 control 是否为 inline 模式。
- */
-func (a *InputGroupControl) Inline(value interface{}) *InputGroupControl {
-    a.Set("inline", value)
-    return a
-}
-
-/**
- * 校验提示信息配置
- */
-func (a *InputGroupControl) ValidationConfig(value interface{}) *InputGroupControl {
-    a.Set("validationConfig", value)
-    return a
-}
-
-/**
- * 静态展示表单项Label类名
- */
-func (a *InputGroupControl) StaticLabelClassName(value interface{}) *InputGroupControl {
-    a.Set("staticLabelClassName", value)
-    return a
-}
-
-/**
- * 静态展示表单项Value类名
+ * staticInputClassName
  */
 func (a *InputGroupControl) StaticInputClassName(value interface{}) *InputGroupControl {
     a.Set("staticInputClassName", value)
@@ -410,32 +295,54 @@ func (a *InputGroupControl) StaticInputClassName(value interface{}) *InputGroupC
 }
 
 /**
- * 配置当前表单项展示模式
- * 可选值: normal | inline | horizontal
  */
-func (a *InputGroupControl) Mode(value interface{}) *InputGroupControl {
-    a.Set("mode", value)
+func (a *InputGroupControl) Type(value interface{}) *InputGroupControl {
+    a.Set("type", value)
     return a
 }
 
 /**
- * 是否隐藏表达式
+ * labelOverflow
  */
-func (a *InputGroupControl) HiddenOn(value interface{}) *InputGroupControl {
-    a.Set("hiddenOn", value)
+func (a *InputGroupControl) LabelOverflow(value interface{}) *InputGroupControl {
+    a.Set("labelOverflow", value)
     return a
 }
 
 /**
- * 当修改完的时候是否提交表单。
+ * desc
  */
-func (a *InputGroupControl) SubmitOnChange(value interface{}) *InputGroupControl {
-    a.Set("submitOnChange", value)
+func (a *InputGroupControl) Desc(value interface{}) *InputGroupControl {
+    a.Set("desc", value)
     return a
 }
 
 /**
- * 配置描述上的 className
+ * required
+ */
+func (a *InputGroupControl) Required(value interface{}) *InputGroupControl {
+    a.Set("required", value)
+    return a
+}
+
+/**
+ * static
+ */
+func (a *InputGroupControl) Static(value interface{}) *InputGroupControl {
+    a.Set("static", value)
+    return a
+}
+
+/**
+ * name
+ */
+func (a *InputGroupControl) Name(value interface{}) *InputGroupControl {
+    a.Set("name", value)
+    return a
+}
+
+/**
+ * descriptionClassName
  */
 func (a *InputGroupControl) DescriptionClassName(value interface{}) *InputGroupControl {
     a.Set("descriptionClassName", value)
@@ -443,7 +350,111 @@ func (a *InputGroupControl) DescriptionClassName(value interface{}) *InputGroupC
 }
 
 /**
- * 配置 input className
+ * initAutoFill
+ */
+func (a *InputGroupControl) InitAutoFill(value interface{}) *InputGroupControl {
+    a.Set("initAutoFill", value)
+    return a
+}
+
+/**
+ * disabled
+ */
+func (a *InputGroupControl) Disabled(value interface{}) *InputGroupControl {
+    a.Set("disabled", value)
+    return a
+}
+
+/**
+ * hiddenOn
+ */
+func (a *InputGroupControl) HiddenOn(value interface{}) *InputGroupControl {
+    a.Set("hiddenOn", value)
+    return a
+}
+
+/**
+ * label
+ */
+func (a *InputGroupControl) Label(value interface{}) *InputGroupControl {
+    a.Set("label", value)
+    return a
+}
+
+/**
+ * inline
+ */
+func (a *InputGroupControl) Inline(value interface{}) *InputGroupControl {
+    a.Set("inline", value)
+    return a
+}
+
+/**
+ * staticOn
+ */
+func (a *InputGroupControl) StaticOn(value interface{}) *InputGroupControl {
+    a.Set("staticOn", value)
+    return a
+}
+
+/**
+ * staticClassName
+ */
+func (a *InputGroupControl) StaticClassName(value interface{}) *InputGroupControl {
+    a.Set("staticClassName", value)
+    return a
+}
+
+/**
+ * style
+ */
+func (a *InputGroupControl) Style(value interface{}) *InputGroupControl {
+    a.Set("style", value)
+    return a
+}
+
+/**
+ * extraName
+ */
+func (a *InputGroupControl) ExtraName(value interface{}) *InputGroupControl {
+    a.Set("extraName", value)
+    return a
+}
+
+/**
+ * className
+ */
+func (a *InputGroupControl) ClassName(value interface{}) *InputGroupControl {
+    a.Set("className", value)
+    return a
+}
+
+/**
+ * staticSchema
+ */
+func (a *InputGroupControl) StaticSchema(value interface{}) *InputGroupControl {
+    a.Set("staticSchema", value)
+    return a
+}
+
+/**
+ * labelAlign
+ */
+func (a *InputGroupControl) LabelAlign(value interface{}) *InputGroupControl {
+    a.Set("labelAlign", value)
+    return a
+}
+
+/**
+ * mode
+ */
+func (a *InputGroupControl) Mode(value interface{}) *InputGroupControl {
+    a.Set("mode", value)
+    return a
+}
+
+/**
+ * inputClassName
  */
 func (a *InputGroupControl) InputClassName(value interface{}) *InputGroupControl {
     a.Set("inputClassName", value)
@@ -451,17 +462,9 @@ func (a *InputGroupControl) InputClassName(value interface{}) *InputGroupControl
 }
 
 /**
- * 配置 label className
+ * hidden
  */
-func (a *InputGroupControl) LabelClassName(value interface{}) *InputGroupControl {
-    a.Set("labelClassName", value)
-    return a
-}
-
-/**
- * 只读条件
- */
-func (a *InputGroupControl) ReadOnlyOn(value interface{}) *InputGroupControl {
-    a.Set("readOnlyOn", value)
+func (a *InputGroupControl) Hidden(value interface{}) *InputGroupControl {
+    a.Set("hidden", value)
     return a
 }
