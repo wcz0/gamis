@@ -170,8 +170,8 @@ func ComboControl() *renderers.ComboControl {
 	return renderers.NewComboControl()
 }
 
-func Component() *renderers.Component {
-	return renderers.NewComponent()
+func Component(typeStr string) *renderers.Component {
+	return renderers.NewComponent(typeStr)
 }
 
 func ConditionBuilderControl() *renderers.ConditionBuilderControl {
