@@ -5,61 +5,50 @@ type Markdown struct {
 }
 
 func NewMarkdown() *Markdown {
-	m := &Markdown{
+	a := &Markdown{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	m.Set("type", "markdown")
-	return m
+
+	a.Set("type", "markdown")
+	return a
 }
 
-func (m *Markdown) Set(name string, value interface{}) *Markdown {
+func (a *Markdown) Set(name string, value interface{}) *Markdown {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	m.AmisSchema[name] = value
-	return m
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 类名
- */
-func (m *Markdown) ClassName(value interface{}) *Markdown {
-	m.Set("className", value)
-	return m
+func (a *Markdown) ClassName(value interface{}) *Markdown {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 名称
- */
-func (m *Markdown) Name(value interface{}) *Markdown {
-	m.Set("name", value)
-	return m
+func (a *Markdown) Name(value interface{}) *Markdown {
+	a.Set("name", value)
+	return a
 }
 
-func (m *Markdown) Options(value interface{}) *Markdown {
-	m.Set("options", value)
-	return m
+func (a *Markdown) Options(value interface{}) *Markdown {
+	a.Set("options", value)
+	return a
 }
 
-/**
- * 外部地址
- */
-func (m *Markdown) Src(value interface{}) *Markdown {
-	m.Set("src", value)
-	return m
+func (a *Markdown) Src(value interface{}) *Markdown {
+	a.Set("src", value)
+	return a
 }
 
-func (m *Markdown) Type(value interface{}) *Markdown {
-	m.Set("type", value)
-	return m
+func (a *Markdown) Type(value interface{}) *Markdown {
+	a.Set("type", value)
+	return a
 }
 
-/**
- * 静态值
- */
-func (m *Markdown) Value(value interface{}) *Markdown {
-	m.Set("value", value)
-	return m
+func (a *Markdown) Value(value interface{}) *Markdown {
+	a.Set("value", value)
+	return a
 }

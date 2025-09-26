@@ -5,35 +5,30 @@ type Barcode struct {
 }
 
 func NewBarcode() *Barcode {
-	b := &Barcode{
+	a := &Barcode{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	b.Set("type", "barcode")
-	return b
+
+	a.Set("type", "barcode")
+	return a
 }
 
-func (b *Barcode) Set(name string, value interface{}) *Barcode {
+func (a *Barcode) Set(name string, value interface{}) *Barcode {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	b.AmisSchema[name] = value
-	return b
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 外层类名
- */
-func (b *Barcode) ClassName(value interface{}) *Barcode {
-	b.Set("className", value)
-	return b
+func (a *Barcode) ClassName(value interface{}) *Barcode {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 指定为 barcode 渲染器。
- */
-func (b *Barcode) Type(value interface{}) *Barcode {
-	b.Set("type", value)
-	return b
+func (a *Barcode) Type(value interface{}) *Barcode {
+	a.Set("type", value)
+	return a
 }

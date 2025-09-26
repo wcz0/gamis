@@ -5,52 +5,40 @@ type ChartRadios struct {
 }
 
 func NewChartRadios() *ChartRadios {
-	c := &ChartRadios{
+	a := &ChartRadios{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	c.Set("type", "chart-radios")
-	return c
+
+	a.Set("type", "chart-radios")
+	return a
 }
 
-func (c *ChartRadios) Set(name string, value interface{}) *ChartRadios {
+func (a *ChartRadios) Set(name string, value interface{}) *ChartRadios {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	c.AmisSchema[name] = value
-	return c
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 图表数值字段名
- */
-
-func (c *ChartRadios) ChartValueField(value interface{}) *ChartRadios {
-	c.Set("chartValueField", value)
-	return c
+func (a *ChartRadios) ChartValueField(value interface{}) *ChartRadios {
+	a.Set("chartValueField", value)
+	return a
 }
 
-/**
- * 图表配置
- */
-func (c *ChartRadios) Config(value interface{}) *ChartRadios {
-	c.Set("config", value)
-	return c
+func (a *ChartRadios) Config(value interface{}) *ChartRadios {
+	a.Set("config", value)
+	return a
 }
 
-/**
- * 高亮的时候是否显示 tooltip
- */
-func (c *ChartRadios) ShowTooltipOnHighlight(value bool) *ChartRadios {
-	c.Set("showTooltipOnHighlight", value)
-	return c
+func (a *ChartRadios) ShowTooltipOnHighlight(value interface{}) *ChartRadios {
+	a.Set("showTooltipOnHighlight", value)
+	return a
 }
 
-/**
- * 指定为 chart-radios 渲染器。
- */
-func (c *ChartRadios) Type(value interface{}) *ChartRadios {
-	c.Set("type", value)
-	return c
+func (a *ChartRadios) Type(value interface{}) *ChartRadios {
+	a.Set("type", value)
+	return a
 }

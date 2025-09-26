@@ -5,107 +5,75 @@ type Log struct {
 }
 
 func NewLog() *Log {
-	l := &Log{
+	a := &Log{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	l.Set("type", "log")
-	return l
+
+	a.Set("type", "log")
+	return a
 }
 
-func (l *Log) Set(name string, value interface{}) *Log {
+func (a *Log) Set(name string, value interface{}) *Log {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	l.AmisSchema[name] = value
-	return l
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 是否自动滚动到底部
- */
-func (l *Log) AutoScroll(value interface{}) *Log {
-	l.Set("autoScroll", value)
-	return l
+func (a *Log) AutoScroll(value interface{}) *Log {
+	a.Set("autoScroll", value)
+	return a
 }
 
-/**
- * 外层 CSS 类名
- */
-func (l *Log) ClassName(value interface{}) *Log {
-	l.Set("className", value)
-	return l
+func (a *Log) ClassName(value interface{}) *Log {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 关闭 ANSI 颜色支持
- */
-func (l *Log) DisableColor(value interface{}) *Log {
-	l.Set("disableColor", value)
-	return l
+func (a *Log) DisableColor(value interface{}) *Log {
+	a.Set("disableColor", value)
+	return a
 }
 
-/**
- * 返回内容的字符编码
- */
-func (l *Log) Encoding(value interface{}) *Log {
-	l.Set("encoding", value)
-	return l
+func (a *Log) Encoding(value interface{}) *Log {
+	a.Set("encoding", value)
+	return a
 }
 
-/**
- * 展示区域高度
- */
-func (l *Log) Height(value interface{}) *Log {
-	l.Set("height", value)
-	return l
+func (a *Log) Height(value interface{}) *Log {
+	a.Set("height", value)
+	return a
 }
 
-/**
- * 最大显示行数
- */
-func (l *Log) MaxLength(value interface{}) *Log {
-	l.Set("maxLength", value)
-	return l
+func (a *Log) MaxLength(value interface{}) *Log {
+	a.Set("maxLength", value)
+	return a
 }
 
-/**
- * 可选日志操作：['stop', 'clear', 'showLineNumber', 'filter']
- */
-func (l *Log) Operation(value interface{}) *Log {
-	l.Set("operation", value)
-	return l
+func (a *Log) Operation(value interface{}) *Log {
+	a.Set("operation", value)
+	return a
 }
 
-/**
- * 加载中的文字
- */
-func (l *Log) Placeholder(value interface{}) *Log {
-	l.Set("placeholder", value)
-	return l
+func (a *Log) Placeholder(value interface{}) *Log {
+	a.Set("placeholder", value)
+	return a
 }
 
-/**
- * 设置每行高度，将会开启虚拟渲染
- */
-func (l *Log) RowHeight(value interface{}) *Log {
-	l.Set("rowHeight", value)
-	return l
+func (a *Log) RowHeight(value interface{}) *Log {
+	a.Set("rowHeight", value)
+	return a
 }
 
-/**
- * 接口
- */
-func (l *Log) Source(value interface{}) *Log {
-	l.Set("source", value)
-	return l
+func (a *Log) Source(value interface{}) *Log {
+	a.Set("source", value)
+	return a
 }
 
-/**
- * 指定为 log 渲染器。
- */
-func (l *Log) Type(value interface{}) *Log {
-	l.Set("type", value)
-	return l
+func (a *Log) Type(value interface{}) *Log {
+	a.Set("type", value)
+	return a
 }

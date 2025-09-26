@@ -5,39 +5,40 @@ type WebComponent struct {
 }
 
 func NewWebComponent() *WebComponent {
-	w := &WebComponent{
+	a := &WebComponent{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	w.Set("type", "web_component")
-	return w
+
+	a.Set("type", "web-component")
+	return a
 }
 
-func (w *WebComponent) Set(name string, value interface{}) *WebComponent {
+func (a *WebComponent) Set(name string, value interface{}) *WebComponent {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	w.AmisSchema[name] = value
-	return w
+	a.AmisSchema[name] = value
+	return a
 }
 
-func (w *WebComponent) body(value interface{}) *WebComponent {
-	w.Set("body", value)
-	return w
+func (a *WebComponent) Body(value interface{}) *WebComponent {
+	a.Set("body", value)
+	return a
 }
 
-func (w *WebComponent) Props(value interface{}) *WebComponent {
-	w.Set("props", value)
-	return w
+func (a *WebComponent) Props(value interface{}) *WebComponent {
+	a.Set("props", value)
+	return a
 }
 
-func (w *WebComponent) Tag(value interface{}) *WebComponent {
-	w.Set("tag", value)
-	return w
+func (a *WebComponent) Tag(value interface{}) *WebComponent {
+	a.Set("tag", value)
+	return a
 }
 
-func (w *WebComponent) Type(value interface{}) *WebComponent {
-	w.Set("type", value)
-	return w
+func (a *WebComponent) Type(value interface{}) *WebComponent {
+	a.Set("type", value)
+	return a
 }

@@ -5,83 +5,59 @@ type Toast struct {
 }
 
 func NewToast() *Toast {
-	t := &Toast{
+	a := &Toast{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	t.Set("type", "toast")
-	return t
+
+	return a
 }
 
-func (t *Toast) Set(name string, value interface{}) *Toast {
+func (a *Toast) Set(name string, value interface{}) *Toast {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	t.AmisSchema[name] = value
-	return t
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 内容
- */
-func (t *Toast) Body(value interface{}) *Toast {
-	t.Set("body", value)
-	return t
+func (a *Toast) Body(value interface{}) *Toast {
+	a.Set("body", value)
+	return a
 }
 
-/**
- * 是否显示关闭按钮
- */
-func (t *Toast) CloseButton(value bool) *Toast {
-	t.Set("closeButton", value)
-	return t
+func (a *Toast) CloseButton(value interface{}) *Toast {
+	a.Set("closeButton", value)
+	return a
 }
 
-/**
- * 轻提示内容
- */
-func (t *Toast) Items(value interface{}) *Toast {
-	t.Set("items", value)
-	return t
+func (a *Toast) Items(value interface{}) *Toast {
+	a.Set("items", value)
+	return a
 }
 
-/**
- * 展示图标，可选'info'/'success'/'error'/'warning'
- */
-func (t *Toast) Level(value interface{}) *Toast {
-	t.Set("level", value)
-	return t
+func (a *Toast) Level(value interface{}) *Toast {
+	a.Set("level", value)
+	return a
 }
 
-/**
- * 提示显示位置，可选值: top-right | top-center | top-left | bottom-center | bottom-left | bottom-right | center
- */
-func (t *Toast) Position(value interface{}) *Toast {
-	t.Set("position", value)
-	return t
+func (a *Toast) Position(value interface{}) *Toast {
+	a.Set("position", value)
+	return a
 }
 
-/**
- * 是否显示图标
- */
-func (t *Toast) ShowIcon(value bool) *Toast {
-	t.Set("showIcon", value)
-	return t
+func (a *Toast) ShowIcon(value interface{}) *Toast {
+	a.Set("showIcon", value)
+	return a
 }
 
-/**
- * 持续时间
- */
-func (t *Toast) Timeout(value interface{}) *Toast {
-	t.Set("timeout", value)
-	return t
+func (a *Toast) Timeout(value interface{}) *Toast {
+	a.Set("timeout", value)
+	return a
 }
 
-/**
- * 标题
- */
-func (t *Toast) Title(value interface{}) *Toast {
-	t.Set("title", value)
-	return t
+func (a *Toast) Title(value interface{}) *Toast {
+	a.Set("title", value)
+	return a
 }

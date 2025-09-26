@@ -1,70 +1,69 @@
 package renderers
 
 type Custom struct {
-    *BaseRenderer
+	*BaseRenderer
 }
 
 func NewCustom() *Custom {
-    c := &Custom{
-        BaseRenderer: NewBaseRenderer(),
-    }
-    c.Set("type", "custom")
-    return c
+	a := &Custom{
+		BaseRenderer: NewBaseRenderer(),
+	}
+
+	a.Set("type", "custom")
+	return a
 }
 
-func (c *Custom) Set(name string, value interface{}) *Custom {
-    if name == "map" {
-        if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
-            value = mapOfArrays(v)
-        }
-    }
-    c.AmisSchema[name] = value
-    return c
+func (a *Custom) Set(name string, value interface{}) *Custom {
+	if name == "map" {
+		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
+			value = mapOfArrays(v)
+		}
+	}
+	a.AmisSchema[name] = value
+	return a
 }
 
-func (c *Custom) ClassName(value interface{}) *Custom {
-    c.Set("className", value)
-    return c
+func (a *Custom) ClassName(value interface{}) *Custom {
+	a.Set("className", value)
+	return a
 }
 
-
-
-func (c *Custom) Html(value interface{}) *Custom {
-    c.Set("html", value)
-    return c
+func (a *Custom) Html(value interface{}) *Custom {
+	a.Set("html", value)
+	return a
 }
 
-func (c *Custom) Id(value interface{}) *Custom {
-    c.Set("id", value)
-    return c
+func (a *Custom) Id(value interface{}) *Custom {
+	a.Set("id", value)
+	return a
 }
 
-func (c *Custom) Inline(value interface{}) *Custom {
-    c.Set("inline", value)
-    return c
+func (a *Custom) Inline(value interface{}) *Custom {
+	a.Set("inline", value)
+	return a
 }
 
-func (c *Custom) Name(value interface{}) *Custom {
-    c.Set("name", value)
-    return c
+func (a *Custom) Name(value interface{}) *Custom {
+	a.Set("name", value)
+	return a
 }
 
-func (c *Custom) OnMount(value interface{}) *Custom {
-    c.Set("onMount", value)
-    return c
+func (a *Custom) OnMount(value interface{}) *Custom {
+	a.Set("onMount", value)
+	return a
 }
 
-func (c *Custom) OnUnmount(value interface{}) *Custom {
-    c.Set("onUnmount", value)
-    return c
+func (a *Custom) OnUnmount(value interface{}) *Custom {
+	a.Set("onUnmount", value)
+	return a
 }
 
-func (c *Custom) OnUpdate(value interface{}) *Custom {
-    c.Set("onUpdate", value)
-    return c
+func (a *Custom) OnUpdate(value interface{}) *Custom {
+	a.Set("onUpdate", value)
+	return a
 }
 
-func (c *Custom) Type(value interface{}) *Custom {
-    c.Set("type", value)
-    return c
+func (a *Custom) Type(value interface{}) *Custom {
+	a.Set("type", value)
+	return a
 }

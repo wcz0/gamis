@@ -5,83 +5,60 @@ type Code struct {
 }
 
 func NewCode() *Code {
-	c := &Code{
+	a := &Code{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	c.Set("type", "code")
-	return c
+
+	a.Set("type", "code")
+	return a
 }
 
-func (c *Code) Set(name string, value interface{}) *Code {
+func (a *Code) Set(name string, value interface{}) *Code {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	c.AmisSchema[name] = value
-	return c
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 外层 CSS 类名
- */
-func (c *Code) ClassName(value interface{}) *Code {
-	c.Set("className", value)
-	return c
+func (a *Code) ClassName(value interface{}) *Code {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 主题，还有 'vs-dark'
- */
-func (c *Code) EditorTheme(value interface{}) *Code {
-	c.Set("editorTheme", value)
-	return c
+func (a *Code) EditorTheme(value interface{}) *Code {
+	a.Set("editorTheme", value)
+	return a
 }
 
-/**
- * 所使用的高亮语言，默认是 plaintext
- */
-func (c *Code) Language(value interface{}) *Code {
-	c.Set("language", value)
-	return c
+func (a *Code) Language(value interface{}) *Code {
+	a.Set("language", value)
+	return a
 }
 
-/**
- * 在其他组件中，时，用作变量映射
- */
-func (c *Code) Name(value interface{}) *Code {
-	c.Set("name", value)
-	return c
+func (a *Code) Name(value interface{}) *Code {
+	a.Set("name", value)
+	return a
 }
 
-/**
- * 默认 tab 大小
- */
-func (c *Code) TabSize(value interface{}) *Code {
-	c.Set("tabSize", value)
-	return c
+func (a *Code) TabSize(value interface{}) *Code {
+	a.Set("tabSize", value)
+	return a
 }
 
-/**
- * 指定为 code 渲染器。
- */
-func (c *Code) Type(value interface{}) *Code {
-	c.Set("type", value)
-	return c
+func (a *Code) Type(value interface{}) *Code {
+	a.Set("type", value)
+	return a
 }
 
-/**
- * 显示的颜色值
- */
-func (c *Code) Value(value interface{}) *Code {
-	c.Set("value", value)
-	return c
+func (a *Code) Value(value interface{}) *Code {
+	a.Set("value", value)
+	return a
 }
 
-/**
- * 是否折行
- */
-func (c *Code) WordWrap(value bool) *Code {
-	c.Set("wordWrap", value)
-	return c
+func (a *Code) WordWrap(value interface{}) *Code {
+	a.Set("wordWrap", value)
+	return a
 }

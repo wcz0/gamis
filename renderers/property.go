@@ -5,107 +5,75 @@ type Property struct {
 }
 
 func NewProperty() *Property {
-	p := &Property{
+	a := &Property{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	p.Set("type", "property")
-	return p
+
+	a.Set("type", "property")
+	return a
 }
 
-func (p *Property) Set(name string, value interface{}) *Property {
+func (a *Property) Set(name string, value interface{}) *Property {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	p.AmisSchema[name] = value
-	return p
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 外层 dom 的类名
- */
-func (p *Property) ClassName(value interface{}) *Property {
-	p.Set("className", value)
-	return p
+func (a *Property) ClassName(value interface{}) *Property {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 每行几列
- */
-func (p *Property) Column(value interface{}) *Property {
-	p.Set("column", value)
-	return p
+func (a *Property) Column(value interface{}) *Property {
+	a.Set("column", value)
+	return a
 }
 
-/**
- * 属性值的样式
- */
-func (p *Property) ContentStyle(value interface{}) *Property {
-	p.Set("contentStyle", value)
-	return p
+func (a *Property) ContentStyle(value interface{}) *Property {
+	a.Set("contentStyle", value)
+	return a
 }
 
-/**
- *
- */
-func (p *Property) Items(value interface{}) *Property {
-	p.Set("items", value)
-	return p
+func (a *Property) Items(value interface{}) *Property {
+	a.Set("items", value)
+	return a
 }
 
-/**
- * 属性名的样式
- */
-func (p *Property) LabelStyle(value interface{}) *Property {
-	p.Set("labelStyle", value)
-	return p
+func (a *Property) LabelStyle(value interface{}) *Property {
+	a.Set("labelStyle", value)
+	return a
 }
 
-/**
- * 显示模式，目前只有 'table' 和 'simple'
- */
-func (p *Property) Mode(value interface{}) *Property {
-	p.Set("mode", value)
-	return p
+func (a *Property) Mode(value interface{}) *Property {
+	a.Set("mode", value)
+	return a
 }
 
-/**
- * 模式下属性名和值之间的分隔符
- */
-func (p *Property) Separator(value interface{}) *Property {
-	p.Set("separator", value)
-	return p
+func (a *Property) Separator(value interface{}) *Property {
+	a.Set("separator", value)
+	return a
 }
 
-/**
- * 数据源
- */
-func (p *Property) Source(value interface{}) *Property {
-	p.Set("source", value)
-	return p
+func (a *Property) Source(value interface{}) *Property {
+	a.Set("source", value)
+	return a
 }
 
-/**
- * 外层 dom 的样式
- */
-func (p *Property) Style(value interface{}) *Property {
-	p.Set("style", value)
-	return p
+func (a *Property) Style(value interface{}) *Property {
+	a.Set("style", value)
+	return a
 }
 
-/**
- * 标题
- */
-func (p *Property) Title(value interface{}) *Property {
-	p.Set("title", value)
-	return p
+func (a *Property) Title(value interface{}) *Property {
+	a.Set("title", value)
+	return a
 }
 
-/**
- * 指定为 property 渲染器。
- */
-func (p *Property) Type(value interface{}) *Property {
-	p.Set("type", value)
-	return p
+func (a *Property) Type(value interface{}) *Property {
+	a.Set("type", value)
+	return a
 }

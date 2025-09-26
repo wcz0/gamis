@@ -5,227 +5,150 @@ type InputExcel struct {
 }
 
 func NewInputExcel() *InputExcel {
-	i := &InputExcel{
+	a := &InputExcel{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	i.Set("type", "input-excel")
-	return i
+
+	a.Set("type", "input-excel")
+	return a
 }
 
-func (i *InputExcel) Set(name string, value interface{}) *InputExcel {
+func (a *InputExcel) Set(name string, value interface{}) *InputExcel {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	i.AmisSchema[name] = value
-	return i
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 是否解析所有 sheet
- */
-func (i *InputExcel) AllSheets(value bool) *InputExcel {
-	i.Set("allSheets", value)
-	return i
+func (a *InputExcel) AllSheets(value interface{}) *InputExcel {
+	a.Set("allSheets", value)
+	return a
 }
 
-/**
- * 数据录入配置，自动填充或者参照录入
- */
-func (i *InputExcel) AutoFill(value interface{}) *InputExcel {
-	i.Set("autoFill", value)
-	return i
+func (a *InputExcel) AutoFill(value interface{}) *InputExcel {
+	a.Set("autoFill", value)
+	return a
 }
 
-/**
- * 表单最外层类名
- */
-func (i *InputExcel) ClassName(value interface{}) *InputExcel {
-	i.Set("className", value)
-	return i
+func (a *InputExcel) ClassName(value interface{}) *InputExcel {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 表单项描述
- */
-func (i *InputExcel) Description(value interface{}) *InputExcel {
-	i.Set("description", value)
-	return i
+func (a *InputExcel) Description(value interface{}) *InputExcel {
+	a.Set("description", value)
+	return a
 }
 
-/**
- * 是否禁用
- */
-func (i *InputExcel) Disabled(value bool) *InputExcel {
-	i.Set("disabled", value)
-	return i
+func (a *InputExcel) Disabled(value interface{}) *InputExcel {
+	a.Set("disabled", value)
+	return a
 }
 
-/**
- * 当前表单项是否禁用的条件
- */
-func (i *InputExcel) DisabledOn(value interface{}) *InputExcel {
-	i.Set("disabledOn", value)
-	return i
+func (a *InputExcel) DisabledOn(value interface{}) *InputExcel {
+	a.Set("disabledOn", value)
+	return a
 }
 
-/**
- * 是否解析所有 sheet
- */
-func (i *InputExcel) IncludeEmpty(value bool) *InputExcel {
-	i.Set("includeEmpty", value)
-	return i
+func (a *InputExcel) IncludeEmpty(value interface{}) *InputExcel {
+	a.Set("includeEmpty", value)
+	return a
 }
 
-/**
- * 是否内联
- */
-func (i *InputExcel) Inline(value bool) *InputExcel {
-	i.Set("inline", value)
-	return i
+func (a *InputExcel) Inline(value interface{}) *InputExcel {
+	a.Set("inline", value)
+	return a
 }
 
-/**
- * 表单控制器类名
- */
-func (i *InputExcel) InputClassName(value interface{}) *InputExcel {
-	i.Set("inputClassName", value)
-	return i
+func (a *InputExcel) InputClassName(value interface{}) *InputExcel {
+	a.Set("inputClassName", value)
+	return a
 }
 
-/**
- * 表单项标签
- */
-func (i *InputExcel) Label(value interface{}) *InputExcel {
-	i.Set("label", value)
-	return i
+func (a *InputExcel) Label(value interface{}) *InputExcel {
+	a.Set("label", value)
+	return a
 }
 
-/**
- * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
- */
-func (i *InputExcel) LabelAlign(value interface{}) *InputExcel {
-	i.Set("labelAlign", value)
-	return i
+func (a *InputExcel) LabelAlign(value interface{}) *InputExcel {
+	a.Set("labelAlign", value)
+	return a
 }
 
-/**
- * label 的类名
- */
-func (i *InputExcel) LabelClassName(value interface{}) *InputExcel {
-	i.Set("labelClassName", value)
-	return i
+func (a *InputExcel) LabelClassName(value interface{}) *InputExcel {
+	a.Set("labelClassName", value)
+	return a
 }
 
-/**
- * 表单项标签描述
- */
-func (i *InputExcel) LabelRemark(value interface{}) *InputExcel {
-	i.Set("labelRemark", value)
-	return i
+func (a *InputExcel) LabelRemark(value interface{}) *InputExcel {
+	a.Set("labelRemark", value)
+	return a
 }
 
-/**
- * 字段名，指定该表单项提交时的 key
- */
-func (i *InputExcel) Name(value interface{}) *InputExcel {
-	i.Set("name", value)
-	return i
+func (a *InputExcel) Name(value interface{}) *InputExcel {
+	a.Set("name", value)
+	return a
 }
 
-/**
- * 解析模式
- */
-func (i *InputExcel) ParseMode(value interface{}) *InputExcel {
-	i.Set("parseMode", value)
-	return i
+func (a *InputExcel) ParseMode(value interface{}) *InputExcel {
+	a.Set("parseMode", value)
+	return a
 }
 
-/**
- * 表单项描述
- */
-func (i *InputExcel) Placeholder(value interface{}) *InputExcel {
-	i.Set("placeholder", value)
-	return i
+func (a *InputExcel) Placeholder(value interface{}) *InputExcel {
+	a.Set("placeholder", value)
+	return a
 }
 
-/**
- * 是否解析为纯文本
- */
-func (i *InputExcel) PlainText(value bool) *InputExcel {
-	i.Set("plainText", value)
-	return i
+func (a *InputExcel) PlainText(value interface{}) *InputExcel {
+	a.Set("plainText", value)
+	return a
 }
 
-/**
- * 是否必填
- */
-func (i *InputExcel) Required(value bool) *InputExcel {
-	i.Set("required", value)
-	return i
+func (a *InputExcel) Required(value interface{}) *InputExcel {
+	a.Set("required", value)
+	return a
 }
 
-/**
- * 通过表达式来配置当前表单项是否为必填。
- */
-func (i *InputExcel) RequiredOn(value interface{}) *InputExcel {
-	i.Set("requiredOn", value)
-	return i
+func (a *InputExcel) RequiredOn(value interface{}) *InputExcel {
+	a.Set("requiredOn", value)
+	return a
 }
 
-/**
- * 是否该表单项值发生变化时就提交当前表单。
- */
-func (i *InputExcel) SubmitOnChange(value bool) *InputExcel {
-	i.Set("submitOnChange", value)
-	return i
+func (a *InputExcel) SubmitOnChange(value interface{}) *InputExcel {
+	a.Set("submitOnChange", value)
+	return a
 }
 
-/**
- * 指定为 input-excel 渲染器。
- */
-func (i *InputExcel) Type(value interface{}) *InputExcel {
-	i.Set("type", value)
-	return i
+func (a *InputExcel) Type(value interface{}) *InputExcel {
+	a.Set("type", value)
+	return a
 }
 
-/**
- * 表单校验接口
- */
-func (i *InputExcel) ValidateApi(value interface{}) *InputExcel {
-	i.Set("validateApi", value)
-	return i
+func (a *InputExcel) ValidateApi(value interface{}) *InputExcel {
+	a.Set("validateApi", value)
+	return a
 }
 
-/**
- * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
- */
-func (i *InputExcel) Validations(value interface{}) *InputExcel {
-	i.Set("validations", value)
-	return i
+func (a *InputExcel) Validations(value interface{}) *InputExcel {
+	a.Set("validations", value)
+	return a
 }
 
-/**
- * 表单默认值
- */
-func (i *InputExcel) Value(value interface{}) *InputExcel {
-	i.Set("value", value)
-	return i
+func (a *InputExcel) Value(value interface{}) *InputExcel {
+	a.Set("value", value)
+	return a
 }
 
-/**
- * 是否可见
- */
-func (i *InputExcel) Visible(value bool) *InputExcel {
-	i.Set("visible", value)
-	return i
+func (a *InputExcel) Visible(value interface{}) *InputExcel {
+	a.Set("visible", value)
+	return a
 }
 
-/**
- * 当前表单项是否禁用的条件
- */
-func (i *InputExcel) VisibleOn(value interface{}) *InputExcel {
-	i.Set("visibleOn", value)
-	return i
+func (a *InputExcel) VisibleOn(value interface{}) *InputExcel {
+	a.Set("visibleOn", value)
+	return a
 }

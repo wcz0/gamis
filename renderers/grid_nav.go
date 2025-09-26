@@ -5,131 +5,90 @@ type GridNav struct {
 }
 
 func NewGridNav() *GridNav {
-	g := &GridNav{
+	a := &GridNav{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	g.Set("type", "grid-nav")
-	return g
+
+	a.Set("type", "grid-nav")
+	return a
 }
 
-func (g *GridNav) Set(name string, value interface{}) *GridNav {
+func (a *GridNav) Set(name string, value interface{}) *GridNav {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	g.AmisSchema[name] = value
-	return g
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 是否显示列表项边框
- */
-func (g *GridNav) Border(value bool) *GridNav {
-	g.Set("border", value)
-	return g
+func (a *GridNav) Border(value interface{}) *GridNav {
+	a.Set("border", value)
+	return a
 }
 
-/**
- * 是否将列表项内容居中显示
- */
-func (g *GridNav) Center(value bool) *GridNav {
-	g.Set("center", value)
-	return g
+func (a *GridNav) Center(value interface{}) *GridNav {
+	a.Set("center", value)
+	return a
 }
 
-/**
- * 外层 CSS 类名
- */
-func (g *GridNav) ClassName(value interface{}) *GridNav {
-	g.Set("className", value)
-	return g
+func (a *GridNav) ClassName(value interface{}) *GridNav {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 列数
- */
-func (g *GridNav) ColumnNum(value interface{}) *GridNav {
-	g.Set("columnNum", value)
-	return g
+func (a *GridNav) ColumnNum(value interface{}) *GridNav {
+	a.Set("columnNum", value)
+	return a
 }
 
-/**
- * 列表项内容排列的方向，可选值为 horizontal 、vertical
- */
-func (g *GridNav) Direction(value interface{}) *GridNav {
-	g.Set("direction", value)
-	return g
+func (a *GridNav) Direction(value interface{}) *GridNav {
+	a.Set("direction", value)
+	return a
 }
 
-/**
- * 列表项之间的间距，默认单位为px
- */
-func (g *GridNav) Gutter(value interface{}) *GridNav {
-	g.Set("gutter", value)
-	return g
+func (a *GridNav) Gutter(value interface{}) *GridNav {
+	a.Set("gutter", value)
+	return a
 }
 
-/**
- * 图标宽度占比，单位%
- */
-func (g *GridNav) IconRatio(value interface{}) *GridNav {
-	g.Set("iconRatio", value)
-	return g
+func (a *GridNav) IconRatio(value interface{}) *GridNav {
+	a.Set("iconRatio", value)
+	return a
 }
 
-/**
- * 列表项 css 类名
- */
-func (g *GridNav) ItemClassName(value interface{}) *GridNav {
-	g.Set("itemClassName", value)
-	return g
+func (a *GridNav) ItemClassName(value interface{}) *GridNav {
+	a.Set("itemClassName", value)
+	return a
 }
 
-/**
- * 列表项图标
- */
-func (g *GridNav) Options(value interface{}) *GridNav {
-	g.Set("options", value)
-	return g
+func (a *GridNav) Options(value interface{}) *GridNav {
+	a.Set("options", value)
+	return a
 }
 
-/**
- * 是否调换图标和文本的位置
- */
-func (g *GridNav) Reverse(value bool) *GridNav {
-	g.Set("reverse", value)
-	return g
+func (a *GridNav) Reverse(value interface{}) *GridNav {
+	a.Set("reverse", value)
+	return a
 }
 
-/**
- * 数据源
- */
-func (g *GridNav) Source(value interface{}) *GridNav {
-	g.Set("source", value)
-	return g
+func (a *GridNav) Source(value interface{}) *GridNav {
+	a.Set("source", value)
+	return a
 }
 
-/**
- * 是否将列表项固定为正方形
- */
-func (g *GridNav) Square(value bool) *GridNav {
-	g.Set("square", value)
-	return g
+func (a *GridNav) Square(value interface{}) *GridNav {
+	a.Set("square", value)
+	return a
 }
 
-/**
- * 指定为 grid-nav 渲染器。
- */
-func (g *GridNav) Type(value interface{}) *GridNav {
-	g.Set("type", value)
-	return g
+func (a *GridNav) Type(value interface{}) *GridNav {
+	a.Set("type", value)
+	return a
 }
 
-/**
- * 图片数组
- */
-func (g *GridNav) Value(value interface{}) *GridNav {
-	g.Set("value", value)
-	return g
+func (a *GridNav) Value(value interface{}) *GridNav {
+	a.Set("value", value)
+	return a
 }

@@ -5,235 +5,155 @@ type InputTimeRange struct {
 }
 
 func NewInputTimeRange() *InputTimeRange {
-	i := &InputTimeRange{
+	a := &InputTimeRange{
 		BaseRenderer: NewBaseRenderer(),
 	}
-	i.Set("type", "input-time-range")
-	return i
+
+	a.Set("type", "input-time-range")
+	return a
 }
 
-func (i *InputTimeRange) Set(name string, value interface{}) *InputTimeRange {
+func (a *InputTimeRange) Set(name string, value interface{}) *InputTimeRange {
 	if name == "map" {
 		if v, ok := value.([]interface{}); ok && isArrayOfArrays(v) {
 			value = mapOfArrays(v)
 		}
 	}
-	i.AmisSchema[name] = value
-	return i
+	a.AmisSchema[name] = value
+	return a
 }
 
-/**
- * 数据录入配置，自动填充或者参照录入
- */
-func (i *InputTimeRange) AutoFill(value interface{}) *InputTimeRange {
-	i.Set("autoFill", value)
-	return i
+func (a *InputTimeRange) AutoFill(value interface{}) *InputTimeRange {
+	a.Set("autoFill", value)
+	return a
 }
 
-/**
- * 表单最外层类名
- */
-func (i *InputTimeRange) ClassName(value interface{}) *InputTimeRange {
-	i.Set("className", value)
-	return i
+func (a *InputTimeRange) ClassName(value interface{}) *InputTimeRange {
+	a.Set("className", value)
+	return a
 }
 
-/**
- * 是否可清除。
- */
-func (i *InputTimeRange) Clearable(value bool) *InputTimeRange {
-	i.Set("clearable", value)
-	return i
+func (a *InputTimeRange) Clearable(value interface{}) *InputTimeRange {
+	a.Set("clearable", value)
+	return a
 }
 
-/**
- * 表单项描述
- */
-func (i *InputTimeRange) Description(value interface{}) *InputTimeRange {
-	i.Set("description", value)
-	return i
+func (a *InputTimeRange) Description(value interface{}) *InputTimeRange {
+	a.Set("description", value)
+	return a
 }
 
-/**
- * 是否禁用
- */
-func (i *InputTimeRange) Disabled(value bool) *InputTimeRange {
-	i.Set("disabled", value)
-	return i
+func (a *InputTimeRange) Disabled(value interface{}) *InputTimeRange {
+	a.Set("disabled", value)
+	return a
 }
 
-/**
- * 当前表单项是否禁用的条件
- */
-func (i *InputTimeRange) DisabledOn(value interface{}) *InputTimeRange {
-	i.Set("disabledOn", value)
-	return i
+func (a *InputTimeRange) DisabledOn(value interface{}) *InputTimeRange {
+	a.Set("disabledOn", value)
+	return a
 }
 
-/**
- * 是否内联模式。
- */
-func (i *InputTimeRange) Embed(value bool) *InputTimeRange {
-	i.Set("embed", value)
-	return i
+func (a *InputTimeRange) Embed(value interface{}) *InputTimeRange {
+	a.Set("embed", value)
+	return a
 }
 
-/**
- * 时间范围选择器值格式
- */
-func (i *InputTimeRange) Format(value interface{}) *InputTimeRange {
-	i.Set("format", value)
-	return i
+func (a *InputTimeRange) Format(value interface{}) *InputTimeRange {
+	a.Set("format", value)
+	return a
 }
 
-/**
- * 是否内联
- */
-func (i *InputTimeRange) Inline(value bool) *InputTimeRange {
-	i.Set("inline", value)
-	return i
+func (a *InputTimeRange) Inline(value interface{}) *InputTimeRange {
+	a.Set("inline", value)
+	return a
 }
 
-/**
- * 表单控制器类名
- */
-func (i *InputTimeRange) InputClassName(value interface{}) *InputTimeRange {
-	i.Set("inputClassName", value)
-	return i
+func (a *InputTimeRange) InputClassName(value interface{}) *InputTimeRange {
+	a.Set("inputClassName", value)
+	return a
 }
 
-/**
- * 时间范围选择器显示格式
- */
-func (i *InputTimeRange) InputFormat(value interface{}) *InputTimeRange {
-	i.Set("inputFormat", value)
-	return i
+func (a *InputTimeRange) InputFormat(value interface{}) *InputTimeRange {
+	a.Set("inputFormat", value)
+	return a
 }
 
-/**
- * 表单项标签
- */
-func (i *InputTimeRange) Label(value interface{}) *InputTimeRange {
-	i.Set("label", value)
-	return i
+func (a *InputTimeRange) Label(value interface{}) *InputTimeRange {
+	a.Set("label", value)
+	return a
 }
 
-/**
- * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
- */
-func (i *InputTimeRange) LabelAlign(value interface{}) *InputTimeRange {
-	i.Set("labelAlign", value)
-	return i
+func (a *InputTimeRange) LabelAlign(value interface{}) *InputTimeRange {
+	a.Set("labelAlign", value)
+	return a
 }
 
-/**
- * label 的类名
- */
-func (i *InputTimeRange) LabelClassName(value interface{}) *InputTimeRange {
-	i.Set("labelClassName", value)
-	return i
+func (a *InputTimeRange) LabelClassName(value interface{}) *InputTimeRange {
+	a.Set("labelClassName", value)
+	return a
 }
 
-/**
- * 表单项标签描述
- */
-func (i *InputTimeRange) LabelRemark(value interface{}) *InputTimeRange {
-	i.Set("labelRemark", value)
-	return i
+func (a *InputTimeRange) LabelRemark(value interface{}) *InputTimeRange {
+	a.Set("labelRemark", value)
+	return a
 }
 
-/**
- * 字段名，指定该表单项提交时的 key
- */
-func (i *InputTimeRange) Name(value interface{}) *InputTimeRange {
-	i.Set("name", value)
-	return i
+func (a *InputTimeRange) Name(value interface{}) *InputTimeRange {
+	a.Set("name", value)
+	return a
 }
 
-/**
- * 占位文本
- */
-func (i *InputTimeRange) Placeholder(value interface{}) *InputTimeRange {
-	i.Set("placeholder", value)
-	return i
+func (a *InputTimeRange) Placeholder(value interface{}) *InputTimeRange {
+	a.Set("placeholder", value)
+	return a
 }
 
-/**
- * 是否必填
- */
-func (i *InputTimeRange) Required(value bool) *InputTimeRange {
-	i.Set("required", value)
-	return i
+func (a *InputTimeRange) Required(value interface{}) *InputTimeRange {
+	a.Set("required", value)
+	return a
 }
 
-/**
- * 通过表达式来配置当前表单项是否为必填。
- */
-func (i *InputTimeRange) RequiredOn(value interface{}) *InputTimeRange {
-	i.Set("requiredOn", value)
-	return i
+func (a *InputTimeRange) RequiredOn(value interface{}) *InputTimeRange {
+	a.Set("requiredOn", value)
+	return a
 }
 
-/**
- * 是否该表单项值发生变化时就提交当前表单。
- */
-func (i *InputTimeRange) SubmitOnChange(value bool) *InputTimeRange {
-	i.Set("submitOnChange", value)
-	return i
+func (a *InputTimeRange) SubmitOnChange(value interface{}) *InputTimeRange {
+	a.Set("submitOnChange", value)
+	return a
 }
 
-/**
- * 时间范围选择器值格式
- */
-func (i *InputTimeRange) TimeFormat(value interface{}) *InputTimeRange {
-	i.Set("timeFormat", value)
-	return i
+func (a *InputTimeRange) TimeFormat(value interface{}) *InputTimeRange {
+	a.Set("timeFormat", value)
+	return a
 }
 
-/**
- * 指定为 input-time-range 渲染器。
- */
-func (i *InputTimeRange) Type(value interface{}) *InputTimeRange {
-	i.Set("type", value)
-	return i
+func (a *InputTimeRange) Type(value interface{}) *InputTimeRange {
+	a.Set("type", value)
+	return a
 }
 
-/**
- * 表单校验接口
- */
-func (i *InputTimeRange) ValidateApi(value interface{}) *InputTimeRange {
-	i.Set("validateApi", value)
-	return i
+func (a *InputTimeRange) ValidateApi(value interface{}) *InputTimeRange {
+	a.Set("validateApi", value)
+	return a
 }
 
-/**
- * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
- */
-func (i *InputTimeRange) Validations(value interface{}) *InputTimeRange {
-	i.Set("validations", value)
-	return i
+func (a *InputTimeRange) Validations(value interface{}) *InputTimeRange {
+	a.Set("validations", value)
+	return a
 }
 
-/**
- * 表单默认值
- */
-func (i *InputTimeRange) Value(value interface{}) *InputTimeRange {
-	i.Set("value", value)
-	return i
+func (a *InputTimeRange) Value(value interface{}) *InputTimeRange {
+	a.Set("value", value)
+	return a
 }
 
-/**
- * 是否可见
- */
-func (i *InputTimeRange) Visible(value bool) *InputTimeRange {
-	i.Set("visible", value)
-	return i
+func (a *InputTimeRange) Visible(value interface{}) *InputTimeRange {
+	a.Set("visible", value)
+	return a
 }
 
-/**
- * 当前表单项是否禁用的条件
- */
-func (i *InputTimeRange) VisibleOn(value interface{}) *InputTimeRange {
-	i.Set("visibleOn", value)
-	return i
+func (a *InputTimeRange) VisibleOn(value interface{}) *InputTimeRange {
+	a.Set("visibleOn", value)
+	return a
 }
