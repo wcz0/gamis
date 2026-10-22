@@ -2,6 +2,8 @@
 
 amis 低代码框架, json 映射
 
+变更记录见 [CHANGELOG.md](./CHANGELOG.md)。
+
 ## feature
 - amis 常用组件
 - component 自定义组件
