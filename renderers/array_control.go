@@ -63,6 +63,11 @@ func (a *ArrayControl) ClearValueOnHidden(value interface{}) *ArrayControl {
 	return a
 }
 
+func (a *ArrayControl) Conditions(value interface{}) *ArrayControl {
+	a.Set("conditions", value)
+	return a
+}
+
 func (a *ArrayControl) DeleteApi(value interface{}) *ArrayControl {
 	a.Set("deleteApi", value)
 	return a
@@ -198,6 +203,11 @@ func (a *ArrayControl) LabelClassName(value interface{}) *ArrayControl {
 	return a
 }
 
+func (a *ArrayControl) LabelOverflow(value interface{}) *ArrayControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *ArrayControl) LabelRemark(value interface{}) *ArrayControl {
 	a.Set("labelRemark", value)
 	return a
@@ -260,6 +270,11 @@ func (a *ArrayControl) Nullable(value interface{}) *ArrayControl {
 
 func (a *ArrayControl) OnEvent(value interface{}) *ArrayControl {
 	a.Set("onEvent", value)
+	return a
+}
+
+func (a *ArrayControl) PerPage(value interface{}) *ArrayControl {
+	a.Set("perPage", value)
 	return a
 }
 

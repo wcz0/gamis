@@ -9,7 +9,7 @@ func NewEmailAction() *EmailAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -130,6 +130,11 @@ func (a *EmailAction) HiddenOn(value interface{}) *EmailAction {
 
 func (a *EmailAction) HotKey(value interface{}) *EmailAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *EmailAction) Href(value interface{}) *EmailAction {
+	a.Set("href", value)
 	return a
 }
 

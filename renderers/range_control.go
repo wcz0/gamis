@@ -143,6 +143,11 @@ func (a *RangeControl) LabelClassName(value interface{}) *RangeControl {
 	return a
 }
 
+func (a *RangeControl) LabelOverflow(value interface{}) *RangeControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *RangeControl) LabelRemark(value interface{}) *RangeControl {
 	a.Set("labelRemark", value)
 	return a

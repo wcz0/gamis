@@ -128,6 +128,11 @@ func (a *UUIDControl) LabelClassName(value interface{}) *UUIDControl {
 	return a
 }
 
+func (a *UUIDControl) LabelOverflow(value interface{}) *UUIDControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *UUIDControl) LabelRemark(value interface{}) *UUIDControl {
 	a.Set("labelRemark", value)
 	return a

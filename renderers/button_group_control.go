@@ -68,6 +68,11 @@ func (a *ButtonGroupControl) Buttons(value interface{}) *ButtonGroupControl {
 	return a
 }
 
+func (a *ButtonGroupControl) CheckAll(value interface{}) *ButtonGroupControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *ButtonGroupControl) ClassName(value interface{}) *ButtonGroupControl {
 	a.Set("className", value)
 	return a
@@ -250,6 +255,11 @@ func (a *ButtonGroupControl) LabelAlign(value interface{}) *ButtonGroupControl {
 
 func (a *ButtonGroupControl) LabelClassName(value interface{}) *ButtonGroupControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *ButtonGroupControl) LabelOverflow(value interface{}) *ButtonGroupControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

@@ -178,6 +178,11 @@ func (a *SubFormControl) LabelField(value interface{}) *SubFormControl {
 	return a
 }
 
+func (a *SubFormControl) LabelOverflow(value interface{}) *SubFormControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *SubFormControl) LabelRemark(value interface{}) *SubFormControl {
 	a.Set("labelRemark", value)
 	return a

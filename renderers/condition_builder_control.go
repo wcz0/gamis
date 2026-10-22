@@ -178,6 +178,11 @@ func (a *ConditionBuilderControl) LabelClassName(value interface{}) *ConditionBu
 	return a
 }
 
+func (a *ConditionBuilderControl) LabelOverflow(value interface{}) *ConditionBuilderControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *ConditionBuilderControl) LabelRemark(value interface{}) *ConditionBuilderControl {
 	a.Set("labelRemark", value)
 	return a

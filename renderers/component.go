@@ -542,6 +542,11 @@ func (a *Component) BtnLevel(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) BtnSize(value interface{}) *Component {
+	a.Set("btnSize", value)
+	return a
+}
+
 func (a *Component) BtnText(value interface{}) *Component {
 	a.Set("btnText", value)
 	return a
@@ -1672,6 +1677,11 @@ func (a *Component) ErrorStatusCode(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) EvalMode(value interface{}) *Component {
+	a.Set("evalMode", value)
+	return a
+}
+
 func (a *Component) Events(value interface{}) *Component {
 	a.Set("events", value)
 	return a
@@ -1992,6 +2002,16 @@ func (a *Component) Funcs(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) FunctionClassName(value interface{}) *Component {
+	a.Set("functionClassName", value)
+	return a
+}
+
+func (a *Component) Functions(value interface{}) *Component {
+	a.Set("functions", value)
+	return a
+}
+
 func (a *Component) Gap(value interface{}) *Component {
 	a.Set("gap", value)
 	return a
@@ -2017,6 +2037,11 @@ func (a *Component) GetLocationPlaceholder(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) GridClassName(value interface{}) *Component {
+	a.Set("gridClassName", value)
+	return a
+}
+
 func (a *Component) Grids(value interface{}) *Component {
 	a.Set("grids", value)
 	return a
@@ -2024,6 +2049,11 @@ func (a *Component) Grids(value interface{}) *Component {
 
 func (a *Component) Gutter(value interface{}) *Component {
 	a.Set("gutter", value)
+	return a
+}
+
+func (a *Component) H(value interface{}) *Component {
+	a.Set("h", value)
 	return a
 }
 
@@ -2199,6 +2229,11 @@ func (a *Component) Icon(value interface{}) *Component {
 
 func (a *Component) IconClassName(value interface{}) *Component {
 	a.Set("iconClassName", value)
+	return a
+}
+
+func (a *Component) IconField(value interface{}) *Component {
+	a.Set("iconField", value)
 	return a
 }
 
@@ -2417,6 +2452,11 @@ func (a *Component) InputFormat(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) InputMode(value interface{}) *Component {
+	a.Set("inputMode", value)
+	return a
+}
+
 func (a *Component) InputName(value interface{}) *Component {
 	a.Set("inputName", value)
 	return a
@@ -2424,6 +2464,11 @@ func (a *Component) InputName(value interface{}) *Component {
 
 func (a *Component) InputParams(value interface{}) *Component {
 	a.Set("inputParams", value)
+	return a
+}
+
+func (a *Component) InputSettings(value interface{}) *Component {
+	a.Set("inputSettings", value)
 	return a
 }
 
@@ -2619,6 +2664,11 @@ func (a *Component) LabelMap(value interface{}) *Component {
 
 func (a *Component) LabelMaxLength(value interface{}) *Component {
 	a.Set("labelMaxLength", value)
+	return a
+}
+
+func (a *Component) LabelOverflow(value interface{}) *Component {
+	a.Set("labelOverflow", value)
 	return a
 }
 
@@ -2974,6 +3024,11 @@ func (a *Component) MinRows(value interface{}) *Component {
 
 func (a *Component) Mini(value interface{}) *Component {
 	a.Set("mini", value)
+	return a
+}
+
+func (a *Component) MixedMode(value interface{}) *Component {
+	a.Set("mixedMode", value)
 	return a
 }
 
@@ -3352,6 +3407,11 @@ func (a *Component) PersistDataKeys(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) PersistKey(value interface{}) *Component {
+	a.Set("persistKey", value)
+	return a
+}
+
 func (a *Component) PickerIcon(value interface{}) *Component {
 	a.Set("pickerIcon", value)
 	return a
@@ -3657,6 +3717,11 @@ func (a *Component) ResetAfterSubmit(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) ResetOnFailed(value interface{}) *Component {
+	a.Set("resetOnFailed", value)
+	return a
+}
+
 func (a *Component) ResetValue(value interface{}) *Component {
 	a.Set("resetValue", value)
 	return a
@@ -3947,6 +4012,11 @@ func (a *Component) Selections(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) SelfVariableName(value interface{}) *Component {
+	a.Set("selfVariableName", value)
+	return a
+}
+
 func (a *Component) SendOn(value interface{}) *Component {
 	a.Set("sendOn", value)
 	return a
@@ -3959,6 +4029,11 @@ func (a *Component) Separator(value interface{}) *Component {
 
 func (a *Component) SeparatorClassName(value interface{}) *Component {
 	a.Set("separatorClassName", value)
+	return a
+}
+
+func (a *Component) SetIf(value interface{}) *Component {
+	a.Set("if", value)
 	return a
 }
 
@@ -4562,6 +4637,11 @@ func (a *Component) Testid(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) TestidBuilder(value interface{}) *Component {
+	a.Set("testidBuilder", value)
+	return a
+}
+
 func (a *Component) Text(value interface{}) *Component {
 	a.Set("text", value)
 	return a
@@ -4774,6 +4854,11 @@ func (a *Component) TrackExpression(value interface{}) *Component {
 
 func (a *Component) Transform(value interface{}) *Component {
 	a.Set("transform", value)
+	return a
+}
+
+func (a *Component) TreeClassName(value interface{}) *Component {
+	a.Set("treeClassName", value)
 	return a
 }
 
@@ -4997,6 +5082,21 @@ func (a *Component) ValuesNoWrap(value interface{}) *Component {
 	return a
 }
 
+func (a *Component) VariableClassName(value interface{}) *Component {
+	a.Set("variableClassName", value)
+	return a
+}
+
+func (a *Component) VariableMode(value interface{}) *Component {
+	a.Set("variableMode", value)
+	return a
+}
+
+func (a *Component) Variables(value interface{}) *Component {
+	a.Set("variables", value)
+	return a
+}
+
 func (a *Component) Vendor(value interface{}) *Component {
 	a.Set("vendor", value)
 	return a
@@ -5029,6 +5129,11 @@ func (a *Component) Visible(value interface{}) *Component {
 
 func (a *Component) VisibleOn(value interface{}) *Component {
 	a.Set("visibleOn", value)
+	return a
+}
+
+func (a *Component) W(value interface{}) *Component {
+	a.Set("w", value)
 	return a
 }
 

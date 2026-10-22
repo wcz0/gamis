@@ -9,6 +9,7 @@ func NewFeedbackDialog() *FeedbackDialog {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
+	a.Set("type", "dialog")
 	return a
 }
 
@@ -24,6 +25,11 @@ func (a *FeedbackDialog) Set(name string, value interface{}) *FeedbackDialog {
 
 func (a *FeedbackDialog) Actions(value interface{}) *FeedbackDialog {
 	a.Set("actions", value)
+	return a
+}
+
+func (a *FeedbackDialog) AllowFullscreen(value interface{}) *FeedbackDialog {
+	a.Set("allowFullscreen", value)
 	return a
 }
 
@@ -224,6 +230,11 @@ func (a *FeedbackDialog) Testid(value interface{}) *FeedbackDialog {
 
 func (a *FeedbackDialog) Title(value interface{}) *FeedbackDialog {
 	a.Set("title", value)
+	return a
+}
+
+func (a *FeedbackDialog) Type(value interface{}) *FeedbackDialog {
+	a.Set("type", value)
 	return a
 }
 

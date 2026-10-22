@@ -58,6 +58,11 @@ func (a *TreeControl) Cascade(value interface{}) *TreeControl {
 	return a
 }
 
+func (a *TreeControl) CheckAll(value interface{}) *TreeControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TreeControl) ClassName(value interface{}) *TreeControl {
 	a.Set("className", value)
 	return a
@@ -218,6 +223,11 @@ func (a *TreeControl) Horizontal(value interface{}) *TreeControl {
 	return a
 }
 
+func (a *TreeControl) IconField(value interface{}) *TreeControl {
+	a.Set("iconField", value)
+	return a
+}
+
 func (a *TreeControl) Id(value interface{}) *TreeControl {
 	a.Set("id", value)
 	return a
@@ -275,6 +285,11 @@ func (a *TreeControl) LabelClassName(value interface{}) *TreeControl {
 
 func (a *TreeControl) LabelField(value interface{}) *TreeControl {
 	a.Set("labelField", value)
+	return a
+}
+
+func (a *TreeControl) LabelOverflow(value interface{}) *TreeControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 
@@ -480,6 +495,11 @@ func (a *TreeControl) SubmitOnChange(value interface{}) *TreeControl {
 
 func (a *TreeControl) TestIdBuilder(value interface{}) *TreeControl {
 	a.Set("testIdBuilder", value)
+	return a
+}
+
+func (a *TreeControl) TreeClassName(value interface{}) *TreeControl {
+	a.Set("treeClassName", value)
 	return a
 }
 

@@ -58,6 +58,11 @@ func (a *TextControl) BorderMode(value interface{}) *TextControl {
 	return a
 }
 
+func (a *TextControl) CheckAll(value interface{}) *TextControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TextControl) ClassName(value interface{}) *TextControl {
 	a.Set("className", value)
 	return a
@@ -250,6 +255,11 @@ func (a *TextControl) LabelAlign(value interface{}) *TextControl {
 
 func (a *TextControl) LabelClassName(value interface{}) *TextControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *TextControl) LabelOverflow(value interface{}) *TextControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

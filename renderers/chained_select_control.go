@@ -43,6 +43,11 @@ func (a *ChainedSelectControl) AutoFill(value interface{}) *ChainedSelectControl
 	return a
 }
 
+func (a *ChainedSelectControl) CheckAll(value interface{}) *ChainedSelectControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *ChainedSelectControl) ClassName(value interface{}) *ChainedSelectControl {
 	a.Set("className", value)
 	return a
@@ -225,6 +230,11 @@ func (a *ChainedSelectControl) LabelAlign(value interface{}) *ChainedSelectContr
 
 func (a *ChainedSelectControl) LabelClassName(value interface{}) *ChainedSelectControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *ChainedSelectControl) LabelOverflow(value interface{}) *ChainedSelectControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

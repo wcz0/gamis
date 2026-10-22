@@ -153,6 +153,11 @@ func (a *NumberControl) LabelClassName(value interface{}) *NumberControl {
 	return a
 }
 
+func (a *NumberControl) LabelOverflow(value interface{}) *NumberControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *NumberControl) LabelRemark(value interface{}) *NumberControl {
 	a.Set("labelRemark", value)
 	return a

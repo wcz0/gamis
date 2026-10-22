@@ -138,6 +138,11 @@ func (a *StaticExactControl) LabelClassName(value interface{}) *StaticExactContr
 	return a
 }
 
+func (a *StaticExactControl) LabelOverflow(value interface{}) *StaticExactControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *StaticExactControl) LabelRemark(value interface{}) *StaticExactControl {
 	a.Set("labelRemark", value)
 	return a

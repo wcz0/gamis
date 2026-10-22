@@ -48,6 +48,11 @@ func (a *TabsTransferControl) AutoFill(value interface{}) *TabsTransferControl {
 	return a
 }
 
+func (a *TabsTransferControl) CheckAll(value interface{}) *TabsTransferControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TabsTransferControl) ClassName(value interface{}) *TabsTransferControl {
 	a.Set("className", value)
 	return a
@@ -245,6 +250,11 @@ func (a *TabsTransferControl) LabelAlign(value interface{}) *TabsTransferControl
 
 func (a *TabsTransferControl) LabelClassName(value interface{}) *TabsTransferControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *TabsTransferControl) LabelOverflow(value interface{}) *TabsTransferControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

@@ -47,6 +47,11 @@ func (a *Option) Disabled(value interface{}) *Option {
 	return a
 }
 
+func (a *Option) DisabledTip(value interface{}) *Option {
+	a.Set("disabledTip", value)
+	return a
+}
+
 func (a *Option) Hidden(value interface{}) *Option {
 	a.Set("hidden", value)
 	return a

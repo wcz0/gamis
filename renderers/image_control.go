@@ -253,6 +253,11 @@ func (a *ImageControl) LabelClassName(value interface{}) *ImageControl {
 	return a
 }
 
+func (a *ImageControl) LabelOverflow(value interface{}) *ImageControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *ImageControl) LabelRemark(value interface{}) *ImageControl {
 	a.Set("labelRemark", value)
 	return a

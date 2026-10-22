@@ -143,6 +143,11 @@ func (a *GroupControl) LabelClassName(value interface{}) *GroupControl {
 	return a
 }
 
+func (a *GroupControl) LabelOverflow(value interface{}) *GroupControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *GroupControl) LabelRemark(value interface{}) *GroupControl {
 	a.Set("labelRemark", value)
 	return a

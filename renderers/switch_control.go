@@ -133,6 +133,11 @@ func (a *SwitchControl) LabelClassName(value interface{}) *SwitchControl {
 	return a
 }
 
+func (a *SwitchControl) LabelOverflow(value interface{}) *SwitchControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *SwitchControl) LabelRemark(value interface{}) *SwitchControl {
 	a.Set("labelRemark", value)
 	return a

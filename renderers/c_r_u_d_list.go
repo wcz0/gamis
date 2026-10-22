@@ -273,6 +273,11 @@ func (a *CRUDList) MatchFunc(value interface{}) *CRUDList {
 	return a
 }
 
+func (a *CRUDList) MaxKeepItemSelectionLength(value interface{}) *CRUDList {
+	a.Set("maxKeepItemSelectionLength", value)
+	return a
+}
+
 func (a *CRUDList) Messages(value interface{}) *CRUDList {
 	a.Set("messages", value)
 	return a

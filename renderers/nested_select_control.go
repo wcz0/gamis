@@ -53,6 +53,11 @@ func (a *NestedSelectControl) Cascade(value interface{}) *NestedSelectControl {
 	return a
 }
 
+func (a *NestedSelectControl) CheckAll(value interface{}) *NestedSelectControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *NestedSelectControl) ClassName(value interface{}) *NestedSelectControl {
 	a.Set("className", value)
 	return a
@@ -240,6 +245,11 @@ func (a *NestedSelectControl) LabelAlign(value interface{}) *NestedSelectControl
 
 func (a *NestedSelectControl) LabelClassName(value interface{}) *NestedSelectControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *NestedSelectControl) LabelOverflow(value interface{}) *NestedSelectControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

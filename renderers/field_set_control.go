@@ -188,6 +188,11 @@ func (a *FieldSetControl) LabelClassName(value interface{}) *FieldSetControl {
 	return a
 }
 
+func (a *FieldSetControl) LabelOverflow(value interface{}) *FieldSetControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *FieldSetControl) LabelRemark(value interface{}) *FieldSetControl {
 	a.Set("labelRemark", value)
 	return a

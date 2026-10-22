@@ -268,6 +268,11 @@ func (a *CRUDCards) MatchFunc(value interface{}) *CRUDCards {
 	return a
 }
 
+func (a *CRUDCards) MaxKeepItemSelectionLength(value interface{}) *CRUDCards {
+	a.Set("maxKeepItemSelectionLength", value)
+	return a
+}
+
 func (a *CRUDCards) Messages(value interface{}) *CRUDCards {
 	a.Set("messages", value)
 	return a

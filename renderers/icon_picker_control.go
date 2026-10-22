@@ -128,6 +128,11 @@ func (a *IconPickerControl) LabelClassName(value interface{}) *IconPickerControl
 	return a
 }
 
+func (a *IconPickerControl) LabelOverflow(value interface{}) *IconPickerControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *IconPickerControl) LabelRemark(value interface{}) *IconPickerControl {
 	a.Set("labelRemark", value)
 	return a

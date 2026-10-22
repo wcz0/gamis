@@ -273,6 +273,11 @@ func (a *CRUDTable) MatchFunc(value interface{}) *CRUDTable {
 	return a
 }
 
+func (a *CRUDTable) MaxKeepItemSelectionLength(value interface{}) *CRUDTable {
+	a.Set("maxKeepItemSelectionLength", value)
+	return a
+}
+
 func (a *CRUDTable) Messages(value interface{}) *CRUDTable {
 	a.Set("messages", value)
 	return a
@@ -340,6 +345,11 @@ func (a *CRUDTable) PerPageAvailable(value interface{}) *CRUDTable {
 
 func (a *CRUDTable) PerPageField(value interface{}) *CRUDTable {
 	a.Set("perPageField", value)
+	return a
+}
+
+func (a *CRUDTable) PersistKey(value interface{}) *CRUDTable {
+	a.Set("persistKey", value)
 	return a
 }
 

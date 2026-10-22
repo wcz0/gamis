@@ -128,6 +128,11 @@ func (a *DropdownButton) OverlayPlacement(value interface{}) *DropdownButton {
 	return a
 }
 
+func (a *DropdownButton) PopOverContainerSelector(value interface{}) *DropdownButton {
+	a.Set("popOverContainerSelector", value)
+	return a
+}
+
 func (a *DropdownButton) RightIcon(value interface{}) *DropdownButton {
 	a.Set("rightIcon", value)
 	return a

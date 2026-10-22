@@ -138,6 +138,11 @@ func (a *TextareaControl) LabelClassName(value interface{}) *TextareaControl {
 	return a
 }
 
+func (a *TextareaControl) LabelOverflow(value interface{}) *TextareaControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *TextareaControl) LabelRemark(value interface{}) *TextareaControl {
 	a.Set("labelRemark", value)
 	return a

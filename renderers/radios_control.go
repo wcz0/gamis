@@ -43,6 +43,11 @@ func (a *RadiosControl) AutoFill(value interface{}) *RadiosControl {
 	return a
 }
 
+func (a *RadiosControl) CheckAll(value interface{}) *RadiosControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *RadiosControl) ClassName(value interface{}) *RadiosControl {
 	a.Set("className", value)
 	return a
@@ -230,6 +235,11 @@ func (a *RadiosControl) LabelAlign(value interface{}) *RadiosControl {
 
 func (a *RadiosControl) LabelClassName(value interface{}) *RadiosControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *RadiosControl) LabelOverflow(value interface{}) *RadiosControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

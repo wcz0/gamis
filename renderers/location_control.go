@@ -148,6 +148,11 @@ func (a *LocationControl) LabelClassName(value interface{}) *LocationControl {
 	return a
 }
 
+func (a *LocationControl) LabelOverflow(value interface{}) *LocationControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *LocationControl) LabelRemark(value interface{}) *LocationControl {
 	a.Set("labelRemark", value)
 	return a

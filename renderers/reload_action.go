@@ -9,7 +9,7 @@ func NewReloadAction() *ReloadAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -120,6 +120,11 @@ func (a *ReloadAction) HiddenOn(value interface{}) *ReloadAction {
 
 func (a *ReloadAction) HotKey(value interface{}) *ReloadAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *ReloadAction) Href(value interface{}) *ReloadAction {
+	a.Set("href", value)
 	return a
 }
 

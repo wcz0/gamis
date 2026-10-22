@@ -138,6 +138,11 @@ func (a *EditorControl) LabelClassName(value interface{}) *EditorControl {
 	return a
 }
 
+func (a *EditorControl) LabelOverflow(value interface{}) *EditorControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *EditorControl) LabelRemark(value interface{}) *EditorControl {
 	a.Set("labelRemark", value)
 	return a

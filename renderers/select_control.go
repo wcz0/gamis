@@ -273,6 +273,11 @@ func (a *SelectControl) LabelField(value interface{}) *SelectControl {
 	return a
 }
 
+func (a *SelectControl) LabelOverflow(value interface{}) *SelectControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *SelectControl) LabelRemark(value interface{}) *SelectControl {
 	a.Set("labelRemark", value)
 	return a

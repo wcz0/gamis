@@ -133,6 +133,11 @@ func (a *FormControl) LabelClassName(value interface{}) *FormControl {
 	return a
 }
 
+func (a *FormControl) LabelOverflow(value interface{}) *FormControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *FormControl) LabelRemark(value interface{}) *FormControl {
 	a.Set("labelRemark", value)
 	return a

@@ -133,6 +133,11 @@ func (a *DiffControl) LabelClassName(value interface{}) *DiffControl {
 	return a
 }
 
+func (a *DiffControl) LabelOverflow(value interface{}) *DiffControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *DiffControl) LabelRemark(value interface{}) *DiffControl {
 	a.Set("labelRemark", value)
 	return a

@@ -143,6 +143,11 @@ func (a *CheckboxControl) LabelClassName(value interface{}) *CheckboxControl {
 	return a
 }
 
+func (a *CheckboxControl) LabelOverflow(value interface{}) *CheckboxControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *CheckboxControl) LabelRemark(value interface{}) *CheckboxControl {
 	a.Set("labelRemark", value)
 	return a

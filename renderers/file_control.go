@@ -243,6 +243,11 @@ func (a *FileControl) LabelClassName(value interface{}) *FileControl {
 	return a
 }
 
+func (a *FileControl) LabelOverflow(value interface{}) *FileControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *FileControl) LabelRemark(value interface{}) *FileControl {
 	a.Set("labelRemark", value)
 	return a

@@ -163,6 +163,11 @@ func (a *InputCityControl) LabelClassName(value interface{}) *InputCityControl {
 	return a
 }
 
+func (a *InputCityControl) LabelOverflow(value interface{}) *InputCityControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *InputCityControl) LabelRemark(value interface{}) *InputCityControl {
 	a.Set("labelRemark", value)
 	return a

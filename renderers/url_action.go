@@ -9,7 +9,7 @@ func NewUrlAction() *UrlAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -125,6 +125,11 @@ func (a *UrlAction) HiddenOn(value interface{}) *UrlAction {
 
 func (a *UrlAction) HotKey(value interface{}) *UrlAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *UrlAction) Href(value interface{}) *UrlAction {
+	a.Set("href", value)
 	return a
 }
 

@@ -9,7 +9,7 @@ func NewDrawerAction() *DrawerAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -135,6 +135,11 @@ func (a *DrawerAction) HiddenOn(value interface{}) *DrawerAction {
 
 func (a *DrawerAction) HotKey(value interface{}) *DrawerAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *DrawerAction) Href(value interface{}) *DrawerAction {
+	a.Set("href", value)
 	return a
 }
 

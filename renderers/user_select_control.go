@@ -43,6 +43,11 @@ func (a *UserSelectControl) AutoFill(value interface{}) *UserSelectControl {
 	return a
 }
 
+func (a *UserSelectControl) CheckAll(value interface{}) *UserSelectControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *UserSelectControl) ClassName(value interface{}) *UserSelectControl {
 	a.Set("className", value)
 	return a
@@ -225,6 +230,11 @@ func (a *UserSelectControl) LabelAlign(value interface{}) *UserSelectControl {
 
 func (a *UserSelectControl) LabelClassName(value interface{}) *UserSelectControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *UserSelectControl) LabelOverflow(value interface{}) *UserSelectControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

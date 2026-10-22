@@ -168,6 +168,11 @@ func (a *MonthControl) LabelClassName(value interface{}) *MonthControl {
 	return a
 }
 
+func (a *MonthControl) LabelOverflow(value interface{}) *MonthControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *MonthControl) LabelRemark(value interface{}) *MonthControl {
 	a.Set("labelRemark", value)
 	return a

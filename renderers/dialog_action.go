@@ -9,7 +9,7 @@ func NewDialogAction() *DialogAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -130,6 +130,11 @@ func (a *DialogAction) HiddenOn(value interface{}) *DialogAction {
 
 func (a *DialogAction) HotKey(value interface{}) *DialogAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *DialogAction) Href(value interface{}) *DialogAction {
+	a.Set("href", value)
 	return a
 }
 

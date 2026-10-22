@@ -203,6 +203,11 @@ func (a *ComboControl) LabelClassName(value interface{}) *ComboControl {
 	return a
 }
 
+func (a *ComboControl) LabelOverflow(value interface{}) *ComboControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *ComboControl) LabelRemark(value interface{}) *ComboControl {
 	a.Set("labelRemark", value)
 	return a
@@ -265,6 +270,11 @@ func (a *ComboControl) Nullable(value interface{}) *ComboControl {
 
 func (a *ComboControl) OnEvent(value interface{}) *ComboControl {
 	a.Set("onEvent", value)
+	return a
+}
+
+func (a *ComboControl) PerPage(value interface{}) *ComboControl {
+	a.Set("perPage", value)
 	return a
 }
 

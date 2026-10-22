@@ -198,6 +198,11 @@ func (a *InputSignature) LabelClassName(value interface{}) *InputSignature {
 	return a
 }
 
+func (a *InputSignature) LabelOverflow(value interface{}) *InputSignature {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *InputSignature) LabelRemark(value interface{}) *InputSignature {
 	a.Set("labelRemark", value)
 	return a

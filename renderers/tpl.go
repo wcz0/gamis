@@ -133,6 +133,11 @@ func (a *Tpl) Testid(value interface{}) *Tpl {
 	return a
 }
 
+func (a *Tpl) TestidBuilder(value interface{}) *Tpl {
+	a.Set("testidBuilder", value)
+	return a
+}
+
 func (a *Tpl) Text(value interface{}) *Tpl {
 	a.Set("text", value)
 	return a

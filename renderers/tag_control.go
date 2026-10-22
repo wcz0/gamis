@@ -43,6 +43,11 @@ func (a *TagControl) AutoFill(value interface{}) *TagControl {
 	return a
 }
 
+func (a *TagControl) CheckAll(value interface{}) *TagControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TagControl) ClassName(value interface{}) *TagControl {
 	a.Set("className", value)
 	return a
@@ -235,6 +240,11 @@ func (a *TagControl) LabelAlign(value interface{}) *TagControl {
 
 func (a *TagControl) LabelClassName(value interface{}) *TagControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *TagControl) LabelOverflow(value interface{}) *TagControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

@@ -128,6 +128,11 @@ func (a *VanillaAction) HotKey(value interface{}) *VanillaAction {
 	return a
 }
 
+func (a *VanillaAction) Href(value interface{}) *VanillaAction {
+	a.Set("href", value)
+	return a
+}
+
 func (a *VanillaAction) Icon(value interface{}) *VanillaAction {
 	a.Set("icon", value)
 	return a

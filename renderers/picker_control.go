@@ -43,6 +43,11 @@ func (a *PickerControl) AutoFill(value interface{}) *PickerControl {
 	return a
 }
 
+func (a *PickerControl) CheckAll(value interface{}) *PickerControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *PickerControl) ClassName(value interface{}) *PickerControl {
 	a.Set("className", value)
 	return a
@@ -240,6 +245,11 @@ func (a *PickerControl) LabelClassName(value interface{}) *PickerControl {
 
 func (a *PickerControl) LabelField(value interface{}) *PickerControl {
 	a.Set("labelField", value)
+	return a
+}
+
+func (a *PickerControl) LabelOverflow(value interface{}) *PickerControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

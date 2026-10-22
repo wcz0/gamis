@@ -133,6 +133,11 @@ func (a *MatrixControl) LabelClassName(value interface{}) *MatrixControl {
 	return a
 }
 
+func (a *MatrixControl) LabelOverflow(value interface{}) *MatrixControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *MatrixControl) LabelRemark(value interface{}) *MatrixControl {
 	a.Set("labelRemark", value)
 	return a

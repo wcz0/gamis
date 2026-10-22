@@ -28,6 +28,11 @@ func (a *Dialog) Actions(value interface{}) *Dialog {
 	return a
 }
 
+func (a *Dialog) AllowFullscreen(value interface{}) *Dialog {
+	a.Set("allowFullscreen", value)
+	return a
+}
+
 func (a *Dialog) Body(value interface{}) *Dialog {
 	a.Set("body", value)
 	return a

@@ -133,6 +133,11 @@ func (a *Html) Testid(value interface{}) *Html {
 	return a
 }
 
+func (a *Html) TestidBuilder(value interface{}) *Html {
+	a.Set("testidBuilder", value)
+	return a
+}
+
 func (a *Html) Text(value interface{}) *Html {
 	a.Set("text", value)
 	return a

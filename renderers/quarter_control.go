@@ -168,6 +168,11 @@ func (a *QuarterControl) LabelClassName(value interface{}) *QuarterControl {
 	return a
 }
 
+func (a *QuarterControl) LabelOverflow(value interface{}) *QuarterControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *QuarterControl) LabelRemark(value interface{}) *QuarterControl {
 	a.Set("labelRemark", value)
 	return a

@@ -138,6 +138,11 @@ func (a *RadioControl) LabelClassName(value interface{}) *RadioControl {
 	return a
 }
 
+func (a *RadioControl) LabelOverflow(value interface{}) *RadioControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *RadioControl) LabelRemark(value interface{}) *RadioControl {
 	a.Set("labelRemark", value)
 	return a

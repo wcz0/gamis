@@ -48,6 +48,11 @@ func (a *ListControl) AutoFill(value interface{}) *ListControl {
 	return a
 }
 
+func (a *ListControl) CheckAll(value interface{}) *ListControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *ListControl) ClassName(value interface{}) *ListControl {
 	a.Set("className", value)
 	return a
@@ -240,6 +245,11 @@ func (a *ListControl) LabelAlign(value interface{}) *ListControl {
 
 func (a *ListControl) LabelClassName(value interface{}) *ListControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *ListControl) LabelOverflow(value interface{}) *ListControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

@@ -9,7 +9,7 @@ func NewToastAction() *ToastAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -120,6 +120,11 @@ func (a *ToastAction) HiddenOn(value interface{}) *ToastAction {
 
 func (a *ToastAction) HotKey(value interface{}) *ToastAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *ToastAction) Href(value interface{}) *ToastAction {
+	a.Set("href", value)
 	return a
 }
 

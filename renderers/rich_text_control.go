@@ -138,6 +138,11 @@ func (a *RichTextControl) LabelClassName(value interface{}) *RichTextControl {
 	return a
 }
 
+func (a *RichTextControl) LabelOverflow(value interface{}) *RichTextControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *RichTextControl) LabelRemark(value interface{}) *RichTextControl {
 	a.Set("labelRemark", value)
 	return a

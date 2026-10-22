@@ -148,6 +148,11 @@ func (a *FormulaControl) LabelClassName(value interface{}) *FormulaControl {
 	return a
 }
 
+func (a *FormulaControl) LabelOverflow(value interface{}) *FormulaControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *FormulaControl) LabelRemark(value interface{}) *FormulaControl {
 	a.Set("labelRemark", value)
 	return a

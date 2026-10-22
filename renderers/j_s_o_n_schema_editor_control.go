@@ -148,6 +148,11 @@ func (a *JSONSchemaEditorControl) LabelClassName(value interface{}) *JSONSchemaE
 	return a
 }
 
+func (a *JSONSchemaEditorControl) LabelOverflow(value interface{}) *JSONSchemaEditorControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *JSONSchemaEditorControl) LabelRemark(value interface{}) *JSONSchemaEditorControl {
 	a.Set("labelRemark", value)
 	return a

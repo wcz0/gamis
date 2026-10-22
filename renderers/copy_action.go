@@ -9,7 +9,7 @@ func NewCopyAction() *CopyAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -130,6 +130,11 @@ func (a *CopyAction) HiddenOn(value interface{}) *CopyAction {
 
 func (a *CopyAction) HotKey(value interface{}) *CopyAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *CopyAction) Href(value interface{}) *CopyAction {
+	a.Set("href", value)
 	return a
 }
 

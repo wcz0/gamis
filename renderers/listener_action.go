@@ -9,6 +9,7 @@ func NewListenerAction() *ListenerAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
+	a.Set("type", "action")
 	return a
 }
 

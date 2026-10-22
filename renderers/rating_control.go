@@ -163,6 +163,11 @@ func (a *RatingControl) LabelClassName(value interface{}) *RatingControl {
 	return a
 }
 
+func (a *RatingControl) LabelOverflow(value interface{}) *RatingControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *RatingControl) LabelRemark(value interface{}) *RatingControl {
 	a.Set("labelRemark", value)
 	return a

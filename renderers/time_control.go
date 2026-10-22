@@ -168,6 +168,11 @@ func (a *TimeControl) LabelClassName(value interface{}) *TimeControl {
 	return a
 }
 
+func (a *TimeControl) LabelOverflow(value interface{}) *TimeControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *TimeControl) LabelRemark(value interface{}) *TimeControl {
 	a.Set("labelRemark", value)
 	return a

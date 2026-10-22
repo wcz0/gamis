@@ -58,6 +58,11 @@ func (a *TreeSelectControl) Cascade(value interface{}) *TreeSelectControl {
 	return a
 }
 
+func (a *TreeSelectControl) CheckAll(value interface{}) *TreeSelectControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TreeSelectControl) ClassName(value interface{}) *TreeSelectControl {
 	a.Set("className", value)
 	return a
@@ -270,6 +275,11 @@ func (a *TreeSelectControl) LabelClassName(value interface{}) *TreeSelectControl
 
 func (a *TreeSelectControl) LabelField(value interface{}) *TreeSelectControl {
 	a.Set("labelField", value)
+	return a
+}
+
+func (a *TreeSelectControl) LabelOverflow(value interface{}) *TreeSelectControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

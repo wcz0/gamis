@@ -9,7 +9,7 @@ func NewOtherAction() *OtherAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -120,6 +120,11 @@ func (a *OtherAction) HiddenOn(value interface{}) *OtherAction {
 
 func (a *OtherAction) HotKey(value interface{}) *OtherAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *OtherAction) Href(value interface{}) *OtherAction {
+	a.Set("href", value)
 	return a
 }
 

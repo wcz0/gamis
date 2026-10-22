@@ -128,6 +128,11 @@ func (a *HiddenControl) LabelClassName(value interface{}) *HiddenControl {
 	return a
 }
 
+func (a *HiddenControl) LabelOverflow(value interface{}) *HiddenControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *HiddenControl) LabelRemark(value interface{}) *HiddenControl {
 	a.Set("labelRemark", value)
 	return a

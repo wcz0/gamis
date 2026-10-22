@@ -173,6 +173,11 @@ func (a *DateTimeControl) LabelClassName(value interface{}) *DateTimeControl {
 	return a
 }
 
+func (a *DateTimeControl) LabelOverflow(value interface{}) *DateTimeControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *DateTimeControl) LabelRemark(value interface{}) *DateTimeControl {
 	a.Set("labelRemark", value)
 	return a

@@ -9,7 +9,7 @@ func NewLinkAction() *LinkAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -120,6 +120,11 @@ func (a *LinkAction) HiddenOn(value interface{}) *LinkAction {
 
 func (a *LinkAction) HotKey(value interface{}) *LinkAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *LinkAction) Href(value interface{}) *LinkAction {
+	a.Set("href", value)
 	return a
 }
 

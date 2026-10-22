@@ -53,6 +53,11 @@ func (a *TransferPickerControl) BorderMode(value interface{}) *TransferPickerCon
 	return a
 }
 
+func (a *TransferPickerControl) CheckAll(value interface{}) *TransferPickerControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TransferPickerControl) ClassName(value interface{}) *TransferPickerControl {
 	a.Set("className", value)
 	return a
@@ -250,6 +255,11 @@ func (a *TransferPickerControl) LabelAlign(value interface{}) *TransferPickerCon
 
 func (a *TransferPickerControl) LabelClassName(value interface{}) *TransferPickerControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *TransferPickerControl) LabelOverflow(value interface{}) *TransferPickerControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

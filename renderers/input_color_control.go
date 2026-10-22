@@ -148,6 +148,11 @@ func (a *InputColorControl) LabelClassName(value interface{}) *InputColorControl
 	return a
 }
 
+func (a *InputColorControl) LabelOverflow(value interface{}) *InputColorControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *InputColorControl) LabelRemark(value interface{}) *InputColorControl {
 	a.Set("labelRemark", value)
 	return a

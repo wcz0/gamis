@@ -48,6 +48,11 @@ func (a *TransferControl) AutoFill(value interface{}) *TransferControl {
 	return a
 }
 
+func (a *TransferControl) CheckAll(value interface{}) *TransferControl {
+	a.Set("checkAll", value)
+	return a
+}
+
 func (a *TransferControl) ClassName(value interface{}) *TransferControl {
 	a.Set("className", value)
 	return a
@@ -245,6 +250,11 @@ func (a *TransferControl) LabelAlign(value interface{}) *TransferControl {
 
 func (a *TransferControl) LabelClassName(value interface{}) *TransferControl {
 	a.Set("labelClassName", value)
+	return a
+}
+
+func (a *TransferControl) LabelOverflow(value interface{}) *TransferControl {
+	a.Set("labelOverflow", value)
 	return a
 }
 

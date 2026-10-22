@@ -128,6 +128,11 @@ func (a *RepeatControl) LabelClassName(value interface{}) *RepeatControl {
 	return a
 }
 
+func (a *RepeatControl) LabelOverflow(value interface{}) *RepeatControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *RepeatControl) LabelRemark(value interface{}) *RepeatControl {
 	a.Set("labelRemark", value)
 	return a

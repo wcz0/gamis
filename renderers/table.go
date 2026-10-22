@@ -143,6 +143,11 @@ func (a *Table) OnEvent(value interface{}) *Table {
 	return a
 }
 
+func (a *Table) PersistKey(value interface{}) *Table {
+	a.Set("persistKey", value)
+	return a
+}
+
 func (a *Table) Placeholder(value interface{}) *Table {
 	a.Set("placeholder", value)
 	return a

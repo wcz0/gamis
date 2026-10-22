@@ -323,6 +323,11 @@ func (a *TableControl) LabelClassName(value interface{}) *TableControl {
 	return a
 }
 
+func (a *TableControl) LabelOverflow(value interface{}) *TableControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *TableControl) LabelRemark(value interface{}) *TableControl {
 	a.Set("labelRemark", value)
 	return a
@@ -370,6 +375,11 @@ func (a *TableControl) OnEvent(value interface{}) *TableControl {
 
 func (a *TableControl) PerPage(value interface{}) *TableControl {
 	a.Set("perPage", value)
+	return a
+}
+
+func (a *TableControl) PersistKey(value interface{}) *TableControl {
+	a.Set("persistKey", value)
 	return a
 }
 

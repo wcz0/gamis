@@ -168,6 +168,11 @@ func (a *YearControl) LabelClassName(value interface{}) *YearControl {
 	return a
 }
 
+func (a *YearControl) LabelOverflow(value interface{}) *YearControl {
+	a.Set("labelOverflow", value)
+	return a
+}
+
 func (a *YearControl) LabelRemark(value interface{}) *YearControl {
 	a.Set("labelRemark", value)
 	return a

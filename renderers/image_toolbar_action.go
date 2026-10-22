@@ -9,6 +9,7 @@ func NewImageToolbarAction() *ImageToolbarAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
+	a.Set("type", "action")
 	return a
 }
 

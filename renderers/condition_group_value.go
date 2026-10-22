@@ -46,3 +46,8 @@ func (a *ConditionGroupValue) Not(value interface{}) *ConditionGroupValue {
 	a.Set("not", value)
 	return a
 }
+
+func (a *ConditionGroupValue) SetIf(value interface{}) *ConditionGroupValue {
+	a.Set("if", value)
+	return a
+}

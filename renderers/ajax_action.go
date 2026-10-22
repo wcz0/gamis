@@ -9,7 +9,7 @@ func NewAjaxAction() *AjaxAction {
 		BaseRenderer: NewBaseRenderer(),
 	}
 
-	a.Set("type", "button")
+	a.Set("type", "action")
 	return a
 }
 
@@ -130,6 +130,11 @@ func (a *AjaxAction) HiddenOn(value interface{}) *AjaxAction {
 
 func (a *AjaxAction) HotKey(value interface{}) *AjaxAction {
 	a.Set("hotKey", value)
+	return a
+}
+
+func (a *AjaxAction) Href(value interface{}) *AjaxAction {
+	a.Set("href", value)
 	return a
 }
 
