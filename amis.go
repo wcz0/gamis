@@ -58,6 +58,50 @@ func BaseApi() *renderers.BaseApi {
 	return renderers.NewBaseApi()
 }
 
+func BaseButtonGroup() *renderers.BaseButtonGroup {
+	return renderers.NewBaseButtonGroup()
+}
+
+func BaseCards() *renderers.BaseCards {
+	return renderers.NewBaseCards()
+}
+
+func BaseCollapse() *renderers.BaseCollapse {
+	return renderers.NewBaseCollapse()
+}
+
+func BaseComboControl() *renderers.BaseComboControl {
+	return renderers.NewBaseComboControl()
+}
+
+func BaseDateRangeControl() *renderers.BaseDateRangeControl {
+	return renderers.NewBaseDateRangeControl()
+}
+
+func BaseForm() *renderers.BaseForm {
+	return renderers.NewBaseForm()
+}
+
+func BaseInputFormulaControl() *renderers.BaseInputFormulaControl {
+	return renderers.NewBaseInputFormulaControl()
+}
+
+func BaseList() *renderers.BaseList {
+	return renderers.NewBaseList()
+}
+
+func BaseRemark() *renderers.BaseRemark {
+	return renderers.NewBaseRemark()
+}
+
+func BaseTable() *renderers.BaseTable {
+	return renderers.NewBaseTable()
+}
+
+func BaseTransferControl() *renderers.BaseTransferControl {
+	return renderers.NewBaseTransferControl()
+}
+
 func Breadcrumb() *renderers.Breadcrumb {
 	return renderers.NewBreadcrumb()
 }
@@ -76,6 +120,10 @@ func ButtonGroupControl() *renderers.ButtonGroupControl {
 
 func ButtonToolbar() *renderers.ButtonToolbar {
 	return renderers.NewButtonToolbar()
+}
+
+func CRUD2() *renderers.CRUD2 {
+	return renderers.NewCRUD2()
 }
 
 func CRUD2Cards() *renderers.CRUD2Cards {
@@ -100,6 +148,10 @@ func CRUDList() *renderers.CRUDList {
 
 func CRUDTable() *renderers.CRUDTable {
 	return renderers.NewCRUDTable()
+}
+
+func CRUDToolbar() *renderers.CRUDToolbar {
+	return renderers.NewCRUDToolbar()
 }
 
 func Calendar() *renderers.Calendar {
@@ -278,8 +330,16 @@ func Form() *renderers.Form {
 	return renderers.NewForm()
 }
 
+func FormBaseControl() *renderers.FormBaseControl {
+	return renderers.NewFormBaseControl()
+}
+
 func FormControl() *renderers.FormControl {
 	return renderers.NewFormControl()
+}
+
+func FormOptions() *renderers.FormOptions {
+	return renderers.NewFormOptions()
 }
 
 func FormulaControl() *renderers.FormulaControl {
@@ -366,6 +426,10 @@ func InputColorControl() *renderers.InputColorControl {
 	return renderers.NewInputColorControl()
 }
 
+func InputDateBaseControl() *renderers.InputDateBaseControl {
+	return renderers.NewInputDateBaseControl()
+}
+
 func InputDatetimeRange() *renderers.InputDatetimeRange {
 	return renderers.NewInputDatetimeRange()
 }
@@ -388,6 +452,10 @@ func InputKVS() *renderers.InputKVS {
 
 func InputSignature() *renderers.InputSignature {
 	return renderers.NewInputSignature()
+}
+
+func InputTextAddOn() *renderers.InputTextAddOn {
+	return renderers.NewInputTextAddOn()
 }
 
 func InputTimeRange() *renderers.InputTimeRange {
@@ -594,16 +662,16 @@ func RichTextControl() *renderers.RichTextControl {
 	return renderers.NewRichTextControl()
 }
 
-func Root() *renderers.Root {
-	return renderers.NewRoot()
-}
-
 func RowSelection() *renderers.RowSelection {
 	return renderers.NewRowSelection()
 }
 
 func RowSelectionOptions() *renderers.RowSelectionOptions {
 	return renderers.NewRowSelectionOptions()
+}
+
+func Schema() *renderers.Schema {
+	return renderers.NewSchema()
 }
 
 func SchemaApi() *renderers.SchemaApi {
@@ -620,6 +688,10 @@ func SchemaMessage() *renderers.SchemaMessage {
 
 func SchemaPopOver() *renderers.SchemaPopOver {
 	return renderers.NewSchemaPopOver()
+}
+
+func SchemaQuickEdit() *renderers.SchemaQuickEdit {
+	return renderers.NewSchemaQuickEdit()
 }
 
 func SearchBox() *renderers.SearchBox {
@@ -837,4 +909,3 @@ func Wrapper() *renderers.Wrapper {
 func YearControl() *renderers.YearControl {
 	return renderers.NewYearControl()
 }
-
