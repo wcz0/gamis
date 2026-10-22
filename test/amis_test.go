@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"github.com/wcz0/gamis"
+	"github.com/wcz0/gamis/v6"
 )
 
 // MockAdminLang 模拟 tools.AdminLang 函数
